@@ -2,9 +2,4 @@
 
 ----
 
-Crazy idea about statistical study of extragalactic globular clusters using HSC data
-
-![HSC Example](doc/hsc_example.png "Example of HSC image of nearby galaxy")
-
-How many of those lovely red dots on HSC images around nearby galaxies are globular clusters?
-
+- Searching for UCDs, Extragalactic GCs, and other weird staff using Gaia and HSC, or maybe more.
