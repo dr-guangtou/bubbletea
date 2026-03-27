@@ -1,0 +1,188 @@
+{
+    "created": "2025-03-25",
+    "description": "Verified VizieR catalogs for UCD literature compilation",
+    
+    "verified_catalogs": [
+        {
+            "vizier_id": "J/ApJ/899/140",
+            "bibcode": "2020ApJ...899..140W",
+            "title": "The Nature of Ultra-compact Dwarfs Revealed by Gaia",
+            "authors": "Wang, L. et al.",
+            "year": 2020,
+            "n_objects": 632,
+            "region": "All-sky (Gaia-based)",
+            "status": "VERIFIED",
+            "tables": {
+                "table2": "List of Gaia UCD candidates (632 rows)",
+                "table3": "MIKE spectroscopic targets (14 rows)",
+                "table4": "Previously confirmed UCDs for completeness (57 rows)"
+            },
+            "notes": "PRIMARY CATALOG - Gaia-based selection, includes parallax and proper motion"
+        },
+        {
+            "vizier_id": "J/ApJ/812/34",
+            "bibcode": "2015ApJ...812...34L",
+            "title": "The Next Generation Virgo Cluster Survey. X. Properties of Ultra-compact Dwarfs in the M87, M49, and M60 Regions",
+            "authors": "Liu, C. et al.",
+            "year": 2015,
+            "n_objects": null,
+            "region": "Virgo (M87, M49, M60)",
+            "status": "VERIFIED",
+            "notes": "NGVS-based UCD candidates in Virgo core"
+        },
+        {
+            "vizier_id": "J/ApJ/802/30",
+            "bibcode": "2015ApJ...802...30Z",
+            "title": "The Next Generation Virgo Cluster Survey. VI. The Kinematics of Ultra-compact Dwarfs in M87",
+            "authors": "Zhang, H. et al.",
+            "year": 2015,
+            "n_objects": null,
+            "region": "Virgo (M87)",
+            "status": "VERIFIED",
+            "notes": "Virgo UCDs with spectroscopic confirmation - nearly tripled confirmed sample"
+        },
+        {
+            "vizier_id": "J/MNRAS/504/3580",
+            "bibcode": "2021MNRAS.504.3580S",
+            "title": "Ultra-compact dwarfs beyond the centre of the Fornax galaxy cluster",
+            "authors": "Saifollahi, T. et al.",
+            "year": 2021,
+            "n_objects": 105,
+            "region": "Fornax",
+            "status": "VERIFIED",
+            "notes": "Extended Fornax UCD sample - 61 confirmed + 44 new candidates"
+        },
+        {
+            "vizier_id": "J/ApJ/737/86",
+            "bibcode": "2011ApJ...737...86C",
+            "title": "Near-infrared Properties of Ultra-compact Dwarf Galaxies in the Coma Cluster",
+            "authors": "Chiboucas, K. et al.",
+            "year": 2011,
+            "n_objects": null,
+            "region": "Coma",
+            "status": "VERIFIED",
+            "tables": {
+                "ucd_cand": "Targeted UCD candidates",
+                "other": "Additional tables"
+            },
+            "notes": "Coma cluster UCDs with NIR properties"
+        },
+        {
+            "vizier_id": "J/A+A/531/A4",
+            "bibcode": "2011A&A...531A...4M",
+            "title": "A large population of ultra-compact dwarf galaxies in the Hydra I cluster",
+            "authors": "Misgeld, I. et al.",
+            "year": 2011,
+            "n_objects": null,
+            "region": "Hydra I",
+            "status": "VERIFIED",
+            "notes": "Hydra I cluster UCDs"
+        },
+        {
+            "vizier_id": "J/A+A/625/A50",
+            "bibcode": "2019A&A...625A..50V",
+            "title": "Ultra compact dwarf galaxies catalog",
+            "authors": "Voggel, K.T. et al.",
+            "year": 2019,
+            "n_objects": null,
+            "region": "Multiple clusters",
+            "status": "VERIFIED",
+            "notes": "Compilation catalog of UCDs from photometric surveys"
+        },
+        {
+            "vizier_id": "J/AJ/142/199",
+            "bibcode": "2011AJ....142..199B",
+            "title": "A Fresh View of Ultracompact Dwarfs: Size, Luminosity, or Mass - What Is the Driving Force Behind the Diverse UCD Formation Scenarios?",
+            "authors": "Brodie, J.P. et al.",
+            "year": 2011,
+            "n_objects": null,
+            "region": "Multiple",
+            "status": "VERIFIED",
+            "notes": "Classic review with compiled UCD properties - sizes and luminosities"
+        },
+        {
+            "vizier_id": "J/other/Sci/348.418",
+            "bibcode": "2015Sci...348..418C",
+            "title": "A Population of Compact Elliptical Galaxies Detected with the Virtual Observatory",
+            "authors": "Chilingarian, I. et al.",
+            "year": 2015,
+            "n_objects": 1688,
+            "region": "All-sky",
+            "status": "VERIFIED",
+            "notes": "Compact ellipticals - related to UCDs, includes isolated cEs"
+        }
+    ],
+    
+    "pending_verification": [
+        {
+            "bibcode": "2011A&A...536A..70M",
+            "title": "A large population of ultra-compact dwarf galaxies in the Fornax cluster",
+            "authors": "Misgeld, I. et al.",
+            "year": 2011,
+            "n_objects": 118,
+            "region": "Fornax",
+            "vizier_id": null,
+            "notes": "Need to check if available on VizieR"
+        },
+        {
+            "bibcode": "2012A&A...546A..79B",
+            "title": "A catalog of extended clusters and ultra-compact dwarf galaxies",
+            "authors": "Brüns, C. et al.",
+            "year": 2012,
+            "n_objects": null,
+            "region": "Multiple",
+            "vizier_id": null,
+            "notes": "Compilation catalog - need to search VizieR"
+        },
+        {
+            "bibcode": "2007A&A...472..111M",
+            "title": "A search for ultra-compact dwarf galaxies in the Centaurus galaxy cluster",
+            "authors": "Mieske, S. et al.",
+            "year": 2007,
+            "n_objects": null,
+            "region": "Centaurus A / NGC 5128",
+            "vizier_id": null,
+            "notes": "Cen A region UCDs"
+        },
+        {
+            "bibcode": "2014MNRAS.442..891C",
+            "title": "Ultracompact dwarfs around NGC 3268 (Antlia cluster)",
+            "authors": "Caso, J.P. et al.",
+            "year": 2014,
+            "n_objects": null,
+            "region": "Antlia",
+            "vizier_id": null,
+            "notes": "Antlia cluster UCDs"
+        },
+        {
+            "bibcode": "2015ApJS..219...43Z",
+            "title": "The Next Generation Virgo Cluster Survey (NGVS). VI. The Virgo Cluster Catalog of Ultra-compact Dwarfs",
+            "authors": "Zhang, H. et al.",
+            "year": 2015,
+            "n_objects": null,
+            "region": "Virgo",
+            "vizier_id": "J/ApJS/219/43 - NOT FOUND",
+            "notes": "Different from J/ApJ/802/30 - may not be on VizieR"
+        }
+    ],
+    
+    "additional_resources": {
+        "ngc5128_gc": {
+            "vizier_id": "J/ApJS/150/367",
+            "title": "Globular clusters in NGC 5128",
+            "notes": "GC catalog for Cen A - may contain UCD candidates"
+        },
+        "ngc5128_extended": {
+            "vizier_id": "J/MNRAS/469/3444",
+            "title": "NGC 5128 GC candidates out to 150 kpc",
+            "notes": "Extended GC survey - potential UCD candidates"
+        }
+    },
+    
+    "notes": [
+        "J/ApJ/899/140 (Wang+ 2020) is the PRIMARY catalog - Gaia-based selection",
+        "Start with verified catalogs only",
+        "Cross-match between catalogs to identify duplicates",
+        "Use ADS to find papers citing these for additional sources"
+    ]
+}

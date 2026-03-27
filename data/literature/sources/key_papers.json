@@ -1,0 +1,115 @@
+{
+    "papers_to_ingest": [
+        {
+            "priority": 1,
+            "bibcode": "2020ApJ...899..140W",
+            "title": "The Nature of Ultra-compact Dwarfs Revealed by Gaia",
+            "authors": "Wang, L. et al.",
+            "journal": "ApJ",
+            "year": 2020,
+            "vizier_id": "J/ApJ/899/140",
+            "n_objects": 632,
+            "notes": "Our Gaia-based UCD catalog - START HERE",
+            "status": "pending"
+        },
+        {
+            "priority": 2,
+            "bibcode": "2011AJ....142..199B",
+            "title": "A Fresh View of Ultracompact Dwarfs",
+            "authors": "Brodie, J.P. et al.",
+            "journal": "AJ",
+            "year": 2011,
+            "vizier_id": "J/AJ/142/199",
+            "n_objects": null,
+            "notes": "Classic review with compiled UCD properties",
+            "status": "pending"
+        },
+        {
+            "priority": 3,
+            "bibcode": "2015ApJS..219...43Z",
+            "title": "The Next Generation Virgo Cluster Survey (NGVS). VI. The Virgo Cluster Catalog of Ultra-compact Dwarfs",
+            "authors": "Zhang, H. et al.",
+            "journal": "ApJS",
+            "year": 2015,
+            "vizier_id": "J/ApJS/219/43",
+            "n_objects": null,
+            "notes": "Comprehensive Virgo UCD catalog",
+            "status": "pending"
+        },
+        {
+            "priority": 4,
+            "bibcode": "2011A&A...536A..70M",
+            "title": "A large population of ultra-compact dwarf galaxies in the Fornax cluster",
+            "authors": "Misgeld, I. et al.",
+            "journal": "A&A",
+            "year": 2011,
+            "vizier_id": null,
+            "n_objects": 118,
+            "notes": "Fornax UCDs with VIMOS",
+            "status": "pending"
+        },
+        {
+            "priority": 5,
+            "bibcode": "2021MNRAS.504.3580S",
+            "title": "Ultra-compact dwarfs beyond the centre of the Fornax galaxy cluster",
+            "authors": "Saifollahi, T. et al.",
+            "journal": "MNRAS",
+            "year": 2021,
+            "vizier_id": null,
+            "n_objects": 105,
+            "notes": "Extended Fornax UCD sample",
+            "status": "pending"
+        },
+        {
+            "priority": 6,
+            "bibcode": "2012A&A...546A..79B",
+            "title": "A catalog of extended clusters and ultra-compact dwarf galaxies",
+            "authors": "Brüns, C. et al.",
+            "journal": "A&A",
+            "year": 2012,
+            "vizier_id": null,
+            "n_objects": null,
+            "notes": "Compilation of ECs and UCDs",
+            "status": "pending"
+        },
+        {
+            "priority": 7,
+            "bibcode": "2007A&A...472..111M",
+            "title": "A search for ultra-compact dwarf galaxies in the Centaurus galaxy cluster",
+            "authors": "Mieske, S. et al.",
+            "journal": "A&A",
+            "year": 2007,
+            "vizier_id": null,
+            "n_objects": null,
+            "notes": "Centaurus A / NGC 5128 region",
+            "status": "pending"
+        },
+        {
+            "priority": 8,
+            "bibcode": "2014MNRAS.442..891C",
+            "title": "Ultracompact dwarfs around NGC 3268 (Antlia cluster)",
+            "authors": "Caso, J.P. et al.",
+            "journal": "MNRAS",
+            "year": 2014,
+            "vizier_id": null,
+            "n_objects": null,
+            "notes": "Antlia cluster UCDs",
+            "status": "pending"
+        }
+    ],
+    
+    "papers_by_galaxy": {
+        "Fornax": ["2021MNRAS.504.3580S", "2011A&A...536A..70M"],
+        "Virgo": ["2015ApJS..219...43Z"],
+        "NGC5128_CenA": ["2007A&A...472..111M"],
+        "Antlia": ["2014MNRAS.442..891C"],
+        "general": ["2011AJ....142..199B", "2012A&A...546A..79B", "2020ApJ...899..140W"]
+    },
+    
+    "notes": [
+        "Start with VizieR catalogs (J/ApJ/899/140, J/AJ/142/199) for bulk download",
+        "Cross-match between catalogs to identify duplicates",
+        "Use ADS to find additional papers citing these",
+        "Check for updated versions or errata"
+    ]
+}
