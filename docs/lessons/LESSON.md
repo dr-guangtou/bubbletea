@@ -1,6 +1,6 @@
 # Lessons Learned - UCD Search Project
 
-**Date:** 2026-03-27  
+**Date:** 2026-03-27
 **Project Duration:** ~11 days (Mar 16 - Mar 27, 2026)
 
 ---
@@ -274,11 +274,12 @@ This document captures key lessons learned during the UCD search project explora
 2. Maintain session-level notes
 3. Update manifest.json after major changes
 
----
+## 2026-05-11: Morphology of Nearby Galaxies
 
-## Summary
+**Lesson:** Do NOT use Legacy Survey object types (`REX`, `SER`, `DEV`, `EXP`) to characterize the morphology of nearby large galaxies ($D < 25\text{ Mpc}$).
+**Context:** In the Legacy Survey's `tractor` processing, these nearby large galaxies are often "shredded" into many individual pieces rather than being represented by a single object. Consequently, the assigned morphological type of any one piece does not reflect the global morphology of the galaxy.
+**Recommendation:** Use primary identifiers (NGC, IC, PGC) to retrieve reliable Hubble classifications and T-types from established databases like NED or HyperLEDA.
 
-**Scientific lessons:**
 - AEN is the primary UCD discriminator
 - Background varies 10x with galactic latitude
 - Local background estimation is essential
