@@ -1,0 +1,1107 @@
+{
+  "checks": [
+    "Every registered publication has exactly one approved reference folder",
+    "Reference folder exists for 2007A&A...472..111M",
+    "Provenance README exists for 2007A&A...472..111M",
+    "README records bibcode for 2007A&A...472..111M",
+    "README records DOI for 2007A&A...472..111M",
+    "PDF or access status is documented for 2007A&A...472..111M",
+    "Machine-readable files or absence are documented for 2007A&A...472..111M",
+    "Digest is documented for mieske2007/ReadMe.txt",
+    "Digest is documented for mieske2007/table1.dat",
+    "Digest is documented for mieske2007/table2.dat",
+    "Reference folder exists for 2008AJ....136.2295B",
+    "Provenance README exists for 2008AJ....136.2295B",
+    "README records bibcode for 2008AJ....136.2295B",
+    "README records DOI for 2008AJ....136.2295B",
+    "PDF or access status is documented for 2008AJ....136.2295B",
+    "Machine-readable files or absence are documented for 2008AJ....136.2295B",
+    "Digest is documented for blakeslee2008/ReadMe.txt",
+    "Digest is documented for blakeslee2008/table1.dat",
+    "Reference folder exists for 2009AJ....137..498G",
+    "Provenance README exists for 2009AJ....137..498G",
+    "README records bibcode for 2009AJ....137..498G",
+    "README records DOI for 2009AJ....137..498G",
+    "PDF or access status is documented for 2009AJ....137..498G",
+    "Machine-readable files or absence are documented for 2009AJ....137..498G",
+    "Digest is documented for gregg2009/ReadMe.txt",
+    "Digest is documented for gregg2009/table2.dat",
+    "Digest is documented for gregg2009/table3.dat",
+    "Reference folder exists for 2011A&A...531A...4M",
+    "Provenance README exists for 2011A&A...531A...4M",
+    "README records bibcode for 2011A&A...531A...4M",
+    "README records DOI for 2011A&A...531A...4M",
+    "PDF or access status is documented for 2011A&A...531A...4M",
+    "Machine-readable files or absence are documented for 2011A&A...531A...4M",
+    "Digest is documented for misgeld2011/ReadMe.txt",
+    "Digest is documented for misgeld2011/tablea1.dat",
+    "Reference folder exists for 2011ApJ...737...86C",
+    "Provenance README exists for 2011ApJ...737...86C",
+    "README records bibcode for 2011ApJ...737...86C",
+    "README records DOI for 2011ApJ...737...86C",
+    "PDF or access status is documented for 2011ApJ...737...86C",
+    "Machine-readable files or absence are documented for 2011ApJ...737...86C",
+    "Digest is documented for chiboucas2011/ReadMe.txt",
+    "Digest is documented for chiboucas2011/table2.dat",
+    "Digest is documented for chiboucas2011/table3.dat",
+    "Digest is documented for chiboucas2011/table4.dat",
+    "Reference folder exists for 2015ApJ...802...30Z",
+    "Provenance README exists for 2015ApJ...802...30Z",
+    "README records bibcode for 2015ApJ...802...30Z",
+    "README records DOI for 2015ApJ...802...30Z",
+    "PDF or access status is documented for 2015ApJ...802...30Z",
+    "Machine-readable files or absence are documented for 2015ApJ...802...30Z",
+    "Digest is documented for zhang2015/ReadMe.txt",
+    "Digest is documented for zhang2015/table1.dat",
+    "Reference folder exists for 2015ApJ...812...34L",
+    "Provenance README exists for 2015ApJ...812...34L",
+    "README records bibcode for 2015ApJ...812...34L",
+    "README records DOI for 2015ApJ...812...34L",
+    "PDF or access status is documented for 2015ApJ...812...34L",
+    "Machine-readable files or absence are documented for 2015ApJ...812...34L",
+    "Digest is documented for liu2015/ReadMe.txt",
+    "Digest is documented for liu2015/table2.dat",
+    "Digest is documented for liu2015/table3.dat",
+    "Digest is documented for liu2015/table4.dat",
+    "Digest is documented for liu2015/table5.dat",
+    "Digest is documented for liu2015/table6.dat",
+    "Digest is documented for liu2015/table7.dat",
+    "Reference folder exists for 2015ApJ...812L...2L",
+    "Provenance README exists for 2015ApJ...812L...2L",
+    "README records bibcode for 2015ApJ...812L...2L",
+    "README records DOI for 2015ApJ...812L...2L",
+    "PDF or access status is documented for 2015ApJ...812L...2L",
+    "Machine-readable files or absence are documented for 2015ApJ...812L...2L",
+    "Digest is documented for liu2015b/liu2015b.pdf",
+    "Reference folder exists for 2015MNRAS.449.1716J",
+    "Provenance README exists for 2015MNRAS.449.1716J",
+    "README records bibcode for 2015MNRAS.449.1716J",
+    "README records DOI for 2015MNRAS.449.1716J",
+    "PDF or access status is documented for 2015MNRAS.449.1716J",
+    "Machine-readable files or absence are documented for 2015MNRAS.449.1716J",
+    "Digest is documented for janz2015/janz2015.pdf",
+    "Reference folder exists for 2015MNRAS.451.3615N",
+    "Provenance README exists for 2015MNRAS.451.3615N",
+    "README records bibcode for 2015MNRAS.451.3615N",
+    "README records DOI for 2015MNRAS.451.3615N",
+    "PDF or access status is documented for 2015MNRAS.451.3615N",
+    "Machine-readable files or absence are documented for 2015MNRAS.451.3615N",
+    "Digest is documented for norris2015/norris2015.pdf",
+    "Reference folder exists for 2016A&A...586A.102V",
+    "Provenance README exists for 2016A&A...586A.102V",
+    "README records bibcode for 2016A&A...586A.102V",
+    "README records DOI for 2016A&A...586A.102V",
+    "PDF or access status is documented for 2016A&A...586A.102V",
+    "Machine-readable files or absence are documented for 2016A&A...586A.102V",
+    "Digest is documented for voggel2016/ReadMe.txt",
+    "Digest is documented for voggel2016/table1.dat",
+    "Digest is documented for voggel2016/tablea1.dat",
+    "Digest is documented for voggel2016/tablea2.dat",
+    "Digest is documented for voggel2016/voggel2016.pdf",
+    "Reference folder exists for 2016MNRAS.459.4450W",
+    "Provenance README exists for 2016MNRAS.459.4450W",
+    "README records bibcode for 2016MNRAS.459.4450W",
+    "README records DOI for 2016MNRAS.459.4450W",
+    "PDF or access status is documented for 2016MNRAS.459.4450W",
+    "Machine-readable files or absence are documented for 2016MNRAS.459.4450W",
+    "Digest is documented for wittmann2016/ReadMe.txt",
+    "Digest is documented for wittmann2016/table1.dat",
+    "Digest is documented for wittmann2016/table3.dat",
+    "Digest is documented for wittmann2016/wittmann2016.pdf",
+    "Reference folder exists for 2017A&A...599L...8F",
+    "Provenance README exists for 2017A&A...599L...8F",
+    "README records bibcode for 2017A&A...599L...8F",
+    "README records DOI for 2017A&A...599L...8F",
+    "PDF or access status is documented for 2017A&A...599L...8F",
+    "Machine-readable files or absence are documented for 2017A&A...599L...8F",
+    "Digest is documented for faifer2017/faifer2017.pdf",
+    "Reference folder exists for 2017ApJ...835..212K",
+    "Provenance README exists for 2017ApJ...835..212K",
+    "README records bibcode for 2017ApJ...835..212K",
+    "README records DOI for 2017ApJ...835..212K",
+    "PDF or access status is documented for 2017ApJ...835..212K",
+    "Machine-readable files or absence are documented for 2017ApJ...835..212K",
+    "Digest is documented for ko2017/ReadMe.txt",
+    "Digest is documented for ko2017/ko2017.pdf",
+    "Digest is documented for ko2017/table2.dat",
+    "Digest is documented for ko2017/table3.dat",
+    "Digest is documented for ko2017/table4.dat",
+    "Reference folder exists for 2017ApJ...839...72A",
+    "Provenance README exists for 2017ApJ...839...72A",
+    "README records bibcode for 2017ApJ...839...72A",
+    "README records DOI for 2017ApJ...839...72A",
+    "PDF or access status is documented for 2017ApJ...839...72A",
+    "Machine-readable files or absence are documented for 2017ApJ...839...72A",
+    "Digest is documented for ahn2017/ahn2017.pdf",
+    "Reference folder exists for 2018ApJ...853...54S",
+    "Provenance README exists for 2018ApJ...853...54S",
+    "README records bibcode for 2018ApJ...853...54S",
+    "README records DOI for 2018ApJ...853...54S",
+    "PDF or access status is documented for 2018ApJ...853...54S",
+    "Machine-readable files or absence are documented for 2018ApJ...853...54S",
+    "Digest is documented for schweizer2018/schweizer2018.pdf",
+    "Reference folder exists for 2018ApJ...858...20V",
+    "Provenance README exists for 2018ApJ...858...20V",
+    "README records bibcode for 2018ApJ...858...20V",
+    "README records DOI for 2018ApJ...858...20V",
+    "PDF or access status is documented for 2018ApJ...858...20V",
+    "Machine-readable files or absence are documented for 2018ApJ...858...20V",
+    "Digest is documented for voggel2018/voggel2018.pdf",
+    "Reference folder exists for 2018ApJ...858...37Z",
+    "Provenance README exists for 2018ApJ...858...37Z",
+    "README records bibcode for 2018ApJ...858...37Z",
+    "README records DOI for 2018ApJ...858...37Z",
+    "PDF or access status is documented for 2018ApJ...858...37Z",
+    "Machine-readable files or absence are documented for 2018ApJ...858...37Z",
+    "Digest is documented for zhang2018/zhang2018.pdf",
+    "Reference folder exists for 2018ApJ...858..102A",
+    "Provenance README exists for 2018ApJ...858..102A",
+    "README records bibcode for 2018ApJ...858..102A",
+    "README records DOI for 2018ApJ...858..102A",
+    "PDF or access status is documented for 2018ApJ...858..102A",
+    "Machine-readable files or absence are documented for 2018ApJ...858..102A",
+    "Digest is documented for ahn2018/ReadMe.txt",
+    "Digest is documented for ahn2018/ahn2018.pdf",
+    "Digest is documented for ahn2018/table3.dat",
+    "Reference folder exists for 2018MNRAS.477.4856A",
+    "Provenance README exists for 2018MNRAS.477.4856A",
+    "README records bibcode for 2018MNRAS.477.4856A",
+    "README records DOI for 2018MNRAS.477.4856A",
+    "PDF or access status is documented for 2018MNRAS.477.4856A",
+    "Machine-readable files or absence are documented for 2018MNRAS.477.4856A",
+    "Digest is documented for afanasiev2018/afanasiev2018.pdf",
+    "Reference folder exists for 2019A&A...625A..50F",
+    "Provenance README exists for 2019A&A...625A..50F",
+    "README records bibcode for 2019A&A...625A..50F",
+    "README records DOI for 2019A&A...625A..50F",
+    "PDF or access status is documented for 2019A&A...625A..50F",
+    "Machine-readable files or absence are documented for 2019A&A...625A..50F",
+    "Digest is documented for fahrion2019/ReadMe.txt",
+    "Digest is documented for fahrion2019/tableb1.dat",
+    "Reference folder exists for 2020ApJ...899..140V",
+    "Provenance README exists for 2020ApJ...899..140V",
+    "README records bibcode for 2020ApJ...899..140V",
+    "README records DOI for 2020ApJ...899..140V",
+    "PDF or access status is documented for 2020ApJ...899..140V",
+    "Machine-readable files or absence are documented for 2020ApJ...899..140V",
+    "Digest is documented for voggel2020/J_ApJ_899_140_table2.dat.fits",
+    "Digest is documented for voggel2020/J_ApJ_899_140_table3.dat.fits",
+    "Digest is documented for voggel2020/J_ApJ_899_140_table4.dat.fits",
+    "Digest is documented for voggel2020/ReadMe.txt",
+    "Digest is documented for voggel2020/Voggel_2020_ApJ_899_140.pdf",
+    "Digest is documented for voggel2020/table2.dat",
+    "Digest is documented for voggel2020/table3.dat",
+    "Digest is documented for voggel2020/table4.dat",
+    "Reference folder exists for 2020ApJS..250...17L",
+    "Provenance README exists for 2020ApJS..250...17L",
+    "README records bibcode for 2020ApJS..250...17L",
+    "README records DOI for 2020ApJS..250...17L",
+    "PDF or access status is documented for 2020ApJS..250...17L",
+    "Machine-readable files or absence are documented for 2020ApJS..250...17L",
+    "Digest is documented for liu2020/ReadMe.txt",
+    "Digest is documented for liu2020/liu2020.pdf",
+    "Digest is documented for liu2020/table3.dat",
+    "Digest is documented for liu2020/table4.dat",
+    "Reference folder exists for 2021MNRAS.504.3580S",
+    "Provenance README exists for 2021MNRAS.504.3580S",
+    "README records bibcode for 2021MNRAS.504.3580S",
+    "README records DOI for 2021MNRAS.504.3580S",
+    "PDF or access status is documented for 2021MNRAS.504.3580S",
+    "Machine-readable files or absence are documented for 2021MNRAS.504.3580S",
+    "Digest is documented for saifollahi2021/ReadMe.txt",
+    "Digest is documented for saifollahi2021/list.dat",
+    "Digest is documented for saifollahi2021/saifollahi2021.pdf",
+    "Digest is documented for saifollahi2021/tablea1.dat",
+    "Digest is documented for saifollahi2021/tablea5.dat",
+    "Digest is documented for saifollahi2021/tablea6.dat",
+    "Reference folder exists for 2022ApJ...929..147D",
+    "Provenance README exists for 2022ApJ...929..147D",
+    "README records bibcode for 2022ApJ...929..147D",
+    "README records DOI for 2022ApJ...929..147D",
+    "PDF or access status is documented for 2022ApJ...929..147D",
+    "Machine-readable files or absence are documented for 2022ApJ...929..147D",
+    "Digest is documented for dumont2022/ReadMe.txt",
+    "Digest is documented for dumont2022/table2.dat",
+    "Digest is documented for dumont2022/table3.dat",
+    "Reference folder exists for 2023MNRAS.526L.136P",
+    "Provenance README exists for 2023MNRAS.526L.136P",
+    "README records bibcode for 2023MNRAS.526L.136P",
+    "README records DOI for 2023MNRAS.526L.136P",
+    "PDF or access status is documented for 2023MNRAS.526L.136P",
+    "Machine-readable files or absence are documented for 2023MNRAS.526L.136P",
+    "Digest is documented for paudel2023/paudel2023.pdf",
+    "Reference folder exists for 2023Natur.623..296W",
+    "Provenance README exists for 2023Natur.623..296W",
+    "README records bibcode for 2023Natur.623..296W",
+    "README records DOI for 2023Natur.623..296W",
+    "PDF or access status is documented for 2023Natur.623..296W",
+    "Machine-readable files or absence are documented for 2023Natur.623..296W",
+    "Digest is documented for wang2023b/source_data_extended_figure_6.xlsx",
+    "Digest is documented for wang2023b/source_data_extended_figure_7.xlsx",
+    "Digest is documented for wang2023b/source_data_figure_2.xlsx",
+    "Digest is documented for wang2023b/source_data_figure_3.xlsx",
+    "Digest is documented for wang2023b/wang2023b.pdf",
+    "Reference folder exists for 2025ApJ...991L..24T",
+    "Provenance README exists for 2025ApJ...991L..24T",
+    "README records bibcode for 2025ApJ...991L..24T",
+    "README records DOI for 2025ApJ...991L..24T",
+    "PDF or access status is documented for 2025ApJ...991L..24T",
+    "Machine-readable files or absence are documented for 2025ApJ...991L..24T",
+    "Digest is documented for taylor2025/taylor2025.pdf",
+    "Reference folder exists for 2026A&A...708A.172M",
+    "Provenance README exists for 2026A&A...708A.172M",
+    "README records bibcode for 2026A&A...708A.172M",
+    "README records DOI for 2026A&A...708A.172M",
+    "PDF or access status is documented for 2026A&A...708A.172M",
+    "Machine-readable files or absence are documented for 2026A&A...708A.172M",
+    "Digest is documented for martinez_delgado2026/martinez_delgado2026.pdf",
+    "Reference folder exists for 2026ApJS..285...27W",
+    "Provenance README exists for 2026ApJS..285...27W",
+    "README records bibcode for 2026ApJS..285...27W",
+    "README records DOI for 2026ApJS..285...27W",
+    "PDF or access status is documented for 2026ApJS..285...27W",
+    "Machine-readable files or absence are documented for 2026ApJS..285...27W",
+    "Digest is documented for wang2026/wang2026.pdf",
+    "Wang 2023 methodology package exists",
+    "Wang 2023 methodology README exists",
+    "Reference folder inventory matches registered and methodology packages",
+    "README.md cites 5,049",
+    "README.md cites 4,359",
+    "docs/PLAN.md cites 5,049",
+    "docs/PLAN.md cites 4,359",
+    "docs/CONTEXT.md cites 5,049",
+    "docs/CONTEXT.md cites 4,359",
+    "data/README.md cites 5,049",
+    "data/README.md cites 4,359",
+    "reference/summary.md cites 5,049",
+    "reference/summary.md cites 4,359",
+    "data/literature/sources/key_papers.json is explicitly historical",
+    "data/literature/sources/vizier_inventory.json is explicitly historical"
+  ],
+  "documented_nonlocal_pdf_package_count": 9,
+  "local_pdf_package_count": 21,
+  "packages": [
+    {
+      "bibcode": "2007A&A...472..111M",
+      "doi": "10.1051/0004-6361:20077631",
+      "files": [
+        {
+          "byte_count": 5938,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "5fe6bf1ceeda0d324a6e7b65a274859edfafcd5594b8f1eeb4118602794069ee"
+        },
+        {
+          "byte_count": 2456,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table1.dat",
+          "sha256": "b8a01fac08fca53f6c4c4c021093ba7eceebff0602937e9a478282fec4bdb5ed"
+        },
+        {
+          "byte_count": 951,
+          "digest_location": "README",
+          "file_name": "table2.dat",
+          "sha256": "487083e49e1a1c0479508a9e843259c13011b7582dbc2e77bb93e24df85b5c26"
+        }
+      ],
+      "machine_readable_file_count": 2,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "mieske2007",
+      "retained_file_count": 3
+    },
+    {
+      "bibcode": "2008AJ....136.2295B",
+      "doi": "10.1088/0004-6256/136/6/2295",
+      "files": [
+        {
+          "byte_count": 4379,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "9658eeb4104cdfd8b1feb115b0eed76ee2798d4b10750b376d039a01a37d013b"
+        },
+        {
+          "byte_count": 3686,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table1.dat",
+          "sha256": "269350c53e23711b12e6b955129ebea5d9d5afd58a6ba3afb512d091da257f7c"
+        }
+      ],
+      "machine_readable_file_count": 1,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "blakeslee2008",
+      "retained_file_count": 2
+    },
+    {
+      "bibcode": "2009AJ....137..498G",
+      "doi": "10.1088/0004-6256/137/1/498",
+      "files": [
+        {
+          "byte_count": 6091,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "e1d9080dbe824141c28d299c36667321c318f06cc47c8adeffd3644cf55e71ec"
+        },
+        {
+          "byte_count": 3076,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "a881cec9c2a759800267a3dd5a446a12853504ec6bdd98a27c48815f205fdb87"
+        },
+        {
+          "byte_count": 3733,
+          "digest_location": "README",
+          "file_name": "table3.dat",
+          "sha256": "e97dcf4d69ae7a096b3bfd496ad38f3cfec51b6af3af222f368f075551156339"
+        }
+      ],
+      "machine_readable_file_count": 2,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "gregg2009",
+      "retained_file_count": 3
+    },
+    {
+      "bibcode": "2011A&A...531A...4M",
+      "doi": "10.1051/0004-6361/201116728",
+      "files": [
+        {
+          "byte_count": 4157,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "67b1f65e2e4a41d68790f7ff399d29644766a6dce4e0a8044e1f4d67a8316341"
+        },
+        {
+          "byte_count": 6726,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea1.dat",
+          "sha256": "0b56d8945f944033eef135d2a087f5737f30f45449d36c168f43e031073e58ed"
+        }
+      ],
+      "machine_readable_file_count": 1,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "misgeld2011",
+      "retained_file_count": 2
+    },
+    {
+      "bibcode": "2011ApJ...737...86C",
+      "doi": "10.1088/0004-637X/737/2/86",
+      "files": [
+        {
+          "byte_count": 8557,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "2bf6927cbfb2bd8da936aa74cc190ff914f3867b57bc93386b3da6909e237cbc"
+        },
+        {
+          "byte_count": 5521,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "2c49c854808a97491fcd7538eb5da969235200ff1f08741a1f50cdf5e8f2a981"
+        },
+        {
+          "byte_count": 3530,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "218bb718039a1d62ff71e1eb9c6ffe731d710ebb000a187377e9f450c23018cd"
+        },
+        {
+          "byte_count": 1519,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table4.dat",
+          "sha256": "4205e63be2a1d49fc71beabb3526ceb167b1971911c6b2a819c62f400a02e450"
+        }
+      ],
+      "machine_readable_file_count": 3,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "chiboucas2011",
+      "retained_file_count": 4
+    },
+    {
+      "bibcode": "2015ApJ...802...30Z",
+      "doi": "10.1088/0004-637X/802/1/30",
+      "files": [
+        {
+          "byte_count": 11117,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "77f54cdd5dffb426e2e351ecfd78733cb4bb1955d143a6fde69c42c95837a6d3"
+        },
+        {
+          "byte_count": 12319,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table1.dat",
+          "sha256": "dba996f6937b23c870d284afa70c9d7b45b1200398403e6dfa244b7997f5de89"
+        }
+      ],
+      "machine_readable_file_count": 1,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "zhang2015",
+      "retained_file_count": 2
+    },
+    {
+      "bibcode": "2015ApJ...812...34L",
+      "doi": "10.1088/0004-637X/812/1/34",
+      "files": [
+        {
+          "byte_count": 12722,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "9c0c7bc248ba688e088a927140453888e62575e7cc53cdcaa8f3a3a67ed2040c"
+        },
+        {
+          "byte_count": 17780,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "ab61ee1eef10604ad1b113cba3328a83df1f4c0668420105345a44c660223ad0"
+        },
+        {
+          "byte_count": 16774,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "7a8efd8cf6b51de2f699cd782dc98d17b0d4e616d46ab33d386ca8ac56e6f801"
+        },
+        {
+          "byte_count": 7000,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table4.dat",
+          "sha256": "a1cf1e3ef6f5e6d3077f97d66dd7051135aa2b37ce1bbd5256c7ff40f56b4f66"
+        },
+        {
+          "byte_count": 6800,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table5.dat",
+          "sha256": "6c3f41cc0d373019dd2d3635cab109510264697a65f0ea131f183d41d84aed67"
+        },
+        {
+          "byte_count": 4060,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table6.dat",
+          "sha256": "3b4a8b8f846088e2534f47267cac80de8e1723906958ec6e4dfd32e222e818dd"
+        },
+        {
+          "byte_count": 3944,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table7.dat",
+          "sha256": "663c71cdc66e8910dc2e3f0555031fde7046f8698265896c26922180f04c2e31"
+        }
+      ],
+      "machine_readable_file_count": 6,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "liu2015",
+      "retained_file_count": 7
+    },
+    {
+      "bibcode": "2015ApJ...812L...2L",
+      "doi": "10.1088/2041-8205/812/1/L2",
+      "files": [
+        {
+          "byte_count": 1611168,
+          "digest_location": "retrieval_manifest",
+          "file_name": "liu2015b.pdf",
+          "sha256": "289e6818553e09148917179d16d51040d4467fb0acee059b530d2792eb003746"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "liu2015b",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2015MNRAS.449.1716J",
+      "doi": "10.1093/mnras/stv389",
+      "files": [
+        {
+          "byte_count": 4620818,
+          "digest_location": "retrieval_manifest",
+          "file_name": "janz2015.pdf",
+          "sha256": "2c1fd30612b528e24fa71a35da3466b6c42219ba5d3830580912643fb8ea88eb"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "janz2015",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2015MNRAS.451.3615N",
+      "doi": "10.1093/mnras/stv1221",
+      "files": [
+        {
+          "byte_count": 1545116,
+          "digest_location": "retrieval_manifest",
+          "file_name": "norris2015.pdf",
+          "sha256": "0eecbb34f78cc3b719d6b638c1a935dcc3b315d2b3f5d4e0d2a813df14b0e8ac"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "norris2015",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "doi": "10.1051/0004-6361/201527070",
+      "files": [
+        {
+          "byte_count": 10878,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "4171df321942823205bb9c4a166fa6460cc9a769606623e14ff9d44df77a3880"
+        },
+        {
+          "byte_count": 1261,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table1.dat",
+          "sha256": "470612956e1e7adac9712fdc044ddf127b4e71a9c6560fceeab167ea8e6e41d2"
+        },
+        {
+          "byte_count": 1890,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea1.dat",
+          "sha256": "50a563291f461879ac11e8c2a629126defc8b2b05a721230c31ff3b7bf53223d"
+        },
+        {
+          "byte_count": 4544,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea2.dat",
+          "sha256": "8a783c865563e2d300b2466fe7cc603228b70e01c3210b5051ed638906a9baf9"
+        },
+        {
+          "byte_count": 5586939,
+          "digest_location": "retrieval_manifest",
+          "file_name": "voggel2016.pdf",
+          "sha256": "8ea9dbe68a40abc16c03af564b3163133305dd21fca2682764da72168eedc155"
+        }
+      ],
+      "machine_readable_file_count": 3,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "voggel2016",
+      "retained_file_count": 5
+    },
+    {
+      "bibcode": "2016MNRAS.459.4450W",
+      "doi": "10.1093/mnras/stw827",
+      "files": [
+        {
+          "byte_count": 6870,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "c5746caa4a4f00966dc6dc46a6aa2eec0eea081defa13dc6a9d9ca5fb20d97f6"
+        },
+        {
+          "byte_count": 63280,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table1.dat",
+          "sha256": "69d2736b8f1c0741eb05022ddd21f452b855e7b034dccaa7e73a450efc94bd8e"
+        },
+        {
+          "byte_count": 25560,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "0f1d5365cca5e3231c7f54321a4463ee04ac22061d7a7e26df840193c14672c9"
+        },
+        {
+          "byte_count": 2696764,
+          "digest_location": "retrieval_manifest",
+          "file_name": "wittmann2016.pdf",
+          "sha256": "747665309847e9e426f996f6db08fd575936e3a579d201e352696e8dc2c520a5"
+        }
+      ],
+      "machine_readable_file_count": 2,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "wittmann2016",
+      "retained_file_count": 4
+    },
+    {
+      "bibcode": "2017A&A...599L...8F",
+      "doi": "10.1051/0004-6361/201730493",
+      "files": [
+        {
+          "byte_count": 401501,
+          "digest_location": "retrieval_manifest",
+          "file_name": "faifer2017.pdf",
+          "sha256": "6e35f535b59659348f611093f62f13e3f3f827ed93c7bdeba8f3f1822944b23b"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "faifer2017",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "doi": "10.3847/1538-4357/835/2/212",
+      "files": [
+        {
+          "byte_count": 11008,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "412fca8fba17532aed0e36bbf7294a43267e34d12c2d385fcde12ee690a987e7"
+        },
+        {
+          "byte_count": 4109169,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ko2017.pdf",
+          "sha256": "a8be671cbd946202f75f668477d30cffefc96e87a29aa7ee2e8c9e5b2c32fb73"
+        },
+        {
+          "byte_count": 48895,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "36c750f8d7b99acb5ed6c082ba6bdf7f8a7b55a84407998e800dfb49766ca167"
+        },
+        {
+          "byte_count": 68750,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "8ae4f3c5feeeed5c9403044b68094b1e14456fdd0727e5a9324e43594aa5e77c"
+        },
+        {
+          "byte_count": 14352,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table4.dat",
+          "sha256": "555cec7738f7bf3ee0c38342d2c1c24a6305770622f96690ad5c50a703369c9a"
+        }
+      ],
+      "machine_readable_file_count": 3,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "ko2017",
+      "retained_file_count": 5
+    },
+    {
+      "bibcode": "2017ApJ...839...72A",
+      "doi": "10.3847/1538-4357/aa6972",
+      "files": [
+        {
+          "byte_count": 2596134,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ahn2017.pdf",
+          "sha256": "e5438f092e37107516ac1af4b923fab7aba98682ce1ae088752f7cc8b4c1a44a"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "ahn2017",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2018ApJ...853...54S",
+      "doi": "10.3847/1538-4357/aaa424",
+      "files": [
+        {
+          "byte_count": 8917930,
+          "digest_location": "retrieval_manifest",
+          "file_name": "schweizer2018.pdf",
+          "sha256": "575c3eee510b8bd1717175e37889cc13170af1d4e9431c585916e36db149df32"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "schweizer2018",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2018ApJ...858...20V",
+      "doi": "10.3847/1538-4357/aabae5",
+      "files": [
+        {
+          "byte_count": 4785141,
+          "digest_location": "retrieval_manifest",
+          "file_name": "voggel2018.pdf",
+          "sha256": "18d4dfbff4c98857b677c258c36b8389c5157f9093ce6301012f1e374c8fb483"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "voggel2018",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2018ApJ...858...37Z",
+      "doi": "10.3847/1538-4357/aab88a",
+      "files": [
+        {
+          "byte_count": 933576,
+          "digest_location": "retrieval_manifest",
+          "file_name": "zhang2018.pdf",
+          "sha256": "f119bbe84fb8b04c1803c2bc2e42333d88d43ad37a7eeea687ae2ce5d0e02504"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "zhang2018",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2018ApJ...858..102A",
+      "doi": "10.3847/1538-4357/aabc57",
+      "files": [
+        {
+          "byte_count": 8174,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "7c41bd24818192927f9fded313cb64e38a58b61d67088325628b577b2b71f070"
+        },
+        {
+          "byte_count": 8199263,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ahn2018.pdf",
+          "sha256": "05c374682f5a60c51c26ca812d020a4af5a363e81e91d26b9a10e70eada2a63c"
+        },
+        {
+          "byte_count": 9156,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "bed51269c1e77fe039f1cdbef2907b5a6dcc1fea495a153f6afd4633018a71a8"
+        }
+      ],
+      "machine_readable_file_count": 1,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "ahn2018",
+      "retained_file_count": 3
+    },
+    {
+      "bibcode": "2018MNRAS.477.4856A",
+      "doi": "10.1093/mnras/sty913",
+      "files": [
+        {
+          "byte_count": 1482422,
+          "digest_location": "retrieval_manifest",
+          "file_name": "afanasiev2018.pdf",
+          "sha256": "efdfb7e47a578e07aad95d5cb53a6bf49b5f9bbeeed85aae85d8b284b144aa3c"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "afanasiev2018",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2019A&A...625A..50F",
+      "doi": "10.1051/0004-6361/201834941",
+      "files": [
+        {
+          "byte_count": 6478,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "83999702a86210cde3289899d2734c7eb80c6babe2fee7de483e479643646266"
+        },
+        {
+          "byte_count": 34290,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tableb1.dat",
+          "sha256": "9326adfa40f71628b75fc6c0ff40aba6e6e4f68e2cfccb8e41fcde96a835ab76"
+        }
+      ],
+      "machine_readable_file_count": 1,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "fahrion2019",
+      "retained_file_count": 2
+    },
+    {
+      "bibcode": "2020ApJ...899..140V",
+      "doi": "10.3847/1538-4357/ab6f69",
+      "files": [
+        {
+          "byte_count": 72000,
+          "digest_location": "README",
+          "file_name": "J_ApJ_899_140_table2.dat.fits",
+          "sha256": "a12d0e7b6ceae50eb34da37695e46891d7a65c3900670cd2aafeadadb7f933e2"
+        },
+        {
+          "byte_count": 20160,
+          "digest_location": "README",
+          "file_name": "J_ApJ_899_140_table3.dat.fits",
+          "sha256": "bb11b30b4bf4566e42a382a90cf0be1b5026fcbee8d134d4c2e63f9ed66adeb3"
+        },
+        {
+          "byte_count": 20160,
+          "digest_location": "README",
+          "file_name": "J_ApJ_899_140_table4.dat.fits",
+          "sha256": "6d57fbe7384186c05a1ae59d02347c2dbfdbb80cc56bc86915336ed3fad1c494"
+        },
+        {
+          "byte_count": 7721,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "93e773bdb8ffdc1e3487bb8f9f59c15748ba18d7433800015d5be517a285dc2c"
+        },
+        {
+          "byte_count": 2361813,
+          "digest_location": "README",
+          "file_name": "Voggel_2020_ApJ_899_140.pdf",
+          "sha256": "aba5a56a2ff18488a24fe0c70d24b8cefc7f3f20f533f220bf4a03260214256d"
+        },
+        {
+          "byte_count": 53088,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "4df1fa187a375e48fa55c1dae3ae3f755d575ce152e93af2231bfb36bbd807ee"
+        },
+        {
+          "byte_count": 1019,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "a3b8aaf2a2fa50e4b5b8a739abe63c776db080085125a1dba502539f148ba59e"
+        },
+        {
+          "byte_count": 3135,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table4.dat",
+          "sha256": "ddf4bd9ac4b9d6cb0302d0cd0851d587829bb0b3abc45cef1efad4d12f0f31a1"
+        }
+      ],
+      "machine_readable_file_count": 6,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "voggel2020",
+      "retained_file_count": 8
+    },
+    {
+      "bibcode": "2020ApJS..250...17L",
+      "doi": "10.3847/1538-4365/abad91",
+      "files": [
+        {
+          "byte_count": 15528,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "bd30e25f914db10ccc12d25634598931717b74440b8410d179a5ad509c28050d"
+        },
+        {
+          "byte_count": 8346366,
+          "digest_location": "retrieval_manifest",
+          "file_name": "liu2020.pdf",
+          "sha256": "70c0ac975507d4e7772f0ebb28250cb66d6d7ffe0328501cdb1081c001e1391b"
+        },
+        {
+          "byte_count": 120888,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "34158d07bc4bace6edcadc6f14f87e1942fd40a20e47e8e21b5f5841fd7495a0"
+        },
+        {
+          "byte_count": 74921,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table4.dat",
+          "sha256": "a30c4489565b2c257cf75f4d3a44ecc3c27b882ad402fa24898782cba377da7e"
+        }
+      ],
+      "machine_readable_file_count": 2,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "liu2020",
+      "retained_file_count": 4
+    },
+    {
+      "bibcode": "2021MNRAS.504.3580S",
+      "doi": "10.1093/mnras/stab1118",
+      "files": [
+        {
+          "byte_count": 10352,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "768cccd9ada451787920f8545f4cc42f99cdde641786d12e7aa0e8d5f2a0be9d"
+        },
+        {
+          "byte_count": 2066,
+          "digest_location": "README",
+          "file_name": "list.dat",
+          "sha256": "2c13785fe7997111eb8851cd5dce68ceaec7cc5930e288d0909995d8b72ec4a6"
+        },
+        {
+          "byte_count": 13366031,
+          "digest_location": "README",
+          "file_name": "saifollahi2021.pdf",
+          "sha256": "93bd4270f71236db763449a832644a470746d93cac54686bee95bde10eb448e7"
+        },
+        {
+          "byte_count": 64152,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea1.dat",
+          "sha256": "0b4ebe3c5501875ecccf7fa722baf0c19c9d4711da1088839494836fa8e1577c"
+        },
+        {
+          "byte_count": 143220,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea5.dat",
+          "sha256": "c18e15e7a5f287dcd99e5d4d75b36577fb7eb2f0621fd7b370ae52ffae4e5d10"
+        },
+        {
+          "byte_count": 5456,
+          "digest_location": "retrieval_manifest",
+          "file_name": "tablea6.dat",
+          "sha256": "5fdc1866cf6ec5b1c5b79cf48f36e181f859630c6a961cdb0d02132537cada50"
+        }
+      ],
+      "machine_readable_file_count": 4,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "saifollahi2021",
+      "retained_file_count": 6
+    },
+    {
+      "bibcode": "2022ApJ...929..147D",
+      "doi": "10.3847/1538-4357/ac551c",
+      "files": [
+        {
+          "byte_count": 12871,
+          "digest_location": "retrieval_manifest",
+          "file_name": "ReadMe.txt",
+          "sha256": "3260ca7046a4ae5974376c834561a1086b9859994f881e31a021e37c00ea7849"
+        },
+        {
+          "byte_count": 32998,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table2.dat",
+          "sha256": "992b3cd7c345569ef94bdb689e8c54296f112f9304a55eec3a70e83dd05a108a"
+        },
+        {
+          "byte_count": 6861,
+          "digest_location": "retrieval_manifest",
+          "file_name": "table3.dat",
+          "sha256": "e8e183ba7ceab98d167c3167591151b1469f4ea9f4b82a94e987b9701aec8975"
+        }
+      ],
+      "machine_readable_file_count": 2,
+      "pdf_file_count": 0,
+      "pdf_status": "documented_not_local",
+      "reference_folder": "dumont2022",
+      "retained_file_count": 3
+    },
+    {
+      "bibcode": "2023MNRAS.526L.136P",
+      "doi": "10.1093/mnrasl/slad126",
+      "files": [
+        {
+          "byte_count": 1961325,
+          "digest_location": "retrieval_manifest",
+          "file_name": "paudel2023.pdf",
+          "sha256": "5206d0555aff4b03817d4bf532235bf894cc0bc04e3374f60086609b430d866a"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "paudel2023",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2023Natur.623..296W",
+      "doi": "10.1038/s41586-023-06650-z",
+      "files": [
+        {
+          "byte_count": 17238,
+          "digest_location": "retrieval_manifest",
+          "file_name": "source_data_extended_figure_6.xlsx",
+          "sha256": "1d9cae518350b3a183f03ee65769655d60331d43dd4f070b9f54dce2f24dbc8f"
+        },
+        {
+          "byte_count": 16631,
+          "digest_location": "retrieval_manifest",
+          "file_name": "source_data_extended_figure_7.xlsx",
+          "sha256": "ea2324ef1317496fd938f3b5d1e864310102cf68fa71b5b66b5114c70a37df50"
+        },
+        {
+          "byte_count": 16520,
+          "digest_location": "retrieval_manifest",
+          "file_name": "source_data_figure_2.xlsx",
+          "sha256": "b601bcb4ace6467e79c812e61ed53572ac3f9e32fd5f9e26fd4291fdf833d083"
+        },
+        {
+          "byte_count": 16574,
+          "digest_location": "retrieval_manifest",
+          "file_name": "source_data_figure_3.xlsx",
+          "sha256": "dfc65b3ea165c340c27539d827ccb13720ef4ed57f7de5d70f179f4333798669"
+        },
+        {
+          "byte_count": 5558722,
+          "digest_location": "retrieval_manifest",
+          "file_name": "wang2023b.pdf",
+          "sha256": "127b194737cfc76070084ba931001bc93996752510361938a98f22ae55c8f558"
+        }
+      ],
+      "machine_readable_file_count": 4,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "wang2023b",
+      "retained_file_count": 5
+    },
+    {
+      "bibcode": "2025ApJ...991L..24T",
+      "doi": "10.3847/2041-8213/ae028e",
+      "files": [
+        {
+          "byte_count": 1050323,
+          "digest_location": "retrieval_manifest",
+          "file_name": "taylor2025.pdf",
+          "sha256": "2ce0c6f9d94fc5d3272ee5abde2c3f81bff08a7c7015c3e118e1d5a2b89979a1"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "taylor2025",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2026A&A...708A.172M",
+      "doi": "10.1051/0004-6361/202557294",
+      "files": [
+        {
+          "byte_count": 9046449,
+          "digest_location": "retrieval_manifest",
+          "file_name": "martinez_delgado2026.pdf",
+          "sha256": "1ca149ee5024e43e721279ed1bc78777e04a48f536d8cb747b146b2329c4a8c8"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "martinez_delgado2026",
+      "retained_file_count": 1
+    },
+    {
+      "bibcode": "2026ApJS..285...27W",
+      "doi": "10.3847/1538-4365/ae5231",
+      "files": [
+        {
+          "byte_count": 17052862,
+          "digest_location": "retrieval_manifest",
+          "file_name": "wang2026.pdf",
+          "sha256": "ab40a2a007f1bed6d2c6504782b1d65339ff0edf4ce68ede1c484c46ff453259"
+        }
+      ],
+      "machine_readable_file_count": 0,
+      "pdf_file_count": 1,
+      "pdf_status": "local",
+      "reference_folder": "wang2026",
+      "retained_file_count": 1
+    }
+  ],
+  "project_status_counts_path": "data/literature/validation/project_status_counts.json",
+  "project_status_counts_sha256": "67d9271667bd772b4660ed04c323774ba81d69732ee291b93861ad0bdea31ab6",
+  "registered_publication_package_count": 30,
+  "schema_version": 1,
+  "status": "passed",
+  "tracked_reference_folder_count": 31
+}

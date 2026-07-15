@@ -47,6 +47,10 @@ CANONICAL_LEGACY_CROSSMATCH_AUDIT = (
 )
 CANONICAL_CROSSMATCH_MANIFEST = LITERATURE_SOURCES / "canonical_crossmatch_manifest.json"
 CANONICAL_CROSSMATCH_VALIDATION = LITERATURE_VALIDATION / "canonical_crossmatch_validation.json"
+PROJECT_STATUS_COUNTS = LITERATURE_VALIDATION / "project_status_counts.json"
+PROVENANCE_DOCUMENTATION_VALIDATION = (
+    LITERATURE_VALIDATION / "provenance_documentation_validation.json"
+)
 
 GALAXY_SAMPLE_DIR = DATA_DIR / "galaxy_sample"
 GALAXY_SAMPLE_CSV = GALAXY_SAMPLE_DIR / "galaxy_sample_ranked.csv"

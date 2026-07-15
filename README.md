@@ -5,19 +5,19 @@ in the nearby universe using Gaia DR3 astrometry and imaging survey photometry.
 
 ## Scientific Goal
 
-Perform a systematic search for UCDs around nearby galaxies (D < 50 Mpc) by
-exploiting Gaia's astrometric excess noise (AEN) as a morphological discriminator.
-Cross-match candidates with Legacy Survey DR10, HSC, and other imaging data to
-characterize their photometric and structural properties.
+Perform a systematic Gaia-only search for UCD candidates around nearby galaxies.
+Gaia evidence of non-point-like structure is combined with host-centered excess
+statistics; external imaging and spectroscopy are value-added characterization,
+not inputs to the primary population selection.
 
 ## Method
 
-1. **AEN-based selection**: UCDs appear as marginally resolved sources in Gaia,
-   producing elevated astrometric excess noise (AEN > 0.5 mas) compared to stars.
-2. **Radial profile analysis**: Search in concentric annuli around target galaxies,
-   subtract local background, identify statistically significant excesses.
-3. **Multi-wavelength cross-match**: Confirm candidates using Legacy Survey morphology,
-   colors, and (where available) spectroscopic data.
+1. **Gaia-only source model**: Calibrate a versioned non-point-source probability
+   from Gaia observables; no final numerical threshold has been approved.
+2. **Host-centered statistics**: Measure positive, null, and negative excesses
+   against validated local or control-field backgrounds.
+3. **Value-added characterization**: Use Legacy Survey and other external data to
+   describe covered subsets without changing Gaia statistical membership.
 
 ## Project Phases
 
@@ -46,7 +46,7 @@ pre-commit install
 export BUBBLETEA_EXTERNAL_DATA=/path/to/your/data
 
 # Run a script
-uv run python scripts/phase1_literature/analyze_gaia_properties.py
+PYTHONPATH=. uv run python scripts/phase1_literature/analyze_gaia_properties.py
 ```
 
 ## Repository Structure
@@ -91,10 +91,18 @@ files. See `reference/summary.md` for the literature tracking table.
 - Wang et al. (2023), ApJ 954, 206 — Gaia GC search around M31
 - Saifollahi et al. (2021), MNRAS 504, 3580 — Fornax UCD sample
 
-## Key Results from Pilot Study
+## Validated Reference State
 
-- **1,542 known UCDs** compiled from 6 literature sources
-- **59% Gaia DR3 match rate** for known UCDs
-- **Background density** varies 10x with galactic latitude (60/deg^2 at |b|>70 to 600/deg^2 at |b|<30)
-- **7 galaxies** show high-contrast (>10x) UCD signal excess in pilot search
-- **AEN is the primary discriminator** — color (BP-RP) alone does not separate UCDs from background
+- **5,049 literature records** from 14 record-contributing publications are
+  preserved in the non-destructive v2 database, which registers 30 publication
+  provenance packages in total.
+- **4,359 canonical objects** are classified as 740 confirmed, 1,515 candidate,
+  2,082 rejected, and 22 uncertain under `confirmation_rules_v1`.
+- **963 canonical Gaia associations** represent 962 unique Gaia DR3 sources.
+- **3,723 Legacy Survey DR10 matches** are retained as value-added enrichment;
+  complete audits include all 4,359 canonical targets.
+- Historical pilot thresholds, match rates, and host contrasts remain exploratory
+  until the unified selector and background model are validated.
+
+The generated counts and validation state are recorded in
+`data/literature/validation/project_status_counts.json`.

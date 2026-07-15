@@ -5,6 +5,10 @@ Gaia DR3 properties, and devise distance-dependent selection criteria.
 
 **Status:** In progress
 
+Sections completed in April-May 2026 record the historical exploratory pipeline.
+Canonical counts and scientific validation status are governed by
+`docs/plans/scientific_validation.md` and the generated status artifact.
+
 ---
 
 ## I.1 Infrastructure Setup
@@ -29,7 +33,8 @@ Gaia DR3 properties, and devise distance-dependent selection criteria.
 - [x] Copy by_source CSVs to data/literature/catalogs/by_source/ (2026-03-27)
 - [x] Copy sources JSON files to data/literature/sources/ (2026-03-27)
 - [x] Copy galaxy_sample_ranked.csv to data/galaxy_sample/ (2026-03-27)
-- [x] Verify database integrity (row counts: 1,542 UCDs, 6 sources) (2026-04-15)
+- [x] Verify historical database checkpoint (1,542 rows, 6 sources) (2026-04-15)
+- [x] Validate current v2 database (5,049 records, 4,359 canonicals) (2026-07-15)
 - [x] Write data/README.md documenting provenance of each file (2026-04-15)
 - [x] Add provenance README.md to reference/voggel2020/ (2026-04-15)
 - [x] Add provenance README.md to reference/wang2023/ (2026-04-15)
@@ -47,18 +52,18 @@ Source: `ucd_project/scripts/ucd_database/`
 Source: `ucd_project/scripts/legacy_survey/xmatch_gaia_final.py`
 
 - [x] `scripts/phase1_literature/xmatch_gaia.py` — Gaia DR3 cross-match (2026-04-15)
-- [ ] Run cross-match for all 1,542 UCDs
-- [x] Verify: ~913 matches (59.2%) (2026-04-15)
-- [x] Save to data/literature/catalogs/all_ucds_gaia_matched.csv (2026-04-15)
+- [x] Synchronize all 963 canonical Gaia associations (2026-07-15)
+- [x] Preserve the 632-row historical export and generate a complete 4,359-target
+  canonical audit (2026-07-15)
 
 ## I.5 Legacy Survey Cross-match
 
 Source: `ucd_project/scripts/legacy_survey/xmatch_legacy_survey.py`
 
 - [x] `scripts/phase1_literature/xmatch_legacy_survey.py` — NOIRLab Data Lab TAP (2026-04-15)
-- [ ] Run cross-match
-- [x] Verify: ~917 matches (59.5%) (2026-04-15)
-- [x] Save to data/literature/catalogs/all_ucds_legacy_matched.csv (2026-04-15)
+- [x] Run spherical cross-match for all 4,359 canonical targets (2026-07-15)
+- [x] Export 3,723 matches and preserve 636 no-match audit states (2026-07-15)
+- [x] Preserve the 917-row historical export by manifest digest (2026-07-15)
 
 ## I.6 Gaia Property Analysis and Figures
 

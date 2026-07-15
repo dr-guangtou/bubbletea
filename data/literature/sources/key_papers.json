@@ -1,5 +1,12 @@
 {
-    "papers_to_ingest": [
+  "artifact_status": "superseded_historical_ingestion_plan",
+  "last_reconciled": "2026-07-16",
+  "authoritative_replacements": [
+    "data/literature/sources/literature_screening_closure.json",
+    "data/literature/validation/project_status_counts.json",
+    "data/literature/validation/provenance_documentation_validation.json"
+  ],
+  "papers_to_ingest": [
         {
             "priority": 1,
             "bibcode": "2020ApJ...899..140V",

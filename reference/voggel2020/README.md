@@ -10,6 +10,7 @@ Crnojevic, D.; Caldwell, N.
 **ADS Bibcode:** `2020ApJ...899..140V`
 **DOI:** `10.3847/1538-4357/ab6f69`
 **VizieR Catalog:** `J/ApJ/899/140`
+**Retrieval Date:** 2026-07-14
 
 The previous repository metadata incorrectly used bibcode suffix `W`, a different
 title, DOI `10.3847/1538-4357/aba842`, and an unrelated arXiv identifier. The
@@ -33,6 +34,18 @@ in the v2 reference model.
 Raw VizieR file URLs, byte counts, and SHA-256 hashes are recorded in
 `data/literature/validation/vizier_retrieval.json`. Catalog membership and Gaia
 extendedness are candidate evidence, not confirmation by themselves.
+
+The derived FITS conversions are retained for compatibility and have the
+following local-file digests:
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `J_ApJ_899_140_table2.dat.fits` | 72000 | `a12d0e7b6ceae50eb34da37695e46891d7a65c3900670cd2aafeadadb7f933e2` |
+| `J_ApJ_899_140_table3.dat.fits` | 20160 | `bb11b30b4bf4566e42a382a90cf0be1b5026fcbee8d134d4c2e63f9ed66adeb3` |
+| `J_ApJ_899_140_table4.dat.fits` | 20160 | `6d57fbe7384186c05a1ae59d02347c2dbfdbb80cc56bc86915336ed3fad1c494` |
+
+The locally retained `Voggel_2020_ApJ_899_140.pdf` is 2361813 bytes with SHA-256
+`aba5a56a2ff18488a24fe0c70d24b8cefc7f3f20f533f220bf4a03260214256d`.
 
 Table 4 is ingested as a reference/comparison sample distinct from the 632 new
 Gaia-selected table 2 candidates. Row-level review approved 34 sub-arcsecond

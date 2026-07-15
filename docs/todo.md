@@ -490,7 +490,7 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Gaia statistical sample. Label all covered-subset and follow-up analyses.
   Depends on: BT-001.
 
-- [ ] **BT-014 - Complete literature provenance packages.**
+- [x] **BT-014 - Complete literature provenance packages.**
   Evidence: Nine sources are ingested, but only `reference/voggel2020/` and
   `reference/wang2023/` follow the required paper-folder convention. Several
   source metadata files and counts are stale or contradictory.
@@ -512,15 +512,31 @@ Phase-specific execution tasks remain in `docs/plans/`.
   four publisher workbooks remain source-package provenance; no reported
   confirmation was promoted automatically. Object-level evidence review for the
   remaining PDF-only sources is still open.
+  Completed, 2026-07-16: All 30 v2 publications map one-to-one to approved
+  reference folders, and the separate Wang methodology package brings the tracked
+  folder count to 31. Twenty-one registered packages retain local PDFs; nine
+  older VizieR packages now explicitly document DOI-based paper access without a
+  local PDF. Every package records bibliographic identifiers, machine-readable
+  data or explicit no-package status, and file digests. The audit also documented
+  three retained files previously absent from package tables: Mieske table 2,
+  Gregg table 3, and the Saifollahi image list. All 275 provenance and
+  documentation checks pass without restructuring `reference/`.
   Depends on: BT-003.
 
-- [ ] **BT-015 - Reconcile plans, journals, summaries, and data manifests.**
+- [x] **BT-015 - Reconcile plans, journals, summaries, and data manifests.**
   Evidence: `README.md`, `docs/PLAN.md`, `data/README.md`, `reference/summary.md`,
   and phase trackers disagree about sample sizes, match rates, distance limits,
   and phase status.
   Resolution criteria: All headline counts are generated or verified from the
   canonical products, statuses reflect unresolved validation work, and documents
   link to the applicable selection and run versions.
+  Completed, 2026-07-16: `project_status_counts.json` now generates the canonical
+  headline counts from the v2 database and synchronized products. `README.md`,
+  `docs/PLAN.md`, `docs/CONTEXT.md`, `data/README.md`, `reference/summary.md`, and
+  the Phase I tracker cite 5,049 literature records, 4,359 canonical objects, the
+  versioned classification counts, and current cross-match totals. Historical
+  journals remain dated snapshots; the stale key-paper and VizieR inventories are
+  explicitly marked as superseded and link to their authoritative replacements.
   Depends on: BT-001 through BT-014 where applicable.
 
 ## P2: Implementation Quality

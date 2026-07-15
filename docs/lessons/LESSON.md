@@ -545,3 +545,27 @@ separations, so its geometry could not be revalidated or promoted.
 **Recommendation:** Report record, canonical-association, and unique-source counts
 separately; hash historical products; and regenerate canonical enrichments with a
 complete target audit and explicit shared-source diagnostics.
+
+## 2026-07-16: Do not use `path` as a zsh loop variable
+
+**Lesson:** In zsh, parameter names are case-insensitive, so assigning the loop
+variable `path` shadows the executable-search `PATH` array.
+
+**Context:** A read-only README comparison loop assigned `path` and then could not
+find `sed`. The command failed before reading or changing any file.
+
+**Recommendation:** Use specific names such as `file_path` in zsh loops and avoid
+shell special parameters even when their capitalization differs.
+
+## 2026-07-16: Generate current counts and label historical inventories
+
+**Lesson:** A dated plan or inventory should remain an honest historical artifact,
+but it must not appear to be the current source of truth after the data model
+changes.
+
+**Context:** Project summaries still cited the 1,542-row exploratory database and
+two metadata JSON files retained pending decisions that had since been closed.
+
+**Recommendation:** Generate headline counts from canonical products, link current
+documents to that artifact, and mark superseded inventories explicitly instead of
+silently rewriting their historical entries.

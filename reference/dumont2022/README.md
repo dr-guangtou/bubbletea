@@ -1,9 +1,12 @@
 # 2022ApJ...929..147D
 
 **ADS Bibcode:** `2022ApJ...929..147D`
+**DOI:** `10.3847/1538-4357/ac551c`
 **VizieR Catalog:** `J/ApJ/929/147`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/ApJ/929/147/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 

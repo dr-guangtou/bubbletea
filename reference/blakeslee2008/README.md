@@ -1,9 +1,12 @@
 # 2008AJ....136.2295B
 
 **ADS Bibcode:** `2008AJ....136.2295B`
+**DOI:** `10.1088/0004-6256/136/6/2295`
 **VizieR Catalog:** `J/AJ/136/2295`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/AJ/136/2295/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 
