@@ -1,0 +1,77 @@
+{
+  "retrieval_utc": "2026-07-15T20:02:45Z",
+  "ads_endpoint": "https://api.adsabs.harvard.edu/v1/search/query",
+  "purpose": "Identify object-level dwarf-galaxy H II-region literature suitable for a Gaia contaminant benchmark complementary to PHANGS-MUSE spiral fields.",
+  "query_runs": [
+    {
+      "query": "(title:\"H II region\" OR title:\"star forming region\") AND (title:dwarf OR abstract:\"dwarf galaxy\") year:2000-2026 property:refereed",
+      "sort": "citation_count desc",
+      "rows_requested": 50,
+      "ads_num_found": 72
+    },
+    {
+      "query": "abstract:\"dwarf irregular galaxies\" AND abstract:\"H II regions\" year:2000-2026 property:refereed",
+      "sort": "citation_count desc",
+      "rows_requested": 30,
+      "ads_num_found": 64
+    }
+  ],
+  "selection_requirements": [
+    "Extragalactic H II or star-forming regions in dwarf-galaxy hosts",
+    "Object-level positions rather than galaxy-integrated measurements",
+    "Publication-backed nebular classification or spectroscopy",
+    "Public machine-readable data with stable row provenance",
+    "Enough sky positions to calibrate Gaia associations against displaced controls"
+  ],
+  "screened_sources": [
+    {
+      "bibcode": "2006ApJ...636..214V",
+      "title": "Oxygen and Nitrogen in Isolated Dwarf Irregular Galaxies",
+      "doi": "10.1086/498017",
+      "catalog_id": "J/ApJ/636/214/table3",
+      "disposition": "selected",
+      "reason": "The public table supplies object-level long-slit H II spectroscopy in 21 dwarf irregular galaxies and preserves stable source rows and derived positions. Its Gaia association geometry was calibrated separately because the published positions are constructed from galaxy centers and integer-arcsecond slit offsets."
+    },
+    {
+      "bibcode": "2000AJ....119.2757V",
+      "title": "The Evolutionary Status of Isolated Dwarf Irregular Galaxies. I. UBV and H-alpha Imaging Observations",
+      "doi": "10.1086/301378",
+      "catalog_id": null,
+      "disposition": "not_selected_for_benchmark_v1",
+      "reason": "Relevant host-level imaging context, but this search did not establish a public machine-readable object-position catalog with row-level H II provenance."
+    },
+    {
+      "bibcode": "2014ApJ...786..155N",
+      "title": "Metal-poor Dwarf Galaxies in the SIGRID Galaxy Sample. I. H II Region Observations and Chemical Abundances",
+      "doi": "10.1088/0004-637X/786/2/155",
+      "catalog_id": null,
+      "disposition": "deferred_incremental_source",
+      "reason": "Scientifically relevant spectroscopy, but no public object-coordinate table was confirmed during the bounded benchmark search; adding it would require a separate provenance and association audit."
+    },
+    {
+      "bibcode": "2018AJ....156..109M",
+      "title": "UVIT Imaging of WLM: Demographics of Star-forming Regions in the Nearby Dwarf Irregular Galaxy",
+      "doi": "10.3847/1538-3881/aad4f6",
+      "catalog_id": null,
+      "disposition": "deferred_incremental_source",
+      "reason": "Potentially useful single-host imaging sample, but it is less direct than the selected spectroscopic cohort and no public object table was confirmed in this search."
+    },
+    {
+      "bibcode": "2000AJ....120.3088C",
+      "title": "Spectroscopy of Star Cluster Candidates and H II Regions in NGC 6822",
+      "doi": "10.1086/316859",
+      "catalog_id": null,
+      "disposition": "deferred_mixed_single_host_source",
+      "reason": "Relevant to cluster-versus-H II confusion, but the mixed object roles and single-host scope require a dedicated source audit before benchmark use."
+    }
+  ],
+  "outcome": {
+    "selected_bibcode": "2006ApJ...636..214V",
+    "selected_catalog_id": "J/ApJ/636/214/table3",
+    "benchmark_cohort": "van_zee_dwarf_hii",
+    "approved_association_radius_arcsec": 3.0,
+    "association_count": 13,
+    "unique_gaia_source_count": 12,
+    "decision_scope": "benchmark_v1"
+  }
+}

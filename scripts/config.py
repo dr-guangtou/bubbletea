@@ -31,6 +31,10 @@ LITERATURE_CATALOGS = LITERATURE_DIR / "catalogs"
 LITERATURE_SOURCES = LITERATURE_DIR / "sources"
 LITERATURE_VALIDATION = LITERATURE_DIR / "validation"
 LITERATURE_DISCOVERY = LITERATURE_DIR / "discovery"
+LITERATURE_BENCHMARKS = LITERATURE_DIR / "benchmarks"
+VALIDATION_BENCHMARK_LITERATURE_SEARCH = (
+    LITERATURE_DISCOVERY / "validation_benchmark_literature_search_2026-07-16.json"
+)
 LITERATURE_IMAGE_CUTOUTS = LITERATURE_VALIDATION / "gaia_image_cutouts"
 GAIA_CROSSMATCH_EXPORT = LITERATURE_CATALOGS / "all_ucds_gaia_matched.csv"
 GAIA_CROSSMATCH_AUDIT = LITERATURE_VALIDATION / "gaia_crossmatch_audit.csv"
@@ -51,6 +55,24 @@ PROJECT_STATUS_COUNTS = LITERATURE_VALIDATION / "project_status_counts.json"
 PROVENANCE_DOCUMENTATION_VALIDATION = (
     LITERATURE_VALIDATION / "provenance_documentation_validation.json"
 )
+VALIDATION_BENCHMARK = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v1.csv"
+VALIDATION_BENCHMARK_MANIFEST = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v1_manifest.json"
+VALIDATION_BENCHMARK_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_validation_benchmark_v1_validation.json"
+)
+HII_GAIA_ASSOCIATION_CANDIDATES = (
+    LITERATURE_VALIDATION / "phangs_muse_gaia_association_candidates.csv"
+)
+HII_GAIA_ASSOCIATION_CALIBRATION = (
+    LITERATURE_VALIDATION / "phangs_muse_gaia_association_calibration.json"
+)
+DWARF_HII_GAIA_ASSOCIATION_CANDIDATES = (
+    LITERATURE_VALIDATION / "van_zee_dwarf_hii_gaia_association_candidates.csv"
+)
+DWARF_HII_GAIA_ASSOCIATION_CALIBRATION = (
+    LITERATURE_VALIDATION / "van_zee_dwarf_hii_gaia_association_calibration.json"
+)
+VALIDATION_BENCHMARK_SOURCES = LITERATURE_SOURCES / "validation_benchmark_sources.json"
 
 GALAXY_SAMPLE_DIR = DATA_DIR / "galaxy_sample"
 GALAXY_SAMPLE_CSV = GALAXY_SAMPLE_DIR / "galaxy_sample_ranked.csv"

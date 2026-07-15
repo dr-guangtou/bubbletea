@@ -1,0 +1,230 @@
+{
+  "benchmark_version": "benchmark_v1",
+  "benchmark_sha256": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73",
+  "check_count": 32,
+  "passed_count": 32,
+  "failed_count": 0,
+  "counts": {
+    "rows": 3857,
+    "gaia_sources": 3857,
+    "partitions": {
+      "development": 3136,
+      "validation": 721
+    },
+    "label_subtypes": {
+      "ambiguous_shared_gaia_distinct_objects": 1,
+      "compact_hii_region": 175,
+      "dwarf_galaxy_hii_region": 12,
+      "gaia_non_single_star": 1412,
+      "reported_non_ucd_comparison": 122,
+      "spectroscopic_galaxy": 805,
+      "spectroscopic_qso": 491,
+      "ucd_candidate": 619,
+      "ucd_confirmed": 199,
+      "ucd_role_conflict": 21
+    }
+  },
+  "checks": [
+    {
+      "name": "benchmark_version",
+      "passed": true,
+      "detail": [
+        "benchmark_v1"
+      ]
+    },
+    {
+      "name": "partition_ruleset",
+      "passed": true,
+      "detail": [
+        "benchmark_partition_v1"
+      ]
+    },
+    {
+      "name": "unique_benchmark_ids",
+      "passed": true,
+      "detail": 3857
+    },
+    {
+      "name": "unique_gaia_sources",
+      "passed": true,
+      "detail": 3857
+    },
+    {
+      "name": "output_digest",
+      "passed": true,
+      "detail": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73"
+    },
+    {
+      "name": "reference_database_digest",
+      "passed": true,
+      "detail": "bb00860e1f39a4b7250a27d545eb5234e6612c1fd70d1ec6f3078658d825e05e"
+    },
+    {
+      "name": "source_registry_digest",
+      "passed": true,
+      "detail": "b6e59342d308bdc85543417ddeb072bfa82f01f40336037924d1963e45c26836"
+    },
+    {
+      "name": "hii_association_candidates_digest",
+      "passed": true,
+      "detail": "5efdbe328d20e7311aaec3b256f2e78fceb353f1e1d711b498c6b8375f4c47eb"
+    },
+    {
+      "name": "hii_association_calibration_digest",
+      "passed": true,
+      "detail": "f1ba02ce3a54aeab623bd7c222313d73c9ff59fe6d01c94691067609473ae3aa"
+    },
+    {
+      "name": "dwarf_hii_association_candidates_digest",
+      "passed": true,
+      "detail": "abbf06c984801a17f03dda79d58b49cbd6adecb0e9ea20f36dfba812f4596970"
+    },
+    {
+      "name": "dwarf_hii_association_calibration_digest",
+      "passed": true,
+      "detail": "67d74e8d4c418e181b796d308080d6d61e61978295d04ee5e24e61d24e6f5745"
+    },
+    {
+      "name": "partition_groups_recomputed",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "partitions_recomputed",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "no_spatial_group_partition_leakage",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "uncertain_labels_not_primary",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "uncertain_labels_retained_for_sensitivity",
+      "passed": true,
+      "detail": 641
+    },
+    {
+      "name": "one_shared_gaia_sensitivity_row",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "all_gaia_linked_canonical_objects_represented",
+      "passed": true,
+      "detail": 963
+    },
+    {
+      "name": "all_literature_gaia_sources_represented_once",
+      "passed": true,
+      "detail": 962
+    },
+    {
+      "name": "magnitude_domain",
+      "passed": true,
+      "detail": [
+        11.26291847229004,
+        21.75798797607422
+      ]
+    },
+    {
+      "name": "every_multirow_label_role_in_both_partitions",
+      "passed": true,
+      "detail": {
+        "ambiguous_shared_gaia_distinct_objects": 1,
+        "compact_hii_region": 2,
+        "dwarf_galaxy_hii_region": 2,
+        "gaia_non_single_star": 2,
+        "reported_non_ucd_comparison": 2,
+        "spectroscopic_galaxy": 2,
+        "spectroscopic_qso": 2,
+        "ucd_candidate": 2,
+        "ucd_confirmed": 2,
+        "ucd_role_conflict": 2
+      }
+    },
+    {
+      "name": "sdss_associations_within_published_crossmatch_radius",
+      "passed": true,
+      "detail": 1.5
+    },
+    {
+      "name": "phangs_muse_hii_count",
+      "passed": true,
+      "detail": 175
+    },
+    {
+      "name": "phangs_muse_hii_association_radius",
+      "passed": true,
+      "detail": 0.2995495117673423
+    },
+    {
+      "name": "phangs_muse_hii_label_contract",
+      "passed": true,
+      "detail": {
+        "labels": [
+          "contaminant"
+        ],
+        "label_subtypes": [
+          "compact_hii_region"
+        ],
+        "confidence_tiers": [
+          "moderate"
+        ]
+      }
+    },
+    {
+      "name": "phangs_muse_hii_registry_status",
+      "passed": true,
+      "detail": "approved_moderate_confidence_0p3_arcsec"
+    },
+    {
+      "name": "van_zee_dwarf_hii_count",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "van_zee_dwarf_hii_association_radius",
+      "passed": true,
+      "detail": 2.843422073150828
+    },
+    {
+      "name": "van_zee_dwarf_hii_label_contract",
+      "passed": true,
+      "detail": {
+        "labels": [
+          "contaminant"
+        ],
+        "label_subtypes": [
+          "dwarf_galaxy_hii_region"
+        ],
+        "confidence_tiers": [
+          "moderate"
+        ]
+      }
+    },
+    {
+      "name": "van_zee_dwarf_hii_registry_status",
+      "passed": true,
+      "detail": "approved_moderate_confidence_3p0_arcsec"
+    },
+    {
+      "name": "association_cohorts_do_not_duplicate_prior_gaia_sources",
+      "passed": true,
+      "detail": {
+        "phangs_muse_hii": 0,
+        "van_zee_dwarf_hii": 0
+      }
+    },
+    {
+      "name": "manifest_total",
+      "passed": true,
+      "detail": 3857
+    }
+  ]
+}

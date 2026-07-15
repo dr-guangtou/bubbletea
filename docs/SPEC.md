@@ -185,6 +185,61 @@ Reference labels, provenance, magnitude coverage, sky dependence, and label
 uncertainty must be retained. Confirmed and candidate UCDs must not be treated as
 equally certain training labels without testing the effect of that assumption.
 
+The versioned Gaia-only calibration benchmark is a derived validation product,
+not a new classification layer in the literature database. Its first version
+uses the complete observed Gaia-magnitude span of the literature cohort as its
+applicability domain and retains the following label roles separately:
+
+- `ucd_confirmed` objects are high-confidence positive references under
+  `confirmation_rules_v1`;
+- `ucd_candidate` objects are positive-sensitivity references and never primary
+  labels;
+- `ucd_role_conflict` objects are conflict-sensitivity references and never
+  primary labels;
+- source-reported non-UCD comparison objects remain a moderate-confidence,
+  heterogeneous comparison cohort rather than being relabeled as a specific
+  contaminant class;
+- clean SDSS DR16 spectroscopic `QSO` and `GALAXY` sources linked to Gaia DR3 are
+  high-confidence extragalactic contaminants; and
+- Gaia DR3 non-single-star solutions are a binary-star contaminant cohort whose
+  exact solution type remains explicit.
+
+Benchmark rows retain the publication, catalog, source-row identifier, label
+basis, confidence tier, Gaia association method, and all Gaia selector inputs.
+Objects sharing a coarse Gaia HEALPix parent cell must remain in one partition.
+`benchmark_partition_v1` assigns those spatial groups deterministically to
+development or validation data using a published hash rule; labels and features
+do not influence assignment. The partition is immutable once released.
+
+PHANGS-MUSE star-forming nebulae form a named spiral-host contaminant cohort. The
+Gaia association audit uses eight 30- and 60-arcsecond displaced-position controls
+and measures the full 0.1--5.0-arcsecond cumulative separation curve. The approved
+`hii_gaia_association_v1` rule retains the 175 unique Gaia sources within 0.3
+arcseconds as moderate-confidence H II contaminants. The controls predict 13.25
+chance matches at that radius, giving a measured excess fraction of 0.9243. The
+cohort is primary-eligible but must also be excluded as a declared sensitivity
+test. It represents nearby spiral environments only; dwarf-host H II coverage
+is supplied separately by the van Zee et al. (2006) long-slit spectroscopy of H II
+regions in 21 dwarf irregular galaxies. That source retains 63 unique published
+positions after repeated slit measurements are consolidated. Its integer-arcsecond
+offset coordinate construction requires a separate association calibration:
+`dwarf_hii_gaia_association_v1` retains 13 associations within 3.0 arcseconds.
+They resolve to 12 unique Gaia sources because two
+published UGC 3647 slit positions select the same Gaia source; the benchmark
+consolidates those positions without discarding either source-row locator. With
+one expected displaced-control match, the measured association-level excess
+fraction is 0.9231. These are also moderate-confidence, primary-eligible labels
+that must be removable as a cohort-level sensitivity test.
+
+`benchmark_v1` contains 3,857 rows representing 3,857 unique Gaia DR3 sources:
+962 literature-reference sources, 805 SDSS DR16 galaxies, 491 SDSS DR16 QSOs,
+1,412 Gaia DR3 non-single-star sources, 175 PHANGS-MUSE H II associations, and 12
+van Zee dwarf-host H II Gaia sources. The fixed spatial partition contains 3,136
+development and 721 validation rows. Primary analyses may use the 3,216
+primary-eligible rows; all 3,857 rows remain available to declared sensitivity
+analyses. The machine-readable validation report must pass before selector work
+uses this benchmark.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

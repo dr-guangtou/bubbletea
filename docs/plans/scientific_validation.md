@@ -116,11 +116,16 @@ value-added candidate characterization.
   (`BT-004`; 2026-07-15).
 - [x] Complete per-paper provenance packages and reconcile documentation counts
   (`BT-014`, `BT-015`; 2026-07-16).
-- [ ] Build the labeled UCD and contaminant benchmark with fixed validation
-  partitions (`BT-019`).
+- [x] Build the 3,857-source labeled UCD and contaminant benchmark with fixed
+  spatial validation partitions and 32 passing release checks (`BT-019`;
+  2026-07-16).
 
 **Gate:** A non-destructive validation report reproduces all canonical counts and
 every benchmark label retains provenance and uncertainty.
+
+**Gate status, 2026-07-16:** Passed. The benchmark manifest hashes every local
+input, the validation report reproduces all label and partition counts, and the
+legacy and v2 literature databases remain unchanged.
 
 ## Stage 2: Define the Galaxy Samples
 

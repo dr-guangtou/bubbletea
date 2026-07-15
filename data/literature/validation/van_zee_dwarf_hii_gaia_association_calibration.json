@@ -1,0 +1,1429 @@
+{
+  "generated_utc": "2026-07-15T19:54:09.040717+00:00",
+  "status": "exploratory_not_approved",
+  "publication_bibcode": "2006ApJ...636..214V",
+  "doi": "10.1086/498017",
+  "catalog_id": "J/ApJ/636/214/table3",
+  "smoke_limit_galaxies": null,
+  "magnitude_domain": [
+    11.262918472290039,
+    21.75798797607422
+  ],
+  "magnitude_domain_source": "data/literature/database/ucd_reference_v2.db",
+  "coordinate_note": "CDS positions derived from published galaxy centers and integer arcsecond slit offsets",
+  "control_offsets_arcsec": [
+    [
+      30.0,
+      0.0
+    ],
+    [
+      -30.0,
+      0.0
+    ],
+    [
+      0.0,
+      30.0
+    ],
+    [
+      0.0,
+      -30.0
+    ],
+    [
+      60.0,
+      0.0
+    ],
+    [
+      -60.0,
+      0.0
+    ],
+    [
+      0.0,
+      60.0
+    ],
+    [
+      0.0,
+      -60.0
+    ]
+  ],
+  "source_query": "SELECT \"Galaxy\", \"Slit\", \"EW\", \"NS\", \"Halpha\", \"F(Hbeta)\",\n                      \"_RA\", \"_DE\", \"recno\"\n               FROM \"J/ApJ/636/214/table3\"\n               ORDER BY \"Galaxy\", \"Slit\", \"EW\", \"NS\"",
+  "gaia_queries": [
+    {
+      "galaxy": "CGCG 007-025",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 146.007599999677, -0.642566666746, 0.022024035895)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "HKK L14",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 30.043100000000, 28.828500000000, 0.019444444444)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 10445",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 248.442357187775, 28.994714321442, 0.030142534956)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 1104",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 23.177550001661, 18.317750000163, 0.020618678875)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 1175",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 24.984866669124, 11.096266667000, 0.021552443672)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 11755",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 322.497800000088, 2.414500000033, 0.019944284686)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 12713",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 354.559366653973, 30.708333344811, 0.021534288651)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 1281",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 27.383500000000, 32.591600000000, 0.019444444444)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 12894",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 0.094399994102, 39.495100054566, 0.022995576487)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 2023",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 38.322822150030, 33.496611249853, 0.031104388079)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 290",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 7.282900014369, 15.900800006645, 0.021803061343)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 3647",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 106.208999795675, 56.518466694964, 0.023994650946)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 3672",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 106.597000000000, 30.347800000000, 0.019444444444)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 4117",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 119.357900062553, 35.942800043323, 0.023173826603)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 4483",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 129.262500115609, 69.778150001811, 0.022506954199)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 5288",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 147.822883375229, 7.824816681814, 0.027528768691)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 685",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 16.845066671090, 16.683233338234, 0.021750589396)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 8651",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 204.987700000000, 40.749000000000, 0.019444444444)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 9240",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 216.184100000000, 44.515700000000, 0.019444444444)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGC 9992",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 235.456200185801, 67.253366676645, 0.022808301942)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    },
+    {
+      "galaxy": "UGCA 292",
+      "query": "SELECT source_id, ra, dec, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag, parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error, astrometric_excess_noise, astrometric_excess_noise_sig, ruwe, ipd_frac_multi_peak, ipd_frac_odd_win, duplicated_source FROM gaia_dr3.gaia_source\n                WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 189.674275064197, 32.764600059081, 0.025164783275)\n                  AND phot_g_mean_mag BETWEEN 11.262918472290039 AND 21.75798797607422\n                ORDER BY source_id"
+    }
+  ],
+  "query_sha256": "4ecd6ab14d1269ec7f4e4e3b43a222916b1ba66983f81503b00e04a0fd08a06f",
+  "field_counts": [
+    {
+      "galaxy": "CGCG 007-025",
+      "hii_region_count": 3,
+      "gaia_source_count": 7,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "HKK L14",
+      "hii_region_count": 1,
+      "gaia_source_count": 4,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 10445",
+      "hii_region_count": 7,
+      "gaia_source_count": 16,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 1104",
+      "hii_region_count": 2,
+      "gaia_source_count": 8,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 1175",
+      "hii_region_count": 3,
+      "gaia_source_count": 3,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 11755",
+      "hii_region_count": 2,
+      "gaia_source_count": 12,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 2,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 2,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 12713",
+      "hii_region_count": 3,
+      "gaia_source_count": 14,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 1281",
+      "hii_region_count": 1,
+      "gaia_source_count": 15,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 12894",
+      "hii_region_count": 3,
+      "gaia_source_count": 18,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.25
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 2023",
+      "hii_region_count": 9,
+      "gaia_source_count": 30,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.25
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 2,
+          "control_match_mean_per_offset": 0.375
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 290",
+      "hii_region_count": 2,
+      "gaia_source_count": 4,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 3647",
+      "hii_region_count": 3,
+      "gaia_source_count": 18,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 3,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 3,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 3672",
+      "hii_region_count": 1,
+      "gaia_source_count": 15,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 4117",
+      "hii_region_count": 3,
+      "gaia_source_count": 14,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 4483",
+      "hii_region_count": 2,
+      "gaia_source_count": 8,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 5288",
+      "hii_region_count": 6,
+      "gaia_source_count": 10,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 2,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 685",
+      "hii_region_count": 3,
+      "gaia_source_count": 6,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 8651",
+      "hii_region_count": 1,
+      "gaia_source_count": 11,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.25
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 9240",
+      "hii_region_count": 1,
+      "gaia_source_count": 26,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 1,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGC 9992",
+      "hii_region_count": 3,
+      "gaia_source_count": 7,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    },
+    {
+      "galaxy": "UGCA 292",
+      "hii_region_count": 4,
+      "gaia_source_count": 8,
+      "cumulative_separation_counts": [
+        {
+          "radius_arcsec": 0.1,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.2,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.3,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 0.75,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 1.5,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 2.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.0
+        },
+        {
+          "radius_arcsec": 3.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        },
+        {
+          "radius_arcsec": 5.0,
+          "real_match_count": 0,
+          "control_match_mean_per_offset": 0.125
+        }
+      ]
+    }
+  ],
+  "cumulative_separation_counts": [
+    {
+      "radius_arcsec": 0.1,
+      "real_match_count": 0,
+      "unique_gaia_source_count": 0,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.0,
+      "estimated_excess_count": 0.0,
+      "estimated_excess_fraction": null
+    },
+    {
+      "radius_arcsec": 0.2,
+      "real_match_count": 0,
+      "unique_gaia_source_count": 0,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.0,
+      "estimated_excess_count": 0.0,
+      "estimated_excess_fraction": null
+    },
+    {
+      "radius_arcsec": 0.3,
+      "real_match_count": 0,
+      "unique_gaia_source_count": 0,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.0,
+      "estimated_excess_count": 0.0,
+      "estimated_excess_fraction": null
+    },
+    {
+      "radius_arcsec": 0.5,
+      "real_match_count": 1,
+      "unique_gaia_source_count": 1,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.0,
+      "estimated_excess_count": 1.0,
+      "estimated_excess_fraction": 1.0
+    },
+    {
+      "radius_arcsec": 0.75,
+      "real_match_count": 2,
+      "unique_gaia_source_count": 2,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.0,
+      "estimated_excess_count": 2.0,
+      "estimated_excess_fraction": 1.0
+    },
+    {
+      "radius_arcsec": 1.0,
+      "real_match_count": 3,
+      "unique_gaia_source_count": 3,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.25,
+      "estimated_excess_count": 2.75,
+      "estimated_excess_fraction": 0.9166666666666666
+    },
+    {
+      "radius_arcsec": 1.5,
+      "real_match_count": 5,
+      "unique_gaia_source_count": 5,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.25,
+      "estimated_excess_count": 4.75,
+      "estimated_excess_fraction": 0.95
+    },
+    {
+      "radius_arcsec": 2.0,
+      "real_match_count": 7,
+      "unique_gaia_source_count": 7,
+      "repeated_source_assignment_count": 0,
+      "control_match_mean_per_offset": 0.375,
+      "estimated_excess_count": 6.625,
+      "estimated_excess_fraction": 0.9464285714285714
+    },
+    {
+      "radius_arcsec": 3.0,
+      "real_match_count": 13,
+      "unique_gaia_source_count": 12,
+      "repeated_source_assignment_count": 1,
+      "control_match_mean_per_offset": 1.0,
+      "estimated_excess_count": 12.0,
+      "estimated_excess_fraction": 0.9230769230769231
+    },
+    {
+      "radius_arcsec": 5.0,
+      "real_match_count": 16,
+      "unique_gaia_source_count": 14,
+      "repeated_source_assignment_count": 2,
+      "control_match_mean_per_offset": 1.875,
+      "estimated_excess_count": 14.125,
+      "estimated_excess_fraction": 0.8828125
+    }
+  ],
+  "candidate_output": "data/literature/validation/van_zee_dwarf_hii_gaia_association_candidates.csv",
+  "candidate_output_sha256": "abbf06c984801a17f03dda79d58b49cbd6adecb0e9ea20f36dfba812f4596970"
+}
