@@ -1,0 +1,11 @@
+source_id,in_database_sources,in_database_objects,in_by_source_catalogs,declared_n_objects,database_rows,catalog_rows,database_catalog_row_difference,ucd_rows,candidate_rows,confirmed_rows,gaia_matched_rows,bibcode,doi,vizier_id,catalog_status_counts,catalog_ucd_counts
+2007A&A...472..111M,1,1,1,,27,27,0,27,27,0,0,2007A&A...472..111M,,J/A+A/472/111/table1,"{""candidate"": 27}","{""1"": 27}"
+2008AJ....136.2295B,1,1,1,,41,41,0,41,41,0,0,2008AJ....136.2295B,,J/AJ/136/2295,"{""candidate"": 41}","{""1"": 41}"
+2009AJ....137..498G,1,1,1,,60,60,0,60,60,0,48,2009AJ....137..498G,,J/AJ/137/498/table2,"{""candidate"": 60}","{""1"": 60}"
+2011A&A...531A...4M,1,1,1,,118,118,0,118,118,0,0,2011A&A...531A...4M,,J/A+A/531/A4,"{""candidate"": 118}","{""1"": 118}"
+2011ApJ...737...86C,1,1,1,,78,78,0,78,78,0,0,2011ApJ...737...86C,,J/ApJ/737/86,"{""candidate"": 78}","{""1"": 78}"
+2015ApJ...802...30Z,0,0,1,,0,95,-95,0,0,0,0,,,,"{""confirmed"": 95}","{""null"": 95}"
+2015ApJ...812...34L,1,1,1,,127,127,0,127,127,0,77,2015ApJ...812...34L,,J/ApJ/812/34,"{""candidate"": 127}","{""1"": 127}"
+2019A&A...625A..50V,1,1,1,,377,377,0,377,0,377,152,2019A&A...625A..50V,,J/A+A/625/A50,"{""confirmed"": 377}","{""1"": 377}"
+2020ApJ...899..140W,1,1,1,,632,632,0,632,632,0,632,2020ApJ...899..140W,,J/ApJ/899/140,"{""candidate"": 632}","{""1"": 632}"
+2021MNRAS.504.3580S,1,1,1,,648,648,0,604,648,0,188,2021MNRAS.504.3580S,,J/MNRAS/504/3580,"{""candidate"": 648}","{""0"": 44, ""1"": 604}"

@@ -1,0 +1,321 @@
+{
+  "cds_root": "https://cdsarc.cds.unistra.fr/ftp",
+  "retrieval_date": "2026-07-14",
+  "sources": [
+    {
+      "bibcode": "2007A&A...472..111M",
+      "catalog_root": "J/A+A/472/111",
+      "files": [
+        {
+          "byte_count": 5938,
+          "file_name": "ReadMe.txt",
+          "sha256": "5fe6bf1ceeda0d324a6e7b65a274859edfafcd5594b8f1eeb4118602794069ee",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/472/111/ReadMe"
+        },
+        {
+          "byte_count": 2456,
+          "declared_bytes": 2456,
+          "file_name": "table1.dat",
+          "sha256": "b8a01fac08fca53f6c4c4c021093ba7eceebff0602937e9a478282fec4bdb5ed",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/472/111/table1.dat"
+        }
+      ],
+      "reference_folder": "mieske2007",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2008AJ....136.2295B",
+      "catalog_root": "J/AJ/136/2295",
+      "files": [
+        {
+          "byte_count": 4379,
+          "file_name": "ReadMe.txt",
+          "sha256": "9658eeb4104cdfd8b1feb115b0eed76ee2798d4b10750b376d039a01a37d013b",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/AJ/136/2295/ReadMe"
+        },
+        {
+          "byte_count": 3686,
+          "declared_bytes": 3686,
+          "file_name": "table1.dat",
+          "sha256": "269350c53e23711b12e6b955129ebea5d9d5afd58a6ba3afb512d091da257f7c",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/AJ/136/2295/table1.dat"
+        }
+      ],
+      "reference_folder": "blakeslee2008",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2009AJ....137..498G",
+      "catalog_root": "J/AJ/137/498",
+      "files": [
+        {
+          "byte_count": 6091,
+          "file_name": "ReadMe.txt",
+          "sha256": "e1d9080dbe824141c28d299c36667321c318f06cc47c8adeffd3644cf55e71ec",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/AJ/137/498/ReadMe"
+        },
+        {
+          "byte_count": 3076,
+          "declared_bytes": 3076,
+          "file_name": "table2.dat",
+          "sha256": "a881cec9c2a759800267a3dd5a446a12853504ec6bdd98a27c48815f205fdb87",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/AJ/137/498/table2.dat"
+        }
+      ],
+      "reference_folder": "gregg2009",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2011A&A...531A...4M",
+      "catalog_root": "J/A+A/531/A4",
+      "files": [
+        {
+          "byte_count": 4157,
+          "file_name": "ReadMe.txt",
+          "sha256": "67b1f65e2e4a41d68790f7ff399d29644766a6dce4e0a8044e1f4d67a8316341",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/531/A4/ReadMe"
+        },
+        {
+          "byte_count": 6726,
+          "declared_bytes": 6726,
+          "file_name": "tablea1.dat",
+          "sha256": "0b56d8945f944033eef135d2a087f5737f30f45449d36c168f43e031073e58ed",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/531/A4/tablea1.dat"
+        }
+      ],
+      "reference_folder": "misgeld2011",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2011ApJ...737...86C",
+      "catalog_root": "J/ApJ/737/86",
+      "files": [
+        {
+          "byte_count": 8557,
+          "file_name": "ReadMe.txt",
+          "sha256": "2bf6927cbfb2bd8da936aa74cc190ff914f3867b57bc93386b3da6909e237cbc",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/737/86/ReadMe"
+        },
+        {
+          "byte_count": 5521,
+          "declared_bytes": 5521,
+          "file_name": "table2.dat",
+          "sha256": "2c49c854808a97491fcd7538eb5da969235200ff1f08741a1f50cdf5e8f2a981",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/737/86/table2.dat"
+        },
+        {
+          "byte_count": 3530,
+          "declared_bytes": 3530,
+          "file_name": "table3.dat",
+          "sha256": "218bb718039a1d62ff71e1eb9c6ffe731d710ebb000a187377e9f450c23018cd",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/737/86/table3.dat"
+        },
+        {
+          "byte_count": 1519,
+          "declared_bytes": 1519,
+          "file_name": "table4.dat",
+          "sha256": "4205e63be2a1d49fc71beabb3526ceb167b1971911c6b2a819c62f400a02e450",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/737/86/table4.dat"
+        }
+      ],
+      "reference_folder": "chiboucas2011",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2015ApJ...802...30Z",
+      "catalog_root": "J/ApJ/802/30",
+      "files": [
+        {
+          "byte_count": 11117,
+          "file_name": "ReadMe.txt",
+          "sha256": "77f54cdd5dffb426e2e351ecfd78733cb4bb1955d143a6fde69c42c95837a6d3",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/802/30/ReadMe"
+        },
+        {
+          "byte_count": 12319,
+          "declared_bytes": 12319,
+          "file_name": "table1.dat",
+          "sha256": "dba996f6937b23c870d284afa70c9d7b45b1200398403e6dfa244b7997f5de89",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/802/30/table1.dat"
+        }
+      ],
+      "reference_folder": "zhang2015",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2015ApJ...812...34L",
+      "catalog_root": "J/ApJ/812/34",
+      "files": [
+        {
+          "byte_count": 12722,
+          "file_name": "ReadMe.txt",
+          "sha256": "9c0c7bc248ba688e088a927140453888e62575e7cc53cdcaa8f3a3a67ed2040c",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/ReadMe"
+        },
+        {
+          "byte_count": 17780,
+          "declared_bytes": 17780,
+          "file_name": "table2.dat",
+          "sha256": "ab61ee1eef10604ad1b113cba3328a83df1f4c0668420105345a44c660223ad0",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table2.dat"
+        },
+        {
+          "byte_count": 16774,
+          "declared_bytes": 16774,
+          "file_name": "table3.dat",
+          "sha256": "7a8efd8cf6b51de2f699cd782dc98d17b0d4e616d46ab33d386ca8ac56e6f801",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table3.dat"
+        },
+        {
+          "byte_count": 7000,
+          "declared_bytes": 7000,
+          "file_name": "table4.dat",
+          "sha256": "a1cf1e3ef6f5e6d3077f97d66dd7051135aa2b37ce1bbd5256c7ff40f56b4f66",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table4.dat"
+        },
+        {
+          "byte_count": 6800,
+          "declared_bytes": 6800,
+          "file_name": "table5.dat",
+          "sha256": "6c3f41cc0d373019dd2d3635cab109510264697a65f0ea131f183d41d84aed67",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table5.dat"
+        },
+        {
+          "byte_count": 4060,
+          "declared_bytes": 4060,
+          "file_name": "table6.dat",
+          "sha256": "3b4a8b8f846088e2534f47267cac80de8e1723906958ec6e4dfd32e222e818dd",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table6.dat"
+        },
+        {
+          "byte_count": 3944,
+          "declared_bytes": 3944,
+          "file_name": "table7.dat",
+          "sha256": "663c71cdc66e8910dc2e3f0555031fde7046f8698265896c26922180f04c2e31",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/table7.dat"
+        }
+      ],
+      "reference_folder": "liu2015",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2019A&A...625A..50F",
+      "catalog_root": "J/A+A/625/A50",
+      "files": [
+        {
+          "byte_count": 6478,
+          "file_name": "ReadMe.txt",
+          "sha256": "83999702a86210cde3289899d2734c7eb80c6babe2fee7de483e479643646266",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/625/A50/ReadMe"
+        },
+        {
+          "byte_count": 34290,
+          "declared_bytes": 34290,
+          "file_name": "tableb1.dat",
+          "sha256": "9326adfa40f71628b75fc6c0ff40aba6e6e4f68e2cfccb8e41fcde96a835ab76",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/625/A50/tableb1.dat"
+        }
+      ],
+      "reference_folder": "fahrion2019",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2020ApJ...899..140V",
+      "catalog_root": "J/ApJ/899/140",
+      "files": [
+        {
+          "byte_count": 7721,
+          "file_name": "ReadMe.txt",
+          "sha256": "93e773bdb8ffdc1e3487bb8f9f59c15748ba18d7433800015d5be517a285dc2c",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/899/140/ReadMe"
+        },
+        {
+          "byte_count": 53088,
+          "declared_bytes": 53088,
+          "file_name": "table2.dat",
+          "sha256": "4df1fa187a375e48fa55c1dae3ae3f755d575ce152e93af2231bfb36bbd807ee",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/899/140/table2.dat"
+        },
+        {
+          "byte_count": 1019,
+          "declared_bytes": 1019,
+          "file_name": "table3.dat",
+          "sha256": "a3b8aaf2a2fa50e4b5b8a739abe63c776db080085125a1dba502539f148ba59e",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/899/140/table3.dat"
+        },
+        {
+          "byte_count": 3135,
+          "declared_bytes": 3135,
+          "file_name": "table4.dat",
+          "sha256": "ddf4bd9ac4b9d6cb0302d0cd0851d587829bb0b3abc45cef1efad4d12f0f31a1",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/899/140/table4.dat"
+        }
+      ],
+      "reference_folder": "voggel2020",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2021MNRAS.504.3580S",
+      "catalog_root": "J/MNRAS/504/3580",
+      "files": [
+        {
+          "byte_count": 10352,
+          "file_name": "ReadMe.txt",
+          "sha256": "768cccd9ada451787920f8545f4cc42f99cdde641786d12e7aa0e8d5f2a0be9d",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/504/3580/ReadMe"
+        },
+        {
+          "byte_count": 64152,
+          "declared_bytes": 64152,
+          "file_name": "tablea1.dat",
+          "sha256": "0b4ebe3c5501875ecccf7fa722baf0c19c9d4711da1088839494836fa8e1577c",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/504/3580/tablea1.dat"
+        },
+        {
+          "byte_count": 143220,
+          "declared_bytes": 143220,
+          "file_name": "tablea5.dat",
+          "sha256": "c18e15e7a5f287dcd99e5d4d75b36577fb7eb2f0621fd7b370ae52ffae4e5d10",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/504/3580/tablea5.dat"
+        },
+        {
+          "byte_count": 5456,
+          "declared_bytes": 5456,
+          "file_name": "tablea6.dat",
+          "sha256": "5fdc1866cf6ec5b1c5b79cf48f36e181f859630c6a961cdb0d02132537cada50",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/504/3580/tablea6.dat"
+        }
+      ],
+      "reference_folder": "saifollahi2021",
+      "retrieval_status": "complete"
+    },
+    {
+      "bibcode": "2022ApJ...929..147D",
+      "catalog_root": "J/ApJ/929/147",
+      "files": [
+        {
+          "byte_count": 12871,
+          "file_name": "ReadMe.txt",
+          "sha256": "3260ca7046a4ae5974376c834561a1086b9859994f881e31a021e37c00ea7849",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/929/147/ReadMe"
+        },
+        {
+          "byte_count": 32998,
+          "declared_bytes": 32998,
+          "file_name": "table2.dat",
+          "sha256": "992b3cd7c345569ef94bdb689e8c54296f112f9304a55eec3a70e83dd05a108a",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/929/147/table2.dat"
+        },
+        {
+          "byte_count": 6861,
+          "declared_bytes": 6861,
+          "file_name": "table3.dat",
+          "sha256": "e8e183ba7ceab98d167c3167591151b1469f4ea9f4b82a94e987b9701aec8975",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/929/147/table3.dat"
+        }
+      ],
+      "reference_folder": "dumont2022",
+      "retrieval_status": "complete"
+    }
+  ]
+}

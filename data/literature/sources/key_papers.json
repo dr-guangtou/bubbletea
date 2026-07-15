@@ -2,15 +2,15 @@
     "papers_to_ingest": [
         {
             "priority": 1,
-            "bibcode": "2020ApJ...899..140W",
-            "title": "The Nature of Ultra-compact Dwarfs Revealed by Gaia",
-            "authors": "Wang, L. et al.",
+            "bibcode": "2020ApJ...899..140V",
+            "title": "A Gaia-based Catalog of Candidate Stripped Nuclei and Luminous Globular Clusters in the Halo of Centaurus A",
+            "authors": "Voggel, K. T. et al.",
             "journal": "ApJ",
             "year": 2020,
             "vizier_id": "J/ApJ/899/140",
             "n_objects": 632,
-            "notes": "Our Gaia-based UCD catalog - START HERE",
-            "status": "pending"
+            "notes": "Gaia-based candidate catalog; confirmation must be assessed per object",
+            "status": "ingested_v2"
         },
         {
             "priority": 2,
@@ -81,7 +81,7 @@
             "year": 2007,
             "vizier_id": null,
             "n_objects": null,
-            "notes": "Centaurus A / NGC 5128 region",
+            "notes": "Centaurus galaxy cluster, not Centaurus A / NGC 5128",
             "status": "pending"
         },
         {
@@ -101,9 +101,9 @@
     "papers_by_galaxy": {
         "Fornax": ["2021MNRAS.504.3580S", "2011A&A...536A..70M"],
         "Virgo": ["2015ApJS..219...43Z"],
-        "NGC5128_CenA": ["2007A&A...472..111M"],
+        "Centaurus_cluster": ["2007A&A...472..111M"],
         "Antlia": ["2014MNRAS.442..891C"],
-        "general": ["2011AJ....142..199B", "2012A&A...546A..79B", "2020ApJ...899..140W"]
+        "general": ["2011AJ....142..199B", "2012A&A...546A..79B", "2020ApJ...899..140V"]
     },
     
     "notes": [

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "approved_treatment": "Positive UCD rows enter as unconfirmed literature records; explicit comparison and contaminant rows remain negative records; Wittmann compact systems remain a separate mixed selection pool; supporting tables remain linked measurements rather than independent objects; no non-exact identity association is authorized except the separately approved S999 review.",
+  "tables": [
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "reference_folder": "voggel2016",
+      "file_name": "table1.dat",
+      "proposed_role": "ucd_structural_evidence_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "reference_folder": "voggel2016",
+      "file_name": "tablea1.dat",
+      "proposed_role": "ucd_companion_evidence_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "reference_folder": "voggel2016",
+      "file_name": "tablea2.dat",
+      "proposed_role": "ucd_reference_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2016MNRAS.459.4450W",
+      "reference_folder": "wittmann2016",
+      "file_name": "table1.dat",
+      "proposed_role": "fornax_compact_system_reference_compilation",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2016MNRAS.459.4450W",
+      "reference_folder": "wittmann2016",
+      "file_name": "table3.dat",
+      "proposed_role": "supporting_structure_measurements",
+      "coordinate_source": "table1.dat:Seq"
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "reference_folder": "ko2017",
+      "file_name": "table2.dat",
+      "proposed_role": "foreground_and_background_comparison_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "reference_folder": "ko2017",
+      "file_name": "table3.dat",
+      "proposed_role": "globular_cluster_comparison_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "reference_folder": "ko2017",
+      "file_name": "table4.dat",
+      "proposed_role": "ucd_reference_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2018ApJ...858..102A",
+      "reference_folder": "ahn2018",
+      "file_name": "table3.dat",
+      "proposed_role": "supporting_spatial_kinematic_bins",
+      "coordinate_source": "not_object_coordinates"
+    },
+    {
+      "bibcode": "2020ApJS..250...17L",
+      "reference_folder": "liu2020",
+      "file_name": "table3.dat",
+      "proposed_role": "candidate_and_contaminant_records",
+      "coordinate_source": "self"
+    },
+    {
+      "bibcode": "2020ApJS..250...17L",
+      "reference_folder": "liu2020",
+      "file_name": "table4.dat",
+      "proposed_role": "supporting_structure_and_classification",
+      "coordinate_source": "table3.dat:Name"
+    }
+  ]
+}

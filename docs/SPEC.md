@@ -338,6 +338,194 @@ are value-added opportunities. Candidate tables must keep the evidence type and
 confirmation status explicit and must not describe Gaia extendedness or host
 overdensity alone as confirmation.
 
+## Literature Reference Data Model
+
+The literature reference collection is rebuilt non-destructively as a versioned
+database alongside the legacy `ucd_collection.db`. The legacy database remains an
+immutable comparison input. Original machine-readable files, their cryptographic
+hashes, table identifiers, and source-row locators are authoritative; processed
+CSVs and legacy database rows are derived products.
+
+The reference model separates publications, datasets, immutable literature rows,
+canonical astrophysical objects, object-to-row associations, evidence, and derived
+classification states. It must preserve rows without coordinates, repeated rows,
+conflicting measurements, compilation reference codes, and aliases for corrected
+bibliographic identifiers. Canonical identifiers must remain stable when records
+are merged by retaining aliases for retired identifiers.
+
+Exact coordinate equality may create an automatic identity association when no
+identifier or host conflict exists. Non-exact Gaia or positional associations must
+remain proposed until spherical geometry, the Gaia match, and ambiguity handling
+are validated. Matching radii must be calibrated from measured reference behavior,
+not assumed. Identity conflicts, `is_ucd` conflicts, ambiguous geometry, and every
+promotion to confirmed status require human review.
+
+The Gaia identity audit must recompute great-circle separations from authoritative
+Gaia DR3 coordinates. Legacy `gaia_xmatch_dist` values were calculated with a
+planar degree-space formula and are retained only as provenance. For the initial
+117 shared-source groups, the maximum measured difference between the legacy
+planar value and the spherical distance is 0.176110481759 arcseconds. A shared
+Gaia detection is strong identity evidence but does not override multi-position,
+Gaia image-parameter, or reported UCD-role review requirements.
+
+The approved Gaia cohorts contain 72 clean two-position groups, 14 separately
+reviewed two-position role-conflict groups, 22 image-reviewed two-position groups,
+and eight literature-reviewed three-position groups. Their canonical objects are
+merged using the literature position nearest the authoritative Gaia DR3
+coordinate, while every superseded canonical identifier remains an alias. No
+shared-Gaia identity proposal remains open.
+
+The three-position review preserves disagreement rather than using it to erase
+source records. The F-6/Gregg 27 radial-velocity difference of 268 km/s, or 2.65
+Gregg uncertainties, remains explicit moderate-tension evidence even though both
+measurements indicate Fornax membership. The two identical Saifollahi table A1
+rows at the F-1/UCD2 position remain separate immutable provenance records linked
+to one canonical position.
+
+A shared Gaia source is not itself an identity equivalence. S547 and VUCD3 remain
+separate canonical objects because the Fahrion source table preserves distinct
+positions, references, magnitudes, and effective sizes. Both objects retain
+approved `ambiguous_shared_gaia_dr3` evidence for their unresolved shared Gaia
+source. The Zhang and Fahrion S547 rows are associated with one another through
+their identical name, consistent properties, and measured 0.058627924650-arcsecond
+spherical separation; the superseded Zhang canonical identifier remains an alias.
+Ambiguous shared-source evidence does not alter either object's classification.
+
+Shared identity and UCD classification are separate decisions. When a reviewed
+two-position Gaia group is accepted as one astrophysical object but its literature
+records contain both `reported_is_ucd=0` and `reported_is_ucd=1`, the canonical
+classification state is `uncertain` with subtype `reported_ucd_role_conflict`.
+Both reported labels and their source provenance remain unchanged. This subtype
+must not be treated as a positional-identity ambiguity or silently collapsed to a
+positive or negative training label.
+
+Literature discovery is also separate from source ingestion. ADS title-and-
+abstract screening must record the exact query set and a cryptographic hash of the
+reviewed metadata corpus. A paper selected for retrieval does not create canonical
+objects, approve source associations, or promote confirmation evidence. The
+project lead must approve each proposed retrieval cohort before source files or
+rows are added to the v2 reference database.
+
+Project-lead-approved, source-specific associations may be accepted after a
+row-level audit records the source role, name evidence, spherical separation, and
+alternative matches. Such approval does not establish a general matching radius.
+The initial approved set links 51 Liu M49/M60 `UCD=1` rows to exact-name Fahrion
+counterparts within one arcsecond and 34 Voggel reference rows to their nearest
+Fahrion or Dumont counterparts within one arcsecond. The additional Voggel
+T17-1596 row is associated with Fahrion HHH86-C15 at 1.37 arcseconds through the
+published Taylor GC0218 and Woodley HHH86-C15 alias chain. Four coordinate-null
+Fahrion rows remain literature records with identity-review entries but no
+canonical object association.
+
+Object classification uses versioned evidence rules with four states:
+
+- `confirmed`: positive spectroscopy consistent with the associated nearby system
+  or approved space-based high-resolution morphology consistent with a UCD, with
+  no unresolved contradictory evidence;
+- `candidate`: reported UCD or UCD candidate, or Gaia-selected extended-source
+  candidate, without approved confirmation evidence;
+- `rejected`: explicit non-UCD evidence without contradictory positive
+  confirmation evidence; and
+- `uncertain`: conflicting evidence or unresolved object identity.
+
+Source-wide ingestion labels, compilation membership, Gaia extendedness, and host
+overdensity are evidence but never confirmation by themselves. The first ruleset
+is identified as `confirmation_rules_v1`.
+
+Broad literature selection pools must be stored separately from canonical positive
+reference records. A paper's final candidate subset may link back to the pool
+without promoting the entire pool. For Saifollahi et al. (2021), table A1 remains a
+mixed spectroscopic UCD/GC reference table, table A5 is a 1,155-row selection pool,
+and only the 44 table A6 "BEST" objects enter as unconfirmed UCD candidates. The 61
+reported reference UCDs satisfy the paper's `g <= 21` and `0 <= rh < 75 pc`
+criteria and have approved spectroscopic-membership evidence.
+
+Liu M49/M60 primary rows retain their object-level UCD flags: 51 `UCD=1` rows are
+unconfirmed candidates and 28 `UCD=0` rows are explicit non-UCD comparisons. Their
+paired structural and redshift tables are supporting measurements. Voggel table 4
+is a 57-row previously confirmed comparison/reference sample, distinct from the
+paper's 632 new Gaia-selected candidates. Those 57 rows remain candidates because
+the local table contains Gaia photometry but not the object-level spectroscopy or
+resolved-structure evidence required by `confirmation_rules_v1`; this is a
+reviewed non-promotion, not an unresolved decision.
+
+The approved 2026-07-15 Wave 1 ingestion preserves 855 source-reported UCD or
+possible-UCD rows as unconfirmed literature records and 1,484 explicit foreground,
+background, GC, or contaminant rows as negative comparison records. No general
+non-exact matching radius is introduced. The 904-object Wittmann Fornax compact-
+system compilation remains a separate mixed selection pool, with its 355
+structural rows linked as supporting payloads. The 109 Ahn spatial-kinematic bins
+are one supporting measurement dataset for M59-UCD3, not independent objects.
+Four exact Ko rows reported in both the GC and UCD tables retain both labels and
+derive `uncertain / reported_ucd_role_conflict` classifications.
+
+The Zhang, Fahrion, Ko, and Liu representations of S999 are one approved identity.
+The canonical position remains the Gaia-bearing Fahrion position; the prior Zhang
+canonical identifier is retained as an alias, and all four source rows, velocities,
+names, and coordinate differences remain provenance. This object-specific decision
+does not authorize other non-exact Wave 1 associations.
+
+A second approved Wave 1 identity cohort links seven rows to six pre-Wave
+candidate objects. Three Ko rows use identical source names and velocities;
+four Liu rows use source-published aliases for M87UCD-1, M87UCD-38, M59-UCD3,
+and M59cO, with matching velocities where both catalogs retain them. Each target
+was the unique nearest pre-Wave canonical within one arcsecond. This is a
+name-led, object-specific approval, not a general positional rule. All seven
+superseded Wave canonical identifiers remain aliases. The 153 Wave rows whose
+identifier matches intersect multiple baseline canonicals within one arcsecond
+remain separate. Their read-only group audit resolves them into 91 connected
+review groups. Twelve groups, containing 16 Wave rows and 24 pre-Wave canonicals,
+have complete shared-identifier coverage, identical retained velocities, no Gaia
+identifier conflict, and no reported UCD-role conflict. The project lead approved
+their object-specific consolidation on 2026-07-15. Their 40 prior canonicals now
+form 12 candidate objects, all 28 superseded canonical identifiers remain aliases,
+and one approved group-level evidence record preserves each decision. The other 79
+groups remain unchanged: 74 contain at least one nearby baseline canonical without
+an identifier link, and five retain non-identical published velocities. These
+routes are conservative review states, not evidence of distinct identity or a
+general positional matching rule.
+
+The project lead subsequently delegated the remaining source audit on 2026-07-15.
+Original catalog lineage closes all 79 groups as 80 identities: 72 use exact Liu
+2015 NGVS keys and published `Other` aliases, two use Brodie 2011 catalog evidence,
+four preserve differing independent or weighted velocity measurements, and the
+S547/VUCD3 connected group is split into its two previously reviewed distinct
+objects. The builder moves 238 records, retains all 229 newly superseded canonical
+identifiers as aliases, and stores 80 approved `identity_source_catalog_lineage`
+evidence records. Seven identities with positive/negative source-role evidence
+derive `uncertain / reported_ucd_role_conflict`; every velocity and source label
+remains immutable provenance. The post-build audit has zero unresolved Wave 1
+multi-canonical groups and still introduces no positional identity rule.
+
+The completed Stage 1 source audit attaches all 168 intentionally supporting raw
+rows as measurement evidence. It corrects the 27 Mieske Centaurus-cluster rows to
+the source-stated 43 Mpc while retaining the erroneous legacy 3.8 Mpc values in
+their immutable payloads, leaves the heterogeneous Fahrion compilation without a
+blanket distance, and scopes Liu's 16.5 Mpc value to its 127 M87 rows. The Liu M87
+primary table also corrects 35 unsafe legacy positive defaults to its authoritative
+`UCD=0` values and supplies explicit M87 host labels.
+
+Under `confirmation_rules_v1`, 1,316 approved spectroscopic evidence rows from 12
+source-defined cohorts resolve to 740 confirmed canonical objects. The remaining
+classification states are 1,515 candidate, 2,082 rejected, and 22 uncertain role
+conflicts. All classifications are derived from preserved evidence; no reported
+measurement is overwritten. The non-destructive validation product contains
+5,049 literature records, 4,359 canonical objects, all 180 legacy exact duplicate-
+coordinate groups, and only four coordinate-null Fahrion identity-review rows.
+
+Literature expansion is evidence-first. Object-level catalogs and confirmation
+evidence within 50 Mpc receive priority. More distant samples may be retained as
+declared sensitivity tests, while methodology, contaminant, and formation papers
+remain separate context unless they supply object-level reference data. Search
+queries, pagination, screening decisions, data-access status, and retrieval dates
+must be reproducible.
+
+The 2026-07-15 discovery checkpoint hashes a 345-paper ADS metadata corpus with
+zero pending title-and-abstract decisions. Nineteen approved sources were
+retrieved. Eight remaining candidates have explicit ancillary, incremental,
+mixed-distance, or distant-sensitivity dispositions and do not block Stage 1;
+they remain discoverable for later enrichment.
+
 ## Per-Galaxy Excess Metric
 
 The quantity used to represent a galaxy's UCD excess in host-property correlations

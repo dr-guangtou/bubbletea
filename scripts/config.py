@@ -26,8 +26,12 @@ DOCS_DIR = PROJECT_ROOT / "docs"
 # ---------------------------------------------------------------------------
 LITERATURE_DIR = DATA_DIR / "literature"
 LITERATURE_DB = LITERATURE_DIR / "database" / "ucd_collection.db"
+LITERATURE_REFERENCE_DB_V2 = LITERATURE_DIR / "database" / "ucd_reference_v2.db"
 LITERATURE_CATALOGS = LITERATURE_DIR / "catalogs"
 LITERATURE_SOURCES = LITERATURE_DIR / "sources"
+LITERATURE_VALIDATION = LITERATURE_DIR / "validation"
+LITERATURE_DISCOVERY = LITERATURE_DIR / "discovery"
+LITERATURE_IMAGE_CUTOUTS = LITERATURE_VALIDATION / "gaia_image_cutouts"
 
 GALAXY_SAMPLE_DIR = DATA_DIR / "galaxy_sample"
 GALAXY_SAMPLE_CSV = GALAXY_SAMPLE_DIR / "galaxy_sample_ranked.csv"
@@ -46,22 +50,20 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 # directory containing large catalog files (NED-LVS, SGA-2020, CF4, etc.).
 # Falls back to data/external/ if not set.
 # ---------------------------------------------------------------------------
-EXTERNAL_DATA_DIR = Path(
-    os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external"))
-)
+EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
 
 # ---------------------------------------------------------------------------
 # Gaia UCD selection criteria (from pilot study)
 # ---------------------------------------------------------------------------
 SELECTION_CRITERIA = {
-    "aen_min": 0.5,           # Astrometric excess noise minimum (mas)
-    "bp_rp_min": 0.8,         # BP-RP color minimum
-    "bp_rp_max": 1.8,         # BP-RP color maximum
-    "g_mag_min": 16.0,        # G-band magnitude minimum
-    "g_mag_max": 21.0,        # G-band magnitude maximum
-    "pm_max": 2.92,           # Proper motion upper limit (mas/yr)
-    "pm_sn_threshold": 3.0,   # PM signal-to-noise threshold (accept if <= this)
-    "search_radius_kpc": 300, # Maximum search radius around galaxies (kpc)
+    "aen_min": 0.5,  # Astrometric excess noise minimum (mas)
+    "bp_rp_min": 0.8,  # BP-RP color minimum
+    "bp_rp_max": 1.8,  # BP-RP color maximum
+    "g_mag_min": 16.0,  # G-band magnitude minimum
+    "g_mag_max": 21.0,  # G-band magnitude maximum
+    "pm_max": 2.92,  # Proper motion upper limit (mas/yr)
+    "pm_sn_threshold": 3.0,  # PM signal-to-noise threshold (accept if <= this)
+    "search_radius_kpc": 300,  # Maximum search radius around galaxies (kpc)
 }
 
 # ---------------------------------------------------------------------------

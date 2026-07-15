@@ -1,0 +1,206 @@
+{
+  "audit_date": "2026-07-15",
+  "decision_scope": "Name or published-alias matches with the reviewed target as the unique nearest pre-Wave canonical object within one arcsecond; this is not a general radius rule.",
+  "proposal_count": 7,
+  "proposals": [
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "direct_name",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd1"
+      ],
+      "minimum_velocity_difference_km_s": 0.0,
+      "proposal_id": "wave1_record_7ae71c9ecb335efdbcb8ce7e38caa84a_canonical_85ca192ef9ff5fd3a6e1d6719d950310",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.00703269978476556,
+      "target_bibcodes": [
+        "2015ApJ...802...30Z"
+      ],
+      "target_canonical_object_id": "canonical_85ca192ef9ff5fd3a6e1d6719d950310",
+      "target_anchor_record_id": "record_be691e38452b5e388188358307f2490e",
+      "retired_wave_canonical_object_id": "canonical_d99840ae44f6571dbe3d2f3d8c84d86c",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M87UCD-1"
+      ],
+      "wave_bibcode": "2017ApJ...835..212K",
+      "wave_original_name": "M87UCD-1",
+      "wave_record_id": "record_7ae71c9ecb335efdbcb8ce7e38caa84a"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "direct_name",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s9053"
+      ],
+      "minimum_velocity_difference_km_s": 0.0,
+      "proposal_id": "wave1_record_a312a9ac38e956e6b1a0c3cb929dec0d_canonical_3ae691b06dc95d0fa9e6b925f2db3354",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.010544213541768136,
+      "target_bibcodes": [
+        "2015ApJ...802...30Z"
+      ],
+      "target_canonical_object_id": "canonical_3ae691b06dc95d0fa9e6b925f2db3354",
+      "target_anchor_record_id": "record_dead7c2559915b408a7771b29c23ae52",
+      "retired_wave_canonical_object_id": "canonical_2b0e875f87a452e0ac40987d3ec16f9e",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "S9053"
+      ],
+      "wave_bibcode": "2017ApJ...835..212K",
+      "wave_original_name": "S9053",
+      "wave_record_id": "record_a312a9ac38e956e6b1a0c3cb929dec0d"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "direct_name",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd31"
+      ],
+      "minimum_velocity_difference_km_s": 0.0,
+      "proposal_id": "wave1_record_c928386fbdda5226aa53869bc40f8a77_canonical_a78d9609dc005297b8f681f2407cb82d",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.017579352592732644,
+      "target_bibcodes": [
+        "2015ApJ...802...30Z"
+      ],
+      "target_canonical_object_id": "canonical_a78d9609dc005297b8f681f2407cb82d",
+      "target_anchor_record_id": "record_09994efd7a0e5886847b137f9cb1199a",
+      "retired_wave_canonical_object_id": "canonical_2f8e7d7b84205f258b23abde8c7b69ed",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M87UCD-31"
+      ],
+      "wave_bibcode": "2017ApJ...835..212K",
+      "wave_original_name": "M87UCD-31",
+      "wave_record_id": "record_c928386fbdda5226aa53869bc40f8a77"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "published_alias",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd1"
+      ],
+      "minimum_velocity_difference_km_s": 0.0,
+      "proposal_id": "wave1_record_431eeb807ad356fca29f9d60cae0b753_canonical_85ca192ef9ff5fd3a6e1d6719d950310",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.044253276092093854,
+      "target_bibcodes": [
+        "2015ApJ...802...30Z"
+      ],
+      "target_canonical_object_id": "canonical_85ca192ef9ff5fd3a6e1d6719d950310",
+      "target_anchor_record_id": "record_be691e38452b5e388188358307f2490e",
+      "retired_wave_canonical_object_id": "canonical_8d74d645eeca5c269874d020e46eb974",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M87UCD-1"
+      ],
+      "wave_bibcode": "2020ApJS..250...17L",
+      "wave_original_name": "NGVS-UCD460",
+      "wave_record_id": "record_431eeb807ad356fca29f9d60cae0b753"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "published_alias",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m59ucd3"
+      ],
+      "minimum_velocity_difference_km_s": null,
+      "proposal_id": "wave1_record_1720f80c123851b4880834807759a1c4_canonical_93ce39d50879542baaa8504b35ca6e2f",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.046782355557193185,
+      "target_bibcodes": [
+        "2019A&A...625A..50F"
+      ],
+      "target_canonical_object_id": "canonical_93ce39d50879542baaa8504b35ca6e2f",
+      "target_anchor_record_id": "record_428eec969dac5078b5555e3cfff4961f",
+      "retired_wave_canonical_object_id": "canonical_06df9ceb433d5d89ae506a46a09b21d8",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M59-UCD3"
+      ],
+      "wave_bibcode": "2020ApJS..250...17L",
+      "wave_original_name": "NGVS-UCD725",
+      "wave_record_id": "record_1720f80c123851b4880834807759a1c4"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "published_alias",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd38"
+      ],
+      "minimum_velocity_difference_km_s": 0.0,
+      "proposal_id": "wave1_record_227f459dd5f25615a5c494135aacfd1b_canonical_4aefba279c0555b88074a2e883375f4c",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.07450389204770903,
+      "target_bibcodes": [
+        "2015ApJ...802...30Z"
+      ],
+      "target_canonical_object_id": "canonical_4aefba279c0555b88074a2e883375f4c",
+      "target_anchor_record_id": "record_cbd4555dd4915187aeec9b1188b157ec",
+      "retired_wave_canonical_object_id": "canonical_bd6af5c252e754868fa9cd403d2a5d79",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M87UCD-38"
+      ],
+      "wave_bibcode": "2020ApJS..250...17L",
+      "wave_original_name": "NGVS-UCD391",
+      "wave_record_id": "record_227f459dd5f25615a5c494135aacfd1b"
+    },
+    {
+      "baseline_objects_within_1_arcsec": 1,
+      "decision": "same_astrophysical_object",
+      "evidence_class": "published_alias",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m59co"
+      ],
+      "minimum_velocity_difference_km_s": null,
+      "proposal_id": "wave1_record_7d62b9f67a4c5cef8eaa8d516bb93a33_canonical_5a3facb9aecc5172a84fab77470ce757",
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "separation_arcsec": 0.13600098507013544,
+      "target_bibcodes": [
+        "2019A&A...625A..50F"
+      ],
+      "target_canonical_object_id": "canonical_5a3facb9aecc5172a84fab77470ce757",
+      "target_anchor_record_id": "record_9c75178af0835144916ce8d7a3bbb93c",
+      "retired_wave_canonical_object_id": "canonical_e83758b31102509a9b998d5a217d9894",
+      "target_classification_state": "candidate",
+      "target_classification_subtype": null,
+      "target_is_nearest_baseline": true,
+      "target_names": [
+        "M59cO"
+      ],
+      "wave_bibcode": "2020ApJS..250...17L",
+      "wave_original_name": "NGVS-UCD719",
+      "wave_record_id": "record_7d62b9f67a4c5cef8eaa8d516bb93a33"
+    }
+  ],
+  "reference_database_sha256": "6e3811c5eb45898c2fd5aa896374822758c69f664f6d513ba8bd9b1cfee1a8a7",
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "schema_version": 1
+}

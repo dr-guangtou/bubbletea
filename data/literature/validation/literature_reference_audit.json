@@ -1,0 +1,58 @@
+{
+  "audit_date": "2026-07-14",
+  "command": "PYTHONPATH=. uv run python scripts/phase1_literature/audit_reference_data.py",
+  "database_sha256": "d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806",
+  "database_source_count": 9,
+  "database_row_count": 2108,
+  "unique_object_id_count": 2108,
+  "ucd_row_count": 2064,
+  "gaia_matched_row_count": 1097,
+  "legacy_matched_row_count": 0,
+  "confirmation_status_counts": {
+    "candidate": 1731,
+    "confirmed": 377
+  },
+  "source_catalog_count": 10,
+  "catalog_sources_missing_from_database": [
+    "2015ApJ...802...30Z"
+  ],
+  "database_sources_missing_catalogs": [],
+  "exact_coordinate_group_count": 1928,
+  "duplicate_group_count": 180,
+  "duplicate_row_count": 360,
+  "minimum_duplicate_group_size": 2,
+  "maximum_duplicate_group_size": 2,
+  "same_source_duplicate_group_count": 32,
+  "same_source_payload_difference_group_count": 0,
+  "cross_source_duplicate_group_count": 148,
+  "confirmation_status_conflict_group_count": 148,
+  "is_ucd_conflict_group_count": 0,
+  "gaia_dr3_id_conflict_group_count": 0,
+  "source_pair_counts": [
+    {
+      "source_id_1": "2011A&A...531A...4M",
+      "source_id_2": "2019A&A...625A..50V",
+      "group_count": 118
+    },
+    {
+      "source_id_1": "2021MNRAS.504.3580S",
+      "source_id_2": "2021MNRAS.504.3580S",
+      "group_count": 30
+    },
+    {
+      "source_id_1": "2007A&A...472..111M",
+      "source_id_2": "2019A&A...625A..50V",
+      "group_count": 27
+    },
+    {
+      "source_id_1": "2009AJ....137..498G",
+      "source_id_2": "2019A&A...625A..50V",
+      "group_count": 3
+    },
+    {
+      "source_id_1": "2011ApJ...737...86C",
+      "source_id_2": "2011ApJ...737...86C",
+      "group_count": 2
+    }
+  ]
+}

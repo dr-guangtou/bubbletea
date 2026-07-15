@@ -1,0 +1,75 @@
+{
+  "review_date": "2026-07-15",
+  "review_status": "approved_by_project_lead_delegation_2026-07-15",
+  "scope": "stage1_literature_discovery_screening",
+  "identity_changes_authorized": false,
+  "classification_changes_authorized": false,
+  "confirmation_changes_authorized": false,
+  "discovery_artifact": {
+    "path": "data/literature/discovery/literature_discovery_2026-07-15.json",
+    "file_sha256": "6e2d6ae7acb7a9f99ddae6567d030dd94bdf169fd2a08bfda5ef8e5daaf382d2",
+    "screening_corpus_sha256": "54619aad14b33d82ff9408d7da7db0190d2f14709673c0b7a4e4fcf702788f79",
+    "unique_paper_count": 345,
+    "query_count": 9
+  },
+  "screening_artifact": {
+    "path": "data/literature/discovery/literature_screening_2026-07-15.csv",
+    "file_sha256": "6d331e03e95be1fddb70b89d91afe0d5331003df13b7d5c53988c23dbaf2d0e0",
+    "screened_paper_count": 345,
+    "pending_decision_count": 0,
+    "decision_counts": {
+      "already_ingested": 5,
+      "context_only": 313,
+      "retrieve_data": 27
+    }
+  },
+  "retrieval_artifact": {
+    "path": "data/literature/sources/literature_retrieval_wave1.json",
+    "file_sha256": "d834185896cd2622a6af0902ee1f2fd58f3f763fe009cc0a67d6d1c020ec2b4e",
+    "approved_retrieval_count": 19
+  },
+  "deferred_sources": [
+    {
+      "bibcode": "2016ApJ...819..162P",
+      "disposition": "defer_ancillary_compilation",
+      "reason": "Secondary X-ray compilation; not required to define Stage 1 positive membership."
+    },
+    {
+      "bibcode": "2016ApJ...819..164H",
+      "disposition": "defer_ancillary_compilation",
+      "reason": "Secondary X-ray compilation; not required to define Stage 1 positive membership."
+    },
+    {
+      "bibcode": "2016MNRAS.456..617J",
+      "disposition": "defer_mixed_distance_measurements",
+      "reason": "Mixed-distance stellar-population measurements are useful enrichment but do not block the nearby reference benchmark."
+    },
+    {
+      "bibcode": "2019ApJ...885..145S",
+      "disposition": "defer_target_list_without_new_positive_detection",
+      "reason": "The Virgo UCD target list reports null planetary-nebula detections and does not add a new positive membership class."
+    },
+    {
+      "bibcode": "2020MNRAS.497..765F",
+      "disposition": "defer_incremental_confirmation_enrichment",
+      "reason": "Spectroscopy enriches three M87 objects already represented by approved confirmation cohorts."
+    },
+    {
+      "bibcode": "2021MNRAS.506.4702F",
+      "disposition": "defer_ancillary_compilation",
+      "reason": "Multiwavelength activity compilation is ancillary to Stage 1 membership and confirmation."
+    },
+    {
+      "bibcode": "2023BAAA...64..262E",
+      "disposition": "defer_incremental_confirmation_enrichment",
+      "reason": "Conference-proceedings spectroscopy is incremental to the already represented NGC 4546 UCD evidence."
+    },
+    {
+      "bibcode": "2025ApJ...988....1P",
+      "disposition": "retain_as_distant_sensitivity_source",
+      "reason": "The Coma catalog is outside the nearby positive-reference domain and belongs in a later sensitivity analysis."
+    }
+  ],
+  "closure_decision": "screening_complete_retrieval_deferrals_scoped",
+  "next_search_trigger": "Run a new hashed ADS corpus when beginning the next benchmark refresh or when a newly published nearby object-level catalog is identified."
+}

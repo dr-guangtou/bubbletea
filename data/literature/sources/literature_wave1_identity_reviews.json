@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-07-15",
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "reviews": [
+    {
+      "review_id": "s999_zhang2015_fahrion2019",
+      "decision": "same_astrophysical_object",
+      "identity_changes_authorized": true,
+      "canonical_object_ids": [
+        "canonical_5b69b14a094250498950aca9a013607b",
+        "canonical_7489e348618956ae8cec3e2d8b7524b5"
+      ],
+      "separation_arcsec": 0.277550692557,
+      "evidence": [
+        {
+          "bibcode": "2015ApJ...802...30Z",
+          "local_path": "reference/zhang2015/table1.dat",
+          "source_name": "S999",
+          "ra": 187.6913,
+          "dec": 12.41709,
+          "radial_velocity_km_s": 1467
+        },
+        {
+          "bibcode": "2019A&A...625A..50F",
+          "local_path": "reference/fahrion2019/tableb1.dat",
+          "source_name": "S999",
+          "ra": 187.691291666667,
+          "dec": 12.417166666667,
+          "radial_velocity_km_s": 1466,
+          "gaia_dr3_id": "3907709821705518720"
+        },
+        {
+          "bibcode": "2017ApJ...835..212K",
+          "local_path": "reference/ko2017/table4.dat",
+          "source_name": "S999",
+          "ra": 187.691299,
+          "dec": 12.41709,
+          "radial_velocity_km_s": 1467
+        },
+        {
+          "bibcode": "2020ApJS..250...17L",
+          "local_path": "reference/liu2020/table4.dat",
+          "source_name": "NGVS-UCD409",
+          "aliases": [
+            "S999",
+            "1316-2",
+            "H47560"
+          ],
+          "radial_velocity_km_s": 1503
+        },
+        {
+          "bibcode": "2015MNRAS.449.1716J",
+          "local_path": "reference/janz2015/janz2015.pdf",
+          "source_name": "S999",
+          "evidence_value": "Object-level dynamical study of S999"
+        }
+      ],
+      "rationale": "The repeated S999 identifier, matching 1466-1467 km/s radial velocities, new Ko position, Liu alias chain, and object-level Janz study support one astrophysical identity. The 0.277551-arcsecond difference is consistent with catalog-coordinate variation, but both current canonicals are preserved until project-lead approval."
+    }
+  ]
+}

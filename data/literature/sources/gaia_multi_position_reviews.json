@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-07-15",
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "decision": "same_astrophysical_object",
+  "approved_gaia_dr3_ids": [
+    "4860278691160658816",
+    "4860292508072273536",
+    "4860293779382565504",
+    "4860294324842097792",
+    "4860297176700385408",
+    "4860372905562802688",
+    "4860376994371696256",
+    "4860388367445133696"
+  ],
+  "approved_group_count": 8,
+  "velocity_tension_treatment": "Preserve both F-6 and Gregg 27 radial-velocity measurements without averaging or selecting one value.",
+  "duplicate_row_treatment": "Preserve both identical Saifollahi table A1 rows at the F-1/UCD2 position as separate provenance records associated with one canonical object.",
+  "identity_changes_authorized": true
+}

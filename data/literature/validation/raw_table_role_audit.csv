@@ -1,0 +1,24 @@
+bibcode,reference_folder,file_name,proposed_role,current_v2_status,notes,raw_row_count,coordinate_row_count,unique_coordinate_count,duplicate_coordinate_row_count,coordinate_null_names,legacy_processed_row_count,current_v2_publication_record_count
+2007A&A...472..111M,mieske2007,table1.dat,primary_records,ingested_from_legacy,Centaurus cluster targets,27,27,27,0,,27,27
+2008AJ....136.2295B,blakeslee2008,table1.dat,primary_records,ingested_from_legacy,Abell S0740 sensitivity sample,41,41,41,0,,41,41
+2009AJ....137..498G,gregg2009,table2.dat,primary_records,ingested_from_legacy,Fornax compact objects,60,60,60,0,,60,60
+2011A&A...531A...4M,misgeld2011,tablea1.dat,primary_records,ingested_from_legacy,Hydra I sensitivity sample,118,118,118,0,,118,118
+2011ApJ...737...86C,chiboucas2011,table2.dat,primary_records,ingested_from_legacy,Coma sample 1,49,49,47,4,,78,78
+2011ApJ...737...86C,chiboucas2011,table3.dat,primary_records,ingested_from_legacy,Coma sample 2,29,29,29,0,,78,78
+2011ApJ...737...86C,chiboucas2011,table4.dat,supporting_measurements,row_linked_as_supporting_measurements,All 27 effective-radius rows linked by same-publication ID and primary-row order,27,0,0,0,,78,78
+2015ApJ...802...30Z,zhang2015,table1.dat,primary_records,ingested_from_raw,All 97 M87 spectroscopic UCDs,97,97,97,0,,95,97
+2015ApJ...812...34L,liu2015,table2.dat,primary_records,ingested_from_legacy,M87 candidates,127,127,127,0,,127,206
+2015ApJ...812...34L,liu2015,table3.dat,supporting_measurements,row_linked_as_supporting_measurements,All 127 M87 structure and velocity rows linked by exact NGVS key and paired row order,127,0,0,0,,127,206
+2015ApJ...812...34L,liu2015,table4.dat,primary_records,ingested_with_object_level_roles,M49: 28 UCD candidates associated with existing objects and 22 explicit non-UCD comparisons,50,50,50,0,,127,206
+2015ApJ...812...34L,liu2015,table5.dat,supporting_measurements,row_linked_as_supporting_measurements,M49 structure and redshifts preserved with paired primary rows,50,0,0,0,,127,206
+2015ApJ...812...34L,liu2015,table6.dat,primary_records,ingested_with_object_level_roles,M60: 23 UCD candidates associated with existing objects and 6 explicit non-UCD comparisons,29,29,29,0,,127,206
+2015ApJ...812...34L,liu2015,table7.dat,supporting_measurements,row_linked_as_supporting_measurements,M60 structure and redshifts preserved with paired primary rows,29,0,0,0,,127,206
+2019A&A...625A..50F,fahrion2019,tableb1.dat,primary_records,ingested_all_rows_four_unassociated,All 381 compilation rows preserved; four coordinate-null rows remain without canonical associations,381,377,377,0,HGHH92-C1;HGHH92-C44;MW-NGC6715;W3 in NGC 7252,377,381
+2020ApJ...899..140V,voggel2020,table2.dat,primary_records,ingested_from_legacy,Gaia-selected candidates,632,632,632,0,,632,689
+2020ApJ...899..140V,voggel2020,table3.dat,supporting_evidence,row_linked_as_evidence,All 14 MIKE rows linked by KV19 key; Fluffy uses the Dumont record with explicit Voggel source citation,14,14,14,0,,632,689
+2020ApJ...899..140V,voggel2020,table4.dat,primary_reference_records,ingested_with_reviewed_associations,"Previously confirmed comparison objects: 34 sub-arcsecond approved links, one approved T17-1596 alias-chain link, and 22 new reference objects",57,57,57,0,,632,689
+2021MNRAS.504.3580S,saifollahi2021,tablea1.dat,mixed_reference_records,ingested_with_reproduced_roles,648 spectroscopic Fornax UCD/GC records; 61 meet the reported UCD definition,648,648,618,60,,648,692
+2021MNRAS.504.3580S,saifollahi2021,tablea5.dat,selection_pool_records,separate_selection_pool,"222 UCD candidates and 933 GC candidates, excluded from the positive reference denominator",1155,1155,1155,0,,648,692
+2021MNRAS.504.3580S,saifollahi2021,tablea6.dat,candidate_records,ingested_as_candidate_subset,44-row high-probability subset linked to tablea5 by exact coordinates,44,44,44,0,,648,692
+2022ApJ...929..147D,dumont2022,table2.dat,primary_records,ingested_from_raw,NGC 5128 targets,321,321,321,0,,0,321
+2022ApJ...929..147D,dumont2022,table3.dat,supporting_evidence,row_linked_as_evidence,Dynamical measurements,57,0,0,0,,0,321

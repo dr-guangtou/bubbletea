@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-07-14",
+  "review_status": "approved_by_project_lead_2026-07-14",
+  "review_basis": [
+    "authoritative Gaia DR3 position and five-arcsecond spherical neighborhood",
+    "Legacy Surveys DR10 data, model, and residual JPEG cutouts",
+    "preserved literature positions and source-table metadata"
+  ],
+  "recommended_shared_identity_source_ids": [
+    "3907614331696710656",
+    "3907655773836976896",
+    "3907685799952667776",
+    "3907692671900370432",
+    "3907703258995508864",
+    "3907706690673680384",
+    "3907709615547414400",
+    "3907712982801463936",
+    "3907714421614861312",
+    "3907715834659663872",
+    "3907716109537532032",
+    "3907902373679428096",
+    "3907906320753259008",
+    "3907908764590507392",
+    "3931738170861716352",
+    "3931942263415425280",
+    "4860278347563228160",
+    "4860288449326385408",
+    "4860373425254943104",
+    "4860384381715556224",
+    "4860387031711083520",
+    "4860410460757384576"
+  ],
+  "shared_identity_rationale": "Both preserved literature positions overlay one centered DR10 modeled source, no competing Gaia DR3 source lies within two arcseconds, and the source records do not present a distinct-object conflict.",
+  "recommended_separate_objects": [
+    {
+      "gaia_dr3_id": "3907709993504135680",
+      "object_names": [
+        "S547",
+        "VUCD3"
+      ],
+      "recommendation": "recommend_retain_separate_shared_gaia_source",
+      "rationale": "Fahrion table B1 preserves S547 and VUCD3 as separate M87 objects with a 0.412226650676-arcsecond separation, different literature references, different magnitudes, and different effective sizes. Gaia and the DR10 viewer image do not resolve the close pair reliably, so their shared Gaia source is ambiguous evidence rather than an identity equivalence."
+    }
+  ],
+  "scientific_limit": "JPEG cutouts are diagnostic only and do not establish Legacy Survey maskbit or catalog-quality status.",
+  "identity_changes_authorized": true
+}

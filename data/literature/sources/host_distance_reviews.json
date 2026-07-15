@@ -1,0 +1,112 @@
+{
+  "review_date": "2026-07-15",
+  "review_status": "approved_by_project_lead_delegation_2026-07-15",
+  "scope": "normalized_host_and_distance_provenance_only",
+  "identity_changes_authorized": false,
+  "classification_changes_authorized": false,
+  "confirmation_changes_authorized": false,
+  "decisions": [
+    {
+      "bibcode": "2007A&A...472..111M",
+      "record_count": 27,
+      "normalized_distance_mpc": 43.0,
+      "distance_status": "source_adopted_cluster_distance",
+      "environment": "Centaurus galaxy cluster",
+      "normalized_host_galaxy": null,
+      "evidence": "reference/mieske2007/ReadMe.txt states d=43 Mpc and identifies the Centaurus galaxy cluster",
+      "legacy_value_disposition": "replace incorrect 3.8 Mpc Centaurus A default while preserving it in raw payloads"
+    },
+    {
+      "bibcode": "2008AJ....136.2295B",
+      "record_count": 41,
+      "normalized_distance_mpc": 150.0,
+      "distance_status": "legacy_adopted_approximate_cluster_distance",
+      "environment": "Abell S0740",
+      "normalized_host_galaxy": null,
+      "evidence": "reference/blakeslee2008/ReadMe.txt identifies Abell S0740 at redshift 0.034",
+      "legacy_value_disposition": "retain as approximate source context, not an object-level distance measurement"
+    },
+    {
+      "bibcode": "2009AJ....137..498G",
+      "record_count": 60,
+      "normalized_distance_mpc": 20.0,
+      "distance_status": "legacy_adopted_cluster_distance",
+      "environment": "Fornax galaxy cluster",
+      "normalized_host_galaxy": null,
+      "evidence": "reference/gregg2009/ReadMe.txt identifies a Fornax-cluster sample",
+      "legacy_value_disposition": "retain as source-level cluster context"
+    },
+    {
+      "bibcode": "2011A&A...531A...4M",
+      "record_count": 118,
+      "normalized_distance_mpc": 50.7,
+      "distance_status": "legacy_adopted_cluster_distance",
+      "environment": "Hydra I galaxy cluster",
+      "normalized_host_galaxy": null,
+      "evidence": "reference/misgeld2011/ReadMe.txt identifies the Hydra I cluster and NGC 3311 sample",
+      "legacy_value_disposition": "retain as source-level cluster context"
+    },
+    {
+      "bibcode": "2011ApJ...737...86C",
+      "record_count": 78,
+      "normalized_distance_mpc": 100.0,
+      "distance_status": "legacy_adopted_approximate_cluster_distance",
+      "environment": "Coma galaxy cluster",
+      "normalized_host_galaxy": null,
+      "evidence": "reference/chiboucas2011/ReadMe.txt identifies a Coma-cluster sample",
+      "legacy_value_disposition": "retain as approximate source context, not an object-level distance measurement"
+    },
+    {
+      "bibcode": "2015ApJ...812...34L",
+      "record_count": 206,
+      "normalized_distance_mpc": 16.5,
+      "distance_record_count": 127,
+      "distance_status": "legacy_adopted_m87_subcluster_distance",
+      "environment": "Virgo galaxy cluster",
+      "normalized_host_galaxy": "source_table_specific",
+      "evidence": "reference/liu2015/ReadMe.txt separates the M87, M49, and M60 primary tables",
+      "legacy_value_disposition": "retain 16.5 Mpc only for the 127 M87 rows; keep M49 and M60 distances null rather than propagate one Virgo-wide value"
+    },
+    {
+      "bibcode": "2019A&A...625A..50F",
+      "record_count": 381,
+      "normalized_distance_mpc": null,
+      "distance_status": "heterogeneous_compilation_distance_unavailable",
+      "environment": "multiple hosts",
+      "normalized_host_galaxy": "preserve_published_row_host",
+      "evidence": "reference/fahrion2019/tableb1.dat and ReadMe.txt define a heterogeneous literature compilation with per-row hosts but no line-of-sight distance column",
+      "legacy_value_disposition": "clear unsafe blanket 20 Mpc normalized default while preserving it in raw payloads"
+    },
+    {
+      "bibcode": "2020ApJ...899..140V",
+      "record_count": 689,
+      "normalized_distance_mpc": 3.8,
+      "distance_record_count": 632,
+      "distance_status": "legacy_adopted_host_distance",
+      "environment": "Centaurus A halo",
+      "normalized_host_galaxy": "NGC 5128",
+      "evidence": "reference/voggel2020/ReadMe.txt identifies the primary Gaia catalog as a Centaurus A sample",
+      "legacy_value_disposition": "retain for the 632 primary rows; supporting/reference rows preserve their own source normalization"
+    },
+    {
+      "bibcode": "2021MNRAS.504.3580S",
+      "record_count": 692,
+      "normalized_distance_mpc": 20.0,
+      "distance_status": "source_adopted_cluster_distance",
+      "environment": "Fornax galaxy cluster",
+      "normalized_host_galaxy": "Fornax cluster",
+      "evidence": "reference/saifollahi2021/ReadMe.txt identifies a Fornax-cluster search and its distance-dependent absolute-magnitude limit",
+      "legacy_value_disposition": "retain as source-level cluster context"
+    },
+    {
+      "bibcode": "2022ApJ...929..147D",
+      "record_count": 321,
+      "normalized_distance_mpc": 3.8,
+      "distance_status": "source_adopted_host_distance",
+      "environment": "Centaurus A halo",
+      "normalized_host_galaxy": "NGC 5128",
+      "evidence": "reference/dumont2022/ReadMe.txt identifies the NGC 5128 sample and an adopted distance modulus",
+      "legacy_value_disposition": "retain as source-level host context"
+    }
+  ]
+}

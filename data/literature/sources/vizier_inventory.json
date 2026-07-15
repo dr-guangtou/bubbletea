@@ -5,9 +5,9 @@
     "verified_catalogs": [
         {
             "vizier_id": "J/ApJ/899/140",
-            "bibcode": "2020ApJ...899..140W",
-            "title": "The Nature of Ultra-compact Dwarfs Revealed by Gaia",
-            "authors": "Wang, L. et al.",
+            "bibcode": "2020ApJ...899..140V",
+            "title": "A Gaia-based Catalog of Candidate Stripped Nuclei and Luminous Globular Clusters in the Halo of Centaurus A",
+            "authors": "Voggel, K. T. et al.",
             "year": 2020,
             "n_objects": 632,
             "region": "All-sky (Gaia-based)",
@@ -80,9 +80,9 @@
         },
         {
             "vizier_id": "J/A+A/625/A50",
-            "bibcode": "2019A&A...625A..50V",
-            "title": "Ultra compact dwarf galaxies catalog",
-            "authors": "Voggel, K.T. et al.",
+            "bibcode": "2019A&A...625A..50F",
+            "title": "Single metal-poor ultra compact dwarf galaxy at one kiloparsec distance from the low-mass elliptical galaxy FCC 47",
+            "authors": "Fahrion, K. et al.",
             "year": 2019,
             "n_objects": null,
             "region": "Multiple clusters",
@@ -140,9 +140,9 @@
             "authors": "Mieske, S. et al.",
             "year": 2007,
             "n_objects": null,
-            "region": "Centaurus A / NGC 5128",
+            "region": "Centaurus galaxy cluster",
             "vizier_id": null,
-            "notes": "Cen A region UCDs"
+            "notes": "Centaurus galaxy cluster; do not confuse with Centaurus A"
         },
         {
             "bibcode": "2014MNRAS.442..891C",

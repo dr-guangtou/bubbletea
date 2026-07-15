@@ -1,0 +1,200 @@
+{
+  "ads_endpoint": "https://api.adsabs.harvard.edu/v1/search/query",
+  "papers": [
+    {
+      "abstract": "Context: The internal dynamics of ultra-compact dwarf galaxies (UCDs) has attracted increasing attention, with most of the UCDs studied to date located in the Virgo cluster. <BR />Aims: Our aim is to perform a comprehensive census of the internal dynamics of UCDs in the Fornax cluster, and to shed light on the nature of the interface between star clusters and galaxies. <BR />Methods: We obtained high-resolution spectra of 23 Fornax UCDs with -10.4&gt;M_V&gt;-13.5 mag (10^6&lt;{ M/M<SUB>sun</SUB>&lt;10^8}), using FLAMES/Giraffe at the VLT. This is the largest homogeneous data set of UCD internal dynamics assembled to date. We derive dynamical M/L ratios for 15 UCDs covered by HST imaging. <BR />Results: In the M_V-\u03c3 plane, UCDs with M_V&lt;-12 mag are consistent with the extrapolated Faber-Jackson relation for luminous elliptical galaxies, while most of the fainter UCDs are closer to the extrapolated globular cluster (GC) relation. At a given metallicity, Fornax UCDs have, on average, M/L ratios lower by 30-40% than Virgo UCDs, suggesting possible differences in age or dark matter content between Fornax and Virgo UCDs. For our sample of Fornax UCDs we find no significant correlation between M/L ratio and mass. We combine our data with available M/L ratio measurements of compact stellar systems with 10^4&lt;{ M/M<SUB>sun</SUB>}&lt;10<SUP>8</SUP> M, and normalise all M/L estimates to solar metallicity. We find that UCDs (M \u2273 2 \u00d7 10^6 M<SUB>sun</SUB>) have M/L ratios twice as large as GCs (M\u2272 2 \u00d7 10^6 M<SUB>sun</SUB>). We argue that dynamical evolution has probably had only a small effect on the current M/L ratios of objects in the combined sample, implying that stellar population models tend to under-predict dynamical M/L ratios of UCDs and over-predict those of GCs. Considering the scaling relations of stellar spheroids, we find that UCDs align well along the \u201cFundamental Manifold\u201d. UCDs can be considered the small-scale end of the galaxy sequence in this context. The alignment for UCDs is especially clear for r<SUB>e</SUB> \u2273 7 pc, which corresponds to dynamical relaxation times that exceed a Hubble time. In contrast, globular clusters exhibit a broader scatter and do not appear to align along the manifold. <BR />Conclusions: We argue that UCDs are the smallest dynamically un-relaxed stellar systems, with M\u2273 2 \u00d7 10^6 M<SUB>sun</SUB> and 7\u2272{r_e/pc} \u2272 100. Future studies should aim at explaining the elevated M/L ratios of UCDs and the environmental dependence of their properties. <P />Based on observations obtained in service mode at the ESO Paranal Observatory with the VLT (programme 078.B-0496). <P />Table 5 is only available in electronic form at http://www.aanda.org",
+      "authors": [
+        "Mieske, S.",
+        "Hilker, M.",
+        "Jord\u00e1n, A.",
+        "Infante, L.",
+        "Kissler-Patig, M.",
+        "Rejkuba, M.",
+        "Richtler, T.",
+        "C\u00f4t\u00e9, P.",
+        "Baumgardt, H.",
+        "West, M. J.",
+        "Ferrarese, L.",
+        "Peng, E. W."
+      ],
+      "bibcode": "2008A&A...487..921M",
+      "citation_count": 159,
+      "doi": "10.1051/0004-6361:200810077",
+      "identifiers": [
+        "10.1051/0004-6361:200810077",
+        "2008A&A...487..921M",
+        "2008arXiv0806.0374M",
+        "10.48550/arXiv.0806.0374",
+        "arXiv:0806.0374"
+      ],
+      "properties": [
+        "ARTICLE",
+        "DATA",
+        "EPRINT_OPENACCESS",
+        "ESOURCE",
+        "OPENACCESS",
+        "PUB_OPENACCESS",
+        "REFEREED"
+      ],
+      "title": "The nature of UCDs: Internal dynamics from an expanded sample and homogeneous database",
+      "year": 2008
+    },
+    {
+      "abstract": "All the previously cataloged ultracompact dwarf (UCD) galaxies in the Fornax and Virgo clusters have 17.5 &lt; b<SUB>J</SUB> &lt; 20. Using the 2dF spectrograph on the Anglo-Australian Telescope, we have carried out a search for fainter UCDs in the Fornax Cluster. In the magnitude interval 19.5 &lt; b<SUB>J</SUB> &lt; 21.5, we have found 54 additional compact cluster members within a projected radius of 0fdg9 (320 kpc) of the cluster center, all of which meet our selection and observational criteria to be UCDs. These newly identified objects, however, overlap in luminosity and spatial distribution with objects classified as globular clusters (GCs) belonging to the central cluster galaxy NGC 1399; in fact, about half of the objects in our sample are included in recent catalogs of NGC 1399/Fornax GCs. The numbers, luminosity function, and spatial distributions of our compact object sample are consistent with being the bright tail of the Fornax cluster-wide GC population. Yet, our present larger sample of intergalactic compact objects forms a dynamically distinct population from both the NGC1399 GCs and the nucleated dwarf ellipticals in Fornax. This supports the interpretation that the UCDs, which populate the bright tail of the GC luminosity function, are, in some respects, a separate class of objects, at least to the extent that they have experienced a distinct dynamical history and origin, which differs from the bulk of the NGC1399 GCs. Correcting for our spectroscopic incompleteness, we estimate that there are ~105 \u00b1 13 of these brighter compact cluster objects down to b<SUB>J</SUB> &lt; 21.5 in the central region of the Fornax, and hence these UCDs/globulars outnumber other galaxy types in this space. The differences in their dynamics and distribution compared to dwarf ellipticals (dEs) may be consistent with a threshing or tidal destruction origin, if they have come from a subpopulation of dE galaxies on initial orbits that rendered them susceptible to such processes.",
+      "authors": [
+        "Gregg, Michael D.",
+        "Drinkwater, Michael J.",
+        "Evstigneeva, Ekaterina",
+        "Jurek, Russell",
+        "Karick, Arna M.",
+        "Phillipps, Steven",
+        "Bridges, Terry",
+        "Jones, J. Bryn",
+        "Bekki, Kenji",
+        "Couch, Warrick J."
+      ],
+      "bibcode": "2009AJ....137..498G",
+      "citation_count": 46,
+      "doi": "10.1088/0004-6256/137/1/498",
+      "identifiers": [
+        "2009AJ....137..498G",
+        "10.1088/0004-6256/137/1/498"
+      ],
+      "properties": [
+        "ARTICLE",
+        "ASSOCIATED",
+        "DATA",
+        "ESOURCE",
+        "OPENACCESS",
+        "PUB_OPENACCESS",
+        "REFEREED"
+      ],
+      "title": "A Large Population of Ultra-Compact Dwarfs and Bright Intracluster Globulars in the Fornax Cluster",
+      "year": 2009
+    },
+    {
+      "abstract": "Context. In the past decade, very extended old stellar clusters with masses in the range from a few 10<SUP>4</SUP> to 10<SUP>8</SUP> M<SUB>\u2609</SUB> and effective radii larger than 10 pc have been found in various types of galaxies in different environments. Objects with masses comparable to normal globular clusters (GCs) are called extended clusters (ECs), while objects with masses in the dwarf galaxy regime are called ultra-compact dwarf galaxies (UCDs). <BR /> Aims: The paper analyses the observational parameters total luminosity, M<SUB>V</SUB>, effective radius, r<SUB>eff</SUB>, and projected distance to the host galaxy, R<SUB>proj</SUB>, of all known ECs and UCDs and the dependence of these parameters on the type and the total luminosity of their host galaxy. <BR /> Methods: We searched the available literature to compile a catalog of star clusters with effective radii larger than 10 pc. As there is no clear distinction between ECs and UCDs, both types of objects will be called extended stellar objects - abbreviated \"EOs\" - in this paper. <BR /> Results: In total, we found 813 EOs of which 171 are associated with late-type galaxies and 642 EOs associated with early-type galaxies. EOs cover a luminosity range from about M<SUB>V</SUB> = -4 to -14 mag. However, the vast majority of EOs brighter than M<SUB>V</SUB> = -10 mag are associated with giant elliptical galaxies. At each magnitude extended objects are found with effective radii between 10 pc and an upper size limit, which shows a clear trend: the more luminous the object the larger is the upper size limit. For EOs associated with early- and late-type galaxies, the EO luminosity functions peak at - 6.40 mag and - 6.47 mag, respectively, which is about one magnitude fainter than the peak of the GC luminosity function. EOs and GCs form a coherent structure in the r<SUB>eff</SUB> vs. M<SUB>V</SUB> parameter space, while there is a clear gap between EOs and early-type dwarf galaxies. However, there is a small potential overlap at the high-mass end, where the most extended EOs are close to the parameters of some compact elliptical galaxies. We compare the EO sample with the numerical models of a previous paper and conclude that the parameters of the EO sample as a whole can be very well explained by a star cluster origin, where EOs are the results of merged star clusters of cluster complexes. <P />Table 2 is available in electronic form at <A href=\"http://www.aanda.org\">http://www.aanda.org</A>Table 1 is only available at the CDS via anonymous ftp to cdsarc.u-strasbg.fr (130.79.128.5) or via <A href=\"http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/547/A65\">http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/547/A65</A>",
+      "authors": [
+        "Br\u00fcns, R. C.",
+        "Kroupa, P."
+      ],
+      "bibcode": "2012A&A...547A..65B",
+      "citation_count": 34,
+      "doi": "10.1051/0004-6361/201219693",
+      "identifiers": [
+        "2012A&A...547A..65B",
+        "2012arXiv1209.4353B",
+        "10.48550/arXiv.1209.4353",
+        "arXiv:1209.4353",
+        "10.1051/0004-6361/201219693"
+      ],
+      "properties": [
+        "ARTICLE",
+        "ASSOCIATED",
+        "DATA",
+        "EPRINT_OPENACCESS",
+        "ESOURCE",
+        "OPENACCESS",
+        "PUB_OPENACCESS",
+        "REFEREED"
+      ],
+      "title": "A catalog of extended clusters and ultra-compact dwarf galaxies. An analysis of their parameters in early- and late-type galaxies",
+      "year": 2012
+    },
+    {
+      "abstract": "Context. Photometric surveys of galaxy clusters have revealed a large number of ultra compact dwarfs (UCDs) around predominantly massive elliptical galaxies. Their origin is still debated as some UCDs are considered to be the remnant nuclei of stripped dwarf galaxies while others seem to mark the high-mass end of the star cluster population. <BR /> Aims: We aim to characterize the properties of a UCD found at very close projected distance (r<SUB>wproj</SUB> = 1.1 kpc) from the centre of the low-mass (M \u223c 10<SUP>10</SUP> M<SUB>\u2609</SUB>) early-type galaxy FCC 47. This is a serendipitous discovery from MUSE adaptive optics science verification data. We explore the potential origin of this UCD as either a massive cluster or the remnant nucleus of a dissolved galaxy. <BR /> Methods: We used archival Hubble Space Telescope data to study the photometric and structural properties of FCC 47-UCD1. In the MUSE data, the UCD is unresolved, but we used its spectrum to determine the radial velocity and metallicity. <BR /> Results: The surface brightness of FCC 47-UCD1 is best described by a single King profile with low concentration C = R<SUB>t</SUB>/R<SUB>c</SUB> \u223c 10 and large effective radius (r<SUB>eff</SUB> = 24 pc). Its integrated magnitude and blue colour (M<SUB>g</SUB> = -10.55 mag, (g - z) = 1.46 mag) combined with a metallicity of [M/H] = -1.12 \u00b1 0.10 dex and an age &gt; 8 Gyr obtained from the full fitting of the MUSE spectrum suggests a stellar population mass of M<SUB>*</SUB> = 4.87 \u00d7 10<SUP>6</SUP> M<SUB>\u2609</SUB>. The low S/N of the MUSE spectrum prevents detailed stellar population analysis. Due to the limited spectral resolution of MUSE, we can only give an upper limit on the velocity dispersion (\u03c3 &lt; 17 km s<SUP>-1</SUP>), and consequently on its dynamical mass (M<SUB>dyn</SUB> &lt; 1.3 \u00d7 10<SUP>7</SUP> M<SUB>\u2609</SUB>). <BR /> Conclusions: The origin of the UCD cannot be constrained with certainty. The low metallicity, old age, and magnitude are consistent with a star cluster origin, whereas the extended size is consistent with an origin as the stripped nucleus of a dwarf galaxy with a initial stellar mass of a few 10<SUP>8</SUP> M<SUB>\u2609</SUB>. <P />Full Table B.1 is only available at the CDS via anonymous ftp to <A href=\"http://cdsarc.u-strasbg.fr/\">http://cdsarc.u-strasbg.fr</A> (ftp://130.79.128.5) or via <A href=\"http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/625/A50\">http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/625/A50</A>Based on observations collected at the ESO Paranal La Silla Observatory, Chile, Prog. ID 60.A-9192, PI Fahrion.",
+      "authors": [
+        "Fahrion, Katja",
+        "Georgiev, Iskren",
+        "Hilker, Michael",
+        "Lyubenova, Mariya",
+        "van de Ven, Glenn",
+        "Alfaro-Cuello, Mayte",
+        "Corsini, Enrico M.",
+        "Sarzi, Marc",
+        "McDermid, Richard M.",
+        "de Zeeuw, Tim"
+      ],
+      "bibcode": "2019A&A...625A..50F",
+      "citation_count": 19,
+      "doi": "10.1051/0004-6361/201834941",
+      "identifiers": [
+        "arXiv:1904.01041",
+        "2019arXiv190401041F",
+        "10.1051/0004-6361/201834941",
+        "2019A&A...625A..50F",
+        "10.48550/arXiv.1904.01041"
+      ],
+      "properties": [
+        "ARTICLE",
+        "ASSOCIATED",
+        "DATA",
+        "EPRINT_OPENACCESS",
+        "ESOURCE",
+        "OPENACCESS",
+        "PUB_OPENACCESS",
+        "REFEREED"
+      ],
+      "title": "Single metal-poor ultra compact dwarf galaxy at one kiloparsec distance from the low-mass elliptical galaxy FCC 47",
+      "year": 2019
+    },
+    {
+      "abstract": "Ultra-compact dwarf galaxies (UCDs) were serendipitously discovered by spectroscopic surveys in the Fornax cluster 20 yr ago. Nowadays, it is commonly accepted that many bright UCDs are the nuclei of galaxies that have been stripped. However, this conclusion might be driven by biased samples of UCDs in high-density environments, on which most searches are based. With the deep optical images of the Fornax Deep Survey, combined with public near-infrared data, we revisit the UCD population of the Fornax cluster and search for UCD candidates, for the first time, systematically out to the virial radius of the galaxy cluster. Our search is complete down to magnitude m<SUB>g</SUB> = 21 mag or M$_g\\, \\sim$ -10.5 mag at the distance of the Fornax cluster. The UCD candidates are identified and separated from foreground stars and background galaxies by their optical and near-infrared colours. This primarily utilizes the u-i/i-Ks diagram and a machine learning technique is employed to incorporate other colour combinations to reduce the number of contaminants. The newly identified candidates (44) in addition to the spectroscopically confirmed UCDs (61), increase the number of known Fornax UCD considerably (105). Almost all of the new UCD candidates are located outside the Fornax cluster core (360 kpc), where all of the known UCDs were found. The distribution of UCDs within the Fornax cluster shows that a population of UCDs may form in low-density environments. This most likely challenges the current models of UCD formation.",
+      "authors": [
+        "Saifollahi, Teymoor",
+        "Janz, Joachim",
+        "Peletier, Reynier F.",
+        "Cantiello, Michele",
+        "Hilker, Michael",
+        "Mieske, Steffen",
+        "Valentijn, Edwin A.",
+        "Venhola, Aku",
+        "Verdoes Kleijn, Gijs"
+      ],
+      "bibcode": "2021MNRAS.504.3580S",
+      "citation_count": 22,
+      "doi": "10.1093/mnras/stab1118",
+      "identifiers": [
+        "10.1093/mnras/stab1118",
+        "2021arXiv210400004S",
+        "2021MNRAS.504.3580S",
+        "2021MNRAS.tmp.1086S",
+        "10.48550/arXiv.2104.00004",
+        "arXiv:2104.00004"
+      ],
+      "properties": [
+        "ARTICLE",
+        "ASSOCIATED",
+        "DATA",
+        "EPRINT_OPENACCESS",
+        "ESOURCE",
+        "OPENACCESS",
+        "PUB_OPENACCESS",
+        "REFEREED"
+      ],
+      "title": "Ultra-compact dwarfs beyond the centre of the Fornax galaxy cluster: hints of UCD formation in low-density environments",
+      "year": 2021
+    }
+  ],
+  "query_run": {
+    "fields": [
+      "bibcode",
+      "title",
+      "author",
+      "year",
+      "doi",
+      "identifier",
+      "abstract",
+      "citation_count",
+      "property"
+    ],
+    "num_found": 5,
+    "page_count": 1,
+    "query": "bibcode:(2008A&A...487..921M OR 2009AJ....137..498G OR 2012A&A...547A..65B OR 2019A&A...625A..50F OR 2021MNRAS.504.3580S)",
+    "query_name": "gaia_multi_position_sources",
+    "rows_per_page": 20,
+    "sort": "bibcode asc"
+  },
+  "retrieval_date": "2026-07-14",
+  "schema_version": 1
+}
