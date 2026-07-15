@@ -1,0 +1,172 @@
+{
+  "ahn_measurement_evidence_count": 1,
+  "ambiguous_gaia_canonical_count": 2,
+  "approved_alias_association_count": 1,
+  "approved_confirmation_evidence_count": 1316,
+  "approved_gaia_ambiguity_evidence_count": 2,
+  "approved_gaia_association_count": 128,
+  "approved_gaia_identity_evidence_count": 116,
+  "approved_identity_evidence_count": 1,
+  "approved_liu_association_count": 51,
+  "approved_multi_position_gaia_count": 8,
+  "approved_reported_confirmation_count": 535,
+  "approved_s547_association_count": 1,
+  "approved_supplemental_identity_evidence_count": 1,
+  "approved_voggel_association_count": 35,
+  "approved_wave1_group_identity_association_count": 28,
+  "approved_wave1_group_identity_evidence_count": 12,
+  "approved_wave1_identity_association_count": 7,
+  "approved_wave1_identity_evidence_count": 7,
+  "approved_wave1_source_identity_association_count": 238,
+  "approved_wave1_source_identity_evidence_count": 80,
+  "association_proposal_count": 0,
+  "authority_counts": {
+    "authoritative_candidate_table": 1,
+    "authoritative_coordinate_null_supplement": 1,
+    "authoritative_mixed_candidate_comparison_table": 2,
+    "authoritative_reference_table": 1,
+    "authoritative_selection_pool": 1,
+    "authoritative_vizier_package": 5,
+    "normalized_records_linked_to_raw_package": 11
+  },
+  "canonical_export_sha256": "6821a94bed510acfb7f0afb0fc62ca4dcb0943ef1a17cd0e8daa673101609a06",
+  "canonical_object_count": 4359,
+  "classification_counts": {
+    "candidate": 1515,
+    "confirmed": 740,
+    "rejected": 2082,
+    "uncertain": 22
+  },
+  "confirmed_object_count": 740,
+  "corrected_bibcode_alias_count": 2,
+  "dataset_count": 22,
+  "dataset_file_count": 50,
+  "exact_duplicate_group_count": 180,
+  "f6_velocity_tension_evidence_count": 1,
+  "failures": [],
+  "gaia_association_proposal_count": 0,
+  "gaia_proposal_group_count": 0,
+  "host_distance_summary": {
+    "2007A&A...472..111M": {
+      "distance_record_count": 27,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 43.0,
+      "minimum_distance_mpc": 43.0,
+      "record_count": 27
+    },
+    "2008AJ....136.2295B": {
+      "distance_record_count": 41,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 150.0,
+      "minimum_distance_mpc": 150.0,
+      "record_count": 41
+    },
+    "2009AJ....137..498G": {
+      "distance_record_count": 60,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 20.0,
+      "minimum_distance_mpc": 20.0,
+      "record_count": 60
+    },
+    "2011A&A...531A...4M": {
+      "distance_record_count": 118,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 50.7,
+      "minimum_distance_mpc": 50.7,
+      "record_count": 118
+    },
+    "2011ApJ...737...86C": {
+      "distance_record_count": 78,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 100.0,
+      "minimum_distance_mpc": 100.0,
+      "record_count": 78
+    },
+    "2015ApJ...812...34L": {
+      "distance_record_count": 127,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 16.5,
+      "minimum_distance_mpc": 16.5,
+      "record_count": 206
+    },
+    "2019A&A...625A..50F": {
+      "distance_record_count": 0,
+      "distinct_distance_count": 0,
+      "maximum_distance_mpc": null,
+      "minimum_distance_mpc": null,
+      "record_count": 381
+    },
+    "2020ApJ...899..140V": {
+      "distance_record_count": 632,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 3.8,
+      "minimum_distance_mpc": 3.8,
+      "record_count": 689
+    },
+    "2021MNRAS.504.3580S": {
+      "distance_record_count": 692,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 20.0,
+      "minimum_distance_mpc": 20.0,
+      "record_count": 692
+    },
+    "2022ApJ...929..147D": {
+      "distance_record_count": 321,
+      "distinct_distance_count": 1,
+      "maximum_distance_mpc": 3.8,
+      "minimum_distance_mpc": 3.8,
+      "record_count": 321
+    }
+  },
+  "legacy_database_sha256": "d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806",
+  "legacy_summary": {
+    "duplicate_group_count": 180,
+    "duplicate_row_count": 360,
+    "exact_coordinate_count": 1928,
+    "row_count": 2108
+  },
+  "literature_record_count": 5049,
+  "open_gates": [],
+  "pending_source_proposal_count": 0,
+  "preserved_legacy_distance_counts": {
+    "fahrion_legacy_20": 377,
+    "mieske_legacy_3_8": 27
+  },
+  "publication_count": 30,
+  "retired_canonical_alias_count": 390,
+  "review_queue_count": 4,
+  "review_type_counts": {
+    "record_identity": 4
+  },
+  "reviewed_confirmation_non_promotion_count": 57,
+  "role_conflict_subtype_count": 22,
+  "s999_association_count": 3,
+  "s999_identity_evidence_count": 1,
+  "saifollahi_duplicate_row_count": 2,
+  "saifollahi_reference_evidence_count": 61,
+  "saifollahi_selection_pool_count": 1155,
+  "screening_artifact_checks": {
+    "approved_retrieval_count": 19,
+    "deferred_source_count": 8,
+    "pending_decision_count": 0,
+    "screened_paper_count": 345,
+    "unique_paper_count": 345
+  },
+  "selection_pool_link_count": 44,
+  "selection_pool_record_count": 2059,
+  "supporting_source_row_counts": {
+    "supporting_spectroscopic_measurement": 14,
+    "supporting_structural_and_velocity_measurement": 127,
+    "supporting_structural_measurement": 27
+  },
+  "supporting_source_row_evidence_count": 168,
+  "unassociated_record_count": 4,
+  "validation_artifact_digest": "acc9e61e73d2fa4c1530688a86c06bf25d9c2e7d75080d5bf286d0bcd615187b",
+  "validation_date": "2026-07-15",
+  "validation_status": "passed",
+  "wave1_comparison_count": 1484,
+  "wave1_dataset_file_count": 16,
+  "wave1_positive_count": 855,
+  "wave1_record_count": 2339,
+  "wittmann_selection_pool_count": 904
+}

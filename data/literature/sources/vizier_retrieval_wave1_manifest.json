@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "approval_date": "2026-07-15",
+  "approval_scope": "wave1_high_priority_literature_sources",
+  "sources": [
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "catalog_root": "J/A+A/586/A102",
+      "reference_folder": "voggel2016",
+      "files": ["table1.dat", "tablea1.dat", "tablea2.dat"]
+    },
+    {
+      "bibcode": "2016MNRAS.459.4450W",
+      "catalog_root": "J/MNRAS/459/4450",
+      "reference_folder": "wittmann2016",
+      "files": ["table1.dat", "table3.dat"]
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "catalog_root": "J/ApJ/835/212",
+      "reference_folder": "ko2017",
+      "files": ["table2.dat", "table3.dat", "table4.dat"]
+    },
+    {
+      "bibcode": "2018ApJ...858..102A",
+      "catalog_root": "J/ApJ/858/102",
+      "reference_folder": "ahn2018",
+      "files": ["table3.dat"]
+    },
+    {
+      "bibcode": "2020ApJS..250...17L",
+      "catalog_root": "J/ApJS/250/17",
+      "reference_folder": "liu2020",
+      "files": ["table3.dat", "table4.dat"]
+    }
+  ]
+}

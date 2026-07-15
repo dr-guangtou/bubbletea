@@ -1,0 +1,22 @@
+{
+  "cohort_source_path": "data/literature/validation/gaia_association_group_review.csv",
+  "cohort_source_sha256": "7573076010c5688a72812272a066b646e0136786e0804ba4748619d1c69562f8",
+  "csv_path": "data/literature/sources/legacy_survey_image_ambiguity_cutouts.csv",
+  "csv_sha256": "d982d7d7f6e18c57d58f09b87c0499477fe1111d580c9d169cb981bdd53d0c95",
+  "endpoint": "https://www.legacysurvey.org/viewer/jpeg-cutout",
+  "file_count": 69,
+  "height_pixels": 128,
+  "layers": [
+    "ls-dr10",
+    "ls-dr10-model",
+    "ls-dr10-resid"
+  ],
+  "pixel_scale_arcsec": 0.262,
+  "retrieval_date": "2026-07-14",
+  "schema_version": 1,
+  "scientific_limit": "JPEG cutouts are image diagnostics only; they do not establish DR10 maskbit or catalog-quality status.",
+  "service": "Legacy Survey Viewer cutout service",
+  "survey_layer": "Legacy Surveys DR10",
+  "target_count": 23,
+  "width_pixels": 128
+}

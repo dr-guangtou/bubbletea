@@ -1,5 +1,29 @@
 # Lessons Learned - UCD Search Project
 
+## 2026-07-14: Parse CDS fixed-width tables from their byte specification
+
+**Lesson:** Whitespace splitting is unsafe for CDS fixed-width tables because
+optional blank fields shift all later values without changing the apparent row.
+
+**Context:** The multi-position Gaia audit initially split Fahrion table B1 rows
+and encountered a shifted reference-code value before producing review results.
+
+**Recommendation:** Parse columns using the published one-based byte ranges in
+the VizieR `ReadMe`, and validate expected types before scientific comparison.
+
+## 2026-07-14: Validate the documented direct script command
+
+**Lesson:** A script that imports the repository's `scripts` namespace can pass
+static checks but fail when invoked by its documented file path because Python
+places the script directory, rather than the repository root, on `sys.path`.
+
+**Context:** The one-target Gaia image-ambiguity audit failed before retrieval
+when run with the required `uv run python scripts/phase1_literature/...` command.
+
+**Recommendation:** Exercise the exact documented command during small-scale
+validation and add a minimal repository-root bootstrap to standalone scripts that
+use absolute project imports.
+
 **Date:** 2026-03-27
 **Project Duration:** ~11 days (Mar 16 - Mar 27, 2026)
 
@@ -294,3 +318,201 @@ This document captures key lessons learned during the UCD search project explora
 - Version control and archival are essential
 - Documentation pays dividends
 - Clear naming conventions save time
+
+## 2026-07-14: Validate documented script invocation
+
+**Lesson:** A script that imports `scripts.config` does not resolve the repository
+package when invoked by file path unless the repository root is on `PYTHONPATH`.
+**Context:** The first literature-audit dry run failed before reading the database
+because its documented direct-file command omitted `PYTHONPATH=.`.
+**Recommendation:** Run and time the exact documented command on the smallest local
+case before publishing it; use `PYTHONPATH=.` for the current direct-file pattern.
+
+## 2026-07-14: Treat source metadata as evidence requiring verification
+
+**Lesson:** A syntactically valid bibcode, source-wide distance, or confirmation
+label can still describe the wrong paper, a heterogeneous compilation, or an
+ingestion default rather than the object.
+**Context:** ADS and VizieR checks corrected two legacy bibcodes, distinguished the
+Centaurus galaxy cluster from Centaurus A, and exposed compilation-wide distances
+and labels that were unsafe to normalize.
+**Recommendation:** Preserve original values in immutable raw payloads, verify
+bibliographic identifiers against authoritative services, and queue uncertain
+normalized metadata for review rather than silently propagating it.
+
+## 2026-07-14: Separate broad selection pools from positive references
+
+**Lesson:** A catalog of objects considered during photometric selection is not
+equivalent to a catalog of reported candidates or confirmed reference objects.
+**Context:** Saifollahi et al. table A5 contains 1,155 classified UCD/GC selection
+objects, while table A6 contains the final 44 unconfirmed UCD candidates and table
+A1 reproduces 61 operational spectroscopic reference UCDs from a mixed sample.
+**Recommendation:** Store broad selection pools separately, link final candidates
+back to their source rows, and encode paper-specific reference criteria explicitly
+without promoting reported confirmation automatically.
+
+## 2026-07-14: Audit object labels below the table-title level
+
+**Lesson:** A table described as UCD candidates can contain explicit non-UCD or
+contaminant rows, while rows absent from direct source membership may already be
+represented through a later literature compilation.
+**Context:** The Liu M49 and M60 candidate tables contain 51 rows flagged as UCDs
+and 28 rows explicitly flagged as non-UCDs. All 51 positive rows already have
+sub-arcsecond v2 counterparts through existing provenance, whereas the 28
+non-positive rows do not.
+**Recommendation:** Join paired source tables, preserve object-level flags, and
+measure exact and spherical overlap before changing canonical membership or
+interpreting a table-wide role as a positive label.
+
+## 2026-07-14: Omit unsupported optional reader arguments
+
+**Lesson:** Passing `None` to an optional library argument is not always equivalent
+to omitting that argument.
+**Context:** The Astropy CDS reader expects `fill_values` to be iterable when the
+keyword is present, so a shared table loader failed when it forwarded
+`fill_values=None`.
+**Recommendation:** Build optional keyword arguments explicitly and pass them only
+when a concrete value is required; exercise both the default and specialized paths
+in the small-scale check.
+
+## 2026-07-14: Never use opaque identifier order as provenance routing
+
+**Lesson:** A deterministic ordering can still encode the wrong relationship when
+it has no scientific or provenance meaning.
+**Context:** After adding multiple datasets per publication, unmatched raw files
+fell back to UUID-sorted dataset order and attached legacy primary tables to new
+supplemental datasets.
+**Recommendation:** Route exact and paired tables explicitly, then use the declared
+legacy-normalized dataset as the semantic fallback; audit the resulting file-to-
+dataset row counts after every multi-table ingestion change.
+
+## 2026-07-14: Run namespace-importing scripts as modules
+
+**Lesson:** A standalone research script that imports from the repository's
+`scripts` namespace is not directly executable by file path unless the project
+root is added to Python's import path.
+**Context:** Running `uv run python scripts/phase1_literature/build_reference_database.py`
+failed before the build began because Python could not resolve `scripts.config`.
+**Recommendation:** From the project root, run namespace-importing scripts with
+`uv run python -m scripts.phase1_literature.<module_name>`, and keep imports
+between phase scripts fully qualified under the same namespace.
+
+## 2026-07-14: Inspect pre-commit scope before repository-wide runs
+
+**Lesson:** A repository-wide auto-fixing hook can mutate frozen legacy notebooks
+and unrelated phase scripts when its file exclusions do not match project policy.
+**Context:** `pre-commit run --all-files` applied Ruff fixes and formatting to
+unrelated tracked files before failing on known legacy findings; those hook-only
+edits were immediately restored.
+**Recommendation:** Audit hook include/exclude rules before an all-files run and
+use targeted Ruff checks for scoped work until frozen and archived paths are
+excluded from auto-fixing hooks.
+
+## 2026-07-14: Recompute catalog distances on the sphere
+
+**Lesson:** A nearest-neighbor identifier can be correct while its stored distance
+is geometrically inconsistent.
+**Context:** The legacy Gaia matcher ranked degree-space offsets without the
+right-ascension cosine factor. Across 280 proposal endpoints, the largest measured
+difference from an authoritative great-circle separation was 0.176110481759
+arcseconds.
+**Recommendation:** Use `SkyCoord.separation` for validation, preserve legacy
+distances only as provenance, and assess shared-source identity separately from
+Gaia blending and catalog-role conflicts.
+
+## 2026-07-14: Apply review routing after proposal eligibility
+
+**Lesson:** Repeated identifiers do not necessarily imply a non-exact association
+proposal when every associated row has identical coordinates.
+**Context:** A Gaia review-routing assertion initially ran before exact-coordinate
+pairs were filtered and rejected an identifier that correctly had no proposal.
+**Recommendation:** Construct the eligible non-exact pair set first, then require
+review metadata only for groups that actually produce proposals.
+
+## 2026-07-14: Validate relationships independently of a primary method label
+
+**Lesson:** A one-to-many scientific relationship cannot always be reconstructed
+from a single-valued association-method field after canonical groups are merged.
+**Context:** Two exact-coordinate companion groups remained intact after approved
+Gaia merging, but their moved rows correctly acquired the Gaia association method,
+causing a method-filtered duplicate check to report false loss.
+**Recommendation:** Validate exact-coordinate preservation directly from immutable
+row coordinates and shared canonical membership, while treating the association
+method as the reason for the latest non-exact merge.
+## 2026-07-15: Run the builder smoke check after adding new digest logic
+
+**Lesson:** A new Wave 1 package-digest path referenced `hashlib` before its import
+was added; Ruff and the temporary-database smoke build caught the error before the
+production v2 database was replaced.
+
+**Context:** The literature builder recreates its output database, so new ingestion
+paths must first target a disposable database even when prior builds are fast.
+
+**Recommendation:** Run Ruff followed by a timed build to a temporary output path
+after changing imports, package hashing, or ingestion orchestration, and only then
+rebuild the configured v2 product.
+
+## 2026-07-15: Do not probe a guessed SQLite path
+
+**Lesson:** Opening a nonexistent path with the SQLite command-line client creates
+an empty database even when the intended operation is read-only.
+
+**Context:** A diagnostic schema query used a guessed v2 filename instead of the
+configured `LITERATURE_REFERENCE_DB_V2` path and created a zero-byte ignored file.
+The file was detected immediately, was never read by the audit, and was removed.
+
+**Recommendation:** Resolve database paths from `scripts/config.py` before running
+SQLite diagnostics, assert that the file exists, and use immutable or read-only
+connection modes for inspection.
+
+## 2026-07-15: Audit catalog lineage before treating a nearby row as unlinked
+
+**Lesson:** A coordinate-designated record can retain its identity alias only in
+an original table's secondary-name column, so normalized database names alone may
+make a documented cross-identification appear absent.
+
+**Context:** Seventy-two Wave 1 groups initially contained an "unreferenced" Liu or
+Fahrion canonical. Liu 2015 table 3 preserved the Zhang/Ko identifier in `Other`,
+and the exact NGVS catalog key connected the records without a positional rule.
+
+**Recommendation:** Before routing a nearby canonical to manual ambiguity, inspect
+source-specific alias columns and stable catalog keys across predecessor and
+successor tables.
+
+## 2026-07-15: Connected proximity groups can contain more than one identity
+
+**Lesson:** A connected review component is not necessarily one astrophysical
+object even when every member has an identifier edge.
+
+**Context:** S547 and VUCD3 share an unresolved Gaia source and occur in one
+sub-arcsecond component, but Fahrion preserves different positions, references,
+magnitudes, and sizes. Source identifiers correctly split the component into two
+identities.
+
+**Recommendation:** Resolve identity at the identifier-edge subgroup level and
+carry explicit retained-separate decisions through any group-level consolidation.
+
+## 2026-07-15: Recheck authoritative flags even when row linkage is correct
+
+**Lesson:** Correctly linking a supporting table does not prove that normalized
+labels inherited from a legacy database match the authoritative primary table.
+
+**Context:** Liu's 127 M87 rows were correctly paired with their structural and
+velocity rows, but the legacy import had set all 127 to UCD. The authoritative
+primary table contains 92 `UCD=1` and 35 `UCD=0` rows.
+
+**Recommendation:** Validate identity, row role, and every selector-facing
+normalized field as separate invariants against the authoritative source row.
+
+## 2026-07-15: A reviewed confirmation can end in non-promotion
+
+**Lesson:** Closing a confirmation review does not require promoting the object.
+
+**Context:** Voggel's 57 previously confirmed comparison rows carry Gaia
+photometry in the local table but not the spectroscopy or resolved morphology
+required by `confirmation_rules_v1`. They remain candidates with an explicit
+reviewed-insufficient-evidence decision.
+
+**Recommendation:** Represent approval, non-promotion, and unresolved review as
+distinct evidence states so absence of local qualifying evidence is not confused
+with either rejection or unfinished work.

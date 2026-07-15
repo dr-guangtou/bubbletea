@@ -1,0 +1,2256 @@
+{
+  "audit_date": "2026-07-15",
+  "decision_scope": "Source-specific catalog lineage and object evidence; proximity alone is never identity evidence. S547 and VUCD3 remain distinct.",
+  "delegated_authorization_scope": "Continue source auditing autonomously until scientific input is absolutely required",
+  "proposals": [
+    {
+      "current_canonical_object_ids": [
+        "canonical_3f152a042efa5bf29201f0048a4ee315",
+        "canonical_5c4abe0b23fb586bad6d7609db018817",
+        "canonical_5e2e72bee9295a5f95516729e9cdf623",
+        "canonical_a4ea5a05b951582fb01d62a0f67e2a21"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_03b85280e1b89206:f12",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "f12"
+      ],
+      "parent_group_id": "wave1_identity_group_03b85280e1b89206",
+      "recommended_anchor_canonical_object_id": "canonical_a4ea5a05b951582fb01d62a0f67e2a21",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123102.59+123414.1",
+        "liu2015_other_name": "F12",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_17b643b6946d54e89c73c8c015b8be48",
+        "canonical_558804cae26a5237815d25ff93df5bd7",
+        "canonical_ca56bb2afaa9558ba3f1b87cd78c1774",
+        "canonical_e7702a1003095613b08c0e3b7db9542c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_03f0f506cdf97b9f:m87ucd22",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd22"
+      ],
+      "parent_group_id": "wave1_identity_group_03f0f506cdf97b9f",
+      "recommended_anchor_canonical_object_id": "canonical_558804cae26a5237815d25ff93df5bd7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122952.28+123737.8",
+        "liu2015_other_name": "M87UCD22",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_55d35e5f296a59adbb51fc8ea5af8dde",
+        "canonical_ad953fc15df05de1b1a413b2b6a38c44",
+        "canonical_d255bc07058058f2b9a716ddfb2ab25a",
+        "canonical_df13d030f5d35be6aee7473e24f52ec4"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_064e891417cad43e:m87ucd26",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd26"
+      ],
+      "parent_group_id": "wave1_identity_group_064e891417cad43e",
+      "recommended_anchor_canonical_object_id": "canonical_df13d030f5d35be6aee7473e24f52ec4",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123016.54+121556.8",
+        "liu2015_other_name": "M87UCD26",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1df9e80a7802548e80b38acbe7ff1f3e",
+        "canonical_651a5e2b90175c1e965b3a2dc79777c5",
+        "canonical_7b46ee14d47a5a62a9b5aa07a653cfa5",
+        "canonical_bba8ccea81ef559f9da869103931387b",
+        "canonical_d4d3add4eb60505cae87e9383dfdbf92"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_085eae8adfacc27f:m87ucd11",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd11"
+      ],
+      "parent_group_id": "wave1_identity_group_085eae8adfacc27f",
+      "recommended_anchor_canonical_object_id": "canonical_1df9e80a7802548e80b38acbe7ff1f3e",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123029.91+123822.2",
+        "liu2015_other_name": "M87UCD11",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_cd3db7baad1f54baaf8931b87282efbc",
+        "canonical_db5e8f49333f5763b1dca6a71c20d0a5",
+        "canonical_f75232d9e0485f388cfcbd44193cd59a",
+        "canonical_fae7ceac8f2c5912b4ec3c2c9fb5c935"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_0980f00f7e78af38:m87ucd27",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd27"
+      ],
+      "parent_group_id": "wave1_identity_group_0980f00f7e78af38",
+      "recommended_anchor_canonical_object_id": "canonical_cd3db7baad1f54baaf8931b87282efbc",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123225.37+121956.8",
+        "liu2015_other_name": "M87UCD27",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0cfdb1fe10cd51b4a99c0f884dbd1df7",
+        "canonical_591849d9b5235cf38a1106afde613d6d",
+        "canonical_8a04fcf9aece5244baf0bab87ef95ce3",
+        "canonical_af15c246c9635901bae26ebde434a56c",
+        "canonical_e5ddfcab31c758d180d03d71d18d2a78"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_12b2cedfc704d123:s1201",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1201"
+      ],
+      "parent_group_id": "wave1_identity_group_12b2cedfc704d123",
+      "recommended_anchor_canonical_object_id": "canonical_0cfdb1fe10cd51b4a99c0f884dbd1df7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123041.81+122341.2",
+        "liu2015_other_name": "S1201",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_206629fc0dba5ad393c699702882c09e",
+        "canonical_74d52f0ab8065f7cb859c1633b404082",
+        "canonical_8622731344315759a01645927c2c6d17",
+        "canonical_8fd908dd39125e7f948d5013e0206ae1",
+        "canonical_bbd477aed18351c5aa871a8291d13fc8"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_130a4dd301d566d6:m87ucd25",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd25"
+      ],
+      "parent_group_id": "wave1_identity_group_130a4dd301d566d6",
+      "recommended_anchor_canonical_object_id": "canonical_206629fc0dba5ad393c699702882c09e",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123138.53+115923.9",
+        "liu2015_other_name": "M87UCD25",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1c602f32a61e5630a1e5a96ed8707073",
+        "canonical_31fe97c053275b54922162dd1cf6d3a3",
+        "canonical_5731f491535f5ba69aaaeb582045bcc7",
+        "canonical_6d5177647d385d1883a5d425caf1b03a"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_19c583953722f89f:m87ucd15",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd15"
+      ],
+      "parent_group_id": "wave1_identity_group_19c583953722f89f",
+      "recommended_anchor_canonical_object_id": "canonical_5731f491535f5ba69aaaeb582045bcc7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123157.99+131534.1",
+        "liu2015_other_name": "M87UCD15",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1cfb18b4f72a57259fdfe74617930d2b",
+        "canonical_5d1dbe4679ed5327b3359e7313ec70cb",
+        "canonical_5f81eea43b6d582fb080b28f5f6ad782",
+        "canonical_8c3fad624d0151b8ac8c8e9375e943d3"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_1ecf233196a347ff:m87ucd10",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd10"
+      ],
+      "parent_group_id": "wave1_identity_group_1ecf233196a347ff",
+      "recommended_anchor_canonical_object_id": "canonical_1cfb18b4f72a57259fdfe74617930d2b",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123001.95+124226.9",
+        "liu2015_other_name": "M87UCD10",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1507a36075bd536e9ee6d15b3c884504",
+        "canonical_66a81d7691cf513fb42d5a80e24b8c35",
+        "canonical_6f9a9ec1f3be57908dbe19978a36467a",
+        "canonical_71a10450a8ef578684f19e25fed1125b"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_23254741c97ce2e5:m87ucd37",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd37"
+      ],
+      "parent_group_id": "wave1_identity_group_23254741c97ce2e5",
+      "recommended_anchor_canonical_object_id": "canonical_1507a36075bd536e9ee6d15b3c884504",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123009.82+123736.5",
+        "liu2015_other_name": "M87UCD37",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2588f675dd165b8081282d9edeefe7d4",
+        "canonical_3a2369c701985ecdb91dad0c7fda92ef",
+        "canonical_4b8e70f6a8c251ec991f7ada5592edcd",
+        "canonical_556c89ca18f35695a9a4429ddb7aab75",
+        "canonical_c9655f4ea2d55476aa0cd41006fc6f87"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_2431b708dfac6847:s682",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s682"
+      ],
+      "parent_group_id": "wave1_identity_group_2431b708dfac6847",
+      "recommended_anchor_canonical_object_id": "canonical_2588f675dd165b8081282d9edeefe7d4",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123054.66+122022.6",
+        "liu2015_other_name": "S682",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_049144cfe54a5675a3db92afe24d7d5e",
+        "canonical_a59ae2c2935c5e7da5298e6efb91f71b",
+        "canonical_f834904df19b5e04a97e054fa38a5da7"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_25340de0b6646441:s991",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s991"
+      ],
+      "parent_group_id": "wave1_identity_group_25340de0b6646441",
+      "recommended_anchor_canonical_object_id": "canonical_f834904df19b5e04a97e054fa38a5da7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123046.50+122017.7",
+        "liu2015_other_name": "S991",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2668947cfff9576cb3ce7a8b49a0f69d",
+        "canonical_352fb2d9e0195c57a63bcc2525c470c2",
+        "canonical_60040abbdcc851489d5705ab05135d69",
+        "canonical_6673786cc43353e882b841f51b675c0b",
+        "canonical_f03dbb4c75f053e88a11dc7e85633a2c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_2ed6c9a0e7be54ef:s731",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s731"
+      ],
+      "parent_group_id": "wave1_identity_group_2ed6c9a0e7be54ef",
+      "recommended_anchor_canonical_object_id": "canonical_60040abbdcc851489d5705ab05135d69",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123053.88+121712.4",
+        "liu2015_other_name": "S731",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_87765cc6428a58b186a20e762c6304a7",
+        "canonical_8caa49558ccb52bebffdd4696bf65575",
+        "canonical_c4c0db5e96095480bafc1d5ffad709ce",
+        "canonical_ed738e8703e754ffa6d896a2a06a5983"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_330545b1cffbb7c1:s928",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s928"
+      ],
+      "parent_group_id": "wave1_identity_group_330545b1cffbb7c1",
+      "recommended_anchor_canonical_object_id": "canonical_8caa49558ccb52bebffdd4696bf65575",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123047.70+122430.5",
+        "liu2015_other_name": "S928",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_6ea9d2c2a59a50b3a7f81a6af8604c66",
+        "canonical_b91adfb1c44e5cf980f2abb24945ef4d",
+        "canonical_d5c6a34c8025575fa869d373f45d4794"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_34645cc1386c5cce:h36612",
+      "evidence_class": "published_identifier_with_independent_or_weighted_velocity_measurements",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h36612"
+      ],
+      "parent_group_id": "wave1_identity_group_34645cc1386c5cce",
+      "recommended_anchor_canonical_object_id": "canonical_b91adfb1c44e5cf980f2abb24945ef4d",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "liu2020_velocity_treatment": "heliocentric radial velocity or weighted mean when multiple measurements are available",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019",
+        "velocity_spread_km_s": 27.0
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_145328bffd70579da82c32ec2debf0c3",
+        "canonical_870853f85b4d5475a53644ce1d795c2d",
+        "canonical_9ac3fcbfb47059dfa162e044c3df017d",
+        "canonical_b51b083f760c55c9baeaab5dd369ba35",
+        "canonical_c689bf4a25e85ae7be6100dfb6a38571"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_34ab7e77f25b7308:s376",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s376"
+      ],
+      "parent_group_id": "wave1_identity_group_34ab7e77f25b7308",
+      "recommended_anchor_canonical_object_id": "canonical_145328bffd70579da82c32ec2debf0c3",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123102.14+122749.7",
+        "liu2015_other_name": "S376",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_06d3deda7e0f50c195fcea53876d5257",
+        "canonical_344ac221e24356bfa7d050360d4473f5",
+        "canonical_83a522c345115feb8416ed4aed384b46",
+        "canonical_8af275edf4fe522cb44dc8ddd2ad289e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_3f5772e41a89d3d2:vucd8",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd8"
+      ],
+      "parent_group_id": "wave1_identity_group_3f5772e41a89d3d2",
+      "recommended_anchor_canonical_object_id": "canonical_8af275edf4fe522cb44dc8ddd2ad289e",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123204.35+122030.3",
+        "liu2015_other_name": "VUCD8",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_422339fc49015b14a52c590f251707fa",
+        "canonical_84d86aa9ef04553dbf0eace03183cb0b",
+        "canonical_a9083d1b80d3592f8cdca416128055b5",
+        "canonical_abd4d1ffdcd95d0cb8ac35356d989553",
+        "canonical_b4bbdf6ba3bf518faef3944835307ca0"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_40161031d14cf449:s1044",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1044"
+      ],
+      "parent_group_id": "wave1_identity_group_40161031d14cf449",
+      "recommended_anchor_canonical_object_id": "canonical_422339fc49015b14a52c590f251707fa",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123045.34+122033.5",
+        "liu2015_other_name": "S1044",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_19e3526947875621a158e1f6e02ff50a",
+        "canonical_66932710488258f6b7d6cab1919d3610",
+        "canonical_8daeb923875e55df91ca166d41bfd69a",
+        "canonical_d47ca4302c50517c9bc67abf8ab924da"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_464d31d0e0d0fae2:m87ucd39",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd39"
+      ],
+      "parent_group_id": "wave1_identity_group_464d31d0e0d0fae2",
+      "recommended_anchor_canonical_object_id": "canonical_66932710488258f6b7d6cab1919d3610",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123346.31+115702.3",
+        "liu2015_other_name": "M87UCD39",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_3054fa0aa2db585b951e33c46084119f",
+        "canonical_67d2e2e2919e55c3934a660327eb5601",
+        "canonical_b0a13106ba605b3b9c7ccf8a0bda9b95",
+        "canonical_d26b14f81e8a53c7bb6bae69a3d1092e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_46bf3c6a4073acde:m87ucd20",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd20"
+      ],
+      "parent_group_id": "wave1_identity_group_46bf3c6a4073acde",
+      "recommended_anchor_canonical_object_id": "canonical_67d2e2e2919e55c3934a660327eb5601",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122941.32+123952.4",
+        "liu2015_other_name": "M87UCD20",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2abe5cb1be585c47a2cd9ae0cbef0211",
+        "canonical_4e796234c3d85c12b9c40b8c94cfd16b",
+        "canonical_8cc24e51d1d2561bbbffba0f535fa4fa",
+        "canonical_d939c83bde865371bf594a0c7b54477c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_48480cff96953d68:vucd6",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd6"
+      ],
+      "parent_group_id": "wave1_identity_group_48480cff96953d68",
+      "recommended_anchor_canonical_object_id": "canonical_4e796234c3d85c12b9c40b8c94cfd16b",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123128.36+122503.6",
+        "liu2015_other_name": "VUCD6",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_21d2a28853f25999871ab6ac3506dee4",
+        "canonical_21dfc18d16c45101882dc6815c37abfd",
+        "canonical_2a26dacc0e2d52388ae4fec501f9fda9"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_4d70847cf3932a92:m87ucd23",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd23"
+      ],
+      "parent_group_id": "wave1_identity_group_4d70847cf3932a92",
+      "recommended_anchor_canonical_object_id": "canonical_21dfc18d16c45101882dc6815c37abfd",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122941.56+124427.6",
+        "liu2015_other_name": "M87UCD23",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_056d1d5e89125d36afb9bf7dc7f93a01",
+        "canonical_152b1a17b9e45970954c28be3c923803",
+        "canonical_d26e5e04dd815d69abc6f7b995c265e7",
+        "canonical_e3b4038dbc2f55a48d37d4959558d72a"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_4eabfebd08cc4672:h55930",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h55930"
+      ],
+      "parent_group_id": "wave1_identity_group_4eabfebd08cc4672",
+      "recommended_anchor_canonical_object_id": "canonical_e3b4038dbc2f55a48d37d4959558d72a",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123033.43+122954.3",
+        "liu2015_other_name": "H55930",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_962d1538176b5c5aaf5d60b73171ee29",
+        "canonical_b2fac49b11f75a2d9908371a3264b008",
+        "canonical_d99ea910724a5f84a71603615525fdfb",
+        "canonical_e84eee64994254f48160da6a8fcc4994"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_502849424574f9f4:s1301",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1301"
+      ],
+      "parent_group_id": "wave1_identity_group_502849424574f9f4",
+      "recommended_anchor_canonical_object_id": "canonical_d99ea910724a5f84a71603615525fdfb",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123039.16+122132.5",
+        "liu2015_other_name": "S1301",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_29ed4e9371d05271b5abab729a4bc110",
+        "canonical_7eb94d5630bc533684a65a9fcc844e06",
+        "canonical_f6d314167ce357e6b57698ec42d63342",
+        "canonical_fe43cbd60c4350a6bbf87e2802bccf68"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_52f289235eb23741:h59533",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h59533"
+      ],
+      "parent_group_id": "wave1_identity_group_52f289235eb23741",
+      "recommended_anchor_canonical_object_id": "canonical_f6d314167ce357e6b57698ec42d63342",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123103.69+123213.0",
+        "liu2015_other_name": "H59533",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_15c84d99522551e097a6ca69e40d9237",
+        "canonical_d7dab84c03f8514b9d5de41fd9543aa6",
+        "canonical_ddc148df84145863818e92a683bc1f4b"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_544837752a944d11:s887",
+      "evidence_class": "brodie_identifier_corrects_fahrion_transcription",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s887"
+      ],
+      "parent_group_id": "wave1_identity_group_544837752a944d11",
+      "recommended_anchor_canonical_object_id": "canonical_ddc148df84145863818e92a683bc1f4b",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "brodie_catalog_id": "J/AJ/142/199",
+        "brodie_row": {
+          "declination_deg": 12.36544,
+          "host": "M87",
+          "identifier": "S887",
+          "log_half_light_radius_pc": 1.0,
+          "right_ascension_deg": 187.70389,
+          "source_reference": "S+11"
+        },
+        "fahrion_identifier": "S877",
+        "shared_velocity_km_s": 1811.0,
+        "zhang_ko_identifier": "S887"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0667eca626fc549fbcc5dda39adc7d39",
+        "canonical_128814db4ccf5d6785db761fecbfa1f5",
+        "canonical_8d41fe852f635d2caf7cf87f0e840003",
+        "canonical_9fccf5dfaf9253a0907d8c9c8c483e1f"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_5b5e1b77fe3c2797:vucd9",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd9"
+      ],
+      "parent_group_id": "wave1_identity_group_5b5e1b77fe3c2797",
+      "recommended_anchor_canonical_object_id": "canonical_128814db4ccf5d6785db761fecbfa1f5",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123214.58+120305.3",
+        "liu2015_other_name": "VUCD9",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_48bf4a3e0b125ff3b7d1c4aa4852b9ba",
+        "canonical_b9053c9be4ac57de9396bd39377bfc23",
+        "canonical_bf18cc22e9145664aadb9ddb7c72aa40"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_5bde03bcc240cddd:vucd2",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd2"
+      ],
+      "parent_group_id": "wave1_identity_group_5bde03bcc240cddd",
+      "recommended_anchor_canonical_object_id": "canonical_bf18cc22e9145664aadb9ddb7c72aa40",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123048.19+123510.7",
+        "liu2015_other_name": "VUCD2",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_343ddcfb97125a759a85a165a39a4c26",
+        "canonical_9079f7dac5d25a25b6a874e75a6c5fec",
+        "canonical_c7796e819f385263a257924ae8c3f52b"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_611130e1c94d9386:m87ucd7",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd7"
+      ],
+      "parent_group_id": "wave1_identity_group_611130e1c94d9386",
+      "recommended_anchor_canonical_object_id": "canonical_343ddcfb97125a759a85a165a39a4c26",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123006.06+123954.0",
+        "liu2015_other_name": "M87UCD7",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_9c3ee8f96fd25f20a4daa77b226f8bed",
+        "canonical_d70f11800bc0538c8bf43443ed527824",
+        "canonical_e410c1278a6e544fb1fadd0a23ab917c",
+        "canonical_fd9e1cc776cb526bbcb8ffdb3b8584d7"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_65f7a14740676158:s1504",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1504"
+      ],
+      "parent_group_id": "wave1_identity_group_65f7a14740676158",
+      "recommended_anchor_canonical_object_id": "canonical_d70f11800bc0538c8bf43443ed527824",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123031.53+122602.6",
+        "liu2015_other_name": "S1504",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_51a2769fa48d509397a4ef1e90c94f33",
+        "canonical_59438c3efc3658a0b21715dc56493102",
+        "canonical_8535707e8d5f53c58baff036feb460f5",
+        "canonical_e51cae89e11c5fd1978caa67ca2e6440"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_65fcd9b6a788286a:m87ucd33",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd33"
+      ],
+      "parent_group_id": "wave1_identity_group_65fcd9b6a788286a",
+      "recommended_anchor_canonical_object_id": "canonical_e51cae89e11c5fd1978caa67ca2e6440",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123214.45+120159.0",
+        "liu2015_other_name": "M87UCD33",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_3b3a4d0dc09354f7a60834774ba6f002",
+        "canonical_427a0de90b045fcf8b1553cf81c10ad9",
+        "canonical_87c6a092ce20577b98474b5f00cb4104",
+        "canonical_d79978906dbb57eba9d7babb935efb35",
+        "canonical_f5ecac0764395672a2a83a7a9d62ac36"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_665758f132bad4be:s1449",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1449"
+      ],
+      "parent_group_id": "wave1_identity_group_665758f132bad4be",
+      "recommended_anchor_canonical_object_id": "canonical_87c6a092ce20577b98474b5f00cb4104",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123034.12+122246.5",
+        "liu2015_other_name": "S1449",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_01770780de815d328a6fb6af1f9a12b3",
+        "canonical_ba61aba83d375ebd895b1e194921e6cf",
+        "canonical_d3c2003ae92a5de58d62e0152fc4b67c",
+        "canonical_fdd5c006f4a554c0b23c361c61eb1ab1"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_672003af77d5fcef:s6003",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s6003"
+      ],
+      "parent_group_id": "wave1_identity_group_672003af77d5fcef",
+      "recommended_anchor_canonical_object_id": "canonical_01770780de815d328a6fb6af1f9a12b3",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123110.14+121627.9",
+        "liu2015_other_name": "S6003",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0347e58bf794528b9a2c6be8176e3dcb",
+        "canonical_2ca635771be4594284a05f4ff43ed156",
+        "canonical_d270d436b7b65afb9f4c2b5d594b4276",
+        "canonical_d6a76b02582e5e40a5be83166242fe94"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_673d7f4d06f89b2f:m87ucd3",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd3"
+      ],
+      "parent_group_id": "wave1_identity_group_673d7f4d06f89b2f",
+      "recommended_anchor_canonical_object_id": "canonical_0347e58bf794528b9a2c6be8176e3dcb",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123020.05+115518.7",
+        "liu2015_other_name": "M87UCD3",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2060ecb6b61e5e859f9550c16b2f1aef",
+        "canonical_391f2c4c60d55e06a23971c3158bbaee",
+        "canonical_48d6628e8ef95cfdbc35ce8b467185af",
+        "canonical_621cdc1ccdaf5443aa45aa930c00c4b5"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_67b96ce1428f2d31:m87ucd34",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd34"
+      ],
+      "parent_group_id": "wave1_identity_group_67b96ce1428f2d31",
+      "recommended_anchor_canonical_object_id": "canonical_391f2c4c60d55e06a23971c3158bbaee",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122914.87+115343.8",
+        "liu2015_other_name": "M87UCD34",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_08ffea57933350af84e7a47df2a1954e",
+        "canonical_68d4a4e3b1ba527cabe1339afc204b99",
+        "canonical_7ec217f31cdf5c288d7d8836544f6d74",
+        "canonical_d8a6dd25bd375fbf85e5dab4ed446f82"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_69e79f852bd4f200:h18539",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h18539"
+      ],
+      "parent_group_id": "wave1_identity_group_69e79f852bd4f200",
+      "recommended_anchor_canonical_object_id": "canonical_7ec217f31cdf5c288d7d8836544f6d74",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123004.05+120714.0",
+        "liu2015_other_name": "H18539",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_039cdddfc1aa56bcbf26e6edd2cd8d53",
+        "canonical_09202a7ed7405823b640dcf60a34aa60",
+        "canonical_6726797622f55949a8a4080cd09a2c10",
+        "canonical_6aeda5a94027569794b57b98d72bc1d1"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_6d58a77c5c583501:f16",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "f16"
+      ],
+      "parent_group_id": "wave1_identity_group_6d58a77c5c583501",
+      "recommended_anchor_canonical_object_id": "canonical_6aeda5a94027569794b57b98d72bc1d1",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123329.47+121017.4",
+        "liu2015_other_name": "F16",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_14916df2077e5955af829396f537dd30",
+        "canonical_96f9c1c77209599db2fb13670e6912f9",
+        "canonical_cab4d93028155d1ca4ff532fc5e0eb08"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_708a317b8f8a061e:s1631",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1631"
+      ],
+      "parent_group_id": "wave1_identity_group_708a317b8f8a061e",
+      "recommended_anchor_canonical_object_id": "canonical_14916df2077e5955af829396f537dd30",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123025.75+122621.1",
+        "liu2015_other_name": "S1631",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0caa454f68325ff39d54d70d28c888da",
+        "canonical_2007b543659856b0b692d934ca387772",
+        "canonical_d87b8cd0b3435140aa1345ecdd023f8d"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_7181bfe2e323851b:vucd5",
+      "evidence_class": "published_identifier_with_independent_or_weighted_velocity_measurements",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd5"
+      ],
+      "parent_group_id": "wave1_identity_group_7181bfe2e323851b",
+      "recommended_anchor_canonical_object_id": "canonical_2007b543659856b0b692d934ca387772",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "liu2020_velocity_treatment": "heliocentric radial velocity or weighted mean when multiple measurements are available",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019",
+        "velocity_spread_km_s": 2.0
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_5f13d0e4df6b555988b1a7dce9850d1c",
+        "canonical_5f4934c299275efca44caa9e493d8ead",
+        "canonical_6e01c2c496a35413b4d15758d6ef1c3c",
+        "canonical_a88f67f2bfa554fcad0c681d6ef369dd",
+        "canonical_bf32f92666b452bcb9161a8e08df3706"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_784b93560cdb2b10:h27916",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h27916"
+      ],
+      "parent_group_id": "wave1_identity_group_784b93560cdb2b10",
+      "recommended_anchor_canonical_object_id": "canonical_5f4934c299275efca44caa9e493d8ead",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123051.65+121409.9",
+        "liu2015_other_name": "H27916",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_3255ebc4e3f75130b277a727179c7bfd",
+        "canonical_3b24a7b98b4f5d3cb47d32adf81a7108",
+        "canonical_5b9d26da2d335105aeac6e82bee52d59",
+        "canonical_8a793bc0730e543d8f4d27e71d6ab218",
+        "canonical_ba89609f3a79521eab39414dfed82b5c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_78f765494266b79e:m87ucd32",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd32"
+      ],
+      "parent_group_id": "wave1_identity_group_78f765494266b79e",
+      "recommended_anchor_canonical_object_id": "canonical_5b9d26da2d335105aeac6e82bee52d59",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123125.25+121931.8",
+        "liu2015_other_name": "M87UCD32",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_329845a99093531798682f8fdc1ef387",
+        "canonical_51f9a72a79ce5a65ac634f41ade5a673",
+        "canonical_9ab1f0f7a51556959c9e349a6c0125c0",
+        "canonical_b4b7d17ace1956b6b5d95b5cce0e70c8"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_7af81d97ac3158d2:m87ucd28",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd28"
+      ],
+      "parent_group_id": "wave1_identity_group_7af81d97ac3158d2",
+      "recommended_anchor_canonical_object_id": "canonical_51f9a72a79ce5a65ac634f41ade5a673",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123006.13+122435.3",
+        "liu2015_other_name": "M87UCD28",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_6386a42b0242566583c9ffe4727afba7",
+        "canonical_9060bf057be85ab0a979f83ab707e5e3",
+        "canonical_94547b19d4ba58f3a0f7f90f9d586f04",
+        "canonical_b36bb00a7553543a9c518376b48a967d"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_7cf14c9f50dec3e7:s1617",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1617"
+      ],
+      "parent_group_id": "wave1_identity_group_7cf14c9f50dec3e7",
+      "recommended_anchor_canonical_object_id": "canonical_6386a42b0242566583c9ffe4727afba7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123026.89+122331.1",
+        "liu2015_other_name": "S1617",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0357f52da5dd5e5eac9acdf13a1bd1bf",
+        "canonical_d83ff433b0245cbf8941e409d930b9ee",
+        "canonical_e53e98f4899e5db4b3fbed1037ece399",
+        "canonical_eb26e12f2bbe525a907ebd3176a92b4d"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_7d6e65896cdf4b50:m87ucd17",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd17"
+      ],
+      "parent_group_id": "wave1_identity_group_7d6e65896cdf4b50",
+      "recommended_anchor_canonical_object_id": "canonical_d83ff433b0245cbf8941e409d930b9ee",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123135.13+123459.4",
+        "liu2015_other_name": "M87UCD17",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_5dd66e65bf1559b59f008dc61af87903",
+        "canonical_7f46d3c04faf5117be4bddb5ea62bde8",
+        "canonical_912669ff330254a9b31a2b43b9ecf2d7",
+        "canonical_a149301329dc5e26932aa89aa756a456"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_818a2e6829deb3e1:s796",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s796"
+      ],
+      "parent_group_id": "wave1_identity_group_818a2e6829deb3e1",
+      "recommended_anchor_canonical_object_id": "canonical_7f46d3c04faf5117be4bddb5ea62bde8",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123051.75+122053.3",
+        "liu2015_other_name": "S796",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_050b8ca7ab065a0681a33042c9409cbf",
+        "canonical_2cc90eb4b75d58b48b9dd8ef8c96f481",
+        "canonical_6d3a238ae7c151699d6666f204250ba7",
+        "canonical_e8ef688816635fff857a101993bc652e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_83c5434ef8504870:m87ucd9",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd9"
+      ],
+      "parent_group_id": "wave1_identity_group_83c5434ef8504870",
+      "recommended_anchor_canonical_object_id": "canonical_e8ef688816635fff857a101993bc652e",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123022.97+123148.7",
+        "liu2015_other_name": "M87UCD9",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_38213a1da74f5450b5af4b0c9ba0caf0",
+        "canonical_a2aaf3bb19a75aae9af53380ca5f71b4",
+        "canonical_aae1f0eee0f65e04ad08bd3be4cc8f12"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_863690bfc8431ff2:m87ucd8",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd8"
+      ],
+      "parent_group_id": "wave1_identity_group_863690bfc8431ff2",
+      "recommended_anchor_canonical_object_id": "canonical_38213a1da74f5450b5af4b0c9ba0caf0",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122945.26+125100.9",
+        "liu2015_other_name": "M87UCD8",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2e6ee54e3e6e5ce9b2e439f03a881bf3",
+        "canonical_3fcfb5e47c2e59cfa89588d04318e582",
+        "canonical_5c026bbfdb605ffd83f5d7fd8db746fd",
+        "canonical_855a75e7f20459668a2ab7400ff8b1bd"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_87914d1e913296ec:h20718",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h20718"
+      ],
+      "parent_group_id": "wave1_identity_group_87914d1e913296ec",
+      "recommended_anchor_canonical_object_id": "canonical_3fcfb5e47c2e59cfa89588d04318e582",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123019.63+120924.6",
+        "liu2015_other_name": "H20718",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_081aa023af9c5df5899d55f1b9ddd62c",
+        "canonical_7c1dbebdf62c5969a317ac079649e957",
+        "canonical_e7904afc3b125cf28aafd051102170f8",
+        "canonical_fe91643e4e05532092b9bf4a8a712bf7"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_8871ff9648c4f82e:vucd7",
+      "evidence_class": "published_identifier_with_independent_or_weighted_velocity_measurements",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd7"
+      ],
+      "parent_group_id": "wave1_identity_group_8871ff9648c4f82e",
+      "recommended_anchor_canonical_object_id": "canonical_081aa023af9c5df5899d55f1b9ddd62c",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "liu2020_velocity_treatment": "heliocentric radial velocity or weighted mean when multiple measurements are available",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019",
+        "velocity_spread_km_s": 5.0
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_3e086227b64a50a1be57dd25cd24f9e8",
+        "canonical_8edb218593b8534e8cd33b3ac4947f1c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_9367531187535d8a:s547",
+      "evidence_class": "published_identifier_with_reviewed_close_pair_split",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s547"
+      ],
+      "parent_group_id": "wave1_identity_group_9367531187535d8a",
+      "recommended_anchor_canonical_object_id": "canonical_8edb218593b8534e8cd33b3ac4947f1c",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [
+        "vucd3"
+      ],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "gaia_dr3_id": "3907709993504135680",
+        "separate_object_rationale": "Fahrion table B1 preserves S547 and VUCD3 as separate M87 objects with a 0.412226650676-arcsecond separation, different literature references, different magnitudes, and different effective sizes. Gaia and the DR10 viewer image do not resolve the close pair reliably, so their shared Gaia source is ambiguous evidence rather than an identity equivalence.",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_655a7981b52a5bf380a07d34c637fae5",
+        "canonical_d4b3c9c5edc056809cdf4c7b58daf87b"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_9367531187535d8a:vucd3",
+      "evidence_class": "published_identifier_with_reviewed_close_pair_split",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd3"
+      ],
+      "parent_group_id": "wave1_identity_group_9367531187535d8a",
+      "recommended_anchor_canonical_object_id": "canonical_655a7981b52a5bf380a07d34c637fae5",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [
+        "s547"
+      ],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "gaia_dr3_id": "3907709993504135680",
+        "separate_object_rationale": "Fahrion table B1 preserves S547 and VUCD3 as separate M87 objects with a 0.412226650676-arcsecond separation, different literature references, different magnitudes, and different effective sizes. Gaia and the DR10 viewer image do not resolve the close pair reliably, so their shared Gaia source is ambiguous evidence rather than an identity equivalence.",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1280a445d2e85c438663349d69d64fd9",
+        "canonical_2cc51ebb0b5751638b78806ce3c11ccd",
+        "canonical_742fa6455ebc5ed2899ee06c475e5a10",
+        "canonical_ef4a4ec9a4b9599da1a580dd74ace1b3"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_9524011721796da3:vucd10",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd10"
+      ],
+      "parent_group_id": "wave1_identity_group_9524011721796da3",
+      "recommended_anchor_canonical_object_id": "canonical_ef4a4ec9a4b9599da1a580dd74ace1b3",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123030.86+121841.7",
+        "liu2015_other_name": "VUCD10",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_5443d40694b5596db8b428d7d950d268",
+        "canonical_9ee1e75e3d655be2ae920db140c0c513",
+        "canonical_ccdbd5355b28599a89e8c9e310ddab89",
+        "canonical_fecc37744918529fae183be74c9110b9"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_9b5926cbb9a1888d:m87ucd29",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd29"
+      ],
+      "parent_group_id": "wave1_identity_group_9b5926cbb9a1888d",
+      "recommended_anchor_canonical_object_id": "canonical_fecc37744918529fae183be74c9110b9",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122806.62+122436.4",
+        "liu2015_other_name": "M87UCD29",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_480b0321e2b150e3be3883e0c9ae00f6",
+        "canonical_f8f4c66fa97d570880630e94669c5450",
+        "canonical_f9b774ca5fb85815acbc08c8097f7f2e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_a5a94d21f911bcf6:m87ucd6",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd6"
+      ],
+      "parent_group_id": "wave1_identity_group_a5a94d21f911bcf6",
+      "recommended_anchor_canonical_object_id": "canonical_480b0321e2b150e3be3883e0c9ae00f6",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123002.46+123633.8",
+        "liu2015_other_name": "M87UCD6",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_5e13e19af4be5fe8b7e8c31fa8d5ee2a",
+        "canonical_9f3801896d8a573dae904c636b68fec0",
+        "canonical_cf21185354c0570ba1655eddfe9c4fed"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_a77810f89e26c78b:f6",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "f6"
+      ],
+      "parent_group_id": "wave1_identity_group_a77810f89e26c78b",
+      "recommended_anchor_canonical_object_id": "canonical_5e13e19af4be5fe8b7e8c31fa8d5ee2a",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123047.40+123301.7",
+        "liu2015_other_name": "F6",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_30c07b04d6c258beb63e3746c8b4d951",
+        "canonical_4ab8e2da2a4c5b7da4ac10959c96b268",
+        "canonical_6f670944673b5f92a0ed84a420ea9a5e",
+        "canonical_d0642642441f54c19ad3443297b49202"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_aa64eb765f9196e0:m87ucd18",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd18"
+      ],
+      "parent_group_id": "wave1_identity_group_aa64eb765f9196e0",
+      "recommended_anchor_canonical_object_id": "canonical_4ab8e2da2a4c5b7da4ac10959c96b268",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123124.75+122525.8",
+        "liu2015_other_name": "M87UCD18",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0c1fe697387a53f9bf0e637854f6b200",
+        "canonical_3ef60be7d23059848a016fba860d115b",
+        "canonical_87f81c1d47c851df8a7fc3084787febb"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_abcdba563fc29253:m87ucd14",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd14"
+      ],
+      "parent_group_id": "wave1_identity_group_abcdba563fc29253",
+      "recommended_anchor_canonical_object_id": "canonical_87f81c1d47c851df8a7fc3084787febb",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123104.35+131042.5",
+        "liu2015_other_name": "M87UCD14",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_93a07e7a087b56f780539ea5644b0f6e",
+        "canonical_ee84200092de562c92161235adcc02b6",
+        "canonical_f43245c21e1752b8865e3d9c8721d0ec",
+        "canonical_fb449577adbd59d58ce166c47b24ed6d"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_b0ababafe7f97d46:s417",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s417"
+      ],
+      "parent_group_id": "wave1_identity_group_b0ababafe7f97d46",
+      "recommended_anchor_canonical_object_id": "canonical_ee84200092de562c92161235adcc02b6",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123101.47+121924.5",
+        "liu2015_other_name": "S417",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_5aca13ed30285f06ac33c45140c6fc67",
+        "canonical_643d78ab6f7b510ba6fd5c3a8fedcee5",
+        "canonical_7d71fb31be51503894b10eb1ae59c299",
+        "canonical_f853bc629052518da9d92b5a81fea313"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_b30e167807289bb4:m87ucd4",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd4"
+      ],
+      "parent_group_id": "wave1_identity_group_b30e167807289bb4",
+      "recommended_anchor_canonical_object_id": "canonical_5aca13ed30285f06ac33c45140c6fc67",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123021.83+122402.4",
+        "liu2015_other_name": "M87UCD4",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_27f0f9a463245d3492982046844750ae",
+        "canonical_3989f94081ab54a08d3f66999a54a366",
+        "canonical_46743e847cb152a9b040ddc5a2e92ecc",
+        "canonical_7d3f36cd33db5620b42290628f56c432",
+        "canonical_f62104d301345bc897a00088f3300166"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_b6b4565b4f5f4d88:s41",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s41"
+      ],
+      "parent_group_id": "wave1_identity_group_b6b4565b4f5f4d88",
+      "recommended_anchor_canonical_object_id": "canonical_27f0f9a463245d3492982046844750ae",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123116.32+121845.4",
+        "liu2015_other_name": "S41",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_275a7b65b40b577ab716602fb417dd5a",
+        "canonical_3a66fa20fee65c21997ddc8e370207d8",
+        "canonical_615d472e865855d289e06268b8e60e85",
+        "canonical_803d1cd446805ac0a788743a77873dd6"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_bce370eaec084e0b:s804",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s804"
+      ],
+      "parent_group_id": "wave1_identity_group_bce370eaec084e0b",
+      "recommended_anchor_canonical_object_id": "canonical_615d472e865855d289e06268b8e60e85",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123051.07+122611.9",
+        "liu2015_other_name": "S804",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_300c54ffbd6357188990cbdf891c95c4",
+        "canonical_902226d027135263aca597ab414d2881",
+        "canonical_d5f2b522141055ffae9b1e8e7a872b64",
+        "canonical_dc35d134476850a7810cefcce43a5562"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_bd02630e300c8997:m87ucd19",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd19"
+      ],
+      "parent_group_id": "wave1_identity_group_bd02630e300c8997",
+      "recommended_anchor_canonical_object_id": "canonical_dc35d134476850a7810cefcce43a5562",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123157.60+124929.6",
+        "liu2015_other_name": "M87UCD19",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_4256644f328b544491248ebae77b385c",
+        "canonical_74cb1341a9cf5defba0814be4143ef9d",
+        "canonical_756841ee5e79551395eb679fd0d92592",
+        "canonical_bf9fd10c3c7f53a7943379e4d4c7bf6e",
+        "canonical_e1c64e07ff8e5f1e9cc635889c0da545"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_bdad62375bfbd496:h51655",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h51655"
+      ],
+      "parent_group_id": "wave1_identity_group_bdad62375bfbd496",
+      "recommended_anchor_canonical_object_id": "canonical_4256644f328b544491248ebae77b385c",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123145.95+122721.1",
+        "liu2015_other_name": "H51655",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_64e8273d913459b8b4d700f85c403276",
+        "canonical_699682c90abb5a65a3ecb58810191db0",
+        "canonical_8ef32519344b5338b167846ab409e4ef",
+        "canonical_94e5301d69cc5c0fa22b609529612027"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_beb7516a440abc7e:s5065",
+      "evidence_class": "published_identifier_with_independent_or_weighted_velocity_measurements",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s5065"
+      ],
+      "parent_group_id": "wave1_identity_group_beb7516a440abc7e",
+      "recommended_anchor_canonical_object_id": "canonical_64e8273d913459b8b4d700f85c403276",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "liu2020_velocity_treatment": "heliocentric radial velocity or weighted mean when multiple measurements are available",
+        "source_rows": "Zhang 2015, Ko 2017, Liu 2020, and Fahrion 2019",
+        "velocity_spread_km_s": 62.0
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_558e92086391567093287aae7f1f8e83",
+        "canonical_59601a7181bd572c821111a736005c57",
+        "canonical_ca977222f8075660a7df42a1999b6d44",
+        "canonical_e2b76970494f548bb0ccb4cdaf2b5f35"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_c0ac38f8ea4f7d6f:m87ucd30",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd30"
+      ],
+      "parent_group_id": "wave1_identity_group_c0ac38f8ea4f7d6f",
+      "recommended_anchor_canonical_object_id": "canonical_558e92086391567093287aae7f1f8e83",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122837.21+122845.6",
+        "liu2015_other_name": "M87UCD30",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_6366a42416c05105a41648ae7d9818bd",
+        "canonical_80cc1231bf895ddcb5050862762e2c96",
+        "canonical_bd6578f9b1a85a94a5ff201dd06ff724"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_c0f8de61d9a2d2d9:m87ucd35",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd35"
+      ],
+      "parent_group_id": "wave1_identity_group_c0f8de61d9a2d2d9",
+      "recommended_anchor_canonical_object_id": "canonical_bd6578f9b1a85a94a5ff201dd06ff724",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123223.49+115755.0",
+        "liu2015_other_name": "M87UCD35",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_00bf317f8c365f65bbe8644aeb41b6f1",
+        "canonical_053e0c05f00259e8bf8967ff04df343f",
+        "canonical_5f645dcf39a052ec9f072b37d1b5754d",
+        "canonical_7c20d6c0f8a653dfbea73fd04dfbad1e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_c17895f61bf27fa0:m87ucd2",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd2"
+      ],
+      "parent_group_id": "wave1_identity_group_c17895f61bf27fa0",
+      "recommended_anchor_canonical_object_id": "canonical_7c20d6c0f8a653dfbea73fd04dfbad1e",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123047.66+120825.2",
+        "liu2015_other_name": "M87UCD2",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_41f7a299429c55b1b31f6be81f857e92",
+        "canonical_632b69f68b3d5acfa30889f4ed3c76ae",
+        "canonical_782e1d99f75653fab730699742dcf1e7",
+        "canonical_a408002dba7550b1b0673a19dda10ed2",
+        "canonical_c326ce839a5d54e1994d601703588375"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_c2cb288625b1e5b5:s323",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s323"
+      ],
+      "parent_group_id": "wave1_identity_group_c2cb288625b1e5b5",
+      "recommended_anchor_canonical_object_id": "canonical_41f7a299429c55b1b31f6be81f857e92",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123104.43+122321.2",
+        "liu2015_other_name": "S323",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_199c5b7bf6a0525e8fe97ece2c728f4b",
+        "canonical_3c11e9ea599456beb64a58bb2a8653b7",
+        "canonical_cb8143b35f855dfeb283fa0258d7d4b6"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_c7ee79c57f0576a4:t15886",
+      "evidence_class": "brodie_cross_catalog_position_velocity_size_identity",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "t15886"
+      ],
+      "parent_group_id": "wave1_identity_group_c7ee79c57f0576a4",
+      "recommended_anchor_canonical_object_id": "canonical_3c11e9ea599456beb64a58bb2a8653b7",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "brodie_catalog_id": "J/AJ/142/199",
+        "brodie_identifier": "H39168",
+        "brodie_row": {
+          "declination_deg": 12.34919,
+          "host": "M87",
+          "identifier": "H39168",
+          "log_half_light_radius_pc": 1.041,
+          "right_ascension_deg": 188.152,
+          "source_reference": "S+11"
+        },
+        "shared_half_light_radius_pc": 11.0,
+        "shared_velocity_km_s": 1349.0,
+        "zhang_ko_identifier": "T15886"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_1249f7e7646f5abea7ccd2bccb95b968",
+        "canonical_40c3cc4cb49f577eba40e57c4711405e",
+        "canonical_9a0487da4b225949b8e6dee80b20c1fb",
+        "canonical_a14a443b8dae559abf2d89751872981f"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_cc5c54deb469faba:h65115",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h65115"
+      ],
+      "parent_group_id": "wave1_identity_group_cc5c54deb469faba",
+      "recommended_anchor_canonical_object_id": "canonical_40c3cc4cb49f577eba40e57c4711405e",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122957.12+123602.9",
+        "liu2015_other_name": "H65115",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2352624abfdd50e992382ff3b634283c",
+        "canonical_271f8712ab555264b76020ce5d240f25",
+        "canonical_3f31866a93f45907898e426903b4abf7",
+        "canonical_e71297f0d912504ab207377c9786c0bc"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_cf0a0b39bd75898a:s1629",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1629"
+      ],
+      "parent_group_id": "wave1_identity_group_cf0a0b39bd75898a",
+      "recommended_anchor_canonical_object_id": "canonical_271f8712ab555264b76020ce5d240f25",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123026.56+122044.6",
+        "liu2015_other_name": "S1629",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_02080de9d5a45d61a950404c6e5991e0",
+        "canonical_5dbb4f2bd39557d3849d35e4294056ba",
+        "canonical_d29555c6fa9a5cad9eedbb4e9cef3785",
+        "canonical_e91ccfb9a7395169b7953aa4a688f507"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_e2ff31aa760f747e:m87ucd36",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd36"
+      ],
+      "parent_group_id": "wave1_identity_group_e2ff31aa760f747e",
+      "recommended_anchor_canonical_object_id": "canonical_d29555c6fa9a5cad9eedbb4e9cef3785",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123111.31+123001.0",
+        "liu2015_other_name": "M87UCD36",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_2a6c40a0beaf595184d795da84869bdb",
+        "canonical_8992a53d40ae58bab87f66a15a42818f",
+        "canonical_8b651d323d285d92a9a00237e7cbaa4c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_e3f6c11063b5d208:vucd1",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd1"
+      ],
+      "parent_group_id": "wave1_identity_group_e3f6c11063b5d208",
+      "recommended_anchor_canonical_object_id": "canonical_8b651d323d285d92a9a00237e7cbaa4c",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123007.57+123631.0",
+        "liu2015_other_name": "VUCD1",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_106675addd955a86bf5cee888b72716a",
+        "canonical_25c7bb0ffe135a5fa2ef1da9ecf8c25f",
+        "canonical_32ed3bd95f8c5f90a4a9439a13b2051d",
+        "canonical_8f980d837a9d53f8b749f9f362e9982e"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_eba471063fc65965:h24581",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h24581"
+      ],
+      "parent_group_id": "wave1_identity_group_eba471063fc65965",
+      "recommended_anchor_canonical_object_id": "canonical_8f980d837a9d53f8b749f9f362e9982e",
+      "recommended_classification_treatment": "uncertain_reported_ucd_role_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123120.00+121158.1",
+        "liu2015_other_name": "H24581",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_0c1b6a53486f537bb0a77352a7ad3712",
+        "canonical_99c19cd888f55194aae61d993ebb0103",
+        "canonical_da817cbc3721586abd9e5c83ee04711c"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_efac2e5a1510e863:m87ucd16",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd16"
+      ],
+      "parent_group_id": "wave1_identity_group_efac2e5a1510e863",
+      "recommended_anchor_canonical_object_id": "canonical_da817cbc3721586abd9e5c83ee04711c",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123131.70+124130.4",
+        "liu2015_other_name": "M87UCD16",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_4fe99cd9008f54529430c96a858283c4",
+        "canonical_9232545333525b8eab69cb7aa5b64d16",
+        "canonical_d7ae5285de7056cdb6ed7c997fa814f5"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_f12d6c00156f99ed:m87ucd24",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd24"
+      ],
+      "parent_group_id": "wave1_identity_group_f12d6c00156f99ed",
+      "recommended_anchor_canonical_object_id": "canonical_d7ae5285de7056cdb6ed7c997fa814f5",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122910.66+124304.1",
+        "liu2015_other_name": "M87UCD24",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_7b1b93b4c5445de583e9337e93350cea",
+        "canonical_8b536eea08d15f0ea0307ca0342d57fe",
+        "canonical_b82c5d9764d45f21ad9dcdadec6d7b51"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_f38a482213cdbee3:m87ucd5",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd5"
+      ],
+      "parent_group_id": "wave1_identity_group_f38a482213cdbee3",
+      "recommended_anchor_canonical_object_id": "canonical_b82c5d9764d45f21ad9dcdadec6d7b51",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J122940.39+122728.1",
+        "liu2015_other_name": "M87UCD5",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_621ea285cca65068a0115f4c2675979d",
+        "canonical_cadf051d05355a838e43b3b873603fc2",
+        "canonical_e4164ed58d035559922971772dfef36b"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_f46d4ee41e5700f5:m87ucd13",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd13"
+      ],
+      "parent_group_id": "wave1_identity_group_f46d4ee41e5700f5",
+      "recommended_anchor_canonical_object_id": "canonical_cadf051d05355a838e43b3b873603fc2",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123049.28+123718.2",
+        "liu2015_other_name": "M87UCD13",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_49ff45a0841f5ca7a5f56622b2d91b5b",
+        "canonical_70fb9178c73d5126b5ec1a06358e9c3f",
+        "canonical_da015e42b835551086963c561957fc75"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_fb55d09b29258066:m87ucd12",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd12"
+      ],
+      "parent_group_id": "wave1_identity_group_fb55d09b29258066",
+      "recommended_anchor_canonical_object_id": "canonical_49ff45a0841f5ca7a5f56622b2d91b5b",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123031.44+125156.6",
+        "liu2015_other_name": "M87UCD12",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    },
+    {
+      "current_canonical_object_ids": [
+        "canonical_4559a0943f4f5f66ba21a60f0eb5669a",
+        "canonical_d183026f7a1852b7aad29723fb39169b",
+        "canonical_dc27c9d8cf235436bf39e50ec3e670bc",
+        "canonical_fc194f32de0e57a39fcc2e74f606dfe6"
+      ],
+      "decision": "same_astrophysical_object",
+      "decision_id": "wave1_identity_group_ff6706beff30bbeb:m87ucd21",
+      "evidence_class": "liu2015_published_alias_chain",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "m87ucd21"
+      ],
+      "parent_group_id": "wave1_identity_group_ff6706beff30bbeb",
+      "recommended_anchor_canonical_object_id": "canonical_dc27c9d8cf235436bf39e50ec3e670bc",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "retained_separate_from": [],
+      "review_status": "approved_by_project_lead_delegation_2026-07-15",
+      "source_evidence": {
+        "fahrion_reference_code": 2,
+        "fahrion_reference_meaning": "Brodie et al. 2011",
+        "liu2015_bibcode": "2015ApJ...812...34L",
+        "liu2015_ngvs_identifier": "J123137.44+121740.7",
+        "liu2015_other_name": "M87UCD21",
+        "wave_sources": "Ko 2017 direct name and/or Liu 2020 OName"
+      }
+    }
+  ],
+  "reference_database_sha256": "5852f1bb32616f45b8a2714faed797d47864381fe773a9895ba572a3392096ac",
+  "review_status": "approved_by_project_lead_delegation_2026-07-15",
+  "schema_version": 1,
+  "summary": {
+    "classification_treatment_counts": {
+      "derive_without_identity_conflict": 73,
+      "uncertain_reported_ucd_role_conflict": 7
+    },
+    "covered_current_canonical_count": 309,
+    "evidence_class_counts": {
+      "brodie_cross_catalog_position_velocity_size_identity": 1,
+      "brodie_identifier_corrects_fahrion_transcription": 1,
+      "liu2015_published_alias_chain": 72,
+      "published_identifier_with_independent_or_weighted_velocity_measurements": 4,
+      "published_identifier_with_reviewed_close_pair_split": 2
+    },
+    "input_group_count": 79,
+    "proposed_identity_count": 80,
+    "retained_final_identity_count": 80,
+    "retired_canonical_count": 229
+  }
+}

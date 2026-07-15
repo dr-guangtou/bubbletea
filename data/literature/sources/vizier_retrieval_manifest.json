@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {"bibcode": "2007A&A...472..111M", "catalog_root": "J/A+A/472/111", "reference_folder": "mieske2007", "files": ["table1.dat"]},
+    {"bibcode": "2008AJ....136.2295B", "catalog_root": "J/AJ/136/2295", "reference_folder": "blakeslee2008", "files": ["table1.dat"]},
+    {"bibcode": "2009AJ....137..498G", "catalog_root": "J/AJ/137/498", "reference_folder": "gregg2009", "files": ["table2.dat"]},
+    {"bibcode": "2011A&A...531A...4M", "catalog_root": "J/A+A/531/A4", "reference_folder": "misgeld2011", "files": ["tablea1.dat"]},
+    {"bibcode": "2011ApJ...737...86C", "catalog_root": "J/ApJ/737/86", "reference_folder": "chiboucas2011", "files": ["table2.dat", "table3.dat", "table4.dat"]},
+    {"bibcode": "2015ApJ...802...30Z", "catalog_root": "J/ApJ/802/30", "reference_folder": "zhang2015", "files": ["table1.dat"]},
+    {"bibcode": "2015ApJ...812...34L", "catalog_root": "J/ApJ/812/34", "reference_folder": "liu2015", "files": ["table2.dat", "table3.dat", "table4.dat", "table5.dat", "table6.dat", "table7.dat"]},
+    {"bibcode": "2019A&A...625A..50F", "catalog_root": "J/A+A/625/A50", "reference_folder": "fahrion2019", "files": ["tableb1.dat"]},
+    {"bibcode": "2020ApJ...899..140V", "catalog_root": "J/ApJ/899/140", "reference_folder": "voggel2020", "files": ["table2.dat", "table3.dat", "table4.dat"]},
+    {"bibcode": "2021MNRAS.504.3580S", "catalog_root": "J/MNRAS/504/3580", "reference_folder": "saifollahi2021", "files": ["tablea1.dat", "tablea5.dat", "tablea6.dat"]},
+    {"bibcode": "2022ApJ...929..147D", "catalog_root": "J/ApJ/929/147", "reference_folder": "dumont2022", "files": ["table2.dat", "table3.dat"]},
+    {"bibcode": "2016A&A...586A.102V", "catalog_root": "J/A+A/586/A102", "reference_folder": "voggel2016", "files": ["table1.dat", "tablea1.dat", "tablea2.dat"]},
+    {"bibcode": "2016MNRAS.459.4450W", "catalog_root": "J/MNRAS/459/4450", "reference_folder": "wittmann2016", "files": ["table1.dat", "table3.dat"]},
+    {"bibcode": "2017ApJ...835..212K", "catalog_root": "J/ApJ/835/212", "reference_folder": "ko2017", "files": ["table2.dat", "table3.dat", "table4.dat"]},
+    {"bibcode": "2018ApJ...858..102A", "catalog_root": "J/ApJ/858/102", "reference_folder": "ahn2018", "files": ["table3.dat"]},
+    {"bibcode": "2020ApJS..250...17L", "catalog_root": "J/ApJS/250/17", "reference_folder": "liu2020", "files": ["table3.dat", "table4.dat"]}
+  ]
+}

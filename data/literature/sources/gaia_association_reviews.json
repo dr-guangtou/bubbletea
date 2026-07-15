@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "review_date": "2026-07-15",
+  "review_id": "gaia_dr3_shared_identity_cohorts_20260715",
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "decision": "same_astrophysical_object",
+  "association_method": "approved_gaia_dr3_shared_source",
+  "review_artifact": "data/literature/validation/gaia_association_group_review.csv",
+  "review_artifact_sha256": "7573076010c5688a72812272a066b646e0136786e0804ba4748619d1c69562f8",
+  "selection_field": "recommended_action",
+  "approved_cohorts": [
+    {
+      "selection_value": "recommend_accept_shared_identity",
+      "approved_group_count": 72,
+      "classification_subtype": null
+    },
+    {
+      "selection_value": "identity_and_classification_review",
+      "approved_group_count": 14,
+      "classification_subtype": "reported_ucd_role_conflict"
+    }
+  ],
+  "historical_approved_group_count": 86,
+  "image_review_artifact": "data/literature/validation/gaia_image_ambiguity_review.csv",
+  "image_review_artifact_sha256": "d3cf2471f85facace375b83684c3808f51a73cec07afae41ffe0c6964dd3ad05",
+  "image_review_selection_field": "identity_recommendation",
+  "image_approved_selection_value": "recommend_accept_shared_identity",
+  "image_approved_group_count": 22,
+  "image_separate_selection_value": "recommend_retain_separate_shared_gaia_source",
+  "image_separate_group_count": 1,
+  "multi_position_review_artifact": "data/literature/validation/gaia_multi_position_review.csv",
+  "multi_position_review_artifact_sha256": "514d04aabb9460e8d139adf4feddbaefff502181a25710b5aa95a66d8b1971ca",
+  "multi_position_selection_field": "identity_recommendation",
+  "multi_position_approved_selection_value": "recommend_accept_multi_position_identity",
+  "multi_position_approved_group_count": 8,
+  "approved_group_count": 116,
+  "retained_review_group_count": 0,
+  "gaia_source_cache": "data/literature/sources/gaia_dr3_association_sources.csv",
+  "gaia_source_cache_sha256": "b9f727426e7addaca6188c2c8ed9c6add9649f97e5a60a98bfe5a586b82b66d2",
+  "adopted_position_rule": "literature_coordinate_nearest_authoritative_gaia_dr3_position",
+  "retired_identifier_rule": "retain_every_merged_canonical_identifier_as_an_alias",
+  "separate_shared_source_evidence_type": "ambiguous_shared_gaia_dr3",
+  "separate_shared_source_evidence_value": "distinct_close_pair_shared_unresolved_source",
+  "supplemental_identity_associations": [
+    {
+      "object_name": "S547",
+      "source_bibcode": "2015ApJ...802...30Z",
+      "target_bibcode": "2019A&A...625A..50F",
+      "maximum_separation_arcsec": 0.1,
+      "association_method": "approved_s547_name_and_spherical_match",
+      "evidence_type": "identity_name_and_spherical_match",
+      "evidence_value": "same_astrophysical_object",
+      "review_status": "approved_by_project_lead_2026-07-14",
+      "rationale": "The Zhang and Fahrion records have the identical name S547, a measured spherical separation of 0.058627924650 arcseconds, consistent velocity and size information, and refer to the same M87 compact stellar system."
+    }
+  ],
+  "rationale": "The 72 clean groups, 14 separately approved role-conflict groups, and 22 image-reviewed groups retain their prior treatment. Source-table, alias, velocity, structural, and ADS review approves the final eight three-position identities while preserving the F-6 velocity tension and duplicate Saifollahi rows as provenance. S547 and VUCD3 remain separate canonical objects because their source table records different references, magnitudes, effective sizes, and positions, while the single Gaia source is retained as ambiguous close-pair evidence for both. No shared-Gaia identity proposals remain."
+}

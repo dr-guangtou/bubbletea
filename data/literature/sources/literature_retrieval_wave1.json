@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "approval_date": "2026-07-15",
+  "approval_scope": "high_priority_nearby_reference_and_confirmation_sources",
+  "minimum_request_interval_seconds": 3,
+  "maximum_pdf_bytes": 52428800,
+  "maximum_supplementary_file_bytes": 10485760,
+  "sources": [
+    {
+      "bibcode": "2015ApJ...812L...2L",
+      "doi": "10.1088/2041-8205/812/1/L2",
+      "arxiv_id": "1508.07373",
+      "reference_folder": "liu2015b",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2015MNRAS.449.1716J",
+      "doi": "10.1093/mnras/stv389",
+      "arxiv_id": "1502.06598",
+      "reference_folder": "janz2015",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2015MNRAS.451.3615N",
+      "doi": "10.1093/mnras/stv1221",
+      "arxiv_id": "1506.00004",
+      "reference_folder": "norris2015",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2016A&A...586A.102V",
+      "doi": "10.1051/0004-6361/201527070",
+      "arxiv_id": "1510.05010",
+      "reference_folder": "voggel2016",
+      "screening_category": "nearby_reference_data",
+      "vizier_catalog": "J/A+A/586/A102"
+    },
+    {
+      "bibcode": "2016MNRAS.459.4450W",
+      "doi": "10.1093/mnras/stw827",
+      "arxiv_id": "1605.01261",
+      "reference_folder": "wittmann2016",
+      "screening_category": "nearby_reference_data",
+      "vizier_catalog": "J/MNRAS/459/4450"
+    },
+    {
+      "bibcode": "2017A&A...599L...8F",
+      "doi": "10.1051/0004-6361/201730493",
+      "arxiv_id": "1702.06472",
+      "reference_folder": "faifer2017",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2017ApJ...835..212K",
+      "doi": "10.3847/1538-4357/835/2/212",
+      "arxiv_id": "1612.04393",
+      "reference_folder": "ko2017",
+      "screening_category": "nearby_reference_data",
+      "vizier_catalog": "J/ApJ/835/212"
+    },
+    {
+      "bibcode": "2017ApJ...839...72A",
+      "doi": "10.3847/1538-4357/aa6972",
+      "arxiv_id": "1703.09221",
+      "reference_folder": "ahn2017",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2018ApJ...853...54S",
+      "doi": "10.3847/1538-4357/aaa424",
+      "arxiv_id": "1801.07254",
+      "reference_folder": "schweizer2018",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2018ApJ...858...20V",
+      "doi": "10.3847/1538-4357/aabae5",
+      "arxiv_id": "1803.09750",
+      "reference_folder": "voggel2018",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2018ApJ...858...37Z",
+      "doi": "10.3847/1538-4357/aab88a",
+      "arxiv_id": "1803.07577",
+      "reference_folder": "zhang2018",
+      "screening_category": "nearby_reference_data"
+    },
+    {
+      "bibcode": "2018ApJ...858..102A",
+      "doi": "10.3847/1538-4357/aabc57",
+      "arxiv_id": "1804.02399",
+      "reference_folder": "ahn2018",
+      "screening_category": "nearby_confirmation_data",
+      "vizier_catalog": "J/ApJ/858/102"
+    },
+    {
+      "bibcode": "2018MNRAS.477.4856A",
+      "doi": "10.1093/mnras/sty913",
+      "arxiv_id": "1804.02938",
+      "reference_folder": "afanasiev2018",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2020ApJS..250...17L",
+      "doi": "10.3847/1538-4365/abad91",
+      "arxiv_id": "2007.15275",
+      "reference_folder": "liu2020",
+      "screening_category": "nearby_reference_data",
+      "vizier_catalog": "J/ApJS/250/17"
+    },
+    {
+      "bibcode": "2023MNRAS.526L.136P",
+      "doi": "10.1093/mnrasl/slad126",
+      "arxiv_id": "2309.08098",
+      "reference_folder": "paudel2023",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2023Natur.623..296W",
+      "doi": "10.1038/s41586-023-06650-z",
+      "arxiv_id": "2311.05448",
+      "reference_folder": "wang2023b",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [
+        {
+          "file_name": "source_data_figure_2.xlsx",
+          "source_label": "Source Data Fig. 2",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM2_ESM.xlsx"
+        },
+        {
+          "file_name": "source_data_figure_3.xlsx",
+          "source_label": "Source Data Fig. 3",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM3_ESM.xlsx"
+        },
+        {
+          "file_name": "source_data_extended_figure_6.xlsx",
+          "source_label": "Source Data Extended Data Fig. 6",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM4_ESM.xlsx"
+        },
+        {
+          "file_name": "source_data_extended_figure_7.xlsx",
+          "source_label": "Source Data Extended Data Fig. 7",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM5_ESM.xlsx"
+        }
+      ]
+    },
+    {
+      "bibcode": "2025ApJ...991L..24T",
+      "doi": "10.3847/2041-8213/ae028e",
+      "arxiv_id": "2503.00113",
+      "reference_folder": "taylor2025",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2026A&A...708A.172M",
+      "doi": "10.1051/0004-6361/202557294",
+      "arxiv_id": "2509.14038",
+      "reference_folder": "martinez_delgado2026",
+      "screening_category": "nearby_confirmation_data"
+    },
+    {
+      "bibcode": "2026ApJS..285...27W",
+      "doi": "10.3847/1538-4365/ae5231",
+      "pdf_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ae5231/pdf",
+      "reference_folder": "wang2026",
+      "screening_category": "nearby_reference_data"
+    }
+  ]
+}

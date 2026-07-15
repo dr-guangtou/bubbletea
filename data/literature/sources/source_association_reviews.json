@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-07-14",
+  "reviews": [
+    {
+      "review_id": "voggel_t17_1596_fahrion_hhh86_c15",
+      "review_status": "approved_by_project_lead_evidence_review_2026-07-14",
+      "source_bibcode": "2020ApJ...899..140V",
+      "source_table": "table4.dat",
+      "source_name": "T17-1596",
+      "source_ra": 201.376623,
+      "source_dec": -43.197138,
+      "target_bibcode": "2019A&A...625A..50F",
+      "target_name": "HHH86-C15",
+      "target_ra": 201.37645833333332,
+      "target_dec": -43.196777777777775,
+      "separation_arcsec": 1.3669116457624286,
+      "decision": "same_astrophysical_object",
+      "association_method": "approved_alias_and_spherical_match",
+      "evidence": [
+        {
+          "catalog_id": "J/MNRAS/469/3444",
+          "table": "table4.dat",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/469/3444/table4.dat",
+          "evidence_value": "T17-1596 has oldID GC0218 at 13 25 30.41 -43 11 49.60"
+        },
+        {
+          "catalog_id": "J/AJ/134/494",
+          "table": "table1.dat",
+          "source_url": "https://cdsarc.cds.unistra.fr/ftp/J/AJ/134/494/table1.dat",
+          "evidence_value": "GC0218 has old name HHH86-15/C15/R226 at the Taylor position and radial velocity 644 km/s"
+        },
+        {
+          "catalog_id": "J/A+A/625/A50",
+          "table": "tableb1.dat",
+          "local_path": "reference/fahrion2019/tableb1.dat",
+          "evidence_value": "HHH86-C15 has radial velocity 644 km/s at the older reported position"
+        },
+        {
+          "catalog_id": "J/ApJ/899/140",
+          "table": "table4.dat",
+          "local_path": "reference/voggel2020/table4.dat",
+          "evidence_value": "T17-1596 is included in the previously confirmed completeness sample"
+        }
+      ],
+      "rationale": "The Taylor and Woodley cross-identifications explicitly connect T17-1596 to GC0218 and GC0218 to HHH86-C15; the matching 644 km/s velocity confirms that the 1.37 arcsecond offset reflects catalog astrometry rather than a second object."
+    }
+  ]
+}

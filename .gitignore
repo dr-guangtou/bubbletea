@@ -35,6 +35,10 @@ venv/
 *.sqlite3
 data/external/
 
+# Verified reference PDFs larger than the 10 MB commit limit
+reference/saifollahi2021/saifollahi2021.pdf
+reference/wang2026/wang2026.pdf
+
 # Jupyter
 .ipynb_checkpoints/
 

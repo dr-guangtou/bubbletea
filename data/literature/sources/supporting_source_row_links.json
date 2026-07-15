@@ -1,0 +1,2983 @@
+{
+  "audit_date": "2026-07-15",
+  "classification_changes_authorized": false,
+  "confirmation_changes_authorized": false,
+  "identity_changes_authorized": false,
+  "links": [
+    {
+      "canonical_object_id": "canonical_f1a4ce652f03509eb9854bdb66077816",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1039188",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1039188,
+        "Imag": 21.97,
+        "Mod": 100,
+        "ReGAL": 25.6,
+        "ReISH": 26.4,
+        "b/a": 0.89,
+        "b/aISH": 0.88,
+        "e_ReGAL": 4.2,
+        "e_ReISH": 6.0,
+        "f_ID": null,
+        "n": 5.2
+      },
+      "primary_coordinate_separation_arcsec": 0.0019213484110229158,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_fa30a3ec12a650079134257d525c92a7",
+      "source_key": "1039188",
+      "source_row_number": 21,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_21b38a91a6fe5ee283aa2ea2774beed1",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1041346",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1041346,
+        "Imag": 21.89,
+        "Mod": 100,
+        "ReGAL": 27.7,
+        "ReISH": 28.3,
+        "b/a": 0.94,
+        "b/aISH": 0.85,
+        "e_ReGAL": 7.5,
+        "e_ReISH": 4.5,
+        "f_ID": null,
+        "n": 4.4
+      },
+      "primary_coordinate_separation_arcsec": 0.0011950297360100851,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_ad5b6f64f9fa5aca98824ffe1949d77c",
+      "source_key": "1041346",
+      "source_row_number": 20,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_41b85d26ec605d258d4958f8ce85428e",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1041508",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1041508,
+        "Imag": 22.91,
+        "Mod": 100,
+        "ReGAL": 10.2,
+        "ReISH": 14.4,
+        "b/a": 0.74,
+        "b/aISH": 0.86,
+        "e_ReGAL": 3.9,
+        "e_ReISH": 4.6,
+        "f_ID": null,
+        "n": 6.1
+      },
+      "primary_coordinate_separation_arcsec": 0.001019445702331143,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_4782e84dcd1b5aff9b8644582cdafad0",
+      "source_key": "1041508",
+      "source_row_number": 22,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_9193b523cfa05d3992b7e6e616691b0f",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1042830",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1042830,
+        "Imag": 21.87,
+        "Mod": 100,
+        "ReGAL": 19.7,
+        "ReISH": 15.2,
+        "b/a": 0.97,
+        "b/aISH": 0.94,
+        "e_ReGAL": 4.8,
+        "e_ReISH": 6.8,
+        "f_ID": null,
+        "n": 4.1
+      },
+      "primary_coordinate_separation_arcsec": 0.0009536292500896975,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_3ab7ad5bf43e509f984c4e801b737161",
+      "source_key": "1042830",
+      "source_row_number": 24,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_0e2ce78d28cb540caac7d2b750bd656f",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1043225",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1043225,
+        "Imag": 22.92,
+        "Mod": 100,
+        "ReGAL": 20.9,
+        "ReISH": 13.0,
+        "b/a": 0.64,
+        "b/aISH": 0.74,
+        "e_ReGAL": 7.0,
+        "e_ReISH": 4.2,
+        "f_ID": null,
+        "n": 4.2
+      },
+      "primary_coordinate_separation_arcsec": 0.001125804962589425,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_e511daffbb5054d78f8f0494ce3283e0",
+      "source_key": "1043225",
+      "source_row_number": 23,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_05c831a0088355dba7e8f8386eec6918",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1044251",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 1044251,
+        "Imag": 22.15,
+        "Mod": 30,
+        "ReGAL": 34.7,
+        "ReISH": 32.6,
+        "b/a": 0.84,
+        "b/aISH": 0.85,
+        "e_ReGAL": 8.4,
+        "e_ReISH": 6.7,
+        "f_ID": null,
+        "n": 4.5
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_e8c6105bf5b45c9abea53c7eddae0766",
+      "source_key": "1044251",
+      "source_row_number": 26,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_05948a0f97225ad497e50bf51a50e600",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_1044847",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": null,
+        "ID": 1044847,
+        "Imag": null,
+        "Mod": null,
+        "ReGAL": null,
+        "ReISH": null,
+        "b/a": null,
+        "b/aISH": null,
+        "e_ReGAL": null,
+        "e_ReISH": null,
+        "f_ID": "b",
+        "n": null
+      },
+      "primary_coordinate_separation_arcsec": 0.0007304893479806097,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_a4f37e1b5e8a598589814d66de9edc3e",
+      "source_key": "1044847",
+      "source_row_number": 27,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_2beb1a7d5d855b46a8b84d7499738ddb",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_120985",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 120985,
+        "Imag": 22.17,
+        "Mod": 30,
+        "ReGAL": 40.5,
+        "ReISH": 42.8,
+        "b/a": 0.9,
+        "b/aISH": 0.88,
+        "e_ReGAL": 3.2,
+        "e_ReISH": 12.2,
+        "f_ID": null,
+        "n": 1.7
+      },
+      "primary_coordinate_separation_arcsec": 0.0006356037996624285,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_c641afcd23fd54b2a558829f2f129c36",
+      "source_key": "120985",
+      "source_row_number": 3,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f467c4d274aa573e98be867c31d753e6",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_121666",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 121666,
+        "Imag": 21.54,
+        "Mod": 100,
+        "ReGAL": 42.0,
+        "ReISH": 38.3,
+        "b/a": 0.99,
+        "b/aISH": 0.88,
+        "e_ReGAL": 13.3,
+        "e_ReISH": 3.6,
+        "f_ID": null,
+        "n": 3.9
+      },
+      "primary_coordinate_separation_arcsec": 0.0017270169027747834,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_09aa7196a049565dbe978330859529ab",
+      "source_key": "121666",
+      "source_row_number": 4,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_a077f69591605e1ca0d23b3bbf9fb6f7",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_150000",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 150000,
+        "Imag": 22.38,
+        "Mod": 100,
+        "ReGAL": 36.0,
+        "ReISH": 24.3,
+        "b/a": 0.92,
+        "b/aISH": 0.72,
+        "e_ReGAL": 8.3,
+        "e_ReISH": 2.8,
+        "f_ID": null,
+        "n": 7.9
+      },
+      "primary_coordinate_separation_arcsec": 0.0014611877358942564,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_1c871bd910885554a67ee41bb81bd870",
+      "source_key": "150000",
+      "source_row_number": 18,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d0967f949850520d81f82e5db8bcffe7",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_150880",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 150880,
+        "Imag": 22.74,
+        "Mod": 100,
+        "ReGAL": 12.8,
+        "ReISH": 11.0,
+        "b/a": 0.95,
+        "b/aISH": 0.77,
+        "e_ReGAL": 5.9,
+        "e_ReISH": 2.4,
+        "f_ID": null,
+        "n": 4.4
+      },
+      "primary_coordinate_separation_arcsec": 0.0014746815286296967,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_e53207328d255a22849151fd4facdf32",
+      "source_key": "150880",
+      "source_row_number": 16,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_47c1a0ddd24f5af0ade0f2be10e00e12",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_151072",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 151072,
+        "Imag": 21.29,
+        "Mod": 100,
+        "ReGAL": 125.5,
+        "ReISH": 68.1,
+        "b/a": 0.98,
+        "b/aISH": 0.89,
+        "e_ReGAL": 18.8,
+        "e_ReISH": 6.4,
+        "f_ID": null,
+        "n": 6.6
+      },
+      "primary_coordinate_separation_arcsec": 0.0010194574564057369,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_9b63776898a45ae4aef2232b6a4827e8",
+      "source_key": "151072",
+      "source_row_number": 17,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_ed6d51d513495553a33d1fa1373660a5",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_160141",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 160141,
+        "Imag": 22.66,
+        "Mod": 100,
+        "ReGAL": 7.0,
+        "ReISH": 6.0,
+        "b/a": 0.76,
+        "b/aISH": 0.89,
+        "e_ReGAL": 3.1,
+        "e_ReISH": 2.9,
+        "f_ID": null,
+        "n": 5.1
+      },
+      "primary_coordinate_separation_arcsec": 0.0016684563291194335,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_ca46922fe5e25c7db8e17950e68fd99e",
+      "source_key": "160141",
+      "source_row_number": 10,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1b355f2a2e2c59078b70759cbcf2f6fd",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_161244",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": null,
+        "ID": 161244,
+        "Imag": 22.6,
+        "Mod": null,
+        "ReGAL": 4.8,
+        "ReISH": null,
+        "b/a": 1.0,
+        "b/aISH": null,
+        "e_ReGAL": 2.9,
+        "e_ReISH": null,
+        "f_ID": null,
+        "n": 3.7
+      },
+      "primary_coordinate_separation_arcsec": 0.0010195460043011914,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_90054cc7ea735a6c8bd781fa638a201b",
+      "source_key": "161244",
+      "source_row_number": 11,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f3d28993f08a5fcab4453be50d59b8ff",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_163341",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 163341,
+        "Imag": 22.24,
+        "Mod": 100,
+        "ReGAL": 23.3,
+        "ReISH": 19.5,
+        "b/a": 0.98,
+        "b/aISH": 0.87,
+        "e_ReGAL": 2.7,
+        "e_ReISH": 6.7,
+        "f_ID": null,
+        "n": 7.6
+      },
+      "primary_coordinate_separation_arcsec": 0.0014616105870085756,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_28aadf9bb4a9515ea208d999bfa860ba",
+      "source_key": "163341",
+      "source_row_number": 12,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e48520812aa15dc8a17210881c89099a",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_163400",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 163400,
+        "Imag": 23.11,
+        "Mod": 100,
+        "ReGAL": 66.9,
+        "ReISH": 54.4,
+        "b/a": 0.74,
+        "b/aISH": 0.8,
+        "e_ReGAL": 16.4,
+        "e_ReISH": 7.1,
+        "f_ID": null,
+        "n": 6.3
+      },
+      "primary_coordinate_separation_arcsec": 0.0010194863928746024,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_31455ca825f25e1a95bd98f242c0c568",
+      "source_key": "163400",
+      "source_row_number": 13,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_70c0bd4518d85401bab7d87c9b6eb940",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_163575",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 163575,
+        "Imag": 22.53,
+        "Mod": 100,
+        "ReGAL": 17.1,
+        "ReISH": 12.8,
+        "b/a": 0.74,
+        "b/aISH": 0.9,
+        "e_ReGAL": 4.1,
+        "e_ReISH": 6.6,
+        "f_ID": null,
+        "n": 5.3
+      },
+      "primary_coordinate_separation_arcsec": 0.0003179015144630131,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_d19825194b6552bba767af247c6a8050",
+      "source_key": "163575",
+      "source_row_number": 15,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_77c3c7932c4a5eceb8d339d1ae4b63e8",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_182204",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 182204,
+        "Imag": 23.17,
+        "Mod": 100,
+        "ReGAL": 14.7,
+        "ReISH": 8.6,
+        "b/a": 0.65,
+        "b/aISH": 0.91,
+        "e_ReGAL": 4.0,
+        "e_ReISH": 4.6,
+        "f_ID": null,
+        "n": 5.4
+      },
+      "primary_coordinate_separation_arcsec": 0.00048028046037484423,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_93c6627f925b5ba68a083a358271341b",
+      "source_key": "182204",
+      "source_row_number": 8,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_92ca0bb5339756dfb31f0b8273909dc8",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_191006",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 191006,
+        "Imag": 22.51,
+        "Mod": 30,
+        "ReGAL": 7.1,
+        "ReISH": 7.8,
+        "b/a": 0.82,
+        "b/aISH": 0.68,
+        "e_ReGAL": 2.3,
+        "e_ReISH": 2.6,
+        "f_ID": null,
+        "n": 5.2
+      },
+      "primary_coordinate_separation_arcsec": 0.001668445623579338,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_bf492ce73dba57cab067ad2d5f2d1e0d",
+      "source_key": "191006",
+      "source_row_number": 1,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_37d611a67ba25f94b97e6b86ab5c7c37",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_192636",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 192636,
+        "Imag": 22.28,
+        "Mod": 30,
+        "ReGAL": 33.3,
+        "ReISH": 29.2,
+        "b/a": 0.86,
+        "b/aISH": 0.93,
+        "e_ReGAL": 3.8,
+        "e_ReISH": 6.5,
+        "f_ID": null,
+        "n": 3.1
+      },
+      "primary_coordinate_separation_arcsec": 0.000720000018876878,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_23b13827d6cb537fa739e703ea969531",
+      "source_key": "192636",
+      "source_row_number": 2,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_b2171438a5575c669052fc89406895eb",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_195526",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 195526,
+        "Imag": 21.66,
+        "Mod": 100,
+        "ReGAL": 37.6,
+        "ReISH": 32.5,
+        "b/a": 0.91,
+        "b/aISH": 0.99,
+        "e_ReGAL": 14.9,
+        "e_ReISH": 5.3,
+        "f_ID": null,
+        "n": 5.7
+      },
+      "primary_coordinate_separation_arcsec": 0.0015741833533221956,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_ce3e771300265de8a1b8f8e4124df011",
+      "source_key": "195526",
+      "source_row_number": 5,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c180e9d449bb5df29d0963dea668d1d5",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_195614",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 195614,
+        "Imag": 22.23,
+        "Mod": 100,
+        "ReGAL": 22.0,
+        "ReISH": 22.9,
+        "b/a": 0.84,
+        "b/aISH": 0.89,
+        "e_ReGAL": 2.5,
+        "e_ReISH": 5.2,
+        "f_ID": null,
+        "n": 6.9
+      },
+      "primary_coordinate_separation_arcsec": 0.0014408524254265905,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_8a0bdf5374395163aa6ffe53b1483ea3",
+      "source_key": "195614",
+      "source_row_number": 6,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_49af5182b6f25808aecdb5d5bbeb0d8b",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_196790",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 196790,
+        "Imag": 21.74,
+        "Mod": 100,
+        "ReGAL": 20.9,
+        "ReISH": 22.6,
+        "b/a": 0.86,
+        "b/aISH": 0.87,
+        "e_ReGAL": 2.4,
+        "e_ReISH": 6.1,
+        "f_ID": null,
+        "n": 6.6
+      },
+      "primary_coordinate_separation_arcsec": 0.0007306709882414853,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_340fb6adfccd5087b9c3e715840367a4",
+      "source_key": "196790",
+      "source_row_number": 7,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_48bf563479c852cc874fd2e05f0608bd",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_2000005",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 2000005,
+        "Imag": 23.07,
+        "Mod": 100,
+        "ReGAL": 7.1,
+        "ReISH": 6.7,
+        "b/a": 0.85,
+        "b/aISH": 0.98,
+        "e_ReGAL": 3.3,
+        "e_ReISH": 2.5,
+        "f_ID": null,
+        "n": 4.1
+      },
+      "primary_coordinate_separation_arcsec": 0.00048020681804023527,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_a2452a8612b455049e636c66bec84ebd",
+      "source_key": "2000005",
+      "source_row_number": 25,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_0b7bc289c99a5344bffbdf2a19902943",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_242857",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 242857,
+        "Imag": 22.3,
+        "Mod": 30,
+        "ReGAL": 23.7,
+        "ReISH": 24.8,
+        "b/a": 0.79,
+        "b/aISH": 0.79,
+        "e_ReGAL": 3.0,
+        "e_ReISH": 5.2,
+        "f_ID": null,
+        "n": 4.7
+      },
+      "primary_coordinate_separation_arcsec": 0.0026823681956883207,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_b1adbe66f7b256b3ad2ef1eba203dede",
+      "source_key": "242857",
+      "source_row_number": 9,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1dc6861957d7531f94804b77a6dcea8a",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_81669",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 81669,
+        "Imag": 22.95,
+        "Mod": 30,
+        "ReGAL": 18.2,
+        "ReISH": 17.7,
+        "b/a": 0.95,
+        "b/aISH": 0.97,
+        "e_ReGAL": 6.0,
+        "e_ReISH": 5.4,
+        "f_ID": null,
+        "n": 2.6
+      },
+      "primary_coordinate_separation_arcsec": 0.0007870077349795885,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_af8609b812a7523388cd088ce42adf43",
+      "source_key": "81669",
+      "source_row_number": 19,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_890762ec55a3599f8201b79c4a410629",
+      "evidence_type": "supporting_structural_measurement",
+      "link_id": "chiboucas2011_table4_92415",
+      "link_method": "same_publication_id_and_primary_row_order",
+      "measurement": {
+        "---": "King",
+        "ID": 92415,
+        "Imag": 22.67,
+        "Mod": 100,
+        "ReGAL": 24.3,
+        "ReISH": 22.0,
+        "b/a": 0.91,
+        "b/aISH": 0.87,
+        "e_ReGAL": 3.8,
+        "e_ReISH": 6.4,
+        "f_ID": null,
+        "n": 7.6
+      },
+      "primary_coordinate_separation_arcsec": 0.0013213877080232453,
+      "publication_bibcode": "2011ApJ...737...86C",
+      "record_id": "record_d24b623e816f5d87b96f2724d1402c9b",
+      "source_key": "92415",
+      "source_row_number": 14,
+      "source_table": "table4.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c27a153ab3a85f058e933930483d1b9b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_1",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  1 NGVS J122623.21+121925.2 19.468|0.022 18.742|0.022 36.59|1.27 35.42|1.08 ---         ---  ---    --- 46450    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3507d9f11e6058f686f87772b157fac7",
+      "source_key": "J122623.21+121925.2",
+      "source_row_number": 1,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_9bab951478d459fe866d44f28b65db4c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_10",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 10 NGVS J122649.87+115931.8 21.498|0.010 20.633|0.014 19.94|0.54 25.22|0.55 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_fe9e5af4a5e85820b4ca84140ddba02f",
+      "source_key": "J122649.87+115931.8",
+      "source_row_number": 10,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1aba5543079d5811b083324d61f99d6c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_100",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "100 NGVS J123131.70+113610.7 21.173|0.019 20.397|0.019 13.40|1.14 13.09|0.96 ---         ---  ---    ---   ---   1838 2 1 1 0 VCC1366"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_caad47f50a6c5af981c2376c8e9d8e20",
+      "source_key": "J123131.70+113610.7",
+      "source_row_number": 100,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_da817cbc3721586abd9e5c83ee04711c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_101",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "101 NGVS J123131.70+124130.4 19.378|0.004 18.552|0.008 38.73|0.28 36.45|0.43 ---         ---  ---   1090  1138    --- 1 1 0 1 M87UCD16"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_59b30ea2ac355c57aeea4d621d365b9f",
+      "source_key": "J123131.70+124130.4",
+      "source_row_number": 101,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d83ff433b0245cbf8941e409d930b9ee",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_102",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "102 NGVS J123135.13+123459.4 20.195|0.012 19.305|0.010 11.02|0.54 12.27|0.42 ---         ---  ---    ---   948    --- 1 1 1 1 M87UCD17"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_147cef598c2353de8e8026f5248a8fd9",
+      "source_key": "J123135.13+123459.4",
+      "source_row_number": 102,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_dc27c9d8cf235436bf39e50ec3e670bc",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_103",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "103 NGVS J123137.44+121740.7 20.655|0.009 19.941|0.012 11.67|0.36 11.10|0.40 ---         ---  ---    -50   ---    --- 1 1 1 1 M87UCD21"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c67a496b613658ac9e2613e5897898ef",
+      "source_key": "J123137.44+121740.7",
+      "source_row_number": 103,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_206629fc0dba5ad393c699702882c09e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_104",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "104 NGVS J123138.53+115923.9 20.743|0.014 19.964|0.010 19.15|0.52 19.81|0.61 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD25"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_a18a1740c6885f9a9e3eb58309347b24",
+      "source_key": "J123138.53+115923.9",
+      "source_row_number": 104,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_4256644f328b544491248ebae77b385c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_105",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "105 NGVS J123145.95+122721.1 21.399|0.008 20.711|0.010 12.33|0.39 11.89|0.37 ---         --- 1320    ---   ---    --- 1 1 1 1 H51655"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_865f6baeb5c051389b838ef374c9e959",
+      "source_key": "J123145.95+122721.1",
+      "source_row_number": 105,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e869c6081bc05175a1d6be8385a4a046",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_106",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "106 NGVS J123151.34+123925.2 20.047|0.012 19.198|0.011 13.96|0.72 16.08|0.78 ---         ---  ---    ---   ---   1279 2 1 1 0 VCC1386"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_7901db719887594b9558c690201fe2fe",
+      "source_key": "J123151.34+123925.2",
+      "source_row_number": 106,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_ca312124b8095c78b2d06b4f404d9309",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_107",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "107 NGVS J123152.96+115052.9 20.784|0.020 19.853|0.018 26.64|0.79 31.65|0.96 ---         ---  ---    ---   ---    --- 4 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_2c8371dd56445ce69ed7bd4eb45d31d8",
+      "source_key": "J123152.96+115052.9",
+      "source_row_number": 107,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_dc35d134476850a7810cefcce43a5562",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_108",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "108 NGVS J123157.60+124929.6 20.293|0.009 19.584|0.005 19.10|0.31 18.77|0.21 ---         ---  ---   1094  1082    --- 1 1 1 1 M87UCD19"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_233d028a7b7357e4837bc8c147e7db69",
+      "source_key": "J123157.60+124929.6",
+      "source_row_number": 108,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5731f491535f5ba69aaaeb582045bcc7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_109",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "109 NGVS J123157.99+131534.1 19.506|0.010 18.766|0.010 38.68|0.55 41.84|0.61 ---         ---  ---    ---  1271    --- 1 1 1 1 M87UCD15"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_fb6939c43b1e5647bf2109814c338348",
+      "source_key": "J123157.99+131534.1",
+      "source_row_number": 109,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_9034a5b834e85f2193170f06947f33e0",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_11",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 11 NGVS J122656.56+123532.2 19.881|0.006 19.041|0.006 17.32|0.37 15.98|0.58 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_456e504989dd557b9d4881d0b674596f",
+      "source_key": "J122656.56+123532.2",
+      "source_row_number": 11,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_8af275edf4fe522cb44dc8ddd2ad289e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_110",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "110 NGVS J123204.35+122030.3 19.722|0.008 18.917|0.008 12.61|0.30 12.00|0.46 ---         --- 1641   1649  1649    --- 1 1 1 1 VUCD8"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_88228011227d502e8944e47d502ba01c",
+      "source_key": "J123204.35+122030.3",
+      "source_row_number": 110,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_9c4653abbbc85eb0b4c457ab4dad94bd",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_111",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "111 NGVS J123211.80+113818.6 19.676|0.007 18.884|0.020 35.45|0.36 39.12|1.00 ---         ---  ---    --- 51399    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_b71e55c8ffc751f5b840b2b98a40ff52",
+      "source_key": "J123211.80+113818.6",
+      "source_row_number": 111,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e51cae89e11c5fd1978caa67ca2e6440",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_112",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "112 NGVS J123214.45+120159.0 20.702|0.008 19.864|0.013 16.74|0.60 15.71|0.67 ---         ---  ---   1825   ---    --- 1 1 1 1 M87UCD33"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_92d61743e42959ffa43537fe38397d72",
+      "source_key": "J123214.45+120159.0",
+      "source_row_number": 112,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_128814db4ccf5d6785db761fecbfa1f5",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_113",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "113 NGVS J123214.58+120305.3 19.504|0.007 18.643|0.010 17.65|0.51 17.19|0.66 ---        25.4 1216   1276  1292    --- 1 1 1 1 VUCD9"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_fdc91e2ecbc85492b43cab84e2c376d7",
+      "source_key": "J123214.58+120305.3",
+      "source_row_number": 113,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_b545d58ed4ac5e75bae29c3f843c834d",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_114",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "114 NGVS J123221.10+121613.4 20.675|0.006 19.911|0.010 29.86|0.37 28.87|0.49 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_1b833c2bac835c6bb6c77b1268437c17",
+      "source_key": "J123221.10+121613.4",
+      "source_row_number": 114,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_bd6578f9b1a85a94a5ff201dd06ff724",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_115",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "115 NGVS J123223.49+115755.0 20.241|0.007 19.391|0.007 11.58|0.48 11.50|0.33 ---         ---  ---   1005   ---    --- 1 1 1 1 M87UCD35"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_f595cbc5a87a5e3ca347edb81ae69e45",
+      "source_key": "J123223.49+115755.0",
+      "source_row_number": 115,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_cd3db7baad1f54baaf8931b87282efbc",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_116",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "116 NGVS J123225.37+121956.8 20.586|0.007 19.860|0.010 12.03|0.40 10.95|0.58 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD27"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3f59f008042f5b06ae435afd9ee0f4e3",
+      "source_key": "J123225.37+121956.8",
+      "source_row_number": 116,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_78bf7d76f0cb5ec59d01e19ab37ae5ac",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_117",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "117 NGVS J123244.39+113638.1 21.599|0.015 20.870|0.018 22.00|0.54 21.78|0.76 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e9d4754591a85091bf058de754be1391",
+      "source_key": "J123244.39+113638.1",
+      "source_row_number": 117,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f151d451f35258f5b4238d1433a9d172",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_118",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "118 NGVS J123244.97+120411.6 21.615|0.011 20.894|0.018 11.98|0.51 10.38|0.88 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_189481ea78d7523ca58cbe357feadd0a",
+      "source_key": "J123244.97+120411.6",
+      "source_row_number": 118,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5904c773d4cd59a18ef6ed070b185095",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_119",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "119 NGVS J123253.34+120711.5 21.250|0.025 20.520|0.034 17.73|0.84 21.38|0.99 ---         ---  ---    ---   ---    --- 3 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_50cc5ec23e8850e9807c03e7a58add22",
+      "source_key": "J123253.34+120711.5",
+      "source_row_number": 119,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_acc680c5c4cc5582ab6aebff4fc3ae7b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_12",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 12 NGVS J122708.43+132009.0 21.330|0.011 20.617|0.016 19.94|0.79 19.24|0.96 ---         ---  ---    ---   --- 150598 2 1 1 0 VCC972  a"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9f993bd7d6295ef6ba22f5056111019d",
+      "source_key": "J122708.43+132009.0",
+      "source_row_number": 12,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_fbfede2d131759dab1747b60ff8b65a9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_120",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "120 NGVS J123256.67+115104.7 20.190|0.020 19.456|0.017 16.44|0.69 17.26|0.52 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d66a0fa01798526ba9a0af90eb08d7f4",
+      "source_key": "J123256.67+115104.7",
+      "source_row_number": 120,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_168a275f95b554178b71e326e4fb0a27",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_121",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "121 NGVS J123313.42+130553.0 20.976|0.007 20.262|0.005 11.35|0.36 15.59|0.36 ---         ---  ---  25326   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_1a624bd529a15fb8942e1fea91889b49",
+      "source_key": "J123313.42+130553.0",
+      "source_row_number": 121,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c0ce3f4033925a51b44c553b455d8d6c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_122",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "122 NGVS J123319.67+121112.3 19.829|0.028 19.012|0.010 41.88|1.48 52.30|0.88 ---         ---  ---    ---   ---    --- 3 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9caa593e115659faaeda4364d397bb51",
+      "source_key": "J123319.67+121112.3",
+      "source_row_number": 122,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_6aeda5a94027569794b57b98d72bc1d1",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_123",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "123 NGVS J123329.47+121017.4 20.637|0.006 19.899|0.012 12.46|0.36 11.47|0.52 ---         --- 1317    ---   ---    --- 1 1 1 1 F16"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_f829ee2784b250589a45b1ecd10ba145",
+      "source_key": "J123329.47+121017.4",
+      "source_row_number": 123,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_66932710488258f6b7d6cab1919d3610",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_124",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "124 NGVS J123346.31+115702.3 21.043|0.009 20.097|0.011 11.53|0.37 10.98|0.25 ---         ---  ---   1351   ---    --- 1 1 1 1 M87UCD39"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_fa256edfa5405c4e83d38fffb5fe3ffe",
+      "source_key": "J123346.31+115702.3",
+      "source_row_number": 124,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_74cbaa2e47095ecf92d57797fdb59baf",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_125",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "125 NGVS J123348.68+124647.9 20.424|0.012 19.604|0.013 15.03|0.75 16.83|0.84 ---         ---  ---    ---   ---   1134 2 1 1 0 VCC1523"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_02d7c37467b757b0ae7d37c5dc69de3f",
+      "source_key": "J123348.68+124647.9",
+      "source_row_number": 125,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_dcdc83f10822593b993bf1f1bd4ca5d6",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_126",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "126 NGVS J123351.52+122346.0 19.768|0.010 18.718|0.014 17.98|0.79 23.90|0.93 ---         ---  ---  65704   ---    --- 3 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c49dbc161a5c535ba5f4301a5a70bb73",
+      "source_key": "J123351.52+122346.0",
+      "source_row_number": 126,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_29fe262ff67a501bbaba2a9f1bbef967",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_127",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "127 NGVS J123359.60+114730.9 21.408|0.006 20.646|0.015 12.76|0.27 12.24|0.37 ---         ---  ---    ---   ---    --- 1 1 1 1"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c16cffe4f229567bb247406bd5934869",
+      "source_key": "J123359.60+114730.9",
+      "source_row_number": 127,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1e8030c314be54d9916d96ed91091180",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_13",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 13 NGVS J122726.54+131150.7 20.901|0.010 20.098|0.012 22.47|0.52 26.28|0.63 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3dbf05b1072654278aa60b38d6bf09c0",
+      "source_key": "J122726.54+131150.7",
+      "source_row_number": 13,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1451e4db70145733b8db12b03993fe28",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_14",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 14 NGVS J122727.19+125546.0 21.046|0.011 20.344|0.006 12.54|0.42 11.43|0.25 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_0e03daac057857bc9d862ca2f4437b44",
+      "source_key": "J122727.19+125546.0",
+      "source_row_number": 14,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f7a2b6cda55d5b78ac50aa67df2006b8",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_15",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 15 NGVS J122729.00+131903.4 21.386|0.020 20.579|0.026 18.07|1.02 15.90|1.11 ---         ---  ---    ---   ---    --- 3 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_8e92695682555cd69e41c8a892afb086",
+      "source_key": "J122729.00+131903.4",
+      "source_row_number": 15,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e1ee60b25dd45304a20beee834a3936e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_16",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 16 NGVS J122745.56+124356.4 21.577|0.015 20.834|0.008 13.51|0.75 12.77|0.51 ---         ---  --- 198108   ---    --- 1 1 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_1ee10690fbf059fd830a39021dbfb4cb",
+      "source_key": "J122745.56+124356.4",
+      "source_row_number": 16,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d63004b7d60f523aae172d98354f0e23",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_17",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 17 NGVS J122804.51+121507.6 21.416|0.009 20.577|0.016 21.62|0.52 25.06|0.72 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_8d203081ae8f5db6b313659ac398f685",
+      "source_key": "J122804.51+121507.6",
+      "source_row_number": 17,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_fecc37744918529fae183be74c9110b9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_18",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 18 NGVS J122806.62+122436.4 21.004|0.011 20.260|0.009 12.03|0.57 12.82|0.33 ---         ---  --- 156806   ---    --- 1 1 1 0 M87UCD29"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_14d670076bf9581d878eb0c480c71172",
+      "source_key": "J122806.62+122436.4",
+      "source_row_number": 18,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_558e92086391567093287aae7f1f8e83",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_19",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 19 NGVS J122837.21+122845.6 21.081|0.005 20.333|0.006 12.61|0.31 12.51|0.42 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD30"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_94c0041dc9fd5f7d841706c4bcb9d1fd",
+      "source_key": "J122837.21+122845.6",
+      "source_row_number": 19,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_017f18a4a770537ebc2e65c63f109b19",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_2",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  2 NGVS J122628.69+125642.6 19.792|0.011 18.852|0.013 17.38|0.72 15.99|0.72 ---         ---  ---    ---  -186    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_ad98363668755369b123c92d4bc318de",
+      "source_key": "J122628.69+125642.6",
+      "source_row_number": 2,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c03370b4662c507a8b9e40f5d5082225",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_20",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 20 NGVS J122856.90+130220.5 21.408|0.009 20.700|0.009 14.41|0.55 15.05|0.40 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_464f3c530ded51118460bdf6a1ddcbea",
+      "source_key": "J122856.90+130220.5",
+      "source_row_number": 20,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d7ae5285de7056cdb6ed7c997fa814f5",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_21",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 21 NGVS J122910.66+124304.1 20.947|0.004 20.157|0.005 12.69|0.25 11.29|0.34 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD24"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_18fe0760b0fa5dafa7eb3015f242a775",
+      "source_key": "J122910.66+124304.1",
+      "source_row_number": 21,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_fcf9b5a394585aab8de8dfb563837740",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_22",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 22 NGVS J122914.82+113622.4 21.226|0.007 20.458|0.009 20.58|0.45 22.36|0.42 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_f8d18e7f632e57dc85e940030002d3cb",
+      "source_key": "J122914.82+113622.4",
+      "source_row_number": 22,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_391f2c4c60d55e06a23971c3158bbaee",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_23",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 23 NGVS J122914.87+115343.8 20.263|0.008 19.489|0.007 12.43|0.40 10.79|0.37 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD34"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_274a60379c7e54e4aa03ebe4f2386576",
+      "source_key": "J122914.87+115343.8",
+      "source_row_number": 23,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_bbf561b7cf815f6788050d4b54a94e1e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_24",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 24 NGVS J122925.49+121835.8 20.880|0.006 20.111|0.014 22.21|0.37 24.86|0.70 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_637fb37279a155a89d430d649e927f63",
+      "source_key": "J122925.49+121835.8",
+      "source_row_number": 24,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_aee40406cb2952109baa4fcb8f453cd4",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_25",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 25 NGVS J122936.29+113708.5 21.112|0.010 20.268|0.021 14.96|0.48 16.84|0.78 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_70c942e8983a544c8ad5880e5fc547f8",
+      "source_key": "J122936.29+113708.5",
+      "source_row_number": 25,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_cad67ae160775098b7fdd76dcbfe05ee",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_26",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 26 NGVS J122937.04+130620.9 20.998|0.010 20.289|0.012 19.97|0.57 23.95|0.61 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9d303d74d96e5ad3ae673629a5eca7d3",
+      "source_key": "J122937.04+130620.9",
+      "source_row_number": 26,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_38c684fcd8b05dd6a6a75944b8f02d6b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_27",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 27 NGVS J122937.93+114058.1 21.263|0.005 20.545|0.008 12.33|0.28 11.17|0.37 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e236634326605853a1570dd2263b6604",
+      "source_key": "J122937.93+114058.1",
+      "source_row_number": 27,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_b82c5d9764d45f21ad9dcdadec6d7b51",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_28",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 28 NGVS J122940.39+122728.1 19.967|0.004 19.173|0.005 20.30|0.22 21.51|0.21 ---         ---  ---    ---  1400    --- 1 1 1 1 M87UCD5"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_bfd200194acf5fd68372fa05adf71ec4",
+      "source_key": "J122940.39+122728.1",
+      "source_row_number": 28,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_67d2e2e2919e55c3934a660327eb5601",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_29",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 29 NGVS J122941.32+123952.4 20.328|0.008 19.537|0.009 17.50|0.43 15.60|0.45 ---         ---  ---    ---  1754    --- 1 1 1 1 M87UCD20"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_b9351a26bd3a527ebbce9eff8d77c6d2",
+      "source_key": "J122941.32+123952.4",
+      "source_row_number": 29,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d655bf8e76b55d6d8fecfc3ca375c303",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_3",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  3 NGVS J122633.05+123847.6 21.391|0.014 20.651|0.007 11.26|0.57 10.99|0.49 ---         ---  ---   5322   ---    --- 1 1 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_8590c718b34a5a59825375942863058b",
+      "source_key": "J122633.05+123847.6",
+      "source_row_number": 3,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_21dfc18d16c45101882dc6815c37abfd",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_30",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 30 NGVS J122941.56+124427.6 21.000|0.006 20.167|0.006 10.98|0.40 11.17|0.30 ---         ---  ---   1261   ---    --- 1 1 1 1 M87UCD23"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_4977b53f67f058f087faf8d2dacada17",
+      "source_key": "J122941.56+124427.6",
+      "source_row_number": 30,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_6c324a0a318451fd8582c0c9c0af1645",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_31",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 31 NGVS J122942.29+131727.6 19.780|0.008 18.717|0.011 19.64|0.55 20.28|1.06 ---         ---  ---  53553   ---    --- 3 1 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3ed75dd17e3d50e6a5b3e4c4af3a7165",
+      "source_key": "J122942.29+131727.6",
+      "source_row_number": 31,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_38213a1da74f5450b5af4b0c9ba0caf0",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_32",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 32 NGVS J122945.26+125100.9 20.560|0.004 19.819|0.004 12.34|0.18 11.35|0.27 ---         ---  ---   1156  1070    --- 1 1 1 1 M87UCD8"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_dea8b14a1a405d9080fcef5979a5db02",
+      "source_key": "J122945.26+125100.9",
+      "source_row_number": 32,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_7f6843861ebd58eb9be866540a2d1520",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_33",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 33 NGVS J122947.20+121717.8 19.655|0.011 18.776|0.014 32.01|0.75 40.93|1.17 ---         ---  ---  37236   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_7b0c4dbc93185528800a6c73c8d2b5ea",
+      "source_key": "J122947.20+121717.8",
+      "source_row_number": 33,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_aaa4eea061cb5e27ac586e967b0acd6e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_34",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 34 NGVS J122950.93+123653.2 21.517|0.009 20.802|0.010  9.30|0.37 12.09|0.31 ---         ---  --- 184673   ---    --- 1 1 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3c3f4e5947f859f08d73a224383f8009",
+      "source_key": "J122950.93+123653.2",
+      "source_row_number": 34,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_558804cae26a5237815d25ff93df5bd7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_35",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 35 NGVS J122952.28+123737.8 20.881|0.005 19.994|0.006 10.58|0.21 13.13|0.28 ---         ---  ---    886   ---    --- 1 1 1 1 M87UCD22"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_1b3de42adf4d5b1f8c6bf69f7e0f4f52",
+      "source_key": "J122952.28+123737.8",
+      "source_row_number": 35,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_2fdcefe0c7215e58950e4519ca3cc91a",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_36",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 36 NGVS J122952.41+123504.1 19.697|0.007 18.934|0.007 31.20|0.39 37.14|0.54 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_abde6f79a539532f8facc07651a59ad0",
+      "source_key": "J122952.41+123504.1",
+      "source_row_number": 36,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c9b4599f8282512c8edb38d41597c9b9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_37",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 37 NGVS J122954.98+123350.9 20.602|0.008 19.891|0.013 23.81|0.46 24.71|0.72 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_1f4e8221a7a655378aecb5850ed9a0b5",
+      "source_key": "J122954.98+123350.9",
+      "source_row_number": 37,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e3ed9cddccdf5859a79651b4ab1064ba",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_38",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 38 NGVS J122956.35+131312.1 20.091|0.004 19.392|0.005 15.86|0.24 11.82|0.27 ---         ---  ---     43   824    --- 2 1 1 0 VCC1244"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d70e363022e55ef0b84063c5330dc91a",
+      "source_key": "J122956.35+131312.1",
+      "source_row_number": 38,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_40c3cc4cb49f577eba40e57c4711405e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_39",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 39 NGVS J122957.12+123602.9 20.312|0.006 19.591|0.007 12.51|0.21 13.31|0.27 ---         --- 1489   1506   ---    --- 1 1 1 1 H65115"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_37af7e6435da568caf1bc99482b6b284",
+      "source_key": "J122957.12+123602.9",
+      "source_row_number": 39,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_136e188f7a18567a93f9c0caaa8cc854",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_4",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  4 NGVS J122636.42+125512.9 18.972|0.006 18.021|0.006 18.01|0.33 17.34|0.27 ---         ---  ---    ---   -93    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c82f938f3d325d30ae4aa292edc7ba90",
+      "source_key": "J122636.42+125512.9",
+      "source_row_number": 4,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1cfb18b4f72a57259fdfe74617930d2b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_40",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 40 NGVS J123001.95+124226.9 19.862|0.005 19.191|0.011 22.18|0.30 20.96|0.51 ---         ---  ---    ---  1115    --- 1 1 1 1 M87UCD10"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_885e9b47256b5c869b904731db758ffd",
+      "source_key": "J123001.95+124226.9",
+      "source_row_number": 40,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_480b0321e2b150e3be3883e0c9ae00f6",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_41",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 41 NGVS J123002.46+123633.8 20.250|0.003 19.461|0.003 14.84|0.18 15.08|0.15 ---         ---  ---    ---  1514    --- 1 1 1 1 M87UCD6"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3de103a76fe554bbb9ebdac2143ef48c",
+      "source_key": "J123002.46+123633.8",
+      "source_row_number": 41,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_7ec217f31cdf5c288d7d8836544f6d74",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_42",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 42 NGVS J123004.05+120714.0 19.802|0.005 19.021|0.005 11.52|0.19 10.47|0.24 ---         --- 1168   1166   ---    --- 1 1 1 1 H18539"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_0f0cf22b379e560695f9f636fd465daa",
+      "source_key": "J123004.05+120714.0",
+      "source_row_number": 42,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_343ddcfb97125a759a85a165a39a4c26",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_43",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 43 NGVS J123006.06+123954.0 19.514|0.003 18.690|0.003 16.80|0.10 18.98|0.19 ---         ---  ---    ---  1160    --- 1 1 1 1 M87UCD7"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_4d349d491c4d522da6befcdae47e2ba4",
+      "source_key": "J123006.06+123954.0",
+      "source_row_number": 43,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_51f9a72a79ce5a65ac634f41ade5a673",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_44",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 44 NGVS J123006.13+122435.3 20.635|0.004 19.797|0.008 12.95|0.21 12.31|0.52 ---         ---  ---   1878   ---    --- 1 1 1 1 M87UCD28"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_6c9849c138f95664b4ec0bb4593623ab",
+      "source_key": "J123006.13+122435.3",
+      "source_row_number": 44,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_8b651d323d285d92a9a00237e7cbaa4c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_45",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 45 NGVS J123007.57+123631.0 19.120|0.002 18.285|0.006 12.37|0.13 12.09|0.31 ---        12.1 1223   1235  1241    --- 1 1 1 1 VUCD1"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_043882a251be58618e89e04601b3325d",
+      "source_key": "J123007.57+123631.0",
+      "source_row_number": 45,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1507a36075bd536e9ee6d15b3c884504",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_46",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 46 NGVS J123009.82+123736.5 21.097|0.004 20.312|0.005 11.19|0.16 11.44|0.24 ---         ---  ---   1261   ---    --- 1 1 1 1 M87UCD37"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3fe5357724ee5c699ca0673b2854f981",
+      "source_key": "J123009.82+123736.5",
+      "source_row_number": 46,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_02d03115fc215f4a88b7f8982aabdf17",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_47",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 47 NGVS J123010.00+123604.7 21.566|0.008 20.826|0.010 12.88|0.45 11.65|0.57 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e163539dd766532fafd0509d95f69673",
+      "source_key": "J123010.00+123604.7",
+      "source_row_number": 47,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_cb2baa0258a6535bb810b2f91703ceb3",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_48",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 48 NGVS J123010.89+121143.7 21.099|0.009 20.432|0.016 19.64|0.63 16.28|1.21 ---         ---  ---    ---   ---   -420 2 1 1 0 VCC1264"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e3b5ccea78135ee1bf09561a24b6fb02",
+      "source_key": "J123010.89+121143.7",
+      "source_row_number": 48,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5a2660129c2d539699d131660bb5c7c4",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_49",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 49 NGVS J123011.07+124721.7 20.640|0.015 19.880|0.006 11.71|0.91 10.92|0.40 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e42190593d455d96a5b76c0866315c8f",
+      "source_key": "J123011.07+124721.7",
+      "source_row_number": 49,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_af5438fee3c055649a330c1a72fb9f0c",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_5",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  5 NGVS J122638.52+123702.7 20.616|0.007 19.843|0.008 17.86|0.40 18.04|0.43 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_64f1ba2e91b75d8995c6797ec5d90523",
+      "source_key": "J122638.52+123702.7",
+      "source_row_number": 5,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_217bec2de4785c708ae91f1385063bb7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_50",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 50 NGVS J123014.74+120726.5 21.294|0.007 20.617|0.013 12.92|0.31 13.87|0.54 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_bc5eb9962e8953bc94d80e1fee9c8fd5",
+      "source_key": "J123014.74+120726.5",
+      "source_row_number": 50,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_df13d030f5d35be6aee7473e24f52ec4",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_51",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 51 NGVS J123016.54+121556.8 20.074|0.006 19.340|0.021 17.28|0.36 17.11|1.08 ---         ---  ---   2021   ---    --- 1 1 1 1 M87UCD26"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_ab116e8b8b795663ad59a9c14a715382",
+      "source_key": "J123016.54+121556.8",
+      "source_row_number": 51,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_2af7d6a751c05b6782f49d799b6343b6",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_52",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 52 NGVS J123017.80+114447.4 19.064|0.022 18.112|0.021 30.65|1.33 28.02|1.45 ---         ---  ---  26492   ---    --- 3 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_8dd8a123ffe75631bf6ac963171eebbf",
+      "source_key": "J123017.80+114447.4",
+      "source_row_number": 52,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_3fcfb5e47c2e59cfa89588d04318e582",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_53",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 53 NGVS J123019.63+120924.6 21.119|0.007 20.432|0.010 11.38|0.25  9.96|0.37 ---         ---  831    881   ---    --- 1 1 1 1 H20718"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d2365dfe738a54e3a22695628d1958d3",
+      "source_key": "J123019.63+120924.6",
+      "source_row_number": 53,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_0347e58bf794528b9a2c6be8176e3dcb",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_54",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 54 NGVS J123020.05+115518.7 19.330|0.003 18.532|0.004 23.31|0.19 22.30|0.21 ---         ---  ---   1276  1397    --- 1 1 1 1 M87UCD3"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e3e1a43894b3565987149efb9df04419",
+      "source_key": "J123020.05+115518.7",
+      "source_row_number": 54,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5aca13ed30285f06ac33c45140c6fc67",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_55",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 55 NGVS J123021.83+122402.4 20.004|0.010 19.042|0.018 11.70|0.46 11.65|0.96 ---         ---  ---    ---  1271    --- 1 1 1 1 M87UCD4"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_94954e6558dd54eea9c7783b1797d5db",
+      "source_key": "J123021.83+122402.4",
+      "source_row_number": 55,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e8ef688816635fff857a101993bc652e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_56",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 56 NGVS J123022.97+123148.7 19.793|0.004 19.069|0.004 18.85|0.22 17.29|0.16 ---         ---  ---    532   546    --- 1 1 1 1 M87UCD9"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_b8a9c7ea0c6654fe83e297cbb864175b",
+      "source_key": "J123022.97+123148.7",
+      "source_row_number": 56,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_14916df2077e5955af829396f537dd30",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_57",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 57 NGVS J123025.75+122621.1 20.501|0.004 19.754|0.015 13.70|0.28 12.61|0.48 ---         --- 1368    ---   ---    --- 1 1 1 1 S1631"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_6f1afc41ee885ffabf3f8a36fcee7607",
+      "source_key": "J123025.75+122621.1",
+      "source_row_number": 57,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_271f8712ab555264b76020ce5d240f25",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_58",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 58 NGVS J123026.56+122044.6 20.348|0.005 19.592|0.016 18.03|0.28 18.15|0.64 ---        26.4 1135    ---  1124    --- 1 1 1 1 S1629"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_a311f0f3d34c562c9e9a3bef97d80a6a",
+      "source_key": "J123026.56+122044.6",
+      "source_row_number": 58,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_6386a42b0242566583c9ffe4727afba7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_59",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 59 NGVS J123026.89+122331.1 19.908|0.004 19.093|0.009 16.45|0.25 17.17|0.42 ---         --- 1404    ---  1409    --- 1 1 1 1 S1617"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_84701e226dc25a839cd809bf5ad5f84f",
+      "source_key": "J123026.89+122331.1",
+      "source_row_number": 59,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_b5e8518c408750fcbf73e1d44be87689",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_6",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  6 NGVS J122638.79+124545.8 20.564|0.007 19.823|0.010 15.93|0.30 15.03|0.42 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_5cc41b4728d155e3acfef5aa6f5fb152",
+      "source_key": "J122638.79+124545.8",
+      "source_row_number": 6,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1df9e80a7802548e80b38acbe7ff1f3e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_60",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 60 NGVS J123029.91+123822.2 20.452|0.024 19.806|0.021 19.04|0.91 18.91|0.75 ---         ---  ---    ---   845    --- 1 1 1 1 M87UCD11"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_85b31d44dc295e8793acce722a74b227",
+      "source_key": "J123029.91+123822.2",
+      "source_row_number": 60,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_ef4a4ec9a4b9599da1a580dd74ace1b3",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_61",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 61 NGVS J123030.86+121841.7 19.794|0.012 19.017|0.011 15.95|0.55 14.76|0.52 ---         --- 2425    ---  2365    --- 1 1 1 1 VUCD10"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_2c18d4b13cc35424b8bff338640a7b65",
+      "source_key": "J123030.86+121841.7",
+      "source_row_number": 61,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_49ff45a0841f5ca7a5f56622b2d91b5b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_62",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 62 NGVS J123031.44+125156.6 20.234|0.023 19.317|0.010 12.19|0.81 12.58|0.61 ---         ---  ---    ---  1511    --- 1 1 1 1 M87UCD12"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_56201ac4e6745c30b712fd7a221f6532",
+      "source_key": "J123031.44+125156.6",
+      "source_row_number": 62,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d70f11800bc0538c8bf43443ed527824",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_63",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 63 NGVS J123031.53+122602.6 20.302|0.007 19.577|0.016 14.66|0.31 14.63|0.58 ---         ---  858    ---   857    --- 1 1 1 1 S1504"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_b827e51d67915bfe9040451da945865a",
+      "source_key": "J123031.53+122602.6",
+      "source_row_number": 63,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e3b4038dbc2f55a48d37d4959558d72a",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_64",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 64 NGVS J123033.43+122954.3 19.164|0.011 18.412|0.011 33.66|0.69 32.21|0.60 36.50|1.71 28.9 1296   1261  1301    --- 1 1 1 1 H55930"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_4a5c8b16e6225cda8239626b6786e8dc",
+      "source_key": "J123033.43+122954.3",
+      "source_row_number": 64,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_87c6a092ce20577b98474b5f00cb4104",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_65",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 65 NGVS J123034.12+122246.5 21.328|0.015 20.575|0.009 16.68|0.54 17.38|0.39 ---         --- 1100    ---   ---    --- 1 1 1 1 S1449"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3d952402884a5dee9dc14cc0feb32832",
+      "source_key": "J123034.12+122246.5",
+      "source_row_number": 65,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_6b24ba318f9f5338aa9fb168a5eb09b9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_66",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 66 NGVS J123035.02+123452.7 20.423|0.010 19.701|0.008 33.24|0.49 33.72|0.52 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_52138e5d187b588da51957816cf2beb7",
+      "source_key": "J123035.02+123452.7",
+      "source_row_number": 66,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d28d1fdbdd7e5171a5886bd9dc6b729e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_67",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 67 NGVS J123036.52+122152.8 20.536|0.009 19.783|0.016 16.69|0.33 15.87|0.61 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d741ddd630305ac6845c85ff5c3a175e",
+      "source_key": "J123036.52+122152.8",
+      "source_row_number": 67,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d99ea910724a5f84a71603615525fdfb",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_68",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 68 NGVS J123039.16+122132.5 20.786|0.007 19.995|0.013 13.70|0.45 13.37|0.64 ---         --- 1086    ---   ---    --- 1 1 1 1 S1301"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_265973277c495ea2b4e008ad011454f4",
+      "source_key": "J123039.16+122132.5",
+      "source_row_number": 68,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_0cfdb1fe10cd51b4a99c0f884dbd1df7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_69",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 69 NGVS J123041.81+122341.2 21.163|0.010 20.446|0.016 15.00|0.52 13.76|0.61 ---        29.9 1211    ---   ---    --- 1 1 1 1 S1201"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9d14451c7de75319aabd43623fe8d0c4",
+      "source_key": "J123041.81+122341.2",
+      "source_row_number": 69,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_cde03ee2390b51d9a798d495aeb32516",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_7",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  7 NGVS J122643.32+121743.9 20.830|0.004 20.112|0.007 11.88|0.39 10.28|0.45 ---         ---  ---    ---   ---    --- 2 1 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_eb833d89ae655291b0149c3f482e2f09",
+      "source_key": "J122643.32+121743.9",
+      "source_row_number": 7,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_c29c684139b257c48ee956667e9eea22",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_70",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 70 NGVS J123043.25+122212.4 21.191|0.006 20.385|0.011 16.92|0.31 17.65|0.55 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_ae67cc57c7be581f8719ec4fdce076ac",
+      "source_key": "J123043.25+122212.4",
+      "source_row_number": 70,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_422339fc49015b14a52c590f251707fa",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_71",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 71 NGVS J123045.34+122033.5 20.612|0.007 19.848|0.020 24.22|0.51 23.67|0.90 ---         --- 2023    ---   ---    --- 1 1 1 1 S1044"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_a8a5a051c25c5a7f897e39469c6397d3",
+      "source_key": "J123045.34+122033.5",
+      "source_row_number": 71,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_181006425aa15bc6a4cd222adf36e3eb",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_72",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 72 NGVS J123045.95+113752.5 21.177|0.013 20.340|0.016 24.05|0.70 31.37|1.00 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_947d6192415e56bd931e0a7f24675318",
+      "source_key": "J123045.95+113752.5",
+      "source_row_number": 72,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f834904df19b5e04a97e054fa38a5da7",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_73",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 73 NGVS J123046.50+122017.7 20.824|0.011 20.047|0.010 15.44|0.42 15.60|0.31 ---         --- 1004    ---   ---    --- 1 1 1 1 S991"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3a84991f38ee5e829bd5cfa5cc97b7e5",
+      "source_key": "J123046.50+122017.7",
+      "source_row_number": 73,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5e13e19af4be5fe8b7e8c31fa8d5ee2a",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_74",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 74 NGVS J123047.40+123301.7 19.513|0.007 18.644|0.004 18.09|0.33 17.02|0.22 ---         --- 1379   1322  1343    --- 1 1 1 1 F6"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9c0e08bcc2b25f9ba9ba21b406a62784",
+      "source_key": "J123047.40+123301.7",
+      "source_row_number": 74,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_7c20d6c0f8a653dfbea73fd04dfbad1e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_75",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 75 NGVS J123047.66+120825.2 19.687|0.021 19.007|0.012 23.68|1.20 23.56|0.48 ---         ---  ---    ---  1265    --- 1 1 1 1 M87UCD2"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_3fdcb6f319c458f2a75bcde9fbd19db4",
+      "source_key": "J123047.66+120825.2",
+      "source_row_number": 75,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_8caa49558ccb52bebffdd4696bf65575",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_76",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 76 NGVS J123047.70+122430.5 19.727|0.010 18.963|0.011 26.12|0.54 26.15|0.57 23.45|0.43 36.3 1283    ---  1331    --- 1 1 1 1 S928"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_20c7ccee311d5860b9f5d4bee4991e67",
+      "source_key": "J123047.70+122430.5",
+      "source_row_number": 76,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_bf18cc22e9145664aadb9ddb7c72aa40",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_77",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 77 NGVS J123048.19+123510.7 19.212|0.004 18.416|0.005 11.41|0.18 10.52|0.22 ---        14.1  824    ---   921    --- 1 1 1 1 VUCD2"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_36599da7027854808681576563d8a2bd",
+      "source_key": "J123048.19+123510.7",
+      "source_row_number": 77,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_cadf051d05355a838e43b3b873603fc2",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_78",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 78 NGVS J123049.28+123718.2 19.984|0.007 19.196|0.012 12.89|0.24 12.25|0.52 ---         ---  ---   1620  1601    --- 1 1 1 1 M87UCD13"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_e65f124d51565448937eb73526486707",
+      "source_key": "J123049.28+123718.2",
+      "source_row_number": 78,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f854c2d302fa596d9ee086f32bd348c9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_79",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 79 NGVS J123049.49+121426.9 20.593|0.010 19.840|0.030 16.69|0.36 17.55|1.12 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_0df7b9a6643350e6a1f279b7e59ad54a",
+      "source_key": "J123049.49+121426.9",
+      "source_row_number": 79,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_998b271c5cbb5a95b0182c4fb028b15d",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_8",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  8 NGVS J122646.48+131732.2 21.446|0.004 20.683|0.013 12.97|0.25 14.53|0.49 ---         ---  ---    ---   ---    --- 1 0 1 0 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c8720aaf130b5bea90bf94c4beecdd66",
+      "source_key": "J122646.48+131732.2",
+      "source_row_number": 8,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_615d472e865855d289e06268b8e60e85",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_80",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 80 NGVS J123051.07+122611.9 19.722|0.004 18.808|0.007 13.52|0.33 13.46|0.46 ---         --- 1131    ---  1142    --- 1 1 1 1 S804"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_4f9cd10634cf5e36aa902be5675692bd",
+      "source_key": "J123051.07+122611.9",
+      "source_row_number": 80,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5f4934c299275efca44caa9e493d8ead",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_81",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 81 NGVS J123051.65+121409.9 21.078|0.006 20.396|0.007 13.03|0.19 14.29|0.30 ---        13.7 1299    ---   ---    --- 1 1 1 1 H27916"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_a0cbe7ec5e0356158b25a2f15de34fdb",
+      "source_key": "J123051.65+121409.9",
+      "source_row_number": 81,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_7f46d3c04faf5117be4bddb5ea62bde8",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_82",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 82 NGVS J123051.75+122053.3 20.824|0.004 20.061|0.007 11.80|0.09 11.61|0.21 ---        15.3 1163    ---   ---    --- 1 1 1 1 S796"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_30c3d47ac4605d24b9d3fedb85f3a335",
+      "source_key": "J123051.75+122053.3",
+      "source_row_number": 82,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_60040abbdcc851489d5705ab05135d69",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_83",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 83 NGVS J123053.88+121712.4 21.052|0.008 20.178|0.013 20.48|0.43 21.35|0.70 19.38|0.28 24.8 1020    ---   ---    --- 1 1 1 1 S731"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_c5db9c511042513bbe99c65db2a9f6fa",
+      "source_key": "J123053.88+121712.4",
+      "source_row_number": 83,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_2588f675dd165b8081282d9edeefe7d4",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_84",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 84 NGVS J123054.66+122022.6 21.273|0.008 20.555|0.010 20.00|0.33 20.85|0.60 ---        23.7 1333    ---   ---    --- 1 1 1 1 S682"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d435221146ec53fcbcc3ffed5071da31",
+      "source_key": "J123054.66+122022.6",
+      "source_row_number": 84,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_ee84200092de562c92161235adcc02b6",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_85",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 85 NGVS J123101.47+121924.5 19.659|0.009 18.695|0.014 14.88|0.31 15.20|0.36 ---        14.7 1860    ---  1856    --- 1 1 1 1 S417"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_8e97c68f98365fd8925e7e3f93d60563",
+      "source_key": "J123101.47+121924.5",
+      "source_row_number": 85,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_145328bffd70579da82c32ec2debf0c3",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_86",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 86 NGVS J123102.14+122749.7 20.592|0.009 19.859|0.015 23.47|0.43 23.31|0.51 ---         --- 1215    ---   ---    --- 1 1 1 1 S376"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_40eadb33015c5284997284c87ca7c289",
+      "source_key": "J123102.14+122749.7",
+      "source_row_number": 86,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_a4ea5a05b951582fb01d62a0f67e2a21",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_87",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 87 NGVS J123102.59+123414.1 19.794|0.005 19.093|0.018 18.19|0.21 17.47|0.99 ---         --- 1192    ---  1187    --- 1 1 1 1 F12"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_9a241aef3cf7594ea62049218260fe6f",
+      "source_key": "J123102.59+123414.1",
+      "source_row_number": 87,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_f6d314167ce357e6b57698ec42d63342",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_88",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 88 NGVS J123103.69+123213.0 20.063|0.006 19.359|0.011 13.16|0.24 11.73|0.60 ---         ---  681    717   708    --- 1 1 1 1 H59533"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_2a7a0629644f5b678d014eca35c8340e",
+      "source_key": "J123103.69+123213.0",
+      "source_row_number": 88,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_87f81c1d47c851df8a7fc3084787febb",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_89",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 89 NGVS J123104.35+131042.5 20.297|0.009 19.405|0.012 11.61|0.36 10.16|0.48 ---         ---  ---   1321  1344    --- 1 1 1 1 M87UCD14"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_190c8cf21cee527eae31791352aa9fad",
+      "source_key": "J123104.35+131042.5",
+      "source_row_number": 89,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_e3cedc693ee950f4becaa1a91e25e2b9",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_9",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": "  9 NGVS J122647.07+122714.0 19.559|0.013 18.692|0.019 24.11|0.99 18.68|1.23 ---         ---  ---    ---   ---   1411 2 1 0 0 VCC940"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_82ba56dc42105416b7652e4c6b14cd92",
+      "source_key": "J122647.07+122714.0",
+      "source_row_number": 9,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_41f7a299429c55b1b31f6be81f857e92",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_90",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 90 NGVS J123104.43+122321.2 20.537|0.013 19.790|0.014 32.75|0.76 34.73|0.88 ---         --- 1157    ---   ---    --- 1 1 1 1 S323"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_600b6480fa585dde81f334d77debf16e",
+      "source_key": "J123104.43+122321.2",
+      "source_row_number": 90,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_92d0fb0b45a25411bbc1406dbf2d643d",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_91",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 91 NGVS J123104.80+131436.6 20.743|0.007 20.012|0.013 13.51|0.43 15.29|0.57 ---         ---  ---    ---   ---    --- 1 1 1 1 ---"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_7ff399f2b3d5521183cf51477c894090",
+      "source_key": "J123104.80+131436.6",
+      "source_row_number": 91,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_01770780de815d328a6fb6af1f9a12b3",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_92",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 92 NGVS J123110.14+121627.9 21.183|0.013 20.382|0.015 20.91|0.60 19.49|0.60 ---         --- 1818    ---   ---    --- 1 1 1 1 S6003"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_128463315b315b3c8ebf2680ddd3c212",
+      "source_key": "J123110.14+121627.9",
+      "source_row_number": 92,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_a77756a609b95268b4abe17f4279fa59",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_93",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 93 NGVS J123110.42+130550.4 20.864|0.008 20.154|0.011 10.95|0.55 11.88|0.55 ---         ---  ---   1607   ---   1529 2 1 1 0 VCC1340"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_d71697a21fe15ccc8d6fb8b667e7e192",
+      "source_key": "J123110.42+130550.4",
+      "source_row_number": 93,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d29555c6fa9a5cad9eedbb4e9cef3785",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_94",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 94 NGVS J123111.31+123001.0 20.870|0.010 20.013|0.010 11.91|0.48 12.33|0.55 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD36"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_ab759a0954ad59c693169d2cf92a37dd",
+      "source_key": "J123111.31+123001.0",
+      "source_row_number": 94,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_27f0f9a463245d3492982046844750ae",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_95",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 95 NGVS J123116.32+121845.4 20.864|0.013 20.049|0.011 25.92|0.57 26.64|0.69 ---         --- 1848   1787   ---    --- 1 1 1 1 S41"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_0e8a17f6feb75e0799f15dfa637ee7ba",
+      "source_key": "J123116.32+121845.4",
+      "source_row_number": 95,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_8f980d837a9d53f8b749f9f362e9982e",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_96",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 96 NGVS J123120.00+121158.1 20.518|0.006 19.750|0.009 11.26|0.33 11.50|0.22 ---         --- 1282   1250  1346    --- 1 1 1 1 H24581"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_da63030695045bb4a92743f38fe3bda4",
+      "source_key": "J123120.00+121158.1",
+      "source_row_number": 96,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_4ab8e2da2a4c5b7da4ac10959c96b268",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_97",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 97 NGVS J123124.75+122525.8 19.833|0.003 19.077|0.007 13.45|0.19 12.75|0.22 ---         ---  ---   1785  1781    --- 1 1 1 1 M87UCD18"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_785fb81e34fb5313add5cea6756d4fc4",
+      "source_key": "J123124.75+122525.8",
+      "source_row_number": 97,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_5b9d26da2d335105aeac6e82bee52d59",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_98",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 98 NGVS J123125.25+121931.8 20.096|0.015 19.344|0.008 32.83|1.09 33.30|0.54 ---         ---  ---    ---   ---    --- 1 1 1 1 M87UCD32"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_f4b8d613d81457738c437f7c8bf0a31e",
+      "source_key": "J123125.25+121931.8",
+      "source_row_number": 98,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_4e796234c3d85c12b9c40b8c94cfd16b",
+      "evidence_type": "supporting_structural_and_velocity_measurement",
+      "link_id": "liu2015_table3_99",
+      "link_method": "same_publication_ngvs_key_and_primary_row_order",
+      "measurement": {
+        "raw_fixed_width_row": " 99 NGVS J123128.36+122503.6 19.388|0.020 18.594|0.009 14.02|0.85 12.85|0.37 ---        18.8 2100   2116  2111    --- 1 1 1 1 VUCD6"
+      },
+      "primary_coordinate_separation_arcsec": 0.0,
+      "publication_bibcode": "2015ApJ...812...34L",
+      "record_id": "record_86d1a1dd14175a3daa406f9ca6945085",
+      "source_key": "J123128.36+122503.6",
+      "source_row_number": 99,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_08de50eae437546eb153da1733477855",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_fluffy",
+      "link_method": "published_name_and_dumont_voggel2020_source_citation",
+      "measurement": {
+        "CL": null,
+        "DEdeg": -44.157251,
+        "KV19": "Fluffy",
+        "Label": "e",
+        "RAdeg": 199.545362,
+        "RVel": 719.2,
+        "S/N": 5.2,
+        "Votes": null,
+        "e_RVel": 6.4,
+        "gMAG": -9.61,
+        "gmag": 18.3
+      },
+      "primary_coordinate_separation_arcsec": 0.005165500167754502,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_da4c58cd07c653bb86e75025cca85e4d",
+      "source_key": "Fluffy",
+      "source_row_number": 5,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_fe9a542f1d9f5a13ac4185e2be17e940",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-054",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 5.08,
+        "DEdeg": -44.5545868,
+        "KV19": "KV19-054",
+        "Label": "-",
+        "RAdeg": 199.1021398,
+        "RVel": 0.5,
+        "S/N": 7.1,
+        "Votes": null,
+        "e_RVel": 4.3,
+        "gMAG": null,
+        "gmag": 18.04
+      },
+      "primary_coordinate_separation_arcsec": 0.00015728587559414117,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_c6ec1d3a687e54d58b1fd0eeb662849a",
+      "source_key": "KV19-054",
+      "source_row_number": 6,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_d103508dbc135c0a9bade3b5055ceee7",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-212",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 2.46,
+        "DEdeg": -43.874459,
+        "KV19": "KV19-212",
+        "Label": "d",
+        "RAdeg": 200.790847,
+        "RVel": 535.1,
+        "S/N": 21.5,
+        "Votes": 1.4,
+        "e_RVel": 2.4,
+        "gMAG": -9.98,
+        "gmag": 17.93
+      },
+      "primary_coordinate_separation_arcsec": 0.0013806738916845127,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_30cf48ced8ae5125a6d97fa89a49a057",
+      "source_key": "KV19-212",
+      "source_row_number": 4,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1db589dfa6de50a68f2551e19e22fd16",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-258",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.31,
+        "DEdeg": -44.931836,
+        "KV19": "KV19-258",
+        "Label": "-",
+        "RAdeg": 201.223936,
+        "RVel": -17.3,
+        "S/N": 23.0,
+        "Votes": null,
+        "e_RVel": 6.4,
+        "gMAG": null,
+        "gmag": 15.84
+      },
+      "primary_coordinate_separation_arcsec": 0.0013582773586144705,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_b9e4ae3650d158038bb5429aa9c6f2b5",
+      "source_key": "KV19-258",
+      "source_row_number": 7,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_00ae5b07b9cf5390ba173953832e14ec",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-271",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 3.67,
+        "DEdeg": -43.509212,
+        "KV19": "KV19-271",
+        "Label": "c",
+        "RAdeg": 201.296298,
+        "RVel": 548.9,
+        "S/N": 20.9,
+        "Votes": 1.5,
+        "e_RVel": 1.7,
+        "gMAG": -10.25,
+        "gmag": 17.66
+      },
+      "primary_coordinate_separation_arcsec": 0.001360237000161247,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_68ac35bb6af95b2aa950db21a2aabd83",
+      "source_key": "KV19-271",
+      "source_row_number": 3,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_a55569533f1f597d80cbcc6afa5c7ee0",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-329",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 1.67,
+        "DEdeg": -42.703936,
+        "KV19": "KV19-329",
+        "Label": "b",
+        "RAdeg": 201.672201,
+        "RVel": 627.4,
+        "S/N": 22.3,
+        "Votes": 1.0,
+        "e_RVel": 1.6,
+        "gMAG": -10.09,
+        "gmag": 17.82
+      },
+      "primary_coordinate_separation_arcsec": 0.0013681086719080212,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_a932464a287f51a2bb25ebfd4138c54a",
+      "source_key": "KV19-329",
+      "source_row_number": 2,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_4a18b7fcd0b95832b2b2565874a33f5a",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-397",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.22,
+        "DEdeg": -42.858302,
+        "KV19": "KV19-397",
+        "Label": "-",
+        "RAdeg": 202.1048,
+        "RVel": -80.8,
+        "S/N": 16.1,
+        "Votes": 3.75,
+        "e_RVel": 11.1,
+        "gMAG": null,
+        "gmag": 16.26
+      },
+      "primary_coordinate_separation_arcsec": 0.0016608339092666585,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_894de0704fbe5a028bf6c40e04dd3883",
+      "source_key": "KV19-397",
+      "source_row_number": 8,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_44ad081b22cc542a9505c1efb27ec836",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-424",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.0001,
+        "DEdeg": -45.212907,
+        "KV19": "KV19-424",
+        "Label": "-",
+        "RAdeg": 202.321732,
+        "RVel": -81.3,
+        "S/N": 11.6,
+        "Votes": null,
+        "e_RVel": 2.0,
+        "gMAG": null,
+        "gmag": 15.18
+      },
+      "primary_coordinate_separation_arcsec": 0.0006661620358328174,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_297690d104ad5727b68d5455d4cff78f",
+      "source_key": "KV19-424",
+      "source_row_number": 9,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_b41649ef486152a888f26dcb5fc7439c",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-442",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 1.71,
+        "DEdeg": -42.391404,
+        "KV19": "KV19-442",
+        "Label": "a",
+        "RAdeg": 202.432394,
+        "RVel": 485.1,
+        "S/N": 22.7,
+        "Votes": 1.0,
+        "e_RVel": 1.2,
+        "gMAG": -10.32,
+        "gmag": 17.59
+      },
+      "primary_coordinate_separation_arcsec": 0.0015352069315515751,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_56427c49a7d65525b994a95af065e12e",
+      "source_key": "KV19-442",
+      "source_row_number": 1,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_17804c7e74715d6ca3fe50787946d8de",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-464",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.73,
+        "DEdeg": -44.666926,
+        "KV19": "KV19-464",
+        "Label": "-",
+        "RAdeg": 202.645456,
+        "RVel": -14.3,
+        "S/N": 16.1,
+        "Votes": 1.75,
+        "e_RVel": 32.7,
+        "gMAG": null,
+        "gmag": 17.28
+      },
+      "primary_coordinate_separation_arcsec": 0.0017584874509635503,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_320884c382ca5e299707cabd178f3fa9",
+      "source_key": "KV19-464",
+      "source_row_number": 10,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_7cf56b44d12b50f9a7817b60a01acfef",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-492",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.44,
+        "DEdeg": -42.611323,
+        "KV19": "KV19-492",
+        "Label": "-",
+        "RAdeg": 202.862878,
+        "RVel": -21.9,
+        "S/N": 8.7,
+        "Votes": 2.0,
+        "e_RVel": 6.9,
+        "gMAG": null,
+        "gmag": 17.89
+      },
+      "primary_coordinate_separation_arcsec": 0.0007249978506339719,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_89d92936fa2f5ec4a31e8a048dc1981a",
+      "source_key": "KV19-492",
+      "source_row_number": 11,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_1f25198096e95827a5aecdc802d30d79",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-521",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 2.27,
+        "DEdeg": -41.300504,
+        "KV19": "KV19-521",
+        "Label": "-",
+        "RAdeg": 203.050732,
+        "RVel": -95.2,
+        "S/N": 10.1,
+        "Votes": null,
+        "e_RVel": 29.1,
+        "gMAG": null,
+        "gmag": 17.69
+      },
+      "primary_coordinate_separation_arcsec": 0.0010189396242905645,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_6aaa61e41f2752b0a091bcbef38529bb",
+      "source_key": "KV19-521",
+      "source_row_number": 12,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_906cad5350875a2ca12a432e141e726f",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-569",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 0.3,
+        "DEdeg": -42.362577,
+        "KV19": "KV19-569",
+        "Label": "-",
+        "RAdeg": 203.478425,
+        "RVel": 23.6,
+        "S/N": 10.8,
+        "Votes": 2.0,
+        "e_RVel": 4.6,
+        "gMAG": null,
+        "gmag": 17.89
+      },
+      "primary_coordinate_separation_arcsec": 0.001264213879137705,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_13c3068278bb5c46b0c45a014755a958",
+      "source_key": "KV19-569",
+      "source_row_number": 13,
+      "source_table": "table3.dat"
+    },
+    {
+      "canonical_object_id": "canonical_60fa53999c875aba803f200901f0e863",
+      "evidence_type": "supporting_spectroscopic_measurement",
+      "link_id": "voggel2020_table3_kv19-573",
+      "link_method": "same_publication_kv19_key_and_primary_row_order",
+      "measurement": {
+        "CL": 3.35,
+        "DEdeg": -42.866562,
+        "KV19": "KV19-573",
+        "Label": "-",
+        "RAdeg": 203.537185,
+        "RVel": -19.6,
+        "S/N": 11.7,
+        "Votes": 2.0,
+        "e_RVel": 1.7,
+        "gMAG": null,
+        "gmag": 18.06
+      },
+      "primary_coordinate_separation_arcsec": 0.0013717087788920222,
+      "publication_bibcode": "2020ApJ...899..140V",
+      "record_id": "record_09dd555b954f5ba589d160edbd98cd89",
+      "source_key": "KV19-573",
+      "source_row_number": 14,
+      "source_table": "table3.dat"
+    }
+  ],
+  "reference_database_sha256": "68aafbf4d018ba9070f9b3f5bd9c723e63d2b2a8998523b04f94c0a84cab6ec4",
+  "review_status": "approved_by_project_lead_delegation_2026-07-15",
+  "schema_version": 1,
+  "summary": {
+    "evidence_type_counts": {
+      "supporting_spectroscopic_measurement": 14,
+      "supporting_structural_and_velocity_measurement": 127,
+      "supporting_structural_measurement": 27
+    },
+    "link_count": 168,
+    "maximum_primary_coordinate_separation_arcsec": 0.005165500167754502,
+    "source_table_counts": {
+      "2011ApJ...737...86C:table4.dat": 27,
+      "2015ApJ...812...34L:table3.dat": 127,
+      "2020ApJ...899..140V:table3.dat": 14
+    }
+  },
+  "supporting_evidence_links_authorized": true
+}

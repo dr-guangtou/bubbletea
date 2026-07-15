@@ -1,0 +1,670 @@
+{
+  "approval_date": "2026-07-15",
+  "approval_scope": "high_priority_nearby_reference_and_confirmation_sources",
+  "minimum_request_interval_seconds": 3.0,
+  "retrieval_date": "2026-07-15",
+  "sources": [
+    {
+      "arxiv_id": "1508.07373",
+      "bibcode": "2015ApJ...812L...2L",
+      "doi": "10.1088/2041-8205/812/1/L2",
+      "files": [
+        {
+          "byte_count": 1611168,
+          "file_name": "liu2015b.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "289e6818553e09148917179d16d51040d4467fb0acee059b530d2792eb003746"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 6,
+      "pdf_byte_count": 1611168,
+      "pdf_file": "liu2015b.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "289e6818553e09148917179d16d51040d4467fb0acee059b530d2792eb003746",
+      "pdf_url": "https://arxiv.org/pdf/1508.07373",
+      "reference_folder": "liu2015b",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1502.06598",
+      "bibcode": "2015MNRAS.449.1716J",
+      "doi": "10.1093/mnras/stv389",
+      "files": [
+        {
+          "byte_count": 4620818,
+          "file_name": "janz2015.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "2c1fd30612b528e24fa71a35da3466b6c42219ba5d3830580912643fb8ea88eb"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 16,
+      "pdf_byte_count": 4620818,
+      "pdf_file": "janz2015.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "2c1fd30612b528e24fa71a35da3466b6c42219ba5d3830580912643fb8ea88eb",
+      "pdf_url": "https://arxiv.org/pdf/1502.06598",
+      "reference_folder": "janz2015",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1506.00004",
+      "bibcode": "2015MNRAS.451.3615N",
+      "doi": "10.1093/mnras/stv1221",
+      "files": [
+        {
+          "byte_count": 1545116,
+          "file_name": "norris2015.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "0eecbb34f78cc3b719d6b638c1a935dcc3b315d2b3f5d4e0d2a813df14b0e8ac"
+        }
+      ],
+      "first_page_height_points": 841.89,
+      "first_page_width_points": 595.276,
+      "page_count": 13,
+      "pdf_byte_count": 1545116,
+      "pdf_file": "norris2015.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "0eecbb34f78cc3b719d6b638c1a935dcc3b315d2b3f5d4e0d2a813df14b0e8ac",
+      "pdf_url": "https://arxiv.org/pdf/1506.00004",
+      "reference_folder": "norris2015",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1510.05010",
+      "bibcode": "2016A&A...586A.102V",
+      "doi": "10.1051/0004-6361/201527070",
+      "files": [
+        {
+          "byte_count": 10878,
+          "file_name": "ReadMe.txt",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "4171df321942823205bb9c4a166fa6460cc9a769606623e14ff9d44df77a3880"
+        },
+        {
+          "byte_count": 1261,
+          "file_name": "table1.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "470612956e1e7adac9712fdc044ddf127b4e71a9c6560fceeab167ea8e6e41d2"
+        },
+        {
+          "byte_count": 1890,
+          "file_name": "tablea1.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "50a563291f461879ac11e8c2a629126defc8b2b05a721230c31ff3b7bf53223d"
+        },
+        {
+          "byte_count": 4544,
+          "file_name": "tablea2.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "8a783c865563e2d300b2466fe7cc603228b70e01c3210b5051ed638906a9baf9"
+        },
+        {
+          "byte_count": 5586939,
+          "file_name": "voggel2016.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "8ea9dbe68a40abc16c03af564b3163133305dd21fca2682764da72168eedc155"
+        }
+      ],
+      "first_page_height_points": 841.89,
+      "first_page_width_points": 595.276,
+      "page_count": 21,
+      "pdf_byte_count": 5586939,
+      "pdf_file": "voggel2016.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "8ea9dbe68a40abc16c03af564b3163133305dd21fca2682764da72168eedc155",
+      "pdf_url": "https://arxiv.org/pdf/1510.05010",
+      "reference_folder": "voggel2016",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [],
+      "vizier_catalog": "J/A+A/586/A102"
+    },
+    {
+      "arxiv_id": "1605.01261",
+      "bibcode": "2016MNRAS.459.4450W",
+      "doi": "10.1093/mnras/stw827",
+      "files": [
+        {
+          "byte_count": 6870,
+          "file_name": "ReadMe.txt",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "c5746caa4a4f00966dc6dc46a6aa2eec0eea081defa13dc6a9d9ca5fb20d97f6"
+        },
+        {
+          "byte_count": 63280,
+          "file_name": "table1.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "69d2736b8f1c0741eb05022ddd21f452b855e7b034dccaa7e73a450efc94bd8e"
+        },
+        {
+          "byte_count": 25560,
+          "file_name": "table3.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "0f1d5365cca5e3231c7f54321a4463ee04ac22061d7a7e26df840193c14672c9"
+        },
+        {
+          "byte_count": 2696764,
+          "file_name": "wittmann2016.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "747665309847e9e426f996f6db08fd575936e3a579d201e352696e8dc2c520a5"
+        }
+      ],
+      "first_page_height_points": 842.0,
+      "first_page_width_points": 595.0,
+      "page_count": 19,
+      "pdf_byte_count": 2696764,
+      "pdf_file": "wittmann2016.pdf",
+      "pdf_header": "%PDF-1.4",
+      "pdf_sha256": "747665309847e9e426f996f6db08fd575936e3a579d201e352696e8dc2c520a5",
+      "pdf_url": "https://arxiv.org/pdf/1605.01261",
+      "reference_folder": "wittmann2016",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [],
+      "vizier_catalog": "J/MNRAS/459/4450"
+    },
+    {
+      "arxiv_id": "1702.06472",
+      "bibcode": "2017A&A...599L...8F",
+      "doi": "10.1051/0004-6361/201730493",
+      "files": [
+        {
+          "byte_count": 401501,
+          "file_name": "faifer2017.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "6e35f535b59659348f611093f62f13e3f3f827ed93c7bdeba8f3f1822944b23b"
+        }
+      ],
+      "first_page_height_points": 842.0,
+      "first_page_width_points": 595.0,
+      "page_count": 5,
+      "pdf_byte_count": 401501,
+      "pdf_file": "faifer2017.pdf",
+      "pdf_header": "%PDF-1.4",
+      "pdf_sha256": "6e35f535b59659348f611093f62f13e3f3f827ed93c7bdeba8f3f1822944b23b",
+      "pdf_url": "https://arxiv.org/pdf/1702.06472",
+      "reference_folder": "faifer2017",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1612.04393",
+      "bibcode": "2017ApJ...835..212K",
+      "doi": "10.3847/1538-4357/835/2/212",
+      "files": [
+        {
+          "byte_count": 11008,
+          "file_name": "ReadMe.txt",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "412fca8fba17532aed0e36bbf7294a43267e34d12c2d385fcde12ee690a987e7"
+        },
+        {
+          "byte_count": 4109169,
+          "file_name": "ko2017.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "a8be671cbd946202f75f668477d30cffefc96e87a29aa7ee2e8c9e5b2c32fb73"
+        },
+        {
+          "byte_count": 48895,
+          "file_name": "table2.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "36c750f8d7b99acb5ed6c082ba6bdf7f8a7b55a84407998e800dfb49766ca167"
+        },
+        {
+          "byte_count": 68750,
+          "file_name": "table3.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "8ae4f3c5feeeed5c9403044b68094b1e14456fdd0727e5a9324e43594aa5e77c"
+        },
+        {
+          "byte_count": 14352,
+          "file_name": "table4.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "555cec7738f7bf3ee0c38342d2c1c24a6305770622f96690ad5c50a703369c9a"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 19,
+      "pdf_byte_count": 4109169,
+      "pdf_file": "ko2017.pdf",
+      "pdf_header": "%PDF-1.4",
+      "pdf_sha256": "a8be671cbd946202f75f668477d30cffefc96e87a29aa7ee2e8c9e5b2c32fb73",
+      "pdf_url": "https://arxiv.org/pdf/1612.04393",
+      "reference_folder": "ko2017",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [],
+      "vizier_catalog": "J/ApJ/835/212"
+    },
+    {
+      "arxiv_id": "1703.09221",
+      "bibcode": "2017ApJ...839...72A",
+      "doi": "10.3847/1538-4357/aa6972",
+      "files": [
+        {
+          "byte_count": 2596134,
+          "file_name": "ahn2017.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "e5438f092e37107516ac1af4b923fab7aba98682ce1ae088752f7cc8b4c1a44a"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 17,
+      "pdf_byte_count": 2596134,
+      "pdf_file": "ahn2017.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "e5438f092e37107516ac1af4b923fab7aba98682ce1ae088752f7cc8b4c1a44a",
+      "pdf_url": "https://arxiv.org/pdf/1703.09221",
+      "reference_folder": "ahn2017",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1801.07254",
+      "bibcode": "2018ApJ...853...54S",
+      "doi": "10.3847/1538-4357/aaa424",
+      "files": [
+        {
+          "byte_count": 8917930,
+          "file_name": "schweizer2018.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "575c3eee510b8bd1717175e37889cc13170af1d4e9431c585916e36db149df32"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 25,
+      "pdf_byte_count": 8917930,
+      "pdf_file": "schweizer2018.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "575c3eee510b8bd1717175e37889cc13170af1d4e9431c585916e36db149df32",
+      "pdf_url": "https://arxiv.org/pdf/1801.07254",
+      "reference_folder": "schweizer2018",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1803.09750",
+      "bibcode": "2018ApJ...858...20V",
+      "doi": "10.3847/1538-4357/aabae5",
+      "files": [
+        {
+          "byte_count": 4785141,
+          "file_name": "voggel2018.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "18d4dfbff4c98857b677c258c36b8389c5157f9093ce6301012f1e374c8fb483"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 21,
+      "pdf_byte_count": 4785141,
+      "pdf_file": "voggel2018.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "18d4dfbff4c98857b677c258c36b8389c5157f9093ce6301012f1e374c8fb483",
+      "pdf_url": "https://arxiv.org/pdf/1803.09750",
+      "reference_folder": "voggel2018",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1803.07577",
+      "bibcode": "2018ApJ...858...37Z",
+      "doi": "10.3847/1538-4357/aab88a",
+      "files": [
+        {
+          "byte_count": 933576,
+          "file_name": "zhang2018.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "f119bbe84fb8b04c1803c2bc2e42333d88d43ad37a7eeea687ae2ce5d0e02504"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 13,
+      "pdf_byte_count": 933576,
+      "pdf_file": "zhang2018.pdf",
+      "pdf_header": "%PDF-1.4",
+      "pdf_sha256": "f119bbe84fb8b04c1803c2bc2e42333d88d43ad37a7eeea687ae2ce5d0e02504",
+      "pdf_url": "https://arxiv.org/pdf/1803.07577",
+      "reference_folder": "zhang2018",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "1804.02399",
+      "bibcode": "2018ApJ...858..102A",
+      "doi": "10.3847/1538-4357/aabc57",
+      "files": [
+        {
+          "byte_count": 8174,
+          "file_name": "ReadMe.txt",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "7c41bd24818192927f9fded313cb64e38a58b61d67088325628b577b2b71f070"
+        },
+        {
+          "byte_count": 8199263,
+          "file_name": "ahn2018.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "05c374682f5a60c51c26ca812d020a4af5a363e81e91d26b9a10e70eada2a63c"
+        },
+        {
+          "byte_count": 9156,
+          "file_name": "table3.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "bed51269c1e77fe039f1cdbef2907b5a6dcc1fea495a153f6afd4633018a71a8"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 17,
+      "pdf_byte_count": 8199263,
+      "pdf_file": "ahn2018.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "05c374682f5a60c51c26ca812d020a4af5a363e81e91d26b9a10e70eada2a63c",
+      "pdf_url": "https://arxiv.org/pdf/1804.02399",
+      "reference_folder": "ahn2018",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": [],
+      "vizier_catalog": "J/ApJ/858/102"
+    },
+    {
+      "arxiv_id": "1804.02938",
+      "bibcode": "2018MNRAS.477.4856A",
+      "doi": "10.1093/mnras/sty913",
+      "files": [
+        {
+          "byte_count": 1482422,
+          "file_name": "afanasiev2018.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "efdfb7e47a578e07aad95d5cb53a6bf49b5f9bbeeed85aae85d8b284b144aa3c"
+        }
+      ],
+      "first_page_height_points": 841.89,
+      "first_page_width_points": 595.276,
+      "page_count": 11,
+      "pdf_byte_count": 1482422,
+      "pdf_file": "afanasiev2018.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "efdfb7e47a578e07aad95d5cb53a6bf49b5f9bbeeed85aae85d8b284b144aa3c",
+      "pdf_url": "https://arxiv.org/pdf/1804.02938",
+      "reference_folder": "afanasiev2018",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "2007.15275",
+      "bibcode": "2020ApJS..250...17L",
+      "doi": "10.3847/1538-4365/abad91",
+      "files": [
+        {
+          "byte_count": 15528,
+          "file_name": "ReadMe.txt",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "bd30e25f914db10ccc12d25634598931717b74440b8410d179a5ad509c28050d"
+        },
+        {
+          "byte_count": 8346366,
+          "file_name": "liu2020.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "70c0ac975507d4e7772f0ebb28250cb66d6d7ffe0328501cdb1081c001e1391b"
+        },
+        {
+          "byte_count": 120888,
+          "file_name": "table3.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "34158d07bc4bace6edcadc6f14f87e1942fd40a20e47e8e21b5f5841fd7495a0"
+        },
+        {
+          "byte_count": 74921,
+          "file_name": "table4.dat",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "a30c4489565b2c257cf75f4d3a44ecc3c27b882ad402fa24898782cba377da7e"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 70,
+      "pdf_byte_count": 8346366,
+      "pdf_file": "liu2020.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "70c0ac975507d4e7772f0ebb28250cb66d6d7ffe0328501cdb1081c001e1391b",
+      "pdf_url": "https://arxiv.org/pdf/2007.15275",
+      "reference_folder": "liu2020",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [],
+      "vizier_catalog": "J/ApJS/250/17"
+    },
+    {
+      "arxiv_id": "2309.08098",
+      "bibcode": "2023MNRAS.526L.136P",
+      "doi": "10.1093/mnrasl/slad126",
+      "files": [
+        {
+          "byte_count": 1961325,
+          "file_name": "paudel2023.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "5206d0555aff4b03817d4bf532235bf894cc0bc04e3374f60086609b430d866a"
+        }
+      ],
+      "first_page_height_points": 782.362,
+      "first_page_width_points": 595.276,
+      "page_count": 7,
+      "pdf_byte_count": 1961325,
+      "pdf_file": "paudel2023.pdf",
+      "pdf_header": "%PDF-1.5",
+      "pdf_sha256": "5206d0555aff4b03817d4bf532235bf894cc0bc04e3374f60086609b430d866a",
+      "pdf_url": "https://arxiv.org/pdf/2309.08098",
+      "reference_folder": "paudel2023",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "2311.05448",
+      "bibcode": "2023Natur.623..296W",
+      "doi": "10.1038/s41586-023-06650-z",
+      "files": [
+        {
+          "byte_count": 17238,
+          "file_name": "source_data_extended_figure_6.xlsx",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "1d9cae518350b3a183f03ee65769655d60331d43dd4f070b9f54dce2f24dbc8f"
+        },
+        {
+          "byte_count": 16631,
+          "file_name": "source_data_extended_figure_7.xlsx",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "ea2324ef1317496fd938f3b5d1e864310102cf68fa71b5b66b5114c70a37df50"
+        },
+        {
+          "byte_count": 16520,
+          "file_name": "source_data_figure_2.xlsx",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "b601bcb4ace6467e79c812e61ed53572ac3f9e32fd5f9e26fd4291fdf833d083"
+        },
+        {
+          "byte_count": 16574,
+          "file_name": "source_data_figure_3.xlsx",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "dfc65b3ea165c340c27539d827ccb13720ef4ed57f7de5d70f179f4333798669"
+        },
+        {
+          "byte_count": 5558722,
+          "file_name": "wang2023b.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "127b194737cfc76070084ba931001bc93996752510361938a98f22ae55c8f558"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 26,
+      "pdf_byte_count": 5558722,
+      "pdf_file": "wang2023b.pdf",
+      "pdf_header": "%PDF-1.3",
+      "pdf_sha256": "127b194737cfc76070084ba931001bc93996752510361938a98f22ae55c8f558",
+      "pdf_url": "https://arxiv.org/pdf/2311.05448",
+      "reference_folder": "wang2023b",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": [
+        {
+          "byte_count": 16520,
+          "file_name": "source_data_figure_2.xlsx",
+          "retrieval_status": "complete",
+          "sha256": "b601bcb4ace6467e79c812e61ed53572ac3f9e32fd5f9e26fd4291fdf833d083",
+          "source_label": "Source Data Fig. 2",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM2_ESM.xlsx",
+          "worksheet_count": 4,
+          "worksheet_names": [
+            "eUCDs",
+            "strongly-nucleated dEs",
+            "strongly-nucleated dE candidate",
+            "disrupting dEs"
+          ],
+          "xlsx_member_count": 13
+        },
+        {
+          "byte_count": 16574,
+          "file_name": "source_data_figure_3.xlsx",
+          "retrieval_status": "complete",
+          "sha256": "dfc65b3ea165c340c27539d827ccb13720ef4ed57f7de5d70f179f4333798669",
+          "source_label": "Source Data Fig. 3",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM3_ESM.xlsx",
+          "worksheet_count": 3,
+          "worksheet_names": [
+            "eUCDs",
+            "strongly-nucleated dEs",
+            "strongly-nucleated dE candidate"
+          ],
+          "xlsx_member_count": 12
+        },
+        {
+          "byte_count": 17238,
+          "file_name": "source_data_extended_figure_6.xlsx",
+          "retrieval_status": "complete",
+          "sha256": "1d9cae518350b3a183f03ee65769655d60331d43dd4f070b9f54dce2f24dbc8f",
+          "source_label": "Source Data Extended Data Fig. 6",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM4_ESM.xlsx",
+          "worksheet_count": 4,
+          "worksheet_names": [
+            "eUCDs",
+            "Strongly-nucleated dEs",
+            "Strongly-nucleated dE candidate",
+            "dE or eUCDs with tidal features"
+          ],
+          "xlsx_member_count": 13
+        },
+        {
+          "byte_count": 16631,
+          "file_name": "source_data_extended_figure_7.xlsx",
+          "retrieval_status": "complete",
+          "sha256": "ea2324ef1317496fd938f3b5d1e864310102cf68fa71b5b66b5114c70a37df50",
+          "source_label": "Source Data Extended Data Fig. 7",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06650-z/MediaObjects/41586_2023_6650_MOESM5_ESM.xlsx",
+          "worksheet_count": 3,
+          "worksheet_names": [
+            "eUCDs",
+            "strongly-nucleated dEs",
+            "strongly-nucleated dE candidate"
+          ],
+          "xlsx_member_count": 12
+        }
+      ]
+    },
+    {
+      "arxiv_id": "2503.00113",
+      "bibcode": "2025ApJ...991L..24T",
+      "doi": "10.3847/2041-8213/ae028e",
+      "files": [
+        {
+          "byte_count": 1050323,
+          "file_name": "taylor2025.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "2ce0c6f9d94fc5d3272ee5abde2c3f81bff08a7c7015c3e118e1d5a2b89979a1"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 11,
+      "pdf_byte_count": 1050323,
+      "pdf_file": "taylor2025.pdf",
+      "pdf_header": "%PDF-1.7",
+      "pdf_sha256": "2ce0c6f9d94fc5d3272ee5abde2c3f81bff08a7c7015c3e118e1d5a2b89979a1",
+      "pdf_url": "https://arxiv.org/pdf/2503.00113",
+      "reference_folder": "taylor2025",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "arxiv_id": "2509.14038",
+      "bibcode": "2026A&A...708A.172M",
+      "doi": "10.1051/0004-6361/202557294",
+      "files": [
+        {
+          "byte_count": 9046449,
+          "file_name": "martinez_delgado2026.pdf",
+          "git_tracking_status": "eligible_by_size",
+          "sha256": "1ca149ee5024e43e721279ed1bc78777e04a48f536d8cb747b146b2329c4a8c8"
+        }
+      ],
+      "first_page_height_points": 841.89,
+      "first_page_width_points": 595.276,
+      "page_count": 10,
+      "pdf_byte_count": 9046449,
+      "pdf_file": "martinez_delgado2026.pdf",
+      "pdf_header": "%PDF-1.7",
+      "pdf_sha256": "1ca149ee5024e43e721279ed1bc78777e04a48f536d8cb747b146b2329c4a8c8",
+      "pdf_url": "https://arxiv.org/pdf/2509.14038",
+      "reference_folder": "martinez_delgado2026",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_confirmation_data",
+      "supplementary_files": []
+    },
+    {
+      "bibcode": "2026ApJS..285...27W",
+      "doi": "10.3847/1538-4365/ae5231",
+      "files": [
+        {
+          "byte_count": 17052862,
+          "file_name": "wang2026.pdf",
+          "git_tracking_status": "local_only_exceeds_10_mib",
+          "sha256": "ab40a2a007f1bed6d2c6504782b1d65339ff0edf4ce68ede1c484c46ff453259"
+        }
+      ],
+      "first_page_height_points": 792.0,
+      "first_page_width_points": 612.0,
+      "page_count": 38,
+      "pdf_byte_count": 17052862,
+      "pdf_file": "wang2026.pdf",
+      "pdf_header": "%PDF-1.7",
+      "pdf_sha256": "ab40a2a007f1bed6d2c6504782b1d65339ff0edf4ce68ede1c484c46ff453259",
+      "pdf_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ae5231/pdf",
+      "reference_folder": "wang2026",
+      "retrieval_status": "complete",
+      "screening_category": "nearby_reference_data",
+      "supplementary_files": []
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+review_id,review_type,priority,review_status,reason,record_id,canonical_object_id,proposal_id,gaia_dr3_id,record_id_1,record_id_2,separation_arcsec,proposal_status,classification_subtype
+review_0ea226d0579d58f78ac653524d74fa60,record_identity,medium,pending,Authoritative Fahrion row has no published coordinates,record_a8a2147efad55c98b56b7e1542b6cd29,,,,,,,,
+review_36dc98a32f0455c483d89ca3ec8342ae,record_identity,medium,pending,Authoritative Fahrion row has no published coordinates,record_21f6b04b3a195ca788eeb41f2b79dac5,,,,,,,,
+review_3abb76b6d37a5052942e67da4fea0976,record_identity,medium,pending,Authoritative Fahrion row has no published coordinates,record_3cd2e0cbafd95956aa0129a050518c21,,,,,,,,
+review_3eb40b4856a45c3a954a07c64f21884a,record_identity,medium,pending,Authoritative Fahrion row has no published coordinates,record_5c8014c31eff58bcacb4c049e721729c,,,,,,,,

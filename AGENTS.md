@@ -100,6 +100,8 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - `docs/plans/phase_{N}_{name}.md` contains task checklists per phase
 - Use markdown checkboxes: `- [ ]` pending, `- [x]` done
 - Add date completed next to done items
+- At the end of every task, always propose the clear next step or ask the user a
+  decision question.
 
 ## Code Style
 

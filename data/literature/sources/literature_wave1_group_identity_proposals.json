@@ -1,0 +1,406 @@
+{
+  "audit_date": "2026-07-15",
+  "audit_summary": {
+    "baseline_canonical_count": 200,
+    "group_count": 91,
+    "proposal_baseline_canonical_count": 24,
+    "proposal_current_canonical_count": 40,
+    "proposal_group_count": 12,
+    "proposal_wave_record_count": 16,
+    "recommendation_counts": {
+      "manual_group_review": 79,
+      "recommend_merge_group": 12
+    },
+    "routing_reason_counts": {
+      "complete_identifier_coverage_without_gaia_or_role_conflict": 12,
+      "nearby_baseline_canonical_lacks_identifier_link": 74,
+      "reported_velocities_are_not_identical": 5
+    },
+    "wave_record_count": 153
+  },
+  "decision_scope": "Connected name-or-alias groups with all nearby baseline canonicals represented; proximity alone is never identity evidence.",
+  "proposal_group_count": 12,
+  "proposals": [
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_92dfe373f2275ecd8379f528daf2de76",
+        "canonical_e8a56884884b52b2adcde51cc905f223"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_4085531b513a512db8f81105ecbb8d52",
+        "canonical_92dfe373f2275ecd8379f528daf2de76",
+        "canonical_a36c91c1e120526db9407d8ff98db4f6",
+        "canonical_e8a56884884b52b2adcde51cc905f223"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_097e1d94740622c7",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s6004"
+      ],
+      "maximum_group_separation_arcsec": 0.06987192761109219,
+      "recommended_anchor_canonical_object_id": "canonical_92dfe373f2275ecd8379f528daf2de76",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_00dbb7d6a3b750deba7ee385f2781886",
+        "record_745b5bf5f0a55a77876af8a7cc1873b3"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_826f2ca8797255da931e41c1bd972e08",
+        "canonical_d7f731a3e57f5e949ed3733384b331dd"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_826f2ca8797255da931e41c1bd972e08",
+        "canonical_a8dfd8df79a752a4990e6747ce709fc2",
+        "canonical_d7f731a3e57f5e949ed3733384b331dd"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [
+        "3907710435885205504"
+      ],
+      "group_id": "wave1_identity_group_2852f94951ba913d",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s686"
+      ],
+      "maximum_group_separation_arcsec": 0.016525031239581874,
+      "recommended_anchor_canonical_object_id": "canonical_826f2ca8797255da931e41c1bd972e08",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_57989cc429e35738a6938f08c39a3acd"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_616e9f3ea61055c69b90e6cad591dd6b",
+        "canonical_e2fcffb7756b50fa9e52c220ed2a1b09"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_616e9f3ea61055c69b90e6cad591dd6b",
+        "canonical_e2fcffb7756b50fa9e52c220ed2a1b09",
+        "canonical_f09408c9cb545584b2c1096639822505"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_33d99d72fb7e0c98",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s672"
+      ],
+      "maximum_group_separation_arcsec": 0.010549650947955964,
+      "recommended_anchor_canonical_object_id": "canonical_616e9f3ea61055c69b90e6cad591dd6b",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_6e844d5a8cc05b34932fd2cecff85f3d"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_77c93d372d75534291f1aaac2c1cbfe0",
+        "canonical_7ec7542de56c52f4a31df5198e7608f0"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_77c93d372d75534291f1aaac2c1cbfe0",
+        "canonical_7ec7542de56c52f4a31df5198e7608f0",
+        "canonical_bc90adf99d3e5de0965450c8219f77ff",
+        "canonical_fc60a2542d6f5804811463f1835b9868"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [
+        "3907709615546615168"
+      ],
+      "group_id": "wave1_identity_group_46775ee74c741a01",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s8006"
+      ],
+      "maximum_group_separation_arcsec": 0.07297875785790475,
+      "recommended_anchor_canonical_object_id": "canonical_7ec7542de56c52f4a31df5198e7608f0",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_27e4a3a0dabd599aaeb5263a8fa23faf",
+        "record_f70b1badbe755c75a561c67cd92ff637"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_28e7c716069359089cda241801255443",
+        "canonical_f89a86300bd0548ca1afa2263c4b3987"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_28e7c716069359089cda241801255443",
+        "canonical_344c022c27df574bad44d9b0e591ab4d",
+        "canonical_f89a86300bd0548ca1afa2263c4b3987"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_4af421a80670aa09",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s723"
+      ],
+      "maximum_group_separation_arcsec": 0.05626937377659751,
+      "recommended_anchor_canonical_object_id": "canonical_28e7c716069359089cda241801255443",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_5ae2c07f01e75976b18fa1de5636a13a"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_132241100eb45f309c983d17a495876e",
+        "canonical_d61257f9bfbf5b3681e49f4515046a90"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_132241100eb45f309c983d17a495876e",
+        "canonical_d2e4ba72b6af5d8ea6d350fe3c3a54db",
+        "canonical_d61257f9bfbf5b3681e49f4515046a90"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_5e33929957d298d9",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s1508"
+      ],
+      "maximum_group_separation_arcsec": 0.018027867756710964,
+      "recommended_anchor_canonical_object_id": "canonical_132241100eb45f309c983d17a495876e",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_07a184a154d35c0fa472238f5ffda299"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_03422881b1e953e9b1468105ecaead90",
+        "canonical_c6d96fd2fed0593f8247c11e6837bb27"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_03422881b1e953e9b1468105ecaead90",
+        "canonical_c6d96fd2fed0593f8247c11e6837bb27",
+        "canonical_d30bf91b77b55c68985b191db3c24562"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_9020b05d4de508f0",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h30401"
+      ],
+      "maximum_group_separation_arcsec": 0.029383691174707464,
+      "recommended_anchor_canonical_object_id": "canonical_03422881b1e953e9b1468105ecaead90",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_a3407680e4ff5dc8bbbc969a7d0a1d0e"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_582e3ec722d95c1f99c8c97dd6cb0942",
+        "canonical_ffad9fadaec654038608de3c75637532"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_582e3ec722d95c1f99c8c97dd6cb0942",
+        "canonical_b43e7327b8c1508fa6ae7f59b3452fb9",
+        "canonical_ffad9fadaec654038608de3c75637532"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_921a0874a0b186d2",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s825"
+      ],
+      "maximum_group_separation_arcsec": 0.021194299803759437,
+      "recommended_anchor_canonical_object_id": "canonical_582e3ec722d95c1f99c8c97dd6cb0942",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_b8239e72a7ca5f3e9d7177d0edee64c9"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_4c31292bec8c52b7802d4e2b00d4d751",
+        "canonical_a78b0463d162518b85d9f85caf844a90"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_4c31292bec8c52b7802d4e2b00d4d751",
+        "canonical_5198e2433a785ab6b359bb4c308e819d",
+        "canonical_a78b0463d162518b85d9f85caf844a90",
+        "canonical_da06daae2416539686236e3071f63efe"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [
+        "3907690408453652480"
+      ],
+      "group_id": "wave1_identity_group_9c3f93d88e988f0c",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "s477"
+      ],
+      "maximum_group_separation_arcsec": 0.1715993683920856,
+      "recommended_anchor_canonical_object_id": "canonical_4c31292bec8c52b7802d4e2b00d4d751",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_7d5bc9432b73538b870c5f02963cf112",
+        "record_dfc3202c5096526e89904e742343a970"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_5b737ad1066b52479b771eec6eb57a3e",
+        "canonical_862879bc55625975be988637d1dd083f"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_06602bf8a1c25d659c6bc5796fbb726c",
+        "canonical_5b737ad1066b52479b771eec6eb57a3e",
+        "canonical_7cb64ef168c450e886c3cb84f63437a6",
+        "canonical_862879bc55625975be988637d1dd083f"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [
+        "3907610208528148864"
+      ],
+      "group_id": "wave1_identity_group_d04070b73fdbc05a",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "vucd4"
+      ],
+      "maximum_group_separation_arcsec": 0.6036104753438963,
+      "recommended_anchor_canonical_object_id": "canonical_862879bc55625975be988637d1dd083f",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_2e99ac1dace557c8b3bfd69518d68910",
+        "record_78e796b21a23568cacdfa85845cbc15c"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_93451dbe9bc650b7b0ad99384802edf4",
+        "canonical_a061d70e0934520d8b2cf07d873d7f24"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_93451dbe9bc650b7b0ad99384802edf4",
+        "canonical_a061d70e0934520d8b2cf07d873d7f24",
+        "canonical_c927fb42ebd95bd4bab33df7a92944fe"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [],
+      "group_id": "wave1_identity_group_dc345506187d5057",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h44905"
+      ],
+      "maximum_group_separation_arcsec": 0.07266597877674563,
+      "recommended_anchor_canonical_object_id": "canonical_93451dbe9bc650b7b0ad99384802edf4",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_4439ec9ee0b154d1b20df1bcf31c6caa"
+      ]
+    },
+    {
+      "baseline_canonical_object_ids": [
+        "canonical_4a2ee0b354645ac6b052d1e8b8b65982",
+        "canonical_84ae2e7f3368563b91be329e3db6fd53"
+      ],
+      "current_canonical_object_ids": [
+        "canonical_21fdee322318563bb5be7de89ab3c54b",
+        "canonical_4a2ee0b354645ac6b052d1e8b8b65982",
+        "canonical_84ae2e7f3368563b91be329e3db6fd53"
+      ],
+      "decision": "same_astrophysical_object",
+      "distinct_gaia_dr3_ids": [
+        "3907690202294377344"
+      ],
+      "group_id": "wave1_identity_group_e311654bc5bfc810",
+      "identity_changes_authorized": true,
+      "matching_identifiers": [
+        "h30772"
+      ],
+      "maximum_group_separation_arcsec": 0.02353713565658764,
+      "recommended_anchor_canonical_object_id": "canonical_4a2ee0b354645ac6b052d1e8b8b65982",
+      "recommended_classification_treatment": "derive_without_identity_conflict",
+      "reported_is_ucd_values": [
+        1
+      ],
+      "review_status": "approved_by_project_lead_2026-07-15",
+      "routing_reason": "complete_identifier_coverage_without_gaia_or_role_conflict",
+      "velocity_spread_km_s": 0.0,
+      "wave_record_ids": [
+        "record_0c36ecd543405286b1c2900ec57c34db"
+      ]
+    }
+  ],
+  "reference_database_sha256": "15ddd262ef12e2f62b6353266a9e5c08fe48a19a38ff52e7e70d7824d48e27f4",
+  "review_status": "approved_by_project_lead_2026-07-15",
+  "schema_version": 1
+}

@@ -53,13 +53,155 @@ Phase-specific execution tasks remain in `docs/plans/`.
   background, and radial-search scripts call the same implementation.
   Depends on: BT-001.
 
-- [ ] **BT-003 - Reconcile the literature database non-destructively.**
+- [x] **BT-003 - Reconcile the literature database non-destructively (completed
+  2026-07-15).**
   Evidence: The database contains 2,108 rows, 2,064 UCD-flagged rows, 1,928 exact
   coordinate pairs, and 180 exact duplicate-coordinate groups. Candidate and
   confirmed labels are mixed. The existing redundancy script deletes rows.
   Resolution criteria: Preserve every source record, define canonical objects and
   source associations, document confirmation labels, and produce a validation
   report without deleting provenance-bearing rows.
+  Progress, 2026-07-14: Added a read-only audit and separate v2 schema/build, then
+  reconciled the Saifollahi source into 61 operational
+  spectroscopic reference UCDs and 587 comparison records from table A1, 44
+  unconfirmed final candidates from table A6, and a separate 1,155-record table A5
+  selection pool. The initial v2 checkpoint preserved 2,710 literature records and 2,331
+  canonical objects, all 180 legacy duplicate-coordinate groups, and 26 non-exact
+  Gaia association proposals across eight groups. Structural checks pass with five
+  scientific-review gates still open. No legacy row was changed or deleted.
+  Progress, 2026-07-14: The pending-row audit shows that the 79 Liu rows split
+  into 51 `UCD=1` candidates already represented by sub-arcsecond v2 counterparts
+  and 28 explicit `UCD=0` comparison rows with no counterpart within five
+  arcseconds. Of 57 Voggel reference objects, 35 have exact or sub-arcsecond v2
+  counterparts, one lies within five arcseconds, and 22 have none within five
+  arcseconds. Four Fahrion rows remain coordinate-null. Membership is unchanged
+  pending project-lead review.
+  Progress, 2026-07-14: The project lead approved and the builder implemented the
+  pending-row treatment. It preserves all 140 rows, accepts 51 Liu and 35 Voggel
+  source associations, creates 28 Liu negative-comparison and 22 new Voggel
+  reference objects, and retains four coordinate-null Fahrion records without
+  canonical associations. T17-1596 is associated with HHH86-C15 through the
+  published Taylor and Woodley alias chain, with its 1.37-arcsecond offset
+  retained. The review queue contains 728 items and all invariants pass.
+  Progress, 2026-07-14: Authoritative Gaia DR3 coordinates were retrieved for all
+  117 source IDs represented by the 140 non-exact proposals. Spherical validation
+  routes 72 groups to recommended shared-identity acceptance and retains 45 for
+  explicit review: 23 Gaia image-ambiguity, 8 multi-position, and 14 combined
+  identity/classification cases. No canonical membership changed. The largest
+  measured difference from the legacy planar distance is 0.176110481759 arcsec.
+  Progress, 2026-07-14: The project lead approved the 72 clean shared-Gaia
+  identities. The builder merges those groups, records 72 approved identity
+  evidence rows, retains 72 retired canonical identifiers as aliases, and leaves
+  the other 45 groups as 65 explicitly routed proposals. The current build has
+  2,368 canonical objects and 649 review items; all invariants pass.
+  Progress, 2026-07-14: The project lead separately approved the 14 shared-Gaia
+  identity groups with conflicting reported UCD/GC roles. They are merged as
+  identities and labeled `uncertain / reported_ucd_role_conflict`, with both
+  source labels preserved. The build now has 2,354 canonical objects, 86 retained
+  canonical aliases, 49 proposals across 31 groups, and 642 review items.
+  Progress, 2026-07-14: The 23 two-position image-ambiguity groups now have
+  provenance-tracked five-arcsecond Gaia DR3 neighborhoods and Legacy Survey DR10
+  data/model/residual cutouts. No group has a competing Gaia source within two
+  arcseconds; one has a separate neighbor at 4.710023680999 arcseconds. Visual and
+  source-table review recommends accepting 22 shared identities while retaining
+  S547 and VUCD3 as separate objects sharing one unresolved Gaia source. No
+  identity decision or database membership has changed pending project-lead
+  review.
+  Progress, 2026-07-14: The project lead approved and the builder implemented the
+  split image-review treatment. Twenty-two groups are merged identities. Zhang
+  and Fahrion S547 are consolidated at a measured 0.058627924650-arcsecond
+  separation, while S547 and VUCD3 remain separate canonical objects with two
+  approved `ambiguous_shared_gaia_dr3` evidence rows. The deterministic build has
+  2,331 canonical objects, 109 retained aliases, 26 proposals across eight
+  multi-position groups, and 618 review items. All invariants pass.
+  Progress, 2026-07-14: The final eight multi-position groups were audited against
+  authoritative Gregg, Fahrion, and Saifollahi tables, Brüns aliases, and a
+  five-paper ADS metadata query. All eight combine three sub-arcsecond positions
+  around one clean Gaia source with positive reported roles and consistent Fornax
+  membership. Seven velocity comparisons agree within 1.7 Gregg uncertainties;
+  F-6/Gregg 27 has a preserved 268 km/s (2.65-sigma) measurement tension. The
+  audit recommends eight shared identities but changes no memberships pending
+  project-lead review.
+  Progress, 2026-07-15: The project lead approved all eight three-position
+  shared-Gaia identities. The builder now merges them generically by declared
+  position count, retains 16 additional canonical aliases, preserves the
+  F-6/Gregg 27 velocity tension and both identical Saifollahi F-1/UCD2 rows, and
+  leaves no shared-Gaia proposals. The deterministic build contains 2,315
+  canonical objects (1,726 candidate, 575 rejected, 14 uncertain), 125 aliases,
+  116 approved shared-Gaia identity evidence rows, and 584 review items. All 180
+  legacy exact duplicate-coordinate groups remain represented, and the immutable
+  legacy database hash is unchanged.
+  Progress, 2026-07-15: A targeted 2015-2026 ADS title query exposed 45 papers
+  absent from the original citation-led discovery set, including seven relevant
+  object studies from 2015-2018. The exact 345-paper union was screened by title
+  and abstract with corpus SHA-256
+  `54619aad14b33d82ff9408d7da7db0190d2f14709673c0b7a4e4fcf702788f79`.
+  Five sources are already ingested, 313 are context-only, and 27 are proposed
+  for retrieval; no source membership changes are authorized pending project-lead
+  review of the retrieval cohort.
+  Progress, 2026-07-15: The project lead approved and the builder implemented the
+  five-part Wave 1 treatment. The deterministic v2 product now preserves 5,049
+  literature records and 2,059 separate pool records across 30 publications and
+  22 datasets. Wave 1 contributes 855 unconfirmed positive records, 1,484 negative
+  comparisons, a 904-row Wittmann mixed compact-system pool, and one Ahn evidence
+  record referencing all 109 M59-UCD3 spatial bins. Four exact Ko UCD/GC conflicts
+  remain `uncertain / reported_ucd_role_conflict`. Four S999 source rows share the
+  Gaia-bearing Fahrion canonical, and the prior Zhang canonical identifier remains
+  an alias. The build has 4,623 canonicals, 126 aliases, 587 review items, and no
+  association proposals; all invariants pass and the legacy database is unchanged.
+  Progress, 2026-07-15: A name-led audit screened all 2,324 Wave 1 rows not already
+  linked to pre-Wave identities. It found 161 rows with direct-name or published-
+  alias evidence. Seven rows have one unique nearest baseline canonical within one
+  arcsecond and are proposed for project-lead approval; 153 rows intersect multiple
+  baseline canonicals within one arcsecond and require group-level identity review.
+  Four reused Fornax-style identifiers are spatially inconsistent by more than
+  474,000 arcseconds and are explicitly not recommended. No general radius rule or
+  database change was made.
+  Progress, 2026-07-15: The project lead approved the seven-row high-confidence
+  cohort. The builder links those rows to six reviewed pre-Wave candidates using
+  `approved_wave1_name_or_alias_identity`, stores seven approved evidence records,
+  and retains all seven superseded Wave canonical identifiers as aliases. The
+  deterministic build now has 4,616 canonicals (2,547 candidate, 2,051 rejected,
+  and 18 uncertain), 133 aliases, and 587 review items. The 153 multi-canonical
+  cases and four distant identifier collisions remain unchanged.
+  Progress, 2026-07-15: A read-only group audit covers all 153 multi-canonical
+  rows in 91 connected groups and retains all 200 nearby pre-Wave canonical
+  contenders. Twelve groups containing 16 Wave rows and 24 pre-Wave canonicals
+  have complete shared-identifier coverage, identical retained velocities, no
+  distinct-Gaia conflict, and no reported-role conflict; they are proposed for
+  project-lead review. Of the 79 unchanged manual groups, 74 contain at least one
+  nearby canonical without an identifier link and five retain non-identical
+  published velocities. No identity, membership, classification, or production
+  database state changed.
+  Progress, 2026-07-15: The project lead approved all 12 complete shared-identifier
+  groups. The builder now consolidates their 40 prior canonicals into 12 candidate
+  objects, stores 12 approved group-level identity evidence records, and retains
+  all 28 superseded canonical identifiers as aliases. The deterministic v2 product
+  has 4,588 canonicals (2,519 candidate, 2,051 rejected, and 18 uncertain), 161
+  aliases, and 575 review items. A post-build audit leaves exactly 79 manual groups
+  covering 137 Wave rows and produces no new proposals. All 180 exact duplicate-
+  coordinate groups remain preserved and the legacy database is unchanged.
+  Progress, 2026-07-15: Under the project lead's delegated source-audit authority,
+  the remaining 79 groups resolve into 80 identities. Seventy-two follow exact Liu
+  2015 NGVS keys and published aliases, two use Brodie catalog evidence, four
+  preserve differing independent or weighted velocity measurements, and S547 and
+  VUCD3 remain two distinct identities. The builder moves 238 records, stores 80
+  approved source-lineage evidence records, and retains 229 additional superseded
+  canonical identifiers as aliases. The deterministic v2 product now has 4,359
+  canonicals (2,290 candidate, 2,048 rejected, and 21 uncertain), 390 aliases, and
+  493 review items. The post-build Wave 1 multi-canonical audit is empty; all 5,049
+  literature records, all 180 exact duplicate-coordinate groups, and the unchanged
+  legacy database remain preserved.
+  Completion, 2026-07-15: Closed all four remaining validation gates. The 168
+  supporting raw rows are object-linked as measurements; host and distance
+  normalization is source-scoped; 1,316 approved spectroscopic evidence rows
+  produce 740 confirmed canonicals; and the hashed 345-paper literature screen has
+  zero pending decisions. The final v2 database preserves 5,049 literature records
+  and 4,359 canonical objects classified as 740 confirmed, 1,515 candidate, 2,082
+  rejected, and 22 uncertain. The only remaining review rows are four coordinate-
+  null Fahrion provenance records. Validation passes with no open Stage 1 gates,
+  all 180 legacy duplicate-coordinate groups are reproduced, the legacy SHA-256 is
+  unchanged, and no destructive redundancy operation was used.
   Depends on: BT-001.
 
 - [ ] **BT-004 - Synchronize Gaia and Legacy Survey cross-match products.**
@@ -223,6 +365,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Resolution criteria: Define provenance-bearing evidence and status fields;
   migrate literature labels without overstating certainty; keep Gaia-only and
   overdensity-selected sources as candidates; validate status transitions.
+  Progress, 2026-07-14: Implemented versioned `confirmation_rules_v1`, evidence
+  records, four derived states, transition fixtures, and mandatory review for
+  every confirmation promotion. The current draft deliberately contains no
+  confirmed objects until evidence reviews are approved.
   Depends on: BT-003, BT-008, BT-013, BT-023.
 
 - [ ] **BT-025 - Compare and validate per-galaxy excess metrics.**
@@ -332,6 +478,21 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Resolution criteria: Every ingested source has a correctly named folder,
   bibliographic identifiers, source PDF or documented access status, original
   machine-readable data, and a provenance README.
+  Progress, 2026-07-14: Retrieved 34 authoritative VizieR files into 11 source
+  packages, recorded SHA-256 hashes and row counts, and added provenance READMEs.
+  PDF acquisition or documented access status and raw-row reconciliation remain
+  open.
+  Progress, 2026-07-15: Retrieved the project-lead-approved 19-source Wave 1
+  cohort: 19 structurally valid PDFs (365 pages), five VizieR packages (11 tables,
+  4,535 preserved rows), and four publisher XLSX source-data files. The retrieval
+  report is deterministic and every file has a SHA-256 digest. The table-role and
+  positional-overlap review remains open; no new source row has changed canonical
+  membership, identity, classification, or confirmation.
+  Progress, 2026-07-15: Registered the five Wave 1 VizieR packages as 16 hashed raw
+  provenance files and implemented the approved row roles in v2. The 19 PDFs and
+  four publisher workbooks remain source-package provenance; no reported
+  confirmation was promoted automatically. Object-level evidence review for the
+  remaining PDF-only sources is still open.
   Depends on: BT-003.
 
 - [ ] **BT-015 - Reconcile plans, journals, summaries, and data manifests.**

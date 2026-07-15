@@ -1,0 +1,27 @@
+{
+  "access_date": "2026-07-15",
+  "ads_bibcode": "2011AJ....142..199B",
+  "catalog_id": "J/AJ/142/199",
+  "doi": "10.1088/0004-6256/142/6/199",
+  "evidence_scope": "Object-specific identity checks for S887/S877 and T15886/H39168",
+  "query_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F142%2F199&-out.all&-out.max=2000",
+  "rows": [
+    {
+      "declination_deg": 12.36544,
+      "host": "M87",
+      "identifier": "S887",
+      "log_half_light_radius_pc": 1.0,
+      "right_ascension_deg": 187.70389,
+      "source_reference": "S+11"
+    },
+    {
+      "declination_deg": 12.34919,
+      "host": "M87",
+      "identifier": "H39168",
+      "log_half_light_radius_pc": 1.041,
+      "right_ascension_deg": 188.152,
+      "source_reference": "S+11"
+    }
+  ],
+  "source_title": "The relationships among compact stellar systems: a fresh view of ultra compact dwarfs"
+}
