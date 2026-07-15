@@ -242,13 +242,22 @@ Phase-specific execution tasks remain in `docs/plans/`.
   metrics from inferential significance.
   Depends on: BT-001, BT-002, BT-005, BT-021.
 
-- [ ] **BT-007 - Correct and validate spherical cross-match geometry.**
+- [x] **BT-007 - Correct and validate spherical cross-match geometry.**
   Evidence: Gaia and Legacy scripts retrieve rectangular boxes, calculate planar
   coordinate differences without the right-ascension cosine factor, and retain
   the nearest row without enforcing the requested cone radius.
   Resolution criteria: Use a spherical separation or service-side cone match,
   enforce the radius, retain ambiguity diagnostics, and validate against known
   matches at representative declinations.
+  Completed, 2026-07-15: Both matchers now use NOIRLab Q3C service-side cones and
+  independently enforce great-circle radii with Astropy. Matched exports retain
+  all in-radius alternatives, counts, second-nearest distances, and neighbor
+  gaps; companion audit exports retain matched, no-match, and query-error states.
+  Deterministic fixtures cover the equator, declinations of plus and minus 80
+  degrees, right-ascension wraparound, strict radius exclusion, ambiguity, and
+  stable ties. Cached authoritative Gaia matches at -35.92 and +13.26 degrees
+  and one bounded live query per catalog pass. Existing one- and two-arcsecond
+  defaults were preserved as parameters rather than treated as calibrated cuts.
 
 - [ ] **BT-008 - Repair literature-recovery and new-candidate validation.**
   Evidence: Each host is matched against the full literature database rather than

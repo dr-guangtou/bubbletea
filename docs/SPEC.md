@@ -368,6 +368,16 @@ planar value and the spherical distance is 0.176110481759 arcseconds. A shared
 Gaia detection is strong identity evidence but does not override multi-position,
 Gaia image-parameter, or reported UCD-role review requirements.
 
+Operational Gaia and Legacy Survey cross-matches must use a service-side spherical
+cone and must independently recompute and enforce the requested radius with
+great-circle separations. They must retain the number of in-radius candidates,
+the nearest and second-nearest distances, their separation gap, and every
+in-radius candidate identifier and coordinate. More than one in-radius candidate
+is descriptive ambiguity evidence, not an automatic rejection or identity merge.
+The historical one-arcsecond Gaia and two-arcsecond Legacy Survey defaults remain
+explicit query parameters until their scientific calibration is completed; the
+geometry repair does not validate those values as selection thresholds.
+
 The approved Gaia cohorts contain 72 clean two-position groups, 14 separately
 reviewed two-position role-conflict groups, 22 image-reviewed two-position groups,
 and eight literature-reviewed three-position groups. Their canonical objects are

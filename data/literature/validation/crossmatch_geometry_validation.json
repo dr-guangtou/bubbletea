@@ -1,0 +1,93 @@
+{
+  "benchmark": {
+    "elapsed_seconds": 1.594126999960281,
+    "iterations": 1000,
+    "milliseconds_per_selection": 1.594126999960281
+  },
+  "known_gaia_matches": [
+    {
+      "declination_degrees": -35.916050308108886,
+      "distance_arcsec": 0.5345007094098672,
+      "gaia_dr3_id": "4860113695696653568"
+    },
+    {
+      "declination_degrees": 13.259498437495903,
+      "distance_arcsec": 0.12100737861339399,
+      "gaia_dr3_id": "3931980578815957376"
+    }
+  ],
+  "live_service_checks": [
+    {
+      "catalog": "gaia_dr3",
+      "elapsed_seconds": 2.1842434159480035,
+      "nearest_distance_arcsec": 0.0,
+      "rows_returned": 1,
+      "rows_within_radius": 1
+    },
+    {
+      "catalog": "legacy_survey_dr10",
+      "elapsed_seconds": 1.7468749589752406,
+      "nearest_distance_arcsec": 5.72499842663433e-12,
+      "rows_returned": 1,
+      "rows_within_radius": 1
+    }
+  ],
+  "query_checks": {
+    "gaia_avoids_box": true,
+    "gaia_uses_cone": true,
+    "legacy_avoids_box": true,
+    "legacy_uses_cone": true
+  },
+  "schema_version": 1,
+  "synthetic_cases": [
+    {
+      "case": "no_match",
+      "distance_arcsec": null,
+      "match_count_within_radius": 0,
+      "selected_source_id": null
+    },
+    {
+      "case": "equator",
+      "distance_arcsec": 0.49999999998249234,
+      "match_count_within_radius": 1,
+      "selected_source_id": "equator_source"
+    },
+    {
+      "case": "north_high_declination",
+      "distance_arcsec": 0.4999999999962887,
+      "match_count_within_radius": 1,
+      "selected_source_id": "north_high_declination_source"
+    },
+    {
+      "case": "south_high_declination",
+      "distance_arcsec": 0.4999999999962887,
+      "match_count_within_radius": 1,
+      "selected_source_id": "south_high_declination_source"
+    },
+    {
+      "case": "right_ascension_wrap",
+      "distance_arcsec": 0.5000000000530338,
+      "match_count_within_radius": 1,
+      "selected_source_id": "right_ascension_wrap_source"
+    },
+    {
+      "case": "strict_radius",
+      "distance_arcsec": 0.9990000000037061,
+      "match_count_within_radius": 1,
+      "selected_source_id": "inside"
+    },
+    {
+      "case": "ambiguity",
+      "distance_arcsec": 0.20000000000332666,
+      "match_count_within_radius": 2,
+      "selected_source_id": "nearer"
+    },
+    {
+      "case": "stable_tie",
+      "distance_arcsec": 0.36000000000000004,
+      "match_count_within_radius": 2,
+      "selected_source_id": "source_a"
+    }
+  ],
+  "total_elapsed_seconds": 5.550220791948959
+}
