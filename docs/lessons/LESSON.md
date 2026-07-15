@@ -516,3 +516,17 @@ reviewed-insufficient-evidence decision.
 **Recommendation:** Represent approval, non-promotion, and unresolved review as
 distinct evidence states so absence of local qualifying evidence is not confused
 with either rejection or unfinished work.
+
+## 2026-07-15: Validate catalog-service geometry against the live endpoint
+
+**Lesson:** Standards-compliant ADQL geometry syntax is not necessarily supported
+by a service that exposes a TAP endpoint.
+
+**Context:** NOIRLab Data Lab rejected `CONTAINS(POINT, CIRCLE)` with a PostgreSQL
+function error. Its supported `Q3C_RADIAL_QUERY` cone predicate succeeded for both
+Gaia DR3 and Legacy Survey DR10. Independent local great-circle filtering remains
+necessary to enforce the requested radius and make the behavior testable.
+
+**Recommendation:** Test one bounded live cone per service before scaling a
+cross-match, use the service's documented spatial predicate, and always verify the
+returned candidates with a local spherical calculation.

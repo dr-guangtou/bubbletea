@@ -110,7 +110,8 @@ value-added candidate characterization.
   - [x] Close the new-literature gate against the hashed 345-paper ADS corpus with
     zero pending screens, 19 approved retrievals, and explicit scoped dispositions
     for the eight deferred retrieval candidates (2026-07-15).
-- [ ] Repair spherical cross-match geometry and ambiguity handling (`BT-007`).
+- [x] Repair spherical cross-match geometry and ambiguity handling (`BT-007`;
+  2026-07-15).
 - [ ] Synchronize the Gaia and Legacy Survey exports with the canonical database
   (`BT-004`).
 - [ ] Complete per-paper provenance packages and reconcile documentation counts
