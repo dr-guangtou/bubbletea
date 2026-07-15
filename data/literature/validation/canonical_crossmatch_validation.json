@@ -1,0 +1,99 @@
+{
+  "checks": [
+    "Manifest schema version is 1",
+    "Manifest represents the full run",
+    "Manifest records the reproducible command",
+    "Every remote query batch has a SHA-256 digest",
+    "Reference database digest matches the retrieval input",
+    "Manifest target count matches the canonical database",
+    "Manifest file exists: data/literature/catalogs/canonical_gaia_dr3_crossmatch.csv",
+    "Manifest digest matches: data/literature/catalogs/canonical_gaia_dr3_crossmatch.csv",
+    "Manifest row count matches: data/literature/catalogs/canonical_gaia_dr3_crossmatch.csv",
+    "Manifest file exists: data/literature/validation/canonical_gaia_dr3_crossmatch_audit.csv",
+    "Manifest digest matches: data/literature/validation/canonical_gaia_dr3_crossmatch_audit.csv",
+    "Manifest row count matches: data/literature/validation/canonical_gaia_dr3_crossmatch_audit.csv",
+    "Manifest file exists: data/literature/catalogs/canonical_legacy_survey_dr10_crossmatch.csv",
+    "Manifest digest matches: data/literature/catalogs/canonical_legacy_survey_dr10_crossmatch.csv",
+    "Manifest row count matches: data/literature/catalogs/canonical_legacy_survey_dr10_crossmatch.csv",
+    "Manifest file exists: data/literature/validation/canonical_legacy_survey_dr10_crossmatch_audit.csv",
+    "Manifest digest matches: data/literature/validation/canonical_legacy_survey_dr10_crossmatch_audit.csv",
+    "Manifest row count matches: data/literature/validation/canonical_legacy_survey_dr10_crossmatch_audit.csv",
+    "Manifest file exists: data/literature/catalogs/all_ucds_gaia_matched.csv",
+    "Manifest digest matches: data/literature/catalogs/all_ucds_gaia_matched.csv",
+    "Manifest row count matches: data/literature/catalogs/all_ucds_gaia_matched.csv",
+    "Manifest file exists: data/literature/catalogs/all_ucds_legacy_matched.csv",
+    "Manifest digest matches: data/literature/catalogs/all_ucds_legacy_matched.csv",
+    "Manifest row count matches: data/literature/catalogs/all_ucds_legacy_matched.csv",
+    "Gaia export count matches canonical database associations",
+    "Gaia unique-source count matches the canonical database",
+    "Gaia canonical IDs are unique",
+    "Every canonical Gaia association is within the diagnostic radius",
+    "Gaia audit contains every canonical target",
+    "Gaia matched audit count equals export count",
+    "Legacy audit contains every canonical target",
+    "Legacy export has one selected row per canonical target",
+    "Every Legacy match is within the enforced radius",
+    "Legacy matched audit count equals export count",
+    "Legacy candidate JSON counts and distance order match",
+    "Legacy shared-source counts reproduce selected source usage",
+    "Legacy shared-source flags reproduce selected source usage"
+  ],
+  "database_counts": {
+    "canonical_gaia_association_count": 963,
+    "canonical_target_count": 4359,
+    "distinct_gaia_source_count": 962
+  },
+  "gaia": {
+    "audit_status_counts": {
+      "matched_by_source_id": 963,
+      "no_canonical_gaia_id": 3396
+    },
+    "export_row_count": 963,
+    "maximum_canonicals_per_source": 2,
+    "maximum_distance_arcsec": 0.9180971776523148,
+    "shared_source_count": 1
+  },
+  "legacy_survey": {
+    "ambiguous_target_count": 620,
+    "audit_status_counts": {
+      "matched": 3723,
+      "no_match": 636
+    },
+    "candidate_count_distribution": {
+      "1": 3103,
+      "2": 575,
+      "3": 45
+    },
+    "export_row_count": 3723,
+    "maximum_canonicals_per_source": 4,
+    "maximum_distance_arcsec": 1.9768617420582848,
+    "shared_source_count": 220
+  },
+  "status": "passed",
+  "validated_files": {
+    "data/literature/catalogs/all_ucds_gaia_matched.csv": {
+      "row_count": 632,
+      "sha256": "db117a1ba51ab81efa5f7216199ad5f6d33814fd5804bc1a88143b83a951d552"
+    },
+    "data/literature/catalogs/all_ucds_legacy_matched.csv": {
+      "row_count": 917,
+      "sha256": "b9be7a2dda80bccbc39a916624f6d4757ed26e7f2c7c47a989d3d9eaf84939e3"
+    },
+    "data/literature/catalogs/canonical_gaia_dr3_crossmatch.csv": {
+      "row_count": 963,
+      "sha256": "4ac01bb1cb622989f9cd9dbdd97880052c02dcee08097f6a2f5f7511b0020f8e"
+    },
+    "data/literature/catalogs/canonical_legacy_survey_dr10_crossmatch.csv": {
+      "row_count": 3723,
+      "sha256": "e249fea3e65cc3669cd9deaf7b0181b1c55cebcd4daa0a730620856d03a21256"
+    },
+    "data/literature/validation/canonical_gaia_dr3_crossmatch_audit.csv": {
+      "row_count": 4359,
+      "sha256": "77397ab41c920dd580d34c62262d4550d23d2622caaf1daa2401de7606dab37f"
+    },
+    "data/literature/validation/canonical_legacy_survey_dr10_crossmatch_audit.csv": {
+      "row_count": 4359,
+      "sha256": "d86d9bef7b17eea3025a5bf80af4d21352e1c5964fc2d406be857a5e0d7439f6"
+    }
+  }
+}

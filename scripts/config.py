@@ -37,6 +37,16 @@ GAIA_CROSSMATCH_AUDIT = LITERATURE_VALIDATION / "gaia_crossmatch_audit.csv"
 LEGACY_CROSSMATCH_EXPORT = LITERATURE_CATALOGS / "all_ucds_legacy_matched.csv"
 LEGACY_CROSSMATCH_AUDIT = LITERATURE_VALIDATION / "legacy_crossmatch_audit.csv"
 CROSSMATCH_GEOMETRY_VALIDATION = LITERATURE_VALIDATION / "crossmatch_geometry_validation.json"
+CANONICAL_GAIA_CROSSMATCH_EXPORT = LITERATURE_CATALOGS / "canonical_gaia_dr3_crossmatch.csv"
+CANONICAL_GAIA_CROSSMATCH_AUDIT = LITERATURE_VALIDATION / "canonical_gaia_dr3_crossmatch_audit.csv"
+CANONICAL_LEGACY_CROSSMATCH_EXPORT = (
+    LITERATURE_CATALOGS / "canonical_legacy_survey_dr10_crossmatch.csv"
+)
+CANONICAL_LEGACY_CROSSMATCH_AUDIT = (
+    LITERATURE_VALIDATION / "canonical_legacy_survey_dr10_crossmatch_audit.csv"
+)
+CANONICAL_CROSSMATCH_MANIFEST = LITERATURE_SOURCES / "canonical_crossmatch_manifest.json"
+CANONICAL_CROSSMATCH_VALIDATION = LITERATURE_VALIDATION / "canonical_crossmatch_validation.json"
 
 GALAXY_SAMPLE_DIR = DATA_DIR / "galaxy_sample"
 GALAXY_SAMPLE_CSV = GALAXY_SAMPLE_DIR / "galaxy_sample_ranked.csv"

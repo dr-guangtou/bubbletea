@@ -204,13 +204,23 @@ Phase-specific execution tasks remain in `docs/plans/`.
   unchanged, and no destructive redundancy operation was used.
   Depends on: BT-001.
 
-- [ ] **BT-004 - Synchronize Gaia and Legacy Survey cross-match products.**
+- [x] **BT-004 - Synchronize Gaia and Legacy Survey cross-match products.**
   Evidence: The database has 1,097 Gaia matches, while the Gaia export has 632
   rows. The Legacy export has 917 rows, while the current database has zero Legacy
   IDs.
   Resolution criteria: A reproducible export from the canonical database matches
   database counts and records query service, catalog release, radius, timestamp,
   and match-quality fields.
+  Completed, 2026-07-15: The reproducible canonical export preserves all 963 Gaia
+  associations represented by 1,097 literature rows and 962 unique Gaia sources;
+  all lie within the one-arcsecond diagnostic radius. A fresh two-arcsecond Legacy
+  Survey DR10 match of all 4,359 canonical targets produces 3,723 matches and 636
+  no-matches. It retains 620 multi-candidate targets and flags 220 selected Legacy
+  sources shared across canonical targets without merging identities. Complete
+  target audits, measured batch records, UTC timestamps, release metadata, file
+  hashes, and the hashes of the superseded 632-row and 917-row products are stored
+  in the manifest. Standalone validation passes, and both database hashes remain
+  unchanged.
   Depends on: BT-003, BT-007.
 
 - [ ] **BT-005 - Make local-background estimation valid for nearby galaxies.**

@@ -293,9 +293,11 @@ used in plans, journals, and commits when resolving the findings below.
 
 - The Phase I model comparison measures recovery of literature entries but does
   not jointly measure purity or false-positive rate on a matched control sample.
-- The Gaia and Legacy cross-match scripts use rectangular coordinate differences,
-  omit the right-ascension cosine correction, and do not enforce the requested
-  cone radius after retrieving the nearest box result.
+- BT-007 replaced the rectangular Gaia and Legacy matching with NOIRLab Q3C cones,
+  independent great-circle radius enforcement, and ambiguity diagnostics. BT-004
+  generated canonical products with complete 4,359-target audits: 963 canonical
+  Gaia associations and 3,723 Legacy Survey matches; 620 Legacy targets have more
+  than one in-radius candidate and remain explicitly ambiguous.
 - Phase III divides counts by 2.0 square degrees, while a 0.8-degree circle has an
   area of 2.010619 square degrees. This is a measured 0.531 percent normalization
   difference and is easy to correct once the selection is frozen.
