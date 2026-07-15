@@ -378,6 +378,18 @@ The historical one-arcsecond Gaia and two-arcsecond Legacy Survey defaults remai
 explicit query parameters until their scientific calibration is completed; the
 geometry repair does not validate those values as selection thresholds.
 
+Canonical cross-match products must use the stabilized v2 canonical identifiers
+and must include a complete target audit, not only successful matches. Gaia
+source-ID synchronization preserves the 963 canonical associations represented
+by 1,097 literature rows and 962 unique Gaia sources; canonical consolidation is
+not missing-match loss. Legacy Survey matching is a fresh positional enrichment
+of all 4,359 positioned canonical objects. A selected Legacy source shared by
+multiple canonical targets is explicit association evidence and must not merge
+those targets. Retrieval manifests must record the reference-database digest,
+service and table, catalog release, radius, UTC timestamps, batch measurements,
+row counts, and output digests. The older 632-row Gaia and 917-row Legacy files
+remain hashed historical products and are not canonical inputs.
+
 The approved Gaia cohorts contain 72 clean two-position groups, 14 separately
 reviewed two-position role-conflict groups, 22 image-reviewed two-position groups,
 and eight literature-reviewed three-position groups. Their canonical objects are

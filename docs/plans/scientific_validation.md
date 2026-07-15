@@ -112,8 +112,8 @@ value-added candidate characterization.
     for the eight deferred retrieval candidates (2026-07-15).
 - [x] Repair spherical cross-match geometry and ambiguity handling (`BT-007`;
   2026-07-15).
-- [ ] Synchronize the Gaia and Legacy Survey exports with the canonical database
-  (`BT-004`).
+- [x] Synchronize the Gaia and Legacy Survey exports with the canonical database
+  (`BT-004`; 2026-07-15).
 - [ ] Complete per-paper provenance packages and reconcile documentation counts
   (`BT-014`, `BT-015`).
 - [ ] Build the labeled UCD and contaminant benchmark with fixed validation

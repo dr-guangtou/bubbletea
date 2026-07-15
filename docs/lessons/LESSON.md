@@ -530,3 +530,18 @@ necessary to enforce the requested radius and make the behavior testable.
 **Recommendation:** Test one bounded live cone per service before scaling a
 cross-match, use the service's documented spatial predicate, and always verify the
 returned candidates with a local spherical calculation.
+
+## 2026-07-15: Separate provenance-row counts from canonical association counts
+
+**Lesson:** Repeated literature rows carrying one catalog identifier must not be
+counted as missing matches after those rows are consolidated into canonical
+objects.
+
+**Context:** The legacy database contained 1,097 Gaia-bearing rows, but the
+stabilized model resolves them to 963 canonical associations and 962 unique Gaia
+sources. The old 917-row Legacy export lacked returned source coordinates and
+separations, so its geometry could not be revalidated or promoted.
+
+**Recommendation:** Report record, canonical-association, and unique-source counts
+separately; hash historical products; and regenerate canonical enrichments with a
+complete target audit and explicit shared-source diagnostics.
