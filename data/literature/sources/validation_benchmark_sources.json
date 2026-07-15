@@ -1,0 +1,51 @@
+{
+  "benchmark_version": "benchmark_v1",
+  "partition_ruleset": "benchmark_partition_v1",
+  "sources": [
+    {
+      "cohort": "literature_ucd",
+      "bibcode": null,
+      "doi": null,
+      "catalog_id": "ucd_reference_v2",
+      "access_url": "data/literature/database/ucd_reference_v2.db",
+      "role": "positive_and_uncertainty_reference",
+      "status": "approved_local_source"
+    },
+    {
+      "cohort": "sdss_dr16_spectroscopic",
+      "bibcode": "2020ApJS..249....3A",
+      "doi": "10.3847/1538-4365/ab929e",
+      "catalog_id": "SDSS_DR16_specObj_Gaia_DR3_x1p5",
+      "access_url": "https://datalab.noirlab.edu/tap",
+      "role": "spectroscopic_qso_and_galaxy_contaminants",
+      "status": "approved_benchmark_source"
+    },
+    {
+      "cohort": "gaia_dr3_non_single_star",
+      "bibcode": "2023A&A...674A..34G",
+      "doi": "10.1051/0004-6361/202243782",
+      "catalog_id": "I/357",
+      "access_url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap",
+      "role": "binary_star_contaminants",
+      "status": "approved_benchmark_source"
+    },
+    {
+      "cohort": "phangs_muse_hii",
+      "bibcode": "2023MNRAS.520.4902G",
+      "doi": "10.1093/mnras/stad114",
+      "catalog_id": "J/MNRAS/520/4902/catalog",
+      "access_url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap",
+      "role": "host_dependent_hii_contaminants",
+      "status": "approved_moderate_confidence_0p3_arcsec"
+    },
+    {
+      "cohort": "van_zee_dwarf_hii",
+      "bibcode": "2006ApJ...636..214V",
+      "doi": "10.1086/498017",
+      "catalog_id": "J/ApJ/636/214/table3",
+      "access_url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap",
+      "role": "dwarf_host_hii_contaminants",
+      "status": "approved_moderate_confidence_3p0_arcsec"
+    }
+  ]
+}

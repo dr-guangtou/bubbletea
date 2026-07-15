@@ -569,3 +569,29 @@ two metadata JSON files retained pending decisions that had since been closed.
 **Recommendation:** Generate headline counts from canonical products, link current
 documents to that artifact, and mark superseded inventories explicitly instead of
 silently rewriting their historical entries.
+
+## 2026-07-16: Calibrate catalog associations by source geometry
+
+**Lesson:** One angular radius is not defensible for catalogs with different
+coordinate construction and source morphology.
+
+**Context:** PHANGS-MUSE region centroids supported a 0.3-arcsecond Gaia radius,
+while van Zee dwarf-galaxy positions derived from galaxy centers and integer-
+arcsecond slit offsets required a separately measured 3.0-arcsecond radius.
+
+**Recommendation:** Measure real and displaced-control separation curves for each
+source catalog, record the coordinate construction, and never transfer an
+association radius between catalogs without calibration.
+
+## 2026-07-16: Consolidate benchmark labels at the Gaia-source level
+
+**Lesson:** Multiple legitimate catalog positions can select one Gaia source even
+when the catalog rows represent separate observations.
+
+**Context:** Two UGC 3647 slit positions produced 13 accepted van Zee associations
+but only 12 unique Gaia sources. A release validation check caught the duplicate
+before selector work began.
+
+**Recommendation:** Enforce one benchmark row per Gaia source while retaining all
+contributing source-row locators, measurements, and association separations in
+the row-level provenance.

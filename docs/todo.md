@@ -278,7 +278,8 @@ Phase-specific execution tasks remain in `docs/plans/`.
   on at least one known rich host and one control target.
   Depends on: BT-002, BT-003, BT-007.
 
-- [ ] **BT-019 - Build a labeled reference and contaminant benchmark.**
+- [x] **BT-019 - Build a labeled reference and contaminant benchmark (completed
+  2026-07-16).**
   Evidence: The Gaia-only non-point-source probability is an open research
   question. The literature collection mixes confirmed UCDs with candidates that
   may be wrong, while the present selector has no documented point-source and
@@ -292,6 +293,29 @@ Phase-specific execution tasks remain in `docs/plans/`.
   tiers, relevant magnitude and sky coverage, fixed development and validation
   partitions, and explicit tests of sensitivity to uncertain UCD labels.
   Depends on: BT-003, BT-014.
+  - [x] Audit literature-label eligibility, Gaia coverage, source concentration,
+    and leakage groups (2026-07-16).
+  - [x] Select provenance-bearing SDSS DR16 spectroscopic and Gaia DR3
+    non-single-star comparison sources, and identify PHANGS-MUSE as the
+    host-dependent H II source cohort (2026-07-16).
+  - [x] Generate and validate `benchmark_v1` with immutable spatial-group
+    partitions and sensitivity-only uncertain UCD labels (2026-07-16).
+  - [x] Calibrate PHANGS-MUSE-to-Gaia association geometry with eight displaced
+    controls and approve 175 unique matches within 0.3 arcseconds as a
+    moderate-confidence, sensitivity-removable cohort (2026-07-16).
+  - [x] Search for and assess an object-level dwarf-galaxy H II catalog; approve
+    13 Gaia associations representing 12 unique Gaia sources from the van Zee et
+    al. long-slit spectroscopy sample within its separately calibrated
+    3.0-arcsecond radius (2026-07-16).
+  Completion, 2026-07-16: Built 3,857 benchmark rows representing 3,857 unique
+  Gaia DR3 sources across six provenance-bearing cohorts. The immutable spatial
+  split contains 3,136 development and 721 validation rows. Uncertain UCD labels
+  are sensitivity-only; the 175 PHANGS-MUSE and 12 unique van Zee dwarf-host H II
+  sources are moderate-confidence, cohort-removable contaminants. All 32 release
+  checks pass, including input hashes, source-specific association radii, label
+  contracts, unique Gaia sources, and partition leakage. The exact ADS dwarf-H II
+  search and source dispositions are retained in
+  `data/literature/discovery/validation_benchmark_literature_search_2026-07-16.json`.
 
 - [ ] **BT-021 - Calibrate the host-scaled signal aperture and inner mask.**
   Evidence: Fixed physical bins do not scale with galaxy size, while central galaxy
