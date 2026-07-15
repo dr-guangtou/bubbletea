@@ -1,9 +1,12 @@
 # 2011A&A...531A...4M
 
 **ADS Bibcode:** `2011A&A...531A...4M`
+**DOI:** `10.1051/0004-6361/201116728`
 **VizieR Catalog:** `J/A+A/531/A4`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/A+A/531/A4/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 

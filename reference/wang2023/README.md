@@ -14,6 +14,8 @@
 
 **VizieR Catalog:** J/ApJ/954/206
 
+**Retrieval Date:** 2026-03-16
+
 ## Significance
 
 Demonstrates Gaia-based search for globular clusters (GCs) in the outer halo of M31
@@ -23,9 +25,9 @@ distances.
 
 ## Data Files
 
-| File | Description |
-|------|-------------|
-| `Wang_2023_ApJ_954_206.pdf` | Full paper |
-| `J_ApJ_954_206_table8.dat.gz.fits` | 20,658 extended sources (Table 8) |
-| `J_ApJ_954_206_table10.dat.fits` | 50 GC candidates (Table 10) |
-| `ReadMe.txt` | VizieR catalog documentation |
+| File | Description | Bytes | SHA-256 |
+|------|-------------|------:|---|
+| `Wang_2023_ApJ_954_206.pdf` | Full paper | 4157858 | `fe723a8eff74f0875c9968dd7bbcce26497bc287573c144acf5a918e7f587c8b` |
+| `J_ApJ_954_206_table8.dat.gz.fits` | 20,658 extended sources (Table 8) | 1716480 | `c9c2973a226e554da4baaa711fee68d44675584e5efda69a11179c2f340d291b` |
+| `J_ApJ_954_206_table10.dat.fits` | 50 GC candidates (Table 10) | 25920 | `a8c591ddbe574f8d52b7ee5e8567db023748a8a957e5ce426a276de59ffbd02e` |
+| `ReadMe.txt` | VizieR catalog documentation | 8676 | `143bb5f89fbe4759023f106546c4d9aae58cd3c522418d35895b7ca6edb97d9e` |

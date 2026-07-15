@@ -1,0 +1,32 @@
+{
+  "canonical_crossmatches": {
+    "complete_target_audit_count": 4359,
+    "gaia_association_count": 963,
+    "legacy_match_count": 3723,
+    "legacy_no_match_count": 636,
+    "unique_gaia_source_count": 962
+  },
+  "command": "PYTHONPATH=. uv run python scripts/phase1_literature/audit_provenance_documentation.py",
+  "measurement_date": "2026-07-16",
+  "reference_database": {
+    "canonical_object_count": 4359,
+    "classification_counts": {
+      "candidate": 1515,
+      "confirmed": 740,
+      "rejected": 2082,
+      "uncertain": 22
+    },
+    "dataset_count": 22,
+    "dataset_file_count": 50,
+    "exact_duplicate_group_count": 180,
+    "literature_record_count": 5049,
+    "open_gate_count": 0,
+    "path": "data/literature/database/ucd_reference_v2.db",
+    "publication_count": 30,
+    "record_contributing_publication_count": 14,
+    "review_queue_count": 4,
+    "sha256": "bb00860e1f39a4b7250a27d545eb5234e6612c1fd70d1ec6f3078658d825e05e",
+    "validation_failure_count": 0
+  },
+  "schema_version": 1
+}

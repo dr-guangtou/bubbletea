@@ -1,9 +1,12 @@
 # 2015ApJ...812...34L
 
 **ADS Bibcode:** `2015ApJ...812...34L`
+**DOI:** `10.1088/0004-637X/812/1/34`
 **VizieR Catalog:** `J/ApJ/812/34`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/ApJ/812/34/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 

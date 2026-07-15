@@ -1,6 +1,6 @@
 # BubbleTea — Master Development Plan
 
-**Last updated:** 2026-03-27
+**Last updated:** 2026-07-16
 
 ## Overview
 
@@ -17,11 +17,13 @@ tracking for each phase is in `docs/plans/`.
 **Goal:** Establish the known UCD population as a reference dataset. Understand their
 Gaia DR3 properties. Devise distance-dependent selection criteria.
 
-- Migrate and verify the existing UCD literature database (1,542 objects, 6 papers)
+- Preserve and validate 5,049 literature records from 14 record-contributing
+  publications as 4,359 canonical objects; retain 30 registered publication
+  provenance packages
 - Rewrite core scripts (database management, VizieR ingestion, cross-matching)
-- Cross-match all known UCDs with Gaia DR3 and Legacy Survey DR10
+- Maintain complete canonical Gaia DR3 and Legacy Survey DR10 cross-match audits
 - Analyze AEN, color, proper motion, and classprob distributions
-- Derive distance-dependent selection criteria
+- Calibrate one versioned Gaia-only selector; historical thresholds are exploratory
 - **Tracking:** `docs/plans/phase_1_literature_ucds.md`
 
 ### Phase Ib: Ancillary Data Collection (Planned)

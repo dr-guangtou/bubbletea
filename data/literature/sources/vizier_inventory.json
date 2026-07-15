@@ -1,5 +1,12 @@
 {
-    "created": "2025-03-25",
+  "artifact_status": "superseded_historical_vizier_inventory",
+  "last_reconciled": "2026-07-16",
+  "authoritative_replacements": [
+    "data/literature/sources/vizier_retrieval_manifest.json",
+    "data/literature/validation/vizier_retrieval.json",
+    "data/literature/validation/vizier_retrieval_wave1.json"
+  ],
+  "created": "2025-03-25",
     "description": "Verified VizieR catalogs for UCD literature compilation",
     
     "verified_catalogs": [

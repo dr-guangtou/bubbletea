@@ -114,8 +114,8 @@ value-added candidate characterization.
   2026-07-15).
 - [x] Synchronize the Gaia and Legacy Survey exports with the canonical database
   (`BT-004`; 2026-07-15).
-- [ ] Complete per-paper provenance packages and reconcile documentation counts
-  (`BT-014`, `BT-015`).
+- [x] Complete per-paper provenance packages and reconcile documentation counts
+  (`BT-014`, `BT-015`; 2026-07-16).
 - [ ] Build the labeled UCD and contaminant benchmark with fixed validation
   partitions (`BT-019`).
 

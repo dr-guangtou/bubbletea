@@ -181,24 +181,29 @@ results were a 1,542-entry literature database, a 2,155-galaxy target sample, a
 The active repository reorganizes that work into reproducible phases and rewrites
 scripts on demand rather than copying the legacy scripts wholesale.
 
-Only two commits describe the formal reorganization in detail; most Phase I-IV
-work currently exists as uncommitted or untracked files. Preserve the working tree
-until its provenance and intended commit boundaries are resolved.
+The formal reorganization and Stage 1 literature stabilization are now preserved
+in feature and merge commits. Canonical data products retain manifests and file
+digests; historical exploratory outputs remain labeled rather than silently
+replaced.
 
 ## Verified Current State
 
-The following values were measured directly from the files on 2026-07-14.
+The legacy and exploratory values below were measured directly on 2026-07-14;
+canonical literature and cross-match values were remeasured on 2026-07-16.
 
 | Component | Verified state |
 |---|---|
-| Literature database | 2,108 rows from 9 sources |
+| Immutable legacy literature database | 2,108 rows from 9 sources |
+| Canonical v2 reference database | 5,049 records, 4,359 canonical objects |
+| Canonical classifications | 740 confirmed, 1,515 candidate, 2,082 rejected, 22 uncertain |
 | Rows flagged as UCDs | 2,064 |
 | Gaia-matched database rows | 1,097 |
 | Legacy-matched database rows | 0 |
 | Exact distinct coordinate pairs | 1,928 |
 | Exact duplicate-coordinate groups | 180 |
-| Gaia matched CSV | 632 rows, not a full export of the database matches |
-| Legacy matched CSV | 917 rows, not synchronized into the current database |
+| Canonical Gaia product | 963 associations, 962 unique Gaia DR3 sources |
+| Canonical Legacy Survey product | 3,723 matches plus 636 audited no-matches |
+| Historical matched CSVs | 632 Gaia rows and 917 Legacy rows; hashed but superseded |
 | Galaxy sample | 2,155 galaxies, 2.586-25.000 Mpc |
 | Legacy Survey coverage checks | 500 galaxies queried; 499 returned coverage |
 | HyperLEDA morphology | 457 of 2,155 galaxies have a retrieved type |
@@ -225,10 +230,10 @@ of unique confirmed UCDs.
 - Compared a constant AEN model, an inverse-distance threshold, and a
   probabilistic score based on AEN significance and BP/RP flux excess.
 
-This phase is scientifically useful but not closed. The database, matched exports,
-source catalog counts, reference folders, and documentation are not synchronized.
-The existing redundancy script deletes rows and should not be used until a
-non-destructive duplicate model and source-priority policy are approved.
+The literature reference database and canonical cross-match products are now
+non-destructively validated and synchronized. Selector calibration remains open.
+The destructive redundancy script remains prohibited because exact-coordinate
+groups are preserved as provenance-bearing many-to-one associations.
 
 ### Phase II: Host-Galaxy Sample
 

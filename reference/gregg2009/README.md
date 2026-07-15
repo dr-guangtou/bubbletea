@@ -1,9 +1,12 @@
 # 2009AJ....137..498G
 
 **ADS Bibcode:** `2009AJ....137..498G`
+**DOI:** `10.1088/0004-6256/137/1/498`
 **VizieR Catalog:** `J/AJ/137/498`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/AJ/137/498/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 
@@ -11,6 +14,7 @@
 |---|---:|---|
 | `ReadMe.txt` | 6091 | `e1d9080dbe824141c28d299c36667321c318f06cc47c8adeffd3644cf55e71ec` |
 | `table2.dat` | 3076 | `a881cec9c2a759800267a3dd5a446a12853504ec6bdd98a27c48815f205fdb87` |
+| `table3.dat` | 3733 | `e97dcf4d69ae7a096b3bfd496ad38f3cfec51b6af3af222f368f075551156339` |
 
 The files in this directory are original VizieR archive products. The generated
 hashes and archive paths are the provenance authority for subsequent ingestion.

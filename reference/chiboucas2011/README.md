@@ -1,9 +1,12 @@
 # 2011ApJ...737...86C
 
 **ADS Bibcode:** `2011ApJ...737...86C`
+**DOI:** `10.1088/0004-637X/737/2/86`
 **VizieR Catalog:** `J/ApJ/737/86`
 **Retrieval Date:** 2026-07-14
 **Retrieval Base:** `https://cdsarc.cds.unistra.fr/ftp/J/ApJ/737/86/`
+**PDF Access Status:** No paper PDF is locally retained; access is documented by
+the DOI, while the original VizieR files below are the machine-readable authority.
 
 ## Files
 
