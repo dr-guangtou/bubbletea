@@ -1,0 +1,125 @@
+{
+  "crossmatch_version": "gaia_morphology_benchmark_crossmatch_v1",
+  "generated_utc": "2026-07-16T19:58:51.806087+00:00",
+  "match_method": "exact_gaia_dr3_source_id",
+  "interpretation": "candidate_catalog_membership_not_astrophysical_truth",
+  "selector_use": "supplementary_morphology_evidence_not_parent_sample_requirement",
+  "validation_partition_inspected": false,
+  "inputs": {
+    "benchmark": "data/literature/benchmarks/gaia_validation_benchmark_v1.csv",
+    "benchmark_sha256": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73",
+    "source_registry": "data/literature/sources/extragalactic_reference_catalogs.json",
+    "source_registry_sha256": "e4b33f981f299c4d85277b430bbe13e9fe4115cee63f93a228a1e49b6324748b",
+    "external_relative_path": "gaia_dr3/gaia_dr3_morphology_galaxies.fits",
+    "external_catalog_sha256": "3ae2bcc9a67ef53a7a4cd72322ace6997907940ec6bc3ef919dc01bbe160639b",
+    "external_catalog_row_count": 914837
+  },
+  "counts": {
+    "benchmark_rows": 3857,
+    "development_rows": 3136,
+    "validation_rows_withheld": 721,
+    "morphology_catalog_rows": 914837,
+    "development_matches": 76,
+    "confirmed_development_ucds": 175,
+    "confirmed_development_ucd_matches": 0,
+    "candidate_development_ucds": 569,
+    "candidate_development_ucd_matches": 1,
+    "development_hii_regions": 127,
+    "development_hii_region_matches": 0
+  },
+  "grouped_counts": [
+    {
+      "source_cohort": "gaia_dr3_non_single_star",
+      "label": "contaminant",
+      "label_subtype": "gaia_non_single_star",
+      "confidence_tier": "high",
+      "development_row_count": 1125,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "literature_ucd",
+      "label": "contaminant",
+      "label_subtype": "reported_non_ucd_comparison",
+      "confidence_tier": "moderate",
+      "development_row_count": 82,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "literature_ucd",
+      "label": "ucd",
+      "label_subtype": "ucd_candidate",
+      "confidence_tier": "uncertain",
+      "development_row_count": 569,
+      "morphology_match_count": 1,
+      "morphology_match_fraction": 0.0017574692442882249
+    },
+    {
+      "source_cohort": "literature_ucd",
+      "label": "ucd",
+      "label_subtype": "ucd_confirmed",
+      "confidence_tier": "high",
+      "development_row_count": 175,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "literature_ucd",
+      "label": "uncertain",
+      "label_subtype": "ambiguous_shared_gaia_distinct_objects",
+      "confidence_tier": "conflict",
+      "development_row_count": 1,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "literature_ucd",
+      "label": "uncertain",
+      "label_subtype": "ucd_role_conflict",
+      "confidence_tier": "conflict",
+      "development_row_count": 16,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "phangs_muse_hii",
+      "label": "contaminant",
+      "label_subtype": "compact_hii_region",
+      "confidence_tier": "moderate",
+      "development_row_count": 118,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "sdss_dr16_galaxy",
+      "label": "contaminant",
+      "label_subtype": "spectroscopic_galaxy",
+      "confidence_tier": "high",
+      "development_row_count": 638,
+      "morphology_match_count": 75,
+      "morphology_match_fraction": 0.11755485893416928
+    },
+    {
+      "source_cohort": "sdss_dr16_qso",
+      "label": "contaminant",
+      "label_subtype": "spectroscopic_qso",
+      "confidence_tier": "high",
+      "development_row_count": 403,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    },
+    {
+      "source_cohort": "van_zee_dwarf_hii",
+      "label": "contaminant",
+      "label_subtype": "dwarf_galaxy_hii_region",
+      "confidence_tier": "moderate",
+      "development_row_count": 9,
+      "morphology_match_count": 0,
+      "morphology_match_fraction": 0.0
+    }
+  ],
+  "output": "data/literature/validation/gaia_morphology_benchmark_crossmatch.csv",
+  "output_sha256": "10a19d3542013d863e1c060797250a1f43de337d50b8ac896a50bfd76c5f0469",
+  "deferred_test": "Repeat exact matching for the withheld validation partition only after the Gaia-only selector and morphology-use policy are frozen."
+}

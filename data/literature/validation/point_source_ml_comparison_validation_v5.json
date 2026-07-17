@@ -1,0 +1,163 @@
+{
+  "comparison_version": "point_source_ml_comparison_v5",
+  "check_count": 20,
+  "passed_count": 20,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "comparison_version",
+      "passed": true,
+      "detail": "point_source_ml_comparison_v5"
+    },
+    {
+      "name": "validation_partition_blind",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "no_validation_identifiers",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "model_families",
+      "passed": true,
+      "detail": [
+        "hand_rank_score",
+        "histogram_gradient_boosting",
+        "logistic_regression"
+      ]
+    },
+    {
+      "name": "one_oof_prediction_per_fit_row",
+      "passed": true,
+      "detail": {
+        "hand_rank_score": 2112,
+        "histogram_gradient_boosting": 2112,
+        "logistic_regression": 2112
+      }
+    },
+    {
+      "name": "one_stress_prediction_per_stress_row",
+      "passed": true,
+      "detail": {
+        "hand_rank_score": 765,
+        "histogram_gradient_boosting": 765,
+        "logistic_regression": 765
+      }
+    },
+    {
+      "name": "outer_fold_count",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "groups_do_not_cross_outer_folds",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "stars_share_matched_ucd_fold",
+      "passed": true,
+      "detail": "maximum fold count per matched group"
+    },
+    {
+      "name": "fold_metrics_complete",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "priority_cohorts",
+      "passed": true,
+      "detail": [
+        "spectroscopic_star",
+        "gaia_non_single_star",
+        "spectroscopic_qso"
+      ]
+    },
+    {
+      "name": "color_is_soft_feature",
+      "passed": true,
+      "detail": [
+        "log1p_astrometric_excess_noise",
+        "log1p_astrometric_excess_noise_sig",
+        "phot_bp_rp_excess_factor",
+        "bp_rp",
+        "log_ruwe",
+        "log1p_ipd_frac_multi_peak",
+        "log1p_ipd_frac_odd_win",
+        "log1p_absolute_parallax_zero_significance",
+        "log1p_proper_motion_zero_significance"
+      ]
+    },
+    {
+      "name": "model_features_exact",
+      "passed": true,
+      "detail": [
+        "log1p_astrometric_excess_noise",
+        "log1p_astrometric_excess_noise_sig",
+        "phot_bp_rp_excess_factor",
+        "bp_rp",
+        "log_ruwe",
+        "log1p_ipd_frac_multi_peak",
+        "log1p_ipd_frac_odd_win",
+        "log1p_absolute_parallax_zero_significance",
+        "log1p_proper_motion_zero_significance"
+      ]
+    },
+    {
+      "name": "tautological_features_excluded",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "development_hash",
+      "passed": true,
+      "detail": "6faa90a6614edcce5b92535ee2f930a4130abc72315c439b5fde06dbca052060"
+    },
+    {
+      "name": "stars_hash",
+      "passed": true,
+      "detail": "669ebc2bf4a9596500ee56521309d0588b11f03d71584a7920fcb7ce6ea8a134"
+    },
+    {
+      "name": "predictions_hash",
+      "passed": true,
+      "detail": "a433220669fb1f48199e6568b5e1925aa9dae652c3ba1b4c6b515520bcd4e753"
+    },
+    {
+      "name": "fold_metrics_hash",
+      "passed": true,
+      "detail": "c7280f8357121f10d9ce99e62fe1115ad8450f19cf456b43f804f06ac900c968"
+    },
+    {
+      "name": "reported_metrics_reproduced",
+      "passed": true,
+      "detail": {
+        "logistic_regression": {
+          "ucd_recall": 0.9246575342465754,
+          "macro_retention": 0.02183773902731039
+        },
+        "histogram_gradient_boosting": {
+          "ucd_recall": 0.815068493150685,
+          "macro_retention": 0.018859693848646567
+        },
+        "hand_rank_score": {
+          "ucd_recall": 0.8972602739726028,
+          "macro_retention": 0.03848042270490348
+        }
+      }
+    },
+    {
+      "name": "selector_not_frozen",
+      "passed": true,
+      "detail": "development_comparison_only_no_model_or_threshold_frozen"
+    }
+  ]
+}

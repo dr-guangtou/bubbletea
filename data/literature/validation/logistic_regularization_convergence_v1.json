@@ -1,0 +1,121 @@
+{
+  "analysis_version": "logistic_regularization_convergence_v1",
+  "validation_partition_inspected": false,
+  "configurations": [
+    "c_100",
+    "c_300",
+    "c_1000",
+    "c_3000",
+    "unregularized"
+  ],
+  "target_ucd_recall": 0.9,
+  "fit_row_count": 2112,
+  "model_features": [
+    "log1p_astrometric_excess_noise",
+    "log1p_astrometric_excess_noise_sig",
+    "phot_bp_rp_excess_factor",
+    "bp_rp",
+    "log_ruwe",
+    "log1p_ipd_frac_multi_peak",
+    "log1p_ipd_frac_odd_win",
+    "log1p_absolute_parallax_zero_significance",
+    "log1p_proper_motion_zero_significance"
+  ],
+  "convergence_to_unregularized": [
+    {
+      "configuration": "c_100",
+      "maximum_absolute_coefficient_difference": 5.566302114588659,
+      "coefficient_vector_relative_l2_difference": 0.774451145364393,
+      "maximum_absolute_probability_difference": 0.9258386614425432,
+      "mean_absolute_probability_difference": 0.036923560615165406,
+      "probability_correlation": 0.9552056731302416
+    },
+    {
+      "configuration": "c_300",
+      "maximum_absolute_coefficient_difference": 4.872556930258328,
+      "coefficient_vector_relative_l2_difference": 0.664332478020018,
+      "maximum_absolute_probability_difference": 0.7911042946707437,
+      "mean_absolute_probability_difference": 0.021057840777242636,
+      "probability_correlation": 0.9760413703737006
+    },
+    {
+      "configuration": "c_1000",
+      "maximum_absolute_coefficient_difference": 3.8262930297363735,
+      "coefficient_vector_relative_l2_difference": 0.5114686207513952,
+      "maximum_absolute_probability_difference": 0.6094292558367722,
+      "mean_absolute_probability_difference": 0.010765200436241504,
+      "probability_correlation": 0.9906436208934598
+    },
+    {
+      "configuration": "c_3000",
+      "maximum_absolute_coefficient_difference": 2.659090275462158,
+      "coefficient_vector_relative_l2_difference": 0.35069398362849596,
+      "maximum_absolute_probability_difference": 0.3411144994733589,
+      "mean_absolute_probability_difference": 0.005499713373396225,
+      "probability_correlation": 0.9969425387461829
+    }
+  ],
+  "fixed_grouped_oof_metrics": [
+    {
+      "configuration": "c_100",
+      "threshold": 0.7515104700072779,
+      "ucd_recall": 0.9041095890410958,
+      "macro_priority_retention": 0.02249642647168056,
+      "priority_retention": {
+        "spectroscopic_star": 0.04337899543378995,
+        "gaia_non_single_star": 0.0017777777777777779,
+        "spectroscopic_qso": 0.022332506203473945
+      }
+    },
+    {
+      "configuration": "c_300",
+      "threshold": 0.8023523713221705,
+      "ucd_recall": 0.9041095890410958,
+      "macro_priority_retention": 0.01908989529316529,
+      "priority_retention": {
+        "spectroscopic_star": 0.0365296803652968,
+        "gaia_non_single_star": 0.0008888888888888889,
+        "spectroscopic_qso": 0.019851116625310174
+      }
+    },
+    {
+      "configuration": "c_1000",
+      "threshold": 0.8418518439025547,
+      "ucd_recall": 0.9041095890410958,
+      "macro_priority_retention": 0.018793598996868992,
+      "priority_retention": {
+        "spectroscopic_star": 0.0365296803652968,
+        "gaia_non_single_star": 0.0,
+        "spectroscopic_qso": 0.019851116625310174
+      }
+    },
+    {
+      "configuration": "c_3000",
+      "threshold": 0.8527521660232071,
+      "ucd_recall": 0.9041095890410958,
+      "macro_priority_retention": 0.020315669012089692,
+      "priority_retention": {
+        "spectroscopic_star": 0.0410958904109589,
+        "gaia_non_single_star": 0.0,
+        "spectroscopic_qso": 0.019851116625310174
+      }
+    },
+    {
+      "configuration": "unregularized",
+      "threshold": 0.8512687096474828,
+      "ucd_recall": 0.9041095890410958,
+      "macro_priority_retention": 0.020315669012089692,
+      "priority_retention": {
+        "spectroscopic_star": 0.0410958904109589,
+        "gaia_non_single_star": 0.0,
+        "spectroscopic_qso": 0.019851116625310174
+      }
+    }
+  ],
+  "inputs": {
+    "development_sha256": "6faa90a6614edcce5b92535ee2f930a4130abc72315c439b5fde06dbca052060",
+    "stars_sha256": "669ebc2bf4a9596500ee56521309d0588b11f03d71584a7920fcb7ce6ea8a134"
+  },
+  "coefficients_sha256": "ab9691e2ad68de6e02b80237d51c07c5f203047ef3d0dd27679e2db18096c61a",
+  "decision_status": "development_convergence_measurement_no_model_or_threshold_frozen"
+}

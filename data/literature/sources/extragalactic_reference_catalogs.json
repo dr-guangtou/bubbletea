@@ -1,0 +1,116 @@
+{
+  "registry_version": "extragalactic_reference_catalogs_v1",
+  "date_audited": "2026-07-17",
+  "external_data_environment_variable": "BUBBLETEA_EXTERNAL_DATA",
+  "external_relative_root": "bubbletea/extragalactic_reference",
+  "benchmark_policy": "supplementary_reference_layers_do_not_mutate_benchmark_v1",
+  "catalogs": [
+    {
+      "catalog_id": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic",
+      "role": "relatively_independent_spectroscopic_calibration_and_density_reference",
+      "publication_bibcode": "2020ApJS..249....3A",
+      "doi": "10.3847/1538-4365/ab929e",
+      "access_url": "https://datalab.noirlab.edu/tap",
+      "external_relative_path": "sdss_dr16/gaia_linked_clean_spectroscopic_extragalactic.fits",
+      "file_size_bytes": 126624960,
+      "row_count": 1241356,
+      "unique_source_id_count": 1241356,
+      "sha256": "f6a2214e1d46327f47964090a84d342113bb74573044e90d623b8523b4605c2a",
+      "class_counts": {
+        "GALAXY": 747153,
+        "QSO": 494203
+      },
+      "class_count_column": "spectroscopic_class",
+      "raw_class_counts_before_unique_association_resolution": {
+        "GALAXY": 753558,
+        "QSO": 494608
+      },
+      "selection": {
+        "spectroscopic_rules": "scienceprimary = 1; zwarning = 0; class exactly GALAXY or QSO",
+        "gaia_magnitude_interval_inclusive": [
+          14.0992431640625,
+          21.818605422973633
+        ],
+        "crossmatch_table": "gaia_dr3.x1p5__gaia_source__sdss_dr16__specobj",
+        "association_rule": "remove cross-class Gaia conflicts, retain nearest unique Gaia-spectrum pair",
+        "retrieval_partition": "ten exact SDSS random_id bins spanning [0, 100) per class to avoid the 100001-row service cap"
+      },
+      "retrieval_query_template": "SELECT g.phot_g_mean_mag, x.distance AS gaia_association_distance_arcsec, s.class AS spectroscopic_class, s.subclass, s.z AS spectroscopic_redshift, s.random_id, g.source_id, s.specobjid FROM gaia_dr3.x1p5__gaia_source__sdss_dr16__specobj AS x JOIN gaia_dr3.gaia_source AS g ON x.id1 = g.source_id JOIN sdss_dr16.specobj AS s ON x.id2 = s.specobjid WHERE s.scienceprimary = 1 AND s.zwarning = 0 AND s.class = '{source_class}' AND s.random_id >= {random_id_minimum} AND s.random_id < {random_id_maximum} AND g.phot_g_mean_mag BETWEEN 14.0992431640625 AND 21.818605422973633 ORDER BY g.source_id, x.distance, s.specobjid",
+      "independence_limit": "SDSS targeting and the requirement of a Gaia crossmatch impose footprint, magnitude, morphology, and targeting selection effects."
+    },
+    {
+      "catalog_id": "gaia_dr3_morphology_galaxies",
+      "role": "primary_compact_or_bright_core_galaxy_failure_mode_stress_catalog",
+      "publication_bibcode": "2023A&A...674A..11D",
+      "doi": "10.1051/0004-6361/202243798",
+      "access_url": "https://gaia.aip.de/tap",
+      "external_relative_path": "gaia_dr3/gaia_dr3_morphology_galaxies.fits",
+      "file_size_bytes": 764821440,
+      "row_count": 914837,
+      "unique_source_id_count": 914837,
+      "sha256": "3ae2bcc9a67ef53a7a4cd72322ace6997907940ec6bc3ef919dc01bbe160639b",
+      "selection": "gaiadr3.galaxy_candidates WHERE radius_sersic IS NOT NULL",
+      "retrieval_query": "SELECT source_id, classprob_dsc_combmod_galaxy, classprob_dsc_combmod_quasar, classlabel_dsc, classlabel_dsc_joint, vari_best_class_name, redshift_ugc, n_transits, radius_sersic, radius_sersic_error, n_sersic, n_sersic_error, flags_sersic, radius_de_vaucouleurs, radius_de_vaucouleurs_error, flags_de_vaucouleurs FROM gaiadr3.galaxy_candidates WHERE radius_sersic IS NOT NULL ORDER BY source_id",
+      "scientific_reason": "The morphology pipeline preferentially represents compact galaxies and detectable bulges or cores, closely matching the galaxy contaminants most likely to appear in Gaia.",
+      "circularity_limit": "Gaia candidate construction and morphology use Gaia data products, so this catalog is a failure-mode and density stress set, not independent truth for fitting a Gaia-only selector."
+    },
+    {
+      "catalog_id": "quaia_v1_g20",
+      "role": "all_sky_qso_spatial_null_with_published_selection_function",
+      "publication_bibcode": "2024ApJ...964...69S",
+      "doi": "10.3847/1538-4357/ad1328",
+      "arxiv": "2306.17749",
+      "zenodo_record": "10403370",
+      "access_url": "https://zenodo.org/records/10403370",
+      "downloaded_file_name": "quaia_G20.0.fits",
+      "external_relative_path": "quaia_v1/quaia_G20.0.fits",
+      "file_size_bytes": 99786240,
+      "row_count": 755850,
+      "unique_source_id_count": 755850,
+      "sha256": "efeda9ae727bf2cd75569f52460a0492827c8a3fcd8ce29dc692b559fca2acb0",
+      "selection_function_external_relative_path": "quaia_v1/selection_function_NSIDE64_G20.0.fits",
+      "selection_function_downloaded_file_name": "selection_function_NSIDE64_G20.0.fits",
+      "selection_function_file_size_bytes": 400320,
+      "selection_function_row_count": 48,
+      "selection_function_sha256": "f66684999b0fdab1cdc3f8fc3ac8ef16956cb037785dbac2dc395dae3ffedd7d",
+      "selection": "Published Quaia G < 20.0 catalog and matching NSIDE=64 selection-function product.",
+      "circularity_limit": "Quaia begins from Gaia DR3 QSO candidates and uses Gaia astrometry plus unWISE photometry; it is not independent truth for Gaia-feature calibration."
+    }
+  ],
+  "remote_count_audit": {
+    "gaia_dr3_galaxy_candidates_all_rows": 4842342,
+    "gaia_dr3_galaxy_pure_union_rows": 2891132,
+    "gaia_dr3_galaxy_dsc_joint_rows": 251063,
+    "gaia_dr3_qso_candidates_all_rows": 6649162,
+    "gaia_dr3_qso_pure_union_rows": 1942825,
+    "gaia_dr3_qso_dsc_joint_rows": 547201,
+    "gaia_extragalactic_pure_union_reference": "2023A&A...674A..41G",
+    "gaia_extragalactic_pure_union_warning": "The full candidate tables favor completeness; the paper's recommended unions favor purity, but neither is independent of Gaia selector features."
+  },
+  "reviewed_not_downloaded": [
+    {
+      "catalog_id": "catnorth",
+      "arxiv": "2310.12704",
+      "disposition": "Useful northern comparison but not all-sky and partly circular through Gaia astrometry; superseded for this purpose by the newer all-sky CatGlobe compilation."
+    },
+    {
+      "catalog_id": "catglobe",
+      "publication_bibcode": "2025ApJS..279...54F",
+      "doi": "10.3847/1538-4365/ade999",
+      "disposition": "Promising all-sky QSO sensitivity catalog; defer download because Quaia already supplies an all-sky catalog and a published selection function."
+    },
+    {
+      "catalog_id": "gaia_wise_agn_dr1",
+      "publication_bibcode": "2018ApJS..236...37S",
+      "doi": "10.3847/1538-4365/aabcb7",
+      "vizier_catalog": "J/ApJS/236/37",
+      "disposition": "Important historical astrometric AGN reference, but based on Gaia DR1 and therefore not the primary DR3-aligned resource."
+    },
+    {
+      "catalog_id": "gaia_dr4_extragalactic_methods",
+      "arxiv": "2605.23388",
+      "publication_bibcode": "2026A&A...711A..62J",
+      "disposition": "Methods reference only; the DR4 catalog is not yet a released operational input as of this audit."
+    }
+  ]
+}

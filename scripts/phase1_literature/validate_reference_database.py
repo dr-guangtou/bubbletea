@@ -1264,7 +1264,7 @@ def validate_invariants(
             WHERE evidence_type = 'spectroscopic_membership'
               AND evidence_value = 'positive'
               AND evidence_status = 'approved'
-              AND review_status = 'approved_by_project_lead_delegation_2026-07-15'
+              AND review_status = 'approved_by_project_lead_2026-07-17'
             """,
         )
     )
@@ -1290,12 +1290,26 @@ def validate_invariants(
             """,
         )
     )
-    if approved_confirmation_evidence_count != 1316:
+    approved_foreground_rejection_count = int(
+        scalar(
+            connection,
+            """
+            SELECT COUNT(*) FROM object_evidence
+            WHERE evidence_type = 'foreground_astrometry'
+              AND evidence_value = 'negative'
+              AND evidence_status = 'approved'
+              AND review_status = 'approved_by_project_lead_2026-07-17'
+            """,
+        )
+    )
+    if approved_confirmation_evidence_count != 1248:
         failures.append("approved_confirmation_evidence_count")
-    if reviewed_confirmation_non_promotion_count != 57:
+    if reviewed_confirmation_non_promotion_count != 125:
         failures.append("reviewed_confirmation_non_promotion_count")
-    if approved_reported_confirmation_count != 535:
+    if approved_reported_confirmation_count != 467:
         failures.append("approved_reported_confirmation_count")
+    if approved_foreground_rejection_count != 1:
+        failures.append("approved_foreground_rejection_count")
     confirmation_review_metadata = {
         str(row[0]): str(row[1])
         for row in connection.execute(
@@ -1312,7 +1326,7 @@ def validate_invariants(
         "confirmation_evidence_review_sha256": calculate_sha256(
             CONFIRMATION_EVIDENCE_REVIEW_MANIFEST
         ),
-        "confirmation_evidence_review_status": ("approved_by_project_lead_delegation_2026-07-15"),
+        "confirmation_evidence_review_status": "approved_by_project_lead_2026-07-17",
     }:
         failures.append("confirmation_review_metadata")
     with LITERATURE_SCREENING_CLOSURE_MANIFEST.open(encoding="utf-8") as input_file:
@@ -1368,9 +1382,9 @@ def validate_invariants(
     }:
         failures.append("screening_closure_metadata")
     if classification_counts != {
-        "candidate": 1515,
-        "confirmed": 740,
-        "rejected": 2082,
+        "candidate": 1574,
+        "confirmed": 680,
+        "rejected": 2083,
         "uncertain": 22,
     }:
         failures.append("classification_counts")
@@ -1449,6 +1463,7 @@ def validate_invariants(
         "host_distance_summary": host_distance_summary,
         "preserved_legacy_distance_counts": preserved_legacy_distance_counts,
         "approved_confirmation_evidence_count": approved_confirmation_evidence_count,
+        "approved_foreground_rejection_count": approved_foreground_rejection_count,
         "reviewed_confirmation_non_promotion_count": (reviewed_confirmation_non_promotion_count),
         "approved_reported_confirmation_count": approved_reported_confirmation_count,
         "screening_artifact_checks": screening_artifact_checks,

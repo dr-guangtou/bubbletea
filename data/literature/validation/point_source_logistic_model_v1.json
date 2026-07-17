@@ -1,0 +1,123 @@
+{
+  "model_version": "point_source_logistic_model_v1",
+  "fit_scope": "benchmark_v3_development_model_fit_rows_only",
+  "validation_partition_inspected": false,
+  "policy": "data/literature/sources/point_source_logistic_policy_v1.json",
+  "policy_sha256": "baf7d00648824356d3ad109a08325fce1268506406a6389ff8bada92a20a6bc3",
+  "regularization_c": 1000.0,
+  "threshold": 0.8277833628791744,
+  "input_features": [
+    "log1p_astrometric_excess_noise",
+    "log1p_astrometric_excess_noise_sig",
+    "phot_bp_rp_excess_factor",
+    "bp_rp",
+    "log_ruwe",
+    "log1p_ipd_frac_multi_peak",
+    "log1p_ipd_frac_odd_win",
+    "log1p_absolute_parallax_zero_significance",
+    "log1p_proper_motion_zero_significance"
+  ],
+  "transformed_features": [
+    "features__log1p_astrometric_excess_noise",
+    "features__log1p_astrometric_excess_noise_sig",
+    "features__phot_bp_rp_excess_factor",
+    "features__bp_rp",
+    "features__log_ruwe",
+    "features__log1p_ipd_frac_multi_peak",
+    "features__log1p_ipd_frac_odd_win",
+    "features__log1p_absolute_parallax_zero_significance",
+    "features__log1p_proper_motion_zero_significance",
+    "features__missingindicator_phot_bp_rp_excess_factor",
+    "features__missingindicator_bp_rp",
+    "features__missingindicator_log_ruwe",
+    "features__missingindicator_log1p_absolute_parallax_zero_significance",
+    "features__missingindicator_log1p_proper_motion_zero_significance"
+  ],
+  "imputer_statistics": {
+    "log1p_astrometric_excess_noise": 0.2207406666978994,
+    "log1p_astrometric_excess_noise_sig": 2.3822577176691913,
+    "phot_bp_rp_excess_factor": 1.2430590000000001,
+    "bp_rp": 0.9756204999999998,
+    "log_ruwe": 0.2484213160964212,
+    "log1p_ipd_frac_multi_peak": 0.0,
+    "log1p_ipd_frac_odd_win": 0.0,
+    "log1p_absolute_parallax_zero_significance": 3.0997193307416175,
+    "log1p_proper_motion_zero_significance": 5.012217206387906
+  },
+  "missing_indicator_input_indices": [
+    2,
+    3,
+    4,
+    7,
+    8
+  ],
+  "scaler_mean": {
+    "features__log1p_astrometric_excess_noise": 0.5077957286539462,
+    "features__log1p_astrometric_excess_noise_sig": 2.296996082757169,
+    "features__phot_bp_rp_excess_factor": 1.5753446794507575,
+    "features__bp_rp": 1.0691102435053044,
+    "features__log_ruwe": 0.40452376605673185,
+    "features__log1p_ipd_frac_multi_peak": 0.11447206373113632,
+    "features__log1p_ipd_frac_odd_win": 0.035525133603956094,
+    "features__log1p_absolute_parallax_zero_significance": 2.5923718709469337,
+    "features__log1p_proper_motion_zero_significance": 4.317541678541589,
+    "features__missingindicator_phot_bp_rp_excess_factor": 0.002840909090909091,
+    "features__missingindicator_bp_rp": 0.002840909090909091,
+    "features__missingindicator_log_ruwe": 0.1377840909090909,
+    "features__missingindicator_log1p_absolute_parallax_zero_significance": 0.1377840909090909,
+    "features__missingindicator_log1p_proper_motion_zero_significance": 0.1377840909090909
+  },
+  "scaler_scale": {
+    "features__log1p_astrometric_excess_noise": 0.7396491591050417,
+    "features__log1p_astrometric_excess_noise_sig": 2.0514827366566446,
+    "features__phot_bp_rp_excess_factor": 2.032903513358407,
+    "features__bp_rp": 0.5650722373632209,
+    "features__log_ruwe": 0.49254496865579206,
+    "features__log1p_ipd_frac_multi_peak": 0.43739544668040925,
+    "features__log1p_ipd_frac_odd_win": 0.2762279560071165,
+    "features__log1p_absolute_parallax_zero_significance": 1.5159040014546017,
+    "features__log1p_proper_motion_zero_significance": 2.159120632660278,
+    "features__missingindicator_phot_bp_rp_excess_factor": 0.05322441475907726,
+    "features__missingindicator_bp_rp": 0.05322441475907726,
+    "features__missingindicator_log_ruwe": 0.34467322959789937,
+    "features__missingindicator_log1p_absolute_parallax_zero_significance": 0.34467322959789937,
+    "features__missingindicator_log1p_proper_motion_zero_significance": 0.34467322959789937
+  },
+  "coefficients": {
+    "features__log1p_astrometric_excess_noise": 1.92280505862522,
+    "features__log1p_astrometric_excess_noise_sig": 2.6313697061185666,
+    "features__phot_bp_rp_excess_factor": -0.42910408056654464,
+    "features__bp_rp": 0.2887795459342125,
+    "features__log_ruwe": 0.05892502402776441,
+    "features__log1p_ipd_frac_multi_peak": -0.04806477464883122,
+    "features__log1p_ipd_frac_odd_win": 0.3222649295209247,
+    "features__log1p_absolute_parallax_zero_significance": -1.459259274308832,
+    "features__log1p_proper_motion_zero_significance": -2.934139449572743,
+    "features__missingindicator_phot_bp_rp_excess_factor": -0.13858826184372833,
+    "features__missingindicator_bp_rp": -0.13858826184372833,
+    "features__missingindicator_log_ruwe": 0.6804097096927108,
+    "features__missingindicator_log1p_absolute_parallax_zero_significance": 0.6804097096927108,
+    "features__missingindicator_log1p_proper_motion_zero_significance": 0.6804097096927108
+  },
+  "intercept": -6.648555186512517,
+  "counts": {
+    "fit_rows": 2112,
+    "reliable_ucds": 146,
+    "priority_contaminants": 1966
+  },
+  "development_apparent_metrics": {
+    "reliable_ucd_recall": 0.9246575342465754,
+    "macro_priority_retention": 0.01651049397403794
+  },
+  "inputs": {
+    "development_features_sha256": "6faa90a6614edcce5b92535ee2f930a4130abc72315c439b5fde06dbca052060",
+    "stellar_matches_sha256": "669ebc2bf4a9596500ee56521309d0588b11f03d71584a7920fcb7ce6ea8a134"
+  },
+  "artifacts": {
+    "model": "/Users/shuang/Dropbox/work/project/bubbletea/data/literature/validation/point_source_logistic_model_v1.joblib",
+    "model_sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a",
+    "predictions": "/Users/shuang/Dropbox/work/project/bubbletea/data/literature/validation/point_source_logistic_development_predictions_v1.csv",
+    "predictions_sha256": "5f4dfe96eb0689255d22c4878e429b85ec97eb14f6f6aee5d21061ac8b2720b8"
+  },
+  "decision_status": "final_development_model_fitted_validation_still_sealed"
+}

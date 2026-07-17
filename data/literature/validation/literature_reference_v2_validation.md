@@ -1,9 +1,9 @@
 # Literature Reference v2 Validation
 
-**Date:** 2026-07-16
+**Date:** 2026-07-18
 **Status:** `passed`
 **Legacy database SHA-256:** `d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806`
-**Canonical export SHA-256:** `6821a94bed510acfb7f0afb0fc62ca4dcb0943ef1a17cd0e8daa673101609a06`
+**Canonical export SHA-256:** `8a33c894658c1ab3a70c747f6f8531b199980e460e78620c3afc5378fe7e5191`
 
 ## Preserved Inputs and Outputs
 
@@ -31,9 +31,9 @@
 | Records moved by delegated Wave 1 source identities | 238 |
 | Approved delegated Wave 1 source identities | 80 |
 | Supporting source rows linked as measurement evidence | 168 |
-| Approved object-level spectroscopic evidence rows | 1316 |
-| Reported-confirmed rows supported by approved evidence | 535 |
-| Reported-confirmed rows reviewed without qualifying local evidence | 57 |
+| Approved object-level spectroscopic evidence rows | 1248 |
+| Reported-confirmed rows supported by approved evidence | 467 |
+| Reported-confirmed rows reviewed without qualifying local evidence | 125 |
 | ADS papers in the completed hashed screen | 345 |
 | Approved literature retrievals | 19 |
 | Explicitly scoped retrieval deferrals | 8 |
@@ -138,9 +138,9 @@ it prevents optional enrichment from blocking the Stage 1 benchmark.
 
 | State | Canonical objects |
 |---|---:|
-| `candidate` | 1515 |
-| `confirmed` | 740 |
-| `rejected` | 2082 |
+| `candidate` | 1574 |
+| `confirmed` | 680 |
+| `rejected` | 2083 |
 | `uncertain` | 22 |
 
 No reported confirmation is promoted automatically. Every promotion requires an

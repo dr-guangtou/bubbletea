@@ -1,0 +1,229 @@
+{
+  "stability_version": "point_source_ml_stability_v1",
+  "check_count": 25,
+  "passed_count": 25,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "stability_version",
+      "passed": true,
+      "detail": "point_source_ml_stability_v1"
+    },
+    {
+      "name": "validation_partition_blind",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "no_validation_identifiers",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "declared_repeat_count",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "declared_repeat_seeds",
+      "passed": true,
+      "detail": [
+        20260717,
+        20261726,
+        20262735,
+        20263744,
+        20264753,
+        20265762,
+        20266771,
+        20267780,
+        20268789,
+        20269798
+      ]
+    },
+    {
+      "name": "prediction_row_count",
+      "passed": true,
+      "detail": 22280
+    },
+    {
+      "name": "each_source_has_every_repeat",
+      "passed": true,
+      "detail": {
+        "10": 2228
+      }
+    },
+    {
+      "name": "one_prediction_per_source_repeat",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "groups_do_not_cross_outer_folds",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "fold_metrics_complete",
+      "passed": true,
+      "detail": 50
+    },
+    {
+      "name": "regularization_grid_respected",
+      "passed": true,
+      "detail": [
+        3.0
+      ]
+    },
+    {
+      "name": "scores_finite",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "source_summary_complete",
+      "passed": true,
+      "detail": 2228
+    },
+    {
+      "name": "source_selection_frequency_reproduced",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "coefficient_fit_count",
+      "passed": true,
+      "detail": {
+        "bp_rp": 50,
+        "log1p_absolute_parallax_zero_significance": 50,
+        "log1p_astrometric_excess_noise": 50,
+        "log1p_astrometric_excess_noise_sig": 50,
+        "log1p_ipd_frac_multi_peak": 50,
+        "log1p_ipd_frac_odd_win": 50,
+        "log1p_proper_motion_zero_significance": 50,
+        "log_ruwe": 50,
+        "missingindicator_bp_rp": 50,
+        "missingindicator_log1p_absolute_parallax_zero_significance": 50,
+        "missingindicator_log1p_proper_motion_zero_significance": 50,
+        "missingindicator_log_ruwe": 50,
+        "missingindicator_phot_bp_rp_excess_factor": 50,
+        "phot_bp_rp_excess_factor": 50
+      }
+    },
+    {
+      "name": "measurement_coefficients_present",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "coefficient_summary_reproduced",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "repeat_metrics_reproduced",
+      "passed": true,
+      "detail": [
+        {
+          "repeat_index": 1,
+          "ucd_recall": 0.9371428571428572,
+          "macro_priority_retention": 0.040200506781151946
+        },
+        {
+          "repeat_index": 2,
+          "ucd_recall": 0.9371428571428572,
+          "macro_priority_retention": 0.038884871401000436
+        },
+        {
+          "repeat_index": 3,
+          "ucd_recall": 0.9485714285714286,
+          "macro_priority_retention": 0.04263610224900547
+        },
+        {
+          "repeat_index": 4,
+          "ucd_recall": 0.9314285714285714,
+          "macro_priority_retention": 0.03814586369425079
+        },
+        {
+          "repeat_index": 5,
+          "ucd_recall": 0.9428571428571428,
+          "macro_priority_retention": 0.040200506781151946
+        },
+        {
+          "repeat_index": 6,
+          "ucd_recall": 0.9542857142857143,
+          "macro_priority_retention": 0.04423206900626255
+        },
+        {
+          "repeat_index": 7,
+          "ucd_recall": 0.9428571428571428,
+          "macro_priority_retention": 0.037510943059330164
+        },
+        {
+          "repeat_index": 8,
+          "ucd_recall": 0.9371428571428572,
+          "macro_priority_retention": 0.0413662609791642
+        },
+        {
+          "repeat_index": 9,
+          "ucd_recall": 0.9371428571428572,
+          "macro_priority_retention": 0.03903475258313968
+        },
+        {
+          "repeat_index": 10,
+          "ucd_recall": 0.9371428571428572,
+          "macro_priority_retention": 0.03893066551131067
+        }
+      ]
+    },
+    {
+      "name": "readiness_criteria_reproduced",
+      "passed": true,
+      "detail": {
+        "median_ucd_recall_at_least_0p90": true,
+        "minimum_repeat_ucd_recall_at_least_0p85": true,
+        "all_measurement_coefficient_sign_agreement_at_least_0p80": true
+      }
+    },
+    {
+      "name": "readiness_status_consistent",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "strata_prediction_counts",
+      "passed": true,
+      "detail": {
+        "absolute_ecliptic_latitude": 22280,
+        "absolute_galactic_latitude": 22280,
+        "g_magnitude": 22280
+      }
+    },
+    {
+      "name": "development_hash",
+      "passed": true,
+      "detail": "23a55d4fbad519834302f9f433c1cd594c8c8c63674e1ffefef786fbc95c38d0"
+    },
+    {
+      "name": "stars_hash",
+      "passed": true,
+      "detail": "38b6551ff470efdfbc1a6c8b7d3e5c211b8fe0e4203fef1de6173251b208c0b0"
+    },
+    {
+      "name": "artifact_hashes",
+      "passed": true,
+      "detail": {
+        "predictions_sha256": "2719d8087f4627aa0f506941a405d003a8b5276054ea3e9552c2ce6e1cb28738",
+        "source_summary_sha256": "315a9d030d269500bf8cdfcbff4b88de668ac4a5dd9714c176401c10590cbfdc",
+        "fold_metrics_sha256": "298316ebd35f1f702364a216074c323b771eed5fa76adf3bc4a125d3bfc5de93",
+        "coefficients_sha256": "0a7974da657f463c4cd7d66eb59417cb65de64dd9d1923218afb8d9157be146d",
+        "coefficient_summary_sha256": "ce00558168296c04f3b1ce799ed35dc23e0896d75dffd389727f22b5acaeb9dc",
+        "strata_sha256": "2eccf8f569349ed0b8e09046a6fc569c7bf3418e3fdd9f1dd2005b8216cdc0d4"
+      }
+    },
+    {
+      "name": "validation_still_sealed",
+      "passed": true,
+      "detail": "ready_for_model_threshold_review_validation_still_sealed"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "design_version": "gaia_morphology_host_control_design_v1",
+  "check_count": 14,
+  "passed_count": 14,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "design_version",
+      "passed": true,
+      "detail": "gaia_morphology_host_control_design_v1"
+    },
+    {
+      "name": "frozen_before_outcome_queries",
+      "passed": true,
+      "detail": "frozen_before_gaia_outcome_queries"
+    },
+    {
+      "name": "environment_deferred",
+      "passed": true,
+      "detail": "deferred_existing_is_cluster_is_an_undocumented_sky_circle_proxy"
+    },
+    {
+      "name": "design_digest",
+      "passed": true,
+      "detail": "60e0ecf9a7499e98e3fd2261484ecac51a36752c545c2da4d01e73f45ba2091b"
+    },
+    {
+      "name": "host_catalog_digest",
+      "passed": true,
+      "detail": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce"
+    },
+    {
+      "name": "unique_field_ids",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "name": "twelve_pairs",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "one_host_and_control_per_pair",
+      "passed": true,
+      "detail": {
+        "control": {
+          "host_control_pair_01": 1,
+          "host_control_pair_02": 1,
+          "host_control_pair_03": 1,
+          "host_control_pair_04": 1,
+          "host_control_pair_05": 1,
+          "host_control_pair_06": 1,
+          "host_control_pair_07": 1,
+          "host_control_pair_08": 1,
+          "host_control_pair_09": 1,
+          "host_control_pair_10": 1,
+          "host_control_pair_11": 1,
+          "host_control_pair_12": 1
+        },
+        "host": {
+          "host_control_pair_01": 1,
+          "host_control_pair_02": 1,
+          "host_control_pair_03": 1,
+          "host_control_pair_04": 1,
+          "host_control_pair_05": 1,
+          "host_control_pair_06": 1,
+          "host_control_pair_07": 1,
+          "host_control_pair_08": 1,
+          "host_control_pair_09": 1,
+          "host_control_pair_10": 1,
+          "host_control_pair_11": 1,
+          "host_control_pair_12": 1
+        }
+      }
+    },
+    {
+      "name": "two_hosts_per_six_strata",
+      "passed": true,
+      "detail": {
+        "high|30_to_50_deg": 2,
+        "high|50_to_90_deg": 2,
+        "low|30_to_50_deg": 2,
+        "low|50_to_90_deg": 2,
+        "middle|30_to_50_deg": 2,
+        "middle|50_to_90_deg": 2
+      }
+    },
+    {
+      "name": "control_ecliptic_latitude_match",
+      "passed": true,
+      "detail": 2.0
+    },
+    {
+      "name": "control_absolute_galactic_latitude_match_recorded",
+      "passed": true,
+      "detail": 6.740496094472533
+    },
+    {
+      "name": "controls_clear_current_nearby_galaxy_apertures",
+      "passed": true,
+      "detail": 0.0259780931300963
+    },
+    {
+      "name": "control_fields_do_not_overlap",
+      "passed": true,
+      "detail": 1.2216759157217743
+    },
+    {
+      "name": "no_gaia_outcome_columns",
+      "passed": true,
+      "detail": [
+        "ecliptic_latitude_difference_deg",
+        "equivalent_maximum_radius_kpc",
+        "field_dec",
+        "field_ecliptic_latitude_deg",
+        "field_ecliptic_longitude_deg",
+        "field_galactic_latitude_deg",
+        "field_galactic_longitude_deg",
+        "field_id",
+        "field_ra",
+        "field_radius_deg",
+        "field_role",
+        "galactic_latitude_difference_deg",
+        "geometric_match_score_deg",
+        "host_distance_mpc",
+        "host_log_l_k",
+        "host_name",
+        "host_rank",
+        "latitude_stratum",
+        "luminosity_stratum",
+        "minimum_nearby_galaxy_clearance_deg",
+        "pair_id",
+        "signed_ecliptic_longitude_offset_deg"
+      ]
+    }
+  ]
+}

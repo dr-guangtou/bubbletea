@@ -1,0 +1,45 @@
+{
+  "design_version": "gaia_morphology_host_control_design_v1",
+  "generated_utc": "2026-07-16T19:02:09.375106+00:00",
+  "design_status": "frozen_before_gaia_outcome_queries",
+  "environment_stratification_status": "deferred_existing_is_cluster_is_an_undocumented_sky_circle_proxy",
+  "host_catalog": "data/galaxy_sample/galaxy_sample_ranked.csv",
+  "host_catalog_sha256": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce",
+  "selection_rules": {
+    "distance_interval_mpc": [
+      15.0,
+      25.0
+    ],
+    "minimum_absolute_galactic_latitude_deg": 30.0,
+    "latitude_boundary_deg": 50.0,
+    "maximum_radius_kpc": 600.0,
+    "maximum_field_radius_deg": 2.1,
+    "hosts_per_luminosity_latitude_stratum": 2,
+    "host_selection_within_stratum": "rows_nearest_one_third_and_two_thirds_positions_after_sorting_by_log_l_k_distance_and_rank",
+    "control_ecliptic_latitude_offsets_deg": [
+      -2.0,
+      -1.0,
+      0.0,
+      1.0,
+      2.0
+    ],
+    "control_ecliptic_longitude_offset_interval_deg": [
+      15,
+      180
+    ],
+    "nearby_galaxy_screen_radius_kpc": 300.0,
+    "nearby_galaxy_screen_cap_deg": 2.1,
+    "control_rank_rule": "minimize_absolute_galactic_latitude_difference_plus_absolute_ecliptic_latitude_difference_then_longitude_offset"
+  },
+  "counts": {
+    "eligible_host_count": 1163,
+    "luminosity_tercile_boundaries_log_l_k": [
+      9.028623444609874,
+      9.969866666666666
+    ],
+    "selected_host_count": 12,
+    "control_count": 12
+  },
+  "output": "data/literature/validation/gaia_morphology_host_control_design.csv",
+  "output_sha256": "60e0ecf9a7499e98e3fd2261484ecac51a36752c545c2da4d01e73f45ba2091b"
+}

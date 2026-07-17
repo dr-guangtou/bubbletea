@@ -147,6 +147,93 @@ inputs, and every exclusion has a recorded reason.
 - [ ] Compare Gaia extendedness features and color combinations on the fixed
   benchmark without treating uncertain UCD candidates as certain labels
   (`BT-002`, `BT-019`).
+  - [x] Enrich and analyze all 3,136 development sources without querying any of
+    the 721 validation identifiers; measure 190 primary and sensitivity metrics
+    with 19 passing artifact checks (2026-07-16).
+  - [x] Review the development findings and approve a tiered selector direction
+    prioritizing equal-weight rejection of ordinary stars, NSS/binaries, and QSOs;
+    keep galaxies secondary and H II/young clusters as separate color/morphology
+    safeguards (2026-07-17).
+  - [x] Audit expanded extragalactic references and stage spectroscopic SDSS,
+    Gaia morphology-galaxy, and Quaia spatial-null layers outside the repository
+    without changing `benchmark_v1` (2026-07-17).
+  - [x] Run and validate the predefined three-galaxy Gaia morphology stress test;
+    measure 814 host-source associations, 87.7% false selection by both legacy rules,
+    and no inner-density enhancement claim (2026-07-17).
+  - [x] Freeze and validate 12 luminosity/latitude-stratified hosts with 12 paired
+    geometric controls; measure 9,144 morphology galaxies, strong spatial variation,
+    and 85--88% false selection without an environment or clustering claim
+    (2026-07-17).
+  - [x] Reclassify the Sersic-fit layer as a Gaia galaxy-candidate stress catalog,
+    prohibit its use as the UCD parent sample, and exact-match only the development
+    partition: 0/175 confirmed UCDs, 1/569 uncertain UCD candidates, and 0/127 H II
+    regions have catalog membership (2026-07-17).
+  - [ ] After selector and morphology-use freezing, run the predeclared exact match
+    on the withheld validation partition and evaluate Sersic evidence without
+    changing the frozen selection rule.
+  - [x] Build a benchmark-disjoint SDSS spectroscopic stellar reference matched 3:1
+    to 175 confirmed development UCDs using G and sky latitudes only; retain 525
+    unique controls, measure 19 Gaia features, and pass 19 validation checks without
+    claiming physical singleness or inspecting validation identifiers (2026-07-17).
+  - [x] Measure 48 point-source-priority score operating points with equal cohort
+    weight for stars, NSS/binaries, and QSOs; validate the rank-score/null-policy
+    grid without freezing a threshold (2026-07-17).
+  - [x] Run a leakage-controlled classical-ML comparison with measured BP-RP as a
+    soft feature and equal priority-cohort weights (2026-07-17). Nested grouped CV
+    favors logistic regression provisionally, but its 81.8--100% fold recall range
+    prevents model or threshold freezing.
+  - [x] Measure repeated grouped-CV stability and magnitude/sky-position behavior
+    (2026-07-17). Ten repeats give 93.14--95.43% UCD recall and 3.75--4.42%
+    equal-cohort retention; all 50 fits select `C = 3.0` with invariant measurement-
+    feature signs. The formal stability gate passes, but 11 persistent UCD failures
+    require provenance and association review.
+  - [ ] Audit persistent UCD and contaminant failures and approve the final grouped-
+    OOF threshold-calibration rule and applicability domain.
+    Source-audit blocker: 68 Fahrion compilation rows use `RV = 0.0`, including 30
+    current confirmed development objects; the prior evidence review incorrectly
+    treated every coordinate-bearing row as positive velocity evidence.
+  - [x] Re-audit the 68 Fahrion zero-RV rows and their independent evidence, preserve
+    all source records, reject only B409 as an incorrectly classified UCD, and derive
+    immutable benchmark/development-feature v2 artifacts (2026-07-17). Eight remain
+    confirmed through independent evidence, 59 become candidates, and 26 Gaia-linked
+    benchmark labels change in total.
+  - [x] Recompute the matched stellar reference and every development-only selector
+    artifact from benchmark v2 (2026-07-18). Ten repeats yield 94.67--96.00% UCD
+    recall and 3.77--4.39% macro priority retention; seven UCDs remain persistent
+    failures and all 50 fits still select boundary `C = 3.0`. Benchmark-v1 results
+    remain immutable and superseded; validation remains sealed.
+  - [x] Test weaker logistic regularization beyond the original `C = 3.0` grid
+    boundary before freezing the model hyperparameters.
+    Failure audit, 2026-07-18: four of seven persistent v2 UCD misses have Gaia
+    proper-motion significance of 9.91--44.87 and should have their Gaia associations
+    quarantined without changing the spectroscopic UCD classifications. The project
+    lead approved this treatment; benchmark v3 uses 146 reliable UCDs, passes all
+    repeated stability gates, and leaves validation sealed.
+    Sensitivity result, 2026-07-18: four of five folds still select the boundary
+    when the grid ends at 100 and again at 3000. Compare weakly regularized and
+    unregularized fits directly; do not freeze 3000 or keep expanding arbitrarily.
+    Direct comparison result: `C = 1000` has the lowest fixed-split macro retention
+    at the same 90.41% recall; `C = 3000` and unregularized have identical aggregate
+    decisions. Repeat these three configurations before freezing a policy.
+    Ten-repeat result: all configurations retain exactly 90.41%; `C = 1000` has
+    lower median macro retention, wins 7/10 paired repeats, and has smaller
+    coefficient norms. The project lead approved and froze `C = 1000` on 2026-07-18;
+    threshold calibration remains pending and validation remains sealed.
+  - [x] Audit frozen-`C = 1000` persistent failures (2026-07-18). Ten reliable UCDs
+    are persistent misses, but all retain strong literature evidence or extended-
+    source Gaia diagnostics. Keep all ten in completeness accounting; no new
+    reliability quarantine is approved or recommended.
+  - [x] Freeze the operating threshold at `0.8277833629` (2026-07-18), using the
+    project-lead-approved median of ten grouped-OOF thresholds that individually
+    target at least 90% reliable-UCD recall. Validation remains sealed.
+  - [x] Fit the complete development model and pass serialization, parameter-export,
+    prediction-parity, provenance, and validation-ID-exclusion checks (2026-07-18).
+    The final artifact is ready for a separately authorized one-time validation run.
+  - [x] Complete the one-time frozen validation run (2026-07-18): 91.30% reliable-
+    UCD recall and 0.57% macro retention across Gaia NSS and QSO. Retuning is closed;
+    any future model generation requires a new independent validation cohort.
+  - [ ] Review and approve one measured operating point before implementing and
+    freezing the shared selector.
 - [ ] Measure selection behavior across magnitude, distance, inferred luminosity,
   inferred size, Galactic latitude, and Gaia uncertainty properties (`BT-002`).
 - [ ] Freeze one versioned selector used identically for literature, control fields,

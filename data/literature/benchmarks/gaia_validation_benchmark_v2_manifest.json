@@ -1,0 +1,24 @@
+{
+  "benchmark_version": "benchmark_v2",
+  "partition_ruleset": "benchmark_partition_v1",
+  "generated_utc": "2026-07-17T16:07:14.535544+00:00",
+  "migration_policy": "evidence_fields_only_from_corrected_reference_database",
+  "sealed_validation_policy": "no_validation_metrics_or_feature_outcomes_inspected",
+  "inputs": {
+    "benchmark_v1": "data/literature/benchmarks/gaia_validation_benchmark_v1.csv",
+    "benchmark_v1_sha256": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73",
+    "benchmark_v1_manifest": "data/literature/benchmarks/gaia_validation_benchmark_v1_manifest.json",
+    "benchmark_v1_manifest_sha256": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b",
+    "reference_database": "data/literature/database/ucd_reference_v2.db",
+    "reference_database_sha256": "6f18ae36701eff9e423782a7fae01cbeadc823193d00d8db06898210da32f5e2"
+  },
+  "invariants": {
+    "row_count": 3857,
+    "changed_evidence_row_count": 26,
+    "row_identity_and_order_preserved": true,
+    "gaia_features_preserved": true,
+    "partition_assignments_preserved": true
+  },
+  "output": "data/literature/benchmarks/gaia_validation_benchmark_v2.csv",
+  "output_sha256": "7a6189c34706d7394668508709a4e34312bb678885510ad52a5cd683062dffc3"
+}

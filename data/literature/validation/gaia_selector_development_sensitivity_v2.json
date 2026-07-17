@@ -1,0 +1,549 @@
+{
+  "feature_version": "gaia_selector_development_features_v2",
+  "partition": "development",
+  "validation_partition_inspected": false,
+  "feature_matrix_sha256": "4423dc9cfd6416a074610145c648f48d6e4e29863d21a8616efd5f5b86550194",
+  "bootstrap_iterations": 500,
+  "counts": {
+    "rows": 3136,
+    "gaia_sources": 3136,
+    "label_subtypes": {
+      "ambiguous_shared_gaia_distinct_objects": 1,
+      "compact_hii_region": 118,
+      "dwarf_galaxy_hii_region": 9,
+      "gaia_non_single_star": 1125,
+      "reported_non_ucd_comparison": 83,
+      "spectroscopic_galaxy": 638,
+      "spectroscopic_qso": 403,
+      "ucd_candidate": 593,
+      "ucd_confirmed": 150,
+      "ucd_role_conflict": 16
+    }
+  },
+  "feature_coverage_by_label_subtype": {
+    "ambiguous_shared_gaia_distinct_objects": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 1.0,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 1.0,
+      "proper_motion_zero_significance": 1.0,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "compact_hii_region": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.13559322033898305,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 0.940677966101695,
+      "bp_g": 0.940677966101695,
+      "g_rp": 0.9576271186440678,
+      "phot_bp_rp_excess_factor": 0.940677966101695,
+      "absolute_parallax_zero_significance": 0.13559322033898305,
+      "proper_motion_zero_significance": 0.13559322033898305,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 0.940677966101695,
+      "phot_rp_mean_flux_over_error": 0.9576271186440678,
+      "classprob_dsc_combmod_galaxy": 0.9661016949152542,
+      "classprob_dsc_combmod_quasar": 0.9661016949152542,
+      "classprob_dsc_combmod_star": 0.9661016949152542,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "dwarf_galaxy_hii_region": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.3333333333333333,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 0.3333333333333333,
+      "proper_motion_zero_significance": 0.3333333333333333,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "gaia_non_single_star": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 1.0,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 1.0,
+      "proper_motion_zero_significance": 1.0,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "reported_non_ucd_comparison": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.2891566265060241,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 0.9879518072289156,
+      "bp_g": 0.9879518072289156,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 0.9879518072289156,
+      "absolute_parallax_zero_significance": 0.2891566265060241,
+      "proper_motion_zero_significance": 0.2891566265060241,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 0.9879518072289156,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "spectroscopic_galaxy": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.06739811912225706,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 0.9984326018808778,
+      "bp_g": 0.9984326018808778,
+      "g_rp": 0.9984326018808778,
+      "phot_bp_rp_excess_factor": 0.9984326018808778,
+      "absolute_parallax_zero_significance": 0.06739811912225706,
+      "proper_motion_zero_significance": 0.06739811912225706,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 0.9984326018808778,
+      "phot_rp_mean_flux_over_error": 0.9984326018808778,
+      "classprob_dsc_combmod_galaxy": 0.9968652037617555,
+      "classprob_dsc_combmod_quasar": 0.9968652037617555,
+      "classprob_dsc_combmod_star": 0.9968652037617555,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "spectroscopic_qso": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.7965260545905707,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 0.7965260545905707,
+      "proper_motion_zero_significance": 0.7965260545905707,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 0.9975186104218362,
+      "classprob_dsc_combmod_quasar": 0.9975186104218362,
+      "classprob_dsc_combmod_star": 0.9975186104218362,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "ucd_candidate": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.4620573355817875,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 0.9983136593591906,
+      "bp_g": 0.9983136593591906,
+      "g_rp": 0.9983136593591906,
+      "phot_bp_rp_excess_factor": 0.9983136593591906,
+      "absolute_parallax_zero_significance": 0.4620573355817875,
+      "proper_motion_zero_significance": 0.4620573355817875,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 0.9983136593591906,
+      "phot_rp_mean_flux_over_error": 0.9983136593591906,
+      "classprob_dsc_combmod_galaxy": 0.9966273187183811,
+      "classprob_dsc_combmod_quasar": 0.9966273187183811,
+      "classprob_dsc_combmod_star": 0.9966273187183811,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "ucd_confirmed": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.4866666666666667,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 0.4866666666666667,
+      "proper_motion_zero_significance": 0.4866666666666667,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    },
+    "ucd_role_conflict": {
+      "astrometric_excess_noise": 1.0,
+      "astrometric_excess_noise_sig": 1.0,
+      "ruwe": 0.625,
+      "ipd_frac_multi_peak": 1.0,
+      "ipd_frac_odd_win": 1.0,
+      "bp_rp": 1.0,
+      "bp_g": 1.0,
+      "g_rp": 1.0,
+      "phot_bp_rp_excess_factor": 1.0,
+      "absolute_parallax_zero_significance": 0.625,
+      "proper_motion_zero_significance": 0.625,
+      "phot_g_mean_flux_over_error": 1.0,
+      "phot_bp_mean_flux_over_error": 1.0,
+      "phot_rp_mean_flux_over_error": 1.0,
+      "classprob_dsc_combmod_galaxy": 1.0,
+      "classprob_dsc_combmod_quasar": 1.0,
+      "classprob_dsc_combmod_star": 1.0,
+      "duplicated_source": 1.0,
+      "non_single_star": 1.0
+    }
+  },
+  "primary_overall_feature_ranking": [
+    {
+      "feature": "proper_motion_zero_significance",
+      "discrimination_auc": 0.855010908830788,
+      "auc_ci_lower": 0.8304389910225688,
+      "auc_ci_upper": 0.8778322722558032,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "absolute_parallax_zero_significance",
+      "discrimination_auc": 0.8547158338996388,
+      "auc_ci_lower": 0.8311480650237848,
+      "auc_ci_upper": 0.8756632479702422,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "non_single_star",
+      "discrimination_auc": 0.7367424242424243,
+      "auc_ci_lower": 0.7270517676767677,
+      "auc_ci_upper": 0.7466329966329966,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "astrometric_excess_noise",
+      "discrimination_auc": 0.7329685746352413,
+      "auc_ci_lower": 0.7014830597643097,
+      "auc_ci_upper": 0.7605903479236813,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "classprob_dsc_combmod_galaxy",
+      "discrimination_auc": 0.7311453496552694,
+      "auc_ci_lower": 0.7070335232869003,
+      "auc_ci_upper": 0.7554600393977768,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "classprob_dsc_combmod_quasar",
+      "discrimination_auc": 0.7238680174475869,
+      "auc_ci_lower": 0.6975634585619812,
+      "auc_ci_upper": 0.7508589067116928,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "phot_bp_mean_flux_over_error",
+      "discrimination_auc": 0.6955499225461202,
+      "auc_ci_lower": 0.6679467680608365,
+      "auc_ci_upper": 0.726733206590621,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "bp_g",
+      "discrimination_auc": 0.685306294888044,
+      "auc_ci_lower": 0.6604807069426841,
+      "auc_ci_upper": 0.7056789184621884,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "phot_rp_mean_flux_over_error",
+      "discrimination_auc": 0.682070323488045,
+      "auc_ci_lower": 0.6523116736990154,
+      "auc_ci_upper": 0.7081450773558369,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "g_rp",
+      "discrimination_auc": 0.6762025316455696,
+      "auc_ci_lower": 0.6515531645569621,
+      "auc_ci_upper": 0.7000082981715894,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "phot_bp_rp_excess_factor",
+      "discrimination_auc": 0.675814673989579,
+      "auc_ci_lower": 0.6488738205886495,
+      "auc_ci_upper": 0.70051436417406,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "phot_g_mean_flux_over_error",
+      "discrimination_auc": 0.6534680134680135,
+      "auc_ci_lower": 0.6224668911335578,
+      "auc_ci_upper": 0.6851746632996633,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "classprob_dsc_combmod_star",
+      "discrimination_auc": 0.5947418038553538,
+      "auc_ci_lower": 0.5690506894610947,
+      "auc_ci_upper": 0.6220393626002533,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "ruwe",
+      "discrimination_auc": 0.560123752637791,
+      "auc_ci_lower": 0.5127065524518044,
+      "auc_ci_upper": 0.6093715351049751,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "astrometric_excess_noise_sig",
+      "discrimination_auc": 0.5573821548821549,
+      "auc_ci_lower": 0.5203917648709315,
+      "auc_ci_upper": 0.6010126964085297,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "bp_rp",
+      "discrimination_auc": 0.5217631319532461,
+      "auc_ci_lower": 0.4955400647796085,
+      "auc_ci_upper": 0.5480820306999015,
+      "ucd_direction": "lower"
+    },
+    {
+      "feature": "ipd_frac_odd_win",
+      "discrimination_auc": 0.518841189674523,
+      "auc_ci_lower": 0.4911231762065095,
+      "auc_ci_upper": 0.5427170314253648,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "ipd_frac_multi_peak",
+      "discrimination_auc": 0.5076809764309764,
+      "auc_ci_lower": 0.47515077861952865,
+      "auc_ci_upper": 0.5444531074635242,
+      "ucd_direction": "higher"
+    },
+    {
+      "feature": "duplicated_source",
+      "discrimination_auc": 0.5007491582491582,
+      "auc_ci_lower": 0.48324074074074075,
+      "auc_ci_upper": 0.5202443181818182,
+      "ucd_direction": "higher"
+    }
+  ],
+  "inherited_model_results": {
+    "phase3_model_c_70_30": {
+      "label_scenarios": {
+        "primary_confirmed_ucd": {
+          "positive_row_count": 150,
+          "positive_selected_count": 105,
+          "positive_selection_fraction": 0.7,
+          "negative_row_count": 2376,
+          "negative_selected_count": 491,
+          "negative_selection_fraction": 0.20664983164983164
+        },
+        "candidate_as_positive_sensitivity": {
+          "positive_row_count": 743,
+          "positive_selected_count": 596,
+          "positive_selection_fraction": 0.8021534320323015,
+          "negative_row_count": 2376,
+          "negative_selected_count": 491,
+          "negative_selection_fraction": 0.20664983164983164
+        },
+        "exclude_phangs_sensitivity": {
+          "positive_row_count": 150,
+          "positive_selected_count": 105,
+          "positive_selection_fraction": 0.7,
+          "negative_row_count": 2258,
+          "negative_selected_count": 434,
+          "negative_selection_fraction": 0.19220549158547387
+        },
+        "exclude_all_hii_sensitivity": {
+          "positive_row_count": 150,
+          "positive_selected_count": 105,
+          "positive_selection_fraction": 0.7,
+          "negative_row_count": 2249,
+          "negative_selected_count": 429,
+          "negative_selection_fraction": 0.1907514450867052
+        }
+      },
+      "selection_by_label_subtype": {
+        "ambiguous_shared_gaia_distinct_objects": {
+          "row_count": 1,
+          "selected_count": 1,
+          "selection_fraction": 1.0
+        },
+        "compact_hii_region": {
+          "row_count": 118,
+          "selected_count": 57,
+          "selection_fraction": 0.4830508474576271
+        },
+        "dwarf_galaxy_hii_region": {
+          "row_count": 9,
+          "selected_count": 5,
+          "selection_fraction": 0.5555555555555556
+        },
+        "gaia_non_single_star": {
+          "row_count": 1125,
+          "selected_count": 7,
+          "selection_fraction": 0.006222222222222222
+        },
+        "reported_non_ucd_comparison": {
+          "row_count": 83,
+          "selected_count": 28,
+          "selection_fraction": 0.3373493975903614
+        },
+        "spectroscopic_galaxy": {
+          "row_count": 638,
+          "selected_count": 353,
+          "selection_fraction": 0.5532915360501567
+        },
+        "spectroscopic_qso": {
+          "row_count": 403,
+          "selected_count": 41,
+          "selection_fraction": 0.10173697270471464
+        },
+        "ucd_candidate": {
+          "row_count": 593,
+          "selected_count": 491,
+          "selection_fraction": 0.8279932546374368
+        },
+        "ucd_confirmed": {
+          "row_count": 150,
+          "selected_count": 105,
+          "selection_fraction": 0.7
+        },
+        "ucd_role_conflict": {
+          "row_count": 16,
+          "selected_count": 12,
+          "selection_fraction": 0.75
+        }
+      }
+    },
+    "phase4_model_c_60_30_10": {
+      "label_scenarios": {
+        "primary_confirmed_ucd": {
+          "positive_row_count": 150,
+          "positive_selected_count": 101,
+          "positive_selection_fraction": 0.6733333333333333,
+          "negative_row_count": 2376,
+          "negative_selected_count": 479,
+          "negative_selection_fraction": 0.2015993265993266
+        },
+        "candidate_as_positive_sensitivity": {
+          "positive_row_count": 743,
+          "positive_selected_count": 451,
+          "positive_selection_fraction": 0.6069986541049798,
+          "negative_row_count": 2376,
+          "negative_selected_count": 479,
+          "negative_selection_fraction": 0.2015993265993266
+        },
+        "exclude_phangs_sensitivity": {
+          "positive_row_count": 150,
+          "positive_selected_count": 101,
+          "positive_selection_fraction": 0.6733333333333333,
+          "negative_row_count": 2258,
+          "negative_selected_count": 424,
+          "negative_selection_fraction": 0.18777679362267494
+        },
+        "exclude_all_hii_sensitivity": {
+          "positive_row_count": 150,
+          "positive_selected_count": 101,
+          "positive_selection_fraction": 0.6733333333333333,
+          "negative_row_count": 2249,
+          "negative_selected_count": 419,
+          "negative_selection_fraction": 0.18630502445531347
+        }
+      },
+      "selection_by_label_subtype": {
+        "ambiguous_shared_gaia_distinct_objects": {
+          "row_count": 1,
+          "selected_count": 1,
+          "selection_fraction": 1.0
+        },
+        "compact_hii_region": {
+          "row_count": 118,
+          "selected_count": 55,
+          "selection_fraction": 0.4661016949152542
+        },
+        "dwarf_galaxy_hii_region": {
+          "row_count": 9,
+          "selected_count": 5,
+          "selection_fraction": 0.5555555555555556
+        },
+        "gaia_non_single_star": {
+          "row_count": 1125,
+          "selected_count": 0,
+          "selection_fraction": 0.0
+        },
+        "reported_non_ucd_comparison": {
+          "row_count": 83,
+          "selected_count": 28,
+          "selection_fraction": 0.3373493975903614
+        },
+        "spectroscopic_galaxy": {
+          "row_count": 638,
+          "selected_count": 351,
+          "selection_fraction": 0.5501567398119123
+        },
+        "spectroscopic_qso": {
+          "row_count": 403,
+          "selected_count": 40,
+          "selection_fraction": 0.09925558312655088
+        },
+        "ucd_candidate": {
+          "row_count": 593,
+          "selected_count": 350,
+          "selection_fraction": 0.5902192242833052
+        },
+        "ucd_confirmed": {
+          "row_count": 150,
+          "selected_count": 101,
+          "selection_fraction": 0.6733333333333333
+        },
+        "ucd_role_conflict": {
+          "row_count": 16,
+          "selected_count": 12,
+          "selection_fraction": 0.75
+        }
+      }
+    }
+  },
+  "decision_status": "development_measurement_only_no_selector_or_threshold_approved"
+}

@@ -1,0 +1,256 @@
+{
+  "feature_version": "gaia_selector_development_features_v2",
+  "check_count": 19,
+  "passed_count": 19,
+  "failed_count": 0,
+  "counts": {
+    "development_rows": 3136,
+    "validation_rows": 721,
+    "metrics_rows": 190
+  },
+  "checks": [
+    {
+      "name": "feature_version",
+      "passed": true,
+      "detail": "gaia_selector_development_features_v2"
+    },
+    {
+      "name": "benchmark_digest",
+      "passed": true,
+      "detail": "7a6189c34706d7394668508709a4e34312bb678885510ad52a5cd683062dffc3"
+    },
+    {
+      "name": "feature_digest",
+      "passed": true,
+      "detail": "4423dc9cfd6416a074610145c648f48d6e4e29863d21a8616efd5f5b86550194"
+    },
+    {
+      "name": "features_are_unique",
+      "passed": true,
+      "detail": 3136
+    },
+    {
+      "name": "all_development_ids_represented",
+      "passed": true,
+      "detail": {
+        "feature_ids": 3136,
+        "development_ids": 3136
+      }
+    },
+    {
+      "name": "no_validation_ids_represented",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "only_development_partition",
+      "passed": true,
+      "detail": [
+        "development"
+      ]
+    },
+    {
+      "name": "manifest_reports_zero_validation_queries",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "all_query_batches_complete",
+      "passed": true,
+      "detail": [
+        {
+          "batch_number": 1,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 2.312489917036146,
+          "query_sha256": "e51648039045adeaa487843b98dc37ba79a9531f66103241f8245fab7c5b5fea",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 2,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.6753374580293894,
+          "query_sha256": "def210a57bf6ef05b1dd89d5fc2d010907e0801e39c2ab65ccd249deeb0d7d54",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 3,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.9924972499720752,
+          "query_sha256": "7f0398518ca0160d969147a482941870962986ac8fd3918889afa8c0cbe296fa",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 4,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.855752957984805,
+          "query_sha256": "c00dc4cfa7f5eebd19d6fed8feacc9dacdf596903da479929cad9d3c86e53db4",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 5,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8602013339987025,
+          "query_sha256": "2c48ce951bea5e5f95c974303ab99e0e40092b1a81fc9a054ddaa31eda869f09",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 6,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8959635420469567,
+          "query_sha256": "cf244926105e02462fadd1027885d38d732037f23f6f9dadc91c98f16f2fb4a6",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 7,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8234347910620272,
+          "query_sha256": "eb206905431cb45214bd20d819eb6d2c34d6ff68414f0f11aad4978671892000",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 8,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8342821249971166,
+          "query_sha256": "7dca46757428ebb999251ca2919f54f665bdb81ae17cca0c7bc9649a47dc3548",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 9,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8242557090707123,
+          "query_sha256": "3897633b7a5e1cf7f2ab204c7f923ff17260dae7d364614892549a486fdf460c",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 10,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8420756660634652,
+          "query_sha256": "ec5adbc47432d760a9db27ab4033d618ba7173da58893ac301d87cf6d188fe00",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 11,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.712585625005886,
+          "query_sha256": "79fdf8ca6639bdfb35bb581280299021aedf49e65569078f653ff5155cc680fb",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 12,
+          "requested_identifier_count": 250,
+          "returned_row_count": 250,
+          "elapsed_seconds": 1.8945256669539958,
+          "query_sha256": "e158202f2eeae69e04c4b562bfb918a8897564c401e1634b3d836428d93759bf",
+          "maximum_query_attempts": 3
+        },
+        {
+          "batch_number": 13,
+          "requested_identifier_count": 136,
+          "returned_row_count": 136,
+          "elapsed_seconds": 1.7230374170467257,
+          "query_sha256": "cee59f2b56e75301b9750ab5a6913425bc9551134e1db14bed5bd88af25425f9",
+          "maximum_query_attempts": 3
+        }
+      ]
+    },
+    {
+      "name": "additional_gaia_columns_present",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "metrics_feature_contract",
+      "passed": true,
+      "detail": [
+        "absolute_parallax_zero_significance",
+        "astrometric_excess_noise",
+        "astrometric_excess_noise_sig",
+        "bp_g",
+        "bp_rp",
+        "classprob_dsc_combmod_galaxy",
+        "classprob_dsc_combmod_quasar",
+        "classprob_dsc_combmod_star",
+        "duplicated_source",
+        "g_rp",
+        "ipd_frac_multi_peak",
+        "ipd_frac_odd_win",
+        "non_single_star",
+        "phot_bp_mean_flux_over_error",
+        "phot_bp_rp_excess_factor",
+        "phot_g_mean_flux_over_error",
+        "phot_rp_mean_flux_over_error",
+        "proper_motion_zero_significance",
+        "ruwe"
+      ]
+    },
+    {
+      "name": "metrics_scenario_contract",
+      "passed": true,
+      "detail": [
+        "candidate_as_positive_sensitivity",
+        "exclude_all_hii_sensitivity",
+        "exclude_phangs_sensitivity",
+        "primary_confirmed_ucd"
+      ]
+    },
+    {
+      "name": "primary_label_counts",
+      "passed": true,
+      "detail": {
+        "positive": [
+          150
+        ],
+        "negative": [
+          2376
+        ]
+      }
+    },
+    {
+      "name": "bootstrap_intervals_ordered",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "sensitivity_feature_digest",
+      "passed": true,
+      "detail": "4423dc9cfd6416a074610145c648f48d6e4e29863d21a8616efd5f5b86550194"
+    },
+    {
+      "name": "validation_partition_not_inspected",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "no_selector_decision_claimed",
+      "passed": true,
+      "detail": "development_measurement_only_no_selector_or_threshold_approved"
+    },
+    {
+      "name": "selector_development_feature_distributions_pair",
+      "passed": true,
+      "detail": {
+        "figure": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/selector_development_feature_distributions.png",
+        "caption": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/selector_development_feature_distributions.md"
+      }
+    },
+    {
+      "name": "selector_development_feature_auc_pair",
+      "passed": true,
+      "detail": {
+        "figure": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/selector_development_feature_auc.png",
+        "caption": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/selector_development_feature_auc.md"
+      }
+    }
+  ]
+}

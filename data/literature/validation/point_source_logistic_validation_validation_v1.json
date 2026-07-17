@@ -1,0 +1,23 @@
+{
+  "evaluation_version": "point_source_logistic_validation_v1",
+  "check_count": 13,
+  "passed_count": 13,
+  "failed_count": 0,
+  "reproduced_reliable_ucd_recall": 0.9130434782608695,
+  "reproduced_macro_available_priority_retention": 0.005681818181818182,
+  "checks": {
+    "authorization_approved": true,
+    "retuning_prohibited": true,
+    "authorization_digest": true,
+    "prediction_digest": true,
+    "validation_row_count": true,
+    "unique_gaia_identifiers": true,
+    "validation_partition_only": true,
+    "feature_prediction_identity_parity": true,
+    "reliable_ucd_count": true,
+    "reliable_ucd_recall_reproduced": true,
+    "priority_retention_reproduced": true,
+    "frozen_model_contract": true,
+    "evaluation_closed": true
+  }
+}

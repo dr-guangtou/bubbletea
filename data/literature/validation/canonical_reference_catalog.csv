@@ -7,7 +7,7 @@ canonical_00ae5b07b9cf5390ba173953832e14ec,201.296298271,-43.5092116773,exact_re
 canonical_00c34e280a6254f9bc748c9c6f13dfe9,159.1808333333333,-27.422472222222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD33,NGC 3311,"candidate,confirmed"
 canonical_00e20e20a20b5cda824ad301389978a1,187.9041521,5.839995,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD477,Virgo cluster,not_ucd
 canonical_00efa56d3b3351ef8802c7db15c01b99,200.780177,-42.725442,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_98,NGC 5128,candidate
-canonical_0124014f239056e4bacad5e3cbd30768,188.50916666666663,6.830652777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J123402.20+064950.3,M49,"candidate,confirmed"
+canonical_0124014f239056e4bacad5e3cbd30768,188.50916666666663,6.830652777777778,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J123402.20+064950.3,M49,"candidate,confirmed"
 canonical_012f9a211a1e561d8471e8bb71b75aad,204.077299851,-43.5154966503,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6111720221490640384,,,candidate
 canonical_015c850f797452c5b85b03a5fa1295bb,184.8068367,5.8245984,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD84,Virgo cluster,candidate
 canonical_0164b54303365a60b19f963bd6f09bc6,187.9016393,17.6488804,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD476,Virgo cluster,candidate
@@ -39,7 +39,7 @@ canonical_02a9aafc1ab45000a4250b4fa56f5ebe,54.497175,-35.393765,exact_reported_p
 canonical_02c1ead949b2596684e00b596ff25b66,200.076340717,-44.1817110759,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088221179802010496,,,candidate
 canonical_02d03115fc215f4a88b7f8982aabdf17,187.5416814,12.6012962,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J123010.00+123604.7,M87,candidate
 canonical_02d307fed288503e956e898f64e28a9e,189.5633365,16.5285616,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD649,Virgo cluster,not_ucd
-canonical_02def790d9d9547588faeb5daf3032cd,148.08404166666665,69.65453055555557,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,GC-2,M81,confirmed
+canonical_02def790d9d9547588faeb5daf3032cd,148.08404166666665,69.65453055555557,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,GC-2,M81,confirmed
 canonical_02e290dd923a5315899e0e3775081b6a,205.90258,-38.1938,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2008AJ....136.2295B,,4507,,candidate
 canonical_02e80b573d4b5ec2a391662ab5b24c57,200.39507832,-42.0174379411,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137028333456725248,,,candidate
 canonical_02f0eb7134eb5ae2b7235a904d1bec13,187.554428,12.68532,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H70999,Virgo cluster,not_ucd
@@ -296,7 +296,7 @@ canonical_11ca7cc6230a5ab09db62854ec6e93e3,185.3696523,11.3694955,exact_reported
 canonical_11ce6b912d2f5919a00803c199583d43,187.733276,12.44559,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H50620,Virgo cluster,not_ucd
 canonical_11d070ecaf8257b7afecef02a670b499,159.12749999999997,-27.360305555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2011A&A...531A...4M",,Hydra-UCD79,NGC 3311,"confirmed,candidate"
 canonical_11d31fba6f5058a9bd1bd272d1a29ac7,54.102303,-35.407778,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_11dc789350ce5594bd14d863f90b6b43,190.54004166666664,11.615188888888888,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3928412526144767744,J124209.61+113654.7,M60,"confirmed,candidate"
+canonical_11dc789350ce5594bd14d863f90b6b43,190.54004166666664,11.615188888888888,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3928412526144767744,J124209.61+113654.7,M60,"confirmed,candidate"
 canonical_11de8fb3bf4a54ffaa857a5509020a2f,187.5241083,12.5397227,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD350,Virgo cluster,candidate
 canonical_11e55976a8ec5ac8b6e857ce65030f00,54.5565,-35.482305555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2016A&A...586A.102V,,UCD-FORS 87,NGC 1399,candidate
 canonical_1208b923da1359c6994b6d8ee2735ea8,186.176544,11.585305,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_102,Virgo cluster,not_ucd
@@ -409,7 +409,7 @@ canonical_18e23a1305aa560f862d74685d98d374,189.1495893,10.3090055,exact_reported
 canonical_18f3d11936b559b5b46d717c3dd4e7f4,187.9537817,7.272478,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J123148.91+071620.9,M49,not_ucd
 canonical_18faa8b1e00e5b93920147d86e2d3545,191.1808612,11.5745425,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD774,Virgo cluster,candidate
 canonical_18fe8de2459f5938896525d1ded40299,186.372864,12.809986,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_180,Virgo cluster,not_ucd
-canonical_1903c5e84a2152f4a904a3fe44241b2b,187.53495833333332,8.418716666666667,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3902736593173782272,J123008.39+082507.4,M49,"confirmed,candidate"
+canonical_1903c5e84a2152f4a904a3fe44241b2b,187.53495833333332,8.418716666666667,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3902736593173782272,J123008.39+082507.4,M49,"confirmed,candidate"
 canonical_1904df8a06c55a91b7308bd829a7c715,201.738120133,-44.6365796554,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087584532510680192,,,candidate
 canonical_19105a3f38a052698456d65cc9b742d7,55.102947,-35.587089,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_1931d22d30d753b480f6349d33c6822e,186.52478,12.79052,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC110,Virgo cluster,not_ucd
@@ -588,7 +588,7 @@ canonical_239d5d784f4651d69ba481815b5a9421,201.379309,-42.837526,exact_reported_
 canonical_23b302174bb15685ac650e0ab949434b,187.238327,12.770036,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC167,Virgo cluster,not_ucd
 canonical_23bb02922b0952f895c8bb615682365a,64.10229166666666,-56.62213888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,4778413281604949120,Dorado1,NGC 1553/1549,confirmed
 canonical_23bb32856edc58709801310b38529312,199.769251663,-41.4889007938,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137856605012152832,,,candidate
-canonical_23d81d21506c5701b99b3950df0b53f5,190.81454166666663,11.656347222222223,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3928416507578569216,J124315.49+113922.8,M60,"candidate,confirmed"
+canonical_23d81d21506c5701b99b3950df0b53f5,190.81454166666663,11.656347222222223,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3928416507578569216,J124315.49+113922.8,M60,"candidate,confirmed"
 canonical_23e20c675865584faa5510aa5057a224,202.992180226,-42.3511400843,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112798911113019008,,,candidate
 canonical_23e8af42ca9d5fc7b57486476f2bd25b,54.500688,-35.502295,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860293637646990336,,,not_ucd
 canonical_241b806c1def5d379d677bb9789dfba5,203.244683379,-42.1513616745,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112807672847408384,,,candidate
@@ -721,7 +721,7 @@ canonical_2b8792a48dcf525bb3d7da2086f0fb28,187.890625,12.36288,exact_reported_po
 canonical_2b984acb833e57a0abd985e6477d119c,201.54011,-42.874367,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_19,NGC 5128,candidate
 canonical_2b9d15f5b48e5e6bb928547aaf03739e,199.243989115,-42.8074543849,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136606597732603392,,,candidate
 canonical_2ba5ba9e746156b9a6c7bb2f1f24e935,200.304929557,-43.3911515207,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136342203844899456,,,candidate
-canonical_2bc25c3f2ac75f80a55a0851f53d842b,191.413875,10.80225,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927372697383335552,J124539.33+104808.1,M60,"confirmed,candidate"
+canonical_2bc25c3f2ac75f80a55a0851f53d842b,191.413875,10.80225,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927372697383335552,J124539.33+104808.1,M60,"confirmed,candidate"
 canonical_2bcaf72c158b5256a60af773830b729c,187.791061,12.25891,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H30011,Virgo cluster,not_ucd
 canonical_2beb1a7d5d855b46a8b84d7499738ddb,194.900784,28.020083,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
 canonical_2bef90619aa254daa555ceef4b03000f,189.4350733,15.6906006,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD635,Virgo cluster,candidate
@@ -793,7 +793,7 @@ canonical_2f9c83f6df485764a31ffed360f16a12,190.5730806,10.9035807,exact_reported
 canonical_2f9e7e246a1c5236a00a46866bf2c7c0,54.629085,-35.410715,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_2fb42f81e7c5572689d6692e2a31c599,186.977844,12.226041,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC151,Virgo cluster,not_ucd
 canonical_2fb5ffb891db538d876fc8457225d81d,186.266769,11.699422,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC053,Virgo cluster,not_ucd
-canonical_2fdcefe0c7215e58950e4519ca3cc91a,187.4683715,12.58447,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907906320753259008,J122952.41+123504.1,M87,"confirmed,candidate"
+canonical_2fdcefe0c7215e58950e4519ca3cc91a,187.4683715,12.58447,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907906320753259008,J122952.41+123504.1,M87,"confirmed,candidate"
 canonical_2ff8fccf3a9c5512bf8964af5cc885d2,159.02499999999998,-27.609250000000003,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2011A&A...531A...4M",,Hydra-UCD17,NGC 3311,"confirmed,candidate"
 canonical_300e3b0fa0bf5f5fb934857bbeb4c44b,187.674927,12.43952,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H49952,Virgo cluster,not_ucd
 canonical_302d6a4dcca055ad941edaadbbcc21fa,202.1632,-43.252491,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_78,NGC 5128,candidate
@@ -834,7 +834,7 @@ canonical_32130af06f5b52dd9b1e05881c3ec992,186.429672,12.61905,exact_reported_po
 canonical_32170d3bbad15f80b896cf09aaef5529,186.2358097,14.0023324,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD179,Virgo cluster,candidate
 canonical_323231211aeb5804933ab1cd308354f1,186.504791,12.422022,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC105,Virgo cluster,not_ucd
 canonical_324a33caf1f95f45b9d646210eddfd6c,185.4913596,12.8640649,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD120,Virgo cluster,candidate
-canonical_3265660e56d95c38975522de90c1662c,190.31454166666663,10.636647222222221,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124115.49+103811.9,M60,"candidate,confirmed"
+canonical_3265660e56d95c38975522de90c1662c,190.31454166666663,10.636647222222221,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124115.49+103811.9,M60,"candidate,confirmed"
 canonical_32694ca31eae5453acb94367a1179f36,199.393526681,-43.6208974938,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136326535803673984,,,candidate
 canonical_327d3d7ae92352b08ca1da45abef6b93,186.7106063,13.3205733,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD225,Virgo cluster,candidate
 canonical_329ac441a4ff5c639e6802457a530e2b,200.988038484,-44.8574725638,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088308286031960192,,,candidate
@@ -1033,7 +1033,7 @@ canonical_3d1c894ae540571aaa5d4e860a4c6a15,159.17458333333332,-27.58127777777778
 canonical_3d365da81c9b5e4f86ca1fe7516b8931,187.685638,12.42513,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H48393,Virgo cluster,not_ucd
 canonical_3d3ca8477aee550ba8f4152f7f70493b,54.636908,-35.506298,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_3d43db51c8095fd1abb8611b1f662481,186.566467,12.695561,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_251,Virgo cluster,not_ucd
-canonical_3d8da7b594c659dd97c9a5ce3c99091f,190.5287083333333,11.862419444444445,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3928436985982761472,J124206.89+115144.7,M60,"confirmed,candidate"
+canonical_3d8da7b594c659dd97c9a5ce3c99091f,190.5287083333333,11.862419444444445,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3928436985982761472,J124206.89+115144.7,M60,"confirmed,candidate"
 canonical_3d920ac07d7d5592a5d5d293605ac863,201.99234877,-43.42937272,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088535850587515648,,,candidate
 canonical_3d926df02e5358a89d92c7123ec3aa10,186.2065257,6.7595961,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD176,Virgo cluster,not_ucd
 canonical_3da9039155d150b6bdfc08c2741a54f1,187.005203,12.485097,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_378,Virgo cluster,not_ucd
@@ -1071,7 +1071,7 @@ canonical_3f2689cb04d95852aa3ce5652d402195,182.3565013,13.3354611,exact_reported
 canonical_3f28e95c95345b6cba8d8303318abf5b,187.448166,12.57676,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H63001,Virgo cluster,not_ucd
 canonical_3f2cf1f980e35172add59570c190492e,200.269263815,-44.0156272593,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088230220715090688,,,candidate
 canonical_3f3fda92e2a3536b931bba339c2467be,54.521,-35.40269444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,1,2016A&A...586A.102V,,UCD-FORS 32,NGC 1399,candidate
-canonical_3f69bb883b2852899dda6ec4b661ab47,187.77125,12.334444444444445,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3907696520191090688,S314,M87,confirmed
+canonical_3f69bb883b2852899dda6ec4b661ab47,187.77125,12.334444444444445,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3907696520191090688,S314,M87,confirmed
 canonical_3f7a554ffc14519093af36b9237db15f,199.732769525,-43.7245015843,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136331792843604736,,,candidate
 canonical_3f7b7d67adad54d98492bd87a81f5c53,54.57333333333333,-35.550666666666665,exact_reported_position,confirmed,,confirmation_rules_v1,0,3,3,"2021MNRAS.504.3580S,2009AJ....137..498G,2019A&A...625A..50F",4860292508072273536,"28,F-7",NGC 1399,"confirmed,candidate"
 canonical_3f7d2b4e10fe50fe8d6c0d5ff4958a1d,202.125409,-43.300774,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_77,NGC 5128,candidate
@@ -1099,7 +1099,7 @@ canonical_4055edd6843b5aa0bc278cd74dd733a5,203.014719159,-43.5814988368,exact_re
 canonical_405cf4bbb6a0543a94af74246b8839c1,186.029617,12.539614,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_49,Virgo cluster,not_ucd
 canonical_4081e4b1788d57fdb38bf68da239b185,203.533181229,-43.282863491,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6111767397410360832,,,candidate
 canonical_409470be2a4c583c94ed095481e60ef7,201.871665,-42.796645,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,KV19-361,NGC 5128,candidate
-canonical_409ee267ee41567ca848141918443ecf,177.77166666666665,-28.81636111111111,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3480892223985373952,NGC 3923 UCD3c,NGC 3923,confirmed
+canonical_409ee267ee41567ca848141918443ecf,177.77166666666665,-28.81636111111111,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3480892223985373952,NGC 3923 UCD3c,NGC 3923,confirmed
 canonical_409f464d46d456e08ef7211201d8cc1e,201.47316666666666,-42.985416666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2020ApJ...899..140V",6088703354312975744,"HGHH92-C22,T17-1814",NGC 5128,confirmed
 canonical_40a9353d927e59c392c32235deb3f30e,54.696123,-35.315116,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_40c026b38aa55522a9bdd46f339fd10f,192.18625,-41.309730555555554,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2007A&A...472..111M",,J1248.74-4118.58,NGC 4696,"confirmed,candidate"
@@ -1113,7 +1113,7 @@ canonical_41824933c5a85364908c8e85a074f907,201.548505488,-44.8841796316,exact_re
 canonical_419c13a7407d5e20938c66359e49980a,201.2424583333333,-42.93619444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,6088718300799198720,VHH81-C3,NGC 5128,confirmed
 canonical_41a27909b6f354f0859c900e5da6c7d1,201.713064,-43.391586,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,H12_42,NGC 5128,candidate
 canonical_41b85d26ec605d258d4958f8ce85428e,194.929382,27.979355,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
-canonical_41b97899ff865063b2141323dbfc47e8,189.78883333333332,11.363316666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J123909.32+112147.9,M60,"candidate,confirmed"
+canonical_41b97899ff865063b2141323dbfc47e8,189.78883333333332,11.363316666666666,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J123909.32+112147.9,M60,"candidate,confirmed"
 canonical_41bc9b78efb958d2a013775494de0a70,186.379898,13.026883,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,UCD09,Virgo cluster,candidate
 canonical_41f3da1e8939535c802c6b99814c92f3,187.7728918,12.0150887,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD446,Virgo cluster,candidate
 canonical_41f7a299429c55b1b31f6be81f857e92,187.7684426,12.3892326,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2015ApJ...802...30Z,2017ApJ...835..212K,2015ApJ...812...34L,2020ApJS..250...17L,2019A&A...625A..50F",,"S323,J123104.43+122321.2,NGVS-UCD443","M87,Virgo cluster","confirmed,candidate"
@@ -1177,9 +1177,9 @@ canonical_45c1ceb10f36581ea93b030f2f4809d8,159.14333333333332,-27.50425,exact_re
 canonical_45e24f9a89b258419cbe67eb5bd77bb5,199.834106579,-44.0128631848,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088250939629895168,,,candidate
 canonical_45fc91be54db5182aab66a5cd5920e9c,188.6186084,14.7127878,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD572,Virgo cluster,candidate
 canonical_460f8c743d23531aa4c10b7e328b8a6c,199.682574451,-42.3805388511,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136644363380163712,,,candidate
-canonical_4631193911cb5212b45b23fbd2795ef4,201.697,-47.47947222222223,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,omega Cen,MW,confirmed
+canonical_4631193911cb5212b45b23fbd2795ef4,201.697,-47.47947222222223,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,omega Cen,MW,confirmed
 canonical_465398675fce50cb89966d3473142cea,54.610088,-35.40699,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860388165582446208,,,not_ucd
-canonical_4662b725d7485ea39a1fef9185a2a5c8,186.78724999999997,7.707863888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3901183051963479040,J122708.94+074228.3,M49,"candidate,confirmed"
+canonical_4662b725d7485ea39a1fef9185a2a5c8,186.78724999999997,7.707863888888889,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3901183051963479040,J122708.94+074228.3,M49,"candidate,confirmed"
 canonical_466842d43cdb52d5abf81cce4f6f011a,54.521031,-35.402635,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2021MNRAS.504.3580S,2009AJ....137..498G",4860297520297524864,19,,"confirmed,candidate"
 canonical_4690d738226e597f825c843755532d60,186.219635,13.201394,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_111,Virgo cluster,not_ucd
 canonical_4698f6766ece531dbba2c5747a05b220,201.621989438,-42.690374719,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088814920380984960,,,candidate
@@ -1309,7 +1309,7 @@ canonical_4caae3829a8b584d82a925df6c38d74c,159.2095833333333,-27.485194444444446
 canonical_4ced79df4a975154a05b46e3d45f95f9,186.823837,12.022394,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_332,Virgo cluster,not_ucd
 canonical_4cf6153868a25a7fa8bc967f9ad30e84,187.2110768,8.4391793,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J122850.66+082621.0,M49,not_ucd
 canonical_4cfbafba67045736bbd9bdd333774a4d,186.150742,12.727286,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC020,Virgo cluster,not_ucd
-canonical_4d0669a350795934b6827da4d799afdc,10.245124999999998,40.59647777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B338,M31,confirmed
+canonical_4d0669a350795934b6827da4d799afdc,10.245124999999998,40.59647777777778,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B338,M31,confirmed
 canonical_4d1aa146b68d50499b41cfd9171b396a,187.874725,12.47846,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,T13744,Virgo cluster,not_ucd
 canonical_4d2956c29d285ebf9a66f3ef5982b74f,182.4217388,12.8019625,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD13,Virgo cluster,candidate
 canonical_4d421310d54a599f97ae1f06d1d37b62,187.751785,12.44082,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H50094,Virgo cluster,not_ucd
@@ -1411,7 +1411,7 @@ canonical_5284c59c32c15d6c9a9b2e45cfaca14e,203.860470803,-42.5403671632,exact_re
 canonical_528a4949ff5d5fe1ad59b77084aeb69c,187.56937499999998,8.08178888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J123016.65+080454.4,M49,"confirmed,candidate"
 canonical_529b172a27d0584a87c39618e60f30c5,54.360849,-35.457134,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_52aa5b4963a355d88384595edcac7b88,186.959473,12.557208,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_369,Virgo cluster,not_ucd
-canonical_52beeb8d06115ffea50e9c17396ef5bf,190.64891666666662,11.715044444444445,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124235.74+114254.2,M60,"confirmed,candidate"
+canonical_52beeb8d06115ffea50e9c17396ef5bf,190.64891666666662,11.715044444444445,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124235.74+114254.2,M60,"confirmed,candidate"
 canonical_52c3053fd3f552f3a96cb358202b7f60,188.5893159,8.2404761,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD568,Virgo cluster,not_ucd
 canonical_52c34bca98c451278e367199bbe399fb,186.242783,12.355695,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_119,Virgo cluster,not_ucd
 canonical_52cad4fbe2f352469d5eeec8197eb593,187.316711,12.631081,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC173,Virgo cluster,not_ucd
@@ -1435,7 +1435,7 @@ canonical_53cf591cfa8e5de598bb765387056c72,186.139221,12.722311,exact_reported_p
 canonical_53d007706ff950f588d7ab85315864bf,194.967377,27.999901,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
 canonical_53dc6a7860a950d5b8fb355d8f06fe37,186.861191,12.838589,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC144,Virgo cluster,not_ucd
 canonical_53faf0e6063d59dfa15278d2550b33dd,201.293322,-43.389607,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,H12_312,NGC 5128,candidate
-canonical_54197b3050575d398f61bb2ce4ff6454,190.85125,11.395347222222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124324.30+112343.2,M60,"confirmed,candidate"
+canonical_54197b3050575d398f61bb2ce4ff6454,190.85125,11.395347222222222,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124324.30+112343.2,M60,"confirmed,candidate"
 canonical_541e6e36aa765b2a9ef10991eb9dc6e8,186.384644,12.634178,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GAL_28,Virgo cluster,not_ucd
 canonical_5421bc97b5ef50159bd988350a37fec1,187.609711,12.73899,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H75108,Virgo cluster,not_ucd
 canonical_5438863d31af5c919e8a3c6d748e5cfc,203.077941807,-44.5174692913,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087635728522024704,,,candidate
@@ -1467,7 +1467,7 @@ canonical_55be38f7fd1c5c23bbf7cc66e4688934,54.300196,-35.16529,exact_reported_po
 canonical_55c13eb000af52218db095f2f407ef77,186.260513,11.998034,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_129,Virgo cluster,not_ucd
 canonical_55dbde87f7505dfbbbd0b0ba5b5bac92,186.596527,11.831586,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_258,Virgo cluster,not_ucd
 canonical_55ddb60c78fb5c47b05f9107f0f9ace1,53.055616,-35.470651,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,FDS-UCD-21,Fornax cluster,candidate
-canonical_55ef0d305bdf57a2817265120b71cb10,187.7062083333333,12.240813888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123049.49+121426.9,M87,confirmed
+canonical_55ef0d305bdf57a2817265120b71cb10,187.7062083333333,12.240813888888889,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123049.49+121426.9,M87,confirmed
 canonical_55fd66d1304e5ffd9b5fd61c7486c0a2,187.4956297,7.9668785,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD336,Virgo cluster,candidate
 canonical_5602d67e9b9e5e8cbfd5af395ac849f7,201.575636497,-44.6435482943,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087564500782716288,,,candidate
 canonical_562056e167f05bf28e7d269c5c766465,202.889740458,-43.5301431147,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088484001742674176,,,candidate
@@ -1512,13 +1512,13 @@ canonical_5838845992a051a3b6883f3a4bb3f130,54.697615,-35.630539,exact_reported_p
 canonical_584cb171244f5ddd910e41fa8f83f51a,200.397829329,-41.7122998782,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137105367990151680,,,candidate
 canonical_5860e0b3433e52f9828d13647e3a8124,201.697633611,-44.9155802619,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087542854148650496,,,candidate
 canonical_5879e57aff065e6d8b0fb88b5963ba00,159.14916666666664,-27.499055555555557,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD117,NGC 3311,"candidate,confirmed"
-canonical_588accbb8b865030b824bdd11a24dbf5,190.56937499999998,11.741269444444443,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124216.65+114428.6,M60,"candidate,confirmed"
+canonical_588accbb8b865030b824bdd11a24dbf5,190.56937499999998,11.741269444444443,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124216.65+114428.6,M60,"candidate,confirmed"
 canonical_5892eb199d5250f78726bb5f65e5c3fd,184.8652937,5.8344359,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD89,Virgo cluster,candidate
 canonical_589918f17021533396fd8722867db195,186.793915,11.92227,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_322,Virgo cluster,not_ucd
 canonical_589da0afbfe5578b9c125ae711d892dc,187.6503598,12.3671024,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD399,Virgo cluster,not_ucd
 canonical_58ba08e4f17c5891b363360c8a4f587e,201.22238,-43.051019,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_4,NGC 5128,candidate
 canonical_58bc90a756655470b287737f2feaa6f7,201.768164201,-40.8010277931,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6161210957837323392,,,candidate
-canonical_58bda4d5a0505fbd98680906bb9ec9b0,186.86329166666664,12.929441666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122727.19+125546.0,M87,confirmed
+canonical_58bda4d5a0505fbd98680906bb9ec9b0,186.86329166666664,12.929441666666666,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122727.19+125546.0,M87,confirmed
 canonical_58d319f4aadf5134aafed776efd2b4c0,186.621918,12.732844,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_264,Virgo cluster,not_ucd
 canonical_58d5d368e6975a5db8da2a9704d5e70c,55.055095,-35.807063,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_58da949d34435f06a2725dfda5a59d11,189.8109028,11.9650757,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD669,Virgo cluster,not_ucd
@@ -1547,7 +1547,7 @@ canonical_5a078f8bf17256e98a8decbc10e96e16,202.832493567,-42.4743963475,exact_re
 canonical_5a1eb9b3597e55ceaa511bd0f6225c6d,187.374222,12.617747,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC181,Virgo cluster,not_ucd
 canonical_5a20f8ce0de95105bc6936286e4e5238,54.69541666666667,-35.39688888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2016A&A...586A.102V,,UCD-FORS 6,NGC 1399,candidate
 canonical_5a22c3d6fe745ae7af63c7137c555e03,54.523583333333335,-35.446305555555554,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2016A&A...586A.102V,,UCD-FORS 54,NGC 1399,candidate
-canonical_5a2660129c2d539699d131660bb5c7c4,187.546125,12.789361111111111,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907922332392170240,J123011.07+124721.7,M87,"confirmed,candidate"
+canonical_5a2660129c2d539699d131660bb5c7c4,187.546125,12.789361111111111,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907922332392170240,J123011.07+124721.7,M87,"confirmed,candidate"
 canonical_5a2ba685c923503ca6a8bb8cb1da0992,188.2138432,16.7830971,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD521,Virgo cluster,candidate
 canonical_5a3bf779882d5f47a65bd39808575c66,186.06485,11.826,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_63,Virgo cluster,not_ucd
 canonical_5a3c9c3c41da538ba54d13a441c39436,202.542261,-41.827168,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_120,NGC 5128,candidate
@@ -1786,7 +1786,7 @@ canonical_67a731e7e43c59c78c4d7123fe63fb0e,186.4803246,7.3916381,exact_reported_
 canonical_67d0f97d1ffb587c9e6bef39d532d066,202.407041429,-44.9203786524,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087510487268205056,,,candidate
 canonical_67d2e2e2919e55c3934a660327eb5601,187.42216666666664,12.664569444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2017ApJ...835..212K,2015ApJ...812...34L,2015ApJ...802...30Z,2019A&A...625A..50F,2020ApJS..250...17L",3907907832581760512,"M87UCD-20,J122941.32+123952.4,NGVS-UCD311","Virgo cluster,M87","candidate,confirmed"
 canonical_67d4c4139909578e8de2dd9a3812b56b,54.513066,-35.473879,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_67d95b7ce3a852be8930566b9098d47a,187.64591666666664,12.581305555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123035.02+123452.7,M87,confirmed
+canonical_67d95b7ce3a852be8930566b9098d47a,187.64591666666664,12.581305555555556,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123035.02+123452.7,M87,confirmed
 canonical_67ea2d61bc2c591998c90a817e3cdbc4,188.939711,12.1814137,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD595,Virgo cluster,not_ucd
 canonical_67f3c4662d505317abe9252423860ec0,54.503797,-35.440099,exact_reported_position,rejected,,confirmation_rules_v1,0,2,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_6801fa51a6b350fd9848136e46f6159f,186.031509,12.190311,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_50,Virgo cluster,not_ucd
@@ -1821,7 +1821,7 @@ canonical_69d126efae125df590a38f928cc80168,201.33798,-43.53354,exact_reported_po
 canonical_69e19fc5b68a5d37acfc1063f8e1d83a,54.593375,-35.44255555555555,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2016A&A...586A.102V,,UCD-FORS 55,NGC 1399,candidate
 canonical_69f2724cb80f576f94ae130e914fc6ce,203.220267813,-42.0101118828,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112821554176568960,,,candidate
 canonical_69ff9ecbab24566890e4077a543c34c2,187.698273,12.43477,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H49478,Virgo cluster,not_ucd
-canonical_6a0e103d82495fa4825593130cd0d58e,190.96866666666665,11.42175,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927645994743032064,J124352.48+112518.3,M60,"confirmed,candidate"
+canonical_6a0e103d82495fa4825593130cd0d58e,190.96866666666665,11.42175,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927645994743032064,J124352.48+112518.3,M60,"confirmed,candidate"
 canonical_6a0e55b3ea7155568a5be83a2d6f6c19,54.835463,-35.320612,exact_reported_position,confirmed,,confirmation_rules_v1,0,3,2,"2021MNRAS.504.3580S,2009AJ....137..498G",4860389677412716416,51,,"confirmed,candidate"
 canonical_6a43ccce2604551fa49001ac806b1128,203.372504435,-43.4289353729,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6111759219793697536,,,candidate
 canonical_6a71f8312b9a550fb658f6f8ac974344,190.3768414,5.7862313,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD710,Virgo cluster,not_ucd
@@ -1913,7 +1913,7 @@ canonical_6fa49956069c5a3e8b4e57191ca18660,187.80733333333333,7.803302777777778,
 canonical_6fabebf8edd45f24a0e0602b8a4b3919,54.579449,-35.443704,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860294260417621376,,,not_ucd
 canonical_6faff00b233b50abb54feab215e1df78,187.779205,12.23782,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H28062,Virgo cluster,not_ucd
 canonical_6fd4bc7b1d535d4b97eaec7430fc3a9a,188.229568,12.33759,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,T15902,Virgo cluster,not_ucd
-canonical_6fdc4811f72a525fa604113b34e86525,189.95504166666663,11.026475000000001,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J123949.21+110135.3,M60,"confirmed,candidate"
+canonical_6fdc4811f72a525fa604113b34e86525,189.95504166666663,11.026475000000001,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J123949.21+110135.3,M60,"confirmed,candidate"
 canonical_700800a861475b239fcf44b94e5a4894,187.1494857,8.0985001,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD267,Virgo cluster,candidate
 canonical_7027c2c1e6e7533abad10e4a21a91385,190.7820776,11.7848163,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD741,Virgo cluster,candidate
 canonical_702c28522df85190868f7d5f0e2435e3,201.819191807,-44.4185827023,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088341821145108736,,,candidate
@@ -1925,7 +1925,7 @@ canonical_704cd8db6bad5f90b16cd59ee0214a41,54.72541666666666,-35.55933333333333,
 canonical_7054a9c886e65fa6aa60ceb7f1d0941e,187.5904573,17.4192287,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD378,Virgo cluster,not_ucd
 canonical_705b27e582925a889fd38ccbb7e47b69,189.4545505,5.4399477,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD640,Virgo cluster,candidate
 canonical_7060ecdef255592cbea9ca75671a5743,198.834614894,-41.7468423159,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137507136411268608,,,candidate
-canonical_706ab260c9405a3192a7f5984de7d0e6,10.255249999999998,41.22924722222223,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B023,M31,confirmed
+canonical_706ab260c9405a3192a7f5984de7d0e6,10.255249999999998,41.22924722222223,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B023,M31,confirmed
 canonical_706e388f3d2056fb9c7256672e96cad1,187.3003838,12.6561261,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD283,Virgo cluster,candidate
 canonical_70871a564470559da6a18c5c68414839,186.522308,12.03617,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_236,Virgo cluster,not_ucd
 canonical_709b19576f2e5705a85b23f944079567,159.1975,-27.5185,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD21,NGC 3311,"candidate,confirmed"
@@ -2203,7 +2203,7 @@ canonical_7fc53d39df0a59febf8dbae90e83cf30,187.813614,12.16936,exact_reported_po
 canonical_7fd3287737375ca5968a3137d65b62a9,201.884111488,-45.2333881942,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087499285999334272,,,candidate
 canonical_7fde3181aff65394be6a880b41f664e9,192.0603767,9.0306912,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD806,Virgo cluster,candidate
 canonical_8003d67fc9d354ba95825b7d8d3ff25b,187.328094,12.129153,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC176,Virgo cluster,not_ucd
-canonical_800992c821105b1c8f92d73caf207917,187.0255833333333,6.985825,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3900813920998642048,J122806.14+065909.0,M49,"candidate,confirmed"
+canonical_800992c821105b1c8f92d73caf207917,187.0255833333333,6.985825,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3900813920998642048,J122806.14+065909.0,M49,"candidate,confirmed"
 canonical_8044edb5081e5814a380071e811eeea5,186.24971,12.887333,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC044,Virgo cluster,not_ucd
 canonical_804856c9e7085932a420b4daa0821440,54.550274,-35.426928,exact_reported_position,rejected,,confirmation_rules_v1,0,2,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_80603a5f465b54ec845647830b280b15,186.856216,12.041573,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_343,Virgo cluster,not_ucd
@@ -2235,7 +2235,7 @@ canonical_81903bf6a67e5939a05abc2df6960b9e,186.397797,13.265866,exact_reported_p
 canonical_81a01a989a015e32827d10de201da461,187.661987,12.4293,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H48846,Virgo cluster,not_ucd
 canonical_81af5c86f0c85e1f8b5a331f8cfcec88,54.557943,-35.431188,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_81b1ef68dfee59bda324eb42bb2310c4,54.48321,-35.548294,exact_reported_position,rejected,,confirmation_rules_v1,0,2,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_81deddc896515cea8ec786782a21d528,190.96841666666666,11.426166666666665,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927645994742413056,J124352.42+112534.2,M60,"confirmed,candidate"
+canonical_81deddc896515cea8ec786782a21d528,190.96841666666666,11.426166666666665,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927645994742413056,J124352.42+112534.2,M60,"confirmed,candidate"
 canonical_81f518f3c78b5505a15b6a1324d68f96,186.827637,12.564436,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_333,Virgo cluster,not_ucd
 canonical_81fad05e61855d3b809fb489577582be,189.1180512,16.7065338,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD612,Virgo cluster,not_ucd
 canonical_8219577af4a357d491669765553eb791,186.764297,12.058766,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_313,Virgo cluster,not_ucd
@@ -2466,7 +2466,7 @@ canonical_900510d36276527ba93f7b3910102097,202.028707891,-41.0019562501,exact_re
 canonical_9007dc8363955f02812ebd63f19c223d,186.3472705,12.592352,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD827,Virgo cluster,candidate
 canonical_9018245a588051b297252467269bc737,186.723694,12.815114,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GAL_48,Virgo cluster,not_ucd
 canonical_902ab7e169bc58f7ae942779f57f9773,187.573914,12.44287,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H50354,Virgo cluster,not_ucd
-canonical_9034a5b834e85f2193170f06947f33e0,186.7356434,12.5922742,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907941745643930112,J122656.56+123532.2,M87,"confirmed,candidate"
+canonical_9034a5b834e85f2193170f06947f33e0,186.7356434,12.5922742,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907941745643930112,J122656.56+123532.2,M87,"confirmed,candidate"
 canonical_90410d5a72d054d0800bdcc34bd6daf7,186.343857,13.07642,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_165,Virgo cluster,not_ucd
 canonical_9043c35281d65938aac14dac339b8b86,186.523972,13.329741,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_237,Virgo cluster,not_ucd
 canonical_90476df806395ae2a25eb88b42e9342c,200.804788802,-43.2732746939,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088682974686709248,,,candidate
@@ -2501,9 +2501,9 @@ canonical_924a1540a7c45360a5c4f98cad09eed7,187.3693834,16.0103846,exact_reported
 canonical_92520ea00da15f00a5937a786500e775,187.3675253,7.8987154,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD296,Virgo cluster,candidate
 canonical_9268beca72a95a0793284b1704d6ddef,187.263351,12.858569,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_451,Virgo cluster,not_ucd
 canonical_92b8c8e91cb05f9c9e08c533f66d2f85,201.901736,-43.083001,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_88,NGC 5128,candidate
-canonical_92c6ecc72ba65128ac19d72f97282e0a,187.40804166666663,11.682816666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122937.93+114058.1,M87,confirmed
+canonical_92c6ecc72ba65128ac19d72f97282e0a,187.40804166666663,11.682816666666666,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122937.93+114058.1,M87,confirmed
 canonical_92ca0bb5339756dfb31f0b8273909dc8,194.886472,27.975344,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
-canonical_92d0fb0b45a25411bbc1406dbf2d643d,187.7699583333333,13.243502777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3931982533025372672,J123104.80+131436.6,M87,"confirmed,candidate"
+canonical_92d0fb0b45a25411bbc1406dbf2d643d,187.7699583333333,13.243502777777778,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3931982533025372672,J123104.80+131436.6,M87,"confirmed,candidate"
 canonical_92d4359b1884555fa14dfb75adbd4115,200.612585677,-44.029631834,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088590753146111872,,,candidate
 canonical_92ddaaf2ca425aae84c2b5b3ce06db62,201.46927,-43.083283,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_21,NGC 5128,candidate
 canonical_92dfe373f2275ecd8379f528daf2de76,187.7925833333333,12.266969444444445,exact_reported_position,confirmed,,confirmation_rules_v1,0,4,4,"2020ApJS..250...17L,2019A&A...625A..50F,2017ApJ...835..212K,2015ApJ...802...30Z",,"NGVS-UCD448,S6004","Virgo cluster,M87","candidate,confirmed"
@@ -2575,7 +2575,7 @@ canonical_966ac7498f1c59fcb469026e9c5bc83b,186.327591,12.931692,exact_reported_p
 canonical_9681b5063bb354349583878adacbf2f5,200.912543663,-42.4783306757,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136778435080539264,,,candidate
 canonical_969e39613dd35579b01ef4116cd112d3,187.75531,12.37396,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H42060,Virgo cluster,not_ucd
 canonical_96a33bd1e6cf5659a4aa0ac512899f61,186.408035,12.800867,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_196,Virgo cluster,not_ucd
-canonical_96de60b714615307860abda63090e8de,187.68020833333333,12.370108333333334,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123043.25+122212.4,M87,confirmed
+canonical_96de60b714615307860abda63090e8de,187.68020833333333,12.370108333333334,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123043.25+122212.4,M87,confirmed
 canonical_96e5e5d9bd3f5343bc6f6b2e436e1011,190.4146865,11.6698947,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD716,Virgo cluster,candidate
 canonical_970621a057c8501f937bd44e67be9a59,186.39711,12.415727,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_192,Virgo cluster,not_ucd
 canonical_97492fbbe4b856f891da35c3b4030dc4,186.441116,13.115069,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC086,Virgo cluster,not_ucd
@@ -2602,7 +2602,7 @@ canonical_98865efa2ebb5611b35a09a0bcdf9149,187.048615,11.713619,exact_reported_p
 canonical_9887514e67275a34aac3a6e9f388cc9c,201.546223311,-45.0565106957,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087540272866819584,,,candidate
 canonical_9889d1edf3d0512686ed429599958da6,186.582184,12.866405,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_254,Virgo cluster,not_ucd
 canonical_989921411baa54a69aa176438db9bd9c,201.996034829,-44.2650192832,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088349998762525952,,,candidate
-canonical_98ae4e3d089c56cca9d0894fb7a2583d,190.5220833333333,10.666408333333333,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124205.30+103959.1,M60,"confirmed,candidate"
+canonical_98ae4e3d089c56cca9d0894fb7a2583d,190.5220833333333,10.666408333333333,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124205.30+103959.1,M60,"confirmed,candidate"
 canonical_98cc95d15d7e55189890af38771b0e9c,159.24249999999998,-27.425055555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD98,NGC 3311,"candidate,confirmed"
 canonical_98cd49a9a71b598ca34cb897101314e9,192.19870833333331,-41.26669722222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2007A&A...472..111M,2019A&A...625A..50F",,J1248.79-4116.00,NGC 4696,"candidate,confirmed"
 canonical_98d2febf48b550db9fc3c2b2cb4492f5,187.605362,12.719405,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC200,Virgo cluster,not_ucd
@@ -2753,7 +2753,7 @@ canonical_a196940c335f50ac9692f8cff4aa6e48,202.218804285,-43.5750963125,exact_re
 canonical_a1a393ad88985c40b6a7cb1ee44ef88a,192.35354166666664,-41.31059722222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2007A&A...472..111M,2019A&A...625A..50F",,J1249.41-4118.64,NGC 4696,"candidate,confirmed"
 canonical_a1b58c1a84195e8481f603bf324d8246,187.027588,12.265522,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_383,Virgo cluster,not_ucd
 canonical_a1b967a5123d571d90903b32cc12d555,195.173996,28.016844,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
-canonical_a1c0837b592d5c2ba64b38bbbf75dbd2,190.6358333333333,11.950716666666667,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124232.60+115702.6,M60,"confirmed,candidate"
+canonical_a1c0837b592d5c2ba64b38bbbf75dbd2,190.6358333333333,11.950716666666667,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124232.60+115702.6,M60,"confirmed,candidate"
 canonical_a1cbbbf9d2c8522f899226376ea638a3,199.896889533,-41.0778398286,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137897153800321920,,,candidate
 canonical_a1d1daf8b7175d66b609ed5ab12ed0f7,54.557968,-35.495425,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860293534567781632,,,not_ucd
 canonical_a1e4d92669ab5e0da4131d375444c50c,202.040606084,-44.5724956229,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087579790866612736,,,candidate
@@ -2807,7 +2807,7 @@ canonical_a4aaf1624d1e5647949126cdfb5effa4,187.449371,11.683733,exact_reported_p
 canonical_a4b5bd34aebe54c3b4b0b508874e82c1,186.834488,12.820894,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_336,Virgo cluster,not_ucd
 canonical_a4ea5a05b951582fb01d62a0f67e2a21,187.7607769,12.5705885,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2019A&A...625A..50F,2017ApJ...835..212K,2020ApJS..250...17L,2015ApJ...812...34L,2015ApJ...802...30Z",3907715834659663872,"J123102.59+123414.1,F12,NGVS-UCD438","M87,Virgo cluster","confirmed,candidate"
 canonical_a5134a9750d551b2997cfc6b45b06cc3,201.49981,-42.475312,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_31,NGC 5128,candidate
-canonical_a53c7c6315f95dacbc1c02851d31d0c9,187.74708333333334,12.356388888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3907708344235929600,S490,M87,confirmed
+canonical_a53c7c6315f95dacbc1c02851d31d0c9,187.74708333333334,12.356388888888889,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,3907708344235929600,S490,M87,confirmed
 canonical_a542eac9ecc15be8ac8664e110f35b8f,187.769592,12.36022,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H40467,Virgo cluster,not_ucd
 canonical_a545da44c8755a15b551b122d497a25f,54.669005,-35.486023,exact_reported_position,uncertain,reported_ucd_role_conflict,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2021MNRAS.504.3580S",4860386752537760000,F-53,NGC 1399,"confirmed,not_ucd"
 canonical_a55569533f1f597d80cbcc6afa5c7ee0,201.672201477,-42.7039358532,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088804406301041792,,,candidate
@@ -2845,7 +2845,7 @@ canonical_a6be7c3be8d758ffbb95b1c02386e625,187.310898,11.81678,exact_reported_po
 canonical_a6e869a8d2935fffb8153ecf05255d1c,186.257553,11.852439,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_125,Virgo cluster,not_ucd
 canonical_a6f76bb35af5519da37595a7d1e02aea,185.1082438,12.8148176,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD97,Virgo cluster,candidate
 canonical_a7017288393e5c0eb7870acd49012829,203.017047664,-42.0340418226,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112823340887553024,,,candidate
-canonical_a71db2a61b8856cb835b46670601f951,12.66325,41.29313055555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,375037265841433344,B409,M31,confirmed
+canonical_a71db2a61b8856cb835b46670601f951,12.66325,41.29313055555556,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,375037265841433344,B409,M31,confirmed
 canonical_a7258f5dce61560c87c9781ec56ee501,203.052190051,-41.6038008552,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112903497858230656,,,candidate
 canonical_a7291c02c7b25feb92280dbaf9b8268c,54.695839,-35.347361,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_a734f2adccd65092b0437878156dde3b,198.363842532,-43.735719947,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136471774414809856,,,candidate
@@ -2880,7 +2880,7 @@ canonical_a88964d8d4cb575e877b3badd2bb1979,186.9398404,12.7323293,exact_reported
 canonical_a895c519e3915cbea35ca5eee3764ac7,187.988525,12.36469,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,T13569,Virgo cluster,not_ucd
 canonical_a899591d210f50d29f8de6d1a8098d68,201.371848,-42.963098,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,WHH-17,NGC 5128,candidate
 canonical_a8a1177cf2be5e6297ce0b56495d812d,199.694797004,-41.1718921791,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137876434878050816,,,candidate
-canonical_a8af5ea06990573b9e650aa6ee4a8cc3,187.4790833333333,12.56412777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122954.98+123350.9,M87,confirmed
+canonical_a8af5ea06990573b9e650aa6ee4a8cc3,187.4790833333333,12.56412777777778,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122954.98+123350.9,M87,confirmed
 canonical_a8b3c75ab4155da5b05637c8620c354e,205.89274,-38.16961,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2008AJ....136.2295B,,2626,,candidate
 canonical_a8becfd987125bef8de7486d467c592f,189.7109956,16.5658212,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD657,Virgo cluster,candidate
 canonical_a8bf068ad43358e4a4c1aa3e94bb7945,187.703857,12.62254,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H66789,Virgo cluster,not_ucd
@@ -2927,7 +2927,7 @@ canonical_ab0b8a579ff05162af9c4be01fcc557e,201.057238221,-44.7542765209,exact_re
 canonical_ab0d7a6dcbe95cf6b3d2b9e6970258d3,187.553894,13.202736,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GAL_92,Virgo cluster,not_ucd
 canonical_ab1afc2f991d5484a9eaca483c345e64,199.421828924,-41.8309274437,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137469959173827584,,,candidate
 canonical_ab2685d071ab5d81892e59463456ce94,185.4776538,10.3785814,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD119,Virgo cluster,candidate
-canonical_ab2a3ea42e405f4c82936a5917886280,8.193791666666666,39.57770555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,380653266294961024,G001,M31,confirmed
+canonical_ab2a3ea42e405f4c82936a5917886280,8.193791666666666,39.57770555555556,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,380653266294961024,G001,M31,confirmed
 canonical_ab3d22272a585de7857d2116b067dac8,205.89067,-38.15035,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2008AJ....136.2295B,,1318,,candidate
 canonical_ab528d3d81ce5b4eb28b769487e27358,185.9323262,17.2317242,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD157,Virgo cluster,candidate
 canonical_ab54179890c75fbf9d2be6e684e91128,54.611217,-35.502077,exact_reported_position,uncertain,reported_ucd_role_conflict,confirmation_rules_v1,0,2,2,"2021MNRAS.504.3580S,2009AJ....137..498G",4860293053533702784,36,,"not_ucd,candidate"
@@ -2952,7 +2952,7 @@ canonical_ac392ef303145fdd82c74374bfe64d7d,54.827992,-35.881816,exact_reported_p
 canonical_ac431f6d199a5a058fde8763fdf80f60,186.137161,12.513942,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_88,Virgo cluster,not_ucd
 canonical_ac72e5fdcbe453c1b280dd03bbd3976c,187.4133,12.354013,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_495,Virgo cluster,not_ucd
 canonical_ac9d94f66b2d5ae0bd83555536a9a476,55.334722,-35.479522,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_acbe7e46eff7532e83943c446fecff0d,188.18737499999997,12.069902777777777,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123244.97+120411.6,M87,confirmed
+canonical_acbe7e46eff7532e83943c446fecff0d,188.18737499999997,12.069902777777777,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123244.97+120411.6,M87,confirmed
 canonical_acc56e76604a5ca381b33784cfaa14df,159.23666666666665,-27.55852777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD24,NGC 3311,"candidate,confirmed"
 canonical_acc680c5c4cc5582ab6aebff4fc3ae7b,186.7850984,13.3358383,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J122708.43+132009.0,M87,not_ucd
 canonical_ace65f1f938f55dfbd6fab52c7da8fe6,201.434161,-42.983166,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,HGHH-35,NGC 5128,candidate
@@ -2993,7 +2993,7 @@ canonical_af04e8d0fc215256986e5dba0c85222c,194.963669,27.931713,exact_reported_p
 canonical_af24377e4f995f6c93a9ec296a5711a0,187.183807,12.277092,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_430,Virgo cluster,not_ucd
 canonical_af3cd7e1b7715606a324744fabe536bc,187.848877,12.31774,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H35718,Virgo cluster,not_ucd
 canonical_af3f83cc552f5ce69b40ca995317234e,194.971374,27.972153,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
-canonical_af5438fee3c055649a330c1a72fb9f0c,186.6604821,12.6174078,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907936939576004224,J122638.52+123702.7,M87,"confirmed,candidate"
+canonical_af5438fee3c055649a330c1a72fb9f0c,186.6604821,12.6174078,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907936939576004224,J122638.52+123702.7,M87,"confirmed,candidate"
 canonical_af5c88f3818d56a2b6a98c7cf7930e32,187.119995,12.233364,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_412,Virgo cluster,not_ucd
 canonical_af778186c73658c68439b9253f514753,187.182007,12.427697,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC160,Virgo cluster,not_ucd
 canonical_af7c6a7452d85b708e61bab0a82767d6,186.372757,13.243983,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_179,Virgo cluster,not_ucd
@@ -3016,7 +3016,7 @@ canonical_b0a159e8dd605bf2912badcde465f023,190.5273792,16.3725199,exact_reported
 canonical_b0b7650298545cf88a7c213d63c54420,54.65891,-35.446284,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860387169150031488,,,not_ucd
 canonical_b0cbced7fbc456bbb9417e3c14dad10a,54.657103,-35.433752,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_b0dcadfcca415b488bca39a7bb3d48c9,159.18124999999998,-27.530388888888886,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD18,NGC 3311,"candidate,confirmed"
-canonical_b0edf364d5c85e86b4f67b607d510cd5,11.124083333333331,41.36015833333334,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B225,M31,confirmed
+canonical_b0edf364d5c85e86b4f67b607d510cd5,11.124083333333331,41.36015833333334,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,B225,M31,confirmed
 canonical_b0f6817ff3c155e4b62459d9235cc790,187.725204,12.50688,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H56671,Virgo cluster,not_ucd
 canonical_b110923df05c52d1beb8431036ce9af7,201.689029,-43.44281,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,,T17-2091,NGC 5128,confirmed
 canonical_b11331a5fd47581d914de197f5490f40,54.78084,-35.418385,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
@@ -3041,12 +3041,12 @@ canonical_b1f95d9e48625831b839a7ad188a6939,183.4588402,11.651907,exact_reported_
 canonical_b20774e808d65ffb8f92fae439d2f72e,182.7141302,11.9041342,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD21,Virgo cluster,not_ucd
 canonical_b20c600022eb546b9800a6eaa1d642fe,187.673126,12.40006,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H45402,Virgo cluster,not_ucd
 canonical_b2171438a5575c669052fc89406895eb,194.918291,27.958585,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2011ApJ...737...86C,,,,candidate
-canonical_b21e376d7be15856a24cc5b54ff175f8,187.01441666666665,6.8953083333333325,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J122803.46+065343.1,M49,"confirmed,candidate"
+canonical_b21e376d7be15856a24cc5b54ff175f8,187.01441666666665,6.8953083333333325,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J122803.46+065343.1,M49,"confirmed,candidate"
 canonical_b25fb7c31dd257a8ad0afb8c5e35c46e,159.20208333333332,-27.578722222222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2011A&A...531A...4M",,Hydra-UCD34,NGC 3311,"confirmed,candidate"
 canonical_b27fc2da8d1e5ba091a0fecad89b700a,54.092917,-34.95871,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_b286be91b9235b73a9c8859bb3e81cd4,202.168744149,-43.9670287055,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088450672787814528,,,candidate
 canonical_b2bd1279dc755253b1c03e0171e53b22,185.978271,11.842253,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_36,Virgo cluster,not_ucd
-canonical_b2e41fef4bb450c5ade4faa82b26e63a,187.11916666666664,7.041155555555555,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J122828.60+070228.2,M49,"confirmed,candidate"
+canonical_b2e41fef4bb450c5ade4faa82b26e63a,187.11916666666664,7.041155555555555,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J122828.60+070228.2,M49,"confirmed,candidate"
 canonical_b2e62883ee2758f9b957793176f3e874,54.66259,-35.460518,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_b2e65e8d46845c1c845e50725f70f8f1,54.596835,-35.333472,exact_reported_position,uncertain,reported_ucd_role_conflict,confirmation_rules_v1,0,2,2,"2021MNRAS.504.3580S,2009AJ....137..498G",4860391975217694848,32,,"not_ucd,candidate"
 canonical_b3089972b01f5e43a19fac4c141ad8b0,54.486824,-35.530757,exact_reported_position,rejected,,confirmation_rules_v1,0,2,1,2021MNRAS.504.3580S,,,,not_ucd
@@ -3092,7 +3092,7 @@ canonical_b59ed9aafd4d5e16aee48894e96eea53,189.1203421,14.7217927,exact_reported
 canonical_b5a0da1e90fb5a488ab40a8fc461bf84,186.1008,11.644261,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_77,Virgo cluster,not_ucd
 canonical_b5b274ccb42b55cabbed7a1fd2236472,201.076362348,-43.3446858176,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088691186661468032,,,candidate
 canonical_b5b3547189cd5960b4b93aaf4f6861c1,186.169205,13.018272,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_98,Virgo cluster,not_ucd
-canonical_b5e8518c408750fcbf73e1d44be87689,186.661625,12.762711111111111,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3907956623410737920,J122638.79+124545.8,M87,"candidate,confirmed"
+canonical_b5e8518c408750fcbf73e1d44be87689,186.661625,12.762711111111111,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3907956623410737920,J122638.79+124545.8,M87,"candidate,confirmed"
 canonical_b5eb163d5f9455f481ff9081e5c9f54b,54.568743,-35.518791,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_b5ecd2bb90f3504fbc14ca4884299141,204.38370033,-43.0661174535,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6111782859288073216,,,candidate
 canonical_b5ff382627745d89895af05cfd82e8a4,187.6069255,12.594897,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD382,Virgo cluster,candidate
@@ -3183,7 +3183,7 @@ canonical_bb7effa3fe4a5c29b2f206a7949f68f7,186.2475917,10.7709757,exact_reported
 canonical_bb8ad2e7ce1a5e47866308044c82d4ce,187.3958189,8.0579927,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD303,Virgo cluster,not_ucd
 canonical_bb8e3c08b2f15d6f85a2fec81e477b2e,186.264938,12.866439,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC051,Virgo cluster,not_ucd
 canonical_bba24b85f3ff551b9067ff0802241487,200.013410503,-43.2929555657,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136358456000824064,,,candidate
-canonical_bba3c6466f4154cc9934c10e8fcd8c06,190.00866666666664,10.921441666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124002.08+105517.2,M60,"candidate,confirmed"
+canonical_bba3c6466f4154cc9934c10e8fcd8c06,190.00866666666664,10.921441666666666,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124002.08+105517.2,M60,"candidate,confirmed"
 canonical_bbb4520e17265d20b3235592c7fcfd4a,187.733185,12.36759,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H41386,Virgo cluster,not_ucd
 canonical_bbb5ab5e22375431992effb1efef1e8f,187.706589,12.42618,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H48518,Virgo cluster,not_ucd
 canonical_bbbcdc2d4d915eb6a02b043aa01785b5,201.017322,-42.425581,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_100,NGC 5128,candidate
@@ -3246,7 +3246,7 @@ canonical_bee780b2508b5ba3b3e65135265b8c7c,55.103749,-35.110315,exact_reported_p
 canonical_bef1caf3bb595e529329b5aae4cdd87b,54.651718,-35.489486,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_bf0bb2c81812595e9edcb4e9f849ffe2,54.742011,-35.441099,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_bf18cc22e9145664aadb9ddb7c72aa40,187.70083333333332,12.586366666666667,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2015ApJ...802...30Z,2019A&A...625A..50F,2015ApJ...812...34L,2020ApJS..250...17L,2017ApJ...835..212K",3907716453134916352,"VUCD2,J123048.19+123510.7,NGVS-UCD416","M87,Virgo cluster","confirmed,candidate"
-canonical_bf29b940c7215643a2cc4aab1cd3de43,191.38004166666664,11.399222222222221,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3927618914972423424,J124531.21+112357.2,M60,"candidate,confirmed"
+canonical_bf29b940c7215643a2cc4aab1cd3de43,191.38004166666664,11.399222222222221,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3927618914972423424,J124531.21+112357.2,M60,"candidate,confirmed"
 canonical_bf2a3c0c9dc75a6aa2319fcab5965c63,185.9207231,13.4276881,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD155,Virgo cluster,candidate
 canonical_bf303d17dd9a5e9f860a702458aee592,186.649292,11.623528,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_279,Virgo cluster,not_ucd
 canonical_bf5a8e88c7165f7a84ea1eb862b1667a,187.696747,12.35186,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H39481,Virgo cluster,not_ucd
@@ -3269,7 +3269,7 @@ canonical_c03370b4662c507a8b9e40f5d5082225,187.2370664,13.0390265,exact_reported
 canonical_c041c9eb83f15b67971babff23cfeb70,186.171066,13.198964,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_99,Virgo cluster,not_ucd
 canonical_c04eb2b77f375a87939dd2dab0d45b65,201.805418687,-43.1642577774,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088732216488210432,,,candidate
 canonical_c05fc665ec635c9fa128488c59fcb312,54.520376,-35.519432,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_c066950255755632860a372f980a1a8e,187.54166666666666,12.601297222222222,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123010.00+123604.7,M87,confirmed
+canonical_c066950255755632860a372f980a1a8e,187.54166666666666,12.601297222222222,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123010.00+123604.7,M87,confirmed
 canonical_c06cfb03cbf25b4f93a73e2ab03c505e,203.583036076,-43.2945655111,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6111764438173357952,,,candidate
 canonical_c085b3927202509f82fb954f4c29dcd0,54.200994,-34.967683,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_c08d154a014553fd9cc176821aceeea4,200.926014,-42.441631,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_101,NGC 5128,candidate
@@ -3280,7 +3280,7 @@ canonical_c0af2434546a53239cf7f0c2b9bc9449,190.9122311,13.259355,exact_reported_
 canonical_c0b1a81cee2058e38371537972cbddbb,186.059341,11.627242,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_59,Virgo cluster,not_ucd
 canonical_c0ce3f4033925a51b44c553b455d8d6c,188.3319655,12.1867587,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J123319.67+121112.3,M87,not_ucd
 canonical_c0d1804fcb695534bfd9275c4f5d03f6,201.790751769,-41.0868389514,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136998440484445312,,,candidate
-canonical_c0de4833e3df598eb0033aa8eed0a380,190.20641666666663,12.193905555555556,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124049.54+121138.1,M60,"confirmed,candidate"
+canonical_c0de4833e3df598eb0033aa8eed0a380,190.20641666666663,12.193905555555556,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124049.54+121138.1,M60,"confirmed,candidate"
 canonical_c0e86c895a6d5bc482ef2ac5084ef020,200.756068978,-44.472904653,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088003480800714880,,,candidate
 canonical_c127536985815e4098443028783c477a,186.637848,12.275842,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_274,Virgo cluster,not_ucd
 canonical_c12ac88481bf5122965b4c9950fcce6f,201.2794,-43.589595,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,KV19-270,NGC 5128,candidate
@@ -3497,7 +3497,7 @@ canonical_cce1faedff1e579c866d5afd96c6bd7d,55.170312,-35.208451,exact_reported_p
 canonical_cce3c4013f7552dd8c254838ca2def99,187.065979,12.870094,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,UCD27,Virgo cluster,candidate
 canonical_cce6a4da3fd757b0b4ef09e7ddab3a09,186.334915,12.299229,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC068,Virgo cluster,not_ucd
 canonical_cceb9daf051551e7a4b519fac7ce05d7,54.312927,-35.52265,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
-canonical_ccf4d7e177e1599b828e4d3118f45316,187.23708333333332,13.039027777777777,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122856.90+130220.5,M87,confirmed
+canonical_ccf4d7e177e1599b828e4d3118f45316,187.23708333333332,13.039027777777777,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J122856.90+130220.5,M87,confirmed
 canonical_ccf615936ac05c079e45896586736bf5,187.442032,12.49415,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H55382,Virgo cluster,not_ucd
 canonical_cd329180934a56df91294c386ece694b,54.437788,-35.483727,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2009AJ....137..498G,2021MNRAS.504.3580S",4860295428650008704,18,,"candidate,confirmed"
 canonical_cd3db7baad1f54baaf8931b87282efbc,188.1056843,12.3324523,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2017ApJ...835..212K,2015ApJ...812...34L,2015ApJ...802...30Z,2020ApJS..250...17L,2019A&A...625A..50F",3931665942396028544,"M87UCD-27,J123225.37+121956.8,NGVS-UCD509","Virgo cluster,M87","candidate,confirmed"
@@ -3574,9 +3574,9 @@ canonical_d256aac86c75557eae3cd2883bf84f53,54.601081,-35.425642,exact_reported_p
 canonical_d2574ea483b354a4977b11f05f3b47d3,187.678177,12.40068,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H45478,Virgo cluster,not_ucd
 canonical_d26dc167bad85efb8d5a3b2eed67421e,187.0144136,6.8953085,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD249,Virgo cluster,candidate
 canonical_d26fd6e1d8d054849f9204a4908e161c,203.649005684,-42.4435327588,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6112618213245388160,,,candidate
-canonical_d2708bbb0d1451028333a0a57fc8c650,188.49833333333333,11.791919444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123359.60+114730.9,M87,confirmed
+canonical_d2708bbb0d1451028333a0a57fc8c650,188.49833333333333,11.791919444444444,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123359.60+114730.9,M87,confirmed
 canonical_d285ef307a135b6eb11bd4dce2d7baba,186.619568,12.945169,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC130,Virgo cluster,not_ucd
-canonical_d28d1fdbdd7e5171a5886bd9dc6b729e,187.6521566,12.3646753,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3907703563937478400,J123036.52+122152.8,M87,"candidate,confirmed"
+canonical_d28d1fdbdd7e5171a5886bd9dc6b729e,187.6521566,12.3646753,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3907703563937478400,J123036.52+122152.8,M87,"candidate,confirmed"
 canonical_d290d7aa149c5608b76fc70813234e34,201.709496813,-41.613758134,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136968650588486272,,,candidate
 canonical_d29555c6fa9a5cad9eedbb4e9cef3785,187.79708333333332,12.500294444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2019A&A...625A..50F,2017ApJ...835..212K,2020ApJS..250...17L,2015ApJ...812...34L,2015ApJ...802...30Z",3907712050797883648,"J123111.31+123001.0,M87UCD-36,NGVS-UCD449","M87,Virgo cluster","confirmed,candidate"
 canonical_d29677874e5d5a22b73746a0dfae7ab0,201.5440833333333,-42.89527777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,6088706962085758336,HGHH92-C37,NGC 5128,confirmed
@@ -3589,7 +3589,7 @@ canonical_d2f098d08aa1572bb2159d673ff981b5,201.916844,-42.665642,exact_reported_
 canonical_d2f2773f3c2e5a23a47fe9aee83743cc,186.098984,11.75868,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_76,Virgo cluster,not_ucd
 canonical_d312a2684c435492a07a26a233ae46cf,187.765945,12.50929,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H56883,Virgo cluster,not_ucd
 canonical_d315116b360450dba52b1aa9972a40d6,188.5433527,11.9914691,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD557,Virgo cluster,candidate
-canonical_d315a1c960585ef8bad4979f08ead897,187.53820833333333,7.690963888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3901147657137679488,J123009.17+074127.5,M49,"candidate,confirmed"
+canonical_d315a1c960585ef8bad4979f08ead897,187.53820833333333,7.690963888888889,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3901147657137679488,J123009.17+074127.5,M49,"candidate,confirmed"
 canonical_d32d2ca0d7bf5e2bbe1613a44dc3b971,54.59670833333333,-35.42491666666666,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2016A&A...586A.102V,,UCD-FORS 61,NGC 1399,candidate
 canonical_d33616fa8dd557bd9da5cbb47b30a187,54.493119,-35.492946,exact_reported_position,rejected,,confirmation_rules_v1,0,2,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_d33e799307305bbe889651f970c8c57a,202.931413438,-41.2182107897,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6160962944948681088,,,candidate
@@ -3609,7 +3609,7 @@ canonical_d42d39eadcdb53f7bee122a7a2bdbf6a,202.838173744,-43.5612853012,exact_re
 canonical_d42f14e133015ff5b58b9ea2c69dd9b2,201.179967835,-42.6177268911,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6136766649691116032,,,candidate
 canonical_d459eafd5c6f502293b1a02dd46244d9,55.095404,-35.564023,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860188909164081280,,,confirmed
 canonical_d45f951a8bca57e391133afd17cf54a0,192.1749583333333,-41.303824999999996,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2007A&A...472..111M",,J1248.70-4118.23,NGC 4696,"confirmed,candidate"
-canonical_d468446793fc57f08ba870e9857b60e4,201.37416666666664,-43.00194444444445,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,HCH99-15,NGC 5128,confirmed
+canonical_d468446793fc57f08ba870e9857b60e4,201.37416666666664,-43.00194444444445,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,HCH99-15,NGC 5128,confirmed
 canonical_d46ef107a9005b6bb96c28d52c6b8ced,186.790726,13.003014,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_320,Virgo cluster,not_ucd
 canonical_d4737fd74fb351fc8f33fe277a8a262f,183.7179418,16.0796349,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD45,Virgo cluster,not_ucd
 canonical_d474e6822ed65390a3a904d820290e6b,188.3352586,8.040723,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2015ApJ...812...34L,,J123320.46+080226.6,M49,not_ucd
@@ -3623,7 +3623,7 @@ canonical_d4b472c3dd1c559bb0131f813eb3f3fe,183.2950532,11.3236761,exact_reported
 canonical_d4c3fad4aeb95abd967788da88c537b0,182.2329343,12.3092174,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD9,Virgo cluster,candidate
 canonical_d4c8ba81538158faab6f8d68c7920501,54.709979,-35.368797,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_d4d571779d325a9bbd4aa6076edc62cc,200.759893922,-44.7061428757,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087950979120413824,,,candidate
-canonical_d4e939a120385f498b729eb3f2dfd0e3,8.194166666666666,39.57777777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,G1,M31,confirmed
+canonical_d4e939a120385f498b729eb3f2dfd0e3,8.194166666666666,39.57777777777778,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,G1,M31,confirmed
 canonical_d4f26299d246519584a0cc1ac0c27194,159.2145833333333,-27.58738888888889,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD108,NGC 3311,"candidate,confirmed"
 canonical_d5082e0394415aef99ab7db3472de782,159.15958333333333,-27.53927777777778,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2011A&A...531A...4M,2019A&A...625A..50F",,Hydra-UCD59,NGC 3311,"candidate,confirmed"
 canonical_d509d150810f5b5d982c37934e820fc9,186.740356,12.455367,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_305,Virgo cluster,not_ucd
@@ -3701,10 +3701,10 @@ canonical_d9144da7b69e5b949ef1ad9cae993094,190.2924889,10.1302417,exact_reported
 canonical_d92bbe50a0e85291bab7ed029b7d527b,187.666306,12.39114,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H44262,Virgo cluster,not_ucd
 canonical_d92dd302d7555b37b51754badf1adde0,185.4184395,11.5102054,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD117,Virgo cluster,not_ucd
 canonical_d93326f023db55ef9224d4213119af69,187.613434,12.28704,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H32779,Virgo cluster,not_ucd
-canonical_d93f45b5a3c55ed386cb3c5b6e8fddee,191.35008333333332,11.0931,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3927574728348720512,J124524.02+110535.2,M60,"candidate,confirmed"
+canonical_d93f45b5a3c55ed386cb3c5b6e8fddee,191.35008333333332,11.0931,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",3927574728348720512,J124524.02+110535.2,M60,"candidate,confirmed"
 canonical_d94bef9c278352a990874ed9752f4750,191.8923641,10.6861465,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD798,Virgo cluster,candidate
 canonical_d94bf7203de455af865105fc01ee4cdd,181.7193703,11.5462618,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD1,Virgo cluster,not_ucd
-canonical_d959f45c2e33573b9a91827f9f86fc5a,188.08791666666664,12.2704,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123221.10+121613.4,M87,confirmed
+canonical_d959f45c2e33573b9a91827f9f86fc5a,188.08791666666664,12.2704,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2019A&A...625A..50F,,J123221.10+121613.4,M87,confirmed
 canonical_d961675b48b1526f89bf4dd3171b0895,185.988205,13.227654,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GAL_5,Virgo cluster,not_ucd
 canonical_d96198c1d64853f992f44b4e67a42851,185.817487,9.4822691,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD144,Virgo cluster,not_ucd
 canonical_d964f79abb3359eaa05069867c7b0f8e,188.6219697,12.6783542,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD573,Virgo cluster,candidate
@@ -3824,12 +3824,12 @@ canonical_e041b65257fa53198507f213b18f2e1d,186.059341,11.904509,exact_reported_p
 canonical_e0516fc326dd55138a344254b5be436d,201.845901796,-40.8675421809,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6161208312138233984,,,candidate
 canonical_e094dc2737ab567ba7b8adc1ff1b5766,54.793689,-35.524305,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_e09d751fc3ff5ec9a70ddd837e102bc3,186.064545,13.155164,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_62,Virgo cluster,not_ucd
-canonical_e0b538a441e8550cb762b389910bf5a0,191.1577083333333,10.633647222222221,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927275699842788608,J124437.85+103801.1,M60,"confirmed,candidate"
+canonical_e0b538a441e8550cb762b389910bf5a0,191.1577083333333,10.633647222222221,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3927275699842788608,J124437.85+103801.1,M60,"confirmed,candidate"
 canonical_e0c35fd8261750358ad1d5cd49e04d98,201.086385458,-41.2776235912,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6137167799633941504,,,candidate
 canonical_e0d139efee7e562999a6d2c371f8fad3,186.277313,12.993289,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC055,Virgo cluster,not_ucd
 canonical_e0d96b57aefa536e9c2f1e8a389b5aec,202.359477702,-43.9007600776,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088451806667172864,,,candidate
 canonical_e0f5326440025a66ac74b31364373c79,187.660995,12.40425,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H45937,Virgo cluster,not_ucd
-canonical_e105846c530b5737b5b90d7e1c6e3767,190.80195833333332,11.208394444444444,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124312.47+111230.2,M60,"confirmed,candidate"
+canonical_e105846c530b5737b5b90d7e1c6e3767,190.80195833333332,11.208394444444444,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",,J124312.47+111230.2,M60,"confirmed,candidate"
 canonical_e118b9f70c9358a08d249aa28a88752d,187.709579,12.35774,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H40142,Virgo cluster,not_ucd
 canonical_e1194784a82159d9b396345e5b81554a,186.420914,13.025239,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,GC081,Virgo cluster,not_ucd
 canonical_e14b199748bb5fc7a4a8cb1af11f65e9,54.620266,-35.41677,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
@@ -3898,7 +3898,7 @@ canonical_e5165307040b5615866748d5e0506e41,191.387462,11.690373,exact_reported_p
 canonical_e51cae89e11c5fd1978caa67ca2e6440,188.0602083333333,12.033072222222224,exact_reported_position,confirmed,,confirmation_rules_v1,0,5,5,"2017ApJ...835..212K,2019A&A...625A..50F,2015ApJ...802...30Z,2015ApJ...812...34L,2020ApJS..250...17L",3907632130041272704,"M87UCD-33,J123214.45+120159.0,NGVS-UCD503","Virgo cluster,M87","candidate,confirmed"
 canonical_e54337d264d85b0eb9ca0479a8da19c7,201.843247516,-45.1550136338,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6087512377059677184,,,candidate
 canonical_e545f116b7e1581f808fb25bc426adae,189.8073094,16.5614463,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD666,Virgo cluster,not_ucd
-canonical_e56f45fc11c65c95aeba2d59c5ddd24d,187.20520833333333,7.988716666666667,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J122849.25+075919.4,M49,"candidate,confirmed"
+canonical_e56f45fc11c65c95aeba2d59c5ddd24d,187.20520833333333,7.988716666666667,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J122849.25+075919.4,M49,"candidate,confirmed"
 canonical_e57662911fe250b0bee1a3937c27f474,186.4580934,8.7794166,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD194,Virgo cluster,candidate
 canonical_e57707ccca06531fbb0198b9b0799a9e,54.710806,-35.408077,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd
 canonical_e57a8dbafb3756abb29b996f56ea0e55,187.687393,12.36452,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H40970,Virgo cluster,not_ucd
@@ -4238,7 +4238,7 @@ canonical_f954abe8382952e3aa6727ef7b089e0e,186.708618,12.743125,exact_reported_p
 canonical_f97559ec577d54119714d7b39114e659,187.081894,12.498031,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,STAR_404,Virgo cluster,not_ucd
 canonical_f9a48ad6d1645ddb8f28ed5236970c94,186.3214418,10.5002175,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJS..250...17L,,NGVS-UCD184,Virgo cluster,candidate
 canonical_f9afea5d39ac5797bb6097d74568bc6e,205.89599,-38.19076,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2008AJ....136.2295B,,4054,,candidate
-canonical_f9b286f7048d55cb9b26cc875e72f8b6,190.6863333333333,11.211238888888888,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124244.72+111240.5,M60,"candidate,confirmed"
+canonical_f9b286f7048d55cb9b26cc875e72f8b6,190.6863333333333,11.211238888888888,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2015ApJ...812...34L,2019A&A...625A..50F",,J124244.72+111240.5,M60,"candidate,confirmed"
 canonical_f9bf37b25d665fdfaee7938264222d19,159.18249999999998,-27.553611111111113,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2011A&A...531A...4M",,Hydra-UCD62,NGC 3311,"confirmed,candidate"
 canonical_f9c1ff0257425738a8e15a366bd947bd,202.78082,-41.922054,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,GC_cand_127,NGC 5128,candidate
 canonical_f9c40a694aac501aa174de4b920830c3,53.92712,-35.23102,exact_reported_position,confirmed,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860359470905910656,,,confirmed
@@ -4276,7 +4276,7 @@ canonical_fba904be8a1d54a184d64a77eb5fb67b,187.099304,11.776844,exact_reported_p
 canonical_fbd252e924b85bb88067d37fd2e85e4d,187.786346,12.12516,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H18863,Virgo cluster,not_ucd
 canonical_fbd925e80aaf549eb10c93b6e7057dd6,53.911935,-35.364794,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,4860356138011208576,,,not_ucd
 canonical_fbe4c6ce48f55f43bbeb27f1ec08a3a6,201.106928063,-42.9882203566,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2020ApJ...899..140V,6088712150405990272,,,candidate
-canonical_fbfede2d131759dab1747b60ff8b65a9,188.2361303,11.8512962,exact_reported_position,confirmed,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907614331696710656,J123256.67+115104.7,M87,"confirmed,candidate"
+canonical_fbfede2d131759dab1747b60ff8b65a9,188.2361303,11.8512962,exact_reported_position,candidate,,confirmation_rules_v1,0,2,2,"2019A&A...625A..50F,2015ApJ...812...34L",3907614331696710656,J123256.67+115104.7,M87,"confirmed,candidate"
 canonical_fbff25ac31cc5683924bad3ecf034f9f,201.089178,-43.043633,exact_reported_position,candidate,,confirmation_rules_v1,0,1,1,2022ApJ...929..147D,,HH-22,NGC 5128,candidate
 canonical_fc044557cb0c5a12bac3108ec5f3c4b2,187.682739,12.4497,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2017ApJ...835..212K,,H51031,Virgo cluster,not_ucd
 canonical_fc07d0a3efbd55a2817474d5d17d06e1,54.251396,-35.520581,exact_reported_position,rejected,,confirmation_rules_v1,0,1,1,2021MNRAS.504.3580S,,,,not_ucd

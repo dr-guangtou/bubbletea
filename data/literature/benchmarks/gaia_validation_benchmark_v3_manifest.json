@@ -1,0 +1,21 @@
+{
+  "benchmark_version": "benchmark_v3",
+  "partition_ruleset": "benchmark_partition_v1",
+  "generated_utc": "2026-07-17T16:25:33.384614+00:00",
+  "policy": "quarantine_approved_ucd_gaia_conflicts_from_reliable_training",
+  "validation_partition_inspected": false,
+  "inputs": {
+    "benchmark_v2": "data/literature/benchmarks/gaia_validation_benchmark_v2.csv",
+    "benchmark_v2_sha256": "7a6189c34706d7394668508709a4e34312bb678885510ad52a5cd683062dffc3",
+    "reliability_reviews": "data/literature/sources/ucd_reliability_reviews.json",
+    "reliability_reviews_sha256": "3f51cfd122ccc5a044b975f903592ee3d00fb041eda1b75e8ea413355f9d2608"
+  },
+  "invariants": {
+    "row_count": 3857,
+    "quarantined_gaia_association_count": 4,
+    "published_classification_changes": 0,
+    "partition_assignment_changes": 0
+  },
+  "output": "data/literature/benchmarks/gaia_validation_benchmark_v3.csv",
+  "output_sha256": "2df20367fd1f13375ec588e9eaabef4752ae85e702f9cfb14d3dbb47a8f1de7e"
+}

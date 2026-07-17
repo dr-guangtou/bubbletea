@@ -1,0 +1,229 @@
+{
+  "analysis_version": "gaia_morphology_host_control_v1",
+  "generated_utc": "2026-07-16T19:58:17.967001+00:00",
+  "analysis_status": "exploratory_no_selector_or_environment_claim_approved",
+  "validation_partition_inspected": false,
+  "endpoint": "https://gaia.aip.de/tap",
+  "smoke_limit_fields": null,
+  "data_retrieval_mode": "verified_existing_sources",
+  "inputs": {
+    "design": "data/literature/validation/gaia_morphology_host_control_design.csv",
+    "design_sha256": "60e0ecf9a7499e98e3fd2261484ecac51a36752c545c2da4d01e73f45ba2091b",
+    "design_manifest": "data/literature/validation/gaia_morphology_host_control_design_manifest.json",
+    "design_manifest_sha256": "2eec6426728466694ab970dbe0779d7eb78108b515f8ea786290612c8dcf8f3d",
+    "benchmark_manifest": "data/literature/benchmarks/gaia_validation_benchmark_v1_manifest.json",
+    "benchmark_manifest_sha256": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b"
+  },
+  "query_records": [
+    {
+      "field_id": "host_control_pair_01_host",
+      "field_role": "host",
+      "returned_row_count": 3,
+      "elapsed_seconds": 4.304270208929665,
+      "query_sha256": "58e15a22a70638e705134616dcbd6df6fe5b87959925590a206656f09d0d692a",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 172.53135, 9.27667,\n                  1.8497922473996455\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_01_control",
+      "field_role": "control",
+      "returned_row_count": 359,
+      "elapsed_seconds": 4.008617624989711,
+      "query_sha256": "4c7f15802e118d47b3d48ca6e46343fe18929545c937d7fcd578d9193c3ccc52",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 198.0748753491251, 0.5082601792265602,\n                  1.8497922473996455\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_02_host",
+      "field_role": "host",
+      "returned_row_count": 197,
+      "elapsed_seconds": 3.793800540966913,
+      "query_sha256": "3b26064eb744730ac7d7cb1608f0fbbdc97e3c9faef0b07357f4f05c8df488fe",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 257.6035368, 72.30439,\n                  1.562224916842398\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_02_control",
+      "field_role": "control",
+      "returned_row_count": 155,
+      "elapsed_seconds": 4.153799750027247,
+      "query_sha256": "312ccc868768c1150808da41b75a631497d736ae855baa6f58c2852c2713d82d",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 262.4411547818759, 60.217335911751334,\n                  1.562224916842398\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_03_host",
+      "field_role": "host",
+      "returned_row_count": 631,
+      "elapsed_seconds": 4.091614207951352,
+      "query_sha256": "32f9dadff96954d44cbba9994bc3eeb3cd99d9a097b3cb8ce2ee803f9bf56f64",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 138.4291646, 76.475383,\n                  1.884157890996568\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_03_control",
+      "field_role": "control",
+      "returned_row_count": 713,
+      "elapsed_seconds": 3.9030446249525994,
+      "query_sha256": "f7561c6bfa39c6c683802760642070234fcd7de8898262a9ed50faf974174b97",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 257.6266288018588, 33.49221594413886,\n                  1.884157890996568\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_04_host",
+      "field_role": "host",
+      "returned_row_count": 393,
+      "elapsed_seconds": 3.9534379999386147,
+      "query_sha256": "1094811063748317016482654d842bbb4db655f8f69f68695b21e868d62aea16",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 353.2607629, -51.6982682,\n                  1.4968389118253054\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_04_control",
+      "field_role": "control",
+      "returned_row_count": 200,
+      "elapsed_seconds": 3.8623540829867125,
+      "query_sha256": "04b4ba65bf2ea86ae59845140af4ac4a2e432fa41651e0a286020c60e7c3e9e7",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 45.14887086338657, -28.967436359706767,\n                  1.4968389118253054\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_05_host",
+      "field_role": "host",
+      "returned_row_count": 616,
+      "elapsed_seconds": 3.896490041981451,
+      "query_sha256": "7380b048b04744766bfd7fa7f5227735a72708e374c6a742a1c70922e00c08b7",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 149.0839723, 27.2275661,\n                  1.9167474248359964\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_05_control",
+      "field_role": "control",
+      "returned_row_count": 357,
+      "elapsed_seconds": 3.8426200830144808,
+      "query_sha256": "74cbe82cba3abd57e38ad430f777c7a6e0418e62a9f13b4987d45aa8db15028f",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 353.3067492099312, 12.125367676180808,\n                  1.9167474248359964\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_06_host",
+      "field_role": "host",
+      "returned_row_count": 377,
+      "elapsed_seconds": 3.8103160000173375,
+      "query_sha256": "bee700950e47f0bf993a8feb17c84997bd8cd1366fa3edeb1e5f55a63355a72d",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 184.9979495, -17.391947,\n                  1.709704241167325\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_06_control",
+      "field_role": "control",
+      "returned_row_count": 7,
+      "elapsed_seconds": 3.37799491698388,
+      "query_sha256": "b6dd558ab982d2a897db5eef33718fbe5d230b6722d2fd182c3b3236fed710db",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 164.0498892027366, -8.336159219112755,\n                  1.709704241167325\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_07_host",
+      "field_role": "host",
+      "returned_row_count": 379,
+      "elapsed_seconds": 3.8318508330266923,
+      "query_sha256": "43bab60445175ab723306e6c9491476efc7f632e855bff8485432d67b0e420c1",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 180.472949, -18.886202,\n                  1.724088772473143\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_07_control",
+      "field_role": "control",
+      "returned_row_count": 38,
+      "elapsed_seconds": 3.3189967499347404,
+      "query_sha256": "8f0223b271938073e9ecf5df1a51fedc0ea5872ea77400da3adb4ce521199124",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 165.98915738084227, -12.583326042713477,\n                  1.724088772473143\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_08_host",
+      "field_role": "host",
+      "returned_row_count": 186,
+      "elapsed_seconds": 3.627339707920328,
+      "query_sha256": "f463dfcf34b1cb9828a8a88ed0e1c7757a2a80cbe261c57d5d08590f5b316728",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 187.0620848, 11.7897196,\n                  2.0667381945584533\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_08_control",
+      "field_role": "control",
+      "returned_row_count": 434,
+      "elapsed_seconds": 3.927767917048186,
+      "query_sha256": "eb2d9602b67929c2756ef20dfe65cc4362de39e301771aca3d3eb5ca38bd104d",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 201.51650158390495, 5.63867108288722,\n                  2.0667381945584533\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_09_host",
+      "field_role": "host",
+      "returned_row_count": 643,
+      "elapsed_seconds": 3.9877847499446943,
+      "query_sha256": "fdc1c5aec547f77c71bf73f8218a6af944cc43e82604dad196f847d5d600be74",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 40.039758, -56.342674,\n                  1.9803783398181285\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_09_control",
+      "field_role": "control",
+      "returned_row_count": 548,
+      "elapsed_seconds": 4.0018845840822905,
+      "query_sha256": "45fbe15a017d410b253476bccdc60fcc35cd3f7c8b9e8ff91d610c9def0c2ef5",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 30.428872840644317, -60.54627671079333,\n                  1.9803783398181285\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_10_host",
+      "field_role": "host",
+      "returned_row_count": 713,
+      "elapsed_seconds": 3.842237332952209,
+      "query_sha256": "fa05997c48ed731416730516da27d28aef4e278c1e98a0a5b3ef2dc7430192ba",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 163.9289399, 71.4885703,\n                  1.8609865374563368\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_10_control",
+      "field_role": "control",
+      "returned_row_count": 618,
+      "elapsed_seconds": 4.143232999951579,
+      "query_sha256": "c7c5eca015d76878948b484373288677dcadc478980252d947570e4ee035caa7",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 246.85163176284584, 35.985728656786996,\n                  1.8609865374563368\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_11_host",
+      "field_role": "host",
+      "returned_row_count": 469,
+      "elapsed_seconds": 3.9606274580582976,
+      "query_sha256": "a6f0595e2ecb50aa8b77b3105cfbcee73f2228e4b6638cf1eafd17da3bede460",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 353.12654, 17.556625,\n                  1.6854916861585316\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_11_control",
+      "field_role": "control",
+      "returned_row_count": 491,
+      "elapsed_seconds": 3.98204154195264,
+      "query_sha256": "428bcbd915d3b9be4199fb0a6d62fc8819b305c893ac34de379dfa87cf545302",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 136.25188393539904, 36.341911211706,\n                  1.6854916861585316\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_12_host",
+      "field_role": "host",
+      "returned_row_count": 617,
+      "elapsed_seconds": 3.8087146669859067,
+      "query_sha256": "478b82f8d956e248dc6ac624935b8b5f52e30ab561b7b6e872961fec92ba8604",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 23.3993435, -7.5334072,\n                  1.9147800822374024\n              )\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "field_id": "host_control_pair_12_control",
+      "field_role": "control",
+      "returned_row_count": 0,
+      "elapsed_seconds": 3.1428496250882745,
+      "query_sha256": "b37b1795814cc32ee9471eb02915e5f0ecb760af6a1a12e9e3df4d24fc35d8db",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, g.matched_transits, g.visibility_periods_used, g.astrometric_n_good_obs_al, g.scan_direction_strength_k4, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE(\n                  'ICRS', 347.80685393316554, -22.722055297619256,\n                  1.9147800822374024\n              )\n          )\n        ORDER BY g.source_id"
+    }
+  ],
+  "outputs": {
+    "sources": "data/literature/validation/gaia_morphology_host_control_sources.csv",
+    "sources_sha256": "132952f0874454dde66842d3def8a4b033e04df7e0d6d3df54bb0bd0cfa436dc",
+    "radial_metrics": "data/literature/validation/gaia_morphology_host_control_metrics.csv",
+    "radial_metrics_sha256": "34b7517136a9139265364a0b1e59deb10c1b0dd5b40ad19354e7de02c047207f",
+    "field_summary": "data/literature/validation/gaia_morphology_host_control_field_summary.csv",
+    "field_summary_sha256": "81a1d5c7278885a3ee1758d18d9e8e374fa17e99f63684147119a0a16ebb2d51",
+    "comparison": "data/literature/validation/gaia_morphology_host_control_comparison.json",
+    "comparison_sha256": "65463f3c03fc23969467c4799103e825d71d2386f463fb00787501d27b6f7498"
+  },
+  "counts": {
+    "field_count": 24,
+    "host_field_count": 12,
+    "control_field_count": 12,
+    "field_source_association_count": 9144,
+    "unique_gaia_source_count": 9144,
+    "radial_metric_row_count": 144
+  }
+}

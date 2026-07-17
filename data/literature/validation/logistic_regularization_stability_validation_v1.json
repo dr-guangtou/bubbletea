@@ -1,0 +1,18 @@
+{
+  "analysis_version": "logistic_regularization_stability_v1",
+  "check_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "checks": {
+    "validation_partition_not_inspected": true,
+    "metrics_digest": true,
+    "source_summary_digest": true,
+    "thirty_repeat_configuration_rows": true,
+    "ten_repeats": true,
+    "three_configurations": true,
+    "three_rows_per_repeat": true,
+    "target_recall_met": true,
+    "finite_metrics": true,
+    "source_rows_unique": true
+  }
+}

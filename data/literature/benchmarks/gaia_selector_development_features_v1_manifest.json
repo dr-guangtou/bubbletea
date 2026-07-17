@@ -1,0 +1,145 @@
+{
+  "feature_version": "gaia_selector_development_features_v1",
+  "generated_utc": "2026-07-16T14:28:33.914055+00:00",
+  "gaia_release": "Gaia DR3",
+  "endpoint": "https://datalab.noirlab.edu/tap",
+  "partition": "development",
+  "smoke_limit": null,
+  "inputs": {
+    "benchmark": "data/literature/benchmarks/gaia_validation_benchmark_v1.csv",
+    "benchmark_sha256": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73",
+    "benchmark_manifest": "data/literature/benchmarks/gaia_validation_benchmark_v1_manifest.json",
+    "benchmark_manifest_sha256": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b",
+    "benchmark_output_sha256": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73"
+  },
+  "additional_gaia_columns": [
+    "pmra_pmdec_corr",
+    "phot_g_mean_flux_over_error",
+    "phot_bp_mean_flux_over_error",
+    "phot_rp_mean_flux_over_error",
+    "phot_bp_rp_excess_factor",
+    "classprob_dsc_combmod_quasar",
+    "classprob_dsc_combmod_galaxy",
+    "classprob_dsc_combmod_star",
+    "in_qso_candidates",
+    "in_galaxy_candidates",
+    "non_single_star"
+  ],
+  "query_batches": [
+    {
+      "batch_number": 1,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 2.312489917036146,
+      "query_sha256": "e51648039045adeaa487843b98dc37ba79a9531f66103241f8245fab7c5b5fea",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 2,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.6753374580293894,
+      "query_sha256": "def210a57bf6ef05b1dd89d5fc2d010907e0801e39c2ab65ccd249deeb0d7d54",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 3,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.9924972499720752,
+      "query_sha256": "7f0398518ca0160d969147a482941870962986ac8fd3918889afa8c0cbe296fa",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 4,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.855752957984805,
+      "query_sha256": "c00dc4cfa7f5eebd19d6fed8feacc9dacdf596903da479929cad9d3c86e53db4",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 5,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8602013339987025,
+      "query_sha256": "2c48ce951bea5e5f95c974303ab99e0e40092b1a81fc9a054ddaa31eda869f09",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 6,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8959635420469567,
+      "query_sha256": "cf244926105e02462fadd1027885d38d732037f23f6f9dadc91c98f16f2fb4a6",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 7,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8234347910620272,
+      "query_sha256": "eb206905431cb45214bd20d819eb6d2c34d6ff68414f0f11aad4978671892000",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 8,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8342821249971166,
+      "query_sha256": "7dca46757428ebb999251ca2919f54f665bdb81ae17cca0c7bc9649a47dc3548",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 9,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8242557090707123,
+      "query_sha256": "3897633b7a5e1cf7f2ab204c7f923ff17260dae7d364614892549a486fdf460c",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 10,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8420756660634652,
+      "query_sha256": "ec5adbc47432d760a9db27ab4033d618ba7173da58893ac301d87cf6d188fe00",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 11,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.712585625005886,
+      "query_sha256": "79fdf8ca6639bdfb35bb581280299021aedf49e65569078f653ff5155cc680fb",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 12,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.8945256669539958,
+      "query_sha256": "e158202f2eeae69e04c4b562bfb918a8897564c401e1634b3d836428d93759bf",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 13,
+      "requested_identifier_count": 136,
+      "returned_row_count": 136,
+      "elapsed_seconds": 1.7230374170467257,
+      "query_sha256": "cee59f2b56e75301b9750ab5a6913425bc9551134e1db14bed5bd88af25425f9",
+      "maximum_query_attempts": 3
+    }
+  ],
+  "counts": {
+    "benchmark_rows": 3857,
+    "development_rows": 3136,
+    "validation_rows": 721,
+    "queried_development_rows": 3136,
+    "queried_validation_rows": 0,
+    "output_rows": 3136,
+    "unique_output_gaia_sources": 3136
+  },
+  "output": "data/literature/benchmarks/gaia_selector_development_features_v1.csv",
+  "output_sha256": "23a55d4fbad519834302f9f433c1cd594c8c8c63674e1ffefef786fbc95c38d0"
+}

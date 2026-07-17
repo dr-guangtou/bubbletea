@@ -2260,7 +2260,7 @@ def prepare_approved_confirmation_evidence(records: list[dict[str, object]]) -> 
     """Attach delegated object-level confirmation reviews to immutable records."""
     with CONFIRMATION_EVIDENCE_REVIEW_MANIFEST.open(encoding="utf-8") as input_file:
         manifest = json.load(input_file)
-    approval_status = "approved_by_project_lead_delegation_2026-07-15"
+    approval_status = "approved_by_project_lead_2026-07-17"
     if (
         manifest["review_status"] != approval_status
         or manifest["ruleset_id"] != RULESET_ID
@@ -2271,13 +2271,16 @@ def prepare_approved_confirmation_evidence(records: list[dict[str, object]]) -> 
         raise RuntimeError("Confirmation evidence reviews lack scoped delegated approval")
     reviews = manifest["reviews"]
     non_promotion_reviews = manifest["non_promotion_reviews"]
+    rejection_reviews = manifest["rejection_reviews"]
     if (
-        len(reviews) != 1316
-        or manifest["summary"]["approved_evidence_count"] != 1316
-        or len(non_promotion_reviews) != 57
-        or manifest["summary"]["explicit_non_promotion_count"] != 57
+        len(reviews) != 1248
+        or manifest["summary"]["approved_evidence_count"] != 1248
+        or len(non_promotion_reviews) != 125
+        or manifest["summary"]["explicit_non_promotion_count"] != 125
+        or len(rejection_reviews) != 1
+        or manifest["summary"]["approved_rejection_count"] != 1
     ):
-        raise RuntimeError(f"Expected 1316 confirmation reviews, found {len(reviews)}")
+        raise RuntimeError(f"Expected 1248 confirmation reviews, found {len(reviews)}")
     records_by_id = {str(record["record_id"]): record for record in records}
     for review in reviews:
         record_id = str(review["record_id"])
@@ -2295,6 +2298,12 @@ def prepare_approved_confirmation_evidence(records: list[dict[str, object]]) -> 
         if record.get("approved_confirmation_review"):
             raise RuntimeError(f"Confirmation promotion and non-promotion conflict: {record_id}")
         record["confirmation_non_promotion_review"] = review
+    for review in rejection_reviews:
+        record_id = str(review["record_id"])
+        record = records_by_id.get(record_id)
+        if record is None:
+            raise RuntimeError(f"Rejection review target record is missing: {record_id}")
+        record["approved_rejection_review"] = review
 
 
 def add_evidence_and_classifications(
@@ -2314,6 +2323,7 @@ def add_evidence_and_classifications(
         evidence_value = "not_ucd" if reported_is_ucd == 0 else str(reported_status or "unlabeled")
         evidence_id = stable_identifier("evidence", f"{record['record_id']}:reported")
         approved_confirmation_review = record.get("approved_confirmation_review")
+        approved_rejection_review = record.get("approved_rejection_review")
         review_status = (
             "approved"
             if reported_status == "confirmed" and approved_confirmation_review
@@ -2377,8 +2387,33 @@ def add_evidence_and_classifications(
                     approved_confirmation_review["evidence_type"],
                     approved_confirmation_review["evidence_value"],
                     "approved",
-                    "approved_by_project_lead_delegation_2026-07-15",
+                    "approved_by_project_lead_2026-07-17",
                     json.dumps(approved_confirmation_review, sort_keys=True),
+                ),
+            )
+
+        if approved_rejection_review:
+            rejection_id = stable_identifier(
+                "evidence", f"rejection_review:{approved_rejection_review['review_id']}"
+            )
+            connection.execute(
+                """
+                INSERT INTO object_evidence (
+                    evidence_id, canonical_object_id, record_id, publication_id,
+                    evidence_type, evidence_value, evidence_status, review_status,
+                    details_json
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    rejection_id,
+                    canonical_object_id,
+                    record["record_id"],
+                    f"ads:{approved_rejection_review['publication_bibcode']}",
+                    approved_rejection_review["evidence_type"],
+                    approved_rejection_review["evidence_value"],
+                    "approved",
+                    "approved_by_project_lead_2026-07-17",
+                    json.dumps(approved_rejection_review, sort_keys=True),
                 ),
             )
 
@@ -2400,6 +2435,15 @@ def add_evidence_and_classifications(
             }
             for item in object_evidence
             if item["record"].get("approved_confirmation_review")
+        )
+        classification_evidence.extend(
+            {
+                "evidence_type": item["record"]["approved_rejection_review"]["evidence_type"],
+                "evidence_value": item["record"]["approved_rejection_review"]["evidence_value"],
+                "review_status": "approved",
+            }
+            for item in object_evidence
+            if item["record"].get("approved_rejection_review")
         )
         classification_state, rationale = derive_classification(
             classification_evidence,
@@ -3175,7 +3219,7 @@ def insert_build_metadata(
         "confirmation_evidence_review_sha256": calculate_sha256(
             CONFIRMATION_EVIDENCE_REVIEW_MANIFEST
         ),
-        "confirmation_evidence_review_status": ("approved_by_project_lead_delegation_2026-07-15"),
+        "confirmation_evidence_review_status": "approved_by_project_lead_2026-07-17",
         "literature_screening_closure_sha256": calculate_sha256(
             LITERATURE_SCREENING_CLOSURE_MANIFEST
         ),

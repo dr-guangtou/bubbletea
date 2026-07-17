@@ -1,0 +1,96 @@
+{
+  "calibration_version": "point_source_selector_calibration_v2",
+  "check_count": 14,
+  "passed_count": 14,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "calibration_version",
+      "passed": true,
+      "detail": "point_source_selector_calibration_v2"
+    },
+    {
+      "name": "validation_partition_blind",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "no_validation_identifiers",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "priority_cohorts",
+      "passed": true,
+      "detail": [
+        "spectroscopic_star",
+        "gaia_non_single_star",
+        "spectroscopic_qso"
+      ]
+    },
+    {
+      "name": "equal_cohort_objective",
+      "passed": true,
+      "detail": "equal_cohort_mean_retention"
+    },
+    {
+      "name": "operating_point_count",
+      "passed": true,
+      "detail": 48
+    },
+    {
+      "name": "aen_weight_grid",
+      "passed": true,
+      "detail": [
+        0.25,
+        0.5,
+        0.75
+      ]
+    },
+    {
+      "name": "astrometric_weight_grid",
+      "passed": true,
+      "detail": [
+        0.0,
+        0.1,
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "name": "completeness_grid",
+      "passed": true,
+      "detail": [
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ]
+    },
+    {
+      "name": "macro_retention_reproduced",
+      "passed": true,
+      "detail": 6.938893903907228e-17
+    },
+    {
+      "name": "measured_completeness_meets_target",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "components_hash",
+      "passed": true,
+      "detail": "3f09a6c9ae7c6740befe0a9f8845a14b1d22e1ae07fffce8da359d7c94a9fa7b"
+    },
+    {
+      "name": "operating_points_hash",
+      "passed": true,
+      "detail": "f911ad8ac6d180c63879610f536ca8172bad0e0fd54617fab25e0ba2e357590a"
+    },
+    {
+      "name": "threshold_not_frozen",
+      "passed": true,
+      "detail": "operating_points_only_no_threshold_frozen"
+    }
+  ]
+}

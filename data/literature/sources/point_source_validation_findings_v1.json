@@ -1,0 +1,32 @@
+{
+  "finding_version": "point_source_validation_findings_v1",
+  "date": "2026-07-18",
+  "evaluation_version": "point_source_logistic_validation_v1",
+  "retuning_status": "prohibited",
+  "findings": [
+    {
+      "canonical_object_id": "canonical_23bb02922b0952f895c8bb615682365a",
+      "published_name": "Dorado1",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "4778413281604949120",
+      "validation_probability": 0.000090,
+      "gaia_proper_motion_significance": 34.565582,
+      "literature_to_gaia_offset_arcsec": 0.769147,
+      "assessment": "published UCD or Gaia-counterpart conflict analogous to the pre-validation Dorado2 case",
+      "current_validation_treatment": "retain original frozen label and outcome; no retuning",
+      "future_treatment": "exclude this Gaia association from reliable training in any future model generation while preserving the published UCD classification"
+    },
+    {
+      "canonical_object_id": "canonical_f8f2e62a6b7d5200a4aa3b04b4ae8c8c",
+      "published_name": "M85-HCC1",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "3947017736061403776",
+      "validation_probability": 0.693918,
+      "gaia_proper_motion_significance": 0.751608,
+      "literature_to_gaia_offset_arcsec": null,
+      "assessment": "credible hard UCD with extended-source Gaia diagnostics",
+      "current_validation_treatment": "retain as a genuine false negative in completeness accounting",
+      "future_treatment": "retain as a reliable UCD"
+    }
+  ]
+}

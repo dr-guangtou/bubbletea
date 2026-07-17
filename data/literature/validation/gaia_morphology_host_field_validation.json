@@ -1,0 +1,177 @@
+{
+  "analysis_version": "gaia_morphology_host_field_v1",
+  "check_count": 25,
+  "passed_count": 25,
+  "failed_count": 0,
+  "counts": {
+    "host_count": 3,
+    "host_source_association_count": 814,
+    "unique_gaia_source_count": 814,
+    "radial_metric_row_count": 18
+  },
+  "checks": [
+    {
+      "name": "analysis_version",
+      "passed": true,
+      "detail": "gaia_morphology_host_field_v1"
+    },
+    {
+      "name": "exploratory_status",
+      "passed": true,
+      "detail": "exploratory_no_selector_or_radial_threshold_approved"
+    },
+    {
+      "name": "validation_partition_not_inspected",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "production_host_count",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "fixed_host_fixture",
+      "passed": true,
+      "detail": [
+        "NGC 1316",
+        "MESSIER 049",
+        "NGC 2974"
+      ]
+    },
+    {
+      "name": "host_catalog_digest",
+      "passed": true,
+      "detail": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce"
+    },
+    {
+      "name": "benchmark_manifest_digest",
+      "passed": true,
+      "detail": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b"
+    },
+    {
+      "name": "source_registry_digest",
+      "passed": true,
+      "detail": "e4b33f981f299c4d85277b430bbe13e9fe4115cee63f93a228a1e49b6324748b"
+    },
+    {
+      "name": "sources_digest",
+      "passed": true,
+      "detail": "220ea41a69392deaeaa5b4e3f46466cb403665cbf606cae3620378b442a9007d"
+    },
+    {
+      "name": "radial_metrics_digest",
+      "passed": true,
+      "detail": "24397322343cdb72e389b47c6a4840937169ebd43036521bb7fdede6294b1246"
+    },
+    {
+      "name": "unique_host_source_associations",
+      "passed": true,
+      "detail": 814
+    },
+    {
+      "name": "all_sources_have_morphology",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "all_sources_inside_aperture",
+      "passed": true,
+      "detail": 599.8945071616993
+    },
+    {
+      "name": "query_rows_represented",
+      "passed": true,
+      "detail": 814
+    },
+    {
+      "name": "manifest_association_count",
+      "passed": true,
+      "detail": 814
+    },
+    {
+      "name": "manifest_unique_source_count",
+      "passed": true,
+      "detail": 814
+    },
+    {
+      "name": "complete_radial_metric_grid",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "declared_radial_edges",
+      "passed": true,
+      "detail": [
+        [
+          0.0,
+          25.0
+        ],
+        [
+          25.0,
+          50.0
+        ],
+        [
+          50.0,
+          100.0
+        ],
+        [
+          100.0,
+          150.0
+        ],
+        [
+          150.0,
+          300.0
+        ],
+        [
+          300.0,
+          600.0
+        ]
+      ]
+    },
+    {
+      "name": "radial_counts_sum_to_associations",
+      "passed": true,
+      "detail": 814
+    },
+    {
+      "name": "phase3_model_c_70_30_selection_is_boolean",
+      "passed": true,
+      "detail": [
+        false,
+        true
+      ]
+    },
+    {
+      "name": "phase3_model_c_70_30_selected_rows_are_applicable",
+      "passed": true,
+      "detail": 714
+    },
+    {
+      "name": "phase4_model_c_60_30_10_selection_is_boolean",
+      "passed": true,
+      "detail": [
+        false,
+        true
+      ]
+    },
+    {
+      "name": "phase4_model_c_60_30_10_selected_rows_are_applicable",
+      "passed": true,
+      "detail": 714
+    },
+    {
+      "name": "projected_geometry_recomputed",
+      "passed": true,
+      "detail": 8.924416761146858e-12
+    },
+    {
+      "name": "figure_caption_pair",
+      "passed": true,
+      "detail": {
+        "figure": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/gaia_morphology_host_field_stress.png",
+        "caption": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/gaia_morphology_host_field_stress.md"
+      }
+    }
+  ]
+}

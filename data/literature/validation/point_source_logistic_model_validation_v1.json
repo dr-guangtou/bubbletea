@@ -1,0 +1,17 @@
+{
+  "model_version": "point_source_logistic_model_v1",
+  "check_count": 8,
+  "passed_count": 8,
+  "failed_count": 0,
+  "maximum_probability_difference": 1.1102230246251565e-16,
+  "checks": {
+    "model_digest": true,
+    "prediction_digest": true,
+    "row_identity_parity": true,
+    "exact_prediction_parity": true,
+    "threshold_parity": true,
+    "no_validation_gaia_identifier_in_fit": true,
+    "feature_contract": true,
+    "validation_partition_not_inspected": true
+  }
+}

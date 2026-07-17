@@ -1,0 +1,161 @@
+{
+  "stability_version": "point_source_ml_stability_v2",
+  "validation_partition_inspected": false,
+  "repeat_count": 10,
+  "repeat_seeds": [
+    20260717,
+    20261726,
+    20262735,
+    20263744,
+    20264753,
+    20265762,
+    20266771,
+    20267780,
+    20268789,
+    20269798
+  ],
+  "outer_folds": 5,
+  "inner_folds": 4,
+  "target_ucd_recall": 0.9,
+  "model_family": "logistic_regression",
+  "model_features": [
+    "log1p_astrometric_excess_noise",
+    "log1p_astrometric_excess_noise_sig",
+    "phot_bp_rp_excess_factor",
+    "bp_rp",
+    "log_ruwe",
+    "log1p_ipd_frac_multi_peak",
+    "log1p_ipd_frac_odd_win",
+    "log1p_absolute_parallax_zero_significance",
+    "log1p_proper_motion_zero_significance"
+  ],
+  "fit_row_count": 2128,
+  "repeat_metrics": [
+    {
+      "repeat_index": 1,
+      "repeat_seed": 20260717,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.043172134914070404,
+      "spectroscopic_star_retention": 0.06888888888888889,
+      "gaia_non_single_star_retention": 0.0035555555555555557,
+      "spectroscopic_qso_retention": 0.05707196029776675
+    },
+    {
+      "repeat_index": 2,
+      "repeat_seed": 20261726,
+      "ucd_recall": 0.96,
+      "macro_priority_retention": 0.042641301350978766,
+      "spectroscopic_star_retention": 0.06888888888888889,
+      "gaia_non_single_star_retention": 0.0044444444444444444,
+      "spectroscopic_qso_retention": 0.05459057071960298
+    },
+    {
+      "repeat_index": 3,
+      "repeat_seed": 20262735,
+      "ucd_recall": 0.9466666666666667,
+      "macro_priority_retention": 0.04391287565481114,
+      "spectroscopic_star_retention": 0.07111111111111111,
+      "gaia_non_single_star_retention": 0.0035555555555555557,
+      "spectroscopic_qso_retention": 0.05707196029776675
+    },
+    {
+      "repeat_index": 4,
+      "repeat_seed": 20263744,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.03903648561713078,
+      "spectroscopic_star_retention": 0.06888888888888889,
+      "gaia_non_single_star_retention": 0.0035555555555555557,
+      "spectroscopic_qso_retention": 0.04466501240694789
+    },
+    {
+      "repeat_index": 5,
+      "repeat_seed": 20264753,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.04048083815825751,
+      "spectroscopic_star_retention": 0.06666666666666667,
+      "gaia_non_single_star_retention": 0.0026666666666666666,
+      "spectroscopic_qso_retention": 0.052109181141439205
+    },
+    {
+      "repeat_index": 6,
+      "repeat_seed": 20265762,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.04190056061023803,
+      "spectroscopic_star_retention": 0.06666666666666667,
+      "gaia_non_single_star_retention": 0.0044444444444444444,
+      "spectroscopic_qso_retention": 0.05459057071960298
+    },
+    {
+      "repeat_index": 7,
+      "repeat_seed": 20266771,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.03770315228379745,
+      "spectroscopic_star_retention": 0.06666666666666667,
+      "gaia_non_single_star_retention": 0.0017777777777777779,
+      "spectroscopic_qso_retention": 0.04466501240694789
+    },
+    {
+      "repeat_index": 8,
+      "repeat_seed": 20267780,
+      "ucd_recall": 0.9533333333333334,
+      "macro_priority_retention": 0.04302398676592225,
+      "spectroscopic_star_retention": 0.06666666666666667,
+      "gaia_non_single_star_retention": 0.005333333333333333,
+      "spectroscopic_qso_retention": 0.05707196029776675
+    },
+    {
+      "repeat_index": 9,
+      "repeat_seed": 20268789,
+      "ucd_recall": 0.96,
+      "macro_priority_retention": 0.04024630089146219,
+      "spectroscopic_star_retention": 0.06666666666666667,
+      "gaia_non_single_star_retention": 0.0044444444444444444,
+      "spectroscopic_qso_retention": 0.04962779156327544
+    },
+    {
+      "repeat_index": 10,
+      "repeat_seed": 20269798,
+      "ucd_recall": 0.96,
+      "macro_priority_retention": 0.043172134914070404,
+      "spectroscopic_star_retention": 0.06888888888888889,
+      "gaia_non_single_star_retention": 0.0035555555555555557,
+      "spectroscopic_qso_retention": 0.05707196029776675
+    }
+  ],
+  "ucd_recall_across_repeats": {
+    "minimum": 0.9466666666666667,
+    "median": 0.9533333333333334,
+    "maximum": 0.96
+  },
+  "macro_priority_retention_across_repeats": {
+    "minimum": 0.03770315228379745,
+    "median": 0.0422709309806084,
+    "maximum": 0.04391287565481114
+  },
+  "persistent_failure_counts": {
+    "confirmed_ucd": 7,
+    "spectroscopic_star": 30,
+    "gaia_non_single_star": 4,
+    "spectroscopic_qso": 21
+  },
+  "coefficient_measurement_feature_minimum_sign_agreement": 1.0,
+  "readiness_criteria": {
+    "median_ucd_recall_at_least_0p90": true,
+    "minimum_repeat_ucd_recall_at_least_0p85": true,
+    "all_measurement_coefficient_sign_agreement_at_least_0p80": true
+  },
+  "ready_for_selector_freeze_review": true,
+  "inputs": {
+    "development_sha256": "4423dc9cfd6416a074610145c648f48d6e4e29863d21a8616efd5f5b86550194",
+    "stars_sha256": "bb1cc361cac8009f5522ae82e42227f9bcf8122db4d2c8152298797e390e0412"
+  },
+  "artifacts": {
+    "predictions_sha256": "74e2a52501902be6b5d31c7efc8a2fbf006b5d37f8634b14722fb2b474b3515c",
+    "source_summary_sha256": "f3c21117745234decc2e5f9deaf4e5916ce5fce9e68c4dd1c19ff67ee46788b5",
+    "fold_metrics_sha256": "6697826dd9fb542ab3532de57ca821bb52ae15e7304257c195664ac516b3b527",
+    "coefficients_sha256": "728ec3872fe4da9e17ae502e8960ce05e43b0eaf88f4b7b78393ee9e317c022b",
+    "coefficient_summary_sha256": "ee2482d481a7c0edaff4744d32eb411794594be4ad8533741508ce3ba9b42fed",
+    "strata_sha256": "2e1418d30eebac61e93842dde171dec7e38e32fb190ec06d40cb5e8b7dffcb81"
+  },
+  "decision_status": "ready_for_model_threshold_review_validation_still_sealed"
+}
