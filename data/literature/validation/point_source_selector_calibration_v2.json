@@ -1,0 +1,78 @@
+{
+  "calibration_version": "point_source_selector_calibration_v2",
+  "validation_partition_inspected": false,
+  "priority_cohorts": [
+    "spectroscopic_star",
+    "gaia_non_single_star",
+    "spectroscopic_qso"
+  ],
+  "priority_objective": "equal_cohort_mean_retention",
+  "galaxy_role": "secondary_stress_not_primary_optimization",
+  "hii_role": "separate_color_safeguard",
+  "null_policy": {
+    "missing_flux_excess": "score_from_available_aen_core_term",
+    "missing_five_parameter_astrometry": "neutral_no_astrometric_penalty"
+  },
+  "grid": {
+    "aen_core_weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "astrometric_penalty_weights": [
+      0.0,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "target_ucd_completeness": [
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ]
+  },
+  "color_safeguard_grid": [
+    {
+      "target_ucd_completeness": 0.8,
+      "bp_rp_minimum": 0.9544029235839844,
+      "measured_ucd_completeness": 0.8,
+      "hii_retention_fraction": 0.16535433070866143
+    },
+    {
+      "target_ucd_completeness": 0.85,
+      "bp_rp_minimum": 0.9280376434326172,
+      "measured_ucd_completeness": 0.8533333333333334,
+      "hii_retention_fraction": 0.1889763779527559
+    },
+    {
+      "target_ucd_completeness": 0.9,
+      "bp_rp_minimum": 0.8632316589355469,
+      "measured_ucd_completeness": 0.9,
+      "hii_retention_fraction": 0.1968503937007874
+    },
+    {
+      "target_ucd_completeness": 0.95,
+      "bp_rp_minimum": 0.8083381652832031,
+      "measured_ucd_completeness": 0.9533333333333334,
+      "hii_retention_fraction": 0.2283464566929134
+    }
+  ],
+  "counts": {
+    "candidate_ucd": 593,
+    "confirmed_ucd": 150,
+    "gaia_non_single_star": 1125,
+    "hii_region": 127,
+    "reported_non_ucd": 83,
+    "spectroscopic_galaxy": 638,
+    "spectroscopic_qso": 403,
+    "spectroscopic_star": 450
+  },
+  "inputs": {
+    "development_sha256": "4423dc9cfd6416a074610145c648f48d6e4e29863d21a8616efd5f5b86550194",
+    "stars_sha256": "bb1cc361cac8009f5522ae82e42227f9bcf8122db4d2c8152298797e390e0412"
+  },
+  "components_sha256": "3f09a6c9ae7c6740befe0a9f8845a14b1d22e1ae07fffce8da359d7c94a9fa7b",
+  "operating_points_sha256": "f911ad8ac6d180c63879610f536ca8172bad0e0fd54617fab25e0ba2e357590a",
+  "decision_status": "operating_points_only_no_threshold_frozen"
+}

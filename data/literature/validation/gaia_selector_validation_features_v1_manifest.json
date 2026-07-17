@@ -1,0 +1,61 @@
+{
+  "feature_version": "gaia_selector_validation_features_v1",
+  "generated_utc": "2026-07-17T18:03:45.231823+00:00",
+  "gaia_release": "Gaia DR3",
+  "endpoint": "https://datalab.noirlab.edu/tap",
+  "partition": "validation",
+  "authorization": "data/literature/sources/point_source_validation_authorization_v1.json",
+  "authorization_sha256": "6d84bdf5d4b7ab3a116f220c0ce79414c5ad23e7b36388876f6de27123c55744",
+  "inputs": {
+    "benchmark": "data/literature/benchmarks/gaia_validation_benchmark_v3.csv",
+    "benchmark_sha256": "2df20367fd1f13375ec588e9eaabef4752ae85e702f9cfb14d3dbb47a8f1de7e",
+    "benchmark_manifest": "data/literature/benchmarks/gaia_validation_benchmark_v3_manifest.json",
+    "benchmark_manifest_sha256": "ca710029f052cc68a01fb9acfeee7bfac31fad8b9be5978172f9a5778d88dade"
+  },
+  "additional_gaia_columns": [
+    "pmra_pmdec_corr",
+    "phot_g_mean_flux_over_error",
+    "phot_bp_mean_flux_over_error",
+    "phot_rp_mean_flux_over_error",
+    "phot_bp_rp_excess_factor",
+    "classprob_dsc_combmod_quasar",
+    "classprob_dsc_combmod_galaxy",
+    "classprob_dsc_combmod_star",
+    "in_qso_candidates",
+    "in_galaxy_candidates",
+    "non_single_star"
+  ],
+  "query_batches": [
+    {
+      "batch_number": 1,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 2.391528124921024,
+      "query_sha256": "34c5766f47e66a22acfff3d7d5478429115a1940cdcd391157c2f11912470f84",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 2,
+      "requested_identifier_count": 250,
+      "returned_row_count": 250,
+      "elapsed_seconds": 1.6730785409454256,
+      "query_sha256": "998b3640c749168b5b7c04af8a8d25e351f20641cfd23864c6807a9d650e1b2d",
+      "maximum_query_attempts": 3
+    },
+    {
+      "batch_number": 3,
+      "requested_identifier_count": 221,
+      "returned_row_count": 221,
+      "elapsed_seconds": 1.529129333095625,
+      "query_sha256": "b9bf4bbf44fff17479591132bdb17b7846a0b3a53b4ce9566874a140f0b00366",
+      "maximum_query_attempts": 3
+    }
+  ],
+  "counts": {
+    "requested_validation_rows": 721,
+    "output_rows": 721,
+    "unique_output_gaia_sources": 721
+  },
+  "output": "data/literature/validation/gaia_selector_validation_features_v1.csv",
+  "output_sha256": "622bedc97425f25d4229df0642a0ab013169499b957a20170f353eeccc83720d"
+}

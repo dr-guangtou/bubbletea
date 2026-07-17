@@ -185,6 +185,71 @@ Reference labels, provenance, magnitude coverage, sky dependence, and label
 uncertainty must be retained. Confirmed and candidate UCDs must not be treated as
 equally certain training labels without testing the effect of that assumption.
 
+The permanent source-by-source definitions, selection rules, bias limitations,
+and required safeguards are maintained in `docs/contaminant_benchmark.md`. That
+document is normative for interpreting benchmark contaminant labels.
+
+Large extragalactic supplements have three distinct roles: relatively independent
+spectroscopic calibration, Gaia-derived failure-mode stress testing, and spatial
+density or null testing. Their approved catalog choices, exact counts, provenance,
+and circularity constraints are maintained in
+`docs/extragalactic_contaminant_catalogs.md`. They must not mutate
+`benchmark_v1` or be pooled according to raw catalog size.
+
+The ordinary-stellar development supplement is the matched SDSS DR16 spectroscopic
+stellar reference defined in `docs/spectroscopic_stellar_reference.md`. It is
+disjoint from `benchmark_v1`, uses no selector feature for retrieval or matching,
+and must not be called a physically single-star sample. Its 525 sources are matched
+3:1 to the 175 confirmed development UCDs in G magnitude, absolute Galactic
+latitude, and absolute ecliptic latitude. It may calibrate stellar failure behavior
+but may not change the sealed validation partition or be pooled with Gaia NSS.
+
+The first bounded Gaia-morphology host-field diagnostic uses a predefined
+three-galaxy test sample and cannot
+set a selector threshold. It selects the first three ranked current host-catalog
+rows satisfying `|b| >= 30 degrees`, `15 <= distance_mpc <= 25`, and an angular
+radius for 600 kpc no larger than 2.1 degrees. It retrieves every source with a
+published Gaia DR3 Sersic fit out to 600 kpc, without selector prefilters, and
+retains physical annuli `[0, 25, 50, 100, 150, 300, 600]` kpc. The 300--600 kpc
+annulus is a local comparison region, not an uncontaminated background. Both
+inherited selector definitions are evaluated after retrieval solely as historical
+failure-rate baselines. The test may expose galaxy contamination behavior but may
+not tune annuli, choose hosts, define priors, inspect validation identifiers, or
+authorize a selector.
+
+The fixed diagnostic returned 814 host-source associations. The two inherited
+selectors made identical decisions and retained 714 morphology candidates (87.7%).
+Only 11.9% had RUWE and covariance-aware proper-motion significance. The combined
+inner density did not exceed the local 300--600 kpc comparison density, so this
+test supports a candidate-selection failure-mode claim but not a host-clustering
+claim. In this context, “selected” means retained as a possible UCD candidate despite
+membership in the Gaia DR3 galaxy-candidate Sersic-fit subset. It is not a pure
+false-positive label because candidate membership is not astrophysical confirmation.
+
+The expanded comparison freezes 12 hosts across three K-band luminosity and two
+absolute Galactic-latitude strata plus one geometrically matched control per host.
+Environment is not a stratum because the inherited `is_cluster` field is an
+undocumented sky-circle proxy. The 24 fields contain 9,144 morphology candidates.
+Host fields have a higher combined density, but only 8 of 12 paired differences are
+positive and the two-sided sign-test p-value is 0.3877; no host-clustering claim is
+approved. The legacy 70/30 and 60/30/10 rules falsely retain 85.5% and 85.4% of host-
+field candidates and about 88.1% of control-field candidates. This high retained
+fraction, not clustering, is the selector-calibration result. The morphology subset
+must not define the UCD parent sample because unresolved UCDs may lack Sersic fits;
+its parameters may be used only as supplementary evidence under a separately frozen
+policy.
+
+An exact-ID cross-match restricted to the blind-safe development partition found no
+Sersic-catalog membership among 175 high-confidence confirmed UCDs, one membership
+among 569 uncertain UCD candidates, and none among 127 H II regions. The 24 confirmed
+validation UCDs remain uninspected until selector and morphology-use freezing. These
+results are defined in `docs/gaia_morphology_ucd_crossmatch.md`.
+
+The permanent definitions, units, derivations, official Gaia references, and
+interpretation safeguards for selector inputs are maintained in
+`docs/gaia_selector_features.md`. That document is normative for feature names
+and scientific interpretation.
+
 The versioned Gaia-only calibration benchmark is a derived validation product,
 not a new classification layer in the literature database. Its first version
 uses the complete observed Gaia-magnitude span of the literature cohort as its
@@ -239,6 +304,237 @@ development and 721 validation rows. Primary analyses may use the 3,216
 primary-eligible rows; all 3,857 rows remain available to declared sensitivity
 analyses. The machine-readable validation report must pass before selector work
 uses this benchmark.
+
+Selector calibration begins on the `benchmark_partition_v1` development rows
+only. The validation source identifiers, labels, and feature distributions remain
+unexamined until one selector implementation, its null behavior, and its decision
+thresholds are frozen. A development enrichment may retrieve additional Gaia DR3
+columns by exact source identifier, but it must select development identifiers
+before querying and prove that no validation identifier appears in its output.
+
+The first development analysis compares Gaia-native extendedness, image-fit,
+astrometric, photometric, and classification features. It includes astrometric
+excess noise and significance, RUWE, IPD multi-peak and odd-window percentages,
+Gaia colors, BP/RP flux excess, parallax and proper-motion zero-significance,
+flux signal-to-noise, and Gaia DSC probabilities. The proper-motion statistic is
+the covariance-aware two-dimensional distance from zero using Gaia
+`pmra_pmdec_corr`; the earlier diagonal approximation is superseded. The
+inherited Phase III 70/30 score
+and Phase IV 60/30/10 score are historical baselines, not approved selector
+definitions.
+
+Primary discrimination metrics compare high-confidence confirmed UCDs against
+primary-eligible contaminants. Declared sensitivity analyses add uncertain UCD
+candidates as positives and remove the PHANGS-MUSE or all H II cohorts from the
+negative class. Reported role conflicts and the unresolved shared-Gaia row remain
+excluded from primary calibration. This exploratory pass may identify useful
+features and failure modes, but it does not authorize a selector threshold.
+
+The project lead approved a tiered selector direction on 2026-07-17 with an
+explicit contaminant priority. The primary calibration objective is rejection of
+point-source contaminants: ordinary spectroscopic stars, Gaia NSS/binary failure
+modes, and spectroscopic QSOs. These three cohorts receive equal cohort weight so
+their unequal row counts do not define the objective. Galaxy candidates are a
+secondary stress set because ancillary optical imaging and photometric catalogs can
+reject extended extragalactic sources in a later pass, and most unrelated galaxies
+should not cluster around nearby hosts. H II regions and compact young clusters are
+the host-correlated exception and retain separate color/morphology safeguards.
+
+The approved architecture has a complete-coverage extendedness/color ranking plus
+conditional parallax and proper-motion evidence when five-parameter astrometry is
+available. Missing astrometry is neutral rather than a rejection. DSC, NSS, and
+Sersic membership may be retained as flags or supplementary evidence but cannot be
+hard parent-sample cuts. Development calibration must show cohort-specific
+completeness and retention before one score, null policy, and threshold are frozen.
+
+The first development-only measurement contains 3,136 unique Gaia sources and
+passes 19 artifact and partition checks. Under the primary labels, proper-motion
+and absolute-parallax zero-significance have direction-adjusted univariate AUC
+values of 0.850 and 0.847, but both exist for only 46.9% of confirmed UCDs; they
+cannot be hard completeness requirements. Astrometric excess noise is the strongest
+fully observed continuous feature (AUC 0.737). BP/RP flux excess reaches 0.677,
+while excess-noise significance and raw BP-RP color alone are near 0.553 and
+0.522 against the mixed contaminant population. The `non_single_star` flag is
+tautological for the benchmark cohort selected from Gaia NSS tables and must not
+be interpreted as independent validation evidence.
+
+Label uncertainty changes the feature ordering. When uncertain UCD candidates are
+included as positive sensitivity rows, IPD multi-peak percentage reaches AUC 0.742
+and RUWE reaches 0.704, while proper-motion zero-significance falls to 0.765.
+This is consistent with the candidate cohort containing more high-motion or poor-fit
+sources and prevents candidate labels from defining the primary score. The two
+inherited Model C definitions retain only 66.3% and 64.0% of confirmed UCDs while
+selecting 20.7% and 20.2% of primary contaminants. Both select about 55% of SDSS
+galaxies and roughly half of the H II cohorts, so neither is acceptable as the
+frozen selector. These are development findings only; the validation partition
+remains sealed.
+
+The approved classical-classification experiment compares regularized logistic
+regression, shallow histogram gradient boosting, and the hand rank score using
+development-only nested grouped cross-validation. Each matched spectroscopic star
+inherits its matched UCD's spatial group; preprocessing, empirical references,
+model fitting, hyperparameter selection, and the 90% recall threshold occur inside
+training folds. The three priority negative cohorts retain equal total weight.
+Measured BP-RP is permitted as a soft feature, while NSS membership, DSC class
+probabilities, candidate-catalog membership, and Sersic parameters are prohibited
+as primary model inputs. Galaxies and H II regions remain fit-excluded stress sets.
+
+The first five-outer/four-inner-fold comparison finds 93.7% pooled confirmed-UCD
+recall and 4.02% equal-cohort priority retention for logistic regression, compared
+with 89.1% and 3.86% for the hand score. Shallow boosting reaches 88.6% and 3.55%.
+The logistic outer-fold recall spans 81.8--100%, so no model or threshold is frozen.
+Repeated grouped stability checks and performance stratification must be reviewed
+before selecting one implementation for the single withheld-validation test.
+
+The logistic-regression stability gate uses ten deterministic repeats with seeds
+`20260717 + 1009 * repeat_index`, five outer grouped folds, and four inner grouped
+folds. It preserves the first comparison's feature set, equal cohort weights,
+hyperparameter grid, target recall, and matched-star/UCD group coupling. Every
+development fit row receives one outer-fold prediction per repeat. The analysis
+records repeat and fold metrics, standardized fold-local coefficients including
+imputation indicators, and source-level selection frequency. A confirmed UCD
+selected in at most half of repeats or a priority contaminant selected in at least
+half is reported as a persistent failure case, without removing or relabeling it.
+
+Performance stratification uses fixed, predeclared bins rather than bins chosen
+from results: Gaia G magnitude `(-inf, 18]`, `(18, 19]`, `(19, 20]`, and
+`(20, inf)` mag; absolute Galactic latitude `[0, 30)`, `[30, 60)`, and
+`[60, 90]` degrees; and absolute ecliptic latitude with the same angular bins.
+Every stratum reports its source and repeated-prediction counts; sparse strata are
+descriptive and cannot set a threshold. Readiness for selector-freeze review
+requires the median repeated pooled UCD recall to meet 90%, no repeat below 85%,
+and at least 80% coefficient-sign agreement for each nonzero median measurement
+feature. These development criteria do not authorize validation unsealing.
+
+The ten-repeat measurement passes all three criteria. Confirmed-UCD recall ranges
+from 93.1% to 95.4% across complete repeats, with a 93.7% median; equal-cohort
+priority retention ranges from 3.75% to 4.42%, with a 3.96% median. All 50 outer
+fits select `C = 3.0`, and every measurement-feature coefficient has 100% sign
+agreement. Because `C = 3.0` is the least-regularized boundary of the tested grid,
+a bounded higher-C sensitivity must enclose or characterize the optimum before the
+regularization strength is frozen. Eleven confirmed UCDs are persistently missed,
+including spatially grouped and strongly star-like Gaia associations. Fixed-stratum
+UCD recall is lower
+in the `G <= 18`, `19 < G <= 20`, mid-Galactic-latitude, and mid-ecliptic-latitude
+bins; the highest ecliptic bin contains only one UCD and cannot support a population
+claim. The model is ready for selector-freeze review only. Failure-case provenance,
+the applicability domain, the regularization-boundary sensitivity, and the full-
+development threshold-calibration procedure must be approved before a versioned
+model is fitted and validation is unsealed.
+
+A source-level audit triggered by the stability failures suspends that readiness.
+The bright M31 entry B409 is associated with Gaia DR3 `375037265841433344`, whose
+parallax is measured at 77.9 sigma and whose total proper motion is 6.127 mas/yr.
+Fahrion table B1 gives B409 `RV = 0.0` and `reff = 0.0`. The approved confirmation
+review incorrectly stated that every coordinate-bearing Fahrion compilation row
+supplies a radial velocity: 68/377 rows use `RV = 0.0`, and 30 of those objects are
+in the current confirmed development benchmark. These rows require non-destructive
+re-audit for independent spectroscopic or structural evidence and Gaia association
+validity. No selector may be frozen and validation may not be unsealed until the
+benchmark is rederived under a corrected zero-RV policy.
+
+The approved correction treats `RV = 0.0` as unavailable evidence, not a velocity
+measurement. All 377 Fahrion rows and their raw provenance remain unchanged: 309
+nonzero-velocity rows receive positive membership evidence and all 68 zero-velocity
+rows receive explicit non-promotion reviews. Independent evidence keeps 8 of the 68
+canonical objects confirmed; 59 are candidates. B409 alone is rejected as an
+incorrectly classified UCD through approved negative foreground-astrometry evidence,
+while its original reported classification remains preserved. The resulting database
+contains 680 confirmed, 1,574 candidate, 2,083 rejected, and 22 uncertain canonical
+objects. Benchmark v1 and its selector products are immutable historical artifacts;
+benchmark v2 preserves every row, Gaia measurement, spatial group, and partition but
+updates 26 Gaia-linked literature labels (25 confirmed to candidate and B409 to
+rejected). Development-only cached Gaia features are carried forward without a new
+query. All selector metrics derived from benchmark v1 are scientifically superseded
+and must be recomputed before selector-freeze review resumes.
+
+The benchmark-v2 development rebuild uses 150 confirmed UCDs and 450 newly rematched
+spectroscopic-star controls. Across the same ten grouped nested-CV repeats, logistic
+recall is 94.67--96.00% with a 95.33% median, and equal-cohort priority retention is
+3.77--4.39% with a 4.23% median. All 50 fits again select boundary value `C = 3.0`,
+and every measurement-feature coefficient retains 100% sign agreement. Seven
+confirmed UCDs are persistently missed. These v2 results pass the declared stability
+gate but do not approve a model or threshold: the seven failures and the higher-C
+sensitivity remain development-only prerequisites to selector freezing.
+
+Published-UCD reliability and Gaia-counterpart reliability are separate states.
+The approved `ucd_reliability_reviews.json` register records B409 as a rejected
+published classification and records NGC 1400_1, NGC1400_2, Dorado2, and Saifollahi
+A1 row 32 as unresolved published-UCD/Gaia-counterpart conflicts. The latter four
+retain their spectroscopic UCD classifications but are excluded from the reliable
+training sample because their Gaia counterparts have 9.91--44.87-sigma proper
+motion. Benchmark v3 preserves every row, feature, and partition, changes no
+published classification, and sets only these four associations ineligible. Its
+development sample has 146 reliable UCDs and 438 rematched stars. Ten-repeat recall
+is 93.84--96.58% with a 94.18% median; macro priority retention is 3.61--4.00% with
+a 3.78% median. Nine reliable UCDs remain persistent failures.
+
+Regularization sensitivity extends the logistic grid from `C <= 3` first to
+`C <= 100` and then to `C <= 3000`. Four of five outer folds select the upper
+boundary in both extensions; the remaining fold selects 30 and 100, respectively.
+Thus `C = 3` is too restrictive under the current inner objective, but no finite
+optimum is enclosed. The project must compare explicit weakly regularized and
+unregularized fits for coefficient and prediction convergence rather than continue
+arbitrary geometric grid expansion. No regularization value is frozen.
+
+The explicit convergence comparison measures `C = 100, 300, 1000, 3000` and an
+unregularized fit on identical grouped development folds. At 90.41% measured UCD
+recall, macro priority retention is 2.25%, 1.91%, 1.88%, 2.03%, and 2.03%,
+respectively. `C = 3000` and the unregularized model have identical aggregate
+operating-point decisions; `C = 1000` is slightly better on the fixed split and
+retains finite regularization. It is therefore the candidate for repeated stability,
+with 3000 and unregularized fits retained as convergence comparators. No value is
+yet frozen.
+
+Across ten paired grouped repeats, `C = 1000`, `C = 3000`, and unregularized fits
+all retain exactly 90.41% of reliable UCDs. Median macro priority retention is
+1.96%, 2.11%, and 2.11%, respectively. `C = 1000` wins seven paired repeats and
+has a maximum fold coefficient norm of 5.35, versus 7.01 and 12.94. The recommended
+finite regularization policy is therefore `C = 1000`; it remains pending explicit
+project-lead freeze approval.
+
+The project lead approved and froze `C = 1000` on 2026-07-18 under
+`point_source_logistic_policy_v1`. The model family, L2 regularization, nine-feature
+contract, fold-local imputation and scaling, benchmark-v3 reliable-training policy,
+and equal priority-cohort weighting are recorded in the machine-readable policy.
+This approval freezes regularization only. The probability threshold is not frozen,
+no final full-development model is authorized yet, and validation remains sealed.
+
+The frozen-`C = 1000` repeated source audit identifies ten persistent reliable-UCD
+misses. Five are multiply published faint Virgo UCDs with two-parameter Gaia
+solutions and 7.12--10.06 mas excess noise; three are spectroscopic Saifollahi A1
+systems with published sizes; one is a Gregg spectroscopic object; and one is a
+Voggel NGC 5128 object whose significant Gaia motion is paired with a 0.019-arcsec
+match and extended-source quality anomalies. None is excluded. These objects remain
+in completeness accounting to avoid biasing the reliable sample toward easy,
+point-like Gaia sources.
+
+The project lead approved and froze the operating threshold on 2026-07-18. The
+calibration rule takes the median of ten grouped out-of-fold thresholds, where each
+repeat threshold is the lowest reliable-UCD score retaining at least 90%. The
+repeat thresholds span 0.8149084969--0.8419524172 and give the frozen value
+0.8277833629. Applied to the full development fit, this threshold has apparent
+92.47% reliable-UCD recall and 1.65% macro priority-contaminant retention. These
+full-fit values are descriptive, not validation performance. Validation remains
+sealed until the final model artifact and parity checks are complete.
+
+`point_source_logistic_model_v1` is the final fitted development artifact. It uses
+146 reliable UCDs and 1,966 priority contaminants, serializes the complete imputation,
+scaling, and logistic pipeline, and exposes all fitted parameters in a transparent
+JSON manifest. Reloaded probabilities agree with stored development probabilities
+to `1.11e-16`; all eight provenance, parity, feature-contract, and blind-safety
+checks pass. Apparent full-development recall is 92.47% and macro priority retention
+is 1.65%, neither of which is validation performance. Model fitting and verification
+do not unseal validation.
+
+The authorized one-time frozen validation evaluation is complete. On 721 independent
+rows, the model retains 21/23 reliable UCDs (91.30%), 0/287 Gaia NSS objects, and
+1/88 spectroscopic QSOs; macro retention across the available priority cohorts is
+0.57%. It retains 87.43% of spectroscopic galaxies and 52.63% of compact H II
+regions, confirming that these remain second-round imaging and photometric problems.
+No retuning is authorized. Dorado1 is recorded post hoc as a 34.57-sigma-motion,
+0.769-arcsec UCD/Gaia conflict, but its frozen validation label and outcome remain
+unchanged. M85-HCC1 remains a genuine hard-UCD false negative.
 
 ## Host-Galaxy Properties
 

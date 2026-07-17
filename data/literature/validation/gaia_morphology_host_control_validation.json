@@ -1,0 +1,188 @@
+{
+  "analysis_version": "gaia_morphology_host_control_v1",
+  "check_count": 26,
+  "passed_count": 26,
+  "failed_count": 0,
+  "counts": {
+    "field_count": 24,
+    "host_field_count": 12,
+    "control_field_count": 12,
+    "field_source_association_count": 9144,
+    "unique_gaia_source_count": 9144,
+    "radial_metric_row_count": 144
+  },
+  "checks": [
+    {
+      "name": "analysis_version",
+      "passed": true,
+      "detail": "gaia_morphology_host_control_v1"
+    },
+    {
+      "name": "exploratory_status",
+      "passed": true,
+      "detail": "exploratory_no_selector_or_environment_claim_approved"
+    },
+    {
+      "name": "validation_partition_not_inspected",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "frozen_design_used",
+      "passed": true,
+      "detail": "frozen_before_gaia_outcome_queries"
+    },
+    {
+      "name": "design_digest",
+      "passed": true,
+      "detail": "60e0ecf9a7499e98e3fd2261484ecac51a36752c545c2da4d01e73f45ba2091b"
+    },
+    {
+      "name": "design_manifest_digest",
+      "passed": true,
+      "detail": "2eec6426728466694ab970dbe0779d7eb78108b515f8ea786290612c8dcf8f3d"
+    },
+    {
+      "name": "benchmark_manifest_digest",
+      "passed": true,
+      "detail": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b"
+    },
+    {
+      "name": "sources_digest",
+      "passed": true,
+      "detail": "132952f0874454dde66842d3def8a4b033e04df7e0d6d3df54bb0bd0cfa436dc"
+    },
+    {
+      "name": "radial_metrics_digest",
+      "passed": true,
+      "detail": "34b7517136a9139265364a0b1e59deb10c1b0dd5b40ad19354e7de02c047207f"
+    },
+    {
+      "name": "field_summary_digest",
+      "passed": true,
+      "detail": "81a1d5c7278885a3ee1758d18d9e8e374fa17e99f63684147119a0a16ebb2d51"
+    },
+    {
+      "name": "comparison_digest",
+      "passed": true,
+      "detail": "65463f3c03fc23969467c4799103e825d71d2386f463fb00787501d27b6f7498"
+    },
+    {
+      "name": "twenty_four_fields",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "name": "twelve_pairs",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "complete_field_summary",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "name": "complete_radial_grid",
+      "passed": true,
+      "detail": 144
+    },
+    {
+      "name": "unique_field_source_associations",
+      "passed": true,
+      "detail": 9144
+    },
+    {
+      "name": "all_query_rows_represented",
+      "passed": true,
+      "detail": 9144
+    },
+    {
+      "name": "source_field_set",
+      "passed": true,
+      "detail": [
+        "host_control_pair_01_control",
+        "host_control_pair_01_host",
+        "host_control_pair_02_control",
+        "host_control_pair_02_host",
+        "host_control_pair_03_control",
+        "host_control_pair_03_host",
+        "host_control_pair_04_control",
+        "host_control_pair_04_host",
+        "host_control_pair_05_control",
+        "host_control_pair_05_host",
+        "host_control_pair_06_control",
+        "host_control_pair_06_host",
+        "host_control_pair_07_control",
+        "host_control_pair_07_host",
+        "host_control_pair_08_control",
+        "host_control_pair_08_host",
+        "host_control_pair_09_control",
+        "host_control_pair_09_host",
+        "host_control_pair_10_control",
+        "host_control_pair_10_host",
+        "host_control_pair_11_control",
+        "host_control_pair_11_host",
+        "host_control_pair_12_host"
+      ]
+    },
+    {
+      "name": "manifest_counts",
+      "passed": true,
+      "detail": {
+        "field_count": 24,
+        "host_field_count": 12,
+        "control_field_count": 12,
+        "field_source_association_count": 9144,
+        "unique_gaia_source_count": 9144,
+        "radial_metric_row_count": 144
+      }
+    },
+    {
+      "name": "all_sources_have_morphology",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "all_sources_inside_equivalent_aperture",
+      "passed": true,
+      "detail": 599.9970898860096
+    },
+    {
+      "name": "field_counts_sum",
+      "passed": true,
+      "detail": 9144
+    },
+    {
+      "name": "comparison_pair_count",
+      "passed": true,
+      "detail": {
+        "pair_count": 12,
+        "host_density_higher_pair_count": 8,
+        "median_host_minus_control_density_per_deg2": 8.22170603086142,
+        "mean_host_minus_control_density_per_deg2": 11.728998026302142,
+        "two_sided_sign_test_p_value": 0.3876953125,
+        "wilcoxon_signed_rank_statistic": 19.0,
+        "wilcoxon_signed_rank_two_sided_p_value": 0.12939453125
+      }
+    },
+    {
+      "name": "legacy_disagreement_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "no_clustering_claim",
+      "passed": true,
+      "detail": "exploratory_field_variation_large_no_host_clustering_detection_claim"
+    },
+    {
+      "name": "figure_caption_pair",
+      "passed": true,
+      "detail": {
+        "figure": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/gaia_morphology_host_control_comparison.png",
+        "caption": "/Users/shuang/Dropbox/work/project/bubbletea/figures/phase1/gaia_morphology_host_control_comparison.md"
+      }
+    }
+  ]
+}

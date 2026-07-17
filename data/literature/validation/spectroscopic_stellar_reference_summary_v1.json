@@ -1,0 +1,30 @@
+{
+  "analysis_version": "spectroscopic_stellar_reference_analysis_v1",
+  "reference_version": "spectroscopic_stellar_reference_v1",
+  "validation_partition_inspected": false,
+  "singleness_status": "not_established",
+  "counts": {
+    "confirmed_development_ucds": 175,
+    "matched_spectroscopic_stars": 525,
+    "metric_rows": 19
+  },
+  "legacy_rule_retention": {
+    "phase3_model_c_70_30": {
+      "stellar_row_count": 525,
+      "stellar_selected_count": 71,
+      "stellar_selected_fraction": 0.13523809523809524
+    },
+    "phase4_model_c_60_30_10": {
+      "stellar_row_count": 525,
+      "stellar_selected_count": 35,
+      "stellar_selected_fraction": 0.06666666666666667
+    }
+  },
+  "inputs": {
+    "ucd_features_sha256": "23a55d4fbad519834302f9f433c1cd594c8c8c63674e1ffefef786fbc95c38d0",
+    "stellar_matches_sha256": "38b6551ff470efdfbc1a6c8b7d3e5c211b8fe0e4203fef1de6173251b208c0b0",
+    "stellar_manifest_sha256": "a8dd48de7ee30412a59cbfcf9903384e4a3ccfa615f4e2ff89116423a646d214"
+  },
+  "metrics_sha256": "90c2e2b301fe29c416eebe2d12dbe337c3e5cf49a499a48c5ebc2530089cd3cd",
+  "decision_status": "development_measurement_only_no_selector_threshold_approved"
+}

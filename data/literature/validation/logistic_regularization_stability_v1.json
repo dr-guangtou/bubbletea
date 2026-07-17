@@ -1,0 +1,128 @@
+{
+  "analysis_version": "logistic_regularization_stability_v1",
+  "validation_partition_inspected": false,
+  "repeat_seeds": [
+    20260717,
+    20261726,
+    20262735,
+    20263744,
+    20264753,
+    20265762,
+    20266771,
+    20267780,
+    20268789,
+    20269798
+  ],
+  "grouped_folds_per_repeat": 5,
+  "target_ucd_recall": 0.9,
+  "configurations": [
+    "c_1000",
+    "c_3000",
+    "unregularized"
+  ],
+  "configuration_summary": {
+    "c_1000": {
+      "ucd_recall": {
+        "minimum": 0.9041095890410958,
+        "median": 0.9041095890410958,
+        "maximum": 0.9041095890410958
+      },
+      "macro_priority_retention": {
+        "minimum": 0.018793598996868992,
+        "median": 0.01958768143036813,
+        "maximum": 0.02137300031599634
+      },
+      "maximum_coefficient_l2_norm": 5.348615921594667
+    },
+    "c_3000": {
+      "ucd_recall": {
+        "minimum": 0.9041095890410958,
+        "median": 0.9041095890410958,
+        "maximum": 0.9041095890410958
+      },
+      "macro_priority_retention": {
+        "minimum": 0.020315669012089692,
+        "median": 0.02107670401970004,
+        "maximum": 0.021903833879087967
+      },
+      "maximum_coefficient_l2_norm": 7.010770365025755
+    },
+    "unregularized": {
+      "ucd_recall": {
+        "minimum": 0.9041095890410958,
+        "median": 0.9041095890410958,
+        "maximum": 0.9041095890410958
+      },
+      "macro_priority_retention": {
+        "minimum": 0.019554634004479342,
+        "median": 0.02107670401970004,
+        "maximum": 0.02183773902731039
+      },
+      "maximum_coefficient_l2_norm": 12.941389962490694
+    }
+  },
+  "paired_repeat_winners": [
+    {
+      "repeat_index": 1,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.018793598996868992
+    },
+    {
+      "repeat_index": 2,
+      "lowest_retention_configuration": "unregularized",
+      "lowest_retention": 0.02107670401970004
+    },
+    {
+      "repeat_index": 3,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.019554634004479342
+    },
+    {
+      "repeat_index": 4,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.020315669012089692
+    },
+    {
+      "repeat_index": 5,
+      "lowest_retention_configuration": "unregularized",
+      "lowest_retention": 0.019554634004479342
+    },
+    {
+      "repeat_index": 6,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.018793598996868992
+    },
+    {
+      "repeat_index": 7,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.020315669012089692
+    },
+    {
+      "repeat_index": 8,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.019554634004479342
+    },
+    {
+      "repeat_index": 9,
+      "lowest_retention_configuration": "c_1000",
+      "lowest_retention": 0.019554634004479342
+    },
+    {
+      "repeat_index": 10,
+      "lowest_retention_configuration": "c_3000",
+      "lowest_retention": 0.02107670401970004
+    }
+  ],
+  "inputs": {
+    "development_sha256": "6faa90a6614edcce5b92535ee2f930a4130abc72315c439b5fde06dbca052060",
+    "stars_sha256": "669ebc2bf4a9596500ee56521309d0588b11f03d71584a7920fcb7ce6ea8a134"
+  },
+  "metrics_sha256": "e4fcf1c633198f7f702e1b612916e9bed696dfa669fc4b601c331ad8585fb1ff",
+  "frozen_c1000_source_summary_sha256": "7c9433da707655dfa428ab69706689f14ba6a4ae6fa58e40c376a9b58ab65d30",
+  "frozen_c1000_persistent_failure_counts": {
+    "confirmed_ucd": 10,
+    "spectroscopic_qso": 8,
+    "spectroscopic_star": 15
+  },
+  "decision_status": "development_regularization_policy_comparison_no_threshold_frozen"
+}

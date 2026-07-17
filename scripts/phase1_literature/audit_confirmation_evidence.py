@@ -17,7 +17,9 @@ from scripts.config import LITERATURE_REFERENCE_DB_V2, LITERATURE_SOURCES, PROJE
 from scripts.phase1_literature.audit_reference_data import calculate_sha256, connect_read_only
 
 DEFAULT_OUTPUT = LITERATURE_SOURCES / "confirmation_evidence_reviews.json"
-APPROVAL_STATUS = "approved_by_project_lead_delegation_2026-07-15"
+APPROVAL_STATUS = "approved_by_project_lead_2026-07-17"
+B409_RECORD_ID = "record_e4ca1c2cb6735032a051a96bad2e10d4"
+B409_CANONICAL_OBJECT_ID = "canonical_a71db2a61b8856cb835b46670601f951"
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -86,8 +88,13 @@ def has_velocity(row: object) -> bool:
 
 def build_reviews(
     connection: object,
-) -> tuple[list[dict[str, object]], list[dict[str, object]], dict[str, object]]:
-    """Build conservative approvals and explicit non-promotions."""
+) -> tuple[
+    list[dict[str, object]],
+    list[dict[str, object]],
+    list[dict[str, object]],
+    dict[str, object],
+]:
+    """Build conservative approvals, non-promotions, and explicit rejections."""
     reviews: list[dict[str, object]] = []
     simple_cohorts = (
         (
@@ -115,12 +122,6 @@ def build_reviews(
             "Every authoritative row reports an M87-consistent heliocentric velocity and UCD structural selection.",
         ),
         (
-            "2019A&A...625A..50F",
-            "fahrion2019_compiled_velocity_members",
-            377,
-            "The authoritative compilation supplies a radial velocity and published host context for each associated row.",
-        ),
-        (
             "2021MNRAS.504.3580S",
             "saifollahi2021_spectroscopic_reference_ucds",
             61,
@@ -146,6 +147,33 @@ def build_reviews(
                 f"Expected {expected_count} records for {cohort}, found {len(records)}"
             )
         add_records(reviews, records, bibcode, cohort, basis)
+
+    fahrion_folder = PROJECT_ROOT / "reference" / "fahrion2019"
+    fahrion_lines = (fahrion_folder / "tableb1.dat").read_text(encoding="utf-8").splitlines()
+    if len(fahrion_lines) != 381:
+        raise RuntimeError(f"Expected 381 Fahrion table B1 rows, found {len(fahrion_lines)}")
+    fahrion_records = publication_records(connection, "2019A&A...625A..50F")
+    fahrion_velocity_records = []
+    fahrion_zero_velocity_records = []
+    for record in fahrion_records:
+        row_index = numeric_suffix(record["source_row_locator"])
+        radial_velocity = float(fahrion_lines[row_index][61:67])
+        if radial_velocity == 0.0:
+            fahrion_zero_velocity_records.append(record)
+        else:
+            fahrion_velocity_records.append(record)
+    if len(fahrion_velocity_records) != 309 or len(fahrion_zero_velocity_records) != 68:
+        raise RuntimeError(
+            "Expected 309 nonzero-RV and 68 zero-RV Fahrion rows, found "
+            f"{len(fahrion_velocity_records)} and {len(fahrion_zero_velocity_records)}"
+        )
+    add_records(
+        reviews,
+        fahrion_velocity_records,
+        "2019A&A...625A..50F",
+        "fahrion2019_nonzero_velocity_members",
+        "Only coordinate-bearing compilation rows with a nonzero published radial velocity are approved as spectroscopic membership evidence.",
+    )
 
     chiboucas_folder = PROJECT_ROOT / "reference" / "chiboucas2011"
     chiboucas_rows = []
@@ -288,7 +316,7 @@ def build_reviews(
     )
 
     cohort_counts = Counter(str(review["cohort"]) for review in reviews)
-    expected_total = 1316
+    expected_total = 1248
     if len(reviews) != expected_total:
         raise RuntimeError(f"Expected {expected_total} confirmation reviews, found {len(reviews)}")
     voggel_non_promotion_records = [
@@ -309,6 +337,29 @@ def build_reviews(
         }
         for record in voggel_non_promotion_records
     ]
+    non_promotion_reviews.extend(
+        {
+            "review_id": f"fahrion2019_zero_velocity_non_promotion:{record['record_id']}",
+            "record_id": record["record_id"],
+            "publication_bibcode": "2019A&A...625A..50F",
+            "canonical_object_id_at_review": record["canonical_object_id"],
+            "decision": "remove_invalid_velocity_confirmation",
+            "reason": "Fahrion table B1 reports RV = 0.0, which is unavailable velocity evidence rather than positive spectroscopic membership.",
+        }
+        for record in fahrion_zero_velocity_records
+    )
+    rejection_reviews = [
+        {
+            "review_id": "b409_foreground_astrometry_rejection_2026-07-17",
+            "record_id": B409_RECORD_ID,
+            "publication_bibcode": "2019A&A...625A..50F",
+            "canonical_object_id_at_review": B409_CANONICAL_OBJECT_ID,
+            "evidence_type": "foreground_astrometry",
+            "evidence_value": "negative",
+            "decision": "incorrectly_classified_as_ucd",
+            "reason": "Project lead decision after review of 77.9-sigma Gaia parallax, 6.127 mas/yr proper motion, foreground radial velocity, and absent nonzero Fahrion velocity evidence.",
+        }
+    ]
     summary = {
         "approved_evidence_count": len(reviews),
         "approved_record_count": len({str(review["record_id"]) for review in reviews}),
@@ -317,15 +368,16 @@ def build_reviews(
         ),
         "cohort_counts": dict(sorted(cohort_counts.items())),
         "explicit_non_promotion_count": len(non_promotion_reviews),
+        "approved_rejection_count": len(rejection_reviews),
     }
-    return reviews, non_promotion_reviews, summary
+    return reviews, non_promotion_reviews, rejection_reviews, summary
 
 
 def main() -> None:
     """Write the deterministic confirmation review artifact."""
     arguments = parse_arguments()
     with connect_read_only(arguments.reference_database) as connection:
-        reviews, non_promotion_reviews, summary = build_reviews(connection)
+        reviews, non_promotion_reviews, rejection_reviews, summary = build_reviews(connection)
     payload = {
         "review_date": date.today().isoformat(),
         "review_status": (
@@ -335,10 +387,12 @@ def main() -> None:
         "confirmation_changes_authorized": arguments.authorize_under_delegation,
         "identity_changes_authorized": False,
         "classification_changes_outside_ruleset_authorized": False,
+        "project_lead_decision": "B409 is incorrectly classified as a UCD; otherwise apply conservative evidence judgment.",
         "reference_database_sha256_at_review": calculate_sha256(arguments.reference_database),
         "summary": summary,
         "reviews": reviews,
         "non_promotion_reviews": non_promotion_reviews,
+        "rejection_reviews": rejection_reviews,
     }
     arguments.output.parent.mkdir(parents=True, exist_ok=True)
     arguments.output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

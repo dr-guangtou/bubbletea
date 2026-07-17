@@ -1,0 +1,16 @@
+model_family,outer_fold,parameters,inner_threshold,inner_macro_priority_retention,outer_ucd_recall,outer_macro_priority_retention
+logistic_regression,1,"{""regularization_c"": 3.0}",0.5790928874295669,0.022512423549036154,0.975609756097561,0.03689024390243902
+histogram_gradient_boosting,1,"{""l2_regularization"": 10.0, ""learning_rate"": 0.03, ""max_leaf_nodes"": 3}",0.5232287009456927,0.02065124440861853,0.9512195121951219,0.04085365853658537
+hand_rank_score,1,"{""aen_weight"": 0.25, ""astrometric_penalty_weight"": 0.1}",0.9382217189308498,0.03475399062479142,0.9512195121951219,0.06544715447154471
+logistic_regression,2,"{""regularization_c"": 3.0}",0.5193719773810805,0.05405889886066309,0.9117647058823529,0.030369253239435793
+histogram_gradient_boosting,2,"{""l2_regularization"": 1.0, ""learning_rate"": 0.08, ""max_leaf_nodes"": 7}",0.6832405104953478,0.015591234100567087,0.7058823529411765,0.011925982514217809
+hand_rank_score,2,"{""aen_weight"": 0.25, ""astrometric_penalty_weight"": 0.1}",0.9369974753892029,0.04055412938065333,0.7647058823529411,0.019522960699431286
+logistic_regression,3,"{""regularization_c"": 3.0}",0.5086458597555658,0.05625762128485778,0.8181818181818182,0.048106060606060604
+histogram_gradient_boosting,3,"{""l2_regularization"": 1.0, ""learning_rate"": 0.08, ""max_leaf_nodes"": 3}",0.706918624218415,0.019344330501302544,0.8484848484848485,0.01936026936026936
+hand_rank_score,3,"{""aen_weight"": 0.25, ""astrometric_penalty_weight"": 0.1}",0.9336512841171496,0.04014486381194181,0.8181818181818182,0.03198653198653199
+logistic_regression,4,"{""regularization_c"": 3.0}",0.5555647855259293,0.03591628533507656,0.9696969696969697,0.03262510159061883
+histogram_gradient_boosting,4,"{""l2_regularization"": 1.0, ""learning_rate"": 0.08, ""max_leaf_nodes"": 3}",0.5621798467391788,0.0188486757393871,0.9090909090909091,0.01439684198304888
+hand_rank_score,4,"{""aen_weight"": 0.25, ""astrometric_penalty_weight"": 0.1}",0.9275644245702706,0.041372001347041464,0.9393939393939394,0.029258098223615466
+logistic_regression,5,"{""regularization_c"": 3.0}",0.526172422550736,0.04189132401565875,1.0,0.053414469235970256
+histogram_gradient_boosting,5,"{""l2_regularization"": 1.0, ""learning_rate"": 0.08, ""max_leaf_nodes"": 7}",0.3677457981424569,0.07597860785357956,1.0,0.08778453910299751
+hand_rank_score,5,"{""aen_weight"": 0.25, ""astrometric_penalty_weight"": 0.1}",0.9246287787192009,0.04051829906933597,0.9705882352941176,0.04090601757944557

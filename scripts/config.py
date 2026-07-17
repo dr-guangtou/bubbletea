@@ -35,6 +35,9 @@ LITERATURE_BENCHMARKS = LITERATURE_DIR / "benchmarks"
 VALIDATION_BENCHMARK_LITERATURE_SEARCH = (
     LITERATURE_DISCOVERY / "validation_benchmark_literature_search_2026-07-16.json"
 )
+EXTRAGALACTIC_REFERENCE_LITERATURE_SEARCH = (
+    LITERATURE_DISCOVERY / "extragalactic_contaminant_literature_search_2026-07-17.json"
+)
 LITERATURE_IMAGE_CUTOUTS = LITERATURE_VALIDATION / "gaia_image_cutouts"
 GAIA_CROSSMATCH_EXPORT = LITERATURE_CATALOGS / "all_ucds_gaia_matched.csv"
 GAIA_CROSSMATCH_AUDIT = LITERATURE_VALIDATION / "gaia_crossmatch_audit.csv"
@@ -55,10 +58,10 @@ PROJECT_STATUS_COUNTS = LITERATURE_VALIDATION / "project_status_counts.json"
 PROVENANCE_DOCUMENTATION_VALIDATION = (
     LITERATURE_VALIDATION / "provenance_documentation_validation.json"
 )
-VALIDATION_BENCHMARK = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v1.csv"
-VALIDATION_BENCHMARK_MANIFEST = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v1_manifest.json"
+VALIDATION_BENCHMARK = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v3.csv"
+VALIDATION_BENCHMARK_MANIFEST = LITERATURE_BENCHMARKS / "gaia_validation_benchmark_v3_manifest.json"
 VALIDATION_BENCHMARK_VALIDATION = (
-    LITERATURE_VALIDATION / "gaia_validation_benchmark_v1_validation.json"
+    LITERATURE_VALIDATION / "gaia_validation_benchmark_v3_validation.json"
 )
 HII_GAIA_ASSOCIATION_CANDIDATES = (
     LITERATURE_VALIDATION / "phangs_muse_gaia_association_candidates.csv"
@@ -73,6 +76,19 @@ DWARF_HII_GAIA_ASSOCIATION_CALIBRATION = (
     LITERATURE_VALIDATION / "van_zee_dwarf_hii_gaia_association_calibration.json"
 )
 VALIDATION_BENCHMARK_SOURCES = LITERATURE_SOURCES / "validation_benchmark_sources.json"
+SELECTOR_DEVELOPMENT_FEATURES = LITERATURE_BENCHMARKS / "gaia_selector_development_features_v3.csv"
+SELECTOR_DEVELOPMENT_FEATURES_MANIFEST = (
+    LITERATURE_BENCHMARKS / "gaia_selector_development_features_v3_manifest.json"
+)
+SELECTOR_DEVELOPMENT_FEATURE_METRICS = (
+    LITERATURE_VALIDATION / "gaia_selector_development_feature_metrics_v3.csv"
+)
+SELECTOR_DEVELOPMENT_SENSITIVITY = (
+    LITERATURE_VALIDATION / "gaia_selector_development_sensitivity_v3.json"
+)
+SELECTOR_DEVELOPMENT_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_selector_development_validation_v3.json"
+)
 
 GALAXY_SAMPLE_DIR = DATA_DIR / "galaxy_sample"
 GALAXY_SAMPLE_CSV = GALAXY_SAMPLE_DIR / "galaxy_sample_ranked.csv"
@@ -92,6 +108,106 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 # Falls back to data/external/ if not set.
 # ---------------------------------------------------------------------------
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
+EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
+STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
+EXTRAGALACTIC_REFERENCE_SOURCES = LITERATURE_SOURCES / "extragalactic_reference_catalogs.json"
+EXTRAGALACTIC_REFERENCE_AUDIT = LITERATURE_VALIDATION / "extragalactic_reference_catalog_audit.json"
+GAIA_MORPHOLOGY_HOST_FIELD_SOURCES = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_field_sources.csv"
+)
+GAIA_MORPHOLOGY_HOST_FIELD_RADIAL_METRICS = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_field_radial_metrics.csv"
+)
+GAIA_MORPHOLOGY_HOST_FIELD_MANIFEST = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_field_manifest.json"
+)
+GAIA_MORPHOLOGY_HOST_FIELD_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_field_validation.json"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_DESIGN = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_design.csv"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_DESIGN_MANIFEST = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_design_manifest.json"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_DESIGN_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_design_validation.json"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_SOURCES = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_sources.csv"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_METRICS = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_metrics.csv"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_FIELD_SUMMARY = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_field_summary.csv"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_COMPARISON = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_comparison.json"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_MANIFEST = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_manifest.json"
+)
+GAIA_MORPHOLOGY_HOST_CONTROL_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_morphology_host_control_validation.json"
+)
+GAIA_MORPHOLOGY_BENCHMARK_CROSSMATCH = (
+    LITERATURE_VALIDATION / "gaia_morphology_benchmark_crossmatch.csv"
+)
+GAIA_MORPHOLOGY_BENCHMARK_CROSSMATCH_MANIFEST = (
+    LITERATURE_VALIDATION / "gaia_morphology_benchmark_crossmatch_manifest.json"
+)
+GAIA_MORPHOLOGY_BENCHMARK_CROSSMATCH_VALIDATION = (
+    LITERATURE_VALIDATION / "gaia_morphology_benchmark_crossmatch_validation.json"
+)
+SPECTROSCOPIC_STELLAR_REFERENCE_MATCHES = (
+    LITERATURE_BENCHMARKS / "spectroscopic_stellar_reference_matches_v3.csv"
+)
+SPECTROSCOPIC_STELLAR_REFERENCE_MANIFEST = (
+    LITERATURE_BENCHMARKS / "spectroscopic_stellar_reference_manifest_v3.json"
+)
+SPECTROSCOPIC_STELLAR_REFERENCE_VALIDATION = (
+    LITERATURE_VALIDATION / "spectroscopic_stellar_reference_validation_v3.json"
+)
+SPECTROSCOPIC_STELLAR_REFERENCE_METRICS = (
+    LITERATURE_VALIDATION / "spectroscopic_stellar_reference_feature_metrics_v3.csv"
+)
+SPECTROSCOPIC_STELLAR_REFERENCE_SUMMARY = (
+    LITERATURE_VALIDATION / "spectroscopic_stellar_reference_summary_v3.json"
+)
+POINT_SOURCE_SELECTOR_COMPONENTS = LITERATURE_VALIDATION / "point_source_selector_components_v3.csv"
+POINT_SOURCE_SELECTOR_OPERATING_POINTS = (
+    LITERATURE_VALIDATION / "point_source_selector_operating_points_v3.csv"
+)
+POINT_SOURCE_SELECTOR_CALIBRATION = (
+    LITERATURE_VALIDATION / "point_source_selector_calibration_v3.json"
+)
+POINT_SOURCE_ML_PREDICTIONS = LITERATURE_VALIDATION / "point_source_ml_oof_predictions_v5.csv"
+POINT_SOURCE_ML_FOLDS = LITERATURE_VALIDATION / "point_source_ml_fold_metrics_v5.csv"
+POINT_SOURCE_ML_COMPARISON = LITERATURE_VALIDATION / "point_source_ml_comparison_v5.json"
+POINT_SOURCE_ML_VALIDATION = LITERATURE_VALIDATION / "point_source_ml_comparison_validation_v5.json"
+POINT_SOURCE_ML_STABILITY_PREDICTIONS = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_predictions_v3.csv"
+)
+POINT_SOURCE_ML_STABILITY_SOURCE_SUMMARY = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_source_summary_v3.csv"
+)
+POINT_SOURCE_ML_STABILITY_FOLDS = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_fold_metrics_v3.csv"
+)
+POINT_SOURCE_ML_STABILITY_COEFFICIENTS = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_coefficients_v3.csv"
+)
+POINT_SOURCE_ML_STABILITY_COEFFICIENT_SUMMARY = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_coefficient_summary_v3.csv"
+)
+POINT_SOURCE_ML_STABILITY_STRATA = LITERATURE_VALIDATION / "point_source_ml_stability_strata_v3.csv"
+POINT_SOURCE_ML_STABILITY_SUMMARY = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_summary_v3.json"
+)
+POINT_SOURCE_ML_STABILITY_VALIDATION = (
+    LITERATURE_VALIDATION / "point_source_ml_stability_validation_v3.json"
+)
 
 # ---------------------------------------------------------------------------
 # Gaia UCD selection criteria (from pilot study)

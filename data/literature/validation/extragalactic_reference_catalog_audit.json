@@ -1,0 +1,258 @@
+{
+  "registry_version": "extragalactic_reference_catalogs_v1",
+  "source_registry_sha256": "e4b33f981f299c4d85277b430bbe13e9fe4115cee63f93a228a1e49b6324748b",
+  "external_relative_root": "bubbletea/extragalactic_reference",
+  "check_count": 20,
+  "passed_count": 20,
+  "failed_count": 0,
+  "files": [
+    {
+      "catalog_id": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic",
+      "external_relative_path": "sdss_dr16/gaia_linked_clean_spectroscopic_extragalactic.fits",
+      "file_size_bytes": 126624960,
+      "row_count": 1241356,
+      "unique_source_id_count": 1241356,
+      "class_counts": {
+        "GALAXY": 747153,
+        "QSO": 494203
+      },
+      "sha256": "f6a2214e1d46327f47964090a84d342113bb74573044e90d623b8523b4605c2a",
+      "columns": [
+        "phot_g_mean_mag",
+        "gaia_association_distance_arcsec",
+        "spectroscopic_class",
+        "subclass",
+        "spectroscopic_redshift",
+        "random_id",
+        "source_id",
+        "specobjid",
+        "sdss_gaia_candidate_count",
+        "gaia_sdss_candidate_count"
+      ]
+    },
+    {
+      "catalog_id": "gaia_dr3_morphology_galaxies",
+      "external_relative_path": "gaia_dr3/gaia_dr3_morphology_galaxies.fits",
+      "file_size_bytes": 764821440,
+      "row_count": 914837,
+      "unique_source_id_count": 914837,
+      "class_counts": null,
+      "sha256": "3ae2bcc9a67ef53a7a4cd72322ace6997907940ec6bc3ef919dc01bbe160639b",
+      "columns": [
+        "source_id",
+        "classprob_dsc_combmod_galaxy",
+        "classprob_dsc_combmod_quasar",
+        "classlabel_dsc",
+        "classlabel_dsc_joint",
+        "vari_best_class_name",
+        "redshift_ugc",
+        "n_transits",
+        "radius_sersic",
+        "radius_sersic_error",
+        "n_sersic",
+        "n_sersic_error",
+        "flags_sersic",
+        "radius_de_vaucouleurs",
+        "radius_de_vaucouleurs_error",
+        "flags_de_vaucouleurs"
+      ]
+    },
+    {
+      "catalog_id": "quaia_v1_g20",
+      "external_relative_path": "quaia_v1/quaia_G20.0.fits",
+      "file_size_bytes": 99786240,
+      "row_count": 755850,
+      "unique_source_id_count": 755850,
+      "class_counts": null,
+      "sha256": "efeda9ae727bf2cd75569f52460a0492827c8a3fcd8ce29dc692b559fca2acb0",
+      "columns": [
+        "source_id",
+        "unwise_objid",
+        "redshift_quaia",
+        "redshift_quaia_err",
+        "ra",
+        "dec",
+        "l",
+        "b",
+        "phot_g_mean_mag",
+        "phot_bp_mean_mag",
+        "phot_rp_mean_mag",
+        "mag_w1_vg",
+        "mag_w2_vg",
+        "pm",
+        "pmra",
+        "pmdec",
+        "pmra_error",
+        "pmdec_error"
+      ]
+    },
+    {
+      "catalog_id": "quaia_v1_g20_selection_function",
+      "external_relative_path": "quaia_v1/selection_function_NSIDE64_G20.0.fits",
+      "file_size_bytes": 400320,
+      "row_count": 48,
+      "unique_source_id_count": null,
+      "class_counts": null,
+      "sha256": "f66684999b0fdab1cdc3f8fc3ac8ef16956cb037785dbac2dc395dae3ffedd7d",
+      "columns": [
+        "T"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_file_exists",
+      "passed": true,
+      "detail": "sdss_dr16/gaia_linked_clean_spectroscopic_extragalactic.fits"
+    },
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_file_size_bytes",
+      "passed": true,
+      "detail": {
+        "expected": 126624960,
+        "measured": 126624960
+      }
+    },
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_row_count",
+      "passed": true,
+      "detail": {
+        "expected": 1241356,
+        "measured": 1241356
+      }
+    },
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_unique_source_id_count",
+      "passed": true,
+      "detail": {
+        "expected": 1241356,
+        "measured": 1241356
+      }
+    },
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_sha256",
+      "passed": true,
+      "detail": {
+        "expected": "f6a2214e1d46327f47964090a84d342113bb74573044e90d623b8523b4605c2a",
+        "measured": "f6a2214e1d46327f47964090a84d342113bb74573044e90d623b8523b4605c2a"
+      }
+    },
+    {
+      "name": "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic_class_counts",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "GALAXY": 747153,
+          "QSO": 494203
+        },
+        "measured": {
+          "GALAXY": 747153,
+          "QSO": 494203
+        }
+      }
+    },
+    {
+      "name": "gaia_dr3_morphology_galaxies_file_exists",
+      "passed": true,
+      "detail": "gaia_dr3/gaia_dr3_morphology_galaxies.fits"
+    },
+    {
+      "name": "gaia_dr3_morphology_galaxies_file_size_bytes",
+      "passed": true,
+      "detail": {
+        "expected": 764821440,
+        "measured": 764821440
+      }
+    },
+    {
+      "name": "gaia_dr3_morphology_galaxies_row_count",
+      "passed": true,
+      "detail": {
+        "expected": 914837,
+        "measured": 914837
+      }
+    },
+    {
+      "name": "gaia_dr3_morphology_galaxies_unique_source_id_count",
+      "passed": true,
+      "detail": {
+        "expected": 914837,
+        "measured": 914837
+      }
+    },
+    {
+      "name": "gaia_dr3_morphology_galaxies_sha256",
+      "passed": true,
+      "detail": {
+        "expected": "3ae2bcc9a67ef53a7a4cd72322ace6997907940ec6bc3ef919dc01bbe160639b",
+        "measured": "3ae2bcc9a67ef53a7a4cd72322ace6997907940ec6bc3ef919dc01bbe160639b"
+      }
+    },
+    {
+      "name": "quaia_v1_g20_file_exists",
+      "passed": true,
+      "detail": "quaia_v1/quaia_G20.0.fits"
+    },
+    {
+      "name": "quaia_v1_g20_file_size_bytes",
+      "passed": true,
+      "detail": {
+        "expected": 99786240,
+        "measured": 99786240
+      }
+    },
+    {
+      "name": "quaia_v1_g20_row_count",
+      "passed": true,
+      "detail": {
+        "expected": 755850,
+        "measured": 755850
+      }
+    },
+    {
+      "name": "quaia_v1_g20_unique_source_id_count",
+      "passed": true,
+      "detail": {
+        "expected": 755850,
+        "measured": 755850
+      }
+    },
+    {
+      "name": "quaia_v1_g20_sha256",
+      "passed": true,
+      "detail": {
+        "expected": "efeda9ae727bf2cd75569f52460a0492827c8a3fcd8ce29dc692b559fca2acb0",
+        "measured": "efeda9ae727bf2cd75569f52460a0492827c8a3fcd8ce29dc692b559fca2acb0"
+      }
+    },
+    {
+      "name": "quaia_v1_g20_selection_function_file_exists",
+      "passed": true,
+      "detail": "quaia_v1/selection_function_NSIDE64_G20.0.fits"
+    },
+    {
+      "name": "quaia_v1_g20_selection_function_file_size_bytes",
+      "passed": true,
+      "detail": {
+        "expected": 400320,
+        "measured": 400320
+      }
+    },
+    {
+      "name": "quaia_v1_g20_selection_function_row_count",
+      "passed": true,
+      "detail": {
+        "expected": 48,
+        "measured": 48
+      }
+    },
+    {
+      "name": "quaia_v1_g20_selection_function_sha256",
+      "passed": true,
+      "detail": {
+        "expected": "f66684999b0fdab1cdc3f8fc3ac8ef16956cb037785dbac2dc395dae3ffedd7d",
+        "measured": "f66684999b0fdab1cdc3f8fc3ac8ef16956cb037785dbac2dc395dae3ffedd7d"
+      }
+    }
+  ]
+}

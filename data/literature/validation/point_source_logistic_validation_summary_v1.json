@@ -1,0 +1,71 @@
+{
+  "evaluation_version": "point_source_logistic_validation_v1",
+  "evaluation_status": "one_time_frozen_validation_complete_no_retuning_authorized",
+  "model_version": "point_source_logistic_model_v1",
+  "regularization_c": 1000.0,
+  "threshold": 0.8277833628791744,
+  "counts": {
+    "validation_rows": 721,
+    "reliable_ucds": 23
+  },
+  "primary_metrics": {
+    "reliable_ucd_recall": 0.9130434782608695,
+    "macro_available_priority_retention": 0.005681818181818182
+  },
+  "cohort_metrics": {
+    "compact_hii_region": {
+      "row_count": 57,
+      "selected_count": 30,
+      "selected_fraction": 0.5263157894736842
+    },
+    "dwarf_galaxy_hii_region": {
+      "row_count": 3,
+      "selected_count": 1,
+      "selected_fraction": 0.3333333333333333
+    },
+    "gaia_non_single_star": {
+      "row_count": 287,
+      "selected_count": 0,
+      "selected_fraction": 0.0
+    },
+    "reported_non_ucd_comparison": {
+      "row_count": 40,
+      "selected_count": 24,
+      "selected_fraction": 0.6
+    },
+    "spectroscopic_galaxy": {
+      "row_count": 167,
+      "selected_count": 146,
+      "selected_fraction": 0.874251497005988
+    },
+    "spectroscopic_qso": {
+      "row_count": 88,
+      "selected_count": 1,
+      "selected_fraction": 0.011363636363636364
+    },
+    "ucd_candidate": {
+      "row_count": 51,
+      "selected_count": 29,
+      "selected_fraction": 0.5686274509803921
+    },
+    "ucd_confirmed": {
+      "row_count": 23,
+      "selected_count": 21,
+      "selected_fraction": 0.9130434782608695
+    },
+    "ucd_role_conflict": {
+      "row_count": 5,
+      "selected_count": 5,
+      "selected_fraction": 1.0
+    }
+  },
+  "inputs": {
+    "authorization_sha256": "6d84bdf5d4b7ab3a116f220c0ce79414c5ad23e7b36388876f6de27123c55744",
+    "features_sha256": "622bedc97425f25d4229df0642a0ab013169499b957a20170f353eeccc83720d",
+    "feature_manifest_sha256": "24a09d69eaa8c71ead9d02759510298f65080c0272b9c547651f328343f98c2a",
+    "model_sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a",
+    "model_manifest_sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+  },
+  "predictions_sha256": "8c2e950dd0151f82940585d16da7a73afd97fe9c057205bfbf39645725261e7e",
+  "future_policy": "no_retuning; any model change requires a new independent validation cohort"
+}

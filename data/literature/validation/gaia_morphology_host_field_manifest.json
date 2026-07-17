@@ -1,0 +1,111 @@
+{
+  "analysis_version": "gaia_morphology_host_field_v1",
+  "generated_utc": "2026-07-16T19:58:33.164317+00:00",
+  "analysis_status": "exploratory_no_selector_or_radial_threshold_approved",
+  "validation_partition_inspected": false,
+  "endpoint": "https://gaia.aip.de/tap",
+  "fixture_rule": {
+    "host_count": 3,
+    "minimum_absolute_galactic_latitude_deg": 30.0,
+    "minimum_distance_mpc": 15.0,
+    "maximum_distance_mpc": 25.0,
+    "maximum_angular_radius_deg": 2.1,
+    "radial_bin_edges_kpc": [
+      0.0,
+      25.0,
+      50.0,
+      100.0,
+      150.0,
+      300.0,
+      600.0
+    ],
+    "local_comparison_minimum_kpc": 300.0,
+    "smoke_limit_hosts": null,
+    "run_maximum_radius_kpc": 600.0
+  },
+  "applicability_domain": {
+    "minimum_phot_g_mean_mag": 11.262918472290039,
+    "maximum_phot_g_mean_mag": 21.75798797607422
+  },
+  "hosts": [
+    {
+      "rank": 1,
+      "objname": "NGC 1316",
+      "ra": 50.673754,
+      "dec": -37.207939,
+      "glat": -56.69016585371814,
+      "dist_best": 19.76969640111861,
+      "maximum_angular_radius_deg": 1.7383634991406465
+    },
+    {
+      "rank": 2,
+      "objname": "MESSIER 049",
+      "ra": 187.44484125,
+      "dec": 8.00047583333,
+      "glat": 70.19608097473625,
+      "dist_best": 16.726304546595625,
+      "maximum_angular_radius_deg": 2.0544127744754754
+    },
+    {
+      "rank": 3,
+      "objname": "NGC 2974",
+      "ra": 145.6387045,
+      "dec": -3.6991485,
+      "glat": 35.01421079392015,
+      "dist_best": 22.428488158692858,
+      "maximum_angular_radius_deg": 1.5323935436411014
+    }
+  ],
+  "query_records": [
+    {
+      "host_rank": 1,
+      "host_name": "NGC 1316",
+      "maximum_radius_kpc": 600.0,
+      "angular_radius_deg": 1.7383634991406465,
+      "returned_row_count": 395,
+      "elapsed_seconds": 4.889258542098105,
+      "query_sha256": "e68516c3fccf54068a6a04e4e0e1b368d00b94d4174938d450fdce777edd0eda",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE('ICRS', 50.673754, -37.207939, 1.7383634991406465)\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "host_rank": 2,
+      "host_name": "MESSIER 049",
+      "maximum_radius_kpc": 600.0,
+      "angular_radius_deg": 2.0544127744754754,
+      "returned_row_count": 285,
+      "elapsed_seconds": 3.5579015420516953,
+      "query_sha256": "71c52fa0ac86a53cbb53c37910e5280340c6fc0e2cdb38b369cf0c1b980fa016",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE('ICRS', 187.44484125, 8.00047583333, 2.0544127744754754)\n          )\n        ORDER BY g.source_id"
+    },
+    {
+      "host_rank": 3,
+      "host_name": "NGC 2974",
+      "maximum_radius_kpc": 600.0,
+      "angular_radius_deg": 1.5323935436411014,
+      "returned_row_count": 134,
+      "elapsed_seconds": 3.5873465000186116,
+      "query_sha256": "d5fb7d69cd347626115761712c8114051f3b02fcbc7fa5142e9453f64aff8c80",
+      "query": "SELECT g.source_id, g.ra, g.dec, g.phot_g_mean_mag, g.phot_bp_mean_mag, g.phot_rp_mean_mag, g.parallax, g.parallax_error, g.pmra, g.pmra_error, g.pmdec, g.pmdec_error, g.pmra_pmdec_corr, g.astrometric_excess_noise, g.astrometric_excess_noise_sig, g.ruwe, g.ipd_frac_multi_peak, g.ipd_frac_odd_win, g.phot_bp_rp_excess_factor, c.radius_sersic, c.n_sersic, c.flags_sersic, c.classprob_dsc_combmod_galaxy, c.classprob_dsc_combmod_quasar\n        FROM gaiadr3.galaxy_candidates AS c\n        JOIN gaiadr3.gaia_source AS g USING (source_id)\n        WHERE c.radius_sersic IS NOT NULL\n          AND 1 = CONTAINS(\n              POINT('ICRS', g.ra, g.dec),\n              CIRCLE('ICRS', 145.6387045, -3.6991485, 1.5323935436411014)\n          )\n        ORDER BY g.source_id"
+    }
+  ],
+  "inputs": {
+    "host_catalog": "data/galaxy_sample/galaxy_sample_ranked.csv",
+    "host_catalog_sha256": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce",
+    "benchmark_manifest": "data/literature/benchmarks/gaia_validation_benchmark_v1_manifest.json",
+    "benchmark_manifest_sha256": "99b99fb0d0759a8c9cf97943e175b2208a1e708a2d5ad1dd47066c926794797b",
+    "source_registry": "data/literature/sources/extragalactic_reference_catalogs.json",
+    "source_registry_sha256": "e4b33f981f299c4d85277b430bbe13e9fe4115cee63f93a228a1e49b6324748b"
+  },
+  "outputs": {
+    "sources": "data/literature/validation/gaia_morphology_host_field_sources.csv",
+    "sources_sha256": "220ea41a69392deaeaa5b4e3f46466cb403665cbf606cae3620378b442a9007d",
+    "radial_metrics": "data/literature/validation/gaia_morphology_host_field_radial_metrics.csv",
+    "radial_metrics_sha256": "24397322343cdb72e389b47c6a4840937169ebd43036521bb7fdede6294b1246"
+  },
+  "counts": {
+    "host_count": 3,
+    "host_source_association_count": 814,
+    "unique_gaia_source_count": 814,
+    "radial_metric_row_count": 18
+  }
+}

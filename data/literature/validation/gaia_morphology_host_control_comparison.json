@@ -1,0 +1,168 @@
+{
+  "interpretation_status": "exploratory_field_variation_large_no_host_clustering_detection_claim",
+  "role_results": {
+    "control": {
+      "field_count": 12,
+      "applicability_row_count": 3920,
+      "area_deg2": 123.72472926961184,
+      "density_per_deg2": 31.683237644899783,
+      "phase3_model_c_70_30_selected_count": 3452,
+      "phase3_model_c_70_30_selection_fraction": 0.8806122448979592,
+      "phase4_model_c_60_30_10_selected_count": 3452,
+      "phase4_model_c_60_30_10_selection_fraction": 0.8806122448979592
+    },
+    "host": {
+      "field_count": 12,
+      "applicability_row_count": 5224,
+      "area_deg2": 123.72472926961184,
+      "density_per_deg2": 42.22276363697869,
+      "phase3_model_c_70_30_selected_count": 4468,
+      "phase3_model_c_70_30_selection_fraction": 0.8552833078101072,
+      "phase4_model_c_60_30_10_selected_count": 4464,
+      "phase4_model_c_60_30_10_selection_fraction": 0.8545176110260337
+    }
+  },
+  "paired_density_test": {
+    "pair_count": 12,
+    "host_density_higher_pair_count": 8,
+    "median_host_minus_control_density_per_deg2": 8.22170603086142,
+    "mean_host_minus_control_density_per_deg2": 11.728998026302142,
+    "two_sided_sign_test_p_value": 0.3876953125,
+    "wilcoxon_signed_rank_statistic": 19.0,
+    "wilcoxon_signed_rank_two_sided_p_value": 0.12939453125
+  },
+  "legacy_rule_disagreement_count": 4,
+  "zero_morphology_control_field_count": 1,
+  "scan_matching": {
+    "matched_transits": {
+      "complete_pair_count": 11,
+      "median_absolute_difference": 2.0,
+      "maximum_absolute_difference": 19.0
+    },
+    "visibility_periods_used": {
+      "complete_pair_count": 11,
+      "median_absolute_difference": 1.0,
+      "maximum_absolute_difference": 3.0
+    },
+    "astrometric_n_good_obs_al": {
+      "complete_pair_count": 11,
+      "median_absolute_difference": 26.0,
+      "maximum_absolute_difference": 145.5
+    },
+    "scan_direction_strength_k4": {
+      "complete_pair_count": 11,
+      "median_absolute_difference": 0.05881049499999996,
+      "maximum_absolute_difference": 0.5564744399999999
+    }
+  },
+  "stratum_results": [
+    {
+      "luminosity_stratum": "high",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 868,
+      "area_deg2": 18.818537547099876,
+      "density_per_deg2": 46.124731947290314
+    },
+    {
+      "luminosity_stratum": "high",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 828,
+      "area_deg2": 18.818537547099876,
+      "density_per_deg2": 43.99916826308339
+    },
+    {
+      "luminosity_stratum": "high",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 559,
+      "area_deg2": 17.787174396934226,
+      "density_per_deg2": 31.42713887689483
+    },
+    {
+      "luminosity_stratum": "high",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 396,
+      "area_deg2": 17.787174396934226,
+      "density_per_deg2": 22.26323254964285
+    },
+    {
+      "luminosity_stratum": "low",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 1109,
+      "area_deg2": 19.803481025397147,
+      "density_per_deg2": 56.0002556408014
+    },
+    {
+      "luminosity_stratum": "low",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 1182,
+      "area_deg2": 19.803481025397147,
+      "density_per_deg2": 59.686476255570106
+    },
+    {
+      "luminosity_stratum": "low",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 548,
+      "area_deg2": 23.836989699659966,
+      "density_per_deg2": 22.98948008555867
+    },
+    {
+      "luminosity_stratum": "low",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 1260,
+      "area_deg2": 23.836989699659966,
+      "density_per_deg2": 52.85902355438673
+    },
+    {
+      "luminosity_stratum": "middle",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 45,
+      "area_deg2": 18.520095563158236,
+      "density_per_deg2": 2.4297930778239536
+    },
+    {
+      "luminosity_stratum": "middle",
+      "latitude_stratum": "30_to_50_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 756,
+      "area_deg2": 18.520095563158236,
+      "density_per_deg2": 40.820523707442426
+    },
+    {
+      "luminosity_stratum": "middle",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "control",
+      "field_count": 2,
+      "applicability_row_count": 791,
+      "area_deg2": 24.95845103736239,
+      "density_per_deg2": 31.69267190563573
+    },
+    {
+      "luminosity_stratum": "middle",
+      "latitude_stratum": "50_to_90_deg",
+      "field_role": "host",
+      "field_count": 2,
+      "applicability_row_count": 802,
+      "area_deg2": 24.95845103736239,
+      "density_per_deg2": 32.13340438472801
+    }
+  ]
+}

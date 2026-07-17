@@ -46,6 +46,11 @@ PARTITION_RULESET = "benchmark_partition_v1"
 VIZIER_TAP_URL = "https://tapvizier.cds.unistra.fr/TAPVizieR/tap"
 SDSS_RANDOM_ID_MINIMUM = 0.0
 SDSS_RANDOM_ID_MAXIMUM = 0.1
+SDSS_RANDOM_ID_DOMAIN_MINIMUM = 0.0
+SDSS_RANDOM_ID_DOMAIN_MAXIMUM = 100.0
+SDSS_RANDOM_ID_SAMPLE_FRACTION = (SDSS_RANDOM_ID_MAXIMUM - SDSS_RANDOM_ID_MINIMUM) / (
+    SDSS_RANDOM_ID_DOMAIN_MAXIMUM - SDSS_RANDOM_ID_DOMAIN_MINIMUM
+)
 NSS_SYSTEMATIC_ROW_STRIDE = 500
 NSS_SYSTEMATIC_ROW_OFFSET = 1
 GAIA_HEALPIX_SOURCE_LEVEL = 12
@@ -653,6 +658,11 @@ def main() -> None:
         },
         "sampling": {
             "sdss_random_id_interval": [SDSS_RANDOM_ID_MINIMUM, SDSS_RANDOM_ID_MAXIMUM],
+            "sdss_random_id_domain": [
+                SDSS_RANDOM_ID_DOMAIN_MINIMUM,
+                SDSS_RANDOM_ID_DOMAIN_MAXIMUM,
+            ],
+            "sdss_random_id_sample_fraction": SDSS_RANDOM_ID_SAMPLE_FRACTION,
             "nss_systematic_row_stride": NSS_SYSTEMATIC_ROW_STRIDE,
             "nss_systematic_row_offset": NSS_SYSTEMATIC_ROW_OFFSET,
             "hii_association_radius_arcsec": HII_ASSOCIATION_RADIUS_ARCSEC,

@@ -1,0 +1,57 @@
+{
+  "policy_version": "point_source_logistic_policy_v1",
+  "approval_date": "2026-07-18",
+  "approval_status": "approved_by_project_lead",
+  "model_family": "logistic_regression",
+  "regularization": {
+    "penalty": "l2",
+    "regularization_c": 1000.0,
+    "status": "frozen"
+  },
+  "features": [
+    "log1p_astrometric_excess_noise",
+    "log1p_astrometric_excess_noise_sig",
+    "phot_bp_rp_excess_factor",
+    "bp_rp",
+    "log_ruwe",
+    "log1p_ipd_frac_multi_peak",
+    "log1p_ipd_frac_odd_win",
+    "log1p_absolute_parallax_zero_significance",
+    "log1p_proper_motion_zero_significance"
+  ],
+  "preprocessing": {
+    "missing_values": "training-fold median imputation with missingness indicators",
+    "scaling": "training-fold standardization"
+  },
+  "training_policy": {
+    "benchmark_version": "benchmark_v3",
+    "partition_ruleset": "benchmark_partition_v1",
+    "reliable_confirmed_ucd_count_in_development": 146,
+    "matched_spectroscopic_star_count": 438,
+    "priority_cohort_weighting": "positive total 0.5; each of star, Gaia NSS, and QSO totals 1/6",
+    "quarantined_ucd_gaia_conflict_count": 4
+  },
+  "evidence": {
+    "ten_repeat_ucd_recall": 0.9041095890410958,
+    "median_macro_priority_retention": 0.01958768143036813,
+    "paired_repeat_wins": 7,
+    "paired_repeat_count": 10,
+    "maximum_fold_coefficient_l2_norm": 5.348615921594667,
+    "comparison_artifact": "data/literature/validation/logistic_regularization_stability_v1.json",
+    "validation_artifact": "data/literature/validation/logistic_regularization_stability_validation_v1.json"
+  },
+  "threshold": {
+    "status": "frozen",
+    "value": 0.8277833628791744,
+    "approval_date": "2026-07-18",
+    "approval_status": "approved_by_project_lead",
+    "calibration_rule": "median of ten grouped out-of-fold thresholds, each chosen as the lowest reliable-UCD score retaining at least 90 percent",
+    "repeat_threshold_minimum": 0.8149084969341858,
+    "repeat_threshold_maximum": 0.8419524172171696,
+    "development_full_fit_apparent_ucd_recall": 0.9246575342465754,
+    "development_full_fit_apparent_macro_priority_retention": 0.01651049397403794
+  },
+  "validation_partition": {
+    "status": "sealed_and_uninspected"
+  }
+}

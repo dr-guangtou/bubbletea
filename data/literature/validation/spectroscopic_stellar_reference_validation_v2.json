@@ -1,0 +1,135 @@
+{
+  "reference_version": "spectroscopic_stellar_reference_v2",
+  "analysis_version": "spectroscopic_stellar_reference_analysis_v2",
+  "check_count": 19,
+  "passed_count": 19,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "reference_version",
+      "passed": true,
+      "detail": "spectroscopic_stellar_reference_v2"
+    },
+    {
+      "name": "analysis_version",
+      "passed": true,
+      "detail": "spectroscopic_stellar_reference_analysis_v2"
+    },
+    {
+      "name": "singleness_not_claimed",
+      "passed": true,
+      "detail": "not_established"
+    },
+    {
+      "name": "validation_partition_blind",
+      "passed": true,
+      "detail": [
+        false,
+        false
+      ]
+    },
+    {
+      "name": "no_selector_feature_matching",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "declared_matching_variables",
+      "passed": true,
+      "detail": [
+        "phot_g_mean_mag",
+        "absolute_galactic_latitude_deg",
+        "absolute_ecliptic_latitude_deg"
+      ]
+    },
+    {
+      "name": "unique_stellar_sources",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "no_benchmark_source_overlap",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "no_validation_target",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "three_controls_per_target",
+      "passed": true,
+      "detail": {
+        "3": 150
+      }
+    },
+    {
+      "name": "all_spectroscopic_star",
+      "passed": true,
+      "detail": {
+        "STAR": 450
+      }
+    },
+    {
+      "name": "associations_within_1p5_arcsec",
+      "passed": true,
+      "detail": 1.2780018422926558
+    },
+    {
+      "name": "external_pool_exists",
+      "passed": true,
+      "detail": "/Users/shuang/Dropbox/work/data/bubbletea/stellar_reference/sdss_dr16/gaia_linked_clean_spectroscopic_stars_random_0_10_v2.fits"
+    },
+    {
+      "name": "external_pool_hash",
+      "passed": true,
+      "detail": "c48b5af9e482fee1fc55c7de4c762962a576455d8b4d5e912b5266e2d98d8fe0"
+    },
+    {
+      "name": "matches_hash",
+      "passed": true,
+      "detail": "bb1cc361cac8009f5522ae82e42227f9bcf8122db4d2c8152298797e390e0412"
+    },
+    {
+      "name": "metric_feature_set",
+      "passed": true,
+      "detail": [
+        "absolute_parallax_zero_significance",
+        "astrometric_excess_noise",
+        "astrometric_excess_noise_sig",
+        "bp_g",
+        "bp_rp",
+        "classprob_dsc_combmod_galaxy",
+        "classprob_dsc_combmod_quasar",
+        "classprob_dsc_combmod_star",
+        "duplicated_source",
+        "g_rp",
+        "ipd_frac_multi_peak",
+        "ipd_frac_odd_win",
+        "non_single_star",
+        "phot_bp_mean_flux_over_error",
+        "phot_bp_rp_excess_factor",
+        "phot_g_mean_flux_over_error",
+        "phot_rp_mean_flux_over_error",
+        "proper_motion_zero_significance",
+        "ruwe"
+      ]
+    },
+    {
+      "name": "metric_row_count",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "metrics_hash",
+      "passed": true,
+      "detail": "13b7d9ecfba655e94c824b9c33879bceb5a7060390ae3291a4dd6e288c7b3147"
+    },
+    {
+      "name": "no_threshold_approved",
+      "passed": true,
+      "detail": "development_measurement_only_no_selector_threshold_approved"
+    }
+  ]
+}

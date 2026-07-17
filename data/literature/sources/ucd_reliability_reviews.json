@@ -1,0 +1,88 @@
+{
+  "review_date": "2026-07-18",
+  "review_status": "approved_by_project_lead_2026-07-18",
+  "policy": "Preserve published classifications and provenance; exclude unresolved or rejected objects from the reliable UCD selector-training sample.",
+  "reviews": [
+    {
+      "canonical_object_id": "canonical_a71db2a61b8856cb835b46670601f951",
+      "published_name": "B409",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "375037265841433344",
+      "review_class": "published_ucd_classification_rejected",
+      "training_treatment": "exclude_from_reliable_ucd_sample",
+      "evidence": {
+        "fahrion_radial_velocity_km_s": 0.0,
+        "fahrion_effective_radius_pc": 0.0,
+        "gaia_parallax_significance": 77.9,
+        "gaia_total_proper_motion_mas_per_year": 6.126589,
+        "gaia_radial_velocity_km_s": -37.13
+      },
+      "decision": "B409 itself was incorrectly classified as a UCD."
+    },
+    {
+      "canonical_object_id": "canonical_07aabc9dd1c85e7a8dc3f7f7c3c0e259",
+      "published_name": "NGC 1400_1",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "5107392559411455616",
+      "review_class": "published_ucd_or_gaia_counterpart_conflict",
+      "training_treatment": "exclude_from_reliable_ucd_sample",
+      "evidence": {
+        "published_membership": "nonzero Fahrion radial velocity",
+        "literature_to_gaia_offset_arcsec": 0.466094,
+        "gaia_g_mag": 19.571091,
+        "gaia_parallax_significance": 0.693,
+        "gaia_proper_motion_significance": 14.307
+      },
+      "decision": "Retain the published UCD classification provisionally, but quarantine the Gaia association and exclude it from reliable selector training."
+    },
+    {
+      "canonical_object_id": "canonical_112ba66b83475a43b3330ca11cf77e03",
+      "published_name": "NGC1400_2",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "5107470379920956160",
+      "review_class": "published_ucd_or_gaia_counterpart_conflict",
+      "training_treatment": "exclude_from_reliable_ucd_sample",
+      "evidence": {
+        "published_membership": "nonzero Fahrion radial velocity",
+        "literature_to_gaia_offset_arcsec": 0.391508,
+        "gaia_g_mag": 19.049055,
+        "gaia_parallax_significance": 0.160,
+        "gaia_proper_motion_significance": 44.871
+      },
+      "decision": "Retain the published UCD classification provisionally, but quarantine the Gaia association and exclude it from reliable selector training."
+    },
+    {
+      "canonical_object_id": "canonical_69aa2ccbc93d5f0bac3c4e94bd057559",
+      "published_name": "Dorado2",
+      "publication_bibcode": "2019A&A...625A..50F",
+      "gaia_dr3_id": "4778649573525185024",
+      "review_class": "published_ucd_or_gaia_counterpart_conflict",
+      "training_treatment": "exclude_from_reliable_ucd_sample",
+      "evidence": {
+        "published_membership": "nonzero Fahrion radial velocity",
+        "literature_to_gaia_offset_arcsec": 0.740738,
+        "gaia_g_mag": 19.824526,
+        "gaia_parallax_significance": 0.907,
+        "gaia_proper_motion_significance": 9.912
+      },
+      "decision": "Retain the published UCD classification provisionally, but quarantine the Gaia association and exclude it from reliable selector training."
+    },
+    {
+      "canonical_object_id": "canonical_b12077eff3155653ad2173ba2d346ca2",
+      "published_name": "Saifollahi A1 row 32",
+      "publication_bibcode": "2021MNRAS.504.3580S",
+      "gaia_dr3_id": "4860354282585368064",
+      "review_class": "published_ucd_or_gaia_counterpart_conflict",
+      "training_treatment": "exclude_from_reliable_ucd_sample",
+      "evidence": {
+        "published_membership": "Saifollahi spectroscopic A1 reference sample",
+        "published_half_light_radius_pc": 15.2,
+        "literature_to_gaia_offset_arcsec": 0.121241,
+        "gaia_g_mag": 20.337584,
+        "gaia_parallax_significance": 1.475,
+        "gaia_proper_motion_significance": 11.666
+      },
+      "decision": "Retain the published UCD classification provisionally, but quarantine the Gaia association and exclude it from reliable selector training."
+    }
+  ]
+}

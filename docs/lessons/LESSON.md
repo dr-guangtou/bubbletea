@@ -595,3 +595,359 @@ before selector work began.
 **Recommendation:** Enforce one benchmark row per Gaia source while retaining all
 contributing source-row locators, measurements, and association separations in
 the row-level provenance.
+
+## 2026-07-16: Interpret discrimination together with feature coverage
+
+**Lesson:** A strong conditional AUC does not justify a hard cut when the feature
+is missing preferentially for the target class.
+
+**Context:** Proper-motion and absolute-parallax zero-significance reached
+development AUC values above 0.84 but were present for only 82 of 175 confirmed
+UCDs. Extended sources frequently lack five-parameter astrometry.
+
+**Recommendation:** Report target and contaminant coverage beside every metric,
+preserve missing astrometry as an allowed selector state, and reject hard cuts
+that silently remove sources without the measurement.
+
+## 2026-07-16: Uncertain positives can reverse feature priorities
+
+**Lesson:** Candidate labels can change which Gaia diagnostics appear most useful
+even when every source association is correct.
+
+**Context:** Adding the uncertain UCD-candidate cohort raised IPD multi-peak and
+RUWE discrimination while weakening proper-motion separation. Many candidates
+have high-motion or poor-fit properties absent from the confirmed cohort.
+
+**Recommendation:** Calibrate primary score terms on confirmed positives, retain
+candidates only as declared sensitivity rows, and present both rankings before
+freezing a selector.
+
+## 2026-07-16: Normalize generated validation details before JSON serialization
+
+**Lesson:** Passing scientific checks can still fail artifact creation when a
+diagnostic detail contains NumPy scalar types.
+
+**Context:** The selector-development validator reached report writing with no
+failed invariant, then `json.dumps` rejected `numpy.int64` values returned by a
+Pandas uniqueness operation.
+
+**Recommendation:** Convert Pandas and NumPy diagnostic scalars to native Python
+types when assembling machine-readable validation reports.
+
+## 2026-07-16: Run repository diagnostics through uv
+
+**Lesson:** A system Python process can lack project dependencies even when the
+locked project environment is complete.
+
+**Context:** One read-only selector-summary command invoked `python` directly and
+failed to import `pyvo`; rerunning the same command through `uv run python`
+succeeded without changing dependencies or data.
+
+**Recommendation:** Use `uv run` for scripts and ad hoc Python diagnostics, not
+only for formal pipeline commands.
+
+## 2026-07-16: Name Gaia diagnostics by their actual units and null hypothesis
+
+**Lesson:** Archive column names and convenient “significance” labels can hide
+scientifically important definitions.
+
+**Context:** Gaia's `ipd_frac_multi_peak` and `ipd_frac_odd_win` are integer
+percentages from 0 to 100, not unit fractions. The initial proper-motion
+diagnostic also treated the two components as independent even though Gaia
+publishes `pmra_pmdec_corr`.
+
+**Recommendation:** Document every selector feature with its unit, equation,
+physical non-uniqueness, null behavior, and official data-model reference. Use
+the Gaia covariance submatrix for vector zero-significance tests.
+
+## 2026-07-17: Verify the numerical domain of archive sampling fields
+
+**Lesson:** A numeric interval does not imply a sampling fraction unless the
+field's complete domain is measured and recorded.
+
+**Context:** The SDSS benchmark query used `0.0 <= random_id < 0.1`. Prose called
+this a 10% slice, but the measured SDSS field spans 0 to 100, making it a 0.1%
+engineering slice. The exact query and selected rows remained reproducible, but
+the interpretation was wrong.
+
+**Recommendation:** Record sampling-field domains, interval widths, and derived
+fractions together; validate them before using cohort size to support a scientific
+claim.
+
+## 2026-07-17: Separate truth, stress, and density roles for large catalogs
+
+**Lesson:** A very large catalog can improve coverage while weakening validation
+if it was constructed from the same features being tested.
+
+**Context:** Gaia DR3 galaxy and QSO candidate catalogs contain millions of rows
+and directly represent real search failure modes, but their classifications use
+Gaia features. Spectroscopic SDSS labels are more independent, Gaia morphology
+galaxies are better stress cases, and Quaia's selection function is useful for
+spatial-null tests.
+
+**Recommendation:** Assign each external catalog one declared role—independent
+calibration, failure-mode stress, or density/null analysis—and never use raw
+catalog size as a class prior or evidence of independent selector accuracy.
+
+## 2026-07-17: Retrieve contaminants before applying selector prefilters
+
+**Lesson:** An archive-side selector prefilter makes contaminant acceptance
+impossible to measure because rejected objects never enter the audit artifact.
+
+**Context:** The inherited radial search queried only sources passing provisional
+astrometric and proper-motion cuts. The morphology-galaxy stress test instead
+retrieved every Sersic-fit source and then found that both historical selectors
+accepted the same 714 of 814 galaxies.
+
+**Recommendation:** Retrieve the complete declared contaminant cohort first, store
+every row, and evaluate versioned selectors locally with selected and rejected
+counts both retained.
+
+## 2026-07-17: Compact-galaxy failure modes include missing astrometry
+
+**Lesson:** A high galaxy rejection rate cannot be assumed from proper-motion or
+RUWE diagnostics when most Gaia morphology galaxies lack those measurements.
+
+**Context:** Astrometric excess noise and IPD percentages were complete in the
+three-host morphology fixture, but RUWE and covariance-aware proper-motion
+significance covered only 11.9%. Both historical selectors still accepted 87.7%.
+
+**Recommendation:** Treat missing five-parameter astrometry as an explicit state,
+measure galaxy acceptance within that state, and add morphology-sensitive evidence
+that does not impose a hard astrometry-availability requirement on UCDs.
+
+## 2026-07-17: Combined density can conceal paired field variation
+
+**Lesson:** A larger combined count does not establish a host-centered excess when
+matched field differences are heterogeneous.
+
+**Context:** Twelve host fields had a combined morphology-galaxy density of 42.22
+per square degree versus 31.68 in controls, but only eight paired differences were
+positive, the two-sided sign-test p-value was 0.3877, and one control was empty.
+
+**Recommendation:** Preserve paired field results, report robust paired tests, and
+do not promote an area-weighted combined ratio to a clustering detection.
+
+## 2026-07-17: Empty groups and exact interval bounds require explicit handling
+
+**Lesson:** Valid zero-count fields and floating-point confidence-interval endpoints
+must be supported by both analysis and plotting paths.
+
+**Context:** All 24 queries completed, but the first figure attempt failed because a
+Wilson upper bound at one differed by floating-point roundoff and produced a tiny
+negative display error. Reuse validation also initially expected every field name
+in a source table even though a valid zero-row control has no source rows.
+
+**Recommendation:** Clip derived display-error lengths at zero, retain zero-count
+fields in field-level tables, and validate source-field membership against nonempty
+query records rather than the complete field design.
+
+## 2026-07-17: A morphology candidate catalog is neither truth nor a parent sample
+
+**Lesson:** Successful Gaia Sersic fitting identifies a useful extended-source
+stress population but does not establish that every row is a background galaxy.
+
+**Context:** Gaia DR3 `galaxy_candidates` can in principle contain UCDs, H II
+regions, nuclei, and other compact sources. Requiring its morphology fit would also
+exclude unresolved UCDs. A blind-safe exact match found 0/175 confirmed development
+UCDs, 1/569 uncertain UCD candidates, and 0/127 development H II regions in the
+914,837-source Sersic-fit subset.
+
+**Recommendation:** Select the Gaia UCD parent sample independently of morphology-
+catalog membership. Use Sersic radius, index, uncertainty, and fit quality only as
+supplementary exclusion evidence calibrated against independent imaging, and keep
+validation identifiers blind until the policy is frozen.
+
+## 2026-07-17: Spectroscopic star does not mean physically single star
+
+**Lesson:** An externally classified stellar spectrum supplies a useful ordinary-
+star label, but neither that label nor absence from Gaia NSS establishes singleness.
+
+**Context:** A deterministic SDSS DR16 pool produced 525 unique stars matched 3:1
+to confirmed development UCDs in G and sky latitudes. Expanding the pool from 1% to
+10% of the measured `random_id` domain reduced the median absolute G mismatch from
+0.539 to 0.081 mag; using signed ecliptic latitude had also encoded the SDSS
+footprint rather than Gaia scan similarity.
+
+**Recommendation:** Name the cohort by the evidence actually available, match on
+absolute ecliptic latitude when controlling broad Gaia scanning geometry, preserve
+the measured balance diagnostics, and keep Gaia NSS as a separate failure mode.
+
+## 2026-07-17: Optimize contaminant cohorts equally, not by their row counts
+
+**Lesson:** A pooled false-positive fraction silently gives the largest reference
+cohort the greatest scientific importance.
+
+**Context:** The approved Stage 3 priority treats ordinary stars, NSS/binaries, and
+QSOs as separate point-source failure modes. Equal-cohort calibration found a 90.3%
+confirmed-UCD operating point with 6.48%, 0.00%, and 4.71% retention in those three
+cohorts, respectively. The same core retains most galaxies and H II regions, which
+are intentionally assigned secondary imaging and color/morphology treatments.
+
+**Recommendation:** Optimize and report the macro-average across declared priority
+cohorts, retain every cohort-specific result, and never let catalog availability or
+sample size become an implicit scientific weight.
+
+## 2026-07-17: Nested thresholds expose selector instability
+
+**Lesson:** Meeting a pooled development recall target does not guarantee stable
+completeness across spatially grouped folds.
+
+**Context:** Regularized logistic regression reached 93.7% pooled confirmed-UCD
+recall with 4.02% equal-cohort point-source retention, but fold-specific recall
+ranged from 81.8% to 100%. Shallow boosting retained fewer contaminants yet missed
+the recall target and was still less stable. Fold-local preprocessing and threshold
+selection prevented training-set calibration from hiding this variation.
+
+**Recommendation:** Require repeated grouped nested-CV stability, inspect simple-
+model coefficients and failure cases, and report stratified completeness before
+freezing one selector for withheld validation.
+
+## 2026-07-17: Normalize NumPy diagnostics before JSON output
+
+**Lesson:** A validation computation can pass logically and still fail while
+writing its report when diagnostic details contain NumPy scalar types.
+
+**Context:** The first ML-comparison validation run reached report serialization,
+where an outer-fold diagnostic contained `numpy.int64`, which the standard JSON
+encoder does not accept.
+
+**Recommendation:** Convert NumPy scalar diagnostics through a strict serializer
+when writing machine-readable validation reports, then rerun the full validator.
+
+## 2026-07-17: Invoke project tools through uv
+
+**Lesson:** Project development executables are available through the locked uv
+environment and may not exist on the interactive shell path.
+
+**Context:** A direct `pre-commit` invocation failed because the executable was not
+globally installed; `uv run pre-commit` used the declared project environment and
+ran successfully.
+
+**Recommendation:** Prefix all project Python tools, including pre-commit, with
+`uv run` so execution uses the reproducible locked environment.
+
+## 2026-07-17: Sync development groups before running repository hooks
+
+**Lesson:** A default locked uv sync can remove tools that are declared only in
+optional development extras.
+
+**Context:** `uv sync --locked` reproduced the default environment but removed
+Ruff and pre-commit before the targeted hook run. No source or scientific artifact
+changed, but the check could not start until the development groups were restored.
+
+**Recommendation:** Use `uv sync --locked --all-extras` when preparing the full
+repository-development environment, then run hooks through `uv run`.
+
+## 2026-07-17: Stable pooled recall can coexist with localized failures
+
+**Lesson:** Repeated cross-validation can stabilize the global estimate without
+eliminating spatial, magnitude, or source-specific completeness failures.
+
+**Context:** Ten grouped nested-CV repeats produced a narrow 93.1--95.4% pooled UCD
+recall range, while individual folds reached as low as 81.8%. Eleven UCDs were
+persistently missed, several in shared HEALPix groups, and fixed-bin recall fell to
+85--88% in some populated magnitude or latitude strata.
+
+**Recommendation:** Treat repeated pooled stability as a gate to source-level
+review, not permission to skip it. Preserve failure identities, report stratum
+counts, and audit provenance and Gaia associations before selector freezing.
+
+## 2026-07-17: Logistic coefficient signs are diagnostics, not causes
+
+**Lesson:** Stable standardized logistic coefficients show that model direction is
+reproducible, but correlated measurements prevent causal feature interpretation.
+
+**Context:** All nine measurement coefficients retained the same sign in 50 fitted
+outer models. Astrometric excess noise carried the largest positive coefficient,
+while parallax and proper-motion significance were consistently negative.
+
+**Recommendation:** Report the preprocessing scale, missing indicators, coefficient
+range, and sign agreement. Do not call coefficient magnitude physical importance
+or use it alone to justify a scientific cut.
+
+## 2026-07-17: Unanimous boundary selection does not enclose an optimum
+
+**Lesson:** Repeatedly choosing the same hyperparameter is not evidence of an
+interior optimum when that value lies at the edge of the tested grid.
+
+**Context:** All 50 logistic outer fits selected `C = 3.0`, the least-regularized
+value available. The choice is stable within the declared grid, but weaker
+regularization was never compared.
+
+**Recommendation:** Run a bounded grid extension until performance plateaus or an
+interior choice is enclosed, without changing the validation partition or choosing
+the extension from validation behavior.
+
+## 2026-07-17: A numeric zero can be a missing-value sentinel
+
+**Lesson:** A machine-readable numeric value is not automatically a physical
+measurement; catalog conventions and astrophysical plausibility must both be
+checked before promoting it to confirmation evidence.
+
+**Context:** Fahrion table B1 contains `RV = 0.0` for 68 of 377 coordinate-bearing
+rows. The confirmation review incorrectly stated that every row supplies a radial
+velocity, placing 30 zero-RV objects in the confirmed development benchmark. The
+bright B409 row then matched a Gaia source with 77.9-sigma parallax and large proper
+motion, exposing the error during classifier failure review.
+
+**Recommendation:** Treat Fahrion `RV = 0.0` as unavailable velocity evidence,
+re-audit affected objects for independent confirmation and foreground Gaia
+superpositions, preserve the original rows and decisions, and rebuild every
+downstream benchmark artifact before selector freezing.
+
+## 2026-07-17: Validate CDS reader compatibility before relying on it
+
+**Lesson:** A valid CDS archive README is not guaranteed to be parsed successfully
+by every Astropy CDS-reader version.
+
+**Context:** The first corrected Fahrion audit attempted to read table B1 through
+its authoritative README, but the installed Astropy reader did not recognize the
+file declaration. The fixed-width radial-velocity field is explicitly defined at
+bytes 62--67 and the table has a validated 381-row count.
+
+**Recommendation:** When a CDS reader rejects an otherwise validated package, parse
+only the required documented fixed-width field, assert the complete row count, and
+retain the original README and file hashes as provenance.
+
+## 2026-07-17: Patch repeated approval blocks with exact function context
+
+**Lesson:** A short patch context can modify the wrong occurrence when a build file
+contains several similar approval-status and evidence-insertion blocks.
+
+**Context:** The first B409 evidence patch changed the Wave-1 approval status instead
+of the confirmation-review status and placed the existing positive-evidence insert
+inside the new rejection branch. The safety gate stopped the rebuild with an empty
+temporary target database before any completed artifact was accepted.
+
+**Recommendation:** Anchor patches on function names and inspect the complete edited
+control-flow block before rebuilding; treat any interrupted generated database as
+invalid and rebuild it from immutable inputs rather than using it.
+
+## 2026-07-17: Correct labels through versioned migrations
+
+**Lesson:** An evidence correction should not overwrite a benchmark that already
+anchors documented analyses, even when every observational feature is unchanged.
+
+**Context:** Correcting the Fahrion zero-velocity policy changed 26 Gaia-linked
+literature labels but did not change source identity, Gaia measurements, spatial
+groups, or the sealed partition assignment. Requerying Gaia would add unnecessary
+external variability, while overwriting benchmark v1 would erase the provenance of
+the superseded selector results.
+
+**Recommendation:** Preserve the old benchmark, create a new evidence version through
+a deterministic field-limited migration, hash both inputs and outputs, and recompute
+all downstream training artifacts under the new version before model approval.
+
+## 2026-07-18: Boundary chasing is not hyperparameter calibration
+
+**Lesson:** Repeatedly enlarging a regularization grid does not establish a defensible
+finite optimum when cross-validation continues selecting its weakest-regularized edge.
+
+**Context:** The logistic grid was extended from `C = 3` to 100 and then 3000. Four
+of five outer folds selected the upper boundary in both tests, while fold recall
+remained variable.
+
+**Recommendation:** Stop geometric boundary chasing. Compare weakly regularized and
+explicitly unregularized fits for coefficient and prediction convergence, then use
+stability and scientific interpretability to define the final model policy.

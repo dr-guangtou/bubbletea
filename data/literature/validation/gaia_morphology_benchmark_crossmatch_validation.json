@@ -1,0 +1,85 @@
+{
+  "crossmatch_version": "gaia_morphology_benchmark_crossmatch_v1",
+  "check_count": 15,
+  "passed_count": 15,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "crossmatch_version",
+      "passed": true,
+      "detail": "gaia_morphology_benchmark_crossmatch_v1"
+    },
+    {
+      "name": "output_hash",
+      "passed": true,
+      "detail": "10a19d3542013d863e1c060797250a1f43de337d50b8ac896a50bfd76c5f0469"
+    },
+    {
+      "name": "benchmark_hash",
+      "passed": true,
+      "detail": "891a7f6e6aad26a0881eb50e586bb0119c155ef4e03610dbad7adf3ce8f3ce73"
+    },
+    {
+      "name": "development_only",
+      "passed": true,
+      "detail": [
+        "development"
+      ]
+    },
+    {
+      "name": "no_validation_identifiers",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "unique_gaia_identifiers",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "all_matches_are_development_rows",
+      "passed": true,
+      "detail": 76
+    },
+    {
+      "name": "manifest_match_count",
+      "passed": true,
+      "detail": 76
+    },
+    {
+      "name": "confirmed_match_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "candidate_match_count",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "hii_match_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "all_matches_have_sersic_radius",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "candidate_catalog_interpretation",
+      "passed": true,
+      "detail": "candidate_catalog_membership_not_astrophysical_truth"
+    },
+    {
+      "name": "not_parent_sample",
+      "passed": true,
+      "detail": "supplementary_morphology_evidence_not_parent_sample_requirement"
+    },
+    {
+      "name": "validation_partition_blind",
+      "passed": true,
+      "detail": false
+    }
+  ]
+}

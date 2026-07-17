@@ -1,0 +1,105 @@
+{
+  "search_date": "2026-07-17",
+  "service": "NASA ADS Search API",
+  "purpose": "Find large Gaia-aligned galaxy and QSO catalogs and literature about extragalactic classification in nearby-galaxy fields.",
+  "queries": [
+    {
+      "query": "(title:\"Gaia\" OR abstract:\"Gaia\") AND (title:(galaxy OR quasar OR extragalactic) OR abstract:(galaxy OR quasar OR extragalactic)) AND (title:(catalog OR catalogue) OR abstract:(catalog OR catalogue)) AND year:[2018 TO 2026]",
+      "num_found": 1910
+    },
+    {
+      "query": "(title:\"Gaia\" OR abstract:\"Gaia\") AND (title:galaxies OR title:galaxy) AND (abstract:(classification OR catalog OR catalogue OR morphology)) AND year:[2018 TO 2026]",
+      "num_found": 570
+    },
+    {
+      "query": "citations(bibcode:2023A&A...674A..41G)",
+      "num_found": 97
+    },
+    {
+      "query": "title:(Gaia AND (quasar OR extragalactic OR \"galaxy candidates\" OR \"galaxy catalog\" OR \"galaxy catalogue\")) year:[2018 TO 2026]",
+      "num_found": 122
+    },
+    {
+      "query": "(title:Gaia OR abstract:Gaia) AND (title:WISE OR abstract:WISE OR title:unWISE OR abstract:unWISE OR title:CatWISE OR abstract:CatWISE) AND (title:(quasar OR AGN OR extragalactic OR galaxy) OR abstract:(quasar OR AGN OR extragalactic OR galaxy)) year:[2018 TO 2026]",
+      "num_found": 264
+    }
+  ],
+  "screening_scope": "Targeted relevance review of the user-supplied works, the Gaia DR3 extragalactic paper's citation set, and title or abstract matches. This is not a claim that every broad-query result was read.",
+  "key_results": [
+    {
+      "bibcode": "2023A&A...674A..41G",
+      "title": "Gaia Data Release 3. The extragalactic content",
+      "doi": "10.1051/0004-6361/202243232",
+      "arxiv": "2206.05681",
+      "disposition": "Primary definition and purity/completeness reference for Gaia DR3 integrated galaxy and QSO candidate tables."
+    },
+    {
+      "bibcode": "2023A&A...674A..11D",
+      "title": "Gaia Data Release 3. Surface brightness profiles of galaxies and host galaxies of quasars",
+      "doi": "10.1051/0004-6361/202243798",
+      "arxiv": "2206.14491",
+      "disposition": "Primary reference for the selected 914837-source Gaia morphology stress catalog."
+    },
+    {
+      "bibcode": "2024ApJ...964...69S",
+      "title": "Quaia, the Gaia-unWISE Quasar Catalog: An All-sky Spectroscopic Quasar Sample",
+      "doi": "10.3847/1538-4357/ad1328",
+      "arxiv": "2306.17749",
+      "disposition": "Selected all-sky QSO spatial-null catalog because a matching selection function is published."
+    },
+    {
+      "bibcode": "2024ApJS..271...54F",
+      "title": "CatNorth: An Improved Gaia DR3 Quasar Candidate Catalog with Pan-STARRS1 and CatWISE",
+      "doi": "10.3847/1538-4365/ad2ae6",
+      "arxiv": "2310.12704",
+      "disposition": "Relevant northern sensitivity catalog; not selected as the primary all-sky null."
+    },
+    {
+      "bibcode": "2025ApJS..279...54F",
+      "title": "The CatSouth Quasar Candidate Catalog for the Southern Sky and a Unified All-sky Catalog Based on Gaia DR3",
+      "doi": "10.3847/1538-4365/ade999",
+      "arxiv": "2503.14141",
+      "disposition": "New all-sky CatGlobe comparison discovered in the search; defer download until Quaia is tested."
+    },
+    {
+      "bibcode": "2018ApJS..236...37S",
+      "title": "The Gaia-unWISE AGN Catalog",
+      "doi": "10.3847/1538-4365/aabcb7",
+      "disposition": "Important Gaia DR1 historical reference; not primary for a Gaia DR3 selector."
+    },
+    {
+      "bibcode": "2024MNRAS.533.3415H",
+      "title": "Comparing Gaia, NED, and SIMBAD source classifications in nearby galaxies",
+      "doi": "10.1093/mnras/stae2026",
+      "arxiv": "2408.12717",
+      "disposition": "Critical evidence that all-sky Gaia class labels behave differently in nearby-galaxy fields."
+    },
+    {
+      "bibcode": "2023MNRAS.518.3746B",
+      "title": "Gaia DR3 and nearby galaxies: where do foregrounds matter?",
+      "doi": "10.1093/mnras/stac3289",
+      "arxiv": "2211.04341",
+      "disposition": "Critical reference for radial and magnitude dependence in Gaia source populations toward nearby galaxies."
+    },
+    {
+      "bibcode": "2022A&A...668A..99H",
+      "title": "Quasar and galaxy classification using Gaia EDR3 and CatWise2020",
+      "doi": "10.1051/0004-6361/202244859",
+      "arxiv": "2210.05505",
+      "disposition": "Method reference demonstrating the importance of population priors and Gaia plus CatWISE features."
+    },
+    {
+      "bibcode": "2024A&A...683A.112S",
+      "title": "LQAC-6: Sixth Release of the Large Quasar Astrometric Catalogue",
+      "doi": "10.1051/0004-6361/202348505",
+      "disposition": "Potential heterogeneous bona fide QSO sensitivity reference with 1739187 Gaia DR3 counterparts."
+    },
+    {
+      "bibcode": "2026A&A...711A..62J",
+      "title": "Performance analysis of extragalactic classifications in Gaia Data Release 4",
+      "doi": "10.1051/0004-6361/202658965",
+      "arxiv": "2605.23388",
+      "disposition": "Methods reference only; not treated as a released DR4 catalog input."
+    }
+  ]
+}
