@@ -52,6 +52,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   null handling, score terms, thresholds, and a version identifier. Literature,
   background, and radial-search scripts call the same implementation.
   Depends on: BT-001.
+  - [x] Integrate `point_source_logistic_model_v1` into the Phase I/IV workflow
+    through one shared inference implementation; preserve the full measured
+    magnitude-domain denominator and validate exact stored-prediction parity
+    before a live search (completed 2026-07-18). All seven integration checks pass;
+    maximum stored-probability difference is `1.11e-16`, and no live pilot was run.
   - [x] Audit the three inherited `Model C` definitions and confirm their weights,
     color terms, and query prefilters are inconsistent (2026-07-16).
   - [x] Build a development-only Gaia DR3 feature enrichment by exact source ID,

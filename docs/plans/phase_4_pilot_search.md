@@ -8,9 +8,13 @@
 
 ## IV.1 Search Pipeline Development
 
+- [x] Integrate `point_source_logistic_model_v1` as the single shared Gaia selector
+  with exact feature, missing-value, threshold, and version parity; validate locally
+  before any live pilot query (completed 2026-07-18)
+
 - [x] Implement `scripts/phase4_search/radial_search.py` (2026-05-11)
   - [x] Gaia DR3 query around target ($R < 300$ kpc)
-  - [x] Apply Model C selection
+  - [x] Replace historical Model C with the frozen v1 selector (2026-07-18)
   - [x] Calculate radial density profile (sources/deg$^2$ vs $R_{\text{kpc}}$)
   - [x] Implement annulus background estimation ($150$-$300$ kpc)
 - [x] Implement statistical excess detection (Poisson significance) (2026-05-11)
@@ -33,9 +37,17 @@
 
 ## IV.4 Candidate Ranking & QA
 
-- [ ] Rank candidates by Model C score and radial significance
+- [ ] Rank candidates by frozen v1 probability and radial significance
 - [ ] Generate "Candidate Cards" (thumbnails + Gaia properties)
 - [ ] Produce Phase IV Summary Report
+
+## Review — 2026-07-18 frozen-selector integration
+
+- Shared inference reproduces all stored development probabilities and decisions.
+- The Gaia query retains the full measured magnitude-domain denominator and removes
+  the two legacy astrometric prefilters.
+- No live scientific pilot was run because BT-005 background coverage and BT-006
+  significance calibration remain open.
 
 ---
 

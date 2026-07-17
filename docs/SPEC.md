@@ -536,6 +536,16 @@ No retuning is authorized. Dorado1 is recorded post hoc as a 34.57-sigma-motion,
 0.769-arcsec UCD/Gaia conflict, but its frozen validation label and outcome remain
 unchanged. M85-HCC1 remains a genuine hard-UCD false negative.
 
+The Phase I/IV integration uses `point_source_logistic_model_v1` through the shared
+implementation in `scripts/utils/point_source_selector.py`. Gaia retrieval includes
+all raw inputs needed for the nine features and applies no legacy excess-noise,
+proper-motion, or color prefilter. The query denominator is restricted only to the
+measured benchmark Gaia G-magnitude domain, 11.26291847229004 through
+21.75798797607422 mag. Every scored export records the model version, probability,
+and frozen-threshold decision. The integration must reproduce stored development
+probabilities to floating-point precision before any live search. Its contract and
+validation evidence are maintained in `docs/point_source_selector_integration_v1.md`.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

@@ -208,6 +208,8 @@ POINT_SOURCE_ML_STABILITY_SUMMARY = (
 POINT_SOURCE_ML_STABILITY_VALIDATION = (
     LITERATURE_VALIDATION / "point_source_ml_stability_validation_v3.json"
 )
+POINT_SOURCE_LOGISTIC_MODEL = LITERATURE_VALIDATION / "point_source_logistic_model_v1.joblib"
+POINT_SOURCE_LOGISTIC_MODEL_MANIFEST = LITERATURE_VALIDATION / "point_source_logistic_model_v1.json"
 
 # ---------------------------------------------------------------------------
 # Gaia UCD selection criteria (from pilot study)

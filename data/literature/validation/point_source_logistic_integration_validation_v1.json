@@ -1,0 +1,16 @@
+{
+  "integration_version": "point_source_logistic_integration_v1",
+  "model_version": "point_source_logistic_model_v1",
+  "maximum_probability_difference": 1.1102230246251565e-16,
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "feature_contract": true,
+    "exact_probability_parity": true,
+    "decision_parity": true,
+    "version_recorded": true,
+    "all_raw_columns_queried": true,
+    "no_legacy_excess_noise_prefilter": true,
+    "no_legacy_proper_motion_prefilter": true
+  }
+}
