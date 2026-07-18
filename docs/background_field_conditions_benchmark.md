@@ -17,8 +17,10 @@ Does placing comparison patches at exactly the same Galactic latitude as a targe
 also make their Gaia coverage and total Gaia source density effectively identical?
 
 This benchmark does not apply the UCD selector and does not count UCD candidates.
-It measures only field properties that can be chosen before seeing a possible
-galaxy excess.
+The reported source counts include every Gaia DR3 catalog entry inside the circle
+with G magnitude between 11.262918 and 21.757988. No parallax, proper-motion,
+binary-star, QSO, morphology, or UCD-classifier filter is applied. It measures only
+field properties that can be chosen before seeing a possible galaxy excess.
 
 ## Test
 

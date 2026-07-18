@@ -29,6 +29,21 @@ contamination changes across the sky. It helps us decide which galaxies can be
 studied reliably and how closely a comparison patch must match its galaxy. It is
 not intended to replace the galaxy-specific comparison patches.
 
+In this design, a **galaxy-centered region** is a circle or annulus centered on the
+nearby galaxy being studied. A **comparison region** is an equal-area region moved
+away from that galaxy and used to estimate unrelated sources. A region described
+as **diagnostic-only** is measured to test the method but is not approved for the
+final background subtraction. When an environment is unresolved, the workflow
+does not generate comparison coordinates from an unverified group center or size;
+earlier summaries referred to avoiding such coordinates as “no invented
+comparison.”
+
+Counts explicitly described as **before selection** contain Gaia DR3 catalog
+entries in the stated magnitude range before any UCD classifier or contaminant
+removal is applied. They are not the sources that survive the point-source, binary,
+QSO, or other contaminant filters. Counts after the frozen selector is applied will
+always be labeled separately as selected-source or UCD-candidate counts.
+
 ## What “similar Gaia observing conditions” means
 
 Gaia is above Earth's atmosphere, so this phrase does not refer to weather. Gaia
