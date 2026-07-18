@@ -674,6 +674,14 @@ damaged range while leaving five intact ranges unchanged. All 15 checks pass. Th
 test's 130-row threshold is not a production limit; that limit must be measured with
 the full frozen-selector input columns before a real host retrieval.
 
+The first full-column benchmark retrieves all 19 frozen-selector inputs and passes
+all ten checks through 10,000 rows. Three repeated 5,000-row queries return identical
+source identifiers in 1.948628--1.976649 seconds and serialize to 1,027,468 bytes
+each. Set 5,000 rows as the provisional development checkpoint limit because it is
+directly repeated and is half the largest successful test. This is not an archive
+maximum or final production limit; multi-field and full-column restart validation
+remain required.
+
 ## Galactic-Latitude Eligibility
 
 The final sample should use a conservative absolute Galactic-latitude cut, but the

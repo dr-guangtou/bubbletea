@@ -1048,3 +1048,17 @@ unchanged. The final 500 source identifiers matched the independent reference.
 **Recommendation:** Write source data and metadata atomically, record query and file
 hashes plus expected and retrieved counts, validate source-identifier uniqueness,
 and requery any checkpoint that fails one of those checks.
+
+## 2026-07-18: Measure checkpoint size with the complete column contract
+
+**Lesson:** A row limit tested with a narrow diagnostic query does not establish the
+memory, file size, or runtime of the real classifier input.
+
+**Context:** The full 19-column Gaia benchmark found that 5,000 rows occupied
+500,132 bytes as a pandas table and 1,027,468 bytes as CSV in three repeated tests;
+the query times were 1.948628--1.976649 seconds. A 10,000-row query also succeeded,
+but only once in one field.
+
+**Recommendation:** Set provisional limits only from repeated full-column
+measurements, retain a margin below the largest successful test, record actual
+per-checkpoint bytes, and require multi-field validation before production.

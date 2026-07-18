@@ -97,6 +97,17 @@ Adaptive-retrieval progress, 2026-07-18:
   frozen-selector input columns.
 - [ ] Integrate production run-state records with exact radial-ring usable areas.
 
+Full-column benchmark progress, 2026-07-18:
+
+- [x] Benchmark all 19 frozen-selector input columns at 100, 500, 1,000, 2,500,
+  5,000, and 10,000 returned rows; all ten checks pass in 17.719464 seconds.
+- [x] Repeat 5,000 rows three times with identical source identifiers, measured
+  query times of 1.948628--1.976649 seconds, and 1,027,468 serialized bytes.
+- [x] Approve 5,000 rows as a provisional development checkpoint limit, half the
+  largest successful test and explicitly not an archive maximum.
+- [ ] Validate the provisional limit in multiple fields with different source
+  densities and in a full-column controlled restart.
+
 ## Review
 
 - The inherited 0.8-degree fields use an obsolete selector and divide by 2.0 square

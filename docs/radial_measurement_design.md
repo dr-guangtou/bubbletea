@@ -73,6 +73,12 @@ and replaced without repeating the other five downloads. All 15 checks pass in
 21.68 seconds. The production safe row limit and a full-selector-column restart
 benchmark remain pending; see `docs/gaia_adaptive_retrieval_validation.md`.
 
+The full 19-column retrieval benchmark subsequently completed tests from 100 to
+10,000 rows. Three 5,000-row runs returned identical identifiers in
+1.948628--1.976649 seconds and serialized to 1,027,468 bytes each. Use 5,000 rows as
+the provisional development checkpoint limit, pending multi-field validation and a
+full-column restart test. The limit is not an archive maximum.
+
 The count-blind audit uses no Gaia source or selector counts and passes all seven
 validation checks. Its artifacts are:
 

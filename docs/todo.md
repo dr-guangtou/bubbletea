@@ -594,6 +594,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   identifiers match the independent reference exactly and all 15 checks pass in
   21.68 seconds. Production row limits, full run identifiers, failure policy, and
   host-level aggregation remain pending.
+  Full-column benchmark, 2026-07-18: Retrieved all 19 classifier inputs from 100
+  through 10,000 rows. Three 5,000-row runs returned identical identifiers in
+  1.948628--1.976649 seconds and serialized to 1,027,468 bytes; all ten checks pass
+  in 17.719464 seconds. Approved 5,000 rows as a provisional development checkpoint
+  limit, pending multi-field and full-column restart validation. This is not an
+  archive maximum.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995

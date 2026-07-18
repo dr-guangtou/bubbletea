@@ -341,6 +341,12 @@ All 15 checks pass. A safe production row limit for the full selector-input colu
 and exact masked radial-ring areas remain pending; see
 `docs/gaia_adaptive_retrieval_validation.md`.
 
+The subsequent 19-column benchmark succeeded through 10,000 rows. Three repeated
+5,000-row queries returned identical identifiers in 1.948628--1.976649 seconds and
+produced 1,027,468 serialized bytes each. The provisional development checkpoint
+limit is 5,000 rows, pending multi-field and full-column restart validation. It is
+not an archive maximum; see `docs/gaia_full_selector_retrieval_benchmark.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13
