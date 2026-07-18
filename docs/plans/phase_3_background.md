@@ -66,11 +66,17 @@ Large-sky grid progress, 2026-07-19:
 - [x] Record represented group, association, and project-host intersections as
   count-blind sensitivity flags without deleting or scientifically approving a
   field.
-- [ ] Measure pre-selector Gaia conditions and retrieve frozen-selector inputs for
-  development fields only; keep all 102 validation fields unopened.
+- [ ] Measure pre-selector Gaia conditions for development fields only; keep all
+  102 validation fields unopened.
 - [x] Freeze a 12-field development retrieval pilot before Gaia queries: ten
   hemisphere/latitude representatives plus two ecliptic-band supplements; all ten
   checks pass (2026-07-19).
+- [x] Benchmark the full 19-column 0.8-degree retrieval on `sky_field_0000`: 84,025
+  rows in 26 strips, controlled stop/resume successful, and all 18 checks pass
+  (2026-07-19).
+- [x] Retrieve and score all 12 frozen development pilot fields: 275,404 Gaia rows,
+  11,583 passing candidates, 83 strips, and all nine aggregate checks pass
+  (2026-07-19).
 
 Off-target split progress, 2026-07-18:
 

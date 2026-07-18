@@ -1227,3 +1227,17 @@ actual count was 12: ten positional representatives and two ecliptic supplements
 **Recommendation:** Read and report the measured value before explaining a failed
 numerical assertion, then correct both the implementation contract and the user-
 facing record explicitly.
+
+## 2026-07-19: Persist measured strip plans as well as raw checkpoints
+
+**Lesson:** In a dense large field, planning the adaptive split can cost more time
+than retrieving the resulting strips.
+
+**Context:** Planning the 84,025-row low-latitude benchmark took 87.086338 seconds,
+while retrieving its 26 strips took 43.725160 seconds. The batch reused both the
+plan and all raw checkpoints, reducing the repeated benchmark processing to local
+verification and scoring.
+
+**Recommendation:** Store a query-contract hash beside each measured plan, verify
+it before reuse, and keep raw strip checkpoints and plans together in external
+storage so neither archive operation must be repeated unnecessarily.

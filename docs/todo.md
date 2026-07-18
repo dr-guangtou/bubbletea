@@ -629,6 +629,14 @@ Phase-specific execution tasks remain in `docs/plans/`.
   equal-area Galactic-latitude band. Two stable-hash supplements complete the six
   ecliptic-latitude bands, producing 12 development fields. All ten checks pass and
   all 102 validation identifiers remain absent.
+  Development retrieval benchmark and pilot, 2026-07-19: The position-only
+  `sky_field_0000` benchmark measured 84,025 Gaia sources in 26 final strips; the
+  largest has 4,982 rows, controlled stop/resume succeeded, and all 18 checks pass.
+  The full 12-field pilot measured 275,404 Gaia sources and 11,583 passing
+  candidates over 24.127040 square degrees. Its passing densities span
+  239.233660–708.748370 per square degree. All nine aggregate checks pass, raw
+  checkpoints remain outside the repository, and all 102 validation fields remain
+  unopened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

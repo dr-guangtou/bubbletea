@@ -414,6 +414,14 @@ with represented groups, associations, and project hosts remain sensitivity flag
 not exclusions or scientific-background approvals. See
 `docs/large_sky_field_grid.md`.
 
+The frozen 12-field development retrieval pilot is also complete. The low-latitude
+performance field contains 84,025 Gaia sources and required 26 verified strips;
+controlled stop and resume passed all 18 safeguards. Across the pilot, 11,583 of
+275,404 sources pass the selector over 24.127040 square degrees. Field densities
+span 239.233660–708.748370 per square degree, so the next development step must
+measure Gaia field conditions before fitting a larger sky model. The 102 validation
+fields remain unopened. See `docs/large_sky_development_retrieval.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

@@ -223,6 +223,15 @@ strips without downloading them again, and apply the frozen selector locally.
 Repository artifacts contain only the frozen field list, strip plans, compact
 field summaries, and provenance manifests.
 
+The single-field benchmark and 12-field development pilot completed on 2026-07-19.
+The benchmark contains 84,025 Gaia sources in 26 final strips; its largest strip
+has 4,982 rows, and all 18 safeguards pass. The full pilot contains 275,404 Gaia
+sources, of which 11,583 pass the frozen selector, over 24.127040 square degrees.
+Its 83 final strips occupy 56,764,898 CSV bytes in external checkpoint storage, and
+all nine aggregate safeguards pass. Individual passing-source densities span
+239.233660–708.748370 per square degree. This positional-coverage pilot does not
+fit the final model or authorize opening any of the 102 validation fields.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
