@@ -318,6 +318,14 @@ distances, 0.1 degree corresponds to a projected radius of 4.712394 kpc for
 ESO 006-G001 but 41.771283 kpc for NGC 4698. A fixed angle therefore cannot provide
 the planned comparable radial profile across nearby galaxies.
 
+The follow-up count-blind audit covers all 2,155 hosts and preserves an exploratory,
+recombinable physical-ring view rather than one fixed circular count. A provisional
+600 kpc diagnostic radius exceeds two degrees for 1,018 hosts and reaches
+13.064418 degrees, so complete retrieval may require multiple archive tiles. The
+current host table has no `R50` field; the central exclusion and normalized radial
+profile therefore remain uncalibrated. The complete measurement contract is in
+`docs/radial_measurement_design.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

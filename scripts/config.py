@@ -123,6 +123,12 @@ BACKGROUND_REVIEW_FIELD_CONDITIONS = (
 BACKGROUND_REVIEW_FIELD_CONDITIONS_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "background_review_field_conditions_v1.json"
 )
+RADIAL_MEASUREMENT_GEOMETRY_AUDIT = (
+    BACKGROUND_RESULTS_DIR / "radial_measurement_geometry_audit_v1.csv"
+)
+RADIAL_MEASUREMENT_GEOMETRY_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "radial_measurement_geometry_audit_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

@@ -531,6 +531,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   host-size-normalized radial profiles. A separately calibrated inner region is
   excluded from UCD inference because galaxy substructure, compact star-forming
   regions, and H II regions can dominate it.
+  Geometry audit, 2026-07-18: All 2,155 hosts have positive distances but the table
+  has no `R50` field. A provisional 600 kpc diagnostic radius exceeds two degrees
+  for 1,018 hosts and reaches 13.064418 degrees, so the inherited angular cap is
+  invalid. Defined a recombinable exploratory physical-ring view while requiring
+  continuous source radii, exact usable areas, and later `R50`-based calibration;
+  all seven count-blind checks pass.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

@@ -1006,3 +1006,16 @@ serve as one comparable host aperture.
 host measurements must retain concentric circular-annulus profiles in physical and
 host-normalized radius and exclude a separately calibrated central region from UCD
 inference.
+
+## 2026-07-18: Preserve continuous radius and never cap physical coverage silently
+
+**Lesson:** Fixed physical profiles cannot be retrieved safely through one fixed
+angular cap across a nearby-galaxy sample.
+
+**Context:** For the 2,155 current hosts, a 600 kpc radius spans 1.374835 to
+13.064418 degrees and exceeds the inherited two-degree cap for 1,018 hosts. A fixed
+cap would silently remove outer rings preferentially for nearby galaxies.
+
+**Recommendation:** Store continuous angular, physical, and—when available—`R50`-
+normalized source radius; treat displayed rings as recombinable views; and use
+complete tiled or equivalent queries with explicit requested and usable area.

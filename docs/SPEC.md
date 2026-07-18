@@ -643,6 +643,20 @@ confirmation and look-elsewhere bias. The final definition must therefore be
 calibrated on declared reference or development data and validated separately, or
 the radial scan must be treated as exploratory with its trial factors included.
 
+The first count-blind geometry audit retains a recombinable exploratory physical
+view with edges at 0, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 300, and
+600 kpc. These edges preserve prior pilot and morphology-diagnostic resolution and
+are not the final signal or background definition. Continuous angular and physical
+source separations must be stored so the view can be changed without a new Gaia
+query. The current 2,155-host catalog has no `R50` field, so no normalized central
+boundary can yet be assigned reproducibly.
+
+At 600 kpc, the audited angular radius exceeds two degrees for 1,018 hosts and
+reaches 13.064418 degrees. The real retrieval therefore cannot use the inherited
+two-degree cap. It must use complete tiled or equivalent queries with explicit
+requested, retrieved, masked, and usable areas. Detailed calibration requirements
+are maintained in `docs/radial_measurement_design.md`.
+
 ## Galactic-Latitude Eligibility
 
 The final sample should use a conservative absolute Galactic-latitude cut, but the

@@ -62,6 +62,18 @@ selector and provide valid host-specific controls.
   under BT-021 before a real host search.
 - [ ] Calibrate the central exclusion and final radial signal region under BT-021.
 
+Progress, 2026-07-18:
+
+- [x] Audit the count-blind angular geometry for all 2,155 hosts; all seven checks
+  pass, and no `R50` field is currently available.
+- [x] Define a recombinable exploratory physical-ring view while preserving
+  continuous source radius; the displayed edges are not final boundaries.
+- [x] Remove the inherited two-degree cap from the design requirement: a 600 kpc
+  diagnostic radius exceeds two degrees for 1,018 hosts.
+- [ ] Acquire provenance-bearing `R50` measurements under BT-020 before calibrating
+  the normalized central exclusion.
+- [ ] Implement and validate tiled retrieval and exact per-ring usable areas.
+
 ## Review
 
 - The inherited 0.8-degree fields use an obsolete selector and divide by 2.0 square
