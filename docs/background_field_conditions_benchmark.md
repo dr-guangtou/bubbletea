@@ -30,6 +30,11 @@ have the same Galactic latitude, 71.345091 degrees. The comparison-patch separat
 and the group-radius multiplier are temporary test values, not approved scientific
 rules.
 
+The 0.1-degree radius was selected only to make the first live archive query small
+and fast. It is not a proposed scientific search radius. The real galaxy
+measurement will use multiple concentric circular rings, retain a radial profile,
+and omit a calibrated central galaxy region from UCD inference.
+
 The script measures:
 
 - the number and sky density of all Gaia sources in the selector's allowed G

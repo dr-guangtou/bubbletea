@@ -24,6 +24,14 @@ remaining at the same Galactic latitude. Earlier summaries called these
 “diagnostic patches.” They are measured to test the method; they are not yet
 approved for subtracting contamination from the galaxy measurement.
 
+The 0.1-degree radius was chosen only for a bounded archive-query test. It is not
+the real galaxy measurement aperture. At the catalog distances used here, this
+angle corresponds to a projected radius of 4.712394 kpc for ESO 006-G001 and
+41.771283 kpc for NGC 4698. The real measurement must instead preserve a series of
+concentric circular rings in physical and host-size-normalized radius. A calibrated
+inner circular region will be omitted from UCD inference because galaxy
+substructure, compact star-forming regions, and H II regions can dominate it.
+
 For the four galaxies with accepted Kourkchi-Tully catalog associations, two
 comparison test circles were placed east and west at exactly the galaxy's Galactic
 latitude. Their temporary separation uses twice the catalog's estimated

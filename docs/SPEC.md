@@ -609,15 +609,24 @@ imputation.
 
 ## Signal Aperture and Central Exclusion
 
-During the exploratory stage, the search should retain a series of annular
-measurements rather than reduce each host immediately to one signal aperture. The
-annular profiles will be used to calibrate a final host-scaled definition.
+The real host measurement must use a series of concentric circular annuli: rings
+centered on the galaxy that divide projected radius into successive intervals. It
+must retain the count, usable area, and selected-source density in every ring rather
+than reduce each host immediately to one fixed circular count. Physical-kpc profiles
+and host-size-normalized profiles must both be retained. The annular profiles will
+be used to calibrate a final host-scaled definition.
+
+The small 0.1-degree-radius circles used in the 2026-07-18 Gaia archive benchmarks
+are query-speed and field-condition diagnostics only. They do not define the real
+host measurement radius, radial bins, inner exclusion, or background geometry.
 
 The intended final signal region may take the form `[M, N] x R50`, with `M` and `N`
-determined from validated behavior rather than assumed now. The analysis should
-also exclude an inner region representing the main body of the galaxy, where
-galaxy substructure, compact star-forming regions, and source-extraction artifacts
-can dominate.
+determined from validated behavior rather than assumed now. The analysis must
+exclude an inner circular region representing the main body of the galaxy from UCD
+inference. Galaxy substructure, compact star-forming regions, H II regions, and
+source-extraction artifacts can dominate there. Sources and measurements inside
+this region may be retained as contamination diagnostics, but they must not
+contribute to the inferred UCD radial excess.
 
 - When a measured, consistent-band `R50` is available, it should anchor the inner
   exclusion and host-normalized annuli.

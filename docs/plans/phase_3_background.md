@@ -51,6 +51,17 @@ selector and provide valid host-specific controls.
   frozen selector.
 - [ ] Calibrate matching tolerances and the conservative Galactic-latitude limit.
 
+## III.4 Interface with the real host measurement
+
+- [x] Confirm that the 0.1-degree field-condition circles are query benchmarks only
+  and do not define the real host aperture (2026-07-18).
+- [x] Require concentric circular annuli for the real radial profile and a separately
+  calibrated central exclusion for galaxy substructure and H II contamination
+  (2026-07-18).
+- [ ] Define the exploratory physical-kpc annuli and host-size-normalized annuli
+  under BT-021 before a real host search.
+- [ ] Calibrate the central exclusion and final radial signal region under BT-021.
+
 ## Review
 
 - The inherited 0.8-degree fields use an obsolete selector and divide by 2.0 square

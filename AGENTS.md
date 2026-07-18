@@ -121,6 +121,18 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - Summaries must explain what an analysis is doing and why, not only name its
   scripts, phases, catalogs, or internal labels.
 
+## Host-Centered Measurement Geometry
+
+- Real galaxy measurements must preserve a series of concentric circular annuli so
+  the radial profile remains available; do not reduce a host immediately to one
+  fixed circular count.
+- Exclude a separately defined inner galaxy region from UCD inference because
+  galaxy substructure, compact star-forming regions, and H II regions can dominate
+  there. Calibrate this inner boundary rather than adopting the temporary benchmark
+  radius or an unvalidated fixed value.
+- Small fixed-angle circles used for archive-query benchmarks are diagnostics only
+  and must never become the real host measurement aperture by default.
+
 ## Git Conventions
 
 - Branch strategy: feature branches, never work directly on `main`

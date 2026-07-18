@@ -525,6 +525,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Resolution criteria: Declare development and validation data; calibrate `M`,
   `N`, and the inner limit with uncertainty; test sensitivity to the `R50` band and
   estimation method; and account for radial-scan trial factors.
+  Clarification, 2026-07-18: The 0.1-degree circles used for Gaia archive benchmarks
+  are query diagnostics only and must not define real host measurements. Real host
+  measurements use concentric circular annuli and retain physical-kpc and
+  host-size-normalized radial profiles. A separately calibrated inner region is
+  excluded from UCD inference because galaxy substructure, compact star-forming
+  regions, and H II regions can dominate it.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

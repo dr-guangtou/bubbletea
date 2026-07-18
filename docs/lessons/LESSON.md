@@ -991,3 +991,18 @@ real M60 or Virgo-associated objects as well as crowding and Gaia coverage effec
 target-to-control matching rule. Calibrate its predictive role on off-target fields,
 validate it on spatially separate fields, and never use target overdensity to tune
 the matching tolerance.
+
+## 2026-07-18: Separate query benchmarks from scientific measurement geometry
+
+**Lesson:** A small fixed-angle archive test can be mistaken for the intended host
+measurement if its limited purpose is not stated every time it is summarized.
+
+**Context:** The Gaia field-condition benchmark used 0.1-degree-radius circles to
+keep the first live queries bounded. That angle corresponds to 4.712394 kpc at the
+distance of ESO 006-G001 and 41.771283 kpc at the distance of NGC 4698, so it cannot
+serve as one comparable host aperture.
+
+**Recommendation:** Label fixed-angle benchmark geometry as diagnostic-only. Real
+host measurements must retain concentric circular-annulus profiles in physical and
+host-normalized radius and exclude a separately calibrated central region from UCD
+inference.

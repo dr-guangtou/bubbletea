@@ -95,8 +95,16 @@ inhomogeneity associated with source density, magnitude, and ecliptic latitude
 
 ## Required geometry terms
 
-- **Signal aperture:** The host-centered region in which an excess will eventually
-  be tested. Its scale and inner mask belong to BT-021 and are not fixed here.
+- **Galaxy-centered radial profile:** Counts and usable areas measured in a series
+  of concentric circular rings around the galaxy. The real measurement preserves
+  this profile rather than returning only one number.
+- **Central exclusion region:** The inner circular part of the galaxy omitted from
+  UCD inference because galaxy substructure, compact star-forming regions, H II
+  regions, and source-extraction artifacts can dominate it. Its calibrated size
+  belongs to BT-021 and is not fixed here.
+- **Signal region:** The set of radial rings outside the central exclusion that may
+  eventually be combined for an excess measurement. Its outer scale belongs to
+  BT-021 and is not fixed here.
 - **Halo exclusion radius:** A conservative sky radius inside which a field cannot
   be treated as background for the host. It is derived from an upper-limit halo
   radius and a frozen safety factor.
@@ -303,6 +311,12 @@ not guarantee identical Gaia coverage or source density in this bounded test. On
 target and two comparisons are insufficient to choose diagnostics or matching
 tolerances, so no scientific rule is frozen. Full definitions, measurements, and
 limitations are recorded in `docs/background_field_conditions_benchmark.md`.
+
+The 0.1-degree radius was chosen only to keep this first archive query small and
+quick. It is not a host-measurement recommendation. At the measured catalog
+distances, 0.1 degree corresponds to a projected radius of 4.712394 kpc for
+ESO 006-G001 but 41.771283 kpc for NGC 4698. A fixed angle therefore cannot provide
+the planned comparable radial profile across nearby galaxies.
 
 ## Five-host field-condition result
 
