@@ -343,9 +343,16 @@ and exact masked radial-ring areas remain pending; see
 
 The subsequent 19-column benchmark succeeded through 10,000 rows. Three repeated
 5,000-row queries returned identical identifiers in 1.948628--1.976649 seconds and
-produced 1,027,468 serialized bytes each. The provisional development checkpoint
-limit is 5,000 rows, pending multi-field and full-column restart validation. It is
-not an archive maximum; see `docs/gaia_full_selector_retrieval_benchmark.md`.
+produced 1,027,468 serialized bytes each. That benchmark set 5,000 rows as the
+provisional development checkpoint limit. It is not an archive maximum; see
+`docs/gaia_full_selector_retrieval_benchmark.md`.
+
+The three-field full-column restart validation measures 2,991 rows for NGC 4698,
+6,497 for M60, and 13,010 for ESO 006-G001, producing one, two, and four final
+strips. Both split fields resume from a verified saved strip, every combined source-
+identifier hash matches an independent reference, and all 13 checks pass. Freeze
+5,000 rows per strip for development and pilot runs under the current 19-column
+contract; see `docs/gaia_full_column_multifield_validation.md`.
 
 ## Five-host field-condition result
 

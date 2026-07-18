@@ -1,6 +1,6 @@
 # Full-selector-column Gaia retrieval benchmark
 
-**Status:** Bounded benchmark passed; 5,000-row development checkpoint limit approved provisionally
+**Status:** Bounded benchmark passed; 5,000-row limit confirmed by multifield restart validation
 **Date:** 2026-07-18
 **Selector:** `point_source_logistic_model_v1`
 **Gaia release reference:** `2023A&A...674A...1G`, DOI
@@ -54,11 +54,14 @@ measured successfully three times with identical identifiers and is half the
 largest successful full-column test of 10,000 rows. This is a conservative project
 setting, not a measured Gaia archive failure boundary.
 
-The limit remains provisional because the benchmark covers one sky field, one
-service session, and one machine. Before a multi-degree production run, it must be
-validated in several fields with different source densities and through a complete
-full-column stop-and-resume test. File sizes must still be recorded per checkpoint
-because null patterns and numeric representations can change serialized size.
+A follow-up test now validates the limit in three fields with different measured
+row counts and through complete full-column stop-and-resume behavior. The accepted
+cases contain 2,991, 6,497, and 13,010 rows, produce one, two, and four strips, and
+match independent identifier references exactly. The project therefore freezes
+5,000 rows as the per-strip limit for development and pilot runs under the current
+19-column contract. File sizes must still be recorded per checkpoint because null
+patterns and numeric representations can change serialized size. See
+`docs/gaia_full_column_multifield_validation.md`.
 
 ## Artifacts and reproduction
 

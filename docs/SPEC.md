@@ -679,8 +679,12 @@ all ten checks through 10,000 rows. Three repeated 5,000-row queries return iden
 source identifiers in 1.948628--1.976649 seconds and serialize to 1,027,468 bytes
 each. Set 5,000 rows as the provisional development checkpoint limit because it is
 directly repeated and is half the largest successful test. This is not an archive
-maximum or final production limit; multi-field and full-column restart validation
-remain required.
+maximum. The follow-up full-column restart validation measures 2,991, 6,497, and
+13,010 rows in three fields, producing one, two, and four strips. Every combined
+identifier set matches an independent complete-circle query and all 13 checks pass.
+Freeze 5,000 rows as the maximum per saved strip for development and pilot runs
+under the current 19-column contract. Record actual bytes per strip; a changed
+column contract, archive, or Gaia release requires a new benchmark.
 
 ## Galactic-Latitude Eligibility
 

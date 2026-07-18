@@ -76,8 +76,14 @@ benchmark remain pending; see `docs/gaia_adaptive_retrieval_validation.md`.
 The full 19-column retrieval benchmark subsequently completed tests from 100 to
 10,000 rows. Three 5,000-row runs returned identical identifiers in
 1.948628--1.976649 seconds and serialized to 1,027,468 bytes each. Use 5,000 rows as
-the provisional development checkpoint limit, pending multi-field validation and a
-full-column restart test. The limit is not an archive maximum.
+the provisional development checkpoint limit before the multi-field test. The limit
+is not an archive maximum.
+
+The full-column restart test now covers NGC 4698, M60, and ESO 006-G001 with 2,991,
+6,497, and 13,010 measured rows. They require one, two, and four final strips,
+respectively, and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows as the
+per-strip limit for development and pilot retrieval under the current 19-column
+contract. Exact radial-ring areas and masks remain the next integration step.
 
 The count-blind audit uses no Gaia source or selector counts and passes all seven
 validation checks. Its artifacts are:

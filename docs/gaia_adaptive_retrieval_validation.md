@@ -63,11 +63,11 @@ A production run must preserve:
 A follow-up full-column benchmark directly measured 5,000 rows three times and
 10,000 rows once. The 5,000-row results had identical source identifiers, query
 times of 1.948628--1.976649 seconds, and serialized sizes of 1,027,468 bytes. The
-provisional development checkpoint limit is therefore 5,000 rows, pending
-multi-field validation. Before a real multi-degree host run, the workflow still
-needs a bounded full-column restart test and integration with exact radial-ring area
-and masking calculations. See
-`docs/gaia_full_selector_retrieval_benchmark.md`.
+provisional development checkpoint limit was therefore 5,000 rows. A subsequent
+three-field test validates full-column restart behavior for one unsplit and two
+split cases and freezes the 5,000-row per-strip limit for development and pilot
+runs. Integration with exact radial-ring area and masking calculations remains
+pending. See `docs/gaia_full_column_multifield_validation.md`.
 
 ## Artifacts and reproduction
 

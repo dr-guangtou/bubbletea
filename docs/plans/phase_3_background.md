@@ -93,8 +93,8 @@ Adaptive-retrieval progress, 2026-07-18:
   those files and downloads only four unfinished strips.
 - [x] Detect and replace one deliberately corrupted strip while preserving five
   valid strips; all 15 checks pass in 21.68 seconds.
-- [ ] Benchmark and freeze a safe production row and file-size limit using the full
-  frozen-selector input columns.
+- [x] Benchmark and freeze a 5,000-row per-strip limit using all 19 frozen-selector
+  input columns; retain actual file bytes per checkpoint (2026-07-18).
 - [ ] Integrate production run-state records with exact radial-ring usable areas.
 
 Full-column benchmark progress, 2026-07-18:
@@ -105,8 +105,20 @@ Full-column benchmark progress, 2026-07-18:
   query times of 1.948628--1.976649 seconds, and 1,027,468 serialized bytes.
 - [x] Approve 5,000 rows as a provisional development checkpoint limit, half the
   largest successful test and explicitly not an archive maximum.
-- [ ] Validate the provisional limit in multiple fields with different source
-  densities and in a full-column controlled restart.
+- [x] Validate the provisional limit in multiple fields with different source
+  densities and in a full-column controlled restart (2026-07-18).
+
+Multi-field full-column validation, 2026-07-18:
+
+- [x] Preserve the failed first diversity test: 0.5-degree fields contained 2,991,
+  3,098, and 13,010 rows, so only one field required splitting.
+- [x] Expand only the M60 performance-test circle to 0.75 degree rather than weaken
+  the two-split-field requirement.
+- [x] Validate 2,991-row unsplit, 6,497-row two-strip, and 13,010-row four-strip
+  cases; exact identifier references match and all 13 checks pass in 29.589341
+  seconds.
+- [x] Freeze 5,000 rows as the development and pilot per-strip limit for the current
+  19-column contract.
 
 ## Review
 

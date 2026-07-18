@@ -600,6 +600,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   in 17.719464 seconds. Approved 5,000 rows as a provisional development checkpoint
   limit, pending multi-field and full-column restart validation. This is not an
   archive maximum.
+  Multi-field full-column validation, 2026-07-18: The first equal-radius test was
+  retained as failed because only the 13,010-row field split. After expanding only
+  the M60 performance circle, the accepted test measured 2,991, 6,497, and 13,010
+  rows and produced one, two, and four strips. Both split cases resumed from one
+  verified checkpoint; every combined identifier hash matches an independent
+  reference and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows per strip
+  for development and pilot runs under the current 19-column contract.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995

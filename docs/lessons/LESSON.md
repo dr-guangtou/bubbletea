@@ -1062,3 +1062,17 @@ but only once in one field.
 **Recommendation:** Set provisional limits only from repeated full-column
 measurements, retain a margin below the largest successful test, record actual
 per-checkpoint bytes, and require multi-field validation before production.
+
+## 2026-07-18: Preserve a failed validation gate instead of weakening it
+
+**Lesson:** A performance test that does not exercise its intended branch is not a
+successful validation, even when every data-integrity check passes.
+
+**Context:** The first three-field full-column test used 0.5-degree circles and
+measured 2,991, 3,098, and 13,010 rows, so only one field exceeded the 5,000-row
+limit. The requirement for two independently split and restarted fields failed.
+
+**Recommendation:** Preserve the failed result and requirement. Change only the
+performance-test geometry needed to exercise the branch, state that it is not a
+scientific aperture, and rerun every check rather than lowering the gate after
+seeing the data.

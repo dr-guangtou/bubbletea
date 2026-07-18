@@ -143,6 +143,15 @@ GAIA_FULL_SELECTOR_RETRIEVAL_BENCHMARK = (
 GAIA_FULL_SELECTOR_RETRIEVAL_BENCHMARK_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "gaia_full_selector_retrieval_benchmark_v1.json"
 )
+GAIA_FULL_COLUMN_MULTIFIELD_RETRIEVAL = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_retrieval_v1.csv"
+)
+GAIA_FULL_COLUMN_MULTIFIELD_PLAN = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_plan_v1.csv"
+)
+GAIA_FULL_COLUMN_MULTIFIELD_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_validation_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )
