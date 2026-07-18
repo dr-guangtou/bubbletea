@@ -19,14 +19,50 @@ to find suitable comparison patches of sky for each galaxy.
 For every galaxy, we want to compare the number of selected Gaia sources near the
 galaxy with the number in one or more patches that should contain no objects
 belonging to that galaxy. The comparison patches should be as similar as possible
-in Milky Way foreground-star density and Gaia observing conditions. In particular,
-they should be close to the same Galactic latitude as the galaxy.
+in Milky Way foreground-star density and in how completely and repeatedly Gaia
+observed the sky. In particular, they should be close to the same Galactic latitude
+as the galaxy.
 
 This is different from the separate random-sky experiment. The random-sky
 experiment deliberately samples many Galactic latitudes to measure how foreground
 contamination changes across the sky. It helps us decide which galaxies can be
 studied reliably and how closely a comparison patch must match its galaxy. It is
 not intended to replace the galaxy-specific comparison patches.
+
+## What “similar Gaia observing conditions” means
+
+Gaia is above Earth's atmosphere, so this phrase does not refer to weather. Gaia
+scanned different sky positions a different number of times and at different scan
+angles. Source crowding also changes whether Gaia detects a source and whether it
+publishes a complete astrometric solution. Consequently, two equal-area patches can
+produce different selected-source counts even when their true populations are
+otherwise similar.
+
+For this project, a galaxy patch and its comparison patch should be checked using
+measured field-level quantities that do not use the UCD selector's output:
+
+- **Ecliptic latitude:** a simple sky-position indicator related to Gaia's scanning
+  pattern. It is a diagnostic, not a complete description of the scan history.
+- **Gaia `M10` completeness indicator:** the median G magnitude of Gaia sources with
+  no more than ten matched astrometric transits in a small sky patch. A brighter
+  `M10` generally indicates shallower or less complete Gaia coverage.
+- **Observation-count distributions:** quantities such as the number of visibility
+  periods and matched astrometric transits, which describe how often sources in the
+  patch contributed to Gaia measurements.
+- **Total Gaia source density:** a crowding indicator measured before applying the
+  frozen UCD selector.
+- **Query and usable-area status:** whether the archive query completed without row
+  truncation and how much of the requested patch remains after masks.
+
+Galactic latitude is related but separate: it primarily tracks how many Milky Way
+foreground stars lie in the direction of the patch. Dust and bright-star masks are
+also separate sky-quality checks.
+
+The exact matching tolerances for these quantities have not been chosen. They must
+be measured from comparison-patch pairs without looking for the values that produce
+the largest galaxy overdensity. We also must test which diagnostics materially
+predict the density of sources passing the frozen selector; a diagnostic that adds
+no measured predictive value need not become a matching requirement.
 
 The background design has to separate three effects:
 
@@ -96,7 +132,7 @@ control must:
 - match the signal aperture's angular geometry and magnitude/selector contract;
 - lie entirely outside the host halo exclusion radius;
 - satisfy predeclared tolerances in Galactic latitude, ecliptic latitude, and an
-  empirical Gaia completeness or observing-condition diagnostic such as `M10`;
+  empirical Gaia completeness indicator such as `M10`;
 - avoid the buffered halos of other cataloged nearby galaxies, groups, and clusters;
 - retain bright-star, crowding, missing-area, and query-truncation masks; and
 - receive a permanent accepted or rejected status with a reason.
