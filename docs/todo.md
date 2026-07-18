@@ -396,6 +396,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   workflow must fail explicitly when required area is missing rather than
   reporting zero background.
   Depends on: BT-001, BT-002.
+  Progress, 2026-07-18: Audited the inherited Phase III random fields, Phase IV
+  annulus, and frozen legacy method. Drafted `docs/background_control_design.md`
+  with paired off-target controls, a halo-excluded local annulus, and a stratified
+  large-field diagnostic. Implementation awaits project-lead decisions on method
+  hierarchy, unresolved environments, and the first `R200c` proxy.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
