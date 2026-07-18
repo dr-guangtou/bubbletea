@@ -1,0 +1,53 @@
+{
+  "split_version": "off_target_field_split_v1",
+  "split_id": "split_04329736d47c538b7aa0",
+  "generated_at_utc": "2026-07-18T15:03:52.906260+00:00",
+  "plain_language_definition": {
+    "development": "fields allowed for choosing and tuning the background method",
+    "validation": "fields held back until the method choices are fixed",
+    "excluded": "target-centered fields that are not part of this off-target split"
+  },
+  "selection_contract": "review_case_and_geometry_only_no_gaia_source_counts_no_selector_outputs",
+  "input": {
+    "path": "data/results/background/background_review_field_positions_v1.csv",
+    "sha256": "e7edaca4a1ad2e5696b53720edf47c985fef4b6e992d256f540a4b551af57fb6"
+  },
+  "assignment_rule": {
+    "development_review_cases": [
+      "highest_ranked_one_galaxy_catalog_case",
+      "highest_ranked_group_main_galaxy"
+    ],
+    "validation_review_cases": [
+      "nearest_one_galaxy_catalog_case",
+      "highest_ranked_group_member"
+    ],
+    "keep_east_and_west_from_one_host_together": true
+  },
+  "field_count": 13,
+  "assigned_off_target_field_count": 8,
+  "development_field_count": 4,
+  "validation_field_count": 4,
+  "excluded_target_field_count": 5,
+  "minimum_development_to_validation_center_separation_deg": 11.94937579466857,
+  "test_patch_radius_deg": 0.1,
+  "required_non_overlap_center_separation_deg": 0.2,
+  "scientific_background_approval_status": "none_approved_diagnostic_fields_only",
+  "check_count": 14,
+  "passed_count": 14,
+  "checks": {
+    "thirteen_input_positions_preserved": true,
+    "eight_off_target_fields_assigned": true,
+    "four_development_fields": true,
+    "four_validation_fields": true,
+    "four_host_systems_assigned": true,
+    "each_host_system_kept_in_one_partition": true,
+    "each_host_system_keeps_east_and_west_fields": true,
+    "each_partition_has_isolated_and_group_cases": true,
+    "each_partition_has_positive_and_negative_galactic_latitude": true,
+    "development_and_validation_circles_do_not_overlap": true,
+    "target_fields_excluded": true,
+    "no_field_promoted_to_scientific_background": true,
+    "no_gaia_or_selector_count_columns_used": true,
+    "input_positions_were_count_blind": true
+  }
+}

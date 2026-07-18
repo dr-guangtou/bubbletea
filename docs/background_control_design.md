@@ -372,6 +372,14 @@ refused rather than overwriting an earlier receipt. Three completed performance
 fields and one controlled partial M60 case pass all 18 checks; see
 `docs/host_run_records.md`.
 
+The first selector experiment now has a frozen count-blind field split. Four
+off-target circles around NGC 4698 and NGC 1316 are development fields, where method
+choices may be made. Four circles around ESO 006-G001 and M60 are held back for
+validation. East and west circles from one host remain together, and each partition
+contains isolated/grouped and positive/negative-latitude cases. The assignment does
+not read Gaia counts or selector outputs, all 14 checks pass, and no circle is
+promoted to a scientific background. See `docs/off_target_field_split.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

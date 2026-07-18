@@ -126,6 +126,20 @@ calibration using total density must be learned on comparison fields away from
 target galaxies and tested on spatially separate comparison fields before it is
 applied to host measurements.
 
+The first bounded off-target experiment freezes eight existing 0.1-degree
+diagnostic circles before any frozen-selector result is calculated. NGC 4698 and
+NGC 1316 supply four development circles; ESO 006-G001 and M60 supply four held-back
+validation circles. East and west circles from one host remain together. Each
+partition contains one isolated catalog case, one grouped case, one positive
+Galactic latitude, and one negative latitude. The closest development-to-validation
+centers are 11.949376 degrees apart. This assignment uses host roles and geometry
+only; it does not read Gaia counts or selector outputs.
+
+These fields remain diagnostic and are not approved scientific backgrounds. Their
+purpose is to test the canonical-selector experiment and the separation between
+method development and held-back checking. They are too small to establish final
+survey-wide matching tolerances or a Galactic-latitude limit.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

@@ -584,6 +584,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   confirm that exact Galactic-latitude matching does not ensure identical Gaia
   coverage. Calibration must use off-target development fields and spatially
   separate validation fields so target-associated sources cannot tune the rule.
+  Frozen field split, 2026-07-18: Assigned the NGC 4698 and NGC 1316 east/west
+  circles to development and held the ESO 006-G001 and M60 east/west circles for
+  validation. Both fields from one host remain together; each partition contains
+  isolated/grouped and positive/negative-latitude cases. The assignment reads no
+  Gaia counts or selector outputs, promotes no field to scientific-background
+  status, and passes all 14 checks. This is a bounded diagnostic split, not a final
+  survey-wide validation set.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

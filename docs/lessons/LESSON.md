@@ -1119,3 +1119,17 @@ content.
 **Recommendation:** Derive run identifiers from declared configuration and input
 fingerprints, write one atomic receipt per galaxy, reuse only byte-identical
 content, refuse changed-content overwrites, and record failures in plain language.
+
+## 2026-07-18: Keep related off-target fields on the same side of validation
+
+**Lesson:** Two fields generated from the same host are not independent examples
+for method development and validation.
+
+**Context:** The bounded background fixture has east and west circles around four
+host systems. Splitting an east/west pair would allow host-specific geometry and sky
+conditions to appear in both the method-tuning and held-back samples.
+
+**Recommendation:** Assign fields in host-level groups, balance declared host and
+sky categories without using Gaia counts, hold validation selector results until
+method choices are fixed, and preserve diagnostic fields as non-scientific controls
+until their background eligibility is separately established.

@@ -39,7 +39,8 @@ selector and provide valid host-specific controls.
 
 ## III.3 Frozen-selector background experiment
 
-- [ ] Define spatial development and validation fields.
+- [x] Freeze four off-target development and four held-back validation fields using
+  host roles and geometry only; all 14 checks pass (2026-07-18).
 - [x] Select a deterministic five-host review set without using Gaia source counts
   (2026-07-18).
 - [x] Run one bounded target/two-comparison field-condition query without applying
@@ -50,6 +51,18 @@ selector and provide valid host-specific controls.
 - [ ] Recompute the random-field experiment with exact usable areas and the shared
   frozen selector.
 - [ ] Calibrate matching tolerances and the conservative Galactic-latitude limit.
+
+Off-target split progress, 2026-07-18:
+
+- [x] Keep east and west fields from each host system in one partition.
+- [x] Assign NGC 4698 and NGC 1316 fields to development; hold ESO 006-G001 and M60
+  fields for validation.
+- [x] Preserve one isolated case, one grouped case, one positive latitude, and one
+  negative latitude in each partition.
+- [x] Verify no development and validation circles overlap; the minimum measured
+  center separation is 11.949376 degrees for 0.1-degree-radius circles.
+- [x] Confirm the split reads no Gaia source counts, densities, or selector outputs
+  and promotes no field to an approved scientific background.
 
 ## III.4 Interface with the real host measurement
 
