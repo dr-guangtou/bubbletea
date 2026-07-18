@@ -68,6 +68,9 @@ Large-sky grid progress, 2026-07-19:
   field.
 - [ ] Measure pre-selector Gaia conditions and retrieve frozen-selector inputs for
   development fields only; keep all 102 validation fields unopened.
+- [x] Freeze a 12-field development retrieval pilot before Gaia queries: ten
+  hemisphere/latitude representatives plus two ecliptic-band supplements; all ten
+  checks pass (2026-07-19).
 
 Off-target split progress, 2026-07-18:
 

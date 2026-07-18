@@ -623,6 +623,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   as count-blind sensitivity flags rather than exclusions. All 16 checks pass; no
   Gaia count or selector output was read, and no field is approved as a scientific
   background.
+  Development retrieval pilot, 2026-07-19: Before querying any 0.8-degree grid
+  field, froze `sky_field_0000` as the position-only low-latitude performance
+  benchmark and selected one development representative from every hemisphere ×
+  equal-area Galactic-latitude band. Two stable-hash supplements complete the six
+  ecliptic-latitude bands, producing 12 development fields. All ten checks pass and
+  all 102 validation identifiers remain absent.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

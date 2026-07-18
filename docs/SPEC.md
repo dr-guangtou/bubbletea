@@ -202,6 +202,27 @@ or approve the field as a scientific background. The full 500-field grid remains
 diagnostic until the frozen selector, pre-selector field conditions, environment-
 flag sensitivity, and held-back predictive performance have been evaluated.
 
+Before any large-grid Gaia query, freeze a development-only retrieval pilot. The
+single performance benchmark is the development field with the smallest absolute
+Galactic latitude, with `field_id` breaking an exact tie. This is expected to be a
+demanding sky position from geometry alone; no Gaia count is used to choose it.
+
+The small retrieval pilot contains that benchmark plus one stable-hash-selected
+development field from every other combination of Galactic hemisphere and
+equal-area Galactic-latitude band. Add the lowest-hash development field from any
+fixed absolute-ecliptic-latitude band still absent. The resulting field identities
+must be written before the benchmark query. All held-back validation field
+identifiers remain forbidden from count queries, retrieval plans, checkpoints,
+selector outputs, and summaries.
+
+Raw 19-column Gaia checkpoints for 0.8-degree fields are large products and must be
+stored under the configured external-data directory, never in the repository. The
+benchmark and pilot use the validated 5,000-row adaptive strip limit, save measured
+plans before retrieval, verify checkpoint hashes and row counts, resume completed
+strips without downloading them again, and apply the frozen selector locally.
+Repository artifacts contain only the frozen field list, strip plans, compact
+field summaries, and provenance manifests.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

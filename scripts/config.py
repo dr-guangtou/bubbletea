@@ -188,6 +188,21 @@ OFF_TARGET_VALIDATION_FROZEN_SUMMARY = (
 OFF_TARGET_VALIDATION_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_validation_selector_v1.json"
 LARGE_SKY_FIELD_GRID = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.csv"
 LARGE_SKY_FIELD_GRID_MANIFEST = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.json"
+LARGE_SKY_DEVELOPMENT_PILOT_FIELDS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_pilot_fields_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_PILOT_FIELDS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_pilot_fields_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_PLAN = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_plan_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )
@@ -215,6 +230,7 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 # Falls back to data/external/ if not set.
 # ---------------------------------------------------------------------------
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
+LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

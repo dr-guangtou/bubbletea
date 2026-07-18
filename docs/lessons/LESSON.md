@@ -1214,3 +1214,16 @@ represented one fifth of possible values.
 **Recommendation:** Define balance explicitly using position-only strata, then use
 stable hashes to choose a fixed number of whole blocks within each stratum. Audit
 the resulting field and coverage counts before freezing the partition.
+
+## 2026-07-19: Inspect a failed measured artifact before reporting its size
+
+**Lesson:** A failed expected-count check identifies a mismatch but does not reveal
+whether the measured count is above or below the expectation.
+
+**Context:** The pilot freeze failed an expected 11-field assertion. An immediate
+status update incorrectly inferred 10 fields before the saved table showed the
+actual count was 12: ten positional representatives and two ecliptic supplements.
+
+**Recommendation:** Read and report the measured value before explaining a failed
+numerical assertion, then correct both the implementation contract and the user-
+facing record explicitly.
