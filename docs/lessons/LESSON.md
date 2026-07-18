@@ -1034,3 +1034,17 @@ boundary points exactly once.
 **Recommendation:** Count rows first, split only ranges that exceed the declared
 safe retrieval size, retain the exact circle predicate in every subquery, validate
 row-count and source-identifier equality, and checkpoint every completed range.
+
+## 2026-07-18: Resume only from verified atomic checkpoints
+
+**Lesson:** The existence of a partial download is not evidence that an archive
+request completed successfully.
+
+**Context:** A controlled Gaia test stopped after two of six measured strips. A new
+retrieval verified and reused those files, completed the other four, then detected
+and replaced one deliberately corrupted file while leaving five valid files
+unchanged. The final 500 source identifiers matched the independent reference.
+
+**Recommendation:** Write source data and metadata atomically, record query and file
+hashes plus expected and retrieved counts, validate source-identifier uniqueness,
+and requery any checkpoint that fails one of those checks.

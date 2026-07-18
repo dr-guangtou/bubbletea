@@ -132,6 +132,11 @@ RADIAL_MEASUREMENT_GEOMETRY_MANIFEST = (
 GAIA_QUERY_PARTITION_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_query_partition_sources_v1.csv"
 GAIA_QUERY_PARTITION_STRIPS = BACKGROUND_RESULTS_DIR / "gaia_query_partition_strips_v1.csv"
 GAIA_QUERY_PARTITION_VALIDATION = BACKGROUND_RESULTS_DIR / "gaia_query_partition_validation_v1.json"
+GAIA_ADAPTIVE_RETRIEVAL_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_sources_v1.csv"
+GAIA_ADAPTIVE_RETRIEVAL_PLAN = BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_plan_v1.csv"
+GAIA_ADAPTIVE_RETRIEVAL_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_validation_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

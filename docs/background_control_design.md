@@ -333,6 +333,14 @@ Gaia identifiers exactly from four ranges, with all nine checks passing. Product
 queries still require row-count-based splitting, checkpoints, and resume behavior;
 see `docs/gaia_query_partition_validation.md`.
 
+The follow-up restart test now measures row counts, recursively splits oversized
+ranges, writes atomic checkpoints, and resumes from verified files. It stopped after
+two of six strips, reused those two on restart, completed the remaining four, and
+replaced one deliberately damaged strip without repeating five valid downloads.
+All 15 checks pass. A safe production row limit for the full selector-input columns
+and exact masked radial-ring areas remain pending; see
+`docs/gaia_adaptive_retrieval_validation.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

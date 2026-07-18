@@ -665,6 +665,15 @@ identifiers as one complete query and four subqueries, with all nine checks pass
 Production ranges must be split according to measured row counts, checkpointed,
 and validated for count equality and source-identifier uniqueness before use.
 
+The restartable implementation writes each completed range and its metadata
+atomically, verifies the archive-query hash, expected and retrieved row counts,
+source-file hash, and source-identifier uniqueness, and skips only valid saved
+ranges. A bounded controlled-stop test split 500 entries into six final ranges,
+reused two verified saved ranges after restart, and replaced one deliberately
+damaged range while leaving five intact ranges unchanged. All 15 checks pass. The
+test's 130-row threshold is not a production limit; that limit must be measured with
+the full frozen-selector input columns before a real host retrieval.
+
 ## Galactic-Latitude Eligibility
 
 The final sample should use a conservative absolute Galactic-latitude cut, but the

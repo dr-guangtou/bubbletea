@@ -81,8 +81,21 @@ Query-partition progress, 2026-07-18:
   pass in 12.96 seconds.
 - [x] Validate one-time assignment of shared strip boundaries and clipping at a
   celestial pole.
-- [ ] Add measured-row-count splitting, per-strip checkpoints, and resume behavior.
+- [x] Add measured-row-count splitting, per-strip checkpoints, and resume behavior
+  (2026-07-18).
 - [ ] Validate exact masked and usable areas for the recombined radial rings.
+
+Adaptive-retrieval progress, 2026-07-18:
+
+- [x] Add measured row-count splitting and save the complete plan before retrieval.
+- [x] Write and verify atomic per-strip source and metadata checkpoints.
+- [x] Validate a controlled stop after two strips and a fresh restart that skips
+  those files and downloads only four unfinished strips.
+- [x] Detect and replace one deliberately corrupted strip while preserving five
+  valid strips; all 15 checks pass in 21.68 seconds.
+- [ ] Benchmark and freeze a safe production row and file-size limit using the full
+  frozen-selector input columns.
+- [ ] Integrate production run-state records with exact radial-ring usable areas.
 
 ## Review
 

@@ -587,6 +587,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   failures, timestamps, and an immutable run identifier. Aggregation includes only
   products from the selected run and can resume safely.
   Depends on: BT-002, BT-005.
+  Retrieval-component progress, 2026-07-18: A bounded Gaia test measured and split
+  500 entries into six final strips, stopped after two atomic checkpoints, resumed
+  by skipping those two and retrieving four, then detected and replaced one
+  deliberately damaged strip without changing five valid strips. The combined 500
+  identifiers match the independent reference exactly and all 15 checks pass in
+  21.68 seconds. Production row limits, full run identifiers, failure policy, and
+  host-level aggregation remain pending.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995

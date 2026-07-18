@@ -65,6 +65,14 @@ set from measured archive row counts rather than this test's 0.1-degree height.
 Production checkpointing and adaptive splitting remain pending. Full details are
 in `docs/gaia_query_partition_validation.md`.
 
+The restartable implementation has now passed a second bounded test. A test-only
+130-entry limit divided the same 500-entry circle into six measured strips. The
+first pass stopped after two saved strips; a fresh run skipped those two and
+retrieved the remaining four. A deliberately damaged checkpoint was then detected
+and replaced without repeating the other five downloads. All 15 checks pass in
+21.68 seconds. The production safe row limit and a full-selector-column restart
+benchmark remain pending; see `docs/gaia_adaptive_retrieval_validation.md`.
+
 The count-blind audit uses no Gaia source or selector counts and passes all seven
 validation checks. Its artifacts are:
 

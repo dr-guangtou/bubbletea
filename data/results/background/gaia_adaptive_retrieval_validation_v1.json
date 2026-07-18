@@ -1,0 +1,111 @@
+{
+  "validation_version": "gaia_adaptive_retrieval_validation_v1",
+  "generated_at_utc": "2026-07-18T09:44:40.522434+00:00",
+  "validation_scope": "bounded_measured_split_checkpoint_stop_and_resume",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/background_review_hosts_v1.csv",
+      "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+    },
+    {
+      "path": "data/results/background/gaia_query_partition_sources_v1.csv",
+      "sha256": "2be2be58c3d1bc11ca9c3f2c2f08110ae024cd202070f511971a344d2e29d542"
+    }
+  ],
+  "host_name": "NGC 4698",
+  "test_radius_deg": 0.2,
+  "test_maximum_rows_per_strip": 130,
+  "test_first_pass_retrieval_count": 2,
+  "planned_node_count": 11,
+  "final_strip_count": 6,
+  "final_strip_source_counts": {
+    "r00": 82,
+    "r010": 71,
+    "r011": 83,
+    "r100": 70,
+    "r101": 79,
+    "r11": 115
+  },
+  "first_pass": {
+    "retrieved_strip_ids": [
+      "r00",
+      "r010"
+    ],
+    "skipped_strip_ids": [],
+    "completed_strip_ids": [
+      "r00",
+      "r010"
+    ],
+    "complete": false
+  },
+  "resumed_pass": {
+    "retrieved_strip_ids": [
+      "r011",
+      "r100",
+      "r101",
+      "r11"
+    ],
+    "skipped_strip_ids": [
+      "r00",
+      "r010"
+    ],
+    "completed_strip_ids": [
+      "r00",
+      "r010",
+      "r011",
+      "r100",
+      "r101",
+      "r11"
+    ],
+    "complete": true
+  },
+  "corruption_recovery_pass": {
+    "retrieved_strip_ids": [
+      "r11"
+    ],
+    "skipped_strip_ids": [
+      "r00",
+      "r010",
+      "r011",
+      "r100",
+      "r101"
+    ],
+    "completed_strip_ids": [
+      "r00",
+      "r010",
+      "r011",
+      "r100",
+      "r101",
+      "r11"
+    ],
+    "complete": true
+  },
+  "combined_source_count": 500,
+  "elapsed_seconds": 21.676326834131032,
+  "check_count": 15,
+  "passed_count": 15,
+  "checks": {
+    "adaptive_split_required": true,
+    "every_leaf_within_test_row_limit": true,
+    "leaf_counts_sum_to_reference": true,
+    "first_pass_stopped_incomplete": true,
+    "first_pass_saved_two_strips": true,
+    "resume_skipped_saved_strips": true,
+    "saved_checkpoint_hashes_unchanged": true,
+    "resumed_run_completed": true,
+    "corrupted_checkpoint_retrieved_again": true,
+    "uncorrupted_checkpoints_skipped_during_recovery": true,
+    "corruption_recovery_completed": true,
+    "combined_source_count_matches_reference": true,
+    "combined_source_identifiers_unique": true,
+    "combined_source_identifiers_match_reference": true,
+    "no_selector_output_used": true
+  }
+}

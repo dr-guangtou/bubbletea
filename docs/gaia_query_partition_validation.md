@@ -54,9 +54,12 @@ spherical separation from the galaxy once. It will then assign the source to the
 exploratory radial rings locally. It will not query overlapping rings separately.
 
 The production workflow must also checkpoint completed strips so a failed archive
-request can resume without repeating successful downloads. This bounded test proves
-the partition geometry and one small live equivalence case; it does not yet prove
-performance or service reliability for a multi-degree nearby-galaxy retrieval.
+request can resume without repeating successful downloads. A follow-up bounded test
+now validates measured splitting, a controlled stop and restart, and recovery of a
+deliberately damaged checkpoint; see
+`docs/gaia_adaptive_retrieval_validation.md`. Neither test yet establishes a safe
+production row limit for the full selector-input column set or service reliability
+for a multi-degree nearby-galaxy retrieval.
 
 ## Artifacts and reproduction
 
