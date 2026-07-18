@@ -170,6 +170,12 @@ OFF_TARGET_DEVELOPMENT_SUMMARY = (
     BACKGROUND_RESULTS_DIR / "off_target_development_selector_summary_v1.csv"
 )
 OFF_TARGET_DEVELOPMENT_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_development_selector_v1.json"
+OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_frozen_summary_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_frozen_summary_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

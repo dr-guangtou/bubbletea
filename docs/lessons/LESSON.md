@@ -1148,3 +1148,16 @@ selector probabilities and decisions. Calling the validation fields simply
 decisions, or passing-source counts; guard their identifiers before archive queries
 and in saved outputs; and do not use their later selector results until the
 development summary procedure is fixed.
+
+## 2026-07-18: Separate random counting ranges from field-to-field uncertainty
+
+**Lesson:** An exact small-count interval is not a complete background-error model.
+
+**Context:** The four development circles contain 6 to 18 passing sources. Exact
+Poisson ranges describe how independent counts can fluctuate around an average, but
+they do not include real sky differences, correlated populations, Gaia observing
+conditions, or selector uncertainty.
+
+**Recommendation:** Report counting-only ranges explicitly, retain every field and
+related host pair, keep pooled values descriptive, and estimate field-to-field and
+method uncertainty separately before scientific inference.

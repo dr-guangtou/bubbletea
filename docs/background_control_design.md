@@ -387,6 +387,14 @@ candidates, not confirmed UCDs. All 18 checks pass, and the four validation fiel
 identifiers are absent from every selector query and output. See
 `docs/off_target_development_selector.md`.
 
+The development summary procedure is now fixed before validation. It retains every
+field, combines east and west only within the same host, and reports exact 68% and
+95% ranges for random small-count variation. The all-development density of
+350.140964 per square degree is descriptive only. These counting ranges do not
+include real field-to-field variation or observing-condition effects. All 16 checks
+pass, the selector threshold is unchanged, and validation remains absent. See
+`docs/off_target_development_summary.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

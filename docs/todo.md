@@ -597,6 +597,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   four field counts are 18, 8, 12, and 6. All 18 checks pass. No held-back field was
   queried or written to selector outputs. These passing sources are candidates, not
   confirmed UCDs, and the small experiment does not set a final background model.
+  Frozen development summary, 2026-07-18: Preserved four field rows, combined
+  east/west only within each of the two host systems, and retained one
+  all-development row for descriptive auditing. Added exact 68% and 95% ranges for
+  random small-count variation while documenting that they exclude real
+  field-to-field and observing-condition differences. Counts and areas are
+  conserved, the selector threshold is unchanged, validation fields remain absent,
+  and all 16 checks pass.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

@@ -1,0 +1,63 @@
+{
+  "summary_version": "off_target_development_frozen_summary_v1",
+  "generated_at_utc": "2026-07-18T16:02:12.829781+00:00",
+  "summary_scope": "development_only_descriptive_not_final_background_model",
+  "input": {
+    "path": "data/results/background/off_target_development_selector_summary_v1.csv",
+    "sha256": "a373787b54cf76e0700003e5078359c052d56c8bb7fdf91b7b380d4fc9cea181"
+  },
+  "selector_manifest": {
+    "path": "data/results/background/off_target_development_selector_v1.json",
+    "sha256": "b69a78440e8a6463ef5a71d706a15f2c90ccbc214264be2c015f209550108c93"
+  },
+  "frozen_rules": {
+    "retain_every_field_separately": true,
+    "combine_east_and_west_only_within_same_host": true,
+    "all_development_row_is_descriptive_only": true,
+    "confidence_levels": [
+      0.68,
+      0.95
+    ],
+    "count_range_method": "exact_central_poisson_garwood",
+    "selector_threshold_must_not_change": 0.8277833628791744,
+    "validation_selector_results_must_remain_unopened": true,
+    "scientific_background_approval": false
+  },
+  "plain_language_limit": "Poisson ranges describe random small-count variation only; they do not include field-to-field differences or make these fields scientific backgrounds.",
+  "summary_row_count": 7,
+  "field_row_count": 4,
+  "host_pair_row_count": 2,
+  "overall_selected_source_count": 44,
+  "overall_usable_area_square_deg": 0.1256636742446348,
+  "overall_selected_source_density_per_square_deg": 350.14096368329433,
+  "held_back_validation_field_ids": [
+    "2115:east",
+    "2115:west",
+    "4:east",
+    "4:west"
+  ],
+  "output": {
+    "path": "data/results/background/off_target_development_frozen_summary_v1.csv",
+    "sha256": "e227027192f1fb9fb5be088c19bf79031a9e152992e86a2e9eb072719029fe08"
+  },
+  "check_count": 16,
+  "passed_count": 16,
+  "checks": {
+    "four_development_fields_preserved": true,
+    "two_host_pair_summaries": true,
+    "one_all_development_summary": true,
+    "seven_total_summary_rows": true,
+    "field_counts_match_selector_input": true,
+    "field_areas_match_selector_input": true,
+    "each_host_pair_contains_two_related_fields": true,
+    "selected_counts_conserved_at_each_summary_level": true,
+    "retrieved_counts_conserved_at_each_summary_level": true,
+    "usable_area_conserved_at_each_summary_level": true,
+    "observed_density_inside_every_interval": true,
+    "ninety_five_percent_ranges_enclose_sixty_eight_percent_ranges": true,
+    "zero_count_interval_supported": true,
+    "validation_fields_absent": true,
+    "selector_threshold_unchanged": true,
+    "input_selector_run_passed_all_checks": true
+  }
+}

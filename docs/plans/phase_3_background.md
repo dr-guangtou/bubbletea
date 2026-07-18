@@ -73,8 +73,19 @@ Development-selector progress, 2026-07-18:
   spherical areas, selector probabilities, and decisions.
 - [x] Verify all 18 safeguards, including complete row counts and absence of every
   held-back validation field from selector queries and outputs.
-- [ ] Freeze the bounded development summary procedure before opening validation
-  selector results.
+- [x] Freeze the bounded field, related-host-pair, and descriptive all-development
+  summary procedure before opening validation; all 16 checks pass (2026-07-18).
+
+Frozen-summary progress, 2026-07-18:
+
+- [x] Preserve all four development fields separately.
+- [x] Combine east and west only within NGC 1316 and within NGC 4698.
+- [x] Report exact 68% and 95% counting-only ranges for field, host-pair, and
+  descriptive all-development rows.
+- [x] Conserve 413 retrieved sources, 44 passing sources, and 0.125664 square degree
+  at every summary level.
+- [x] Keep the selector threshold fixed and all held-back validation identifiers
+  absent.
 
 ## III.4 Interface with the real host measurement
 

@@ -152,6 +152,15 @@ Existing pre-selector observing-condition measurements do not violate the holdba
 For this experiment, “held back” means that selector probabilities, decisions, and
 passing-source counts remain unopened until the development procedure is fixed.
 
+The development summary procedure is now fixed. It retains all four fields
+separately, combines east and west only within the same host system, and keeps one
+all-development row for descriptive count and area auditing only. Every row reports
+68% and 95% exact central Poisson ranges for random small-count variation. A
+Poisson range does not include real field-to-field differences, correlated sources,
+observing-condition changes, or selector uncertainty and therefore is not the final
+background uncertainty. The selector threshold remains unchanged, validation
+fields remain absent, and all 16 checks pass.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
