@@ -8,6 +8,8 @@ The raw ReadMe, group table, and member table are stored outside the repository
 under `BUBBLETEA_EXTERNAL_DATA/bubbletea/environment_reference/kourkchi2017`.
 Their SHA-256 digests and source identifiers are recorded in
 `data/literature/sources/kourkchi_tully_2017_groups.json`.
+The external files include the member table, group-property table, association-
+property table, and CDS ReadMe.
 
 The member table contains 15,004 unique PGC galaxies in 8,826 groups. A nearest
 spherical audit against all 2,155 current BubbleTea hosts finds 1,794 hosts with a
@@ -34,3 +36,5 @@ Artifacts:
 - `data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv`
 - `data/results/background/kourkchi_tully_environment_audit_v1.json`
 - `data/results/background/kourkchi_tully_environment_validation_v1.json`
+- `data/results/background/kourkchi_tully_halo_exclusion_analysis_v1.json`
+- `data/results/background/kourkchi_tully_halo_exclusion_outliers_v1.csv`

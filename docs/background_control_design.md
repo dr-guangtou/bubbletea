@@ -173,3 +173,18 @@ Artifacts:
 The fixture inputs are synthetic geometry values, not estimates for real hosts and
 not permission to infer a background before the real environment and halo-proxy
 contracts are validated.
+
+## Environment-radius audit
+
+The Kourkchi-Tully accepted associations were tested against the catalog's own
+group second-turnaround radius, `R2t`. Among 883 accepted group members, `1.5 R2t`
+encloses 810 (91.73%), `2 R2t` encloses 863 (97.73%), and `3 R2t` encloses 881
+(99.77%). The maximum projected ratio is 7.22. This is an internal catalog-
+consistency test because both membership and `R2t` come from the same construction;
+it is not independent halo validation.
+
+The larger association first-turnaround scale, `R1t`, is also not a universal
+replacement. It is usable for 832 accepted group members and encloses 763 (86.41%)
+at one radius in the published association geometry. Group membership, association
+membership, and physical halo exclusion must therefore remain distinct. No safety
+factor is frozen.

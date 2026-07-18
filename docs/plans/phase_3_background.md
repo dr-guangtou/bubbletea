@@ -32,8 +32,10 @@ selector and provide valid host-specific controls.
 - [x] Audit all 2,155 hosts and accept 1,792 unique associations within the
   shift-calibrated 5-arcsec rule; preserve 2 ambiguities and 361 unmatched hosts
   (2026-07-18).
-- [ ] Audit whether accepted group radii and masses provide conservative exclusion
-  geometry for group members and principals.
+- [x] Audit whether accepted group `R2t` and association `R1t` provide conservative
+  exclusion geometry; neither is a universal one-radius solution (2026-07-18).
+- [ ] Approve separate exclusion treatment for isolated principals, ordinary groups,
+  and rich groups or clusters.
 
 ## III.3 Frozen-selector background experiment
 
@@ -53,3 +55,6 @@ selector and provide valid host-specific controls.
   required to finalize exclusion radii.
 - The query-free fixture evaluates 20 symmetric candidates: 11 accepted and 9
   rejected, with a maximum Galactic-latitude mismatch of `7.11e-14` degrees.
+- `1.5 R2t`, `2 R2t`, and `3 R2t` enclose 91.73%, 97.73%, and 99.77% of accepted
+  group members, while one association `R1t` encloses 86.41% of usable members;
+  no universal safety factor is frozen.

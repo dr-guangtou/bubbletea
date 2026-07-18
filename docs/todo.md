@@ -414,6 +414,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   all 2,155 hosts. A shift-calibrated 5-arcsec rule accepts 1,792 unique associations,
   preserves 2 multiple-catalog ambiguities, and leaves 361 unmatched; all ten
   provenance and identity validations pass.
+  Halo-scale audit, 2026-07-18: Among 883 accepted group members, `1.5 R2t`,
+  `2 R2t`, and `3 R2t` enclose 91.73%, 97.73%, and 99.77%, respectively. One
+  association `R1t` encloses 86.41% of 832 usable members. These internally coupled
+  catalog tests do not justify one universal exclusion factor; no factor is frozen.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**

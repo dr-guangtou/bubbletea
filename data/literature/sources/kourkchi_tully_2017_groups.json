@@ -17,6 +17,10 @@
     "table3.dat.gz": {
       "role": "galaxy membership and dominant-group identifier",
       "sha256": "dcddfa96bded7e3dc4c4354703bf1570ef92ae91820fd4d24dc3a56fd7071a3a"
+    },
+    "table4.dat": {
+      "role": "association properties",
+      "sha256": "fa87cc1b0b6773922316ab337372c7268eddbdfcd87a4c621ee9e441bf873503"
     }
   },
   "storage": "External files under BUBBLETEA_EXTERNAL_DATA/bubbletea/environment_reference/kourkchi2017",

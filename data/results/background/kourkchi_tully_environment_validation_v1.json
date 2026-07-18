@@ -6,7 +6,8 @@
   "source_digests": {
     "ReadMe": "47bcea4a7430d6cf8323f40d8bc5e383c0b231622e9534cce345a6bdb6892d01",
     "table2.dat.gz": "1e5bca96f6339905d07dccac4ed8cfe6148a9b193c1231794d57a51dbd502bab",
-    "table3.dat.gz": "dcddfa96bded7e3dc4c4354703bf1570ef92ae91820fd4d24dc3a56fd7071a3a"
+    "table3.dat.gz": "dcddfa96bded7e3dc4c4354703bf1570ef92ae91820fd4d24dc3a56fd7071a3a",
+    "table4.dat": "fa87cc1b0b6773922316ab337372c7268eddbdfcd87a4c621ee9e441bf873503"
   },
   "checks": {
     "source_digests": true,

@@ -4,6 +4,7 @@
   "host_count": 2155,
   "catalog_member_count": 15004,
   "catalog_group_count": 8826,
+  "catalog_association_count": 885,
   "nearest_separation_tier_counts": {
     "1": 1185,
     "3": 1713,

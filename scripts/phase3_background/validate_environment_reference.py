@@ -34,7 +34,7 @@ def main() -> None:
     unmatched = rows["association_state"].eq("unmatched_beyond_5_arcsec")
     source_digests = {
         name: sha256(KOURKCHI_TULLY_2017_DIR / name)
-        for name in ["ReadMe", "table2.dat.gz", "table3.dat.gz"]
+        for name in ["ReadMe", "table2.dat.gz", "table3.dat.gz", "table4.dat"]
     }
     checks = {
         "source_digests": all(

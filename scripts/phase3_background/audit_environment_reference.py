@@ -15,6 +15,7 @@ if __package__ in {None, ""}:
 
 from scripts.config import (
     GALAXY_SAMPLE_CSV,
+    KOURKCHI_TULLY_2017_ASSOCIATIONS,
     KOURKCHI_TULLY_2017_GROUPS,
     KOURKCHI_TULLY_2017_MEMBERS,
     KOURKCHI_TULLY_ENVIRONMENT_AUDIT,
@@ -103,6 +104,28 @@ GROUP_COLSPECS = [
     (111, 117),
     (118, 124),
 ]
+ASSOCIATION_COLUMNS = [
+    "association_principal_pgc",
+    "supergalactic_longitude_deg",
+    "supergalactic_latitude_deg",
+    "log_k_luminosity",
+    "local_sheet_velocity_km_s",
+    "distance_mpc",
+    "distance_percent_error",
+    "first_turnaround_radius_mpc",
+    "log_luminosity_mass",
+]
+ASSOCIATION_COLSPECS = [
+    (0, 7),
+    (8, 16),
+    (17, 25),
+    (26, 31),
+    (32, 36),
+    (37, 42),
+    (43, 45),
+    (46, 51),
+    (52, 58),
+]
 
 
 def read_fixed_width_gzip(path: Path, colspecs: list[tuple[int, int]], names: list[str]):
@@ -131,7 +154,11 @@ def normalize_identifier(value: object) -> str:
 
 def main() -> None:
     """Write nearest-neighbor proposals and measured coverage tiers."""
-    for path in [KOURKCHI_TULLY_2017_MEMBERS, KOURKCHI_TULLY_2017_GROUPS]:
+    for path in [
+        KOURKCHI_TULLY_2017_MEMBERS,
+        KOURKCHI_TULLY_2017_GROUPS,
+        KOURKCHI_TULLY_2017_ASSOCIATIONS,
+    ]:
         if not path.exists():
             raise FileNotFoundError(
                 f"Missing external catalog {path}; set BUBBLETEA_EXTERNAL_DATA correctly"
@@ -139,6 +166,11 @@ def main() -> None:
     hosts = pd.read_csv(GALAXY_SAMPLE_CSV)
     members = read_fixed_width_gzip(KOURKCHI_TULLY_2017_MEMBERS, MEMBER_COLSPECS, MEMBER_COLUMNS)
     groups = read_fixed_width_gzip(KOURKCHI_TULLY_2017_GROUPS, GROUP_COLSPECS, GROUP_COLUMNS)
+    associations = pd.read_fwf(
+        KOURKCHI_TULLY_2017_ASSOCIATIONS,
+        colspecs=ASSOCIATION_COLSPECS,
+        names=ASSOCIATION_COLUMNS,
+    )
     if len(members) != 15_004 or members["pgc"].duplicated().any():
         raise RuntimeError("Kourkchi-Tully member-table identity contract failed")
     if groups["group_principal_pgc"].duplicated().any():
@@ -146,6 +178,28 @@ def main() -> None:
     members = members.merge(groups, on="group_principal_pgc", how="left", suffixes=("", "_group"))
     if members["member_count"].isna().any():
         raise RuntimeError("A member row lacks its group-property record")
+    principal_coordinates = members[["pgc", "ra_deg", "dec_deg"]].rename(
+        columns={
+            "pgc": "group_principal_pgc",
+            "ra_deg": "group_principal_ra_deg",
+            "dec_deg": "group_principal_dec_deg",
+        }
+    )
+    members = members.merge(principal_coordinates, on="group_principal_pgc", how="left")
+    members = members.merge(
+        associations,
+        on="association_principal_pgc",
+        how="left",
+        suffixes=("", "_association"),
+    )
+    association_coordinates = members[["pgc", "ra_deg", "dec_deg"]].rename(
+        columns={
+            "pgc": "association_principal_pgc",
+            "ra_deg": "association_principal_ra_deg",
+            "dec_deg": "association_principal_dec_deg",
+        }
+    )
+    members = members.merge(association_coordinates, on="association_principal_pgc", how="left")
 
     host_coordinates = SkyCoord(hosts["ra"].to_numpy() * u.deg, hosts["dec"].to_numpy() * u.deg)
     member_coordinates = SkyCoord(
@@ -182,10 +236,17 @@ def main() -> None:
     candidates["catalog_ra_deg"] = nearest["ra_deg"]
     candidates["catalog_dec_deg"] = nearest["dec_deg"]
     candidates["group_principal_pgc"] = nearest["group_principal_pgc"].astype(int)
+    candidates["group_principal_ra_deg"] = nearest["group_principal_ra_deg"]
+    candidates["group_principal_dec_deg"] = nearest["group_principal_dec_deg"]
     candidates["group_member_count"] = nearest["member_count"].astype(int)
     candidates["catalog_environment_role"] = nearest.apply(environment_role, axis=1)
     candidates["group_second_turnaround_radius_mpc"] = nearest["second_turnaround_radius_mpc"]
     candidates["group_log_luminosity_mass"] = nearest["log_luminosity_mass"]
+    candidates["association_principal_pgc"] = nearest["association_principal_pgc"].astype(int)
+    candidates["association_principal_ra_deg"] = nearest["association_principal_ra_deg"]
+    candidates["association_principal_dec_deg"] = nearest["association_principal_dec_deg"]
+    candidates["association_first_turnaround_radius_mpc"] = nearest["first_turnaround_radius_mpc"]
+    candidates["association_distance_mpc"] = nearest["distance_mpc_association"]
     candidates["catalog_distance_mpc"] = nearest["distance_mpc"]
     candidates["absolute_distance_difference_mpc"] = (
         candidates["dist_best"] - candidates["catalog_distance_mpc"]
@@ -216,6 +277,7 @@ def main() -> None:
         "host_count": len(hosts),
         "catalog_member_count": len(members),
         "catalog_group_count": len(groups),
+        "catalog_association_count": len(associations),
         "nearest_separation_tier_counts": {
             str(limit): int(candidates["nearest_separation_arcsec"].le(limit).sum())
             for limit in tiers_arcsec
