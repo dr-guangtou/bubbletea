@@ -54,6 +54,12 @@ All 12 development fields pass all 12 safeguards. The complete run took
 The full-column and compact pre-selector retrievals have identical source counts
 in every field. None of the 102 held-back validation fields was queried or scored.
 
+Three additional field descriptions were calculated later from the verified raw
+checkpoints: the 10th percentile, median, and 90th percentile of all G magnitudes
+inside the frozen magnitude range. All nine checks pass, all source counts and
+identifier fingerprints match the original retrieval, and no archive query was
+needed. See `docs/large_sky_development_scale.md`.
+
 ## Interpretation limit
 
 The fields were selected to cover sky position, not to estimate correlations

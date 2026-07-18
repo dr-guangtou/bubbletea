@@ -263,6 +263,14 @@ Contract `model_contract_8da80ba5e4bd6d3027e6` freezes six comparisons and the
 grouped evaluation with all 13 safeguards passing. No model is fitted, no held-back
 selector result is opened, and no field is scientifically approved.
 
+The fixed field-level G-magnitude summaries were subsequently derived from the 12
+verified raw checkpoint sets with all nine safeguards passing and no archive
+query. The development continuation defaults to zero new remote fields, uses a
+count-blind fixed order, keeps per-field raw checkpoints and receipts outside the
+repository, and refuses validation identifiers. One bounded live continuation
+field and one zero-query restart pass all ten field and 14 run safeguards. Thirteen
+of 398 development fields are complete; the 102 validation fields remain unopened.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

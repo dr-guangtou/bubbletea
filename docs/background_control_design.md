@@ -439,6 +439,13 @@ best prediction score will be selected. All 13 safeguards pass; no model is fitt
 no validation result is opened, and no field is scientifically approved. See
 `docs/large_sky_model_comparison_contract.md`.
 
+The fixed G-magnitude summaries have now been calculated locally for all 12 pilot
+fields with nine safeguards passing and no archive query. The resumable continuation
+then processed one new development field and reused it on a zero-query restart.
+Thirteen of 398 development fields are complete, 385 remain, and all 14 run
+safeguards pass. This establishes the full development processing path but does not
+fit the background model. See `docs/large_sky_development_scale.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

@@ -218,6 +218,18 @@ LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS = (
 LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "large_sky_development_field_conditions_v1.json"
 )
+LARGE_SKY_DEVELOPMENT_G_MAGNITUDE_SUMMARIES = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_g_magnitude_summaries_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_G_MAGNITUDE_SUMMARIES_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_g_magnitude_summaries_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_SCALE_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_scale_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_SCALE_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_scale_v1.json"
+)
 LARGE_SKY_MODEL_COMPARISON_CONTRACT = (
     BACKGROUND_RESULTS_DIR / "large_sky_model_comparison_contract_v1.json"
 )

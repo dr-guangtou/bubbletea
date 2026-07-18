@@ -647,6 +647,14 @@ Phase-specific execution tasks remain in `docs/plans/`.
   239.233660–708.748370 per square degree. All nine aggregate checks pass, raw
   checkpoints remain outside the repository, and all 102 validation fields remain
   unopened.
+  Development continuation, 2026-07-19: Calculated the fixed 10th-percentile,
+  median, and 90th-percentile G-magnitude summaries from the 12 verified external
+  checkpoints without an archive query; all nine checks pass. A resumable
+  development-only continuation then processed `sky_field_0167` as one bounded
+  live test, raising completed coverage to 13 of 398 fields. Its 9,095 sources use
+  two verified strips, 540 pass the selector, and all ten field and 14 run checks
+  pass. A zero-query restart verified the receipt and started no new field. All 102
+  validation fields remain unopened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

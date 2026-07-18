@@ -83,8 +83,13 @@ Large-sky grid progress, 2026-07-19:
 - [x] Freeze six candidate comparisons, grouped development evaluation, settings,
   scoring rules, and the simple-model preference before scale-up; all 13 safeguards
   pass and no model is fitted (2026-07-19).
-- [ ] Derive the three frozen G-magnitude summaries from verified raw checkpoints,
-  then extend retrieval and pre-selector measurements to all 398 development fields.
+- [x] Derive the three frozen G-magnitude summaries from verified raw checkpoints;
+  all nine checks pass with no archive query (2026-07-19).
+- [x] Validate the resumable all-development continuation with a zero-query dry run,
+  one new live field, and a zero-query restart; 13 development fields are complete,
+  all 14 run checks pass, and validation remains unopened (2026-07-19).
+- [ ] Extend retrieval and pre-selector measurements to the remaining 385
+  development fields in explicitly bounded runs.
 
 Off-target split progress, 2026-07-18:
 

@@ -1269,3 +1269,28 @@ are synchronized at `06fb6b6`.
 **Recommendation:** Inspect `git branch -a` and the remote HEAD before constructing
 primary-branch comparisons. Use the repository's measured ref name in all later
 checks.
+
+## 2026-07-19: Reduce table-wide safeguards to one Boolean value
+
+**Lesson:** Applying `.all()` once to a two-dimensional pandas or NumPy result can
+still return one value per column rather than one value for the entire check.
+
+**Context:** The first G-magnitude validation attempted to convert a column-wise
+Series to `bool`, which pandas correctly rejected as ambiguous.
+
+**Recommendation:** For a safeguard covering an entire table, explicitly reduce
+both dimensions and verify the resulting type is one Boolean before building the
+manifest.
+
+## 2026-07-19: Phrase safeguards as conditions that must be true
+
+**Lesson:** A manifest check named as an observed failure state can correctly store
+`false` while accidentally causing an otherwise successful all-checks gate to fail.
+
+**Context:** The first zero-query continuation manifest used
+`validation_selector_results_opened: false` inside the checks dictionary. The
+scientific state was correct, but the generic requirement that every safeguard be
+true rejected the run.
+
+**Recommendation:** Keep descriptive state fields separate. Phrase safeguards as
+positive requirements such as `validation_selector_results_remain_unopened: true`.
