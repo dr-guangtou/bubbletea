@@ -410,6 +410,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   count-blind symmetric candidates; 11 are accepted and 9 rejected. All nine checks
   pass, including constant Galactic latitude, removal of the two-degree cap,
   environment blocking, neighbor-halo rejection, and preservation of alternatives.
+  Query-partition validation, 2026-07-18: A bounded 0.2-degree NGC 4698 test
+  retrieved exactly 500 unique Gaia identifiers both as one complete circle and as
+  four non-overlapping horizontal sky strips containing 82, 154, 149, and 115 rows.
+  All nine geometry, boundary, exact-membership, and selector-independence checks
+  pass in 12.96 seconds. Adaptive row-count splitting and resumable production
+  retrieval remain pending.
   Environment audit, 2026-07-18: Staged Kourkchi-Tully 2017 externally and audited
   all 2,155 hosts. A shift-calibrated 5-arcsec rule accepts 1,792 unique associations,
   preserves 2 multiple-catalog ambiguities, and leaves 361 unmatched; all ten

@@ -74,6 +74,16 @@ Progress, 2026-07-18:
   the normalized central exclusion.
 - [ ] Implement and validate tiled retrieval and exact per-ring usable areas.
 
+Query-partition progress, 2026-07-18:
+
+- [x] Validate a complete circle against four non-overlapping horizontal sky strips;
+  both retrieve exactly the same 500 Gaia source identifiers and all nine checks
+  pass in 12.96 seconds.
+- [x] Validate one-time assignment of shared strip boundaries and clipping at a
+  celestial pole.
+- [ ] Add measured-row-count splitting, per-strip checkpoints, and resume behavior.
+- [ ] Validate exact masked and usable areas for the recombined radial rings.
+
 ## Review
 
 - The inherited 0.8-degree fields use an obsolete selector and divide by 2.0 square

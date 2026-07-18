@@ -1019,3 +1019,18 @@ cap would silently remove outer rings preferentially for nearby galaxies.
 **Recommendation:** Store continuous angular, physical, and—when available—`R50`-
 normalized source radius; treat displayed rings as recombinable views; and use
 complete tiled or equivalent queries with explicit requested and usable area.
+
+## 2026-07-18: Partition large cone queries with disjoint coordinate boundaries
+
+**Lesson:** Large circular sky retrievals can be divided without changing their
+contents when every subquery retains the exact circle and the coordinate ranges do
+not overlap.
+
+**Context:** One 0.2-degree NGC 4698 query returned 500 Gaia entries. Four
+declination strips returned 82, 154, 149, and 115 entries, reproducing exactly the
+same 500 unique source identifiers. Half-open shared boundaries assign synthetic
+boundary points exactly once.
+
+**Recommendation:** Count rows first, split only ranges that exceed the declared
+safe retrieval size, retain the exact circle predicate in every subquery, validate
+row-count and source-identifier equality, and checkpoint every completed range.

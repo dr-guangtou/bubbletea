@@ -657,6 +657,14 @@ two-degree cap. It must use complete tiled or equivalent queries with explicit
 requested, retrieved, masked, and usable areas. Detailed calibration requirements
 are maintained in `docs/radial_measurement_design.md`.
 
+The approved retrieval building block partitions one exact circular query into
+non-overlapping declination ranges. Each subquery retains the original circle
+predicate; half-open shared boundaries assign every source to exactly one range.
+A bounded 0.2-degree NGC 4698 validation retrieved the same 500 unique Gaia source
+identifiers as one complete query and four subqueries, with all nine checks passing.
+Production ranges must be split according to measured row counts, checkpointed,
+and validated for count equality and source-identifier uniqueness before use.
+
 ## Galactic-Latitude Eligibility
 
 The final sample should use a conservative absolute Galactic-latitude cut, but the

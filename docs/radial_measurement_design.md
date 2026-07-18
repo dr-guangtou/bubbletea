@@ -56,6 +56,15 @@ will require tiled or otherwise complete archive queries with explicit coverage 
 row-limit checks. The 600 kpc value remains exploratory; this audit does not approve
 it as the final outer signal boundary.
 
+A bounded live test validates the first gap-free retrieval building block. A
+0.2-degree-radius NGC 4698 circle returned 500 Gaia entries both as one complete
+query and as four non-overlapping horizontal sky strips. The strip counts were 82,
+154, 149, and 115; their 500 unique source identifiers match the complete-circle
+reference exactly. All nine checks pass in 12.96 seconds. Real strip sizes will be
+set from measured archive row counts rather than this test's 0.1-degree height.
+Production checkpointing and adaptive splitting remain pending. Full details are
+in `docs/gaia_query_partition_validation.md`.
+
 The count-blind audit uses no Gaia source or selector counts and passes all seven
 validation checks. Its artifacts are:
 

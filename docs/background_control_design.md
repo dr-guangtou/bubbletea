@@ -326,6 +326,13 @@ current host table has no `R50` field; the central exclusion and normalized radi
 profile therefore remain uncalibrated. The complete measurement contract is in
 `docs/radial_measurement_design.md`.
 
+For large circular regions, the validated query partition uses non-overlapping
+declination ranges while retaining the exact original circle in every archive
+request. One bounded NGC 4698 test reconstructed the complete query's 500 unique
+Gaia identifiers exactly from four ranges, with all nine checks passing. Production
+queries still require row-count-based splitting, checkpoints, and resume behavior;
+see `docs/gaia_query_partition_validation.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13
