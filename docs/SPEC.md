@@ -171,6 +171,37 @@ including unchanged development files. These comparisons are descriptive rather
 than pass/fail gates: the eight small diagnostic circles do not approve a
 scientific background, set matching tolerances, or establish a survey-wide model.
 
+The larger sky-calibration design replaces the inherited unseeded random
+coordinates with 500 deterministic field centers. It places 250 centers in each
+Galactic hemisphere over the existing host-sample domain `|b| >= 20` degrees. The
+centers are uniform in spherical area within that domain and spread in Galactic
+longitude using a fixed golden-angle sequence. This preserves the scope of the
+inherited 500-field experiment while making every coordinate reproducible.
+
+Each diagnostic field retains the inherited 0.8-degree radius. Its exact spherical
+area, 2.010586633 square degrees, must be used rather than either 2.0 square degrees
+or the planar-circle approximation. This radius belongs only to the large-sky
+calibration and does not define the real galaxy aperture or radial profile.
+
+The grid is divided into broad sky blocks using 30-degree Galactic-longitude bands
+and five equal-sky-area absolute-Galactic-latitude bands. Every field in one block
+must remain in the same experiment partition. A stable hash assigns whole blocks
+to development or held-back validation without reading Gaia counts, selector
+probabilities, or passing-source densities. Both partitions must cover both
+Galactic hemispheres, all five latitude bands, and all fixed absolute-ecliptic-
+latitude diagnostic bands. Each hemisphere/latitude combination contributes two
+validation blocks, and five of the ten combinations contribute a third; stable
+hashes choose the blocks and the five combinations. Ecliptic latitude is a
+position-based proxy for Gaia's scan pattern; actual Gaia observation counts and
+completeness indicators are measured later using development fields only.
+
+Intersections with represented Kourkchi-Tully `2 R2t` group circles, represented
+`R1t` association circles, and project-host centers are retained as count-blind
+sensitivity flags. They do not delete a field, establish a universal halo radius,
+or approve the field as a scientific background. The full 500-field grid remains
+diagnostic until the frozen selector, pre-selector field conditions, environment-
+flag sensitivity, and held-back predictive performance have been evaluated.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

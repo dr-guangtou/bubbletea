@@ -1175,3 +1175,42 @@ ranges, but individual densities still span 95.492990–604.788937 per square de
 **Recommendation:** Freeze rules before opening held-back data, report comparisons
 without retuning or pass/fail reinterpretation, and use a much larger count-blind
 off-target sample to calibrate sky dependence and final applicability limits.
+
+## 2026-07-19: Convert pandas coordinate columns to numerical arrays before adding units
+
+**Lesson:** Multiplying a pandas Series by an Astropy unit can retain an object-like
+container that `SkyCoord` does not interpret as an angular quantity.
+
+**Context:** The first 20-field grid check converted right ascension with
+`to_numpy()` but passed declination as a Series, causing an Astropy unit error
+before the full grid was written.
+
+**Recommendation:** Convert every pandas coordinate column with `to_numpy()` before
+attaching degree units, and exercise coordinate construction in the required
+small-scale run before writing full products.
+
+## 2026-07-19: Do not assume a fixed-radius neighbor search returns a pair
+
+**Lesson:** A sparse test grid can have no distinct pair inside a chosen neighbor-
+search radius, leaving a minimum operation with no values.
+
+**Context:** The 20-field check was more widely separated than the provisional
+20-degree search radius, so the first minimum-separation implementation failed even
+though the geometry itself was valid.
+
+**Recommendation:** For bounded validation sets, calculate the complete angular-
+separation matrix, ignore its diagonal, and take the measured minimum without an
+assumed search radius.
+
+## 2026-07-19: A hash threshold does not guarantee a balanced held-back sky sample
+
+**Lesson:** Stable hashing makes an assignment reproducible, but a modulus rule can
+still produce an uneven number of validation sky blocks and fields.
+
+**Context:** The first count-blind 500-field audit assigned only 17 of 120 broad sky
+blocks, containing 68 fields, to validation even though the nominal hash remainder
+represented one fifth of possible values.
+
+**Recommendation:** Define balance explicitly using position-only strata, then use
+stable hashes to choose a fixed number of whole blocks within each stratum. Audit
+the resulting field and coverage counts before freezing the partition.

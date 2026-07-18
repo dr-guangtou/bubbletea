@@ -404,6 +404,16 @@ pass. The comparison supports continued use of the procedure for a larger
 calibration experiment, but the eight small circles remain diagnostic and cannot
 define or approve scientific backgrounds. See `docs/off_target_validation_selector.md`.
 
+The large-sky calibration coordinates are now frozen independently of Gaia counts.
+Five hundred deterministic 0.8-degree-radius fields replace the inherited unseeded
+random coordinates, with 250 in each Galactic hemisphere over `|b| >= 20` degrees.
+Broad count-blind sky blocks produce 398 development and 102 held-back fields; both
+partitions cover every declared Galactic- and ecliptic-latitude band. The minimum
+field-center separation is 6.429656 degrees, and all 16 checks pass. Intersections
+with represented groups, associations, and project hosts remain sensitivity flags,
+not exclusions or scientific-background approvals. See
+`docs/large_sky_field_grid.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

@@ -186,6 +186,8 @@ OFF_TARGET_VALIDATION_FROZEN_SUMMARY = (
     BACKGROUND_RESULTS_DIR / "off_target_validation_frozen_summary_v1.csv"
 )
 OFF_TARGET_VALIDATION_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_validation_selector_v1.json"
+LARGE_SKY_FIELD_GRID = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.csv"
+LARGE_SKY_FIELD_GRID_MANIFEST = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.json"
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

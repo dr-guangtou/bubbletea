@@ -571,8 +571,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   selection.**
   Evidence: Phase III omits the Phase IV proper-motion filter and color score. Its
   density model is therefore not calibrated to the pilot selector. It also divides
-  by 2.0 square degrees instead of the measured 2.010619 square degrees for a
-  0.8-degree-radius circle.
+  by 2.0 square degrees instead of the exact spherical area of 2.010586633 square
+  degrees for a 0.8-degree-radius circle. The previously cited 2.010619 value is
+  the flat-circle approximation.
   Resolution criteria: Background and pilot use BT-002, exact usable areas are
   recorded, failures are preserved, and the latitude model includes uncertainty
   and a stated applicability domain.
@@ -613,6 +614,15 @@ Phase-specific execution tasks remain in `docs/plans/`.
   changed, no development artifact changed, and no diagnostic circle is approved
   as a scientific background. A larger off-target sample remains necessary for
   the final latitude-dependent model and applicability range.
+  Fixed large-sky grid, 2026-07-19: Replaced the inherited unseeded random
+  coordinates with 500 reproducible, equal-sky-area positions over `|b| >= 20`
+  degrees. Broad sky blocks keep nearby fields together, producing 398 development
+  and 102 held-back fields while covering both hemispheres and every declared
+  Galactic- and ecliptic-latitude band. The minimum center separation is 6.429656
+  degrees. Known group, association, and project-host intersections are retained
+  as count-blind sensitivity flags rather than exclusions. All 16 checks pass; no
+  Gaia count or selector output was read, and no field is approved as a scientific
+  background.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

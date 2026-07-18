@@ -50,7 +50,24 @@ selector and provide valid host-specific controls.
   scientific background (2026-07-18).
 - [ ] Recompute the random-field experiment with exact usable areas and the shared
   frozen selector.
+- [x] Replace the unseeded random coordinates with a deterministic 500-field sky
+  grid and freeze 398 development and 102 held-back fields; all 16 checks pass
+  (2026-07-19).
 - [ ] Calibrate matching tolerances and the conservative Galactic-latitude limit.
+
+Large-sky grid progress, 2026-07-19:
+
+- [x] Preserve the inherited 500-field count and 0.8-degree diagnostic radius while
+  using the exact 2.010586633-square-degree spherical area.
+- [x] Place 250 deterministic, equal-sky-area centers in each Galactic hemisphere
+  over the catalog domain `|b| >= 20` degrees.
+- [x] Keep each broad sky block wholly in development or validation and cover all
+  declared Galactic- and ecliptic-latitude bands in both partitions.
+- [x] Record represented group, association, and project-host intersections as
+  count-blind sensitivity flags without deleting or scientifically approving a
+  field.
+- [ ] Measure pre-selector Gaia conditions and retrieve frozen-selector inputs for
+  development fields only; keep all 102 validation fields unopened.
 
 Off-target split progress, 2026-07-18:
 
