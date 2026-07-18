@@ -1091,3 +1091,17 @@ with a scientific decision.
 usable area separately. Form the union of overlapping masks before subtraction,
 retain central rings with a diagnostic-only role, and require provenance before a
 real mask can alter a scientific density.
+
+## 2026-07-18: Do not import ancillary-imaging masks into the Gaia denominator
+
+**Lesson:** Gaia retrieval completion and ancillary image quality are separate data
+contracts.
+
+**Context:** The project lead decided that bright-star, dust, and other imaging
+masks should not remove area from the Gaia radial measurement. Applying them would
+mix a later imaging-stage concern into the Gaia-only source-density denominator.
+
+**Recommendation:** For Gaia, set masked area to zero and usable area equal to the
+area covered by verified completed retrieval strips. Preserve incomplete or failed
+strips as missing area, and retain any synthetic mask fixture only as a generic
+geometry test.

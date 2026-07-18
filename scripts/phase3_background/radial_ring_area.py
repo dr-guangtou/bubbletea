@@ -313,3 +313,27 @@ def calculate_ring_areas(
         "completed_strip_count": len(completed_coverage),
         "mask_count": len(masks),
     }
+
+
+def calculate_gaia_ring_areas(
+    host_ra_deg: float,
+    host_dec_deg: float,
+    ring: RadialRing,
+    coverage: list[DeclinationCoverage],
+    integration_tolerance_steradian: float = DEFAULT_INTEGRATION_TOLERANCE_STERADIAN,
+) -> dict[str, float | str | int]:
+    """Calculate Gaia areas without bright-star, dust, or ancillary-imaging masks."""
+    areas = calculate_ring_areas(
+        host_ra_deg,
+        host_dec_deg,
+        ring,
+        coverage,
+        masks=[],
+        integration_tolerance_steradian=integration_tolerance_steradian,
+    )
+    if areas["masked_area_steradian"] != 0 or (
+        abs(areas["usable_area_steradian"] - areas["successfully_queried_area_steradian"])
+        > integration_tolerance_steradian
+    ):
+        raise RuntimeError("Gaia area policy requires usable area to equal queried area")
+    return areas

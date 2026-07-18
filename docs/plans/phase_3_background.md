@@ -84,7 +84,7 @@ Query-partition progress, 2026-07-18:
 - [x] Add measured-row-count splitting, per-strip checkpoints, and resume behavior
   (2026-07-18).
 - [x] Validate spherical requested, successfully queried, missing, masked, and
-  usable areas for recombined radial rings; all 16 checks pass (2026-07-18).
+  usable areas for recombined radial rings; all 18 checks pass (2026-07-18).
 
 Adaptive-retrieval progress, 2026-07-18:
 
@@ -97,7 +97,7 @@ Adaptive-retrieval progress, 2026-07-18:
 - [x] Benchmark and freeze a 5,000-row per-strip limit using all 19 frozen-selector
   input columns; retain actual file bytes per checkpoint (2026-07-18).
 - [x] Integrate verified strip-completion states with spherical radial-ring usable
-  areas in the bounded component; real mask sources remain pending (2026-07-18).
+  areas in the bounded component (2026-07-18).
 
 Radial-ring area progress, 2026-07-18:
 
@@ -106,10 +106,11 @@ Radial-ring area progress, 2026-07-18:
 - [x] Reproduce complete retrieval-circle areas for NGC 4698, M60, and
   ESO 006-G001 using their measured final strip plans.
 - [x] Preserve positive missing area in a controlled one-of-two-strip M60 state.
-- [x] Subtract the union of two overlapping synthetic circular masks once; all 16
-  checks pass in 0.263657 seconds.
-- [ ] Select and validate authoritative real mask products before scientific area
-  subtraction.
+- [x] Subtract the union of two overlapping synthetic circular masks once to test
+  the generic geometry code.
+- [x] Freeze the Gaia-specific policy: apply no bright-star, dust, or ancillary-
+  imaging masks; usable area equals successfully queried area and incomplete strips
+  remain missing area. All 18 checks pass in 0.216274 seconds (2026-07-18).
 
 Full-column benchmark progress, 2026-07-18:
 

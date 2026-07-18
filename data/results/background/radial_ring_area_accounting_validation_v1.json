@@ -1,7 +1,14 @@
 {
   "validation_version": "radial_ring_area_accounting_validation_v1",
-  "generated_at_utc": "2026-07-18T13:49:06.675135+00:00",
+  "generated_at_utc": "2026-07-18T14:30:25.725582+00:00",
   "validation_scope": "performance_geometry_only_not_scientific_aperture_or_real_mask",
+  "gaia_area_policy": {
+    "apply_bright_star_masks": false,
+    "apply_dust_masks": false,
+    "apply_ancillary_imaging_masks": false,
+    "usable_area_definition": "successfully_queried_area",
+    "incomplete_retrieval_treatment": "explicit_missing_area"
+  },
   "area_definition": {
     "requested": "full spherical ring area",
     "successfully_queried": "part of the ring covered by verified complete strips",
@@ -53,13 +60,13 @@
       "provenance": "synthetic_fixture_not_survey_coverage"
     }
   ],
-  "record_count": 20,
-  "elapsed_seconds": 0.2636565410066396,
+  "record_count": 24,
+  "elapsed_seconds": 0.21627441700547934,
   "maximum_complete_area_error_square_deg": 1.8730017536938703e-12,
   "maximum_ring_sum_error_square_deg": 1.1102230246251565e-16,
   "maximum_reported_integration_error_square_deg": 1.018057261731333e-09,
-  "check_count": 16,
-  "passed_count": 16,
+  "check_count": 18,
+  "passed_count": 18,
   "checks": {
     "three_measured_complete_fields": true,
     "four_rings_per_scenario": true,
@@ -75,6 +82,8 @@
     "integration_errors_below_declared_tolerance": true,
     "central_ring_remains_diagnostic_only": true,
     "retrieval_leaf_counts_match_measured_totals": true,
+    "gaia_policy_applies_no_external_imaging_masks": true,
+    "gaia_usable_area_equals_successfully_queried_area": true,
     "synthetic_masks_cannot_be_mistaken_for_coverage": true,
     "ring_and_mask_geometry_fixed_without_source_selection": true
   }

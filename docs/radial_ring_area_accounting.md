@@ -1,6 +1,6 @@
 # Radial-ring area accounting
 
-**Status:** Spherical area component validated; real survey masks not yet supplied
+**Status:** Spherical area component validated; Gaia no-mask policy fixed
 **Date:** 2026-07-18
 **Issues:** BT-005, BT-010, BT-021
 
@@ -25,6 +25,11 @@ The central galaxy exclusion is a different concept. It marks inner rings as
 diagnostic-only for the scientific analysis; it does not pretend that those rings
 were missing from the archive or geometrically unusable.
 
+For the Gaia measurement, masked area is always zero. Bright-star, dust, and
+ancillary-imaging masks are not applied. Therefore Gaia usable area equals
+successfully queried area. Crowding, observation counts, or dust may still be
+recorded as diagnostics, but they do not remove Gaia sky area.
+
 ## Spherical calculation
 
 The requested area is the analytic area between two circles on a sphere. Retrieval
@@ -41,13 +46,19 @@ cannot remove the same sky twice.
 ## Bounded validation
 
 The measured retrieval plans for NGC 4698, M60, and ESO 006-G001 were divided into
-four test rings each. These are fractions of the archive performance-test circles,
-not physical-kiloparsec rings or approved scientific apertures.
+four test rings each. A controlled M60 case retains only one of its two completed
+strips. These are fractions of the archive performance-test circles, not physical-
+kiloparsec rings or approved scientific apertures.
 
 For all three completed retrievals, the successfully queried area reproduces the
 requested spherical area. The largest ring-level difference is
 `1.873002e-12` square degree, and the four rings for each host sum to the analytic
 circle area within `1.110223e-16` square degree.
+
+Under the Gaia policy, the complete M60 fixture has `1.767121` square degrees both
+successfully queried and usable. The controlled one-of-two-strip state has
+`0.884062` square degree both successfully queried and usable, while `0.883059`
+square degree remains explicitly missing.
 
 Two overlapping circular masks were then placed in the M60 fixture. They are
 explicitly labeled `synthetic_fixture_not_survey_coverage`; they are not real Gaia,
@@ -57,17 +68,18 @@ the two masks removes `0.039362` square degree, leaving `1.727758` square degree
 usable. A controlled partial state with only one of two retrieval strips complete
 records `0.884062` square degree queried and `0.883059` square degree missing.
 
-All 16 predeclared checks pass in `0.263657` seconds. They cover completed and
+All 18 predeclared checks pass in `0.216274` seconds. They cover completed and
 partial retrievals, area identities, overlapping-mask union, non-negative areas,
-polar geometry, central-ring disposition, retrieval-plan counts, and the synthetic-
-mask provenance warning.
+polar geometry, central-ring disposition, retrieval-plan counts, the Gaia no-mask
+policy, and the synthetic-mask provenance warning. The output contains 24 ring
+records.
 
-## Remaining boundary
+## Boundary between Gaia and ancillary imaging
 
-The accounting component is ready, but the project does not yet have an approved
-real bright-star, missing-coverage, dust, or ancillary-imaging mask contract. Real
-host densities must not use the synthetic fixture masks. Each real mask source must
-be selected, documented, versioned, and validated before it can reduce usable area.
+Real Gaia host densities must not use the synthetic fixture masks. The generic mask
+intersection remains available only as tested geometry for a future data product
+that explicitly requires masks. Any later ancillary-imaging measurement has its own
+coverage and quality policy; it does not change the Gaia denominator.
 
 ## Artifacts and reproduction
 

@@ -90,10 +90,11 @@ masked, and usable area for every ring. It derives query coverage from verified
 completed strips and subtracts the union of circular masks, so overlapping masks
 are not counted twice. Complete strip plans for all three performance fields
 reproduce the requested area; a controlled partial M60 state retains positive
-missing area. All 16 checks pass in 0.263657 seconds. The masks used in validation
-are explicitly synthetic and cannot be used for science. Authoritative real mask
-sources remain to be selected and validated; see
-`docs/radial_ring_area_accounting.md`.
+missing area. The masks used to test generic intersection geometry are explicitly
+synthetic and cannot be used for Gaia science. The Gaia area policy applies no
+bright-star, dust, or ancillary-imaging masks: usable area equals successfully
+queried area, while an incomplete or failed strip contributes missing area. All 18
+checks pass in 0.216274 seconds. See `docs/radial_ring_area_accounting.md`.
 
 The count-blind audit uses no Gaia source or selector counts and passes all seven
 validation checks. Its artifacts are:

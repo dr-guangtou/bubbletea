@@ -67,11 +67,12 @@ measured field-level quantities that do not use the UCD selector's output:
 - **Total Gaia source density:** a crowding indicator measured before applying the
   frozen UCD selector.
 - **Query and usable-area status:** whether the archive query completed without row
-  truncation and how much of the requested patch remains after masks.
+  truncation and how much of the requested patch has verified completed retrieval.
 
 Galactic latitude is related but separate: it primarily tracks how many Milky Way
-foreground stars lie in the direction of the patch. Dust and bright-star masks are
-also separate sky-quality checks.
+foreground stars lie in the direction of the patch. Dust and bright-star conditions
+may be recorded as diagnostics, but they do not remove area from the Gaia
+measurement.
 
 The exact matching tolerances for these quantities have not been chosen. They must
 be measured from comparison-patch pairs without looking for the values that produce
@@ -157,7 +158,8 @@ control must:
 - satisfy predeclared tolerances in Galactic latitude, ecliptic latitude, and an
   empirical Gaia completeness indicator such as `M10`;
 - avoid the buffered halos of other cataloged nearby galaxies, groups, and clusters;
-- retain bright-star, crowding, missing-area, and query-truncation masks; and
+- retain crowding diagnostics and explicit missing-area or query-truncation states;
+  and
 - receive a permanent accepted or rejected status with a reason.
 
 Symmetric candidates reduce the risk that one preferred direction is chosen after
@@ -358,8 +360,9 @@ covered by verified completed retrieval strips, the missing part, the union of
 explicit unusable masks, and the remaining usable area. Complete retrieval plans
 for the three performance fields reproduce their spherical requested areas, while
 a controlled interrupted state retains positive missing area. Two overlapping
-synthetic masks are subtracted once, and all 16 checks pass. These masks test the
-accounting only; no real survey mask is approved yet. See
+synthetic masks are subtracted once, and all 18 checks pass. The Gaia-specific path
+applies no bright-star, dust, or ancillary-imaging masks: usable area equals
+successfully queried area. Synthetic masks test only the generic geometry code. See
 `docs/radial_ring_area_accounting.md`.
 
 ## Five-host field-condition result

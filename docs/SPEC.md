@@ -682,12 +682,20 @@ area, with overlaps counted once. Usable area is successfully queried area minus
 masked area and is the only allowed density denominator. A central scientific
 exclusion changes a ring's inference role but is not a missing-coverage mask.
 
+For Gaia radial measurements, do not apply bright-star, dust, or ancillary-imaging
+masks. Retain the masked-area field as zero for a stable output schema, and define
+Gaia usable area to equal successfully queried area. An incomplete or failed Gaia
+retrieval remains explicit missing area. Crowding, observation counts, and dust may
+be retained as diagnostics or model inputs, but they do not remove Gaia sky area.
+
 The bounded area validation intersects spherical rings, declination strips, and
 circular masks without a flat-sky approximation. Three completed performance-test
 fields reproduce their analytic requested areas; a controlled partial retrieval
 retains positive missing area, and two overlapping synthetic masks are subtracted
-only once. All 16 checks pass. Synthetic masks are validation fixtures only; real
-mask products require separate provenance and approval before scientific use.
+only once. The Gaia-specific complete and partial cases apply no external masks and
+require usable area to equal successfully queried area. All 18 checks pass.
+Synthetic masks validate only the generic spherical intersection code and cannot
+be used in a Gaia scientific measurement.
 
 The first full-column benchmark retrieves all 19 frozen-selector inputs and passes
 all ten checks through 10,000 rows. Three repeated 5,000-row queries return identical

@@ -27,6 +27,7 @@ from scripts.phase3_background.radial_ring_area import (
     DeclinationCoverage,
     RadialRing,
     SphericalCircleMask,
+    calculate_gaia_ring_areas,
     calculate_ring_areas,
     spherical_circle_area_steradian,
 )
@@ -92,32 +93,45 @@ def make_records(
     test_radius_deg: float,
     coverage: list[DeclinationCoverage],
     masks: list[SphericalCircleMask],
+    use_gaia_area_policy: bool,
 ) -> list[dict[str, object]]:
     """Calculate all test-ring records for one declared scenario."""
     completed_strip_ids = [item.strip_id for item in coverage if item.complete]
-    return [
-        {
-            "scenario": scenario,
-            "host_name": host_name,
-            "host_ra_deg": host_ra_deg,
-            "host_dec_deg": host_dec_deg,
-            "test_radius_deg": test_radius_deg,
-            "ring_id": ring.ring_id,
-            "inner_radius_deg": ring.inner_radius_deg,
-            "outer_radius_deg": ring.outer_radius_deg,
-            "inference_role": ring.inference_role,
-            "completed_strip_ids": ";".join(completed_strip_ids),
-            "mask_ids": ";".join(mask.mask_id for mask in masks),
-            **calculate_ring_areas(
+    records = []
+    for ring in build_rings(test_radius_deg):
+        areas = (
+            calculate_gaia_ring_areas(host_ra_deg, host_dec_deg, ring, coverage)
+            if use_gaia_area_policy
+            else calculate_ring_areas(
                 host_ra_deg,
                 host_dec_deg,
                 ring,
                 coverage,
                 masks,
-            ),
-        }
-        for ring in build_rings(test_radius_deg)
-    ]
+            )
+        )
+        records.append(
+            {
+                "scenario": scenario,
+                "area_policy": (
+                    "gaia_no_external_imaging_masks"
+                    if use_gaia_area_policy
+                    else "generic_spherical_mask_fixture"
+                ),
+                "host_name": host_name,
+                "host_ra_deg": host_ra_deg,
+                "host_dec_deg": host_dec_deg,
+                "test_radius_deg": test_radius_deg,
+                "ring_id": ring.ring_id,
+                "inner_radius_deg": ring.inner_radius_deg,
+                "outer_radius_deg": ring.outer_radius_deg,
+                "inference_role": ring.inference_role,
+                "completed_strip_ids": ";".join(completed_strip_ids),
+                "mask_ids": ";".join(mask.mask_id for mask in masks),
+                **areas,
+            }
+        )
+    return records
 
 
 def main() -> None:
@@ -134,13 +148,14 @@ def main() -> None:
         complete_coverage = build_coverage(host_plan, leaf_ids)
         records.extend(
             make_records(
-                "measured_complete_no_masks",
+                "measured_complete_gaia_policy",
                 host_name,
                 float(host["ra"]),
                 float(host["dec"]),
                 float(retrieval_row["test_radius_deg"]),
                 complete_coverage,
                 [],
+                True,
             )
         )
 
@@ -161,6 +176,19 @@ def main() -> None:
             float(test_retrieval["test_radius_deg"]),
             build_coverage(test_plan, set(test_leaf_ids)),
             test_masks,
+            False,
+        )
+    )
+    records.extend(
+        make_records(
+            "controlled_partial_gaia_policy",
+            test_host_name,
+            float(test_host["ra"]),
+            float(test_host["dec"]),
+            float(test_retrieval["test_radius_deg"]),
+            build_coverage(test_plan, {test_leaf_ids[0]}),
+            [],
+            True,
         )
     )
     records.extend(
@@ -172,13 +200,14 @@ def main() -> None:
             float(test_retrieval["test_radius_deg"]),
             build_coverage(test_plan, {test_leaf_ids[0]}),
             test_masks,
+            False,
         )
     )
     results = pd.DataFrame(records)
 
-    complete_no_masks = results.loc[results["scenario"].eq("measured_complete_no_masks")]
+    complete_gaia = results.loc[results["scenario"].eq("measured_complete_gaia_policy")]
+    partial_gaia = results.loc[results["scenario"].eq("controlled_partial_gaia_policy")]
     masked_complete = results.loc[results["scenario"].eq("synthetic_masked_complete")]
-    masked_partial = results.loc[results["scenario"].eq("synthetic_masked_partial")]
     individual_mask_results = [
         pd.DataFrame(
             make_records(
@@ -189,6 +218,7 @@ def main() -> None:
                 float(test_retrieval["test_radius_deg"]),
                 build_coverage(test_plan, set(test_leaf_ids)),
                 [mask],
+                False,
             )
         )
         for mask in test_masks
@@ -198,7 +228,7 @@ def main() -> None:
     )
     union_mask_area = masked_complete["masked_area_square_deg"].to_numpy()
     requested_circle_errors = []
-    for host_name, host_rows in complete_no_masks.groupby("host_name"):
+    for host_name, host_rows in complete_gaia.groupby("host_name"):
         radius_deg = float(retrieval.loc[host_name, "test_radius_deg"])
         expected_circle_area = spherical_circle_area_steradian(radius_deg) * (180 / np.pi) ** 2
         requested_circle_errors.append(
@@ -213,21 +243,21 @@ def main() -> None:
         plan_count_matches.append(int(leaf_count) == int(retrieval_row["available_rows"]))
 
     checks = {
-        "three_measured_complete_fields": complete_no_masks["host_name"].nunique() == 3,
+        "three_measured_complete_fields": complete_gaia["host_name"].nunique() == 3,
         "four_rings_per_scenario": results.groupby(["scenario", "host_name"]).size().eq(4).all(),
         "complete_strips_reproduce_requested_area": (
-            complete_no_masks["successfully_queried_area_square_deg"]
-            - complete_no_masks["requested_area_square_deg"]
+            complete_gaia["successfully_queried_area_square_deg"]
+            - complete_gaia["requested_area_square_deg"]
         )
         .abs()
         .le(SQUARE_DEGREE_TOLERANCE)
         .all(),
         "ring_areas_sum_to_analytic_circle": max(requested_circle_errors)
         <= SQUARE_DEGREE_TOLERANCE,
-        "partial_state_has_positive_missing_area": masked_partial["missing_area_square_deg"]
+        "partial_state_has_positive_missing_area": partial_gaia["missing_area_square_deg"]
         .gt(0)
         .all(),
-        "partial_state_retains_positive_queried_area": masked_partial[
+        "partial_state_retains_positive_queried_area": partial_gaia[
             "successfully_queried_area_square_deg"
         ]
         .gt(0)
@@ -278,6 +308,21 @@ def main() -> None:
         .eq("central_diagnostic")
         .all(),
         "retrieval_leaf_counts_match_measured_totals": all(plan_count_matches),
+        "gaia_policy_applies_no_external_imaging_masks": results.loc[
+            results["area_policy"].eq("gaia_no_external_imaging_masks"), "mask_count"
+        ]
+        .eq(0)
+        .all(),
+        "gaia_usable_area_equals_successfully_queried_area": (
+            results.loc[
+                results["area_policy"].eq("gaia_no_external_imaging_masks"),
+                "usable_area_square_deg",
+            ].to_numpy()
+            == results.loc[
+                results["area_policy"].eq("gaia_no_external_imaging_masks"),
+                "successfully_queried_area_square_deg",
+            ].to_numpy()
+        ).all(),
         "synthetic_masks_cannot_be_mistaken_for_coverage": all(
             mask.provenance == "synthetic_fixture_not_survey_coverage" for mask in test_masks
         ),
@@ -290,6 +335,13 @@ def main() -> None:
         "validation_version": "radial_ring_area_accounting_validation_v1",
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "validation_scope": "performance_geometry_only_not_scientific_aperture_or_real_mask",
+        "gaia_area_policy": {
+            "apply_bright_star_masks": False,
+            "apply_dust_masks": False,
+            "apply_ancillary_imaging_masks": False,
+            "usable_area_definition": "successfully_queried_area",
+            "incomplete_retrieval_treatment": "explicit_missing_area",
+        },
         "area_definition": {
             "requested": "full spherical ring area",
             "successfully_queried": "part of the ring covered by verified complete strips",
@@ -319,8 +371,8 @@ def main() -> None:
         "elapsed_seconds": perf_counter() - started,
         "maximum_complete_area_error_square_deg": float(
             (
-                complete_no_masks["successfully_queried_area_square_deg"]
-                - complete_no_masks["requested_area_square_deg"]
+                complete_gaia["successfully_queried_area_square_deg"]
+                - complete_gaia["requested_area_square_deg"]
             )
             .abs()
             .max()

@@ -133,6 +133,14 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - Small fixed-angle circles used for archive-query benchmarks are diagnostics only
   and must never become the real host measurement aperture by default.
 
+## Gaia Area Policy
+
+- Do not apply bright-star, dust, or ancillary-imaging masks to Gaia radial-area
+  measurements. For Gaia, usable area equals the area covered by verified completed
+  retrieval strips; incomplete or failed strips remain explicit missing area.
+- Keep any generic mask-intersection fixture labeled as geometry validation only.
+  It must not be used as a Gaia scientific mask or density denominator.
+
 ## Git Conventions
 
 - Branch strategy: feature branches, never work directly on `main`

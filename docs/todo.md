@@ -441,9 +441,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Radial-area component, 2026-07-18: Defined requested, successfully queried,
   missing, masked, and usable spherical area for each ring. Verified completed
   strips reproduce the requested area, interrupted retrieval retains positive
-  missing area, and overlapping masks are subtracted once. All 16 checks pass in
-  0.263657 seconds. Validation masks are synthetic; authoritative real mask sources
-  remain pending.
+  missing area, and overlapping synthetic masks are subtracted once. The approved
+  Gaia path applies no bright-star, dust, or ancillary-imaging masks, so Gaia usable
+  area equals successfully queried area. All 18 checks pass in 0.216274 seconds.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -615,8 +615,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   for development and pilot runs under the current 19-column contract.
   Radial-area integration, 2026-07-18: Verified strip-completion states now produce
   per-ring requested, successfully queried, missing, masked, and usable areas.
-  Complete, partial, and overlapping-mask fixtures pass all 16 checks. Real run
-  manifests still require immutable run identifiers and approved real mask inputs.
+  Complete, partial, and overlapping-mask fixtures pass all 18 checks. The Gaia
+  path applies no external imaging masks and requires usable area to equal verified
+  queried area. Real run manifests still require immutable run identifiers.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995
