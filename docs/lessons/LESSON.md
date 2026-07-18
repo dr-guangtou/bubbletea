@@ -1161,3 +1161,17 @@ conditions, or selector uncertainty.
 **Recommendation:** Report counting-only ranges explicitly, retain every field and
 related host pair, keep pooled values descriptive, and estimate field-to-field and
 method uncertainty separately before scientific inference.
+
+## 2026-07-19: Treat a small held-back check as a transfer test, not final calibration
+
+**Lesson:** A procedure can behave consistently on untouched fields without the
+held-back sample being large or representative enough to define a background
+model.
+
+**Context:** The four validation circles have a combined passing-source density
+1.181818 times the development value and overlapping field and host-pair density
+ranges, but individual densities still span 95.492990–604.788937 per square degree.
+
+**Recommendation:** Freeze rules before opening held-back data, report comparisons
+without retuning or pass/fail reinterpretation, and use a much larger count-blind
+off-target sample to calibrate sky dependence and final applicability limits.

@@ -161,6 +161,16 @@ observing-condition changes, or selector uncertainty and therefore is not the fi
 background uncertainty. The selector threshold remains unchanged, validation
 fields remain absent, and all 16 checks pass.
 
+The four held-back fields were opened once on 2026-07-19 under those unchanged
+rules. They contain 1,233 Gaia sources, of which 52 pass, over 0.125664 square
+degree. The descriptive combined validation density is 413.802957 per square
+degree, 1.181818 times the development value. It lies outside the development 68%
+counting-only range but inside its 95% range. Individual-field and related-host-
+pair density ranges overlap between the two partitions. All 24 safeguards pass,
+including unchanged development files. These comparisons are descriptive rather
+than pass/fail gates: the eight small diagnostic circles do not approve a
+scientific background, set matching tolerances, or establish a survey-wide model.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

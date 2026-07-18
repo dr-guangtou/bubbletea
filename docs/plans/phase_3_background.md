@@ -75,6 +75,8 @@ Development-selector progress, 2026-07-18:
   held-back validation field from selector queries and outputs.
 - [x] Freeze the bounded field, related-host-pair, and descriptive all-development
   summary procedure before opening validation; all 16 checks pass (2026-07-18).
+- [x] Open the four held-back fields once under the unchanged selector and summary
+  rules; 52 of 1,233 sources pass and all 24 safeguards pass (2026-07-19).
 
 Frozen-summary progress, 2026-07-18:
 
@@ -86,6 +88,17 @@ Frozen-summary progress, 2026-07-18:
   at every summary level.
 - [x] Keep the selector threshold fixed and all held-back validation identifiers
   absent.
+
+Held-back validation progress, 2026-07-19:
+
+- [x] Query exactly the four frozen validation fields and exclude all development
+  identifiers from queries and outputs.
+- [x] Apply the unchanged 19-column selector, threshold, Gaia area rule, host-pair
+  grouping, and 68% and 95% counting-only ranges.
+- [x] Preserve 1,233 retrieved sources, 52 passing sources, and 0.125664 square
+  degree across four field rows, two host-pair rows, and one descriptive total.
+- [x] Record the validation/development density ratio of 1.181818 and overlapping
+  field and host-pair density ranges as descriptions, not scientific approval.
 
 ## III.4 Interface with the real host measurement
 

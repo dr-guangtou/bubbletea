@@ -395,6 +395,15 @@ include real field-to-field variation or observing-condition effects. All 16 che
 pass, the selector threshold is unchanged, and validation remains absent. See
 `docs/off_target_development_summary.md`.
 
+The four held-back fields were subsequently opened once under the unchanged
+procedure. Fifty-two of 1,233 Gaia sources pass over 0.125664 square degree, giving
+a descriptive density of 413.802957 per square degree. This is 1.181818 times the
+development value and lies inside its 95%, but not 68%, counting-only range. Field
+and related-host-pair density ranges overlap across partitions. All 24 safeguards
+pass. The comparison supports continued use of the procedure for a larger
+calibration experiment, but the eight small circles remain diagnostic and cannot
+define or approve scientific backgrounds. See `docs/off_target_validation_selector.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

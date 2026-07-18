@@ -176,6 +176,16 @@ OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY = (
 OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "off_target_development_frozen_summary_v1.json"
 )
+OFF_TARGET_VALIDATION_SOURCES = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_selector_sources_v1.csv"
+)
+OFF_TARGET_VALIDATION_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_selector_summary_v1.csv"
+)
+OFF_TARGET_VALIDATION_FROZEN_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_frozen_summary_v1.csv"
+)
+OFF_TARGET_VALIDATION_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_validation_selector_v1.json"
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

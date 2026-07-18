@@ -604,6 +604,15 @@ Phase-specific execution tasks remain in `docs/plans/`.
   field-to-field and observing-condition differences. Counts and areas are
   conserved, the selector threshold is unchanged, validation fields remain absent,
   and all 16 checks pass.
+  Held-back validation, 2026-07-19: Opened exactly the four frozen validation
+  circles after fixing the procedure. Among 1,233 Gaia sources, 52 pass over
+  0.125664 square degree, for a descriptive density of 413.802957 per square
+  degree versus 350.140964 in development. The combined value is outside the
+  development 68% counting-only range but inside its 95% range; field and host-pair
+  density ranges overlap. All 24 safeguards pass. No selector or summary setting
+  changed, no development artifact changed, and no diagnostic circle is approved
+  as a scientific background. A larger off-target sample remains necessary for
+  the final latitude-dependent model and applicability range.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.
