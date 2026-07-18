@@ -32,8 +32,8 @@ from scripts.config import (
     SELECTOR_DEVELOPMENT_FEATURES,
     SPECTROSCOPIC_STELLAR_REFERENCE_MATCHES,
 )
-from scripts.phase1_literature.analyze_selector_development import add_derived_features
 from scripts.phase1_literature.audit_reference_data import calculate_sha256
+from scripts.utils.point_source_selector import MODEL_FEATURES, add_model_features
 
 COMPARISON_VERSION = "point_source_ml_comparison_v5"
 OUTER_FOLDS = 5
@@ -41,17 +41,6 @@ INNER_FOLDS = 4
 RANDOM_SEED = 20260717
 TARGET_UCD_RECALL = 0.9
 PRIORITY_COHORTS = ["spectroscopic_star", "gaia_non_single_star", "spectroscopic_qso"]
-MODEL_FEATURES = [
-    "log1p_astrometric_excess_noise",
-    "log1p_astrometric_excess_noise_sig",
-    "phot_bp_rp_excess_factor",
-    "bp_rp",
-    "log_ruwe",
-    "log1p_ipd_frac_multi_peak",
-    "log1p_ipd_frac_odd_win",
-    "log1p_absolute_parallax_zero_significance",
-    "log1p_proper_motion_zero_significance",
-]
 EXCLUDED_PRIMARY_FEATURES = [
     "non_single_star",
     "classprob_dsc_combmod_galaxy",
@@ -97,26 +86,6 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--fold-metrics", type=Path, default=POINT_SOURCE_ML_FOLDS)
     parser.add_argument("--comparison", type=Path, default=POINT_SOURCE_ML_COMPARISON)
     return parser.parse_args()
-
-
-def add_model_features(rows: pd.DataFrame) -> pd.DataFrame:
-    """Add bounded transforms while preserving missingness for the estimators."""
-    rows = add_derived_features(rows)
-    rows["log1p_astrometric_excess_noise"] = np.log1p(
-        rows["astrometric_excess_noise"].clip(lower=0)
-    )
-    rows["log1p_astrometric_excess_noise_sig"] = np.log1p(
-        rows["astrometric_excess_noise_sig"].clip(lower=0)
-    )
-    rows["log_ruwe"] = np.log(rows["ruwe"].where(rows["ruwe"].gt(0)))
-    for source in [
-        "ipd_frac_multi_peak",
-        "ipd_frac_odd_win",
-        "absolute_parallax_zero_significance",
-        "proper_motion_zero_significance",
-    ]:
-        rows[f"log1p_{source}"] = np.log1p(rows[source].clip(lower=0))
-    return rows
 
 
 def load_cohorts(development_path: Path, stars_path: Path) -> pd.DataFrame:
