@@ -1,0 +1,21 @@
+{
+  "validation_version": "background_control_geometry_validation_v1",
+  "fixture_scope": "synthetic_geometry_only_no_gaia_query_no_scientific_halo_estimates",
+  "candidate_count": 20,
+  "accepted_count": 11,
+  "rejected_count": 9,
+  "maximum_absolute_galactic_latitude_difference_deg": 7.105427357601002e-14,
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "five_fixture_cases": true,
+    "four_symmetric_candidates_per_case": true,
+    "constant_galactic_latitude": true,
+    "nearby_case_exceeds_legacy_two_degree_cap": true,
+    "isolated_cases_have_accepted_controls": true,
+    "cluster_inference_blocked": true,
+    "satellite_inference_blocked": true,
+    "neighbor_intersection_rejected": true,
+    "neighbor_alternatives_preserved": true
+  }
+}

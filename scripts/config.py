@@ -97,6 +97,22 @@ GAIA_QUERIES_DIR = DATA_DIR / "gaia_queries"
 
 RESULTS_DIR = DATA_DIR / "results"
 BACKGROUND_RESULTS_DIR = RESULTS_DIR / "background"
+BACKGROUND_CONTROL_GEOMETRY_FIXTURE = (
+    BACKGROUND_RESULTS_DIR / "background_control_geometry_fixture_v1.csv"
+)
+BACKGROUND_CONTROL_GEOMETRY_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "background_control_geometry_validation_v1.json"
+)
+KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
+    GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
+)
+KOURKCHI_TULLY_ENVIRONMENT_AUDIT = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_environment_audit_v1.json"
+)
+KOURKCHI_TULLY_ENVIRONMENT_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_environment_validation_v1.json"
+)
+KOURKCHI_TULLY_2017_PROVENANCE = LITERATURE_SOURCES / "kourkchi_tully_2017_groups.json"
 RADIAL_SEARCH_RESULTS_DIR = RESULTS_DIR / "radial_search"
 CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 
@@ -110,6 +126,10 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
+ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"
+KOURKCHI_TULLY_2017_DIR = ENVIRONMENT_REFERENCE_DIR / "kourkchi2017"
+KOURKCHI_TULLY_2017_MEMBERS = KOURKCHI_TULLY_2017_DIR / "table3.dat.gz"
+KOURKCHI_TULLY_2017_GROUPS = KOURKCHI_TULLY_2017_DIR / "table2.dat.gz"
 EXTRAGALACTIC_REFERENCE_SOURCES = LITERATURE_SOURCES / "extragalactic_reference_catalogs.json"
 EXTRAGALACTIC_REFERENCE_AUDIT = LITERATURE_VALIDATION / "extragalactic_reference_catalog_audit.json"
 GAIA_MORPHOLOGY_HOST_FIELD_SOURCES = (

@@ -99,6 +99,15 @@ Every background method must account for the following constraints:
 - Control regions must be checked for other nearby galaxies whose compact-system
   populations or halos could contaminate the inferred background.
 
+The project lead approved the BT-005 method hierarchy on 2026-07-18. Matched
+off-target apertures are the primary background estimator. A valid host-centered
+annulus outside the buffered halo exclusion radius and a stratified large-field
+model are robustness methods. Unresolved group or cluster membership blocks an
+inferential background assignment but does not block a clearly labeled exploratory
+radial profile. The first geometry fixture may use a conservative K-luminosity-based
+upper `R200c` proxy for isolated centrals; scientific inference still requires
+verified environment information and a versioned proxy with propagated scatter.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
@@ -633,13 +642,17 @@ be tuned to increase the number of detected host excesses.
 
 ## Groups and Clusters
 
-The first-stage overdensity analysis should ignore environment as a selection or
-methodological distinction. Galaxies in groups and clusters should initially be
-processed with the same host-centered Gaia procedure as isolated galaxies.
+The first-stage overdensity analysis does not use environment to select a different
+Gaia selector or host-centered measurement procedure. Galaxies in groups and
+clusters are processed through the same source retrieval, selector, radial-profile,
+and control-candidate workflow as isolated galaxies.
 
 Within 50 Mpc, the prominent groups and clusters are few and well known. They
 should be flagged so they can be isolated for dedicated analysis later, without
-removing them from the first-stage measurements.
+removing them from the first-stage measurements. Under the BT-005 decision approved
+on 2026-07-18, unresolved environment status is a background-quality failure state:
+the exploratory measurements are preserved, but no field-background-subtracted
+inferential excess is assigned until the containing halo exclusion is known.
 
 Dense environments require explicit comparison of local and global background
 definitions. A local estimate may contain a real intragroup or intracluster compact

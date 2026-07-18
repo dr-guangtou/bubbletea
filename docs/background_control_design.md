@@ -1,7 +1,7 @@
 # Background control design
 
-**Status:** Draft for project-lead review  
-**Date:** 2026-07-18  
+**Status:** Method hierarchy approved; geometry fixture validated
+**Date:** 2026-07-18
 **Issues:** BT-005, BT-009, BT-022; interfaces with BT-006, BT-020, and BT-021
 
 ## Purpose
@@ -150,3 +150,26 @@ discarded or assigned zero background.
 3. Whether to wait for verified `R50` and environment data, or permit a conservative
    K-luminosity--based upper `R200c` proxy for isolated centrals in the first fixture.
 
+All three decisions were approved by the project lead on 2026-07-18 as recommended.
+
+## Geometry-fixture result
+
+The synthetic, query-free fixture in
+`scripts/phase3_background/validate_background_control_geometry.py` contains a
+nearby isolated host, a more distant isolated host, an unresolved cluster central,
+an unresolved satellite, and an isolated host with one direction contaminated by a
+neighbor halo. It produces 20 symmetric control candidates at exactly matched
+Galactic latitude. Eleven are accepted and nine rejected. All nine predeclared
+checks pass, including explicit environment blocking, neighbor rejection with
+alternative controls preserved, and a nearby exclusion radius larger than the old
+two-degree cap. The maximum numerical Galactic-latitude mismatch is
+`7.11e-14` degrees.
+
+Artifacts:
+
+- `data/results/background/background_control_geometry_fixture_v1.csv`
+- `data/results/background/background_control_geometry_validation_v1.json`
+
+The fixture inputs are synthetic geometry values, not estimates for real hosts and
+not permission to infer a background before the real environment and halo-proxy
+contracts are validated.

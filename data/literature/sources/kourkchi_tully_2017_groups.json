@@ -1,0 +1,24 @@
+{
+  "source_version": "kourkchi_tully_2017_groups_v1",
+  "title": "Galaxy Groups within 3500 km s-1",
+  "authors": "Ehsan Kourkchi; R. Brent Tully",
+  "bibcode": "2017ApJ...843...16K",
+  "doi": "10.3847/1538-4357/aa76db",
+  "vizier_catalog_id": "J/ApJ/843/16",
+  "catalog_url": "https://cdsarc.cds.unistra.fr/ftp/J/ApJ/843/16/",
+  "files": {
+    "ReadMe": {
+      "sha256": "47bcea4a7430d6cf8323f40d8bc5e383c0b231622e9534cce345a6bdb6892d01"
+    },
+    "table2.dat.gz": {
+      "role": "group properties",
+      "sha256": "1e5bca96f6339905d07dccac4ed8cfe6148a9b193c1231794d57a51dbd502bab"
+    },
+    "table3.dat.gz": {
+      "role": "galaxy membership and dominant-group identifier",
+      "sha256": "dcddfa96bded7e3dc4c4354703bf1570ef92ae91820fd4d24dc3a56fd7071a3a"
+    }
+  },
+  "storage": "External files under BUBBLETEA_EXTERNAL_DATA/bubbletea/environment_reference/kourkchi2017",
+  "use_policy": "Environment-association proposals only until identity and coverage review; no automatic inferential background assignment."
+}

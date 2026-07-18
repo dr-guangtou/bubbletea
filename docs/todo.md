@@ -401,6 +401,19 @@ Phase-specific execution tasks remain in `docs/plans/`.
   with paired off-target controls, a halo-excluded local annulus, and a stratified
   large-field diagnostic. Implementation awaits project-lead decisions on method
   hierarchy, unresolved environments, and the first `R200c` proxy.
+  Decision, 2026-07-18: Project lead approved paired off-target apertures as the
+  primary estimator, with a valid halo-excluded local annulus and a stratified
+  large-field model as robustness methods. Unresolved group or cluster membership
+  blocks inference but not exploratory profiles. A conservative K-luminosity upper
+  `R200c` proxy is permitted only for isolated centrals in the geometry fixture.
+  Geometry validation, 2026-07-18: The five-case synthetic fixture generates 20
+  count-blind symmetric candidates; 11 are accepted and 9 rejected. All nine checks
+  pass, including constant Galactic latitude, removal of the two-degree cap,
+  environment blocking, neighbor-halo rejection, and preservation of alternatives.
+  Environment audit, 2026-07-18: Staged Kourkchi-Tully 2017 externally and audited
+  all 2,155 hosts. A shift-calibrated 5-arcsec rule accepts 1,792 unique associations,
+  preserves 2 multiple-catalog ambiguities, and leaves 361 unmatched; all ten
+  provenance and identity validations pass.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -649,6 +662,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   global background sensitivity; and define any later membership analysis without
   selecting the background that maximizes excess.
   Depends on: BT-001.
+  Clarification, 2026-07-18: The approved BT-005 environment gate does not change
+  the selector or host-centered procedure and does not remove dense-environment
+  hosts. It preserves their exploratory measurements but withholds an inferential
+  field-background subtraction until the containing halo exclusion is known.
 
 - [ ] **BT-020 - Complete the mandatory host-property table.**
   Evidence: Luminosity, consistently measured `R50`, and morphology are required
