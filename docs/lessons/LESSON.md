@@ -951,3 +951,15 @@ remained variable.
 **Recommendation:** Stop geometric boundary chasing. Compare weakly regularized and
 explicitly unregularized fits for coefficient and prediction convergence, then use
 stability and scientific interpretability to define the final model policy.
+
+## 2026-07-18: Define scientific shorthand before using it
+
+**Lesson:** Catalog abbreviations and internal role labels can hide the physical
+meaning of an analysis even when the calculations are correct.
+
+**Context:** The background-design summary used `R1t`, `R2t`, “isolated principal,”
+and “exclusion region” before explaining what they mean or how they relate to the
+existing nearby-galaxy catalog.
+
+**Recommendation:** Introduce every new term in plain language, explain what the
+analysis is doing and why, and use abbreviations only after their definitions.

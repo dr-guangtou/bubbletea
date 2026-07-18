@@ -113,6 +113,14 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - `logging` module (not `print`) for scripts that run long
 - No redundant comments that restate function/variable names
 
+## Scientific Communication
+
+- Define every new scientific or project-specific term in plain language before
+  using its abbreviation or shorthand.
+- Do not invent jargon when an ordinary English phrase is sufficient.
+- Summaries must explain what an analysis is doing and why, not only name its
+  scripts, phases, catalogs, or internal labels.
+
 ## Git Conventions
 
 - Branch strategy: feature branches, never work directly on `main`

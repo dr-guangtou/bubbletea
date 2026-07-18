@@ -31,6 +31,13 @@ is preserved as a diagnostic and does not invalidate an otherwise unique
 sub-arcsecond identity; the project host distance and the group-catalog distance
 have different provenance and uses.
 
+Here “principal” means the catalog's main or brightest galaxy for a group.
+“Isolated principal” means that the catalog treats the object as a one-member
+group; it does not prove that the galaxy is physically isolated or lacks faint
+satellites. `R2t` is the catalog's model-based size estimate for the smaller,
+collapsed group region. `R1t` is its model-based size estimate for the larger
+surrounding association. Neither is a directly measured sharp boundary.
+
 Artifacts:
 
 - `data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv`

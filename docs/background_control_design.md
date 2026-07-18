@@ -11,6 +11,23 @@ pass the exact frozen selector but are not members of the target galaxy's compac
 stellar-system population. It is not assumed to be spatially uniform, and a missing
 or unusable control measurement is never represented as zero.
 
+## Plain-language overview
+
+Yes: this work starts from the existing catalog of 2,155 nearby galaxies and tries
+to find suitable comparison patches of sky for each galaxy.
+
+For every galaxy, we want to compare the number of selected Gaia sources near the
+galaxy with the number in one or more patches that should contain no objects
+belonging to that galaxy. The comparison patches should be as similar as possible
+in Milky Way foreground-star density and Gaia observing conditions. In particular,
+they should be close to the same Galactic latitude as the galaxy.
+
+This is different from the separate random-sky experiment. The random-sky
+experiment deliberately samples many Galactic latitudes to measure how foreground
+contamination changes across the sky. It helps us decide which galaxies can be
+studied reliably and how closely a comparison patch must match its galaxy. It is
+not intended to replace the galaxy-specific comparison patches.
+
 The background design has to separate three effects:
 
 1. Milky Way source-density variation, especially with Galactic latitude;
@@ -39,6 +56,35 @@ inhomogeneity associated with source density, magnitude, and ecliptic latitude
 - **Large-field model:** A model learned from many control fields using sky and Gaia
   observing-condition predictors. It is a population-level diagnostic, not a
   substitute for missing local data unless a fallback rule is approved in advance.
+
+- **Excluded background region:** A patch of sky that is not allowed to serve as a
+  background comparison because it may contain objects belonging to the target
+  galaxy, another nearby galaxy, a galaxy group, or a cluster. “Excluded” applies
+  only to its use as background; sources there are not deleted from the project.
+
+## Kourkchi-Tully catalog terms
+
+- **Principal galaxy:** The galaxy the catalog uses as the main or brightest galaxy
+  of a group. It is the group's catalog anchor, not a claim that the galaxy is the
+  only scientifically important member.
+- **Isolated principal:** A galaxy that the catalog treats as a one-member group:
+  the galaxy is its own principal galaxy and no other cataloged galaxy was assigned
+  to its group. In plain language, this is one ordinary galaxy that this particular
+  catalog did not place in a multi-galaxy group. It does not prove that the galaxy
+  is physically isolated or has no faint satellites.
+- **`R2t`, the estimated second-turnaround radius:** A model-based estimate of the
+  size of the more collapsed, gravitationally bound part of a galaxy group. The
+  catalog derives it from the group's K-band luminosity and inferred mass. It is
+  roughly a group-scale halo boundary, not a directly observed sharp edge.
+- **`R1t`, the estimated first-turnaround radius:** A model-based estimate of the
+  larger surrounding association where matter has stopped joining the general
+  expansion of the Universe and is beginning to fall inward. It describes a wider
+  region than the settled group core. It is also not a directly observed sharp
+  edge.
+
+The two radii answer different questions. `R2t` describes the smaller collapsed
+group region; `R1t` describes a larger association around one or more groups. That
+is why neither can be substituted automatically for the other.
 
 ## Recommended three-layer design
 
