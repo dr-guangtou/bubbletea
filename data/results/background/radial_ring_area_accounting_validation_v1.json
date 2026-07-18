@@ -1,0 +1,81 @@
+{
+  "validation_version": "radial_ring_area_accounting_validation_v1",
+  "generated_at_utc": "2026-07-18T13:49:06.675135+00:00",
+  "validation_scope": "performance_geometry_only_not_scientific_aperture_or_real_mask",
+  "area_definition": {
+    "requested": "full spherical ring area",
+    "successfully_queried": "part of the ring covered by verified complete strips",
+    "masked": "union of explicit unusable masks inside successfully queried area",
+    "missing": "requested area without a verified complete strip",
+    "usable": "successfully queried area minus the union of masks"
+  },
+  "integration": {
+    "method": "adaptive_quadrature_of_exact_spherical_longitude_intervals",
+    "internal_absolute_tolerance_steradian": 1e-13,
+    "validation_tolerance_square_deg": 1e-08
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/background_review_hosts_v1.csv",
+      "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+    },
+    {
+      "path": "data/results/background/gaia_full_column_multifield_plan_v1.csv",
+      "sha256": "ed085323db1d2a3f195eb971f659c1bd14c87ff486ae25a799dc545396e6311b"
+    },
+    {
+      "path": "data/results/background/gaia_full_column_multifield_retrieval_v1.csv",
+      "sha256": "6b97e73abc76a54998a9135109aa3df242b42ab1402da1b8b1bb747e4a5793c1"
+    }
+  ],
+  "test_ring_radius_fractions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "synthetic_masks": [
+    {
+      "mask_id": "synthetic_overlap_1",
+      "center_ra_deg": 191.1411943440389,
+      "center_dec_deg": 11.552525464066974,
+      "radius_deg": 0.1,
+      "reason": "area_accounting_validation_only",
+      "provenance": "synthetic_fixture_not_survey_coverage"
+    },
+    {
+      "mask_id": "synthetic_overlap_2",
+      "center_ra_deg": 191.18202142133822,
+      "center_dec_deg": 11.552491215167946,
+      "radius_deg": 0.1,
+      "reason": "area_accounting_validation_only",
+      "provenance": "synthetic_fixture_not_survey_coverage"
+    }
+  ],
+  "record_count": 20,
+  "elapsed_seconds": 0.2636565410066396,
+  "maximum_complete_area_error_square_deg": 1.8730017536938703e-12,
+  "maximum_ring_sum_error_square_deg": 1.1102230246251565e-16,
+  "maximum_reported_integration_error_square_deg": 1.018057261731333e-09,
+  "check_count": 16,
+  "passed_count": 16,
+  "checks": {
+    "three_measured_complete_fields": true,
+    "four_rings_per_scenario": true,
+    "complete_strips_reproduce_requested_area": true,
+    "ring_areas_sum_to_analytic_circle": true,
+    "partial_state_has_positive_missing_area": true,
+    "partial_state_retains_positive_queried_area": true,
+    "masks_reduce_usable_area": true,
+    "overlapping_masks_counted_once": true,
+    "queried_plus_missing_equals_requested": true,
+    "usable_plus_masked_equals_queried": true,
+    "all_areas_nonnegative": true,
+    "integration_errors_below_declared_tolerance": true,
+    "central_ring_remains_diagnostic_only": true,
+    "retrieval_leaf_counts_match_measured_totals": true,
+    "synthetic_masks_cannot_be_mistaken_for_coverage": true,
+    "ring_and_mask_geometry_fixed_without_source_selection": true
+  }
+}

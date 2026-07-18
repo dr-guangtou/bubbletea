@@ -438,6 +438,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   patch versus 59 and 130 in diagnostic patches, showing that total target-field
   density can contain real host or group populations and must not become a rigid
   matching rule.
+  Radial-area component, 2026-07-18: Defined requested, successfully queried,
+  missing, masked, and usable spherical area for each ring. Verified completed
+  strips reproduce the requested area, interrupted retrieval retains positive
+  missing area, and overlapping masks are subtracted once. All 16 checks pass in
+  0.263657 seconds. Validation masks are synthetic; authoritative real mask sources
+  remain pending.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -607,6 +613,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   verified checkpoint; every combined identifier hash matches an independent
   reference and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows per strip
   for development and pilot runs under the current 19-column contract.
+  Radial-area integration, 2026-07-18: Verified strip-completion states now produce
+  per-ring requested, successfully queried, missing, masked, and usable areas.
+  Complete, partial, and overlapping-mask fixtures pass all 16 checks. Real run
+  manifests still require immutable run identifiers and approved real mask inputs.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995

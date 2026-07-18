@@ -674,6 +674,21 @@ damaged range while leaving five intact ranges unchanged. All 15 checks pass. Th
 test's 130-row threshold is not a production limit; that limit must be measured with
 the full frozen-selector input columns before a real host retrieval.
 
+Every radial-ring output uses a five-area contract. Requested area is the full
+spherical ring. Successfully queried area is the part covered by verified completed
+retrieval strips. Missing area is the requested part without completed retrieval.
+Masked area is the union of explicitly unusable regions inside successfully queried
+area, with overlaps counted once. Usable area is successfully queried area minus
+masked area and is the only allowed density denominator. A central scientific
+exclusion changes a ring's inference role but is not a missing-coverage mask.
+
+The bounded area validation intersects spherical rings, declination strips, and
+circular masks without a flat-sky approximation. Three completed performance-test
+fields reproduce their analytic requested areas; a controlled partial retrieval
+retains positive missing area, and two overlapping synthetic masks are subtracted
+only once. All 16 checks pass. Synthetic masks are validation fixtures only; real
+mask products require separate provenance and approval before scientific use.
+
 The first full-column benchmark retrieves all 19 frozen-selector inputs and passes
 all ten checks through 10,000 rows. Three repeated 5,000-row queries return identical
 source identifiers in 1.948628--1.976649 seconds and serialize to 1,027,468 bytes

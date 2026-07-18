@@ -152,6 +152,12 @@ GAIA_FULL_COLUMN_MULTIFIELD_PLAN = (
 GAIA_FULL_COLUMN_MULTIFIELD_VALIDATION = (
     BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_validation_v1.json"
 )
+RADIAL_RING_AREA_ACCOUNTING = (
+    BACKGROUND_RESULTS_DIR / "radial_ring_area_accounting_validation_v1.csv"
+)
+RADIAL_RING_AREA_ACCOUNTING_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "radial_ring_area_accounting_validation_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

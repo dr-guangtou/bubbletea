@@ -83,7 +83,8 @@ Query-partition progress, 2026-07-18:
   celestial pole.
 - [x] Add measured-row-count splitting, per-strip checkpoints, and resume behavior
   (2026-07-18).
-- [ ] Validate exact masked and usable areas for the recombined radial rings.
+- [x] Validate spherical requested, successfully queried, missing, masked, and
+  usable areas for recombined radial rings; all 16 checks pass (2026-07-18).
 
 Adaptive-retrieval progress, 2026-07-18:
 
@@ -95,7 +96,20 @@ Adaptive-retrieval progress, 2026-07-18:
   valid strips; all 15 checks pass in 21.68 seconds.
 - [x] Benchmark and freeze a 5,000-row per-strip limit using all 19 frozen-selector
   input columns; retain actual file bytes per checkpoint (2026-07-18).
-- [ ] Integrate production run-state records with exact radial-ring usable areas.
+- [x] Integrate verified strip-completion states with spherical radial-ring usable
+  areas in the bounded component; real mask sources remain pending (2026-07-18).
+
+Radial-ring area progress, 2026-07-18:
+
+- [x] Define requested, successfully queried, missing, masked, and usable area in
+  plain language and enforce their accounting identities.
+- [x] Reproduce complete retrieval-circle areas for NGC 4698, M60, and
+  ESO 006-G001 using their measured final strip plans.
+- [x] Preserve positive missing area in a controlled one-of-two-strip M60 state.
+- [x] Subtract the union of two overlapping synthetic circular masks once; all 16
+  checks pass in 0.263657 seconds.
+- [ ] Select and validate authoritative real mask products before scientific area
+  subtraction.
 
 Full-column benchmark progress, 2026-07-18:
 

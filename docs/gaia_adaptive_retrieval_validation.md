@@ -66,8 +66,9 @@ times of 1.948628--1.976649 seconds, and serialized sizes of 1,027,468 bytes. Th
 provisional development checkpoint limit was therefore 5,000 rows. A subsequent
 three-field test validates full-column restart behavior for one unsplit and two
 split cases and freezes the 5,000-row per-strip limit for development and pilot
-runs. Integration with exact radial-ring area and masking calculations remains
-pending. See `docs/gaia_full_column_multifield_validation.md`.
+runs. The subsequent spherical area component maps verified completed strips to
+each ring's successfully queried and missing area, then subtracts the union of
+explicit masks. See `docs/radial_ring_area_accounting.md`.
 
 ## Artifacts and reproduction
 

@@ -337,9 +337,8 @@ The follow-up restart test now measures row counts, recursively splits oversized
 ranges, writes atomic checkpoints, and resumes from verified files. It stopped after
 two of six strips, reused those two on restart, completed the remaining four, and
 replaced one deliberately damaged strip without repeating five valid downloads.
-All 15 checks pass. A safe production row limit for the full selector-input columns
-and exact masked radial-ring areas remain pending; see
-`docs/gaia_adaptive_retrieval_validation.md`.
+All 15 checks pass. At that stage, the full-column row limit and masked radial-ring
+areas had not yet been validated; see `docs/gaia_adaptive_retrieval_validation.md`.
 
 The subsequent 19-column benchmark succeeded through 10,000 rows. Three repeated
 5,000-row queries returned identical identifiers in 1.948628--1.976649 seconds and
@@ -353,6 +352,15 @@ strips. Both split fields resume from a verified saved strip, every combined sou
 identifier hash matches an independent reference, and all 13 checks pass. Freeze
 5,000 rows per strip for development and pilot runs under the current 19-column
 contract; see `docs/gaia_full_column_multifield_validation.md`.
+
+The radial-area component now distinguishes the entire requested ring, the part
+covered by verified completed retrieval strips, the missing part, the union of
+explicit unusable masks, and the remaining usable area. Complete retrieval plans
+for the three performance fields reproduce their spherical requested areas, while
+a controlled interrupted state retains positive missing area. Two overlapping
+synthetic masks are subtracted once, and all 16 checks pass. These masks test the
+accounting only; no real survey mask is approved yet. See
+`docs/radial_ring_area_accounting.md`.
 
 ## Five-host field-condition result
 

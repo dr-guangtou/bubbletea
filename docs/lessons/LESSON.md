@@ -1076,3 +1076,18 @@ limit. The requirement for two independently split and restarted fields failed.
 performance-test geometry needed to exercise the branch, state that it is not a
 scientific aperture, and rerun every check rather than lowering the gate after
 seeing the data.
+
+## 2026-07-18: Keep missing coverage separate from scientific exclusion
+
+**Lesson:** An inner region excluded from UCD inference is not the same as sky that
+was never retrieved or was removed by a survey-quality mask.
+
+**Context:** Radial profiles need a density denominator even when a retrieval stops
+partway or overlapping masks remove area. Treating the central galaxy exclusion as
+missing coverage would hide useful contamination diagnostics and confuse geometry
+with a scientific decision.
+
+**Recommendation:** Record requested, successfully queried, missing, masked, and
+usable area separately. Form the union of overlapping masks before subtraction,
+retain central rings with a diagnostic-only role, and require provenance before a
+real mask can alter a scientific density.
