@@ -270,3 +270,21 @@ replacement. It is usable for 832 accepted group members and encloses 763 (86.41
 at one radius in the published association geometry. Group membership, association
 membership, and physical halo exclusion must therefore remain distinct. No safety
 factor is frozen.
+
+## Bounded Gaia field-condition result
+
+A first live-archive benchmark used NGC 4698 and two 0.1-degree-radius comparison
+patches with exactly the same Galactic latitude. It deliberately did not apply or
+inspect the UCD selector. The target, west, and east patches contained 121, 100,
+and 122 Gaia sources in the allowed G magnitude range. Their average numbers of
+visibility periods were 15.98, 12.07, and 14.46, while their `M10` values—the median
+G magnitude of sources with no more than ten matched astrometric transits—were
+21.187, 21.093, and 21.102.
+
+All six validation checks passed, including complete retrieval, non-missing
+observation counts, positive area, and a query contract containing no selector
+output. The measured run took 11.19 seconds. Same Galactic latitude therefore did
+not guarantee identical Gaia coverage or source density in this bounded test. One
+target and two comparisons are insufficient to choose diagnostics or matching
+tolerances, so no scientific rule is frozen. Full definitions, measurements, and
+limitations are recorded in `docs/background_field_conditions_benchmark.md`.

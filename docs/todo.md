@@ -418,6 +418,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   `2 R2t`, and `3 R2t` enclose 91.73%, 97.73%, and 99.77%, respectively. One
   association `R1t` encloses 86.41% of 832 usable members. These internally coupled
   catalog tests do not justify one universal exclusion factor; no factor is frozen.
+  Field-condition benchmark, 2026-07-18: Selected five real review hosts without
+  Gaia source counts, then queried one target and two equal comparison patches at
+  exactly the same Galactic latitude without applying the UCD selector. The patches
+  contain 121, 100, and 122 Gaia sources in the allowed magnitude range and differ
+  in average observation counts; all six data-contract checks pass in 11.19 seconds.
+  This bounded result justifies measuring Gaia field conditions but does not freeze
+  a matching tolerance.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -539,6 +546,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   recorded, failures are preserved, and the latitude model includes uncertainty
   and a stated applicability domain.
   Depends on: BT-002.
+  Preparation, 2026-07-18: The bounded three-patch field-condition benchmark used
+  only pre-selector quantities and passed all six checks. The canonical-selector
+  random-field experiment and spatially separate validation fields remain pending.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

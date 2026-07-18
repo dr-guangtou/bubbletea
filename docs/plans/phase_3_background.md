@@ -40,7 +40,10 @@ selector and provide valid host-specific controls.
 ## III.3 Frozen-selector background experiment
 
 - [ ] Define spatial development and validation fields.
-- [ ] Run one bounded target/control query and benchmark it.
+- [x] Select a deterministic five-host review set without using Gaia source counts
+  (2026-07-18).
+- [x] Run one bounded target/two-comparison field-condition query without applying
+  the selector; all six checks pass in 11.19 seconds (2026-07-18).
 - [ ] Recompute the random-field experiment with exact usable areas and the shared
   frozen selector.
 - [ ] Calibrate matching tolerances and the conservative Galactic-latitude limit.
@@ -58,3 +61,6 @@ selector and provide valid host-specific controls.
 - `1.5 R2t`, `2 R2t`, and `3 R2t` enclose 91.73%, 97.73%, and 99.77% of accepted
   group members, while one association `R1t` encloses 86.41% of usable members;
   no universal safety factor is frozen.
+- The first live-archive test found 121, 100, and 122 Gaia sources in three equal
+  patches at exactly the same Galactic latitude. Gaia coverage and total source
+  density must therefore be measured, but three patches cannot set a tolerance.

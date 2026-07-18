@@ -1,0 +1,23 @@
+{
+  "review_version": "background_review_hosts_v1",
+  "generated_at_utc": "2026-07-18T08:25:55.440596+00:00",
+  "selection_contract": "deterministic_host_and_environment_fields_only_no_gaia_counts",
+  "inputs": [
+    {
+      "path": "data/galaxy_sample/galaxy_sample_ranked.csv",
+      "sha256": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce"
+    },
+    {
+      "path": "data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv",
+      "sha256": "12d805fba60a23fd126f3c737109a339cf9973ebac5639ecc0ce3d1b6c462f93"
+    }
+  ],
+  "row_count": 5,
+  "review_cases": [
+    "highest_ranked_one_galaxy_catalog_case",
+    "nearest_one_galaxy_catalog_case",
+    "highest_ranked_group_main_galaxy",
+    "highest_ranked_group_member",
+    "highest_ranked_unresolved_environment"
+  ]
+}

@@ -103,6 +103,14 @@ BACKGROUND_CONTROL_GEOMETRY_FIXTURE = (
 BACKGROUND_CONTROL_GEOMETRY_VALIDATION = (
     BACKGROUND_RESULTS_DIR / "background_control_geometry_validation_v1.json"
 )
+BACKGROUND_REVIEW_HOSTS = BACKGROUND_RESULTS_DIR / "background_review_hosts_v1.csv"
+BACKGROUND_REVIEW_HOSTS_MANIFEST = BACKGROUND_RESULTS_DIR / "background_review_hosts_v1.json"
+BACKGROUND_FIELD_CONDITIONS_BENCHMARK = (
+    BACKGROUND_RESULTS_DIR / "background_field_conditions_benchmark_v1.csv"
+)
+BACKGROUND_FIELD_CONDITIONS_BENCHMARK_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_field_conditions_benchmark_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

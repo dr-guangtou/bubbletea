@@ -108,6 +108,16 @@ radial profile. The first geometry fixture may use a conservative K-luminosity-b
 upper `R200c` proxy for isolated centrals; scientific inference still requires
 verified environment information and a versioned proxy with propagated scatter.
 
+Candidate comparison fields must also be evaluated using quantities measured
+before the UCD selector is applied. These include total Gaia source density, local
+Gaia depth, source observation counts, ecliptic latitude, usable area, and query
+completion. Galactic latitude remains a separate indicator of Milky Way foreground
+density. A bounded NGC 4698 test on 2026-07-18 showed that three equal patches at
+exactly the same Galactic latitude still differed in total Gaia source density and
+average observation counts. This test does not set a matching tolerance; tolerances
+must be calibrated on declared development fields and checked on spatially separate
+validation fields without choosing values that maximize a host overdensity.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

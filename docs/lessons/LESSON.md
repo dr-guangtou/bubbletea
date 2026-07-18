@@ -963,3 +963,17 @@ existing nearby-galaxy catalog.
 
 **Recommendation:** Introduce every new term in plain language, explain what the
 analysis is doing and why, and use abbreviations only after their definitions.
+
+## 2026-07-18: Validate archive aggregate data types and denominators
+
+**Lesson:** A remote archive can return an aggregate with metadata that a client
+cannot parse, and a valid sum may still use fewer rows than the total count.
+
+**Context:** The NOIRLab Data Lab Gaia service declared an integer data type for an
+`AVG` result that contained a decimal value, causing the VOTable reader to fail.
+Replacing the average with `SUM` and local division worked, but required a separate
+non-missing count for each column because SQL sums ignore missing values.
+
+**Recommendation:** For remote integer-column averages, retrieve `SUM`,
+`COUNT(column)`, and `COUNT(*)`, compute the mean locally, and fail validation when
+required values are missing rather than silently dividing by the total row count.
