@@ -118,6 +118,14 @@ average observation counts. This test does not set a matching tolerance; toleran
 must be calibrated on declared development fields and checked on spatially separate
 validation fields without choosing values that maximize a host overdensity.
 
+Total Gaia source density near a target is not a pure observing-condition variable:
+it may include the real galaxy, group, or cluster population being measured. It may
+be used as a crowding diagnostic, but it must not become a rigid target-to-control
+matching requirement that can reject a genuine host overdensity. Any predictive
+calibration using total density must be learned on comparison fields away from
+target galaxies and tested on spatially separate comparison fields before it is
+applied to host measurements.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

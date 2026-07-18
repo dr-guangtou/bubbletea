@@ -1,0 +1,27 @@
+{
+  "position_version": "background_review_field_positions_v1",
+  "generated_at_utc": "2026-07-18T08:32:34.296395+00:00",
+  "selection_contract": "host_and_environment_geometry_only_no_gaia_counts",
+  "input": {
+    "path": "data/results/background/background_review_hosts_v1.csv",
+    "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+  },
+  "temporary_test_values": {
+    "patch_radius_deg": 0.1,
+    "group_radius_multiplier": 2.0,
+    "center_separation_multiplier": 1.2
+  },
+  "field_count": 13,
+  "target_field_count": 5,
+  "comparison_field_count": 8,
+  "check_count": 6,
+  "passed_count": 6,
+  "checks": {
+    "five_target_fields": true,
+    "eight_comparison_fields": true,
+    "all_hosts_represented": true,
+    "comparison_latitudes_match_targets": true,
+    "unresolved_environment_has_no_comparison": true,
+    "no_field_is_approved_scientific_background": true
+  }
+}

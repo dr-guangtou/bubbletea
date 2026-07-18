@@ -111,6 +111,18 @@ BACKGROUND_FIELD_CONDITIONS_BENCHMARK = (
 BACKGROUND_FIELD_CONDITIONS_BENCHMARK_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "background_field_conditions_benchmark_v1.json"
 )
+BACKGROUND_REVIEW_FIELD_POSITIONS = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_positions_v1.csv"
+)
+BACKGROUND_REVIEW_FIELD_POSITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_positions_v1.json"
+)
+BACKGROUND_REVIEW_FIELD_CONDITIONS = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_conditions_v1.csv"
+)
+BACKGROUND_REVIEW_FIELD_CONDITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_conditions_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

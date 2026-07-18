@@ -44,6 +44,9 @@ selector and provide valid host-specific controls.
   (2026-07-18).
 - [x] Run one bounded target/two-comparison field-condition query without applying
   the selector; all six checks pass in 11.19 seconds (2026-07-18).
+- [x] Extend pre-selector measurements to all five review hosts using 13 frozen
+  patches; all nine checks pass in 46.93 seconds, and no patch is approved as a
+  scientific background (2026-07-18).
 - [ ] Recompute the random-field experiment with exact usable areas and the shared
   frozen selector.
 - [ ] Calibrate matching tolerances and the conservative Galactic-latitude limit.
@@ -64,3 +67,6 @@ selector and provide valid host-specific controls.
 - The first live-archive test found 121, 100, and 122 Gaia sources in three equal
   patches at exactly the same Galactic latitude. Gaia coverage and total source
   density must therefore be measured, but three patches cannot set a tolerance.
+- The five-host review shows larger field-condition variation for the two group
+  cases. Total Gaia density is partly signal-sensitive near a target and cannot be
+  used as a rigid matching requirement.

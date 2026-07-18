@@ -288,3 +288,21 @@ not guarantee identical Gaia coverage or source density in this bounded test. On
 target and two comparisons are insufficient to choose diagnostics or matching
 tolerances, so no scientific rule is frozen. Full definitions, measurements, and
 limitations are recorded in `docs/background_field_conditions_benchmark.md`.
+
+## Five-host field-condition result
+
+The same pre-selector measurements were extended to five review hosts using 13
+frozen patches. Four resolved environments received east and west test patches;
+Arp 244 received only a target measurement because its environment association is
+unresolved. All nine validation checks pass, and the measured run took 46.93
+seconds. No test patch is approved as a scientific background.
+
+The one-galaxy catalog cases have `M10` ranges of 0.094 and 0.105 magnitude across
+their three patches. The NGC 1316 and M60 group cases have larger ranges of 0.503
+and 0.498 magnitude. M60 also illustrates that total Gaia density is not a pure
+survey-condition measurement: its target patch contains 289 Gaia sources in the
+allowed magnitude range, compared with 59 and 130 in the two diagnostic patches.
+Some of the target excess may be a real M60 or Virgo population. Total Gaia density
+may therefore diagnose crowding, but it must not be matched so rigidly that a real
+host-associated population is treated as a field-quality failure. Full definitions
+and results are in `docs/background_review_field_conditions.md`.

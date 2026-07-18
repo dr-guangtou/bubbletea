@@ -425,6 +425,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   in average observation counts; all six data-contract checks pass in 11.19 seconds.
   This bounded result justifies measuring Gaia field conditions but does not freeze
   a matching tolerance.
+  Five-host expansion, 2026-07-18: Measured 13 frozen target and provisional
+  comparison patches without applying the selector; all nine checks pass in 46.93
+  seconds. Arp 244 has a target measurement but no invented comparison because its
+  environment remains unresolved. M60 has 289 total Gaia sources in its target
+  patch versus 59 and 130 in diagnostic patches, showing that total target-field
+  density can contain real host or group populations and must not become a rigid
+  matching rule.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -549,6 +556,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Preparation, 2026-07-18: The bounded three-patch field-condition benchmark used
   only pre-selector quantities and passed all six checks. The canonical-selector
   random-field experiment and spatially separate validation fields remain pending.
+  Five-host preparation, 2026-07-18: Thirteen pre-selector field measurements
+  confirm that exact Galactic-latitude matching does not ensure identical Gaia
+  coverage. Calibration must use off-target development fields and spatially
+  separate validation fields so target-associated sources cannot tune the rule.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

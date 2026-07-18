@@ -977,3 +977,17 @@ non-missing count for each column because SQL sums ignore missing values.
 **Recommendation:** For remote integer-column averages, retrieve `SUM`,
 `COUNT(column)`, and `COUNT(*)`, compute the mean locally, and fail validation when
 required values are missing rather than silently dividing by the total row count.
+
+## 2026-07-18: Do not treat target-field source density as pure survey coverage
+
+**Lesson:** A pre-selector source count is independent of the classifier but is not
+necessarily independent of the astrophysical signal.
+
+**Context:** The five-host Gaia field review found 289 sources in the M60 target
+patch and 59 and 130 in its two diagnostic patches. The target count may include
+real M60 or Virgo-associated objects as well as crowding and Gaia coverage effects.
+
+**Recommendation:** Use total Gaia density as a crowding diagnostic, not a rigid
+target-to-control matching rule. Calibrate its predictive role on off-target fields,
+validate it on spatially separate fields, and never use target overdensity to tune
+the matching tolerance.
