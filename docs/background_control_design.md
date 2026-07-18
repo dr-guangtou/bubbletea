@@ -380,6 +380,13 @@ contains isolated/grouped and positive/negative-latitude cases. The assignment d
 not read Gaia counts or selector outputs, all 14 checks pass, and no circle is
 promoted to a scientific background. See `docs/off_target_field_split.md`.
 
+The four development circles have now been retrieved with all 19 Gaia inputs and
+scored locally with the frozen selector. They contain 413 Gaia sources; 44 pass the
+threshold, with field-level counts of 18, 8, 12, and 6. These are retained search
+candidates, not confirmed UCDs. All 18 checks pass, and the four validation field
+identifiers are absent from every selector query and output. See
+`docs/off_target_development_selector.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

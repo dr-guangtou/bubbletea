@@ -591,6 +591,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Gaia counts or selector outputs, promotes no field to scientific-background
   status, and passes all 14 checks. This is a bounded diagnostic split, not a final
   survey-wide validation set.
+  Development selector run, 2026-07-18: Retrieved all 19 frozen inputs for only the
+  four development circles and applied `point_source_logistic_model_v1` locally.
+  Among 413 Gaia sources, 44 pass the threshold over 0.125664 square degree; the
+  four field counts are 18, 8, 12, and 6. All 18 checks pass. No held-back field was
+  queried or written to selector outputs. These passing sources are candidates, not
+  confirmed UCDs, and the small experiment does not set a final background model.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

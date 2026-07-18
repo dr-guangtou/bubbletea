@@ -64,6 +64,18 @@ Off-target split progress, 2026-07-18:
 - [x] Confirm the split reads no Gaia source counts, densities, or selector outputs
   and promotes no field to an approved scientific background.
 
+Development-selector progress, 2026-07-18:
+
+- [x] Retrieve all 19 frozen-selector inputs for the four development fields only.
+- [x] Apply `point_source_logistic_model_v1` locally to 413 Gaia sources; 44 pass
+  the frozen threshold over 0.125664 square degree.
+- [x] Save field-level query fingerprints, source-identifier fingerprints, exact
+  spherical areas, selector probabilities, and decisions.
+- [x] Verify all 18 safeguards, including complete row counts and absence of every
+  held-back validation field from selector queries and outputs.
+- [ ] Freeze the bounded development summary procedure before opening validation
+  selector results.
+
 ## III.4 Interface with the real host measurement
 
 - [x] Confirm that the 0.1-degree field-condition circles are query benchmarks only

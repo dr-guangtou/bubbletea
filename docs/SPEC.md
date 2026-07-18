@@ -140,6 +140,18 @@ purpose is to test the canonical-selector experiment and the separation between
 method development and held-back checking. They are too small to establish final
 survey-wide matching tolerances or a Galactic-latitude limit.
 
+The first development-only selector run retrieves all 19 frozen inputs for the four
+development circles and applies `point_source_logistic_model_v1` locally. It returns
+413 Gaia sources, of which 44 pass the frozen threshold, over 0.125664 square degree
+of usable area. Field-level passing counts are 18, 8, 12, and 6. Passing the selector
+means only that a source is retained as a search candidate; it does not confirm a
+UCD. All 18 safeguards pass, and none of the four held-back field identifiers
+appears in a selector query or output.
+
+Existing pre-selector observing-condition measurements do not violate the holdback.
+For this experiment, “held back” means that selector probabilities, decisions, and
+passing-source counts remain unopened until the development procedure is fixed.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

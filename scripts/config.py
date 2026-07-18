@@ -163,6 +163,13 @@ HOST_RUN_RECORD_INDEX = BACKGROUND_RESULTS_DIR / "host_run_record_index_v1.csv"
 HOST_RUN_RECORD_VALIDATION = BACKGROUND_RESULTS_DIR / "host_run_record_validation_v1.json"
 OFF_TARGET_FIELD_SPLIT = BACKGROUND_RESULTS_DIR / "off_target_field_split_v1.csv"
 OFF_TARGET_FIELD_SPLIT_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_field_split_v1.json"
+OFF_TARGET_DEVELOPMENT_SOURCES = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_selector_sources_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_selector_summary_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_development_selector_v1.json"
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

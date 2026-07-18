@@ -1133,3 +1133,18 @@ conditions to appear in both the method-tuning and held-back samples.
 sky categories without using Gaia counts, hold validation selector results until
 method choices are fixed, and preserve diagnostic fields as non-scientific controls
 until their background eligibility is separately established.
+
+## 2026-07-18: Define precisely what remains unopened in validation
+
+**Lesson:** A held-back selector experiment can coexist with earlier pre-selector
+observing-condition measurements only when the boundary is explicit.
+
+**Context:** All eight off-target positions already had total Gaia counts and
+observation diagnostics, but only the four development fields received frozen-
+selector probabilities and decisions. Calling the validation fields simply
+“unopened” would incorrectly imply that nothing had ever been measured there.
+
+**Recommendation:** State that held-back fields have no selector probabilities,
+decisions, or passing-source counts; guard their identifiers before archive queries
+and in saved outputs; and do not use their later selector results until the
+development summary procedure is fixed.
