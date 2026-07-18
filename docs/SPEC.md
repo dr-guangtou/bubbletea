@@ -697,6 +697,19 @@ require usable area to equal successfully queried area. All 18 checks pass.
 Synthetic masks validate only the generic spherical intersection code and cannot
 be used in a Gaia scientific measurement.
 
+Every processed galaxy must receive a permanent per-galaxy analysis receipt. The
+receipt records the galaxy identity, run configuration fingerprint, retrieval and
+failure status, completed strip identifiers, source counts and identifier
+fingerprints, radial-ring areas, and plain-language failures. An identical rerun may
+reuse an identical receipt. Changed content must never replace an existing receipt;
+a changed configuration or input creates a new run identifier and receipt path.
+
+The bounded receipt validation writes three completed performance-field receipts
+under one run identifier and one controlled partial M60 receipt under a separate
+identifier. The partial receipt preserves one missing strip and positive missing
+area. A deliberate changed-content write is rejected, and all 18 checks pass. These
+are performance-test receipts, not approved physical search apertures.
+
 The first full-column benchmark retrieves all 19 frozen-selector inputs and passes
 all ten checks through 10,000 rows. Three repeated 5,000-row queries return identical
 source identifiers in 1.948628--1.976649 seconds and serialize to 1,027,468 bytes

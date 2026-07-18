@@ -158,6 +158,9 @@ RADIAL_RING_AREA_ACCOUNTING = (
 RADIAL_RING_AREA_ACCOUNTING_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "radial_ring_area_accounting_validation_v1.json"
 )
+HOST_RUN_RECORDS_DIR = BACKGROUND_RESULTS_DIR / "host_run_records_v1"
+HOST_RUN_RECORD_INDEX = BACKGROUND_RESULTS_DIR / "host_run_record_index_v1.csv"
+HOST_RUN_RECORD_VALIDATION = BACKGROUND_RESULTS_DIR / "host_run_record_validation_v1.json"
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

@@ -365,6 +365,13 @@ applies no bright-star, dust, or ancillary-imaging masks: usable area equals
 successfully queried area. Synthetic masks test only the generic geometry code. See
 `docs/radial_ring_area_accounting.md`.
 
+Each processed galaxy can now retain a permanent analysis receipt containing its
+configuration fingerprint, completed strips, source checks, ring areas, and any
+failure in plain language. Identical content is reused, while different content is
+refused rather than overwriting an earlier receipt. Three completed performance
+fields and one controlled partial M60 case pass all 18 checks; see
+`docs/host_run_records.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

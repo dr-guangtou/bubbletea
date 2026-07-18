@@ -617,7 +617,14 @@ Phase-specific execution tasks remain in `docs/plans/`.
   per-ring requested, successfully queried, missing, masked, and usable areas.
   Complete, partial, and overlapping-mask fixtures pass all 18 checks. The Gaia
   path applies no external imaging masks and requires usable area to equal verified
-  queried area. Real run manifests still require immutable run identifiers.
+  queried area. At this stage, permanent run identifiers had not yet been added.
+  Per-galaxy receipt component, 2026-07-18: Three completed performance fields now
+  share one configuration-derived run identifier and retain separate permanent
+  receipts. A controlled partial M60 receipt uses a separate identifier, preserves
+  positive missing area, and records its incomplete retrieval in plain language.
+  Identical writes are reused, different content cannot overwrite an existing
+  receipt, and all 18 checks pass in 0.014978 seconds. Real host aggregation still
+  depends on declaring the physical ring request and central scientific exclusion.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995

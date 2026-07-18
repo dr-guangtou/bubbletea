@@ -1105,3 +1105,17 @@ mix a later imaging-stage concern into the Gaia-only source-density denominator.
 area covered by verified completed retrieval strips. Preserve incomplete or failed
 strips as missing area, and retain any synthetic mask fixture only as a generic
 geometry test.
+
+## 2026-07-18: Preserve one permanent receipt per galaxy and run
+
+**Lesson:** A project-wide summary can hide a galaxy that failed or disappeared
+between runs.
+
+**Context:** The receipt fixture contains three completed galaxies and one
+controlled partial M60 run. The partial run must remain visible without replacing
+the completed M60 receipt, and an identical rerun should not create contradictory
+content.
+
+**Recommendation:** Derive run identifiers from declared configuration and input
+fingerprints, write one atomic receipt per galaxy, reuse only byte-identical
+content, refuse changed-content overwrites, and record failures in plain language.

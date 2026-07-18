@@ -112,6 +112,18 @@ Radial-ring area progress, 2026-07-18:
   imaging masks; usable area equals successfully queried area and incomplete strips
   remain missing area. All 18 checks pass in 0.216274 seconds (2026-07-18).
 
+Per-galaxy receipt progress, 2026-07-18:
+
+- [x] Define a permanent JSON receipt containing galaxy identity, configuration
+  fingerprint, retrieval status, completed strips, source checks, ring areas, and
+  plain-language failures.
+- [x] Write three completed performance-field receipts under one run identifier and
+  one controlled partial M60 receipt under a separate identifier.
+- [x] Reuse identical receipts and reject changed content instead of overwriting;
+  all 18 checks pass in 0.014978 seconds.
+- [ ] Apply the receipt format to real physical-ring requests after their geometry
+  and central scientific exclusion are declared.
+
 Full-column benchmark progress, 2026-07-18:
 
 - [x] Benchmark all 19 frozen-selector input columns at 100, 500, 1,000, 2,500,
