@@ -1241,3 +1241,31 @@ verification and scoring.
 **Recommendation:** Store a query-contract hash beside each measured plan, verify
 it before reuse, and keep raw strip checkpoints and plans together in external
 storage so neither archive operation must be repeated unnecessarily.
+
+## 2026-07-19: Do not sum narrow integer Gaia columns in archive aggregates
+
+**Lesson:** A TAP service can preserve a narrow source-column integer type in
+`SUM`, silently overflowing a field-level aggregate.
+
+**Context:** Summing `visibility_periods_used` and
+`astrometric_matched_transits` over 6,198 sources returned both totals as the
+16-bit maximum 32,767, falsely making their means identical. Raw rows showed the
+columns were different, and the service did not accept an aggregate cast.
+
+**Recommendation:** Measure the row count first, retrieve the compact observation-
+count columns completely with a verified row limit, and calculate means locally.
+Require retrieved counts, unique source identifiers, and non-null counts to match
+the independently measured field total.
+
+## 2026-07-19: Read the repository's default branch name before comparing refs
+
+**Lesson:** A project rule may use `main` generically even when the repository's
+actual primary branch is named `master`.
+
+**Context:** A remote-state check first requested a nonexistent local `main` ref.
+Inspection showed that both the local and remote primary branches are `master` and
+are synchronized at `06fb6b6`.
+
+**Recommendation:** Inspect `git branch -a` and the remote HEAD before constructing
+primary-branch comparisons. Use the repository's measured ref name in all later
+checks.

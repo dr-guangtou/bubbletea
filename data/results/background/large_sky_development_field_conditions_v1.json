@@ -1,0 +1,80 @@
+{
+  "measurement_version": "large_sky_development_field_conditions_v1",
+  "generated_at_utc": "2026-07-18T21:36:45.057746+00:00",
+  "measurement_scope": "twelve_frozen_development_fields_pre_selector_only",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.csv",
+      "sha256": "067e95eaffa0230b6e4f0c1c1311284e15e70d0b2dc7bc160edecf63b0b18212"
+    },
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.json",
+      "sha256": "c444916cb1bd54a71ede536e3b4468ac9669eadf52fb9b1713995ec8f2a0abd7"
+    },
+    {
+      "path": "data/results/background/large_sky_development_retrieval_summary_v1.csv",
+      "sha256": "cf08408d74a8d3db6a087ba4d74d337002114d61477b48e1a8e8d1688bac1672"
+    },
+    {
+      "path": "data/results/background/large_sky_development_retrieval_v1.json",
+      "sha256": "50ab0e6e696e248b627e4da882cd2427f7e4a851440d9daa843c0a1409274c04"
+    }
+  ],
+  "plain_language_definitions": {
+    "m10": "The median Gaia G magnitude among sources with at most ten matched astrometric transits; it is a local depth indicator, not a selector cut.",
+    "visibility_periods": "Groups of Gaia observations separated in time; the field mean describes how often sources were observed on distinct occasions.",
+    "matched_transits": "Gaia focal-plane crossings matched to a source; the field mean is another measure of observation frequency.",
+    "total_source_density": "All Gaia sources in the frozen G range divided by exact usable area before the UCD selector is applied."
+  },
+  "minimum_g_magnitude": 11.26291847229004,
+  "maximum_g_magnitude": 21.75798797607422,
+  "field_count": 12,
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "total_elapsed_seconds": 66.50126862502657,
+  "measured_ranges": {
+    "source_density_per_square_deg": {
+      "minimum": 2874.285496493901,
+      "maximum": 41791.28548934072
+    },
+    "mean_visibility_periods_used": {
+      "minimum": 12.437076476282671,
+      "maximum": 24.246461222638626
+    },
+    "mean_astrometric_matched_transits": {
+      "minimum": 19.192642787996128,
+      "maximum": 56.19941278972621
+    },
+    "m10_median_g_magnitude": {
+      "minimum": 20.894908905029297,
+      "maximum": 21.158577919006348
+    }
+  },
+  "output": {
+    "path": "data/results/background/large_sky_development_field_conditions_v1.csv",
+    "sha256": "beb7da112b4e5cdfd663b75c4ab2615aef8b8ff5c7a3ce4e33544bc5bc052490"
+  },
+  "check_count": 12,
+  "passed_count": 12,
+  "checks": {
+    "all_twelve_frozen_development_fields_measured": true,
+    "no_validation_field_measured": true,
+    "aggregate_counts_match_full_column_retrieval": true,
+    "observation_retrievals_complete": true,
+    "observation_source_identifiers_unique": true,
+    "low_transit_retrievals_complete": true,
+    "observation_counts_complete": true,
+    "all_m10_values_finite": true,
+    "all_areas_match_retrieval": true,
+    "query_hashes_unique_per_field_and_query_type": true,
+    "no_selector_output_used": true,
+    "input_manifests_passed": true
+  }
+}

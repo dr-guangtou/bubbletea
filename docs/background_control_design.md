@@ -422,6 +422,23 @@ span 239.233660–708.748370 per square degree, so the next development step mus
 measure Gaia field conditions before fitting a larger sky model. The 102 validation
 fields remain unopened. See `docs/large_sky_development_retrieval.md`.
 
+Pre-selector conditions are now measured in the same 12 development fields. Total
+Gaia source density spans 2,874.285496--41,791.285489 per square degree, mean
+visibility periods span 12.437076--24.246461, mean matched transits span
+19.192643--56.199413, and M10 spans G = 20.894909--21.158578. All 12 safeguards
+pass. These fields establish useful predictor range but are too few and were not
+sampled to choose predictors from their correlations. See
+`docs/large_sky_development_field_conditions.md`.
+
+The comparison was frozen before development scale-up as contract
+`model_contract_8da80ba5e4bd6d3027e6`. It compares five eligible models of increasing
+complexity and one environment-flag sensitivity model. Whole broad sky blocks stay
+together in the five prediction tests, while four internal splits choose only the
+already declared settings. The simplest model statistically consistent with the
+best prediction score will be selected. All 13 safeguards pass; no model is fitted,
+no validation result is opened, and no field is scientifically approved. See
+`docs/large_sky_model_comparison_contract.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

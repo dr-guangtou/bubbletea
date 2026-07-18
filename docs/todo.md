@@ -438,6 +438,16 @@ Phase-specific execution tasks remain in `docs/plans/`.
   patch versus 59 and 130 in diagnostic patches, showing that total target-field
   density can contain real host or group populations and must not become a rigid
   matching rule.
+  Large-sky pilot conditions, 2026-07-19: Measured total pre-selector Gaia source
+  density, M10, mean visibility periods, and mean matched transits in the 12 frozen
+  development pilot fields. The compact source retrieval agrees exactly with the
+  existing full-column counts, all 12 safeguards pass in 66.501269 seconds, and all
+  102 validation fields remain unopened.
+  Model-comparison freeze, 2026-07-19: Frozen five eligible candidate models of
+  increasing complexity, one environment-flag sensitivity comparison, whole-sky-
+  block prediction tests, internal setting selection, scores, and the simple-model
+  preference as `model_contract_8da80ba5e4bd6d3027e6`. All 13 safeguards pass; no
+  model is fitted and no field is scientifically approved.
   Radial-area component, 2026-07-18: Defined requested, successfully queried,
   missing, masked, and usable spherical area for each ring. Verified completed
   strips reproduce the requested area, interrupted retrieval retains positive

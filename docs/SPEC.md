@@ -232,6 +232,37 @@ all nine aggregate safeguards pass. Individual passing-source densities span
 239.233660–708.748370 per square degree. This positional-coverage pilot does not
 fit the final model or authorize opening any of the 102 validation fields.
 
+Before scaling beyond the 12-field pilot, freeze the large-sky model comparison.
+The response is the number of sources passing the frozen selector divided by exact
+usable area; usable area supplies the statistical weight. Failed or incomplete
+fields retain explicit failure records and do not enter a fitted model as zero.
+
+Compare, in increasing complexity: a constant-rate baseline; an absolute-Galactic-
+latitude spline; a position model adding Galactic hemisphere, Galactic-longitude
+sine and cosine, and an absolute-ecliptic-latitude spline; a Gaia-condition model
+adding log total Gaia density, `M10`, mean visibility periods, mean matched
+transits, and frozen-domain G-magnitude distribution summaries; and one nonlinear
+Poisson-loss tree benchmark using the same inputs. An environment-flag term is a
+sensitivity comparison only and cannot make a field scientific background or
+delete it.
+
+Development evaluation keeps every broad sky block intact. Five outer grouped
+folds measure prediction on unseen development blocks. Within each outer training
+set, four inner grouped folds choose only regularization or other declared model
+settings. The primary score is mean Poisson deviance; secondary scores are median
+absolute log-density error, root-mean-square log-density error, systematic residual
+by sky band, and empirical prediction-range coverage. Select the simplest model
+whose fold-to-fold uncertainty is within one standard error of the best primary
+score. Freeze the fitted development model, preprocessing, uncertainty procedure,
+and evaluation code before one final use of the 102 held-back fields.
+
+The 12-field pre-selector measurement and comparison freeze completed on
+2026-07-19. Total Gaia source density, mean visibility periods, mean matched
+transits, and M10 all span measurable ranges; all 12 measurement safeguards pass.
+Contract `model_contract_8da80ba5e4bd6d3027e6` freezes six comparisons and the
+grouped evaluation with all 13 safeguards passing. No model is fitted, no held-back
+selector result is opened, and no field is scientifically approved.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

@@ -212,6 +212,15 @@ LARGE_SKY_DEVELOPMENT_RETRIEVAL_SUMMARY = (
 LARGE_SKY_DEVELOPMENT_RETRIEVAL_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "large_sky_development_retrieval_v1.json"
 )
+LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_field_conditions_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_field_conditions_v1.json"
+)
+LARGE_SKY_MODEL_COMPARISON_CONTRACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_model_comparison_contract_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )
