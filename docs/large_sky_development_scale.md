@@ -63,13 +63,28 @@ fields and passing all 14 run safeguards. It then processed exactly one new fiel
 - all ten field checks and all 14 run checks pass.
 
 A subsequent zero-query restart retained 13 completed development fields, started
-no new field, and finished its state check in 0.005078 seconds. There are 385
-unfinished development fields. All 102 validation fields remain unopened.
+no new field, and finished its state check in 0.005078 seconds.
+
+Continued bounded runs increased completion to 65 of 398 development fields. The
+latest successful 25-field batch measured 402,986 Gaia sources, 18,730 passing
+sources, 118 final strips, and 83,087,504 checkpoint bytes in 647.913666 seconds.
+Its individual field times span 11.384314--76.646483 seconds, and all 17 run
+safeguards pass.
+
+One field, `sky_field_0317`, repeatedly encountered a stalled archive read during
+adaptive strip planning. The workflow now applies a 180-second ceiling to each
+archive request and a 300-second ceiling to the complete processing attempt for one
+field. The failed attempt has a permanent external receipt, is not represented as
+zero, and is deferred by default so it cannot consume the first slot of every
+batch. Retrying previously failed fields requires the explicit
+`--retry-failed-fields` option. The next untouched field completed normally after
+the timeout. There are 333 unfinished development fields, including the deferred
+field. All 102 validation fields remain unopened.
 
 ## Interpretation
 
-This validates the complete continuation path at the required small scale. It does
-not establish the total duration of the remaining run because fields can differ
-substantially in source density and the number of required strips. Runtime and
-storage must be accumulated from the actual completed fields rather than projected
-from this one field.
+This validates the continuation path, failure preservation, bounded waiting, and
+restart behavior. It does not establish the total duration of the remaining run
+because fields differ substantially in source density and the number of required
+strips. Runtime and storage are accumulated from completed fields rather than
+projected from a small subset.

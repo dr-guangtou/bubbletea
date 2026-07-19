@@ -1294,3 +1294,18 @@ true rejected the run.
 
 **Recommendation:** Keep descriptive state fields separate. Phrase safeguards as
 positive requirements such as `validation_selector_results_remain_unopened: true`.
+
+## 2026-07-19: Bound both archive requests and complete field attempts
+
+**Lesson:** A timeout on each remote request does not by itself bound an adaptive
+field plan because the planner can issue many separate count requests.
+
+**Context:** `sky_field_0317` remained in adaptive planning for more than six
+minutes without producing a completed plan. A later run showed both a 180-second
+archive read timeout and a 300-second total field-attempt limit were needed. The
+failure was preserved and the next field completed normally.
+
+**Recommendation:** Limit batches by attempted fields rather than successful
+fields, apply measured ceilings to both individual requests and the whole field,
+write every failure without converting it to zero, and defer repeated failures so
+untouched fields can continue.

@@ -88,8 +88,12 @@ Large-sky grid progress, 2026-07-19:
 - [x] Validate the resumable all-development continuation with a zero-query dry run,
   one new live field, and a zero-query restart; 13 development fields are complete,
   all 14 run checks pass, and validation remains unopened (2026-07-19).
-- [ ] Extend retrieval and pre-selector measurements to the remaining 385
-  development fields in explicitly bounded runs.
+- [x] Add measured per-request and whole-field time ceilings, permanent failure
+  receipts, attempt-based batch limits, and default deferral of failed fields after
+  one archive stall; all 17 run checks pass (2026-07-19).
+- [ ] Extend retrieval and pre-selector measurements to the remaining 333
+  development fields in explicitly bounded runs; 65 of 398 are complete and
+  `sky_field_0317` is deferred for an explicit retry.
 
 Off-target split progress, 2026-07-18:
 

@@ -4,14 +4,18 @@ import argparse
 import hashlib
 import json
 import logging
+import signal
 import sys
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from time import perf_counter
 
 import numpy as np
 import pandas as pd
+import requests
 from pyvo.dal import tap
+from pyvo.dal.exceptions import DALAccessError
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -65,6 +69,40 @@ from scripts.utils.point_source_selector import (
 LOGGER = logging.getLogger(__name__)
 SCALE_VERSION = "large_sky_development_scale_v1"
 DEFAULT_MAXIMUM_NEW_FIELDS = 0
+ARCHIVE_QUERY_TIMEOUT_SECONDS = 180
+FIELD_ATTEMPT_TIMEOUT_SECONDS = 300
+
+
+class FieldAttemptTimeoutError(TimeoutError):
+    """One development field exceeded its measured whole-field wait limit."""
+
+
+@contextmanager
+def field_attempt_timeout():
+    """Interrupt one field attempt after the fixed whole-field ceiling."""
+
+    def raise_timeout(signum: int, frame: object) -> None:
+        del signum, frame
+        raise FieldAttemptTimeoutError(
+            f"Field attempt exceeded {FIELD_ATTEMPT_TIMEOUT_SECONDS} seconds"
+        )
+
+    previous_handler = signal.signal(signal.SIGALRM, raise_timeout)
+    signal.setitimer(signal.ITIMER_REAL, FIELD_ATTEMPT_TIMEOUT_SECONDS)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_handler)
+
+
+class ArchiveTimeoutSession(requests.Session):
+    """Apply a measured upper wait to every archive HTTP request."""
+
+    def request(self, method: str, url: str, **kwargs: object) -> requests.Response:
+        """Send a request with the development archive timeout by default."""
+        kwargs.setdefault("timeout", ARCHIVE_QUERY_TIMEOUT_SECONDS)
+        return super().request(method, url, **kwargs)
 
 
 def stable_processing_order(field_id: str) -> int:
@@ -83,6 +121,15 @@ def parse_arguments() -> argparse.Namespace:
         help=(
             "Maximum previously unfinished development fields to query. The default "
             "is zero so an unrestricted remote run cannot start accidentally."
+        ),
+    )
+    parser.add_argument(
+        "--retry-failed-fields",
+        action="store_true",
+        help=(
+            "Include unfinished fields that already have a preserved failure receipt. "
+            "They are deferred by default so one archive problem cannot block untouched "
+            "development fields."
         ),
     )
     arguments = parser.parse_args()
@@ -185,6 +232,40 @@ def import_pilot_records(grid: pd.DataFrame) -> list[dict[str, object]]:
 def scale_field_directory(grid_id: str, field_id: str) -> Path:
     """Return the external checkpoint directory for one scale-up field."""
     return LARGE_SKY_GAIA_RETRIEVAL_DIR / grid_id / SCALE_VERSION / field_id
+
+
+def write_failure_receipt(
+    field: pd.Series,
+    error: BaseException,
+    elapsed_seconds: float,
+) -> dict[str, object]:
+    """Preserve one failed or interrupted development-field attempt."""
+    generated_at = datetime.now(UTC)
+    field_directory = scale_field_directory(str(field["grid_id"]), str(field["field_id"]))
+    field_directory.mkdir(parents=True, exist_ok=True)
+    failure_path = field_directory / (f"failure_{generated_at.strftime('%Y%m%dT%H%M%S_%fZ')}.json")
+    failure = {
+        "scale_version": SCALE_VERSION,
+        "generated_at_utc": generated_at.isoformat(),
+        "field_id": str(field["field_id"]),
+        "experiment_partition": str(field["experiment_partition"]),
+        "elapsed_seconds": elapsed_seconds,
+        "error_type": type(error).__name__,
+        "plain_language_error": str(error) or "The bounded run was stopped by the operator.",
+        "field_represented_as_zero": False,
+        "retry_policy": (
+            "Keep valid plans and strip checkpoints. A later explicitly bounded run may "
+            "retry this unfinished development field."
+        ),
+    }
+    write_json_atomic(failure_path, failure)
+    return {
+        "field_id": str(field["field_id"]),
+        "path": str(failure_path.resolve()),
+        "sha256": file_sha256(failure_path),
+        "error_type": type(error).__name__,
+        "elapsed_seconds": elapsed_seconds,
+    }
 
 
 def completed_receipt_is_valid(
@@ -386,6 +467,15 @@ def main() -> None:
     records = import_pilot_records(grid)
     completed_field_ids = {str(record["field_id"]) for record in records}
     invalid_receipt_field_ids = []
+    previous_failure_field_ids = {
+        str(field["field_id"])
+        for _, field in development.iterrows()
+        if any(
+            scale_field_directory(str(field["grid_id"]), str(field["field_id"])).glob(
+                "failure_*.json"
+            )
+        )
+    }
     for _, field in development.iterrows():
         field_id = str(field["field_id"])
         if field_id in completed_field_ids:
@@ -397,23 +487,44 @@ def main() -> None:
             completed_field_ids.add(field_id)
         elif receipt_path.exists():
             invalid_receipt_field_ids.append(field_id)
-    service = tap.TAPService(DATA_LAB_TAP_URL)
+    service = tap.TAPService(DATA_LAB_TAP_URL, session=ArchiveTimeoutSession())
     selector = load_frozen_selector()
     run_started = perf_counter()
     newly_completed_field_ids = []
+    attempted_field_ids = []
+    failed_field_attempts = []
+    interrupted = False
     for _, field in development.iterrows():
         field_id = str(field["field_id"])
         if field_id in completed_field_ids:
             continue
-        if len(newly_completed_field_ids) >= arguments.maximum_new_fields:
+        if field_id in previous_failure_field_ids and not arguments.retry_failed_fields:
+            continue
+        if len(attempted_field_ids) >= arguments.maximum_new_fields:
             break
+        attempted_field_ids.append(field_id)
         LOGGER.info("Processing development scale field %s", field_id)
-        record, receipt = process_new_field(
-            service,
-            selector,
-            field,
-            maximum_rows_per_strip,
-        )
+        attempt_started = perf_counter()
+        try:
+            with field_attempt_timeout():
+                record, receipt = process_new_field(
+                    service,
+                    selector,
+                    field,
+                    maximum_rows_per_strip,
+                )
+        except KeyboardInterrupt as error:
+            failed_field_attempts.append(
+                write_failure_receipt(field, error, perf_counter() - attempt_started)
+            )
+            interrupted = True
+            break
+        except (requests.RequestException, DALAccessError, FieldAttemptTimeoutError) as error:
+            failed_field_attempts.append(
+                write_failure_receipt(field, error, perf_counter() - attempt_started)
+            )
+            LOGGER.warning("Preserved recoverable failure for %s: %s", field_id, error)
+            continue
         receipt_path = scale_field_directory(str(field["grid_id"]), field_id) / "field_receipt.json"
         write_json_atomic(receipt_path, receipt)
         records.append(record)
@@ -464,8 +575,17 @@ def main() -> None:
         .all()
         .all(),
         "no_invalid_external_receipt_used": not invalid_receipt_field_ids,
-        "maximum_new_field_limit_respected": len(newly_completed_field_ids)
+        "maximum_new_field_attempt_limit_respected": len(attempted_field_ids)
         <= arguments.maximum_new_fields,
+        "all_attempted_fields_are_development": set(attempted_field_ids).issubset(
+            development_field_ids
+        ),
+        "all_failed_attempts_preserved": all(
+            Path(record["path"]).exists() and file_sha256(Path(record["path"])) == record["sha256"]
+            for record in failed_field_attempts
+        ),
+        "previous_failures_deferred_unless_retry_requested": arguments.retry_failed_fields
+        or set(attempted_field_ids).isdisjoint(previous_failure_field_ids),
         "no_model_fitted": True,
         "validation_selector_results_remain_unopened": True,
         "no_field_scientifically_approved": not grid["eligible_for_scientific_background"]
@@ -490,8 +610,15 @@ def main() -> None:
         "maximum_rows_per_strip": maximum_rows_per_strip,
         "processing_order_rule": "sha256_of_scale_version_colon_field_id",
         "default_maximum_new_fields": DEFAULT_MAXIMUM_NEW_FIELDS,
+        "archive_query_timeout_seconds": ARCHIVE_QUERY_TIMEOUT_SECONDS,
+        "field_attempt_timeout_seconds": FIELD_ATTEMPT_TIMEOUT_SECONDS,
         "requested_maximum_new_fields_this_run": arguments.maximum_new_fields,
+        "retry_failed_fields_this_run": arguments.retry_failed_fields,
+        "deferred_failure_field_ids": sorted(previous_failure_field_ids - completed_field_ids),
+        "attempted_field_ids_this_run": attempted_field_ids,
         "newly_completed_field_ids_this_run": newly_completed_field_ids,
+        "failed_field_attempts_this_run": failed_field_attempts,
+        "run_interrupted": interrupted,
         "completed_development_field_count": len(output_field_ids),
         "remaining_development_field_count": len(development_field_ids - output_field_ids),
         "held_back_validation_field_count": len(validation_field_ids),
@@ -525,6 +652,8 @@ def main() -> None:
     )
     if not all(checks.values()):
         raise RuntimeError(f"Development scale run failed: {checks}")
+    if interrupted:
+        raise KeyboardInterrupt
 
 
 if __name__ == "__main__":

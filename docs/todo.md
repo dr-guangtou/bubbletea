@@ -655,6 +655,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   two verified strips, 540 pass the selector, and all ten field and 14 run checks
   pass. A zero-query restart verified the receipt and started no new field. All 102
   validation fields remain unopened.
+  Bounded scale-up, 2026-07-19: Increased measured development coverage to 65 of
+  398 fields. The latest 25-field batch retrieved 402,986 Gaia sources in 118
+  strips, selected 18,730, and wrote 83,087,504 checkpoint bytes in 647.913666
+  seconds. A repeated archive stall for `sky_field_0317` motivated measured
+  180-second per-request and 300-second whole-field ceilings, attempt-based batch
+  limits, permanent nonzero failure receipts, and default deferral until an
+  explicit retry. All 17 run safeguards pass and validation remains unopened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.
