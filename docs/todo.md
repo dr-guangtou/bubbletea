@@ -662,6 +662,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   180-second per-request and 300-second whole-field ceilings, attempt-based batch
   limits, permanent nonzero failure receipts, and default deferral until an
   explicit retry. All 17 run safeguards pass and validation remains unopened.
+  Continued scale-up, 2026-07-19: A subsequent 50-field batch completed without
+  failure, retrieving 664,824 sources in 200 strips, selecting 36,993, and writing
+  136,550,316 checkpoint bytes in 1,102.252987 seconds. Overall development
+  coverage is 115 of 398 fields; 283 remain and validation is unopened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

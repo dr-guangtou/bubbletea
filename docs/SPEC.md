@@ -271,13 +271,13 @@ repository, and refuses validation identifiers. One bounded live continuation
 field and one zero-query restart pass all ten field and 14 run safeguards. Thirteen
 of 398 development fields are complete; the 102 validation fields remain unopened.
 
-Bounded continuation runs subsequently increased completion to 65 development
+Bounded continuation runs subsequently increased completion to 115 development
 fields. Each archive request has a 180-second ceiling and each complete field
 attempt has a 300-second ceiling, both chosen above the longest measured successful
 field and below the repeated stalled behavior. Failed or interrupted attempts keep
 permanent external receipts and are never represented as zero. Previously failed
 fields are deferred unless an explicit retry is requested, so they cannot block
-untouched development fields. All 17 run safeguards pass; 333 development fields
+untouched development fields. All 17 run safeguards pass; 283 development fields
 remain and validation is still unopened.
 
 The final analysis must compare the background methods and propagate their

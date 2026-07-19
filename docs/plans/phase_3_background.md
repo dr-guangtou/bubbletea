@@ -91,8 +91,8 @@ Large-sky grid progress, 2026-07-19:
 - [x] Add measured per-request and whole-field time ceilings, permanent failure
   receipts, attempt-based batch limits, and default deferral of failed fields after
   one archive stall; all 17 run checks pass (2026-07-19).
-- [ ] Extend retrieval and pre-selector measurements to the remaining 333
-  development fields in explicitly bounded runs; 65 of 398 are complete and
+- [ ] Extend retrieval and pre-selector measurements to the remaining 283
+  development fields in explicitly bounded runs; 115 of 398 are complete and
   `sky_field_0317` is deferred for an explicit retry.
 
 Off-target split progress, 2026-07-18:
