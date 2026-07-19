@@ -666,6 +666,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   failure, retrieving 664,824 sources in 200 strips, selecting 36,993, and writing
   136,550,316 checkpoint bytes in 1,102.252987 seconds. Overall development
   coverage is 115 of 398 fields; 283 remain and validation is unopened.
+  Continued scale-up, 2026-07-19: A bounded 100-field batch completed without
+  failure, retrieving 1,751,980 sources in 505 strips, selecting 85,551, and
+  writing 361,142,579 checkpoint bytes in 2,736.647886 seconds. Overall development
+  coverage is 215 of 398 fields; 182 untouched fields and one deferred failure
+  remain, while validation stays unopened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

@@ -442,10 +442,10 @@ no validation result is opened, and no field is scientifically approved. See
 The fixed G-magnitude summaries have now been calculated locally for all 12 pilot
 fields with nine safeguards passing and no archive query. The resumable continuation
 then processed one new development field and reused it on a zero-query restart.
-Continued bounded runs have completed 115 of 398 development fields. One archive
+Continued bounded runs have completed 215 of 398 development fields. One archive
 stall is preserved as an unfinished, deferred field rather than a zero count; per-
 request and whole-field time ceilings prevent it from blocking later fields. All 17
-run safeguards pass, 283 fields remain, and no background model is fitted. See
+run safeguards pass, 183 fields remain, and no background model is fitted. See
 `docs/large_sky_development_scale.md`.
 
 ## Five-host field-condition result

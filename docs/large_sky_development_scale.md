@@ -65,10 +65,10 @@ fields and passing all 14 run safeguards. It then processed exactly one new fiel
 A subsequent zero-query restart retained 13 completed development fields, started
 no new field, and finished its state check in 0.005078 seconds.
 
-Continued bounded runs increased completion to 115 of 398 development fields. The
-latest successful 50-field batch measured 664,824 Gaia sources, 36,993 passing
-sources, 200 final strips, and 136,550,316 checkpoint bytes in 1,102.252987
-seconds. Its individual field times span 7.651993--76.915745 seconds, and all 17
+Continued bounded runs increased completion to 215 of 398 development fields. The
+latest successful 100-field batch measured 1,751,980 Gaia sources, 85,551 passing
+sources, 505 final strips, and 361,142,579 checkpoint bytes in 2,736.647886
+seconds. Its individual field times span 11.221026--112.253834 seconds, and all 17
 run safeguards pass.
 
 One field, `sky_field_0317`, repeatedly encountered a stalled archive read during
@@ -78,7 +78,7 @@ field. The failed attempt has a permanent external receipt, is not represented a
 zero, and is deferred by default so it cannot consume the first slot of every
 batch. Retrying previously failed fields requires the explicit
 `--retry-failed-fields` option. The next untouched field completed normally after
-the timeout. There are 283 unfinished development fields, including the deferred
+the timeout. There are 183 unfinished development fields, including the deferred
 field. All 102 validation fields remain unopened.
 
 ## Interpretation
