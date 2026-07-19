@@ -1,0 +1,118 @@
+{
+  "comparison_version": "large_sky_development_model_comparison_v1",
+  "generated_at_utc": "2026-07-19T05:07:58.526184+00:00",
+  "status": "development_model_selected_and_frozen_validation_unopened",
+  "contract_id": "model_contract_8da80ba5e4bd6d3027e6",
+  "plain_language_scope": "Six predeclared methods were compared using only 398 development fields. Nearby fields stayed together during testing, and validation results remain unopened.",
+  "field_count": 398,
+  "sky_block_count": 95,
+  "model_count": 6,
+  "selected_model_id": "sky_position_and_gaia_conditions",
+  "selected_model_final_settings": {
+    "alpha": 0.1,
+    "spline_knot_count": 3
+  },
+  "best_eligible_model_id": "sky_position_and_gaia_conditions",
+  "one_standard_error_threshold": 625.3261041437481,
+  "selected_prediction_range": {
+    "prediction_68_lower_multiplier": 0.8575804349630958,
+    "prediction_68_upper_multiplier": 1.1742036569178598,
+    "prediction_95_lower_multiplier": 0.6846565338937384,
+    "prediction_95_upper_multiplier": 1.374214393596257,
+    "empirical_68_percent_coverage": 0.678391959798995,
+    "empirical_95_percent_coverage": 0.949748743718593
+  },
+  "unflagged_sensitivity_field_count": 163,
+  "unflagged_sensitivity_mean_outer_fold_poisson_deviance": 66.52184803072625,
+  "unflagged_sensitivity_outer_fold_poisson_deviance_standard_error": 57.34353989078953,
+  "largest_selected_model_out_of_fold_residual": {
+    "field_id": "sky_field_0317",
+    "outer_fold": 5,
+    "environment_flag_state": "one_or_more_count_blind_environment_flags",
+    "observed_rate_per_square_deg": 37714.86328320402,
+    "predicted_rate_per_square_deg": 3265.937783257536,
+    "log_observed_to_predicted_rate": 2.4465073237635866,
+    "field_poisson_deviance": 115641.52747430907
+  },
+  "validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "scientific_background_approval": false,
+  "software": {
+    "scikit_learn_version": "1.9.0"
+  },
+  "elapsed_seconds": 210.4299791250378,
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_model_comparison_contract_v1.json",
+      "sha256": "702fb51a0cf480b185e65c6f6a172cf154f39b3762f55281f3c2f26eb1df1a57"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_summary_v1.csv",
+      "sha256": "670e59ae0ef8179fa83cb8d61b8ec968b427d44827d91dd1860d125e9e996760"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_v1.json",
+      "sha256": "fa227e06d91b826566926acd2b9990e5d13410924439bb9d8028853c244c6a58"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/results/background/large_sky_development_model_summary_v1.csv",
+      "sha256": "c73d7fcc54ff1d3016659c3d3a49760bd080359acbaee9c75b5937485422b62a"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_fold_results_v1.csv",
+      "sha256": "3ec2a64adc63e67da015c3d60e1471398f39e4c062b48f7f315179156cf35cd2"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_predictions_v1.csv",
+      "sha256": "504f6b623b1ef2809d50bb59a076d22714c82c8456922140c143a8783bd15679"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_tuning_results_v1.csv",
+      "sha256": "230629b2fb9167e1a8d576470d5397319227f380a52911cc0dfaafb07441fced"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_environment_results_v1.csv",
+      "sha256": "74827b5baac9f0907b37b75d94c7d666ad347ab6ed9fea2218394b4956acd1b4"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_band_results_v1.csv",
+      "sha256": "547a6dd651682ad8e9e04c6ef8af147f0b46974c670486ed717107647f78ed5e"
+    },
+    {
+      "path": "data/results/background/large_sky_development_model_v1.joblib",
+      "sha256": "b09cda5fd1ac4ca4df50801de099436264a416322885e75d358aa1009b0b56c6"
+    }
+  ],
+  "check_count": 22,
+  "passed_count": 22,
+  "checks": {
+    "frozen_contract_identifier_matches": true,
+    "frozen_contract_passed_all_checks": true,
+    "complete_scale_input_passed_all_checks": true,
+    "all_398_development_fields_used_once": true,
+    "all_95_development_sky_blocks_present": true,
+    "no_validation_field_used": true,
+    "all_six_frozen_models_evaluated": true,
+    "five_outer_folds_for_each_primary_comparison": true,
+    "each_model_predicts_each_development_field_once": true,
+    "all_outer_training_and_test_blocks_disjoint": true,
+    "all_model_inputs_finite": true,
+    "all_fits_completed_without_convergence_warning": true,
+    "selected_model_is_primary_eligible": true,
+    "selected_model_satisfies_one_standard_error_rule": true,
+    "environment_flag_model_not_selected": true,
+    "both_environment_states_reported": true,
+    "all_models_have_five_galactic_band_summaries": true,
+    "all_models_have_six_ecliptic_band_summaries": true,
+    "unflagged_refit_is_sensitivity_only": true,
+    "prediction_ranges_are_ordered": true,
+    "validation_results_remain_unopened": true,
+    "no_field_scientifically_approved": true
+  }
+}

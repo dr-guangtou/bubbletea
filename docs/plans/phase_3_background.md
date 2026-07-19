@@ -98,8 +98,17 @@ Large-sky grid progress, 2026-07-19:
 - [x] Save adaptive planning progress after every measured count and verify it
   before reuse; the local stop-and-restart test passes all eight checks, and the
   dense final field resumes safely to completion (2026-07-19).
-- [ ] Fit and compare the six frozen model choices using only the 398 development
-  fields; do not open validation results or approve scientific backgrounds.
+- [x] Fit and compare the six frozen model choices using only the 398 development
+  fields; the sky-position-plus-Gaia-conditions regression is selected, all 22
+  safeguards pass, and validation remains unopened (2026-07-19).
+- [x] Preserve `sky_field_0317` as an explicit flagged applicability warning after
+  its held-out density exceeds the selected prediction by a factor of 11.548; do
+  not delete it or use the unflagged sensitivity fit as the primary model
+  (2026-07-19).
+- [ ] Review and accept the frozen development model, prediction ranges, and extreme
+  flagged-field treatment before the single held-back validation run.
+- [ ] Retrieve and evaluate the 102 held-back validation fields exactly once without
+  retuning the model or changing its applicability warning.
 
 Off-target split progress, 2026-07-18:
 

@@ -448,6 +448,15 @@ can be saved and resumed across bounded attempts. All 17 run safeguards pass, al
 102 validation fields remain unopened, and no background model is fitted. See
 `docs/large_sky_development_scale.md`.
 
+The six frozen development models have now been compared. The selected model uses
+sky position together with measured Gaia source density, observing frequency,
+depth, and G-magnitude summaries. Its central development residual multipliers are
+0.858--1.174 for 68% and 0.685--1.374 for 95%. The flagged
+`sky_field_0317` is far outside those ranges and dominates one of five prediction
+tests; it remains in the fit and is recorded as an applicability warning rather
+than deleted. All 22 fitting safeguards pass, and the 102 held-back results remain
+unopened pending review. See `docs/large_sky_development_model_comparison.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

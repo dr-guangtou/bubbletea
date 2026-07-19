@@ -679,6 +679,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   rerun verified every external record in 0.025172 seconds, and all 102 validation
   fields remain unopened. The next step is the already frozen six-model comparison
   on development data only.
+  Development model comparison, 2026-07-19: Compared all six predeclared methods
+  with whole sky blocks held together and selected the regression combining sky
+  position with measured Gaia conditions. Its final setting uses three spline knots
+  and `alpha = 0.1`; all 22 safeguards pass. The flagged `sky_field_0317` dominates
+  one test fold and remains an explicit applicability warning rather than being
+  deleted. The fitted model and residual ranges are frozen, while all 102 validation
+  selector results remain unopened pending review.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

@@ -236,6 +236,33 @@ LARGE_SKY_DEVELOPMENT_SCALE_MANIFEST = (
 LARGE_SKY_MODEL_COMPARISON_CONTRACT = (
     BACKGROUND_RESULTS_DIR / "large_sky_model_comparison_contract_v1.json"
 )
+LARGE_SKY_DEVELOPMENT_MODEL_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_FOLD_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_fold_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_PREDICTIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_predictions_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_TUNING_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_tuning_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_ENVIRONMENT_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_environment_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_BAND_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_band_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_ARTIFACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_v1.joblib"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_comparison_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_validation_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

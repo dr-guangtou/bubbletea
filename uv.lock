@@ -92,6 +92,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "astropy" },
     { name = "astroquery" },
+    { name = "joblib" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
@@ -113,6 +114,7 @@ requires-dist = [
     { name = "astro-datalab", marker = "extra == 'datalab'", specifier = ">=2.22" },
     { name = "astropy", specifier = ">=6.0" },
     { name = "astroquery", specifier = ">=0.4.7" },
+    { name = "joblib", specifier = ">=1.4" },
     { name = "matplotlib", specifier = ">=3.9" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "pandas", specifier = ">=2.2" },

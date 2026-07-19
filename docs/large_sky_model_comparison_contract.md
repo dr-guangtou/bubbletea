@@ -72,7 +72,11 @@ opened once for a final check. They cannot be used to revise the model.
 
 ## Current status
 
-All 13 contract safeguards pass. No model has been fitted, no validation selector
-result has been opened, and no large-sky field has been approved as a scientific
-background. Correlations among the 12 pilot fields are recorded only to confirm
-predictor range; they do not choose the model or its inputs.
+The frozen comparison has now been run on all 398 development fields. The selected
+model combines sky position with measured Gaia conditions and uses three spline
+knots with `alpha = 0.1`. All 22 fitting safeguards pass. The extreme flagged field
+`sky_field_0317` is retained and documented rather than deleted; it dominates one
+outer fold and limits the model's applicability in unusual crowded or physically
+associated regions. No validation selector result has been opened, and no
+large-sky field has been approved as a scientific background. See
+`docs/large_sky_development_model_comparison.md`.

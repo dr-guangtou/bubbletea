@@ -1325,3 +1325,41 @@ without weakening the fixed row or time limits.
 store the query contract beside it, and verify both the query hash and strip
 geometry before reuse. Test stop and restart locally before relying on the behavior
 for a live archive field.
+
+## 2026-07-19: Exercise synthetic data builders before real model fitting
+
+**Lesson:** Similar-looking pandas and NumPy arrays do not provide the same
+comparison methods.
+
+**Context:** The first local model-comparison test used the pandas-only `.eq()`
+method on a NumPy array while constructing an environment flag. The synthetic run
+failed before reading or fitting the 398-field development table.
+
+**Recommendation:** Run the complete synthetic builder and comparison path before
+the real fit, and use ordinary vectorized comparison operators for NumPy arrays.
+
+## 2026-07-19: Treat model convergence warnings as failed fits
+
+**Lesson:** A model can return coefficients after reaching its iteration limit, but
+those coefficients are not a valid basis for scientific model selection.
+
+**Context:** The first 398-field comparison exposed unscaled spline bases that
+reached the Poisson solver's 2,000-iteration limit. The run was stopped before
+writing or interpreting model-comparison artifacts.
+
+**Recommendation:** Scale every learned spline basis inside its training fold and
+promote convergence warnings to errors. Accept the comparison only when every
+inner, outer, sensitivity, and final fit converges.
+
+## 2026-07-19: Make table-wide Boolean reduction visually explicit
+
+**Lesson:** A bare `.all()` on a two-dimensional table is easy to mistake for a
+complete reduction even after the pandas behavior has been documented.
+
+**Context:** The first completed development-model fit reached its final safeguards
+but the finite-input check returned one Boolean per feature. The ambiguous Series
+correctly stopped the manifest from being accepted.
+
+**Recommendation:** Convert table-wide checks to a NumPy array and call `.all()` on
+that array, or explicitly reduce both axes. Keep this form visible in scientific
+manifests so reviewers can see that the result is one Boolean.

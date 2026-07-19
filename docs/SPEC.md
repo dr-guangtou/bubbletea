@@ -287,6 +287,41 @@ the 102 validation fields remain unopened. Model fitting may now use the 398
 development summaries under the already frozen comparison contract; it must not
 open validation results.
 
+The development comparison sorts fields by identifier before creating deterministic
+grouped folds. It predicts the passing-source rate and weights each field by its
+exact usable area; this is the rate-form equivalent of fitting the count with area
+as exposure. Smooth latitude terms, numeric scaling, and every other learned data
+transformation are fitted only on the current training fields. Each outer test fold
+contains whole sky blocks that are absent from its training data. Inside that
+training data, four grouped folds choose the declared setting with the lowest mean
+area-weighted Poisson deviance. The final development setting is chosen in the same
+way using all development blocks, after predictive comparison is complete.
+
+The primary comparison reports the mean of the five outer-fold Poisson deviances.
+Its uncertainty is the sample standard deviation across those five values divided
+by the square root of five. The one-standard-error threshold is the best eligible
+model's mean plus that uncertainty; the first eligible model in the frozen
+complexity order below the threshold is selected. Prediction ranges use the frozen
+central 68% and 95% quantiles of grouped out-of-fold log observed-to-predicted rate
+ratios. Environment-flag results and a separate fit that omits flagged development
+fields are sensitivity checks only. Neither can select the main model, delete a
+field, or open held-back results.
+
+The completed development comparison selects the sky-position-plus-Gaia-conditions
+regression with three spline knots and `alpha = 0.1`. Its mean outer-fold Poisson
+deviance is 320.728231 with standard error 304.597873; no simpler eligible model is
+inside the resulting 625.326104 one-standard-error threshold. The frozen central
+68% observed-to-predicted multiplier range is 0.857580--1.174204, and the central
+95% range is 0.684657--1.374214.
+
+`sky_field_0317` must remain an explicit applicability warning. Its held-out
+observed rate is 37,714.863283 passing sources per square degree versus a
+3,265.937783 prediction, and it dominates one outer-fold score. It retains its
+count-blind environment flag and remains in the primary development comparison.
+The unflagged-only result is a sensitivity check and cannot replace the selected
+model. The fitted model, preprocessing, settings, prediction ranges, and this
+warning are frozen before any held-back selector result is opened.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
