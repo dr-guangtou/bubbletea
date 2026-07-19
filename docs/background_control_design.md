@@ -439,13 +439,13 @@ best prediction score will be selected. All 13 safeguards pass; no model is fitt
 no validation result is opened, and no field is scientifically approved. See
 `docs/large_sky_model_comparison_contract.md`.
 
-The fixed G-magnitude summaries have now been calculated locally for all 12 pilot
-fields with nine safeguards passing and no archive query. The resumable continuation
-then processed one new development field and reused it on a zero-query restart.
-Continued bounded runs have completed 215 of 398 development fields. One archive
-stall is preserved as an unfinished, deferred field rather than a zero count; per-
-request and whole-field time ceilings prevent it from blocking later fields. All 17
-run safeguards pass, 183 fields remain, and no background model is fitted. See
+The fixed G-magnitude summaries were first calculated locally for all 12 pilot
+fields with nine safeguards passing and no archive query. The resumable
+continuation then completed all 398 development fields: 8,001,113 Gaia sources,
+403,920 passing sources, 2,356 final strips, and 800.213480 square degrees. The
+dense final field demonstrated that both planning measurements and source strips
+can be saved and resumed across bounded attempts. All 17 run safeguards pass, all
+102 validation fields remain unopened, and no background model is fitted. See
 `docs/large_sky_development_scale.md`.
 
 ## Five-host field-condition result

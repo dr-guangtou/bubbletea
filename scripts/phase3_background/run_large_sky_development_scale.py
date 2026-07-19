@@ -41,7 +41,6 @@ from scripts.phase3_background.adaptive_gaia_retrieval import (
     load_leaf_plan,
     plan_adaptive_strips,
     write_json_atomic,
-    write_plan,
 )
 from scripts.phase3_background.benchmark_full_selector_retrieval import (
     source_identifier_sha256,
@@ -331,24 +330,29 @@ def process_new_field(
     contract_path = field_directory / "plan_contract.json"
     base_where = field_base_where(field)
     expected_contract = plan_contract(base_where, maximum_rows_per_strip)
-    reused_plan = False
-    if plan_path.exists() and contract_path.exists():
-        try:
-            reused_plan = json.loads(contract_path.read_text(encoding="utf-8")) == expected_contract
-        except json.JSONDecodeError:
-            reused_plan = False
-    if reused_plan:
-        planned = load_all_plan_nodes(plan_path)
-    else:
-        planned = plan_adaptive_strips(
-            service,
-            base_where,
-            max(-90.0, float(field["dec_deg"]) - float(field["field_radius_deg"])),
-            min(90.0, float(field["dec_deg"]) + float(field["field_radius_deg"])),
-            maximum_rows_per_strip,
-        )
-        write_plan(plan_path, planned)
+    reused_plan_node_count = 0
+    if plan_path.exists():
+        contract_matches = False
+        if contract_path.exists():
+            try:
+                contract_matches = (
+                    json.loads(contract_path.read_text(encoding="utf-8")) == expected_contract
+                )
+            except json.JSONDecodeError:
+                contract_matches = False
+        if not contract_matches:
+            plan_path.unlink()
+        else:
+            reused_plan_node_count = len(load_all_plan_nodes(plan_path))
     write_json_atomic(contract_path, expected_contract)
+    planned = plan_adaptive_strips(
+        service,
+        base_where,
+        max(-90.0, float(field["dec_deg"]) - float(field["field_radius_deg"])),
+        min(90.0, float(field["dec_deg"]) + float(field["field_radius_deg"])),
+        maximum_rows_per_strip,
+        progress_path=plan_path,
+    )
     leaf_strips = load_leaf_plan(plan_path)
     retriever = AdaptiveGaiaRetriever(
         service,
@@ -428,7 +432,7 @@ def process_new_field(
         "field_id": field_id,
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "plan_contract": expected_contract,
-        "plan_reused": reused_plan,
+        "reused_plan_node_count": reused_plan_node_count,
         "external_plan_path": str(plan_path.resolve()),
         "external_plan_sha256": file_sha256(plan_path),
         "retrieval_result": retrieval_result,

@@ -1309,3 +1309,19 @@ failure was preserved and the next field completed normally.
 fields, apply measured ceilings to both individual requests and the whole field,
 write every failure without converting it to zero, and defer repeated failures so
 untouched fields can continue.
+
+## 2026-07-19: Save adaptive planning after every completed measurement
+
+**Lesson:** A resumable source download is not enough when deciding how to divide a
+dense field requires hundreds of separate archive counts.
+
+**Context:** `sky_field_0317` required 771 saved planning entries before its 386
+final source strips could be retrieved. Whole-field time limits repeatedly stopped
+the work, but saving each completed planning entry allowed every explicit retry to
+continue forward. The field ultimately completed with 1,242,936 Gaia sources
+without weakening the fixed row or time limits.
+
+**Recommendation:** Write planning progress atomically after each measured count,
+store the query contract beside it, and verify both the query hash and strip
+geometry before reuse. Test stop and restart locally before relying on the behavior
+for a live archive field.

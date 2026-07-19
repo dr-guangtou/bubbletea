@@ -8,7 +8,7 @@ and `scripts/phase3_background/run_large_sky_development_scale.py`
 
 ## What was added
 
-The 12 completed development fields now include three fixed descriptions of their
+The 12 pilot development fields include three fixed descriptions of their
 Gaia G-magnitude distributions:
 
 - the magnitude below which 10% of the field's sources lie;
@@ -65,26 +65,34 @@ fields and passing all 14 run safeguards. It then processed exactly one new fiel
 A subsequent zero-query restart retained 13 completed development fields, started
 no new field, and finished its state check in 0.005078 seconds.
 
-Continued bounded runs increased completion to 215 of 398 development fields. The
-latest successful 100-field batch measured 1,751,980 Gaia sources, 85,551 passing
-sources, 505 final strips, and 361,142,579 checkpoint bytes in 2,736.647886
-seconds. Its individual field times span 11.221026--112.253834 seconds, and all 17
-run safeguards pass.
+Continued bounded runs completed all 398 development fields. Together they contain
+8,001,113 Gaia sources, of which 403,920 pass the frozen selector, over
+800.213480 square degrees. The external raw checkpoints contain 2,356 final strips
+and 1,640,878,040 CSV bytes. Total Gaia density spans 2,401.289216--618,195.694388
+sources per square degree; passing-source density spans
+99.970823--37,714.863283 per square degree. These are measured ranges, not
+projections from the pilot.
 
-One field, `sky_field_0317`, repeatedly encountered a stalled archive read during
-adaptive strip planning. The workflow now applies a 180-second ceiling to each
-archive request and a 300-second ceiling to the complete processing attempt for one
-field. The failed attempt has a permanent external receipt, is not represented as
-zero, and is deferred by default so it cannot consume the first slot of every
-batch. Retrying previously failed fields requires the explicit
-`--retry-failed-fields` option. The next untouched field completed normally after
-the timeout. There are 183 unfinished development fields, including the deferred
-field. All 102 validation fields remain unopened.
+One unusually dense field, `sky_field_0317`, contains 1,242,936 Gaia sources and
+75,829 passing sources in 386 final strips. Its adaptive planning repeatedly met
+the fixed time ceiling. The planner now saves every completed count measurement,
+checks its query and geometry before reuse, and resumes from that point. A local
+stop-and-restart test passed all eight safeguards without an archive query. The
+live field then resumed across bounded attempts until it completed; earlier failed
+attempts remain as permanent external records and are not converted to zero.
+
+The workflow retains a 180-second ceiling for each archive request and a 300-second
+ceiling for each complete field attempt. Failed fields are deferred by default so
+they cannot consume the first slot of every later batch, and retrying them requires
+the explicit `--retry-failed-fields` option. All 17 aggregate safeguards pass. A
+final zero-work run verified all 398 external field records, made no new field
+attempt, and finished in 0.025172 seconds. All 102 validation fields remain
+unopened.
 
 ## Interpretation
 
-This validates the continuation path, failure preservation, bounded waiting, and
-restart behavior. It does not establish the total duration of the remaining run
-because fields differ substantially in source density and the number of required
-strips. Runtime and storage are accumulated from completed fields rather than
-projected from a small subset.
+This validates the complete development measurement, failure preservation, bounded
+waiting, planning and retrieval restarts, and local aggregate verification. It does
+not select a sky-background model or approve any field as a scientific background.
+The next step is to fit and compare the six already frozen model choices using only
+these 398 development rows, while keeping all validation results closed.

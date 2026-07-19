@@ -77,11 +77,23 @@ def plan_adaptive_strips(
     maximum_dec_deg: float,
     maximum_rows_per_strip: int,
     minimum_strip_height_deg: float = 1e-8,
+    progress_path: Path | None = None,
 ) -> list[AdaptiveStrip]:
-    """Recursively split ranges until every final strip fits the measured row limit."""
+    """Recursively split ranges and optionally checkpoint every measured node."""
     if maximum_rows_per_strip <= 0:
         raise ValueError("Maximum rows per strip must be positive")
     planned: list[AdaptiveStrip] = []
+    cached_nodes: dict[str, AdaptiveStrip] = {}
+    if progress_path is not None and progress_path.exists():
+        cached_frame = pd.read_csv(progress_path)
+        cached_nodes = {
+            record["strip_id"]: AdaptiveStrip(**record)
+            for record in cached_frame.to_dict(orient="records")
+        }
+
+    def checkpoint_progress() -> None:
+        if progress_path is not None:
+            write_plan(progress_path, planned)
 
     def visit(
         strip_id: str,
@@ -98,7 +110,20 @@ def plan_adaptive_strips(
             "",
             False,
         )
-        measured_count, count_hash = measure_strip_count(service, base_where, provisional)
+        expected_count_hash = query_sha256(count_query(base_where, provisional))
+        cached = cached_nodes.get(strip_id)
+        cached_matches = (
+            cached is not None
+            and cached.minimum_dec_deg == minimum_dec
+            and cached.maximum_dec_deg == maximum_dec
+            and cached.includes_maximum_dec == includes_maximum
+            and cached.count_query_sha256 == expected_count_hash
+        )
+        if cached_matches:
+            measured_count = cached.measured_source_count
+            count_hash = cached.count_query_sha256
+        else:
+            measured_count, count_hash = measure_strip_count(service, base_where, provisional)
         is_leaf = measured_count <= maximum_rows_per_strip
         current = AdaptiveStrip(
             strip_id,
@@ -110,6 +135,7 @@ def plan_adaptive_strips(
             is_leaf,
         )
         planned.append(current)
+        checkpoint_progress()
         if is_leaf:
             return measured_count
         if maximum_dec - minimum_dec <= minimum_strip_height_deg:

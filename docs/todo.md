@@ -671,6 +671,14 @@ Phase-specific execution tasks remain in `docs/plans/`.
   writing 361,142,579 checkpoint bytes in 2,736.647886 seconds. Overall development
   coverage is 215 of 398 fields; 182 untouched fields and one deferred failure
   remain, while validation stays unopened.
+  Completed development measurement, 2026-07-19: Bounded continuation runs now
+  cover all 398 development fields over 800.213480 square degrees. The verified
+  aggregate contains 8,001,113 Gaia sources, 403,920 passing sources, and 2,356
+  final strips. The dense final field resumed both its saved planning counts and
+  386 source strips across bounded attempts. All 17 safeguards pass, a zero-work
+  rerun verified every external record in 0.025172 seconds, and all 102 validation
+  fields remain unopened. The next step is the already frozen six-model comparison
+  on development data only.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

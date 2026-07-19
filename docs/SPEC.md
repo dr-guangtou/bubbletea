@@ -271,14 +271,21 @@ repository, and refuses validation identifiers. One bounded live continuation
 field and one zero-query restart pass all ten field and 14 run safeguards. Thirteen
 of 398 development fields are complete; the 102 validation fields remain unopened.
 
-Bounded continuation runs subsequently increased completion to 215 development
-fields. Each archive request has a 180-second ceiling and each complete field
-attempt has a 300-second ceiling, both chosen above the longest measured successful
-field and below the repeated stalled behavior. Failed or interrupted attempts keep
-permanent external receipts and are never represented as zero. Previously failed
-fields are deferred unless an explicit retry is requested, so they cannot block
-untouched development fields. All 17 run safeguards pass; 183 development fields
-remain and validation is still unopened.
+Bounded continuation runs subsequently completed all 398 development fields. Their
+verified aggregate contains 8,001,113 Gaia sources, 403,920 passing sources, 2,356
+final strips, and 800.213480 square degrees. Each archive request has a 180-second
+ceiling and each complete field attempt has a 300-second ceiling. Failed or
+interrupted attempts keep permanent external receipts and are never represented as
+zero. Previously failed fields are deferred unless an explicit retry is requested,
+so they cannot block untouched development fields.
+
+Adaptive planning progress is written after every completed count measurement and
+must pass query-hash and geometry checks before reuse. This rule allowed the dense
+final field to resume safely across bounded attempts rather than repeat its plan.
+All 17 run safeguards pass, a zero-work rerun verified all external records, and
+the 102 validation fields remain unopened. Model fitting may now use the 398
+development summaries under the already frozen comparison contract; it must not
+open validation results.
 
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing

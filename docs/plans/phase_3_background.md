@@ -66,8 +66,8 @@ Large-sky grid progress, 2026-07-19:
 - [x] Record represented group, association, and project-host intersections as
   count-blind sensitivity flags without deleting or scientifically approving a
   field.
-- [ ] Measure pre-selector Gaia conditions for all 398 development fields; keep all
-  102 validation fields unopened.
+- [x] Measure pre-selector Gaia conditions for all 398 development fields; keep all
+  102 validation fields unopened (2026-07-19).
 - [x] Freeze a 12-field development retrieval pilot before Gaia queries: ten
   hemisphere/latitude representatives plus two ecliptic-band supplements; all ten
   checks pass (2026-07-19).
@@ -91,9 +91,15 @@ Large-sky grid progress, 2026-07-19:
 - [x] Add measured per-request and whole-field time ceilings, permanent failure
   receipts, attempt-based batch limits, and default deferral of failed fields after
   one archive stall; all 17 run checks pass (2026-07-19).
-- [ ] Extend retrieval and pre-selector measurements to the remaining 183
-  development fields in explicitly bounded runs; 215 of 398 are complete and
-  `sky_field_0317` is deferred for an explicit retry.
+- [x] Extend retrieval and pre-selector measurements to all 398 development fields
+  in explicitly bounded runs; 8,001,113 Gaia sources were measured, 403,920 pass
+  the frozen selector, all 17 run checks pass, and validation remains unopened
+  (2026-07-19).
+- [x] Save adaptive planning progress after every measured count and verify it
+  before reuse; the local stop-and-restart test passes all eight checks, and the
+  dense final field resumes safely to completion (2026-07-19).
+- [ ] Fit and compare the six frozen model choices using only the 398 development
+  fields; do not open validation results or approve scientific backgrounds.
 
 Off-target split progress, 2026-07-18:
 
