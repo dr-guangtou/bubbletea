@@ -110,7 +110,8 @@ Large-sky grid progress, 2026-07-19:
   extreme-field failure clarified that direct measurements should remain primary
   (2026-08-11).
 - [ ] Retrieve and evaluate the 102 held-back validation fields exactly once without
-  retuning the model or changing its applicability warning.
+  retuning the direct procedure, refitting the diagnostic model, or changing the
+  applicability warning.
 - [x] Freeze and compare the three approved direct random-field procedures using
   only the 398 development fields; preserve comparison identities, measured
   distributions, and the `|b| >= 20` applicability limit; the simple latitude-band
@@ -120,8 +121,17 @@ Large-sky grid progress, 2026-07-19:
 - [x] Freeze the future host report to show the valid outer-annulus measurement,
   direct random-field distribution, their difference, and their ratio
   (2026-08-11).
-- [ ] Close this branch with all 102 large-sky validation fields still unopened;
-  perform their one-time retrieval and evaluation on a fresh branch.
+- [x] Close the design branch with all 102 large-sky validation fields still
+  unopened, merge it into `master`, and begin the one-time evaluation on a fresh
+  branch (2026-08-11).
+- [x] Freeze the 102 field identifiers, count-blind order, bounded retrieval, direct
+  evaluation metrics, and secondary fitted-model diagnostic before the first query;
+  all 11 contract checks pass (2026-08-11).
+- [x] Run the zero-query validation start: no reserved result is opened, no archive
+  query is made, and all 17 retrieval safeguards pass (2026-08-11).
+- [ ] Retrieve the 102 reserved fields in measured, explicitly bounded batches.
+- [ ] Apply the frozen direct reference and diagnostic model once, report differences
+  from development performance, and do not retune either method.
 
 Off-target split progress, 2026-07-18:
 

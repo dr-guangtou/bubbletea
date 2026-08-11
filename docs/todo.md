@@ -700,6 +700,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   development error, while the simplest method uses larger comparison pools and
   has better measured-range coverage. The 102 reserved fields were not queried or
   inspected; their one-time test belongs on a new branch.
+  Validation freeze, 2026-08-11: On the fresh validation branch, contract
+  `validation_run_contract_d75e3ddea7013547c088` fixes all 102 reserved field
+  identifiers, their count-blind processing order, bounded retrieval rules, direct
+  comparison metrics, and the fitted model's secondary diagnostic role. A zero-query
+  start passes all 17 run safeguards with zero completed fields and confirms that no
+  reserved selector result has yet been opened.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

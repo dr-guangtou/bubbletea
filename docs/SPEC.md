@@ -375,6 +375,23 @@ square degree. The measured field density is 37,714.863283 per square degree, a
 factor of 96.597452 above the median. Preserve this explicit out-of-range result;
 do not stretch the general reference distribution to absorb it.
 
+The one-time large-sky validation uses the 102 sky fields that were reserved before
+any Gaia selector result was measured for them. A reserved field is simply a fixed
+test field that could not influence the procedure choice. Contract
+`validation_run_contract_d75e3ddea7013547c088` fixes their identities, count-blind
+processing order, retrieval limits, selector, exact areas, and evaluation before
+the first reserved-field query.
+
+For each reserved field, the primary test compares its measured passing-source
+density with the already measured development fields in the same one of five broad
+absolute-Galactic-latitude bands. Report the median absolute log difference, the
+root-mean-square log difference, and the fractions inside the development 68% and
+95% measured ranges. Preserve every field result and report count-blind environment
+flags without excluding those fields. The serialized fitted model is evaluated on
+the same measurements only as a secondary diagnostic; it is not refitted and cannot
+replace or retune the direct procedure. Failed retrievals keep permanent receipts
+and remain missing rather than becoming zero-density measurements.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

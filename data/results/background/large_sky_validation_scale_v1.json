@@ -1,0 +1,74 @@
+{
+  "scale_version": "large_sky_validation_scale_v1",
+  "contract_id": "validation_run_contract_d75e3ddea7013547c088",
+  "status": "not_started_frozen_validation",
+  "plain_language_scope": "Only the 102 reserved validation fields may be processed. Completed fields keep verified external checkpoints and receipts; failures are not zeroes.",
+  "grid_id": "sky_grid_446c747dcc7dde21be4f",
+  "selector_version": "point_source_logistic_model_v1",
+  "maximum_rows_per_strip": 5000,
+  "processing_order_rule": "sha256_of_validation_run_version_colon_field_id",
+  "default_maximum_new_fields": 0,
+  "requested_maximum_new_fields_this_run": 0,
+  "retry_failed_fields_this_run": false,
+  "deferred_failure_field_ids": [],
+  "attempted_field_ids_this_run": [],
+  "newly_completed_field_ids_this_run": [],
+  "failed_field_attempts_this_run": [],
+  "run_interrupted": false,
+  "completed_validation_field_count": 0,
+  "remaining_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "invalid_external_receipt_field_ids": [],
+  "elapsed_seconds_this_run": 0.004114750001463108,
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_validation_run_contract_v1.json",
+      "sha256": "88fba1ae45fd7d7096c730f9a74e7723c9b784ce1fa9c5383eaec1d3aab9b994"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.json",
+      "sha256": "ab72d846d0fe812702ae5fe8d2eb394fe8dcfd1e5cb30e513dc68351ee300ae3"
+    },
+    {
+      "path": "data/results/background/gaia_full_selector_retrieval_benchmark_v1.json",
+      "sha256": "188180ea9649601919851d43a1f610199e09cf760a8edeae33d7cfd77ed7c864"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    }
+  ],
+  "output": {
+    "path": "data/results/background/large_sky_validation_scale_summary_v1.csv",
+    "sha256": "5878a431173a84c19b850550462ffe89fe5dc0fc94246a8901b5bddbdc9353e1"
+  },
+  "check_count": 17,
+  "passed_count": 17,
+  "checks": {
+    "frozen_contract_identifier_matches": true,
+    "exactly_one_hundred_two_validation_fields_declared": true,
+    "all_summarized_fields_are_validation": true,
+    "no_development_field_summarized_or_queried": true,
+    "field_identifiers_unique": true,
+    "processing_order_unique": true,
+    "all_counts_nonnegative": true,
+    "selected_counts_do_not_exceed_retrieved_counts": true,
+    "all_model_inputs_finite": true,
+    "no_invalid_external_receipt_used": true,
+    "maximum_new_field_attempt_limit_respected": true,
+    "all_attempted_fields_are_validation": true,
+    "all_failed_attempts_preserved": true,
+    "previous_failures_deferred_unless_retry_requested": true,
+    "selector_version_unchanged": true,
+    "no_model_fitted_or_procedure_retuned": true,
+    "no_field_scientifically_approved": true
+  }
+}
