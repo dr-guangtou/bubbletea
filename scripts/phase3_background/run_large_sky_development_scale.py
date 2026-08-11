@@ -104,9 +104,9 @@ class ArchiveTimeoutSession(requests.Session):
         return super().request(method, url, **kwargs)
 
 
-def stable_processing_order(field_id: str) -> int:
+def stable_processing_order(field_id: str, run_version: str = SCALE_VERSION) -> int:
     """Return a count-blind stable processing-order value."""
-    content = f"{SCALE_VERSION}:{field_id}".encode()
+    content = f"{run_version}:{field_id}".encode()
     return int(hashlib.sha256(content).hexdigest()[:16], 16)
 
 
@@ -228,23 +228,30 @@ def import_pilot_records(grid: pd.DataFrame) -> list[dict[str, object]]:
     return records
 
 
-def scale_field_directory(grid_id: str, field_id: str) -> Path:
+def scale_field_directory(
+    grid_id: str,
+    field_id: str,
+    run_version: str = SCALE_VERSION,
+) -> Path:
     """Return the external checkpoint directory for one scale-up field."""
-    return LARGE_SKY_GAIA_RETRIEVAL_DIR / grid_id / SCALE_VERSION / field_id
+    return LARGE_SKY_GAIA_RETRIEVAL_DIR / grid_id / run_version / field_id
 
 
 def write_failure_receipt(
     field: pd.Series,
     error: BaseException,
     elapsed_seconds: float,
+    run_version: str = SCALE_VERSION,
 ) -> dict[str, object]:
-    """Preserve one failed or interrupted development-field attempt."""
+    """Preserve one failed or interrupted field attempt."""
     generated_at = datetime.now(UTC)
-    field_directory = scale_field_directory(str(field["grid_id"]), str(field["field_id"]))
+    field_directory = scale_field_directory(
+        str(field["grid_id"]), str(field["field_id"]), run_version
+    )
     field_directory.mkdir(parents=True, exist_ok=True)
     failure_path = field_directory / (f"failure_{generated_at.strftime('%Y%m%dT%H%M%S_%fZ')}.json")
     failure = {
-        "scale_version": SCALE_VERSION,
+        "scale_version": run_version,
         "generated_at_utc": generated_at.isoformat(),
         "field_id": str(field["field_id"]),
         "experiment_partition": str(field["experiment_partition"]),
@@ -254,7 +261,7 @@ def write_failure_receipt(
         "field_represented_as_zero": False,
         "retry_policy": (
             "Keep valid plans and strip checkpoints. A later explicitly bounded run may "
-            "retry this unfinished development field."
+            "retry this unfinished field."
         ),
     }
     write_json_atomic(failure_path, failure)
@@ -271,6 +278,8 @@ def completed_receipt_is_valid(
     receipt_path: Path,
     field: pd.Series,
     maximum_rows_per_strip: int,
+    run_version: str = SCALE_VERSION,
+    expected_partition: str = "development",
 ) -> bool:
     """Verify a completed external receipt and every recorded checkpoint hash."""
     if not receipt_path.exists():
@@ -278,7 +287,7 @@ def completed_receipt_is_valid(
     try:
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         expected_contract = plan_contract(field_base_where(field), maximum_rows_per_strip)
-        if receipt.get("scale_version") != SCALE_VERSION:
+        if receipt.get("scale_version") != run_version:
             return False
         if receipt.get("field_id") != field["field_id"]:
             return False
@@ -289,7 +298,7 @@ def completed_receipt_is_valid(
         record = receipt["summary_record"]
         if record["field_id"] != field["field_id"]:
             return False
-        if record["experiment_partition"] != "development":
+        if record["experiment_partition"] != expected_partition:
             return False
         if record["selected_source_count"] > record["retrieved_source_count"]:
             return False
@@ -320,11 +329,14 @@ def process_new_field(
     selector: object,
     field: pd.Series,
     maximum_rows_per_strip: int,
+    run_version: str = SCALE_VERSION,
+    expected_partition: str = "development",
+    source_state: str = "new_verified_scale_retrieval",
 ) -> tuple[dict[str, object], dict[str, object]]:
-    """Retrieve, score, measure, and checkpoint one development field."""
+    """Retrieve, score, measure, and checkpoint one frozen-grid field."""
     field_started = perf_counter()
     field_id = str(field["field_id"])
-    field_directory = scale_field_directory(str(field["grid_id"]), field_id)
+    field_directory = scale_field_directory(str(field["grid_id"]), field_id, run_version)
     field_directory.mkdir(parents=True, exist_ok=True)
     plan_path = field_directory / "measured_plan.csv"
     contract_path = field_directory / "plan_contract.json"
@@ -364,7 +376,7 @@ def process_new_field(
     combined = retriever.combine(leaf_strips)
     scored = selector.score(combined)
     condition_field = field.copy()
-    condition_field["pilot_id"] = SCALE_VERSION
+    condition_field["pilot_id"] = run_version
     conditions = measure_field_condition(service, condition_field)
     magnitudes = combined["phot_g_mean_mag"].dropna().astype(float)
     magnitude_quantiles = magnitudes.quantile((0.1, 0.5, 0.9))
@@ -373,7 +385,7 @@ def process_new_field(
     inventory = checkpoint_inventory(retriever, leaf_strips)
     identifier_hash = source_identifier_sha256(combined)
     field_checks = {
-        "development_partition": field["experiment_partition"] == "development",
+        "expected_partition_matches": field["experiment_partition"] == expected_partition,
         "retrieval_complete": bool(retrieval_result["complete"]),
         "retrieved_count_matches_plan": len(combined) == planned[0].measured_source_count,
         "condition_count_matches_retrieval": int(
@@ -399,11 +411,11 @@ def process_new_field(
     if not all(field_checks.values()):
         raise RuntimeError(f"Field {field_id} failed scale checks: {field_checks}")
     record = {
-        "scale_version": SCALE_VERSION,
+        "scale_version": run_version,
         "grid_id": field["grid_id"],
         "field_id": field_id,
-        "processing_order": stable_processing_order(field_id),
-        "source_state": "new_verified_scale_retrieval",
+        "processing_order": stable_processing_order(field_id, run_version),
+        "source_state": source_state,
         "experiment_partition": field["experiment_partition"],
         "sky_block_id": field["sky_block_id"],
         "hemisphere": field["hemisphere"],
@@ -428,7 +440,7 @@ def process_new_field(
         "field_seconds": perf_counter() - field_started,
     }
     receipt = {
-        "scale_version": SCALE_VERSION,
+        "scale_version": run_version,
         "field_id": field_id,
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "plan_contract": expected_contract,

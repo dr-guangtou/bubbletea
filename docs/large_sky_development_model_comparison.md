@@ -100,9 +100,12 @@ The fitted development model and its prediction ranges are now frozen. No field 
 approved as a scientific background, and selector results for all 102 held-back
 validation fields remain unopened.
 
-## Superseded validation step
+## Reserved-field diagnostic result
 
 The earlier plan to validate this fitted model as the primary background procedure
-was superseded on 2026-08-11. The held-back fields remain unopened. Their future
-one-time use will evaluate the frozen direct random-field procedure, while this
-model is reported only as a secondary diagnostic.
+was superseded on 2026-08-11. The 102 reserved fields were later opened once to
+evaluate the frozen direct procedure, with this serialized model included only as a
+secondary diagnostic. Its validation typical difference is a factor of 1.128;
+66/102 fields lie inside its frozen 68% range and 100/102 inside its frozen 95%
+range. It was not refitted or retuned and remains secondary. See
+`docs/large_sky_validation_run.md`.

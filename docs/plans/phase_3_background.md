@@ -3,8 +3,8 @@
 **Goal:** Measure the spatially varying density of sources passing the frozen Gaia
 selector and provide valid host-specific controls.
 
-**Status:** Development procedure frozen; held-back validation deferred to a new
-branch
+**Status:** Large-sky development and reserved-field validation complete; real-host
+annulus calibration remains
 
 ## III.1 Control design
 
@@ -109,8 +109,9 @@ Large-sky grid progress, 2026-07-19:
 - [x] Review the frozen model and demote it to a diagnostic interpolation after its
   extreme-field failure clarified that direct measurements should remain primary
   (2026-08-11).
-- [ ] Retrieve and evaluate the 102 held-back validation fields exactly once without
-  retuning the model or changing its applicability warning.
+- [x] Retrieve and evaluate the 102 held-back validation fields exactly once without
+  retuning the direct procedure, refitting the diagnostic model, or changing the
+  applicability warning (2026-08-11).
 - [x] Freeze and compare the three approved direct random-field procedures using
   only the 398 development fields; preserve comparison identities, measured
   distributions, and the `|b| >= 20` applicability limit; the simple latitude-band
@@ -120,8 +121,32 @@ Large-sky grid progress, 2026-07-19:
 - [x] Freeze the future host report to show the valid outer-annulus measurement,
   direct random-field distribution, their difference, and their ratio
   (2026-08-11).
-- [ ] Close this branch with all 102 large-sky validation fields still unopened;
-  perform their one-time retrieval and evaluation on a fresh branch.
+- [x] Close the design branch with all 102 large-sky validation fields still
+  unopened, merge it into `master`, and begin the one-time evaluation on a fresh
+  branch (2026-08-11).
+- [x] Freeze the 102 field identifiers, count-blind order, bounded retrieval, direct
+  evaluation metrics, and secondary fitted-model diagnostic before the first query;
+  all 11 contract checks pass (2026-08-11).
+- [x] Run the zero-query validation start: no reserved result is opened, no archive
+  query is made, and all 17 retrieval safeguards pass (2026-08-11).
+- [x] Retrieve exactly one reserved field and run a zero-query restart; 11,680 Gaia
+  sources yield 1,108 passing sources in four verified strips, all receipt hashes
+  and 17 run safeguards pass, and 101 fields remain (2026-08-11).
+- [x] Complete a ten-attempt validation batch without failure and verify another
+  zero-query restart; cumulative coverage is 11 fields, 142,703 Gaia sources, 9,908
+  passing sources, and 42 verified strips (2026-08-11).
+- [x] Complete the next 25-attempt batch without failure; cumulative coverage is 36
+  fields, 533,034 Gaia sources, 30,972 passing sources, and 163 verified strips,
+  with all 17 restart safeguards passing (2026-08-11).
+- [x] Complete a 35-attempt continuation without failure; cumulative coverage is 71
+  fields, 974,992 Gaia sources, 59,951 passing sources, and 291 verified strips,
+  with 31 fields remaining (2026-08-11).
+- [x] Retrieve the 102 reserved fields in measured, explicitly bounded batches;
+  1,534,299 Gaia sources yield 86,189 passing sources in 459 verified strips with
+  no failed field (2026-08-11).
+- [x] Apply the frozen direct reference and diagnostic model once, report differences
+  from development performance, and do not retune either method; all 20 evaluation
+  safeguards pass (2026-08-11).
 
 Off-target split progress, 2026-07-18:
 

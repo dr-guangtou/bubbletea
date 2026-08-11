@@ -700,6 +700,37 @@ Phase-specific execution tasks remain in `docs/plans/`.
   development error, while the simplest method uses larger comparison pools and
   has better measured-range coverage. The 102 reserved fields were not queried or
   inspected; their one-time test belongs on a new branch.
+  Validation freeze, 2026-08-11: On the fresh validation branch, contract
+  `validation_run_contract_d75e3ddea7013547c088` fixes all 102 reserved field
+  identifiers, their count-blind processing order, bounded retrieval rules, direct
+  comparison metrics, and the fitted model's secondary diagnostic role. A zero-query
+  start passes all 17 run safeguards with zero completed fields and confirms that no
+  reserved selector result has yet been opened.
+  Validation first field, 2026-08-11: The bounded first run opened only
+  `sky_field_0422`, measured 11,680 Gaia sources and 1,108 passing sources in four
+  verified strips, and completed in 35.113735 seconds. A zero-query restart reused
+  the immutable external receipt, attempted nothing, and passed all 17 safeguards
+  with 101 reserved fields remaining.
+  Validation scale-up, 2026-08-11: A ten-attempt batch completed every field without
+  failure in 238.688603 seconds. Cumulative coverage is 11 reserved fields with
+  142,703 Gaia sources, 9,908 passing sources, and 42 verified strips; a zero-query
+  restart reused all receipts and passed all 17 safeguards.
+  Validation continuation, 2026-08-11: The next 25-attempt batch completed without
+  failure in 712.880576 seconds. Cumulative coverage is 36 reserved fields with
+  533,034 Gaia sources, 30,972 passing sources, and 163 verified strips; the next
+  zero-query restart passed all 17 safeguards with 66 fields remaining.
+  Validation continuation, 2026-08-11: A 35-attempt batch completed every field
+  without failure in 828.929929 seconds. Cumulative coverage is 71 reserved fields
+  with 974,992 Gaia sources, 59,951 passing sources, and 291 verified strips; a
+  zero-query restart passed all 17 safeguards with 31 fields remaining.
+  Validation completion, 2026-08-11: The final bounded batch completed all 102
+  reserved fields without failure. The verified total is 1,534,299 Gaia sources,
+  86,189 passing sources, 459 strips, and 205.079837 square degrees. The unchanged
+  direct procedure has a validation typical density factor of 1.197 and range
+  coverage of 63/102 at 68% and 94/102 at 95%, versus 65.58% and 90.95% in
+  development. The frozen fitted diagnostic has factor 1.128 and coverage of 66/102
+  and 100/102 but remains secondary. All 20 evaluation safeguards pass without
+  refitting or retuning.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

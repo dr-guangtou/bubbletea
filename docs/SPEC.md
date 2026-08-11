@@ -375,6 +375,45 @@ square degree. The measured field density is 37,714.863283 per square degree, a
 factor of 96.597452 above the median. Preserve this explicit out-of-range result;
 do not stretch the general reference distribution to absorb it.
 
+The one-time large-sky validation uses the 102 sky fields that were reserved before
+any Gaia selector result was measured for them. A reserved field is simply a fixed
+test field that could not influence the procedure choice. Contract
+`validation_run_contract_d75e3ddea7013547c088` fixes their identities, count-blind
+processing order, retrieval limits, selector, exact areas, and evaluation before
+the first reserved-field query.
+
+For each reserved field, the primary test compares its measured passing-source
+density with the already measured development fields in the same one of five broad
+absolute-Galactic-latitude bands. Report the median absolute log difference, the
+root-mean-square log difference, and the fractions inside the development 68% and
+95% measured ranges. Preserve every field result and report count-blind environment
+flags without excluding those fields. The serialized fitted model is evaluated on
+the same measurements only as a secondary diagnostic; it is not refitted and cannot
+replace or retune the direct procedure. Failed retrievals keep permanent receipts
+and remain missing rather than becoming zero-density measurements.
+
+The completed reserved-field retrieval contains all 102 fields, 1,534,299 Gaia
+sources, 86,189 passing sources, 459 verified strips, and 205.079837 square degrees.
+All external receipt and checkpoint hashes pass, no field failed, and a zero-query
+restart recovers the complete state without a new attempt.
+
+The frozen direct procedure has validation median absolute log-density difference
+0.180146, root-mean-square log difference 0.299110, 68% range coverage 63/102
+(61.7647%), and 95% range coverage 94/102 (92.1569%). The corresponding development
+values are 0.167102, 0.397446, 65.5779%, and 90.9548%. Thus the validation-minus-
+development differences are +0.013045, -0.098336, -3.8132 percentage points, and
++1.2021 percentage points. Preserve all of these differences; validation neither
+retunes the ranges nor changes the selected procedure.
+
+The frozen fitted diagnostic has validation median absolute log-density difference
+0.120432, root-mean-square log difference 0.157033, 68% range coverage 66/102
+(64.7059%), and 95% range coverage 100/102 (98.0392%). Its corresponding
+validation-minus-development differences are +0.014158, -0.062636, -3.1333
+percentage points, and +3.0643 percentage points. Its tighter validation values do
+not promote it to the primary method; the fitted curve remains a secondary check
+because that role was fixed before validation and because the development audit
+already demonstrated an extreme-field failure.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
