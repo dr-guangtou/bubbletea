@@ -1,0 +1,35 @@
+{
+  "benchmark_version": "first_stage_host_profile_count_benchmark_v1",
+  "generated_at_utc": "2026-08-11T15:47:45.832410+00:00",
+  "status": "measured_count_only_archive_benchmark",
+  "plain_language_result": "The archive returned one measured Gaia source count for the frozen NGC 4698 circle. No individual source rows were downloaded and the UCD selector was not applied.",
+  "host_name": "NGC 4698",
+  "outer_radius_kpc": 600,
+  "outer_radius_deg": 1.4360941842776274,
+  "requested_area_square_deg": 6.478776272343008,
+  "source_count_in_frozen_magnitude_domain": 23811,
+  "source_density_per_square_deg": 3675.2310928910815,
+  "query_seconds": 2.004449707994354,
+  "query_service": "https://datalab.noirlab.edu/tap",
+  "query_sha256": "029b17acd5bffe17b1c43e045dd5ee1928954146eef99612e3eee03048151e56",
+  "contract": {
+    "path": "data/results/background/first_stage_host_profile_count_contract_v1.json",
+    "sha256": "0040c8b8f585a1cb9a55a2486e10e9bc67f88d0e9171b914a3599fe8cd422f7f"
+  },
+  "archive_queries_executed": 1,
+  "source_rows_downloaded": 0,
+  "selector_applied": false,
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "frozen_contract_used": true,
+    "contract_file_hash_recorded": true,
+    "exact_frozen_query_executed": true,
+    "one_archive_query_executed": true,
+    "one_aggregate_row_returned": true,
+    "source_count_is_nonnegative": true,
+    "no_source_rows_saved": true,
+    "selector_not_applied": true,
+    "scientific_boundaries_unchanged": true
+  }
+}

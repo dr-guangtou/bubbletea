@@ -572,6 +572,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   than being removed for difficult geometry. All 16 checks pass without a Gaia
   query. NGC 4698 is the first live benchmark because it has the smallest 600 kpc
   angular radius among the fixed resolved isolated cases.
+  Count benchmark, 2026-08-11: Measured 23,811 frozen-domain Gaia sources over
+  6.478776 square degrees in 2.004 seconds. The query returned one aggregate count,
+  downloaded no source rows, and did not apply the point-source selector; all nine
+  checks pass.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

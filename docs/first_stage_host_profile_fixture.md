@@ -64,5 +64,15 @@ NGC 4698 is the first archive benchmark because it has the smallest 600 kpc angu
 radius among the fixed review galaxies whose isolated-environment association is
 resolved. This is a geometry-only choice and uses no Gaia source count.
 
-All 16 fixture checks pass with zero archive queries. The next step is a count-only
-600 kpc NGC 4698 benchmark before any full source retrieval.
+All 16 fixture checks pass with zero archive queries.
+
+The count-only 600 kpc NGC 4698 benchmark measured 23,811 Gaia sources in the
+frozen G-magnitude range over 6.478776 square degrees. The archive returned the
+single aggregate count in 2.004 seconds. No source rows were downloaded, and the
+point-source contamination selector was not applied. All nine benchmark checks
+pass.
+
+The next step is the explicitly bounded, resumable NGC 4698 source retrieval. Its
+output will report both the density of all Gaia sources in the frozen magnitude
+range and the density that remains after the point-source contamination selector
+in every preserved physical ring.

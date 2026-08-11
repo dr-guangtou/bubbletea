@@ -218,8 +218,13 @@ Interview decisions, 2026-08-11:
 - [x] Freeze and validate a count-blind first-stage profile fixture before any real
   600 kpc Gaia query; five hosts retain 14 rings each, all 16 safeguards pass, and
   NGC 4698 is the geometry-only first benchmark (2026-08-11).
-- [ ] Measure the NGC 4698 600 kpc archive count and planning behavior before a full
-  source retrieval.
+- [x] Measure the NGC 4698 600 kpc archive count before a full source retrieval:
+  23,811 frozen-domain Gaia sources over 6.478776 square degrees in 2.004 seconds,
+  with no source rows or selector output retrieved; all nine checks pass
+  (2026-08-11).
+- [ ] Retrieve the frozen NGC 4698 circle in measured non-overlapping strips, apply
+  the frozen point-source contamination selector locally, and inspect both radial
+  density profiles before choosing an outer signal boundary.
 
 Progress, 2026-07-18:
 

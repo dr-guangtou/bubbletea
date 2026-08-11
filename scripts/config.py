@@ -141,6 +141,13 @@ FIRST_STAGE_HOST_PROFILE_COUNT_CONTRACT = (
 FIRST_STAGE_HOST_PROFILE_COUNT_BENCHMARK = (
     BACKGROUND_RESULTS_DIR / "first_stage_host_profile_count_benchmark_v1.json"
 )
+FIRST_STAGE_HOST_PROFILE_RETRIEVAL_PLAN = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_retrieval_plan_v1.csv"
+)
+FIRST_STAGE_HOST_PROFILE = BACKGROUND_RESULTS_DIR / "first_stage_host_profile_ngc4698_v1.csv"
+FIRST_STAGE_HOST_PROFILE_RUN_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_ngc4698_v1.json"
+)
 GAIA_QUERY_PARTITION_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_query_partition_sources_v1.csv"
 GAIA_QUERY_PARTITION_STRIPS = BACKGROUND_RESULTS_DIR / "gaia_query_partition_strips_v1.csv"
 GAIA_QUERY_PARTITION_VALIDATION = BACKGROUND_RESULTS_DIR / "gaia_query_partition_validation_v1.json"
@@ -333,6 +340,7 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 # ---------------------------------------------------------------------------
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
 LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
+FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_host_profiles_v1"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"
