@@ -135,6 +135,12 @@ FIRST_STAGE_HOST_PROFILE_FIXTURE = (
 FIRST_STAGE_HOST_PROFILE_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "first_stage_host_profile_fixture_v1.json"
 )
+FIRST_STAGE_HOST_PROFILE_COUNT_CONTRACT = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_count_contract_v1.json"
+)
+FIRST_STAGE_HOST_PROFILE_COUNT_BENCHMARK = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_count_benchmark_v1.json"
+)
 GAIA_QUERY_PARTITION_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_query_partition_sources_v1.csv"
 GAIA_QUERY_PARTITION_STRIPS = BACKGROUND_RESULTS_DIR / "gaia_query_partition_strips_v1.csv"
 GAIA_QUERY_PARTITION_VALIDATION = BACKGROUND_RESULTS_DIR / "gaia_query_partition_validation_v1.json"
