@@ -60,5 +60,10 @@ and compare validation performance numerically with development performance.
 
 Contract `validation_run_contract_d75e3ddea7013547c088` passes all 11 safeguards.
 The zero-query start passes all 17 retrieval safeguards with zero completed fields,
-102 remaining fields, and no reserved selector result opened. The next action is a
-single-field bounded retrieval followed by a zero-query restart check.
+102 remaining fields, and no reserved selector result opened.
+
+The first bounded retrieval then opened only `sky_field_0422`. It measured 11,680
+Gaia sources, selected 1,108, used four verified strips, and completed in 35.113735
+seconds. A zero-query restart recovered the field from its external receipt, made
+no new attempt, and passed all 17 safeguards with one completed field and 101
+remaining. Every recorded source and metadata hash was independently verified.

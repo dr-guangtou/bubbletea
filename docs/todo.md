@@ -706,6 +706,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   comparison metrics, and the fitted model's secondary diagnostic role. A zero-query
   start passes all 17 run safeguards with zero completed fields and confirms that no
   reserved selector result has yet been opened.
+  Validation first field, 2026-08-11: The bounded first run opened only
+  `sky_field_0422`, measured 11,680 Gaia sources and 1,108 passing sources in four
+  verified strips, and completed in 35.113735 seconds. A zero-query restart reused
+  the immutable external receipt, attempted nothing, and passed all 17 safeguards
+  with 101 reserved fields remaining.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

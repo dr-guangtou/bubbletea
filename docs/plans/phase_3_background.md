@@ -129,6 +129,9 @@ Large-sky grid progress, 2026-07-19:
   all 11 contract checks pass (2026-08-11).
 - [x] Run the zero-query validation start: no reserved result is opened, no archive
   query is made, and all 17 retrieval safeguards pass (2026-08-11).
+- [x] Retrieve exactly one reserved field and run a zero-query restart; 11,680 Gaia
+  sources yield 1,108 passing sources in four verified strips, all receipt hashes
+  and 17 run safeguards pass, and 101 fields remain (2026-08-11).
 - [ ] Retrieve the 102 reserved fields in measured, explicitly bounded batches.
 - [ ] Apply the frozen direct reference and diagnostic model once, report differences
   from development performance, and do not retune either method.
