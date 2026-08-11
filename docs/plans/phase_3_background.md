@@ -132,6 +132,9 @@ Large-sky grid progress, 2026-07-19:
 - [x] Retrieve exactly one reserved field and run a zero-query restart; 11,680 Gaia
   sources yield 1,108 passing sources in four verified strips, all receipt hashes
   and 17 run safeguards pass, and 101 fields remain (2026-08-11).
+- [x] Complete a ten-attempt validation batch without failure and verify another
+  zero-query restart; cumulative coverage is 11 fields, 142,703 Gaia sources, 9,908
+  passing sources, and 42 verified strips (2026-08-11).
 - [ ] Retrieve the 102 reserved fields in measured, explicitly bounded batches.
 - [ ] Apply the frozen direct reference and diagnostic model once, report differences
   from development performance, and do not retune either method.

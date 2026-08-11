@@ -711,6 +711,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   verified strips, and completed in 35.113735 seconds. A zero-query restart reused
   the immutable external receipt, attempted nothing, and passed all 17 safeguards
   with 101 reserved fields remaining.
+  Validation scale-up, 2026-08-11: A ten-attempt batch completed every field without
+  failure in 238.688603 seconds. Cumulative coverage is 11 reserved fields with
+  142,703 Gaia sources, 9,908 passing sources, and 42 verified strips; a zero-query
+  restart reused all receipts and passed all 17 safeguards.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

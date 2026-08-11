@@ -67,3 +67,9 @@ Gaia sources, selected 1,108, used four verified strips, and completed in 35.113
 seconds. A zero-query restart recovered the field from its external receipt, made
 no new attempt, and passed all 17 safeguards with one completed field and 101
 remaining. Every recorded source and metadata hash was independently verified.
+
+A subsequent ten-attempt batch completed all ten fields without failure in
+238.688603 seconds. The cumulative 11-field summary contains 142,703 Gaia sources,
+9,908 passing sources, and 42 verified strips. A second zero-query restart reused
+all 11 receipts, attempted no field, and passed all 17 safeguards with 91 fields
+remaining.

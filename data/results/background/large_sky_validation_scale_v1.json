@@ -15,11 +15,11 @@
   "newly_completed_field_ids_this_run": [],
   "failed_field_attempts_this_run": [],
   "run_interrupted": false,
-  "completed_validation_field_count": 1,
-  "remaining_validation_field_count": 101,
+  "completed_validation_field_count": 11,
+  "remaining_validation_field_count": 91,
   "validation_selector_results_opened": true,
   "invalid_external_receipt_field_ids": [],
-  "elapsed_seconds_this_run": 0.004810833001101855,
+  "elapsed_seconds_this_run": 0.005811250004626345,
   "inputs": [
     {
       "path": "data/results/background/large_sky_validation_run_contract_v1.json",
@@ -48,7 +48,7 @@
   ],
   "output": {
     "path": "data/results/background/large_sky_validation_scale_summary_v1.csv",
-    "sha256": "164b5f5daefea41ea05626b08375de4b573b3d49964975b4c3bd5e76561e1b89"
+    "sha256": "7569a2886d05dec4c5a1487b902592013873f7a1d2e544db95d593e2bae934ba"
   },
   "check_count": 17,
   "passed_count": 17,
