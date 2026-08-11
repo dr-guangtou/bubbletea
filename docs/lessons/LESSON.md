@@ -1423,3 +1423,17 @@ coverage fields `empirical_68_percent_coverage` and
 **Recommendation:** Map historical column names to one declared report vocabulary
 before checking metric sets or calculating differences. Let missing mappings stop
 the run before an evaluation artifact is written.
+
+## 2026-08-11: Scope formatting checks in the legacy research tree
+
+**Lesson:** A repository-wide pre-commit run can mechanically rewrite archived
+notebooks and legacy scripts that are unrelated to the active task before reporting
+their pre-existing lint failures.
+
+**Context:** The first NGC 4698 host-profile closeout ran pre-commit over the full
+tree. The hooks changed 22 unrelated legacy files; those hook-only edits were
+removed immediately from a previously clean worktree.
+
+**Recommendation:** Run Ruff and pre-commit on every file changed by the active
+task. Reserve a repository-wide cleanup for its own approved branch so legacy
+formatting changes cannot enter a scientific task commit.

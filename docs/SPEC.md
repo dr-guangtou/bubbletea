@@ -972,6 +972,16 @@ benchmark because it has the smallest 600 kpc angular radius among the fixed,
 resolved isolated review hosts; this selection uses no Gaia count or selector
 result.
 
+The first NGC 4698 run completed on 2026-08-11. The 600 kpc circle contains 23,811
+unique Gaia sources in the frozen G-magnitude range; six measured retrieval strips
+contain at most 4,709 rows each. The frozen point-source contamination selector
+retains 2,548 sources. Both all-source and selector-passing counts and densities are
+stored in all fourteen rings, and continuous physical radius remains in the
+external source-level output. All fourteen run safeguards pass. Beyond the
+temporary 50 kpc central exclusion, the selector-passing density spans
+317.377181--426.550743 per square degree across the six preserved rings. This
+single-host profile does not approve an outer signal boundary.
+
 The approved retrieval building block partitions one exact circular query into
 non-overlapping declination ranges. Each subquery retains the original circle
 predicate; half-open shared boundaries assign every source to exactly one range.

@@ -1,0 +1,52 @@
+{
+  "run_version": "first_stage_host_profile_ngc4698_v1",
+  "generated_at_utc": "2026-08-11T15:51:23.518485+00:00",
+  "status": "complete_first_stage_single_host_profile",
+  "plain_language_scope": "The complete frozen Gaia circle around NGC 4698 was divided into fourteen physical rings. Both all-source and point-source-selector counts are reported. The inner 50 kpc remains a diagnostic region, and no final outer boundary is selected.",
+  "host_name": "NGC 4698",
+  "selector_version": "point_source_logistic_model_v1",
+  "maximum_rows_per_strip": 5000,
+  "planned_node_count": 11,
+  "final_strip_count": 6,
+  "maximum_leaf_source_count": 4709,
+  "count_benchmark_source_count": 23811,
+  "retrieved_source_count": 23811,
+  "selector_passing_source_count": 2548,
+  "planning_seconds": 16.096737041996676,
+  "retrieval_seconds": 14.086913084000116,
+  "scoring_seconds": 1.2128492920019198,
+  "total_seconds": 31.928934124996886,
+  "profile_output": {
+    "path": "data/results/background/first_stage_host_profile_ngc4698_v1.csv",
+    "sha256": "8f1bcb25168d58e0ee1eec969982feb93d56baee79a4b208a1e688b7e7a721b6"
+  },
+  "plan_output": {
+    "path": "data/results/background/first_stage_host_profile_retrieval_plan_v1.csv",
+    "sha256": "9b7eeb070fe379a8602381bc4d2bb2cf703cfb098ffe4a5e2a8bfdf0c1e3fb1a"
+  },
+  "external_source_output": {
+    "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_host_profiles_v1/ngc_4698/scored_sources.csv",
+    "sha256": "4be6c11ba496adb43fa67388a372d38f5fabcc443fd8433dd78fd0a38808b39e",
+    "bytes": 9968108
+  },
+  "archive_count_queries_executed_or_reused": 11,
+  "archive_source_queries_executed_or_reused": 6,
+  "check_count": 14,
+  "passed_count": 14,
+  "checks": {
+    "frozen_host_and_outer_radius_used": true,
+    "count_benchmark_checks_passed": true,
+    "adaptive_plan_is_complete": true,
+    "every_leaf_is_below_measured_row_limit": true,
+    "leaf_counts_match_initial_count_benchmark": true,
+    "retrieved_rows_match_measured_leaf_counts": true,
+    "retrieved_source_identifiers_are_unique": true,
+    "all_sources_have_continuous_physical_radius": true,
+    "all_sources_fall_inside_profile_rings": true,
+    "profile_has_all_fourteen_frozen_rings": true,
+    "selected_profile_matches_source_decisions": true,
+    "central_rings_remain_withheld_from_final_inference": true,
+    "r50_normalized_profile_remains_explicitly_unavailable": true,
+    "no_gaia_imaging_masks_applied": true
+  }
+}

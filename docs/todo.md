@@ -576,6 +576,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
   6.478776 square degrees in 2.004 seconds. The query returned one aggregate count,
   downloaded no source rows, and did not apply the point-source selector; all nine
   checks pass.
+  First measured profile, 2026-08-11: Retrieved all 23,811 unique sources in six
+  verified strips, retained continuous source radii outside the repository, and
+  measured all fourteen rings. The frozen point-source contamination selector
+  retains 2,548 sources. Beyond 50 kpc its density spans 317.377181--426.550743 per
+  square degree. All fourteen run checks pass; no final outer boundary is selected
+  from this one host.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

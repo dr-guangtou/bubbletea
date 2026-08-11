@@ -76,3 +76,28 @@ The next step is the explicitly bounded, resumable NGC 4698 source retrieval. It
 output will report both the density of all Gaia sources in the frozen magnitude
 range and the density that remains after the point-source contamination selector
 in every preserved physical ring.
+
+## First measured profile
+
+The complete source retrieval used six non-overlapping sky strips, each containing
+no more than the previously validated 5,000-row limit. It retrieved all 23,811
+unique sources and retained their continuous angular and projected physical radius
+outside the repository under `BUBBLETEA_EXTERNAL_DATA`. The frozen point-source
+contamination selector retained 2,548 sources. All fourteen run checks pass.
+
+Outside the temporary 50 kpc central exclusion, the all-source density ranges from
+3,599.136759 to 4,087.777954 per square degree and the selector-passing density
+ranges from 317.377181 to 426.550743 per square degree. The six outer rings contain
+23,650 all-source objects and 2,530 selector-passing objects over 6.433764 square
+degrees. The remaining ring-to-ring variation is consistent with a broadly flat
+first profile, but one host is not enough to select a final outer signal boundary.
+
+The inner bins have very small areas and few objects. For example, the apparently
+high selector-passing density inside 5 kpc is based on one object. The temporary
+0--50 kpc exclusion therefore remains unchanged rather than being tightened from
+this profile.
+
+The profile is shown in
+`figures/phase3/first_stage_ngc4698_radial_profile.png`. Vertical error bars are
+exact central 68.27% intervals from counting uncertainty; horizontal bars show the
+full physical width of each ring.

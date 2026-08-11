@@ -222,9 +222,12 @@ Interview decisions, 2026-08-11:
   23,811 frozen-domain Gaia sources over 6.478776 square degrees in 2.004 seconds,
   with no source rows or selector output retrieved; all nine checks pass
   (2026-08-11).
-- [ ] Retrieve the frozen NGC 4698 circle in measured non-overlapping strips, apply
-  the frozen point-source contamination selector locally, and inspect both radial
-  density profiles before choosing an outer signal boundary.
+- [x] Retrieve the frozen NGC 4698 circle in six measured non-overlapping strips,
+  preserve all 23,811 continuous source radii outside the repository, apply the
+  frozen point-source contamination selector locally, and report both profiles;
+  2,548 sources remain and all fourteen checks pass (2026-08-11).
+- [ ] Review the first profile, then select the next manageable host profile without
+  using its Gaia density; do not choose a final outer signal boundary from one host.
 
 Progress, 2026-07-18:
 
