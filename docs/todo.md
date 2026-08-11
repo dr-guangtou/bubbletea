@@ -715,6 +715,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   failure in 238.688603 seconds. Cumulative coverage is 11 reserved fields with
   142,703 Gaia sources, 9,908 passing sources, and 42 verified strips; a zero-query
   restart reused all receipts and passed all 17 safeguards.
+  Validation continuation, 2026-08-11: The next 25-attempt batch completed without
+  failure in 712.880576 seconds. Cumulative coverage is 36 reserved fields with
+  533,034 Gaia sources, 30,972 passing sources, and 163 verified strips; the next
+  zero-query restart passed all 17 safeguards with 66 fields remaining.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

@@ -73,3 +73,10 @@ A subsequent ten-attempt batch completed all ten fields without failure in
 9,908 passing sources, and 42 verified strips. A second zero-query restart reused
 all 11 receipts, attempted no field, and passed all 17 safeguards with 91 fields
 remaining.
+
+The next 25-attempt batch also completed without failure, taking 712.880576
+seconds. Cumulative coverage is 36 fields with 533,034 Gaia sources, 30,972 passing
+sources, and 163 verified strips. The longest measured field so far is
+`sky_field_0255`: 74,812 Gaia sources in 24 strips and 121.586662 seconds, still
+inside the frozen field ceiling. A zero-query restart passed all 17 safeguards with
+66 fields remaining.
