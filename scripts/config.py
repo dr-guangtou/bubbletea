@@ -129,6 +129,12 @@ RADIAL_MEASUREMENT_GEOMETRY_AUDIT = (
 RADIAL_MEASUREMENT_GEOMETRY_MANIFEST = (
     BACKGROUND_RESULTS_DIR / "radial_measurement_geometry_audit_v1.json"
 )
+FIRST_STAGE_HOST_PROFILE_FIXTURE = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_fixture_v1.csv"
+)
+FIRST_STAGE_HOST_PROFILE_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "first_stage_host_profile_fixture_v1.json"
+)
 GAIA_QUERY_PARTITION_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_query_partition_sources_v1.csv"
 GAIA_QUERY_PARTITION_STRIPS = BACKGROUND_RESULTS_DIR / "gaia_query_partition_strips_v1.csv"
 GAIA_QUERY_PARTITION_VALIDATION = BACKGROUND_RESULTS_DIR / "gaia_query_partition_validation_v1.json"

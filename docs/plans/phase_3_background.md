@@ -207,6 +207,20 @@ Held-back validation progress, 2026-07-19:
   under BT-021 before a real host search.
 - [ ] Calibrate the central exclusion and final radial signal region under BT-021.
 
+Interview decisions, 2026-08-11:
+
+- [x] Require both physical-kpc and `R50`-normalized profiles when a verified
+  `R50` exists; missing `R50` makes only the normalized view unavailable.
+- [x] Use 0--50 kpc as a deliberately conservative first-stage contamination
+  region while preserving every inner component ring; do not treat it as final.
+- [x] Retain the exploratory profile through 600 kpc and inspect the measured outer
+  behavior before selecting the final outer signal boundary.
+- [x] Freeze and validate a count-blind first-stage profile fixture before any real
+  600 kpc Gaia query; five hosts retain 14 rings each, all 16 safeguards pass, and
+  NGC 4698 is the geometry-only first benchmark (2026-08-11).
+- [ ] Measure the NGC 4698 600 kpc archive count and planning behavior before a full
+  source retrieval.
+
 Progress, 2026-07-18:
 
 - [x] Audit the count-blind angular geometry for all 2,155 hosts; all seven checks

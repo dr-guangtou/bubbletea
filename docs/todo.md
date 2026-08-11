@@ -559,6 +559,19 @@ Phase-specific execution tasks remain in `docs/plans/`.
   invalid. Defined a recombinable exploratory physical-ring view while requiring
   continuous source radii, exact usable areas, and later `R50`-based calibration;
   all seven count-blind checks pass.
+  Interview decision, 2026-08-11: Report physical-kpc and `R50`-normalized profiles
+  whenever verified `R50` exists, while missing `R50` affects only the normalized
+  view. Use 0--50 kpc as a deliberately conservative first-stage contamination
+  region without discarding its component rings. Retain profiles through 600 kpc
+  and inspect their outer behavior before selecting a final outer signal boundary.
+  The 50 kpc exclusion and 600 kpc reach are first-stage working geometry, not final
+  scientific limits.
+  First-stage fixture, 2026-08-11: Froze 14 physical rings through 600 kpc for the
+  five count-blind review hosts. The requested 600 kpc areas span 6.478776--
+  491.177142 square degrees; the very nearby dwarf remains in the fixture rather
+  than being removed for difficult geometry. All 16 checks pass without a Gaia
+  query. NGC 4698 is the first live benchmark because it has the smallest 600 kpc
+  angular radius among the fixed resolved isolated cases.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

@@ -945,6 +945,33 @@ two-degree cap. It must use complete tiled or equivalent queries with explicit
 requested, retrieved, masked, and usable areas. Detailed calibration requirements
 are maintained in `docs/radial_measurement_design.md`.
 
+Interview decisions on 2026-08-11 fix the first-stage calibration policy. Report
+both the physical-kpc profile and the `R50`-normalized profile whenever a verified
+`R50` is available; a missing `R50` makes only the normalized view unavailable. The
+first-stage physical view retains all existing rings through 600 kpc so that the
+outer behavior can be inspected before a final outer boundary is chosen. Retrieval
+must attempt the declared large radius and record incomplete coverage explicitly;
+it must not silently replace the requested radius with an angular cap.
+
+The first-stage safety view treats 0--50 kpc as a conservative central
+contamination region and does not use it for UCD inference. This is a temporary,
+deliberately large physical exclusion chosen from an already declared ring edge,
+not a final universal boundary and not a substitute for `R50` calibration. The
+0--50 kpc component rings, their areas, counts, densities, and continuous source
+radii remain in the output. Candidate central boundaries at 20, 25, 30, 40, and
+50 kpc may be compared using contamination behavior, but not by selecting the
+boundary that produces the largest UCD excess. No outer signal boundary is approved
+until the large-radius profiles have been reviewed.
+
+The first-stage five-host fixture freezes 14 physical rings per host and passes all
+16 count-blind geometry checks without a Gaia query. The 600 kpc requested circle
+areas are 6.478776 square degrees for NGC 4698, 491.177142 for ESO 006-G001,
+9.492875 for NGC 1316, 13.368272 for M60, and 9.337623 for Arp 244. Preserve every
+host, including the difficult nearby dwarf. NGC 4698 is the initial live geometry
+benchmark because it has the smallest 600 kpc angular radius among the fixed,
+resolved isolated review hosts; this selection uses no Gaia count or selector
+result.
+
 The approved retrieval building block partitions one exact circular query into
 non-overlapping declination ranges. Each subquery retains the original circle
 predicate; half-open shared boundaries assign every source to exactly one range.

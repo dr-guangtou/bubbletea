@@ -1,0 +1,117 @@
+{
+  "fixture_version": "first_stage_host_profile_fixture_v1",
+  "generated_at_utc": "2026-08-11T15:45:34.904646+00:00",
+  "status": "count_blind_first_stage_profile_geometry_frozen",
+  "plain_language_scope": "Five fixed review hosts keep physical rings from zero to 600 kpc. The inner 50 kpc is a conservative diagnostic region, and no final signal boundary is approved.",
+  "host_count": 5,
+  "ring_count_per_host": 14,
+  "physical_ring_edges_kpc": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    75,
+    100,
+    150,
+    200,
+    300,
+    600
+  ],
+  "candidate_central_exclusions_kpc": [
+    20,
+    25,
+    30,
+    40,
+    50
+  ],
+  "first_stage_conservative_central_exclusion_kpc": 50,
+  "first_stage_outer_profile_radius_kpc": 600,
+  "outer_signal_boundary_status": "not_selected_review_profiles_first",
+  "r50_policy": {
+    "report_normalized_profile_when_verified_r50_available": true,
+    "current_review_host_r50_columns": [],
+    "missing_r50_effect": "normalized_view_unavailable_physical_view_retained"
+  },
+  "initial_live_geometry_benchmark": {
+    "host_name": "NGC 4698",
+    "selection_rule": "smallest 600 kpc angular radius among fixed resolved isolated review hosts",
+    "uses_gaia_counts": false
+  },
+  "review_host_geometry": [
+    {
+      "host_name": "NGC 4698",
+      "host_distance_mpc": 23.933157564053875,
+      "central_50_kpc_radius_deg": 0.11969940866157917,
+      "outer_600_kpc_radius_deg": 1.4360941842776274,
+      "outer_600_kpc_circle_area_square_deg": 6.4787762723430085
+    },
+    {
+      "host_name": "ESO 006- G 001",
+      "host_distance_mpc": 2.7,
+      "central_50_kpc_radius_deg": 1.0609116902642277,
+      "outer_600_kpc_radius_deg": 12.528807709151511,
+      "outer_600_kpc_circle_area_square_deg": 491.17714173307553
+    },
+    {
+      "host_name": "NGC 1316",
+      "host_distance_mpc": 19.76969640111861,
+      "central_50_kpc_radius_deg": 0.14490778256673661,
+      "outer_600_kpc_radius_deg": 1.7383634991406463,
+      "outer_600_kpc_circle_area_square_deg": 9.492874652778198
+    },
+    {
+      "host_name": "MESSIER 060",
+      "host_distance_mpc": 16.6571232806881,
+      "central_50_kpc_radius_deg": 0.17198530161593295,
+      "outer_600_kpc_radius_deg": 2.062937915783204,
+      "outer_600_kpc_circle_area_square_deg": 13.368271934895695
+    },
+    {
+      "host_name": "ARP 244",
+      "host_distance_mpc": 19.933481216430664,
+      "central_50_kpc_radius_deg": 0.14371714284937068,
+      "outer_600_kpc_radius_deg": 1.724088772473143,
+      "outer_600_kpc_circle_area_square_deg": 9.33762330382187
+    }
+  ],
+  "inputs": [
+    {
+      "path": "data/results/background/background_review_hosts_v1.csv",
+      "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+    },
+    {
+      "path": "data/results/background/background_review_hosts_v1.json",
+      "sha256": "2d9fc2fe2468143478d20cc549d076fe1bb335c7708394bb32237744c7f39686"
+    }
+  ],
+  "output": {
+    "path": "data/results/background/first_stage_host_profile_fixture_v1.csv",
+    "sha256": "12a9ce1c2bc0eca66a757c300369b1a76247641c0dd42117949ba8f37de3fdc6"
+  },
+  "archive_queries_executed": 0,
+  "check_count": 16,
+  "passed_count": 16,
+  "checks": {
+    "five_count_blind_review_hosts_preserved": true,
+    "fourteen_physical_rings_per_host": true,
+    "declared_physical_edges_preserved_exactly": true,
+    "all_host_distances_positive": true,
+    "angular_edges_increase_within_every_ring": true,
+    "ring_areas_sum_to_requested_600_kpc_circle": true,
+    "central_exclusion_uses_declared_50_kpc_edge": true,
+    "candidate_central_edges_were_predeclared": true,
+    "inner_rings_preserved_as_diagnostics": true,
+    "outer_rings_are_exploratory_not_final": true,
+    "all_profiles_reach_declared_600_kpc_edge": true,
+    "no_fixed_angular_cap_applied": true,
+    "normalized_view_explicitly_unavailable_without_r50": true,
+    "one_geometry_only_live_benchmark_selected": true,
+    "no_gaia_source_or_selector_counts_used": true,
+    "continuous_source_radii_required": true
+  }
+}

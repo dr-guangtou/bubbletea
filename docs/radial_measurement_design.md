@@ -1,7 +1,8 @@
 # Radial measurement and central exclusion design
 
-**Status:** Count-blind geometry audited; scientific boundaries not calibrated
-**Date:** 2026-07-18
+**Status:** First-stage conservative profile policy approved; scientific boundaries
+not final
+**Date:** 2026-08-11
 **Issues:** BT-005, BT-020, BT-021
 
 ## What the real measurement does
@@ -132,6 +133,14 @@ a value to test. Until `R50` coverage is completed under BT-020, a host can reta
 its physical-kpc exploratory profile but cannot receive a final normalized central
 exclusion from an undocumented estimate.
 
+For the first profile stage, label 0--50 kpc as a conservative contamination region
+and withhold it from UCD inference. This deliberately large physical exclusion is a
+temporary safety rule, not the final central boundary. Preserve its component rings
+and test the already declared 20, 25, 30, 40, and 50 kpc edges using contamination
+behavior. Do not choose among them by maximizing a UCD excess. When a verified
+`R50` becomes available, report the normalized profile as well; otherwise mark only
+that view unavailable.
+
 ## Calibrating the outer signal range
 
 The final outer signal boundary will also be common to a declared host class rather
@@ -144,3 +153,9 @@ background remains unavailable when the containing environment cannot be screene
 The final analysis may combine several rings only after the central exclusion,
 outer signal boundary, background method, and handling of the resulting radial
 scan have been declared.
+
+The first-stage retrieval should retain the complete physical profile through the
+declared 600 kpc edge wherever verified retrieval coverage permits. Review the
+measured outer profiles before choosing a smaller final signal boundary. A failed
+or incomplete outer strip remains missing area and cannot silently shorten the
+requested profile or become a zero-density ring.
