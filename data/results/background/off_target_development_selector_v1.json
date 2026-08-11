@@ -1,0 +1,104 @@
+{
+  "experiment_version": "off_target_development_selector_v1",
+  "generated_at_utc": "2026-07-18T15:38:17.111112+00:00",
+  "experiment_scope": "development_fields_only_validation_selector_results_unopened",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/off_target_field_split_v1.csv",
+      "sha256": "ca050a9172b7b7f8b0e85fdb157f33778b58299e81af3849650a5f335f422be2"
+    },
+    {
+      "path": "data/results/background/off_target_field_split_v1.json",
+      "sha256": "3a7b62d5e177f281287bf90b6f2193d8ba1d7e8e8a5cfcd8d9c6ee1e4539fd90"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    }
+  ],
+  "split_id": "split_04329736d47c538b7aa0",
+  "development_field_ids": [
+    "1:east",
+    "1:west",
+    "58:east",
+    "58:west"
+  ],
+  "held_back_validation_field_ids": [
+    "2115:east",
+    "2115:west",
+    "4:east",
+    "4:west"
+  ],
+  "selector_version": "point_source_logistic_model_v1",
+  "selector_threshold": 0.8277833628791744,
+  "minimum_g_magnitude": 11.26291847229004,
+  "maximum_g_magnitude": 21.75798797607422,
+  "raw_gaia_column_count": 19,
+  "raw_gaia_columns": [
+    "source_id",
+    "ra",
+    "dec",
+    "phot_g_mean_mag",
+    "phot_bp_mean_mag",
+    "phot_rp_mean_mag",
+    "phot_bp_rp_excess_factor",
+    "astrometric_excess_noise",
+    "astrometric_excess_noise_sig",
+    "parallax",
+    "parallax_error",
+    "pmra",
+    "pmra_error",
+    "pmdec",
+    "pmdec_error",
+    "pmra_pmdec_corr",
+    "ruwe",
+    "ipd_frac_multi_peak",
+    "ipd_frac_odd_win"
+  ],
+  "development_field_count": 4,
+  "total_retrieved_source_count": 413,
+  "total_selected_source_count": 44,
+  "total_usable_area_square_deg": 0.1256636742446349,
+  "total_elapsed_seconds": 10.560199833009392,
+  "source_output": {
+    "path": "data/results/background/off_target_development_selector_sources_v1.csv",
+    "sha256": "8bf5ad78bc1f2533dae4f29c453a9871648557a2ce93ef8700ad10f4415bac33"
+  },
+  "summary_output": {
+    "path": "data/results/background/off_target_development_selector_summary_v1.csv",
+    "sha256": "a373787b54cf76e0700003e5078359c052d56c8bb7fdf91b7b380d4fc9cea181"
+  },
+  "check_count": 18,
+  "passed_count": 18,
+  "checks": {
+    "four_development_fields_queried": true,
+    "four_validation_fields_remain_held_back": true,
+    "split_assignments_match_frozen_review_cases": true,
+    "no_validation_field_queried": true,
+    "no_validation_field_in_source_output": true,
+    "no_validation_field_in_summary_output": true,
+    "source_and_summary_fields_match_frozen_development": true,
+    "all_measured_counts_retrieved": true,
+    "summary_counts_match_source_rows": true,
+    "all_raw_columns_and_selector_outputs_present": true,
+    "all_source_identifiers_unique_within_fields": true,
+    "non_overlapping_fields_have_unique_source_identifiers": true,
+    "all_selector_probabilities_finite": true,
+    "all_rows_use_frozen_selector_version": true,
+    "selected_counts_match_source_decisions": true,
+    "gaia_usable_area_equals_queried_area": true,
+    "gaia_masked_and_missing_areas_zero": true,
+    "input_split_matches_frozen_identifier": true
+  }
+}

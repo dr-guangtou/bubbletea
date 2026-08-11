@@ -1,0 +1,24 @@
+{
+  "validation_version": "large_sky_development_model_validation_v1",
+  "generated_at_utc": "2026-07-19T05:10:58.590646+00:00",
+  "plain_language_result": "A synthetic 60-field test kept sky blocks separate, evaluated all six frozen model forms, honored area weights, and prevented the environment diagnostic from becoming the selected model.",
+  "synthetic_field_count": 60,
+  "synthetic_sky_block_count": 15,
+  "archive_queries_executed": 0,
+  "held_back_catalog_results_read": false,
+  "elapsed_seconds": 1.514811292057857,
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "six_contract_models_in_frozen_order": true,
+    "three_grouped_outer_folds_per_model": true,
+    "training_and_test_blocks_always_disjoint": true,
+    "each_model_predicts_all_sixty_fields_once": true,
+    "all_predictions_positive_and_finite": true,
+    "constant_model_uses_supplied_weights": true,
+    "selected_model_is_primary_eligible": true,
+    "environment_sensitivity_cannot_be_selected": true,
+    "validation_catalog_results_not_read": true,
+    "no_archive_query_executed": true
+  }
+}

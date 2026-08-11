@@ -951,3 +951,459 @@ remained variable.
 **Recommendation:** Stop geometric boundary chasing. Compare weakly regularized and
 explicitly unregularized fits for coefficient and prediction convergence, then use
 stability and scientific interpretability to define the final model policy.
+
+## 2026-07-18: Define scientific shorthand before using it
+
+**Lesson:** Catalog abbreviations and internal role labels can hide the physical
+meaning of an analysis even when the calculations are correct.
+
+**Context:** The background-design summary used `R1t`, `R2t`, “isolated principal,”
+and “exclusion region” before explaining what they mean or how they relate to the
+existing nearby-galaxy catalog.
+
+**Recommendation:** Introduce every new term in plain language, explain what the
+analysis is doing and why, and use abbreviations only after their definitions.
+
+## 2026-07-18: Validate archive aggregate data types and denominators
+
+**Lesson:** A remote archive can return an aggregate with metadata that a client
+cannot parse, and a valid sum may still use fewer rows than the total count.
+
+**Context:** The NOIRLab Data Lab Gaia service declared an integer data type for an
+`AVG` result that contained a decimal value, causing the VOTable reader to fail.
+Replacing the average with `SUM` and local division worked, but required a separate
+non-missing count for each column because SQL sums ignore missing values.
+
+**Recommendation:** For remote integer-column averages, retrieve `SUM`,
+`COUNT(column)`, and `COUNT(*)`, compute the mean locally, and fail validation when
+required values are missing rather than silently dividing by the total row count.
+
+## 2026-07-18: Do not treat target-field source density as pure survey coverage
+
+**Lesson:** A pre-selector source count is independent of the classifier but is not
+necessarily independent of the astrophysical signal.
+
+**Context:** The five-host Gaia field review found 289 sources in the M60 target
+patch and 59 and 130 in its two diagnostic patches. The target count may include
+real M60 or Virgo-associated objects as well as crowding and Gaia coverage effects.
+
+**Recommendation:** Use total Gaia density as a crowding diagnostic, not a rigid
+target-to-control matching rule. Calibrate its predictive role on off-target fields,
+validate it on spatially separate fields, and never use target overdensity to tune
+the matching tolerance.
+
+## 2026-07-18: Separate query benchmarks from scientific measurement geometry
+
+**Lesson:** A small fixed-angle archive test can be mistaken for the intended host
+measurement if its limited purpose is not stated every time it is summarized.
+
+**Context:** The Gaia field-condition benchmark used 0.1-degree-radius circles to
+keep the first live queries bounded. That angle corresponds to 4.712394 kpc at the
+distance of ESO 006-G001 and 41.771283 kpc at the distance of NGC 4698, so it cannot
+serve as one comparable host aperture.
+
+**Recommendation:** Label fixed-angle benchmark geometry as diagnostic-only. Real
+host measurements must retain concentric circular-annulus profiles in physical and
+host-normalized radius and exclude a separately calibrated central region from UCD
+inference.
+
+## 2026-07-18: Preserve continuous radius and never cap physical coverage silently
+
+**Lesson:** Fixed physical profiles cannot be retrieved safely through one fixed
+angular cap across a nearby-galaxy sample.
+
+**Context:** For the 2,155 current hosts, a 600 kpc radius spans 1.374835 to
+13.064418 degrees and exceeds the inherited two-degree cap for 1,018 hosts. A fixed
+cap would silently remove outer rings preferentially for nearby galaxies.
+
+**Recommendation:** Store continuous angular, physical, and—when available—`R50`-
+normalized source radius; treat displayed rings as recombinable views; and use
+complete tiled or equivalent queries with explicit requested and usable area.
+
+## 2026-07-18: Partition large cone queries with disjoint coordinate boundaries
+
+**Lesson:** Large circular sky retrievals can be divided without changing their
+contents when every subquery retains the exact circle and the coordinate ranges do
+not overlap.
+
+**Context:** One 0.2-degree NGC 4698 query returned 500 Gaia entries. Four
+declination strips returned 82, 154, 149, and 115 entries, reproducing exactly the
+same 500 unique source identifiers. Half-open shared boundaries assign synthetic
+boundary points exactly once.
+
+**Recommendation:** Count rows first, split only ranges that exceed the declared
+safe retrieval size, retain the exact circle predicate in every subquery, validate
+row-count and source-identifier equality, and checkpoint every completed range.
+
+## 2026-07-18: Resume only from verified atomic checkpoints
+
+**Lesson:** The existence of a partial download is not evidence that an archive
+request completed successfully.
+
+**Context:** A controlled Gaia test stopped after two of six measured strips. A new
+retrieval verified and reused those files, completed the other four, then detected
+and replaced one deliberately corrupted file while leaving five valid files
+unchanged. The final 500 source identifiers matched the independent reference.
+
+**Recommendation:** Write source data and metadata atomically, record query and file
+hashes plus expected and retrieved counts, validate source-identifier uniqueness,
+and requery any checkpoint that fails one of those checks.
+
+## 2026-07-18: Measure checkpoint size with the complete column contract
+
+**Lesson:** A row limit tested with a narrow diagnostic query does not establish the
+memory, file size, or runtime of the real classifier input.
+
+**Context:** The full 19-column Gaia benchmark found that 5,000 rows occupied
+500,132 bytes as a pandas table and 1,027,468 bytes as CSV in three repeated tests;
+the query times were 1.948628--1.976649 seconds. A 10,000-row query also succeeded,
+but only once in one field.
+
+**Recommendation:** Set provisional limits only from repeated full-column
+measurements, retain a margin below the largest successful test, record actual
+per-checkpoint bytes, and require multi-field validation before production.
+
+## 2026-07-18: Preserve a failed validation gate instead of weakening it
+
+**Lesson:** A performance test that does not exercise its intended branch is not a
+successful validation, even when every data-integrity check passes.
+
+**Context:** The first three-field full-column test used 0.5-degree circles and
+measured 2,991, 3,098, and 13,010 rows, so only one field exceeded the 5,000-row
+limit. The requirement for two independently split and restarted fields failed.
+
+**Recommendation:** Preserve the failed result and requirement. Change only the
+performance-test geometry needed to exercise the branch, state that it is not a
+scientific aperture, and rerun every check rather than lowering the gate after
+seeing the data.
+
+## 2026-07-18: Keep missing coverage separate from scientific exclusion
+
+**Lesson:** An inner region excluded from UCD inference is not the same as sky that
+was never retrieved or was removed by a survey-quality mask.
+
+**Context:** Radial profiles need a density denominator even when a retrieval stops
+partway or overlapping masks remove area. Treating the central galaxy exclusion as
+missing coverage would hide useful contamination diagnostics and confuse geometry
+with a scientific decision.
+
+**Recommendation:** Record requested, successfully queried, missing, masked, and
+usable area separately. Form the union of overlapping masks before subtraction,
+retain central rings with a diagnostic-only role, and require provenance before a
+real mask can alter a scientific density.
+
+## 2026-07-18: Do not import ancillary-imaging masks into the Gaia denominator
+
+**Lesson:** Gaia retrieval completion and ancillary image quality are separate data
+contracts.
+
+**Context:** The project lead decided that bright-star, dust, and other imaging
+masks should not remove area from the Gaia radial measurement. Applying them would
+mix a later imaging-stage concern into the Gaia-only source-density denominator.
+
+**Recommendation:** For Gaia, set masked area to zero and usable area equal to the
+area covered by verified completed retrieval strips. Preserve incomplete or failed
+strips as missing area, and retain any synthetic mask fixture only as a generic
+geometry test.
+
+## 2026-07-18: Preserve one permanent receipt per galaxy and run
+
+**Lesson:** A project-wide summary can hide a galaxy that failed or disappeared
+between runs.
+
+**Context:** The receipt fixture contains three completed galaxies and one
+controlled partial M60 run. The partial run must remain visible without replacing
+the completed M60 receipt, and an identical rerun should not create contradictory
+content.
+
+**Recommendation:** Derive run identifiers from declared configuration and input
+fingerprints, write one atomic receipt per galaxy, reuse only byte-identical
+content, refuse changed-content overwrites, and record failures in plain language.
+
+## 2026-07-18: Keep related off-target fields on the same side of validation
+
+**Lesson:** Two fields generated from the same host are not independent examples
+for method development and validation.
+
+**Context:** The bounded background fixture has east and west circles around four
+host systems. Splitting an east/west pair would allow host-specific geometry and sky
+conditions to appear in both the method-tuning and held-back samples.
+
+**Recommendation:** Assign fields in host-level groups, balance declared host and
+sky categories without using Gaia counts, hold validation selector results until
+method choices are fixed, and preserve diagnostic fields as non-scientific controls
+until their background eligibility is separately established.
+
+## 2026-07-18: Define precisely what remains unopened in validation
+
+**Lesson:** A held-back selector experiment can coexist with earlier pre-selector
+observing-condition measurements only when the boundary is explicit.
+
+**Context:** All eight off-target positions already had total Gaia counts and
+observation diagnostics, but only the four development fields received frozen-
+selector probabilities and decisions. Calling the validation fields simply
+“unopened” would incorrectly imply that nothing had ever been measured there.
+
+**Recommendation:** State that held-back fields have no selector probabilities,
+decisions, or passing-source counts; guard their identifiers before archive queries
+and in saved outputs; and do not use their later selector results until the
+development summary procedure is fixed.
+
+## 2026-07-18: Separate random counting ranges from field-to-field uncertainty
+
+**Lesson:** An exact small-count interval is not a complete background-error model.
+
+**Context:** The four development circles contain 6 to 18 passing sources. Exact
+Poisson ranges describe how independent counts can fluctuate around an average, but
+they do not include real sky differences, correlated populations, Gaia observing
+conditions, or selector uncertainty.
+
+**Recommendation:** Report counting-only ranges explicitly, retain every field and
+related host pair, keep pooled values descriptive, and estimate field-to-field and
+method uncertainty separately before scientific inference.
+
+## 2026-07-19: Treat a small held-back check as a transfer test, not final calibration
+
+**Lesson:** A procedure can behave consistently on untouched fields without the
+held-back sample being large or representative enough to define a background
+model.
+
+**Context:** The four validation circles have a combined passing-source density
+1.181818 times the development value and overlapping field and host-pair density
+ranges, but individual densities still span 95.492990–604.788937 per square degree.
+
+**Recommendation:** Freeze rules before opening held-back data, report comparisons
+without retuning or pass/fail reinterpretation, and use a much larger count-blind
+off-target sample to calibrate sky dependence and final applicability limits.
+
+## 2026-07-19: Convert pandas coordinate columns to numerical arrays before adding units
+
+**Lesson:** Multiplying a pandas Series by an Astropy unit can retain an object-like
+container that `SkyCoord` does not interpret as an angular quantity.
+
+**Context:** The first 20-field grid check converted right ascension with
+`to_numpy()` but passed declination as a Series, causing an Astropy unit error
+before the full grid was written.
+
+**Recommendation:** Convert every pandas coordinate column with `to_numpy()` before
+attaching degree units, and exercise coordinate construction in the required
+small-scale run before writing full products.
+
+## 2026-07-19: Do not assume a fixed-radius neighbor search returns a pair
+
+**Lesson:** A sparse test grid can have no distinct pair inside a chosen neighbor-
+search radius, leaving a minimum operation with no values.
+
+**Context:** The 20-field check was more widely separated than the provisional
+20-degree search radius, so the first minimum-separation implementation failed even
+though the geometry itself was valid.
+
+**Recommendation:** For bounded validation sets, calculate the complete angular-
+separation matrix, ignore its diagonal, and take the measured minimum without an
+assumed search radius.
+
+## 2026-07-19: A hash threshold does not guarantee a balanced held-back sky sample
+
+**Lesson:** Stable hashing makes an assignment reproducible, but a modulus rule can
+still produce an uneven number of validation sky blocks and fields.
+
+**Context:** The first count-blind 500-field audit assigned only 17 of 120 broad sky
+blocks, containing 68 fields, to validation even though the nominal hash remainder
+represented one fifth of possible values.
+
+**Recommendation:** Define balance explicitly using position-only strata, then use
+stable hashes to choose a fixed number of whole blocks within each stratum. Audit
+the resulting field and coverage counts before freezing the partition.
+
+## 2026-07-19: Inspect a failed measured artifact before reporting its size
+
+**Lesson:** A failed expected-count check identifies a mismatch but does not reveal
+whether the measured count is above or below the expectation.
+
+**Context:** The pilot freeze failed an expected 11-field assertion. An immediate
+status update incorrectly inferred 10 fields before the saved table showed the
+actual count was 12: ten positional representatives and two ecliptic supplements.
+
+**Recommendation:** Read and report the measured value before explaining a failed
+numerical assertion, then correct both the implementation contract and the user-
+facing record explicitly.
+
+## 2026-07-19: Persist measured strip plans as well as raw checkpoints
+
+**Lesson:** In a dense large field, planning the adaptive split can cost more time
+than retrieving the resulting strips.
+
+**Context:** Planning the 84,025-row low-latitude benchmark took 87.086338 seconds,
+while retrieving its 26 strips took 43.725160 seconds. The batch reused both the
+plan and all raw checkpoints, reducing the repeated benchmark processing to local
+verification and scoring.
+
+**Recommendation:** Store a query-contract hash beside each measured plan, verify
+it before reuse, and keep raw strip checkpoints and plans together in external
+storage so neither archive operation must be repeated unnecessarily.
+
+## 2026-07-19: Do not sum narrow integer Gaia columns in archive aggregates
+
+**Lesson:** A TAP service can preserve a narrow source-column integer type in
+`SUM`, silently overflowing a field-level aggregate.
+
+**Context:** Summing `visibility_periods_used` and
+`astrometric_matched_transits` over 6,198 sources returned both totals as the
+16-bit maximum 32,767, falsely making their means identical. Raw rows showed the
+columns were different, and the service did not accept an aggregate cast.
+
+**Recommendation:** Measure the row count first, retrieve the compact observation-
+count columns completely with a verified row limit, and calculate means locally.
+Require retrieved counts, unique source identifiers, and non-null counts to match
+the independently measured field total.
+
+## 2026-07-19: Read the repository's default branch name before comparing refs
+
+**Lesson:** A project rule may use `main` generically even when the repository's
+actual primary branch is named `master`.
+
+**Context:** A remote-state check first requested a nonexistent local `main` ref.
+Inspection showed that both the local and remote primary branches are `master` and
+are synchronized at `06fb6b6`.
+
+**Recommendation:** Inspect `git branch -a` and the remote HEAD before constructing
+primary-branch comparisons. Use the repository's measured ref name in all later
+checks.
+
+## 2026-07-19: Reduce table-wide safeguards to one Boolean value
+
+**Lesson:** Applying `.all()` once to a two-dimensional pandas or NumPy result can
+still return one value per column rather than one value for the entire check.
+
+**Context:** The first G-magnitude validation attempted to convert a column-wise
+Series to `bool`, which pandas correctly rejected as ambiguous.
+
+**Recommendation:** For a safeguard covering an entire table, explicitly reduce
+both dimensions and verify the resulting type is one Boolean before building the
+manifest.
+
+## 2026-07-19: Phrase safeguards as conditions that must be true
+
+**Lesson:** A manifest check named as an observed failure state can correctly store
+`false` while accidentally causing an otherwise successful all-checks gate to fail.
+
+**Context:** The first zero-query continuation manifest used
+`validation_selector_results_opened: false` inside the checks dictionary. The
+scientific state was correct, but the generic requirement that every safeguard be
+true rejected the run.
+
+**Recommendation:** Keep descriptive state fields separate. Phrase safeguards as
+positive requirements such as `validation_selector_results_remain_unopened: true`.
+
+## 2026-07-19: Bound both archive requests and complete field attempts
+
+**Lesson:** A timeout on each remote request does not by itself bound an adaptive
+field plan because the planner can issue many separate count requests.
+
+**Context:** `sky_field_0317` remained in adaptive planning for more than six
+minutes without producing a completed plan. A later run showed both a 180-second
+archive read timeout and a 300-second total field-attempt limit were needed. The
+failure was preserved and the next field completed normally.
+
+**Recommendation:** Limit batches by attempted fields rather than successful
+fields, apply measured ceilings to both individual requests and the whole field,
+write every failure without converting it to zero, and defer repeated failures so
+untouched fields can continue.
+
+## 2026-07-19: Save adaptive planning after every completed measurement
+
+**Lesson:** A resumable source download is not enough when deciding how to divide a
+dense field requires hundreds of separate archive counts.
+
+**Context:** `sky_field_0317` required 771 saved planning entries before its 386
+final source strips could be retrieved. Whole-field time limits repeatedly stopped
+the work, but saving each completed planning entry allowed every explicit retry to
+continue forward. The field ultimately completed with 1,242,936 Gaia sources
+without weakening the fixed row or time limits.
+
+**Recommendation:** Write planning progress atomically after each measured count,
+store the query contract beside it, and verify both the query hash and strip
+geometry before reuse. Test stop and restart locally before relying on the behavior
+for a live archive field.
+
+## 2026-07-19: Exercise synthetic data builders before real model fitting
+
+**Lesson:** Similar-looking pandas and NumPy arrays do not provide the same
+comparison methods.
+
+**Context:** The first local model-comparison test used the pandas-only `.eq()`
+method on a NumPy array while constructing an environment flag. The synthetic run
+failed before reading or fitting the 398-field development table.
+
+**Recommendation:** Run the complete synthetic builder and comparison path before
+the real fit, and use ordinary vectorized comparison operators for NumPy arrays.
+
+## 2026-07-19: Treat model convergence warnings as failed fits
+
+**Lesson:** A model can return coefficients after reaching its iteration limit, but
+those coefficients are not a valid basis for scientific model selection.
+
+**Context:** The first 398-field comparison exposed unscaled spline bases that
+reached the Poisson solver's 2,000-iteration limit. The run was stopped before
+writing or interpreting model-comparison artifacts.
+
+**Recommendation:** Scale every learned spline basis inside its training fold and
+promote convergence warnings to errors. Accept the comparison only when every
+inner, outer, sensitivity, and final fit converges.
+
+## 2026-07-19: Make table-wide Boolean reduction visually explicit
+
+**Lesson:** A bare `.all()` on a two-dimensional table is easy to mistake for a
+complete reduction even after the pandas behavior has been documented.
+
+**Context:** The first completed development-model fit reached its final safeguards
+but the finite-input check returned one Boolean per feature. The ambiguous Series
+correctly stopped the manifest from being accepted.
+
+**Recommendation:** Convert table-wide checks to a NumPy array and call `.all()` on
+that array, or explicitly reduce both axes. Keep this form visible in scientific
+manifests so reviewers can see that the result is one Boolean.
+
+## 2026-08-11: Write normalized distances in the same form as the contract
+
+**Lesson:** Algebraically equivalent code can still obscure whether a frozen
+training-only transformation was implemented as declared.
+
+**Context:** The first nearest-comparison implementation divided training-to-target
+differences by the training scale. The training center cancels from that distance,
+so an assigned center appeared unused and Ruff stopped the validation run.
+
+**Recommendation:** Express both training and target values in the explicitly
+centered and scaled coordinates before calculating distance. This makes the absence
+of held-out preprocessing visible to reviewers and static checks.
+
+## 2026-08-11: Prefer preserved measurements when the background is directly observable
+
+**Lesson:** A fitted sky model is not automatically the best primary background
+reference when comparison-field densities can be measured directly.
+
+**Context:** Three direct procedures had nearly identical typical held-out errors.
+The simple Galactic-latitude bands used roughly 61 measured fields per comparison
+and gave better range coverage than two procedures using Gaia source density. They
+also exposed `sky_field_0317` as a factor of 96.597 above its comparison median
+rather than hiding it behind a smooth extrapolation.
+
+**Recommendation:** Preserve and report the comparison-field distribution and
+identities as the primary large-sky reference. Use fitted curves only for trend
+diagnostics, and report direct local-annulus and random-field measurements together
+without forcing agreement.
+
+## 2026-08-11: Scope automatic lint fixes before running them
+
+**Lesson:** A repository-wide pre-commit run can rewrite unrelated legacy files
+before reporting failures, even when the current task changes only a few scripts.
+
+**Context:** The final direct-background check reformatted archived notebooks and
+older phase scripts, then stopped on 13 pre-existing lint errors. The working tree
+had been inspected immediately beforehand, so those hook-created edits could be
+identified and restored without touching the direct-background work.
+
+**Recommendation:** Inspect the working tree first, run the required repository-wide
+check once to expose its true status, and restore only known hook-created edits if
+legacy failures stop it. Then run the same hooks explicitly on the files changed by
+the current task and report the repository-wide failures separately.

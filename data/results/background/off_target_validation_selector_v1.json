@@ -1,0 +1,166 @@
+{
+  "experiment_version": "off_target_validation_selector_v1",
+  "generated_at_utc": "2026-07-18T16:17:28.947015+00:00",
+  "experiment_scope": "one_time_opening_of_four_held_back_off_target_fields",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/off_target_field_split_v1.csv",
+      "sha256": "ca050a9172b7b7f8b0e85fdb157f33778b58299e81af3849650a5f335f422be2"
+    },
+    {
+      "path": "data/results/background/off_target_field_split_v1.json",
+      "sha256": "3a7b62d5e177f281287bf90b6f2193d8ba1d7e8e8a5cfcd8d9c6ee1e4539fd90"
+    },
+    {
+      "path": "data/results/background/off_target_development_selector_v1.json",
+      "sha256": "b69a78440e8a6463ef5a71d706a15f2c90ccbc214264be2c015f209550108c93"
+    },
+    {
+      "path": "data/results/background/off_target_development_frozen_summary_v1.csv",
+      "sha256": "e227027192f1fb9fb5be088c19bf79031a9e152992e86a2e9eb072719029fe08"
+    },
+    {
+      "path": "data/results/background/off_target_development_frozen_summary_v1.json",
+      "sha256": "5a01df3f21a5d3f5299b56ca5e4a1d70485c0ce17aba9f20b06b063dd593701b"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    }
+  ],
+  "split_id": "split_04329736d47c538b7aa0",
+  "validation_field_ids": [
+    "2115:east",
+    "2115:west",
+    "4:east",
+    "4:west"
+  ],
+  "protected_development_field_ids": [
+    "1:east",
+    "1:west",
+    "58:east",
+    "58:west"
+  ],
+  "selector_version": "point_source_logistic_model_v1",
+  "selector_threshold": 0.8277833628791744,
+  "minimum_g_magnitude": 11.26291847229004,
+  "maximum_g_magnitude": 21.75798797607422,
+  "raw_gaia_column_count": 19,
+  "raw_gaia_columns": [
+    "source_id",
+    "ra",
+    "dec",
+    "phot_g_mean_mag",
+    "phot_bp_mean_mag",
+    "phot_rp_mean_mag",
+    "phot_bp_rp_excess_factor",
+    "astrometric_excess_noise",
+    "astrometric_excess_noise_sig",
+    "parallax",
+    "parallax_error",
+    "pmra",
+    "pmra_error",
+    "pmdec",
+    "pmdec_error",
+    "pmra_pmdec_corr",
+    "ruwe",
+    "ipd_frac_multi_peak",
+    "ipd_frac_odd_win"
+  ],
+  "frozen_summary_rules": {
+    "retain_every_field_separately": true,
+    "combine_east_and_west_only_within_same_host": true,
+    "all_validation_row_is_descriptive_only": true,
+    "confidence_levels": [
+      0.68,
+      0.95
+    ],
+    "count_range_method": "exact_central_poisson_garwood",
+    "scientific_background_approval": false
+  },
+  "plain_language_limit": "This small held-back check tests whether the frozen procedure behaves similarly on four untouched circles. It does not make any circle a scientific background and does not establish a survey-wide background model.",
+  "validation_field_count": 4,
+  "total_retrieved_source_count": 1233,
+  "total_selected_source_count": 52,
+  "total_usable_area_square_deg": 0.1256636742446349,
+  "total_elapsed_seconds": 12.43936387496069,
+  "comparison": {
+    "interpretation": "descriptive_only_not_a_scientific_background_approval_test",
+    "development_overall_density_per_square_deg": 350.14096368329433,
+    "validation_overall_density_per_square_deg": 413.8029570802566,
+    "validation_to_development_overall_density_ratio": 1.1818181818181808,
+    "validation_overall_inside_development_poisson_68_density_range": false,
+    "validation_overall_inside_development_poisson_95_density_range": true,
+    "development_field_density_range_per_square_deg": {
+      "minimum": 190.98598019088783,
+      "maximum": 572.9579405726635
+    },
+    "validation_field_density_range_per_square_deg": {
+      "minimum": 95.49299009544383,
+      "maximum": 604.7889372711443
+    },
+    "field_density_ranges_overlap": true,
+    "development_host_pair_density_range_per_square_deg": {
+      "minimum": 286.47897028633173,
+      "maximum": 413.802957080257
+    },
+    "validation_host_pair_density_range_per_square_deg": {
+      "minimum": 270.56347193709087,
+      "maximum": 557.0424422234223
+    },
+    "host_pair_density_ranges_overlap": true
+  },
+  "outputs": [
+    {
+      "path": "data/results/background/off_target_validation_selector_sources_v1.csv",
+      "sha256": "9b18443e4d5e94815fbd44c8b5eaf7060d7b3b30c275862b160c254f90299f5c"
+    },
+    {
+      "path": "data/results/background/off_target_validation_selector_summary_v1.csv",
+      "sha256": "33bbf906f2b2bee90c5edbd99fa7d8e17c648f7fac805d1e5174cb6e109297e0"
+    },
+    {
+      "path": "data/results/background/off_target_validation_frozen_summary_v1.csv",
+      "sha256": "6038304e651aa72fc166c60b3be23b195a47cf9c53c7e43797021516cabca985"
+    }
+  ],
+  "check_count": 24,
+  "passed_count": 24,
+  "checks": {
+    "four_validation_fields_queried_once": true,
+    "validation_ids_match_frozen_held_back_ids": true,
+    "no_development_field_queried_or_written": true,
+    "source_and_field_summaries_match_validation_ids": true,
+    "all_measured_counts_retrieved": true,
+    "summary_counts_match_source_rows": true,
+    "all_raw_columns_and_selector_outputs_present": true,
+    "source_identifiers_unique_within_fields": true,
+    "non_overlapping_fields_have_unique_source_identifiers": true,
+    "all_selector_probabilities_finite": true,
+    "all_rows_use_frozen_selector_version": true,
+    "selected_counts_match_source_decisions": true,
+    "gaia_area_policy_unchanged": true,
+    "split_identifier_unchanged": true,
+    "selector_threshold_unchanged": true,
+    "four_fields_two_pairs_one_total": true,
+    "each_pair_contains_two_related_fields": true,
+    "selected_counts_conserved": true,
+    "retrieved_counts_conserved": true,
+    "usable_area_conserved": true,
+    "summary_columns_match_frozen_development_contract": true,
+    "confidence_levels_unchanged": true,
+    "development_artifacts_not_modified": true,
+    "comparison_is_not_scientific_background_approval": true
+  }
+}

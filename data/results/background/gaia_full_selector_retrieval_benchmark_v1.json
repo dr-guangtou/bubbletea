@@ -1,0 +1,71 @@
+{
+  "benchmark_version": "gaia_full_selector_retrieval_benchmark_v1",
+  "generated_at_utc": "2026-07-18T10:10:20.458422+00:00",
+  "benchmark_scope": "bounded_full_selector_columns_progressive_rows",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "input": {
+    "path": "data/results/background/background_review_hosts_v1.csv",
+    "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+  },
+  "host_name": "ESO 006- G 001",
+  "test_radius_deg": 0.5,
+  "available_rows_in_test_circle": 13010,
+  "raw_selector_column_count": 19,
+  "raw_selector_columns": [
+    "source_id",
+    "ra",
+    "dec",
+    "phot_g_mean_mag",
+    "phot_bp_mean_mag",
+    "phot_rp_mean_mag",
+    "phot_bp_rp_excess_factor",
+    "astrometric_excess_noise",
+    "astrometric_excess_noise_sig",
+    "parallax",
+    "parallax_error",
+    "pmra",
+    "pmra_error",
+    "pmdec",
+    "pmdec_error",
+    "pmra_pmdec_corr",
+    "ruwe",
+    "ipd_frac_multi_peak",
+    "ipd_frac_odd_win"
+  ],
+  "selector_version": "point_source_logistic_model_v1",
+  "count_query_sha256": "74afef5549310a004e20efaef640bec781a5836d9de3955a4bc6d94d72e1f0f0",
+  "test_row_counts": [
+    100,
+    500,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "repeat_row_count": 5000,
+  "repeat_count": 3,
+  "maximum_successful_tested_rows": 10000,
+  "provisional_safe_rows_per_strip": 5000,
+  "provisional_limit_scope": "development_default_pending_multi_field_production_validation",
+  "total_elapsed_seconds": 17.719464041059837,
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "field_contains_at_least_10000_rows": true,
+    "all_requested_rows_returned": true,
+    "all_raw_selector_columns_returned": true,
+    "source_identifiers_unique_within_every_query": true,
+    "all_selector_probabilities_finite": true,
+    "three_5000_row_measurements": true,
+    "repeated_5000_row_identifiers_match": true,
+    "10000_row_full_column_query_completed": true,
+    "provisional_limit_directly_measured": true,
+    "provisional_limit_no_more_than_half_maximum_tested": true
+  }
+}

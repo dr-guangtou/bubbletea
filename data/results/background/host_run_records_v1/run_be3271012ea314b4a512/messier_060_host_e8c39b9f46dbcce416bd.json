@@ -1,0 +1,173 @@
+{
+  "failures": [],
+  "host": {
+    "dec_deg": 11.5526118,
+    "name": "MESSIER 060",
+    "ra_deg": 190.9166453
+  },
+  "host_run_id": "host_e8c39b9f46dbcce416bd",
+  "is_controlled_fixture": false,
+  "purpose": "bounded_retrieval_and_area_validation_not_scientific_search",
+  "radial_rings": [
+    {
+      "area_status": "complete",
+      "inference_role": "central_diagnostic",
+      "inner_radius_deg": 0.0,
+      "masked_area_square_deg": 0.0,
+      "masked_integration_error_square_deg": 0.0,
+      "missing_area_square_deg": 0.0,
+      "outer_radius_deg": 0.1875,
+      "queried_integration_error_square_deg": 1.2844189182351372e-11,
+      "requested_area_square_deg": 0.1104465181608811,
+      "ring_id": "fraction_0.00_0.25",
+      "successfully_queried_area_square_deg": 0.1104465181611187,
+      "usable_area_square_deg": 0.1104465181611187
+    },
+    {
+      "area_status": "complete",
+      "inference_role": "area_validation_only",
+      "inner_radius_deg": 0.1875,
+      "masked_area_square_deg": 0.0,
+      "masked_integration_error_square_deg": 0.0,
+      "missing_area_square_deg": 1.872998074577728e-12,
+      "outer_radius_deg": 0.375,
+      "queried_integration_error_square_deg": 2.6478726693542764e-11,
+      "requested_area_square_deg": 0.3313383716910984,
+      "ring_id": "fraction_0.25_0.50",
+      "successfully_queried_area_square_deg": 0.3313383716892254,
+      "usable_area_square_deg": 0.3313383716892254
+    },
+    {
+      "area_status": "complete",
+      "inference_role": "area_validation_only",
+      "inner_radius_deg": 0.375,
+      "masked_area_square_deg": 0.0,
+      "masked_integration_error_square_deg": 0.0,
+      "missing_area_square_deg": 0.0,
+      "outer_radius_deg": 0.5625,
+      "queried_integration_error_square_deg": 5.748203017485735e-11,
+      "requested_area_square_deg": 0.5522266768535509,
+      "ring_id": "fraction_0.50_0.75",
+      "successfully_queried_area_square_deg": 0.5522266768535937,
+      "usable_area_square_deg": 0.5522266768535937
+    },
+    {
+      "area_status": "complete",
+      "inference_role": "area_validation_only",
+      "inner_radius_deg": 0.5625,
+      "masked_area_square_deg": 0.0,
+      "masked_integration_error_square_deg": 0.0,
+      "missing_area_square_deg": 1.3943266979563886e-13,
+      "outer_radius_deg": 0.75,
+      "queried_integration_error_square_deg": 1.1864211977686058e-10,
+      "requested_area_square_deg": 0.7731090681109489,
+      "ring_id": "fraction_0.75_1.00",
+      "successfully_queried_area_square_deg": 0.7731090681108095,
+      "usable_area_square_deg": 0.7731090681108095
+    }
+  ],
+  "recorded_at_utc": "2026-07-18T10:25:52.901683+00:00",
+  "retrieval": {
+    "base_where_sha256": "7661085e737372fcd2141eeb78df40d5a576bba2208bfa058bfd5a413b4b483f",
+    "checkpoint_files_retained": false,
+    "combined_source_count": 6497,
+    "combined_source_identifier_sha256": "e1e4bdee8ee98329005834206012da1256d27c443b457ba55f91a80ed1295652",
+    "completed_strip_ids": [
+      "r0",
+      "r1"
+    ],
+    "elapsed_seconds": 8.15822233306244,
+    "expected_strip_count": 2,
+    "maximum_saved_strip_bytes": 639072,
+    "measured_source_count": 6497,
+    "reference_query_sha256": "d32fbe346456d09862239e60c68755a9b65cd341cc11d758ddd72b318e3b316c",
+    "reference_source_identifier_sha256": "e1e4bdee8ee98329005834206012da1256d27c443b457ba55f91a80ed1295652",
+    "saved_csv_bytes": 1255861,
+    "status": "complete",
+    "test_radius_deg": 0.75
+  },
+  "run_configuration": {
+    "gaia_area_policy": {
+      "apply_ancillary_imaging_masks": false,
+      "apply_bright_star_masks": false,
+      "apply_dust_masks": false,
+      "incomplete_retrieval_treatment": "explicit_missing_area",
+      "usable_area_definition": "successfully_queried_area"
+    },
+    "gaia_release": "Gaia DR3",
+    "gaia_table": "gaia_dr3.gaia_source",
+    "inputs": [
+      {
+        "path": "data/results/background/background_review_hosts_v1.csv",
+        "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+      },
+      {
+        "path": "data/results/background/gaia_full_column_multifield_plan_v1.csv",
+        "sha256": "ed085323db1d2a3f195eb971f659c1bd14c87ff486ae25a799dc545396e6311b"
+      },
+      {
+        "path": "data/results/background/gaia_full_column_multifield_retrieval_v1.csv",
+        "sha256": "6b97e73abc76a54998a9135109aa3df242b42ab1402da1b8b1bb747e4a5793c1"
+      },
+      {
+        "path": "data/results/background/gaia_full_column_multifield_validation_v1.json",
+        "sha256": "b1a6e6b22e1850c867a56a752fa016aa83556fa85f328211b6060483d3d406dd"
+      },
+      {
+        "path": "data/results/background/radial_ring_area_accounting_validation_v1.csv",
+        "sha256": "20af70ef4a02d4c70871d6514acf28a1225223868cde5e1f4caea47033828c71"
+      },
+      {
+        "path": "data/results/background/radial_ring_area_accounting_validation_v1.json",
+        "sha256": "52154342808c0bbf3b53b8af42a418c35130664282f835194811ef6ce04c3d2a"
+      }
+    ],
+    "maximum_rows_per_strip": 5000,
+    "purpose": "three_field_complete_performance_validation",
+    "query_contract": {
+      "geometry": "host_centered_performance_test_circle_partitioned_by_declination",
+      "maximum_g_magnitude": 21.75798797607422,
+      "minimum_g_magnitude": 11.26291847229004,
+      "selector_applied_after_retrieval": true
+    },
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "raw_gaia_columns": [
+      "source_id",
+      "ra",
+      "dec",
+      "phot_g_mean_mag",
+      "phot_bp_mean_mag",
+      "phot_rp_mean_mag",
+      "phot_bp_rp_excess_factor",
+      "astrometric_excess_noise",
+      "astrometric_excess_noise_sig",
+      "parallax",
+      "parallax_error",
+      "pmra",
+      "pmra_error",
+      "pmdec",
+      "pmdec_error",
+      "pmra_pmdec_corr",
+      "ruwe",
+      "ipd_frac_multi_peak",
+      "ipd_frac_odd_win"
+    ],
+    "receipt_embeds_complete_run_configuration": true,
+    "ring_view": {
+      "radius_fractions": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "status": "performance_test_fractions_not_scientific_aperture"
+    },
+    "schema_version": "host_run_record_v1",
+    "selector_version": "point_source_logistic_model_v1"
+  },
+  "run_configuration_sha256": "be3271012ea314b4a512a5a87a11c4590d5ef1a5df21a16d575a53d036fa0c82",
+  "run_id": "run_be3271012ea314b4a512",
+  "schema_version": "host_run_record_v1",
+  "status": "complete"
+}

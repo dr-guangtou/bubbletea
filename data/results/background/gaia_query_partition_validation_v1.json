@@ -1,0 +1,39 @@
+{
+  "validation_version": "gaia_query_partition_validation_v1",
+  "generated_at_utc": "2026-07-18T09:31:09.247343+00:00",
+  "validation_scope": "bounded_whole_circle_vs_non_overlapping_declination_strips",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "input": {
+    "path": "data/results/background/background_review_hosts_v1.csv",
+    "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+  },
+  "host_name": "NGC 4698",
+  "test_radius_deg": 0.2,
+  "test_maximum_strip_height_deg": 0.1,
+  "reference_source_count": 500,
+  "strip_count": 4,
+  "combined_source_count": 500,
+  "unique_combined_source_count": 500,
+  "elapsed_seconds": 12.958585208049044,
+  "reference_count_query_sha256": "98b7da537c5316387a1658c4c72f58b010f8470ff9947f55db37670939039da1",
+  "reference_source_query_sha256": "a05c676ad759ca33399d2c271614a6fb8ad68953400819e04457793f349d77a1",
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "reference_contains_sources": true,
+    "four_test_strips": true,
+    "strip_counts_sum_to_reference": true,
+    "no_source_repeated_between_strips": true,
+    "source_identifier_sets_match_exactly": true,
+    "all_sources_inside_exact_circle": true,
+    "every_strip_boundary_assigned_once": true,
+    "circle_at_north_pole_clipped_exactly": true,
+    "no_selector_output_used": true
+  }
+}

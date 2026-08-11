@@ -1,0 +1,77 @@
+{
+  "validation_version": "host_run_record_validation_v1",
+  "plain_language_name": "per_galaxy_analysis_receipt",
+  "complete_run_id": "run_be3271012ea314b4a512",
+  "controlled_partial_run_id": "run_0462fc307c338f11120f",
+  "receipt_schema_version": "host_run_record_v1",
+  "input_provenance": [
+    {
+      "path": "data/results/background/background_review_hosts_v1.csv",
+      "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+    },
+    {
+      "path": "data/results/background/gaia_full_column_multifield_plan_v1.csv",
+      "sha256": "ed085323db1d2a3f195eb971f659c1bd14c87ff486ae25a799dc545396e6311b"
+    },
+    {
+      "path": "data/results/background/gaia_full_column_multifield_retrieval_v1.csv",
+      "sha256": "6b97e73abc76a54998a9135109aa3df242b42ab1402da1b8b1bb747e4a5793c1"
+    },
+    {
+      "path": "data/results/background/gaia_full_column_multifield_validation_v1.json",
+      "sha256": "b1a6e6b22e1850c867a56a752fa016aa83556fa85f328211b6060483d3d406dd"
+    },
+    {
+      "path": "data/results/background/radial_ring_area_accounting_validation_v1.csv",
+      "sha256": "20af70ef4a02d4c70871d6514acf28a1225223868cde5e1f4caea47033828c71"
+    },
+    {
+      "path": "data/results/background/radial_ring_area_accounting_validation_v1.json",
+      "sha256": "52154342808c0bbf3b53b8af42a418c35130664282f835194811ef6ce04c3d2a"
+    }
+  ],
+  "receipt_count": 4,
+  "complete_receipt_count": 3,
+  "controlled_partial_receipt_count": 1,
+  "write_dispositions": [
+    {
+      "first_write": "existing_identical",
+      "repeat_write": "existing_identical"
+    },
+    {
+      "first_write": "existing_identical",
+      "repeat_write": "existing_identical"
+    },
+    {
+      "first_write": "existing_identical",
+      "repeat_write": "existing_identical"
+    },
+    {
+      "first_write": "existing_identical",
+      "repeat_write": "existing_identical"
+    }
+  ],
+  "elapsed_seconds": 0.014977790880948305,
+  "check_count": 18,
+  "passed_count": 18,
+  "checks": {
+    "three_complete_host_receipts": true,
+    "complete_receipts_share_one_run_identifier": true,
+    "every_host_receipt_identifier_unique": true,
+    "stable_identical_write_reused": true,
+    "different_content_cannot_overwrite_receipt": true,
+    "no_temporary_files_remain": true,
+    "record_files_match_index_hashes": true,
+    "every_receipt_embeds_matching_configuration": true,
+    "every_receipt_preserves_query_fingerprints": true,
+    "four_rings_in_every_receipt": true,
+    "gaia_usable_area_equals_queried_area": true,
+    "queried_plus_missing_equals_requested": true,
+    "complete_receipts_have_no_failures": true,
+    "partial_receipt_has_plain_failure": true,
+    "partial_receipt_preserves_missing_area": true,
+    "partial_receipt_has_separate_run_identifier": true,
+    "complete_retrieval_counts_and_hashes_preserved": true,
+    "complete_run_index_contains_only_three_hosts": true
+  }
+}

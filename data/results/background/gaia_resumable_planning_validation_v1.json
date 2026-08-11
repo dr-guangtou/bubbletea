@@ -1,0 +1,31 @@
+{
+  "validation_version": "gaia_resumable_planning_validation_v1",
+  "generated_at_utc": "2026-07-19T03:36:54.214551+00:00",
+  "plain_language_result": "The interrupted first pass saved three completed count nodes. The restart reused them and queried only the two missing nodes.",
+  "archive_queries_executed": 0,
+  "elapsed_seconds": 0.00786541705019772,
+  "first_pass_counted_ids": [
+    "r",
+    "r0",
+    "r1",
+    "r10"
+  ],
+  "second_pass_counted_ids": [
+    "r10",
+    "r11"
+  ],
+  "saved_node_count_after_stop": 3,
+  "final_saved_node_count": 5,
+  "check_count": 8,
+  "passed_count": 8,
+  "checks": {
+    "controlled_stop_observed": true,
+    "three_nodes_saved_before_stop": true,
+    "first_pass_reached_only_expected_nodes": true,
+    "restart_counted_only_missing_nodes": true,
+    "completed_plan_has_five_nodes": true,
+    "final_progress_has_five_nodes": true,
+    "leaf_counts_conserve_root": true,
+    "all_leaf_counts_within_limit": true
+  }
+}

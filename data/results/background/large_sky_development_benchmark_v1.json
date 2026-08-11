@@ -1,0 +1,412 @@
+{
+  "benchmark_version": "large_sky_development_benchmark_v1",
+  "generated_at_utc": "2026-07-18T17:14:14.944824+00:00",
+  "benchmark_scope": "one_frozen_low_latitude_development_field_full_19_columns",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.csv",
+      "sha256": "067e95eaffa0230b6e4f0c1c1311284e15e70d0b2dc7bc160edecf63b0b18212"
+    },
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.json",
+      "sha256": "c444916cb1bd54a71ede536e3b4468ac9669eadf52fb9b1713995ec8f2a0abd7"
+    },
+    {
+      "path": "data/results/background/gaia_full_selector_retrieval_benchmark_v1.json",
+      "sha256": "188180ea9649601919851d43a1f610199e09cf760a8edeae33d7cfd77ed7c864"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    }
+  ],
+  "benchmark_field_id": "sky_field_0000",
+  "selection_rule": "minimum_absolute_galactic_latitude_then_field_id",
+  "selector_version": "point_source_logistic_model_v1",
+  "selector_threshold": 0.8277833628791744,
+  "minimum_g_magnitude": 11.26291847229004,
+  "maximum_g_magnitude": 21.75798797607422,
+  "raw_gaia_columns": [
+    "source_id",
+    "ra",
+    "dec",
+    "phot_g_mean_mag",
+    "phot_bp_mean_mag",
+    "phot_rp_mean_mag",
+    "phot_bp_rp_excess_factor",
+    "astrometric_excess_noise",
+    "astrometric_excess_noise_sig",
+    "parallax",
+    "parallax_error",
+    "pmra",
+    "pmra_error",
+    "pmdec",
+    "pmdec_error",
+    "pmra_pmdec_corr",
+    "ruwe",
+    "ipd_frac_multi_peak",
+    "ipd_frac_odd_win"
+  ],
+  "maximum_rows_per_strip": 5000,
+  "base_where_sha256": "e60fee850ca92aac56b788be5dcc80d781c622bd074ef620cf9728bb55141cea",
+  "valid_checkpoint_ids_before_run": [],
+  "first_pass": {
+    "retrieved_strip_ids": [
+      "r0000"
+    ],
+    "skipped_strip_ids": [],
+    "completed_strip_ids": [
+      "r0000"
+    ],
+    "complete": false
+  },
+  "resumed_pass": {
+    "retrieved_strip_ids": [
+      "r0001",
+      "r0010",
+      "r00110",
+      "r00111",
+      "r01000",
+      "r01001",
+      "r01010",
+      "r01011",
+      "r01100",
+      "r01101",
+      "r01110",
+      "r01111",
+      "r10000",
+      "r10001",
+      "r10010",
+      "r10011",
+      "r10100",
+      "r10101",
+      "r10110",
+      "r10111",
+      "r11000",
+      "r11001",
+      "r1101",
+      "r1110",
+      "r1111"
+    ],
+    "skipped_strip_ids": [
+      "r0000"
+    ],
+    "completed_strip_ids": [
+      "r0000",
+      "r0001",
+      "r0010",
+      "r00110",
+      "r00111",
+      "r01000",
+      "r01001",
+      "r01010",
+      "r01011",
+      "r01100",
+      "r01101",
+      "r01110",
+      "r01111",
+      "r10000",
+      "r10001",
+      "r10010",
+      "r10011",
+      "r10100",
+      "r10101",
+      "r10110",
+      "r10111",
+      "r11000",
+      "r11001",
+      "r1101",
+      "r1110",
+      "r1111"
+    ],
+    "complete": true
+  },
+  "external_checkpoint_directory": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000",
+  "external_measured_plan": {
+    "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/measured_plan.csv",
+    "sha256": "109aea2cf8a04d1a7e502f9627da075ee3819fe2acbf4f91793059703c661a90"
+  },
+  "external_checkpoint_inventory": [
+    {
+      "strip_id": "r0000",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0000.csv",
+      "source_bytes": 441385,
+      "source_sha256": "85553052b25a7517e21fd88d867f96b9e9d6d04d841b31ef38f3d5213572f6de",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0000.json",
+      "metadata_sha256": "96ab637fa6ea058c391505d2fc647766c1d170c2776a096f467c89ac4586075c"
+    },
+    {
+      "strip_id": "r0001",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0001.csv",
+      "source_bytes": 806839,
+      "source_sha256": "9badc46d73d9cca125d0901499516bbbf8344dbb284869fb404af9a92d141394",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0001.json",
+      "metadata_sha256": "f5c82e1da2d3c12165c1f0a38604011e97aaa0a7f76c92228b6366492d3c96a0"
+    },
+    {
+      "strip_id": "r0010",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0010.csv",
+      "source_bytes": 983289,
+      "source_sha256": "7baeea95e5bf639cf8e338067b399d122a28df9ee63c1c8912301e8b73be21f4",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r0010.json",
+      "metadata_sha256": "fa4aae8d9b44d4e0ed391a7cfb24b65b122599ad4ab95aa2d0f3e0184cd360d0"
+    },
+    {
+      "strip_id": "r00110",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r00110.csv",
+      "source_bytes": 559385,
+      "source_sha256": "cd8137437626946a4057c2104a42dbf43c65f83b6d905d7d0b112976bce2fab9",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r00110.json",
+      "metadata_sha256": "e4dd9cc482b92d65d4f469634399d28472f647b1ad2da33e211305288bd64d05"
+    },
+    {
+      "strip_id": "r00111",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r00111.csv",
+      "source_bytes": 616764,
+      "source_sha256": "1e881a1f32de57b753161416a1bef2d092e6240b40e90bfaca8a34c3986e0993",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r00111.json",
+      "metadata_sha256": "e516033140504f95a0f65dc02e6db3d622f7c04c49c313ef6c6aa015bf3f7bd6"
+    },
+    {
+      "strip_id": "r01000",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01000.csv",
+      "source_bytes": 627105,
+      "source_sha256": "0d7608485f439d444f4714c838f75df634e7f427c54ffbaa06b24e96edf56574",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01000.json",
+      "metadata_sha256": "7661408f11b4770443351b9547ad3cc0f98906a4b9cf9fcbbf7b0b75786cc5e9"
+    },
+    {
+      "strip_id": "r01001",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01001.csv",
+      "source_bytes": 653936,
+      "source_sha256": "b4f9b1804e5e80eabfbd5d17fb1306ba25b3b4fa7a3e5ce2fb655f892479d998",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01001.json",
+      "metadata_sha256": "57bffa1ccdff66a3fe80ea65070cc06e58c639a174fbac61eaf35ef45e6f48ed"
+    },
+    {
+      "strip_id": "r01010",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01010.csv",
+      "source_bytes": 648241,
+      "source_sha256": "897e598af5ae3d9615ee4852134513c96b8cc61a5b1da2c004d959cabbe66df7",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01010.json",
+      "metadata_sha256": "959bfb9a978ed45ded28ee4ff9486c5290509842abb0447b7be23fb28f2b7cde"
+    },
+    {
+      "strip_id": "r01011",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01011.csv",
+      "source_bytes": 636386,
+      "source_sha256": "f40ac1b1dc0c0fcb7cf8a24c3c5ec94d8d5359308fc542a74795a6edfac0c8c1",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01011.json",
+      "metadata_sha256": "6ddd6bd57cdb79b190016bd4187e35f1bc4efb204b7824a2ea93179ddb2609c3"
+    },
+    {
+      "strip_id": "r01100",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01100.csv",
+      "source_bytes": 660171,
+      "source_sha256": "feedb50fb7bccf5f95df60f488ebeab2a47c786bfd1e4b3bb22c9429183f5f4f",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01100.json",
+      "metadata_sha256": "996528681aeb7978cd96ac1a8bf6ac09e2ecaa770d03b53a18a8b95e820b34d3"
+    },
+    {
+      "strip_id": "r01101",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01101.csv",
+      "source_bytes": 648954,
+      "source_sha256": "aed77ea3eece8a3ad67db29a6a9fc89f8d8d87f23bf281c6ebea9bc5ebf5de4b",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01101.json",
+      "metadata_sha256": "0e68d53ed93e6463d7584992c670435e6ddd5ae7cba62f354523d15ef938bf87"
+    },
+    {
+      "strip_id": "r01110",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01110.csv",
+      "source_bytes": 637090,
+      "source_sha256": "955186ff6391edc806aeb9b0ca3f75051f1f9021c62f4f2828c2b1e98e6f4df7",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01110.json",
+      "metadata_sha256": "fa90b5a75f490c60cf019d4a1aae7f7ef2914323f7f6275b6b744ad90e0cb6dd"
+    },
+    {
+      "strip_id": "r01111",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01111.csv",
+      "source_bytes": 691301,
+      "source_sha256": "a577fa20bb50d79452fe4054e81b78ef42f0d99e5d7a41d3e341fd9b0a2a7848",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r01111.json",
+      "metadata_sha256": "851f425f06082768f146e66d329f8d935c212932a27730976e9167686990f064"
+    },
+    {
+      "strip_id": "r10000",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10000.csv",
+      "source_bytes": 699114,
+      "source_sha256": "2ed788653efbdf3c1ac2cfd97a7259cb0c02b21f1d129848127cd3095cbf41d9",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10000.json",
+      "metadata_sha256": "8f4f4df04f766104789772a6376406a1ddb7e16b786818ee754b5d680edbc0fc"
+    },
+    {
+      "strip_id": "r10001",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10001.csv",
+      "source_bytes": 716887,
+      "source_sha256": "7a60294ec89baacf44952917f6a3d90b0d7e8048d99ce898b675eb718da6463f",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10001.json",
+      "metadata_sha256": "a7fc2e015fbdc5955ffe5377b514aebb0d111618d89ea6339759328a92335abd"
+    },
+    {
+      "strip_id": "r10010",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10010.csv",
+      "source_bytes": 665813,
+      "source_sha256": "d8bb4c050086fea64e66f7602039451f7f248c6252a4e58b9ec5fc30d813c0cc",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10010.json",
+      "metadata_sha256": "928a6b43c6ec71298188af27fcf830989343cdbd64bd725791fc62b2197557f6"
+    },
+    {
+      "strip_id": "r10011",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10011.csv",
+      "source_bytes": 682682,
+      "source_sha256": "e64612787759f246930a07c262039a99af5a10580ec8eb20f6ea9fd0fe921b95",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10011.json",
+      "metadata_sha256": "9ac563f7b17a25938f3f1e5e8c2b143a7d162fc155906b4490320ba2f0a3da15"
+    },
+    {
+      "strip_id": "r10100",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10100.csv",
+      "source_bytes": 686999,
+      "source_sha256": "ad3387657e330e302717e769a18004df6df3fc7427dcf66ae6f906e3624bd99b",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10100.json",
+      "metadata_sha256": "5a460d5870e658953a8db67992cccbcf10bbf95714f60d2f55a6f1c801131ee1"
+    },
+    {
+      "strip_id": "r10101",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10101.csv",
+      "source_bytes": 715141,
+      "source_sha256": "b6e7695f36bc5f788e9803e1ea96385b8d8c149cd7aa1b75ba3a9602985ebc64",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10101.json",
+      "metadata_sha256": "13e6b76ff6d6eebb712cdc94605d00270ac21a23f64cc0a398d68fc3a77fa1f1"
+    },
+    {
+      "strip_id": "r10110",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10110.csv",
+      "source_bytes": 679625,
+      "source_sha256": "4d4be771d285cd000d1dd234523fd3278a290958f4fd49af23b56a753dc94836",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10110.json",
+      "metadata_sha256": "f1dc832fb2b39720209b721c6b4caf7fc9b3ff34998f4552a2c5f25df6910d9d"
+    },
+    {
+      "strip_id": "r10111",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10111.csv",
+      "source_bytes": 610204,
+      "source_sha256": "f0755af35485f36099b948e7206135630da5bc224b00d0c9c4d1a5a5e651ce64",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r10111.json",
+      "metadata_sha256": "bcfebac8303dd180c0506bd0e8506c846071a68bf159f134296901bf6ce90aa6"
+    },
+    {
+      "strip_id": "r11000",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r11000.csv",
+      "source_bytes": 612257,
+      "source_sha256": "5896eb165798426c3f241fcfa1f9a6c1990403a94e86562c3af2dae450531ec4",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r11000.json",
+      "metadata_sha256": "ef60619af923c7519c20d5b950202cd1654df91ebf1da344ab27202a0cc16766"
+    },
+    {
+      "strip_id": "r11001",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r11001.csv",
+      "source_bytes": 575765,
+      "source_sha256": "ab725dbd971f92b032b276f4d14f591d1247397bbd0e13e3db826c66d88c834c",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r11001.json",
+      "metadata_sha256": "63671715899c51113e341340ab57d897c739b520087a9bd5e8b297b58d4a9780"
+    },
+    {
+      "strip_id": "r1101",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1101.csv",
+      "source_bytes": 1028233,
+      "source_sha256": "a923bbac2f7f386767c2cc26a25e93fc0af017e4dbec8b5b6fb8c6c5ad99719b",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1101.json",
+      "metadata_sha256": "fb45bb53ca51d9e44f9b7585f60e75ecbe5b2d1ae39659ab49df7165f4b1c6d2"
+    },
+    {
+      "strip_id": "r1110",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1110.csv",
+      "source_bytes": 673829,
+      "source_sha256": "75eaef2ab8392aed368b52433d316323d53baa38092a239b6e69f19963cbf840",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1110.json",
+      "metadata_sha256": "05f64b07ebc9c27e998e553b3e0edd8db47854cb3063ea1a22f6eb5b1a5190ce"
+    },
+    {
+      "strip_id": "r1111",
+      "source_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1111.csv",
+      "source_bytes": 411950,
+      "source_sha256": "8e3feae978466ccb29f8156dea8bf93427d30c40974f368d0dc55f07eab8ea24",
+      "metadata_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/strip_r1111.json",
+      "metadata_sha256": "b5068cfeee8387d4cb282928df440bb54f1fdd1a5b0e1a74909fd9b5aad47f12"
+    }
+  ],
+  "summary": {
+    "benchmark_version": "large_sky_development_benchmark_v1",
+    "pilot_id": "development_pilot_7be256713067f1030f10",
+    "grid_id": "sky_grid_446c747dcc7dde21be4f",
+    "field_id": "sky_field_0000",
+    "experiment_partition": "development",
+    "ra_deg": 248.5273239423,
+    "dec_deg": -17.3296128764,
+    "galactic_latitude_deg": 20.0802583591,
+    "ecliptic_latitude_deg": 4.5929534815,
+    "field_radius_deg": 0.8,
+    "usable_area_square_deg": 2.0105866335,
+    "measured_source_count": 84025,
+    "retrieved_source_count": 84025,
+    "selected_source_count": 1393,
+    "all_source_density_per_square_deg": 41791.2854893407,
+    "selected_source_density_per_square_deg": 692.8326175144,
+    "planned_node_count": 51,
+    "final_strip_count": 26,
+    "maximum_leaf_source_count": 4982,
+    "combined_source_identifier_sha256": "742afe5852db59fc21c9871ac6c1d35092934f2cf8b941ba401aa94e2eabf408",
+    "checkpoint_source_bytes": 17369345,
+    "combined_dataframe_memory_bytes": 17372171,
+    "plan_seconds": 87.0863377498,
+    "retrieval_seconds": 43.7251597079,
+    "selector_seconds": 2.1612006251,
+    "total_seconds": 133.3576773331
+  },
+  "outputs": [
+    {
+      "path": "data/results/background/large_sky_development_benchmark_plan_v1.csv",
+      "sha256": "1ae86a6a78888c45477800652c25b9b1a82089756ced070511f7f554cfd771c1"
+    },
+    {
+      "path": "data/results/background/large_sky_development_benchmark_summary_v1.csv",
+      "sha256": "9e333c5f89bbd984fda2d976d7bb978aa63e07cd0fa0b9110f7fdf1a385ceffc"
+    }
+  ],
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "check_count": 18,
+  "passed_count": 18,
+  "checks": {
+    "frozen_benchmark_field_queried": true,
+    "benchmark_is_development_only": true,
+    "no_validation_field_in_plan_or_output": true,
+    "adaptive_split_required": true,
+    "every_leaf_within_five_thousand_rows": true,
+    "leaf_counts_conserve_root_count": true,
+    "retrieved_count_matches_measured_count": true,
+    "combined_source_identifiers_unique": true,
+    "all_raw_columns_and_selector_outputs_present": true,
+    "all_selector_probabilities_finite": true,
+    "all_rows_use_frozen_selector_version": true,
+    "controlled_first_pass_retrieved_at_most_one_new_strip": true,
+    "resumed_run_complete": true,
+    "all_checkpoints_valid_after_resume": true,
+    "external_checkpoint_directory_outside_repository": true,
+    "no_selector_prefilter_in_archive_query": true,
+    "selected_count_matches_saved_decisions": true,
+    "input_pilot_passed_all_checks": true
+  }
+}

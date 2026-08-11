@@ -1,0 +1,50 @@
+{
+  "pilot_version": "large_sky_development_pilot_fields_v1",
+  "pilot_id": "development_pilot_7be256713067f1030f10",
+  "generated_at_utc": "2026-07-18T17:08:53.501163+00:00",
+  "status": "development_field_identities_frozen_before_gaia_retrieval",
+  "selection_contract": "grid_positions_and_stable_hashes_only_no_gaia_counts_no_selector_outputs",
+  "input": {
+    "path": "data/results/background/large_sky_field_grid_v1.csv",
+    "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d",
+    "grid_id": "sky_grid_446c747dcc7dde21be4f"
+  },
+  "benchmark_rule": "smallest_absolute_galactic_latitude_then_field_id",
+  "coverage_rule": "benchmark_plus_one_development_field_per_hemisphere_latitude_band_then_stable_hash_supplements_for_missing_ecliptic_bands",
+  "pilot_field_count": 12,
+  "benchmark_field_id": "sky_field_0000",
+  "pilot_field_ids": [
+    "sky_field_0000",
+    "sky_field_0067",
+    "sky_field_0126",
+    "sky_field_0151",
+    "sky_field_0220",
+    "sky_field_0275",
+    "sky_field_0299",
+    "sky_field_0302",
+    "sky_field_0357",
+    "sky_field_0429",
+    "sky_field_0432",
+    "sky_field_0483"
+  ],
+  "held_back_validation_field_count": 102,
+  "held_back_validation_field_ids_sha256": "774608a887941added4a89680ead927e009035e2786f740c3fe657e422909d4c",
+  "output": {
+    "path": "data/results/background/large_sky_development_pilot_fields_v1.csv",
+    "sha256": "067e95eaffa0230b6e4f0c1c1311284e15e70d0b2dc7bc160edecf63b0b18212"
+  },
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "twelve_development_fields": true,
+    "pilot_field_identifiers_unique": true,
+    "all_pilot_fields_are_development": true,
+    "no_validation_field_selected": true,
+    "one_benchmark_field": true,
+    "benchmark_is_minimum_absolute_latitude_development_field": true,
+    "all_hemisphere_latitude_bands_represented": true,
+    "all_ecliptic_latitude_bands_represented": true,
+    "both_environment_flag_states_represented": true,
+    "selection_uses_no_gaia_counts_or_selector_outputs": true
+  }
+}

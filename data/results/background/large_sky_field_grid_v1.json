@@ -1,0 +1,116 @@
+{
+  "grid_version": "large_sky_field_grid_v1",
+  "grid_id": "sky_grid_446c747dcc7dde21be4f",
+  "generated_at_utc": "2026-07-18T16:53:31.527194+00:00",
+  "status": "count_blind_field_identities_and_partition_frozen",
+  "plain_language_definition": {
+    "fixed_sky_grid": "A reproducible set of sky positions used to measure how the frozen selector behaves away from target-centered measurements.",
+    "sky_block": "A broad fixed part of the sky used only to keep nearby grid fields on the same side of development and validation.",
+    "development": "fields allowed for measuring and choosing the large-sky model",
+    "validation": "fields held back until the large-sky model is fixed",
+    "environment_flag": "A warning that a field overlaps a represented catalog group, association, or project-host center; it is not an automatic deletion or a settled halo boundary."
+  },
+  "selection_contract": "deterministic_spherical_geometry_and_catalog_environment_flags_only_no_gaia_counts",
+  "inputs": [
+    {
+      "path": "data/galaxy_sample/galaxy_sample_ranked.csv",
+      "sha256": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce"
+    },
+    {
+      "path": "data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv",
+      "sha256": "12d805fba60a23fd126f3c737109a339cf9973ebac5639ecc0ce3d1b6c462f93"
+    },
+    {
+      "path": "data/literature/sources/kourkchi_tully_2017_groups.json",
+      "sha256": "82e8403cf590c7434287291bc2a822efc4807babbe00c62ab6127568eb64dc6c"
+    }
+  ],
+  "field_generation": {
+    "field_count": 500,
+    "field_count_per_hemisphere": 250,
+    "minimum_absolute_galactic_latitude_deg": 20.0,
+    "maximum_absolute_galactic_latitude_deg_measured": 87.06027595310552,
+    "minimum_absolute_galactic_latitude_deg_measured": 20.08025835913103,
+    "golden_angle_deg": 137.50776405003785,
+    "field_radius_deg": 0.8,
+    "exact_spherical_field_area_square_deg": 2.010586633460495,
+    "inherited_field_count_and_radius": true,
+    "field_count_is_not_a_new_power_calculation": true
+  },
+  "partition": {
+    "galactic_longitude_block_width_deg": 30.0,
+    "equal_area_latitude_band_edges_deg": [
+      20.0,
+      28.269283578244956,
+      37.24410496696652,
+      47.460216190070014,
+      60.27370369260021,
+      90.0
+    ],
+    "ecliptic_latitude_diagnostic_band_edges_deg": [
+      0.0,
+      15.0,
+      30.0,
+      45.0,
+      60.0,
+      75.0,
+      90.0
+    ],
+    "base_validation_blocks_per_hemisphere_latitude_band": 2,
+    "hemisphere_latitude_bands_with_third_validation_block": 5,
+    "field_counts": {
+      "development": 398,
+      "validation": 102
+    },
+    "sky_block_counts": {
+      "development": 95,
+      "validation": 25
+    },
+    "validation_selector_results_must_remain_unopened": true
+  },
+  "spatial_separation": {
+    "minimum_distinct_field_center_separation_deg": 6.429655591118685,
+    "minimum_development_to_validation_center_separation_deg": 6.429655591118686,
+    "required_non_overlap_center_separation_deg": 1.6
+  },
+  "environment_sensitivity_flags": {
+    "represented_group_count": 996,
+    "represented_association_count": 136,
+    "group_radius": "two_times_catalog_second_turnaround_radius",
+    "association_radius": "one_catalog_first_turnaround_radius",
+    "universal_halo_exclusion_approved": false,
+    "field_counts": {
+      "one_or_more_count_blind_environment_flags": 304,
+      "no_represented_environment_intersection": 196
+    },
+    "fields_intersecting_represented_group_circle": 142,
+    "fields_intersecting_represented_association_circle": 283,
+    "fields_containing_project_host_center": 47,
+    "flags_are_sensitivity_labels_not_field_rejections": true
+  },
+  "scientific_background_approval": false,
+  "output": {
+    "path": "data/results/background/large_sky_field_grid_v1.csv",
+    "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+  },
+  "check_count": 16,
+  "passed_count": 16,
+  "checks": {
+    "five_hundred_fields": true,
+    "two_hundred_fifty_fields_per_hemisphere": true,
+    "field_identifiers_unique": true,
+    "all_fields_in_declared_latitude_domain": true,
+    "all_fields_have_exact_spherical_area": true,
+    "development_and_validation_both_nonempty": true,
+    "every_sky_block_stays_in_one_partition": true,
+    "twenty_five_balanced_validation_sky_blocks": true,
+    "both_partitions_cover_both_hemispheres": true,
+    "both_partitions_cover_all_equal_area_latitude_bands": true,
+    "both_partitions_cover_all_ecliptic_latitude_bands": true,
+    "field_circles_do_not_overlap": true,
+    "cross_partition_field_circles_do_not_overlap": true,
+    "environment_intersections_are_flags_not_exclusions": true,
+    "no_gaia_count_or_selector_columns_used": true,
+    "input_host_and_environment_rows_preserved": true
+  }
+}

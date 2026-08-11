@@ -1,0 +1,59 @@
+{
+  "audit_version": "kourkchi_tully_environment_audit_v1",
+  "audit_status": "unique_5arcsec_associations_accepted_ambiguities_preserved",
+  "host_count": 2155,
+  "catalog_member_count": 15004,
+  "catalog_group_count": 8826,
+  "catalog_association_count": 885,
+  "nearest_separation_tier_counts": {
+    "1": 1185,
+    "3": 1713,
+    "5": 1794,
+    "10": 1857,
+    "30": 1889,
+    "60": 1893
+  },
+  "nearest_separation_arcsec": {
+    "minimum": 0.014722297157825064,
+    "median": 0.8521044360909137,
+    "maximum": 22505.353511822144
+  },
+  "proposed_role_counts_within_5_arcsec": {
+    "catalog_group_member": 884,
+    "catalog_group_principal": 325,
+    "catalog_isolated_principal": 585
+  },
+  "identity_diagnostics_within_5_arcsec": {
+    "normalized_name_agreement_count": 1147,
+    "distinct_catalog_pgc_count": 1794,
+    "rows_sharing_catalog_pgc_count": 0,
+    "shared_catalog_pgc_count": 0,
+    "fractional_distance_difference_median": 0.0209030348251232,
+    "fractional_distance_difference_90th_percentile": 0.10644367259898838,
+    "fractional_distance_difference_over_0_5_count": 5
+  },
+  "association_state_counts": {
+    "accepted_unique_spherical_5arcsec_v1": 1792,
+    "manual_ambiguous_multiple_within_5arcsec": 2,
+    "unmatched_beyond_5_arcsec": 361
+  },
+  "shifted_control_calibration": {
+    "offset_deg": 1,
+    "position_angle_step_deg": 45,
+    "shifted_position_count": 17240,
+    "match_radius_arcsec": 5,
+    "match_counts_by_position_angle_deg": {
+      "0": 0,
+      "45": 0,
+      "90": 0,
+      "135": 0,
+      "180": 0,
+      "225": 0,
+      "270": 0,
+      "315": 0
+    },
+    "total_match_count": 0
+  },
+  "output": "/Users/shuang/Dropbox/work/project/bubbletea/data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv",
+  "next_gate": "audit ambiguous and unmatched hosts; do not infer environment for them"
+}

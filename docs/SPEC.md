@@ -99,6 +99,282 @@ Every background method must account for the following constraints:
 - Control regions must be checked for other nearby galaxies whose compact-system
   populations or halos could contaminate the inferred background.
 
+The project lead approved the BT-005 method hierarchy on 2026-07-18. Matched
+off-target apertures are the primary background estimator. A valid host-centered
+annulus outside the buffered halo exclusion radius and a stratified large-field
+model are robustness methods. Unresolved group or cluster membership blocks an
+inferential background assignment but does not block a clearly labeled exploratory
+radial profile. The first geometry fixture may use a conservative K-luminosity-based
+upper `R200c` proxy for isolated centrals; scientific inference still requires
+verified environment information and a versioned proxy with propagated scatter.
+
+Candidate comparison fields must also be evaluated using quantities measured
+before the UCD selector is applied. These include total Gaia source density, local
+Gaia depth, source observation counts, ecliptic latitude, usable area, and query
+completion. Galactic latitude remains a separate indicator of Milky Way foreground
+density. A bounded NGC 4698 test on 2026-07-18 showed that three equal patches at
+exactly the same Galactic latitude still differed in total Gaia source density and
+average observation counts. This test does not set a matching tolerance; tolerances
+must be calibrated on declared development fields and checked on spatially separate
+validation fields without choosing values that maximize a host overdensity.
+
+Total Gaia source density near a target is not a pure observing-condition variable:
+it may include the real galaxy, group, or cluster population being measured. It may
+be used as a crowding diagnostic, but it must not become a rigid target-to-control
+matching requirement that can reject a genuine host overdensity. Any predictive
+calibration using total density must be learned on comparison fields away from
+target galaxies and tested on spatially separate comparison fields before it is
+applied to host measurements.
+
+The first bounded off-target experiment freezes eight existing 0.1-degree
+diagnostic circles before any frozen-selector result is calculated. NGC 4698 and
+NGC 1316 supply four development circles; ESO 006-G001 and M60 supply four held-back
+validation circles. East and west circles from one host remain together. Each
+partition contains one isolated catalog case, one grouped case, one positive
+Galactic latitude, and one negative latitude. The closest development-to-validation
+centers are 11.949376 degrees apart. This assignment uses host roles and geometry
+only; it does not read Gaia counts or selector outputs.
+
+These fields remain diagnostic and are not approved scientific backgrounds. Their
+purpose is to test the canonical-selector experiment and the separation between
+method development and held-back checking. They are too small to establish final
+survey-wide matching tolerances or a Galactic-latitude limit.
+
+The first development-only selector run retrieves all 19 frozen inputs for the four
+development circles and applies `point_source_logistic_model_v1` locally. It returns
+413 Gaia sources, of which 44 pass the frozen threshold, over 0.125664 square degree
+of usable area. Field-level passing counts are 18, 8, 12, and 6. Passing the selector
+means only that a source is retained as a search candidate; it does not confirm a
+UCD. All 18 safeguards pass, and none of the four held-back field identifiers
+appears in a selector query or output.
+
+Existing pre-selector observing-condition measurements do not violate the holdback.
+For this experiment, “held back” means that selector probabilities, decisions, and
+passing-source counts remain unopened until the development procedure is fixed.
+
+The development summary procedure is now fixed. It retains all four fields
+separately, combines east and west only within the same host system, and keeps one
+all-development row for descriptive count and area auditing only. Every row reports
+68% and 95% exact central Poisson ranges for random small-count variation. A
+Poisson range does not include real field-to-field differences, correlated sources,
+observing-condition changes, or selector uncertainty and therefore is not the final
+background uncertainty. The selector threshold remains unchanged, validation
+fields remain absent, and all 16 checks pass.
+
+The four held-back fields were opened once on 2026-07-19 under those unchanged
+rules. They contain 1,233 Gaia sources, of which 52 pass, over 0.125664 square
+degree. The descriptive combined validation density is 413.802957 per square
+degree, 1.181818 times the development value. It lies outside the development 68%
+counting-only range but inside its 95% range. Individual-field and related-host-
+pair density ranges overlap between the two partitions. All 24 safeguards pass,
+including unchanged development files. These comparisons are descriptive rather
+than pass/fail gates: the eight small diagnostic circles do not approve a
+scientific background, set matching tolerances, or establish a survey-wide model.
+
+The larger sky-calibration design replaces the inherited unseeded random
+coordinates with 500 deterministic field centers. It places 250 centers in each
+Galactic hemisphere over the existing host-sample domain `|b| >= 20` degrees. The
+centers are uniform in spherical area within that domain and spread in Galactic
+longitude using a fixed golden-angle sequence. This preserves the scope of the
+inherited 500-field experiment while making every coordinate reproducible.
+
+Each diagnostic field retains the inherited 0.8-degree radius. Its exact spherical
+area, 2.010586633 square degrees, must be used rather than either 2.0 square degrees
+or the planar-circle approximation. This radius belongs only to the large-sky
+calibration and does not define the real galaxy aperture or radial profile.
+
+The grid is divided into broad sky blocks using 30-degree Galactic-longitude bands
+and five equal-sky-area absolute-Galactic-latitude bands. Every field in one block
+must remain in the same experiment partition. A stable hash assigns whole blocks
+to development or held-back validation without reading Gaia counts, selector
+probabilities, or passing-source densities. Both partitions must cover both
+Galactic hemispheres, all five latitude bands, and all fixed absolute-ecliptic-
+latitude diagnostic bands. Each hemisphere/latitude combination contributes two
+validation blocks, and five of the ten combinations contribute a third; stable
+hashes choose the blocks and the five combinations. Ecliptic latitude is a
+position-based proxy for Gaia's scan pattern; actual Gaia observation counts and
+completeness indicators are measured later using development fields only.
+
+Intersections with represented Kourkchi-Tully `2 R2t` group circles, represented
+`R1t` association circles, and project-host centers are retained as count-blind
+sensitivity flags. They do not delete a field, establish a universal halo radius,
+or approve the field as a scientific background. The full 500-field grid remains
+diagnostic until the frozen selector, pre-selector field conditions, environment-
+flag sensitivity, and held-back predictive performance have been evaluated.
+
+Before any large-grid Gaia query, freeze a development-only retrieval pilot. The
+single performance benchmark is the development field with the smallest absolute
+Galactic latitude, with `field_id` breaking an exact tie. This is expected to be a
+demanding sky position from geometry alone; no Gaia count is used to choose it.
+
+The small retrieval pilot contains that benchmark plus one stable-hash-selected
+development field from every other combination of Galactic hemisphere and
+equal-area Galactic-latitude band. Add the lowest-hash development field from any
+fixed absolute-ecliptic-latitude band still absent. The resulting field identities
+must be written before the benchmark query. All held-back validation field
+identifiers remain forbidden from count queries, retrieval plans, checkpoints,
+selector outputs, and summaries.
+
+Raw 19-column Gaia checkpoints for 0.8-degree fields are large products and must be
+stored under the configured external-data directory, never in the repository. The
+benchmark and pilot use the validated 5,000-row adaptive strip limit, save measured
+plans before retrieval, verify checkpoint hashes and row counts, resume completed
+strips without downloading them again, and apply the frozen selector locally.
+Repository artifacts contain only the frozen field list, strip plans, compact
+field summaries, and provenance manifests.
+
+The single-field benchmark and 12-field development pilot completed on 2026-07-19.
+The benchmark contains 84,025 Gaia sources in 26 final strips; its largest strip
+has 4,982 rows, and all 18 safeguards pass. The full pilot contains 275,404 Gaia
+sources, of which 11,583 pass the frozen selector, over 24.127040 square degrees.
+Its 83 final strips occupy 56,764,898 CSV bytes in external checkpoint storage, and
+all nine aggregate safeguards pass. Individual passing-source densities span
+239.233660–708.748370 per square degree. This positional-coverage pilot does not
+fit the final model or authorize opening any of the 102 validation fields.
+
+Before scaling beyond the 12-field pilot, freeze the large-sky model comparison.
+The response is the number of sources passing the frozen selector divided by exact
+usable area; usable area supplies the statistical weight. Failed or incomplete
+fields retain explicit failure records and do not enter a fitted model as zero.
+
+Compare, in increasing complexity: a constant-rate baseline; an absolute-Galactic-
+latitude spline; a position model adding Galactic hemisphere, Galactic-longitude
+sine and cosine, and an absolute-ecliptic-latitude spline; a Gaia-condition model
+adding log total Gaia density, `M10`, mean visibility periods, mean matched
+transits, and frozen-domain G-magnitude distribution summaries; and one nonlinear
+Poisson-loss tree benchmark using the same inputs. An environment-flag term is a
+sensitivity comparison only and cannot make a field scientific background or
+delete it.
+
+Development evaluation keeps every broad sky block intact. Five outer grouped
+folds measure prediction on unseen development blocks. Within each outer training
+set, four inner grouped folds choose only regularization or other declared model
+settings. The primary score is mean Poisson deviance; secondary scores are median
+absolute log-density error, root-mean-square log-density error, systematic residual
+by sky band, and empirical prediction-range coverage. Select the simplest model
+whose fold-to-fold uncertainty is within one standard error of the best primary
+score. Freeze the fitted development model, preprocessing, uncertainty procedure,
+and evaluation code before one final use of the 102 held-back fields.
+
+The 12-field pre-selector measurement and comparison freeze completed on
+2026-07-19. Total Gaia source density, mean visibility periods, mean matched
+transits, and M10 all span measurable ranges; all 12 measurement safeguards pass.
+Contract `model_contract_8da80ba5e4bd6d3027e6` freezes six comparisons and the
+grouped evaluation with all 13 safeguards passing. No model is fitted, no held-back
+selector result is opened, and no field is scientifically approved.
+
+The fixed field-level G-magnitude summaries were subsequently derived from the 12
+verified raw checkpoint sets with all nine safeguards passing and no archive
+query. The development continuation defaults to zero new remote fields, uses a
+count-blind fixed order, keeps per-field raw checkpoints and receipts outside the
+repository, and refuses validation identifiers. One bounded live continuation
+field and one zero-query restart pass all ten field and 14 run safeguards. Thirteen
+of 398 development fields are complete; the 102 validation fields remain unopened.
+
+Bounded continuation runs subsequently completed all 398 development fields. Their
+verified aggregate contains 8,001,113 Gaia sources, 403,920 passing sources, 2,356
+final strips, and 800.213480 square degrees. Each archive request has a 180-second
+ceiling and each complete field attempt has a 300-second ceiling. Failed or
+interrupted attempts keep permanent external receipts and are never represented as
+zero. Previously failed fields are deferred unless an explicit retry is requested,
+so they cannot block untouched development fields.
+
+Adaptive planning progress is written after every completed count measurement and
+must pass query-hash and geometry checks before reuse. This rule allowed the dense
+final field to resume safely across bounded attempts rather than repeat its plan.
+All 17 run safeguards pass, a zero-work rerun verified all external records, and
+the 102 validation fields remain unopened. Model fitting may now use the 398
+development summaries under the already frozen comparison contract; it must not
+open validation results.
+
+The development comparison sorts fields by identifier before creating deterministic
+grouped folds. It predicts the passing-source rate and weights each field by its
+exact usable area; this is the rate-form equivalent of fitting the count with area
+as exposure. Smooth latitude terms, numeric scaling, and every other learned data
+transformation are fitted only on the current training fields. Each outer test fold
+contains whole sky blocks that are absent from its training data. Inside that
+training data, four grouped folds choose the declared setting with the lowest mean
+area-weighted Poisson deviance. The final development setting is chosen in the same
+way using all development blocks, after predictive comparison is complete.
+
+The primary comparison reports the mean of the five outer-fold Poisson deviances.
+Its uncertainty is the sample standard deviation across those five values divided
+by the square root of five. The one-standard-error threshold is the best eligible
+model's mean plus that uncertainty; the first eligible model in the frozen
+complexity order below the threshold is selected. Prediction ranges use the frozen
+central 68% and 95% quantiles of grouped out-of-fold log observed-to-predicted rate
+ratios. Environment-flag results and a separate fit that omits flagged development
+fields are sensitivity checks only. Neither can select the main model, delete a
+field, or open held-back results.
+
+The completed development comparison selects the sky-position-plus-Gaia-conditions
+regression with three spline knots and `alpha = 0.1`. Its mean outer-fold Poisson
+deviance is 320.728231 with standard error 304.597873; no simpler eligible model is
+inside the resulting 625.326104 one-standard-error threshold. The frozen central
+68% observed-to-predicted multiplier range is 0.857580--1.174204, and the central
+95% range is 0.684657--1.374214.
+
+`sky_field_0317` must remain an explicit applicability warning. Its held-out
+observed rate is 37,714.863283 passing sources per square degree versus a
+3,265.937783 prediction, and it dominates one outer-fold score. It retains its
+count-blind environment flag and remains in the primary development comparison.
+The unflagged-only result is a sensitivity check and cannot replace the selected
+model. The fitted model, preprocessing, settings, prediction ranges, and this
+warning are frozen before any held-back selector result is opened.
+
+The large-sky fitted model is a diagnostic interpolation only, not the primary
+background measurement. For each real host, report both the directly measured
+density in a valid outer annulus and a distribution of densities measured in
+comparable random fields. Report their numerical difference and ratio without
+forcing either measurement to agree with the other. The outer annulus remains
+unavailable until its physical radial boundary and central exclusion have been
+calibrated; a missing or invalid annulus is never converted to zero.
+
+Freeze and compare three direct random-field procedures using only the 398
+development fields. In increasing complexity, their comparison pools are:
+
+1. all training fields in the same one of five absolute-Galactic-latitude bands;
+2. training fields in the same latitude band and the same low, middle, or high
+   third of total Gaia source density, with the two dividing values learned from
+   that latitude band's training fields only; and
+3. the 20 training fields closest in absolute Galactic latitude and log total Gaia
+   source density after both quantities are centered and scaled using training
+   fields only.
+
+For every target field, preserve the comparison-field identifiers and measured
+passing-source densities. Report their median as the central reference, their
+arithmetic mean, and their central 68% and 95% measured ranges. These ranges describe
+real field-to-field variation and are not model confidence intervals. Testing keeps
+whole sky blocks out of the comparison pool. The primary score is the median
+absolute log difference between a held-out field's measured density and its
+comparison-pool median, summarized across five sky-block folds. Select the simplest
+procedure within one standard error of the lowest score. Also report root-mean-
+square log error, range coverage, comparison-pool size, and the behavior of the
+extreme flagged field.
+
+The random-field procedure applies only inside the measured domain
+`|b| >= 20 degrees`. A target outside that domain, or without enough valid
+comparison fields, receives an explicit unavailable state. Total Gaia source
+density is allowed only as a coarse comparison property; it must not become a
+source cut or a reason to force a host field to match controls exactly. The 102
+held-back validation fields remain unopened on this branch. Their one-time
+retrieval and evaluation begin only after this direct procedure is frozen on a new
+branch.
+
+The completed direct comparison selects the five-band absolute-Galactic-latitude
+procedure. Its mean fold median absolute log-density error is 0.165714, and its
+overall typical absolute error is a factor of 1.181874. The central 68% and 95%
+comparison-pool ranges contain 65.5779% and 90.9548% of held-out development
+fields. The more detailed Gaia-density and nearest-field procedures have nearly
+identical typical errors, use smaller pools, and have lower range coverage; they are
+not selected.
+
+For `sky_field_0317`, the selected direct procedure returns 58 comparison fields
+with median density 390.433313 and central 95% range 177.323869--659.384668 per
+square degree. The measured field density is 37,714.863283 per square degree, a
+factor of 96.597452 above the median. Preserve this explicit out-of-range result;
+do not stretch the general reference distribution to absorb it.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density
@@ -582,15 +858,24 @@ imputation.
 
 ## Signal Aperture and Central Exclusion
 
-During the exploratory stage, the search should retain a series of annular
-measurements rather than reduce each host immediately to one signal aperture. The
-annular profiles will be used to calibrate a final host-scaled definition.
+The real host measurement must use a series of concentric circular annuli: rings
+centered on the galaxy that divide projected radius into successive intervals. It
+must retain the count, usable area, and selected-source density in every ring rather
+than reduce each host immediately to one fixed circular count. Physical-kpc profiles
+and host-size-normalized profiles must both be retained. The annular profiles will
+be used to calibrate a final host-scaled definition.
+
+The small 0.1-degree-radius circles used in the 2026-07-18 Gaia archive benchmarks
+are query-speed and field-condition diagnostics only. They do not define the real
+host measurement radius, radial bins, inner exclusion, or background geometry.
 
 The intended final signal region may take the form `[M, N] x R50`, with `M` and `N`
-determined from validated behavior rather than assumed now. The analysis should
-also exclude an inner region representing the main body of the galaxy, where
-galaxy substructure, compact star-forming regions, and source-extraction artifacts
-can dominate.
+determined from validated behavior rather than assumed now. The analysis must
+exclude an inner circular region representing the main body of the galaxy from UCD
+inference. Galaxy substructure, compact star-forming regions, H II regions, and
+source-extraction artifacts can dominate there. Sources and measurements inside
+this region may be retained as contamination diagnostics, but they must not
+contribute to the inferred UCD radial excess.
 
 - When a measured, consistent-band `R50` is available, it should anchor the inner
   exclusion and host-normalized annuli.
@@ -606,6 +891,85 @@ Using observed target excesses to choose `M`, `N`, or the inner limit can introd
 confirmation and look-elsewhere bias. The final definition must therefore be
 calibrated on declared reference or development data and validated separately, or
 the radial scan must be treated as exploratory with its trial factors included.
+
+The first count-blind geometry audit retains a recombinable exploratory physical
+view with edges at 0, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 300, and
+600 kpc. These edges preserve prior pilot and morphology-diagnostic resolution and
+are not the final signal or background definition. Continuous angular and physical
+source separations must be stored so the view can be changed without a new Gaia
+query. The current 2,155-host catalog has no `R50` field, so no normalized central
+boundary can yet be assigned reproducibly.
+
+At 600 kpc, the audited angular radius exceeds two degrees for 1,018 hosts and
+reaches 13.064418 degrees. The real retrieval therefore cannot use the inherited
+two-degree cap. It must use complete tiled or equivalent queries with explicit
+requested, retrieved, masked, and usable areas. Detailed calibration requirements
+are maintained in `docs/radial_measurement_design.md`.
+
+The approved retrieval building block partitions one exact circular query into
+non-overlapping declination ranges. Each subquery retains the original circle
+predicate; half-open shared boundaries assign every source to exactly one range.
+A bounded 0.2-degree NGC 4698 validation retrieved the same 500 unique Gaia source
+identifiers as one complete query and four subqueries, with all nine checks passing.
+Production ranges must be split according to measured row counts, checkpointed,
+and validated for count equality and source-identifier uniqueness before use.
+
+The restartable implementation writes each completed range and its metadata
+atomically, verifies the archive-query hash, expected and retrieved row counts,
+source-file hash, and source-identifier uniqueness, and skips only valid saved
+ranges. A bounded controlled-stop test split 500 entries into six final ranges,
+reused two verified saved ranges after restart, and replaced one deliberately
+damaged range while leaving five intact ranges unchanged. All 15 checks pass. The
+test's 130-row threshold is not a production limit; that limit must be measured with
+the full frozen-selector input columns before a real host retrieval.
+
+Every radial-ring output uses a five-area contract. Requested area is the full
+spherical ring. Successfully queried area is the part covered by verified completed
+retrieval strips. Missing area is the requested part without completed retrieval.
+Masked area is the union of explicitly unusable regions inside successfully queried
+area, with overlaps counted once. Usable area is successfully queried area minus
+masked area and is the only allowed density denominator. A central scientific
+exclusion changes a ring's inference role but is not a missing-coverage mask.
+
+For Gaia radial measurements, do not apply bright-star, dust, or ancillary-imaging
+masks. Retain the masked-area field as zero for a stable output schema, and define
+Gaia usable area to equal successfully queried area. An incomplete or failed Gaia
+retrieval remains explicit missing area. Crowding, observation counts, and dust may
+be retained as diagnostics or model inputs, but they do not remove Gaia sky area.
+
+The bounded area validation intersects spherical rings, declination strips, and
+circular masks without a flat-sky approximation. Three completed performance-test
+fields reproduce their analytic requested areas; a controlled partial retrieval
+retains positive missing area, and two overlapping synthetic masks are subtracted
+only once. The Gaia-specific complete and partial cases apply no external masks and
+require usable area to equal successfully queried area. All 18 checks pass.
+Synthetic masks validate only the generic spherical intersection code and cannot
+be used in a Gaia scientific measurement.
+
+Every processed galaxy must receive a permanent per-galaxy analysis receipt. The
+receipt records the galaxy identity, run configuration fingerprint, retrieval and
+failure status, completed strip identifiers, source counts and identifier
+fingerprints, radial-ring areas, and plain-language failures. An identical rerun may
+reuse an identical receipt. Changed content must never replace an existing receipt;
+a changed configuration or input creates a new run identifier and receipt path.
+
+The bounded receipt validation writes three completed performance-field receipts
+under one run identifier and one controlled partial M60 receipt under a separate
+identifier. The partial receipt preserves one missing strip and positive missing
+area. A deliberate changed-content write is rejected, and all 18 checks pass. These
+are performance-test receipts, not approved physical search apertures.
+
+The first full-column benchmark retrieves all 19 frozen-selector inputs and passes
+all ten checks through 10,000 rows. Three repeated 5,000-row queries return identical
+source identifiers in 1.948628--1.976649 seconds and serialize to 1,027,468 bytes
+each. Set 5,000 rows as the provisional development checkpoint limit because it is
+directly repeated and is half the largest successful test. This is not an archive
+maximum. The follow-up full-column restart validation measures 2,991, 6,497, and
+13,010 rows in three fields, producing one, two, and four strips. Every combined
+identifier set matches an independent complete-circle query and all 13 checks pass.
+Freeze 5,000 rows as the maximum per saved strip for development and pilot runs
+under the current 19-column contract. Record actual bytes per strip; a changed
+column contract, archive, or Gaia release requires a new benchmark.
 
 ## Galactic-Latitude Eligibility
 
@@ -633,13 +997,17 @@ be tuned to increase the number of detected host excesses.
 
 ## Groups and Clusters
 
-The first-stage overdensity analysis should ignore environment as a selection or
-methodological distinction. Galaxies in groups and clusters should initially be
-processed with the same host-centered Gaia procedure as isolated galaxies.
+The first-stage overdensity analysis does not use environment to select a different
+Gaia selector or host-centered measurement procedure. Galaxies in groups and
+clusters are processed through the same source retrieval, selector, radial-profile,
+and control-candidate workflow as isolated galaxies.
 
 Within 50 Mpc, the prominent groups and clusters are few and well known. They
 should be flagged so they can be isolated for dedicated analysis later, without
-removing them from the first-stage measurements.
+removing them from the first-stage measurements. Under the BT-005 decision approved
+on 2026-07-18, unresolved environment status is a background-quality failure state:
+the exploratory measurements are preserved, but no field-background-subtracted
+inferential excess is assigned until the containing halo exclusion is known.
 
 Dense environments require explicit comparison of local and global background
 definitions. A local estimate may contain a real intragroup or intracluster compact

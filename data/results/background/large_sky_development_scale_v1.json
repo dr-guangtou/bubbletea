@@ -1,0 +1,89 @@
+{
+  "scale_version": "large_sky_development_scale_v1",
+  "generated_at_utc": "2026-07-19T03:32:36.140588+00:00",
+  "status": "complete_development_measurement",
+  "plain_language_scope": "Only development fields are processed. Each completed field keeps verified raw checkpoints and a receipt outside the repository, so later runs skip it.",
+  "grid_id": "sky_grid_446c747dcc7dde21be4f",
+  "selector_version": "point_source_logistic_model_v1",
+  "maximum_rows_per_strip": 5000,
+  "processing_order_rule": "sha256_of_scale_version_colon_field_id",
+  "default_maximum_new_fields": 0,
+  "archive_query_timeout_seconds": 180,
+  "field_attempt_timeout_seconds": 300,
+  "requested_maximum_new_fields_this_run": 0,
+  "retry_failed_fields_this_run": false,
+  "deferred_failure_field_ids": [],
+  "attempted_field_ids_this_run": [],
+  "newly_completed_field_ids_this_run": [],
+  "failed_field_attempts_this_run": [],
+  "run_interrupted": false,
+  "completed_development_field_count": 398,
+  "remaining_development_field_count": 0,
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "invalid_external_receipt_field_ids": [],
+  "elapsed_seconds_this_run": 0.02517199981957674,
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.json",
+      "sha256": "ab72d846d0fe812702ae5fe8d2eb394fe8dcfd1e5cb30e513dc68351ee300ae3"
+    },
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.csv",
+      "sha256": "067e95eaffa0230b6e4f0c1c1311284e15e70d0b2dc7bc160edecf63b0b18212"
+    },
+    {
+      "path": "data/results/background/large_sky_development_retrieval_summary_v1.csv",
+      "sha256": "cf08408d74a8d3db6a087ba4d74d337002114d61477b48e1a8e8d1688bac1672"
+    },
+    {
+      "path": "data/results/background/large_sky_development_field_conditions_v1.csv",
+      "sha256": "beb7da112b4e5cdfd663b75c4ab2615aef8b8ff5c7a3ce4e33544bc5bc052490"
+    },
+    {
+      "path": "data/results/background/large_sky_development_g_magnitude_summaries_v1.csv",
+      "sha256": "7242b66e9cd68e9c94df624b13a3333aeb44ff8ac7f583eadf05cec2eb3b428f"
+    },
+    {
+      "path": "data/results/background/gaia_full_selector_retrieval_benchmark_v1.json",
+      "sha256": "188180ea9649601919851d43a1f610199e09cf760a8edeae33d7cfd77ed7c864"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    }
+  ],
+  "output": {
+    "path": "data/results/background/large_sky_development_scale_summary_v1.csv",
+    "sha256": "670e59ae0ef8179fa83cb8d61b8ec968b427d44827d91dd1860d125e9e996760"
+  },
+  "check_count": 17,
+  "passed_count": 17,
+  "checks": {
+    "exactly_three_hundred_ninety_eight_development_fields_declared": true,
+    "all_summarized_fields_are_development": true,
+    "no_validation_field_summarized_or_queried": true,
+    "twelve_verified_pilot_fields_imported": true,
+    "field_identifiers_unique": true,
+    "processing_order_unique": true,
+    "all_counts_nonnegative": true,
+    "selected_counts_do_not_exceed_retrieved_counts": true,
+    "all_model_inputs_finite": true,
+    "no_invalid_external_receipt_used": true,
+    "maximum_new_field_attempt_limit_respected": true,
+    "all_attempted_fields_are_development": true,
+    "all_failed_attempts_preserved": true,
+    "previous_failures_deferred_unless_retry_requested": true,
+    "no_model_fitted": true,
+    "validation_selector_results_remain_unopened": true,
+    "no_field_scientifically_approved": true
+  }
+}

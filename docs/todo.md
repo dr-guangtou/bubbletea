@@ -396,6 +396,64 @@ Phase-specific execution tasks remain in `docs/plans/`.
   workflow must fail explicitly when required area is missing rather than
   reporting zero background.
   Depends on: BT-001, BT-002.
+  Progress, 2026-07-18: Audited the inherited Phase III random fields, Phase IV
+  annulus, and frozen legacy method. Drafted `docs/background_control_design.md`
+  with paired off-target controls, a halo-excluded local annulus, and a stratified
+  large-field diagnostic. Implementation awaits project-lead decisions on method
+  hierarchy, unresolved environments, and the first `R200c` proxy.
+  Decision, 2026-07-18: Project lead approved paired off-target apertures as the
+  primary estimator, with a valid halo-excluded local annulus and a stratified
+  large-field model as robustness methods. Unresolved group or cluster membership
+  blocks inference but not exploratory profiles. A conservative K-luminosity upper
+  `R200c` proxy is permitted only for isolated centrals in the geometry fixture.
+  Geometry validation, 2026-07-18: The five-case synthetic fixture generates 20
+  count-blind symmetric candidates; 11 are accepted and 9 rejected. All nine checks
+  pass, including constant Galactic latitude, removal of the two-degree cap,
+  environment blocking, neighbor-halo rejection, and preservation of alternatives.
+  Query-partition validation, 2026-07-18: A bounded 0.2-degree NGC 4698 test
+  retrieved exactly 500 unique Gaia identifiers both as one complete circle and as
+  four non-overlapping horizontal sky strips containing 82, 154, 149, and 115 rows.
+  All nine geometry, boundary, exact-membership, and selector-independence checks
+  pass in 12.96 seconds. Adaptive row-count splitting and resumable production
+  retrieval remain pending.
+  Environment audit, 2026-07-18: Staged Kourkchi-Tully 2017 externally and audited
+  all 2,155 hosts. A shift-calibrated 5-arcsec rule accepts 1,792 unique associations,
+  preserves 2 multiple-catalog ambiguities, and leaves 361 unmatched; all ten
+  provenance and identity validations pass.
+  Halo-scale audit, 2026-07-18: Among 883 accepted group members, `1.5 R2t`,
+  `2 R2t`, and `3 R2t` enclose 91.73%, 97.73%, and 99.77%, respectively. One
+  association `R1t` encloses 86.41% of 832 usable members. These internally coupled
+  catalog tests do not justify one universal exclusion factor; no factor is frozen.
+  Field-condition benchmark, 2026-07-18: Selected five real review hosts without
+  Gaia source counts, then queried one target and two equal comparison patches at
+  exactly the same Galactic latitude without applying the UCD selector. The patches
+  contain 121, 100, and 122 Gaia sources in the allowed magnitude range and differ
+  in average observation counts; all six data-contract checks pass in 11.19 seconds.
+  This bounded result justifies measuring Gaia field conditions but does not freeze
+  a matching tolerance.
+  Five-host expansion, 2026-07-18: Measured 13 frozen target and provisional
+  comparison patches without applying the selector; all nine checks pass in 46.93
+  seconds. Arp 244 has a target measurement but no invented comparison because its
+  environment remains unresolved. M60 has 289 total Gaia sources in its target
+  patch versus 59 and 130 in diagnostic patches, showing that total target-field
+  density can contain real host or group populations and must not become a rigid
+  matching rule.
+  Large-sky pilot conditions, 2026-07-19: Measured total pre-selector Gaia source
+  density, M10, mean visibility periods, and mean matched transits in the 12 frozen
+  development pilot fields. The compact source retrieval agrees exactly with the
+  existing full-column counts, all 12 safeguards pass in 66.501269 seconds, and all
+  102 validation fields remain unopened.
+  Model-comparison freeze, 2026-07-19: Frozen five eligible candidate models of
+  increasing complexity, one environment-flag sensitivity comparison, whole-sky-
+  block prediction tests, internal setting selection, scores, and the simple-model
+  preference as `model_contract_8da80ba5e4bd6d3027e6`. All 13 safeguards pass; no
+  model is fitted and no field is scientifically approved.
+  Radial-area component, 2026-07-18: Defined requested, successfully queried,
+  missing, masked, and usable spherical area for each ring. Verified completed
+  strips reproduce the requested area, interrupted retrieval retains positive
+  missing area, and overlapping synthetic masks are subtracted once. The approved
+  Gaia path applies no bright-star, dust, or ancillary-imaging masks, so Gaia usable
+  area equals successfully queried area. All 18 checks pass in 0.216274 seconds.
 
 - [ ] **BT-006 - Replace the pilot significance diagnostic with a validated
   statistical model.**
@@ -489,6 +547,18 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Resolution criteria: Declare development and validation data; calibrate `M`,
   `N`, and the inner limit with uncertainty; test sensitivity to the `R50` band and
   estimation method; and account for radial-scan trial factors.
+  Clarification, 2026-07-18: The 0.1-degree circles used for Gaia archive benchmarks
+  are query diagnostics only and must not define real host measurements. Real host
+  measurements use concentric circular annuli and retain physical-kpc and
+  host-size-normalized radial profiles. A separately calibrated inner region is
+  excluded from UCD inference because galaxy substructure, compact star-forming
+  regions, and H II regions can dominate it.
+  Geometry audit, 2026-07-18: All 2,155 hosts have positive distances but the table
+  has no `R50` field. A provisional 600 kpc diagnostic radius exceeds two degrees
+  for 1,018 hosts and reaches 13.064418 degrees, so the inherited angular cap is
+  invalid. Defined a recombinable exploratory physical-ring view while requiring
+  continuous source radii, exact usable areas, and later `R50`-based calibration;
+  all seven count-blind checks pass.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**
@@ -511,12 +581,125 @@ Phase-specific execution tasks remain in `docs/plans/`.
   selection.**
   Evidence: Phase III omits the Phase IV proper-motion filter and color score. Its
   density model is therefore not calibrated to the pilot selector. It also divides
-  by 2.0 square degrees instead of the measured 2.010619 square degrees for a
-  0.8-degree-radius circle.
+  by 2.0 square degrees instead of the exact spherical area of 2.010586633 square
+  degrees for a 0.8-degree-radius circle. The previously cited 2.010619 value is
+  the flat-circle approximation.
   Resolution criteria: Background and pilot use BT-002, exact usable areas are
   recorded, failures are preserved, and the latitude model includes uncertainty
   and a stated applicability domain.
   Depends on: BT-002.
+  Preparation, 2026-07-18: The bounded three-patch field-condition benchmark used
+  only pre-selector quantities and passed all six checks. The canonical-selector
+  random-field experiment and spatially separate validation fields remain pending.
+  Five-host preparation, 2026-07-18: Thirteen pre-selector field measurements
+  confirm that exact Galactic-latitude matching does not ensure identical Gaia
+  coverage. Calibration must use off-target development fields and spatially
+  separate validation fields so target-associated sources cannot tune the rule.
+  Frozen field split, 2026-07-18: Assigned the NGC 4698 and NGC 1316 east/west
+  circles to development and held the ESO 006-G001 and M60 east/west circles for
+  validation. Both fields from one host remain together; each partition contains
+  isolated/grouped and positive/negative-latitude cases. The assignment reads no
+  Gaia counts or selector outputs, promotes no field to scientific-background
+  status, and passes all 14 checks. This is a bounded diagnostic split, not a final
+  survey-wide validation set.
+  Development selector run, 2026-07-18: Retrieved all 19 frozen inputs for only the
+  four development circles and applied `point_source_logistic_model_v1` locally.
+  Among 413 Gaia sources, 44 pass the threshold over 0.125664 square degree; the
+  four field counts are 18, 8, 12, and 6. All 18 checks pass. No held-back field was
+  queried or written to selector outputs. These passing sources are candidates, not
+  confirmed UCDs, and the small experiment does not set a final background model.
+  Frozen development summary, 2026-07-18: Preserved four field rows, combined
+  east/west only within each of the two host systems, and retained one
+  all-development row for descriptive auditing. Added exact 68% and 95% ranges for
+  random small-count variation while documenting that they exclude real
+  field-to-field and observing-condition differences. Counts and areas are
+  conserved, the selector threshold is unchanged, validation fields remain absent,
+  and all 16 checks pass.
+  Held-back validation, 2026-07-19: Opened exactly the four frozen validation
+  circles after fixing the procedure. Among 1,233 Gaia sources, 52 pass over
+  0.125664 square degree, for a descriptive density of 413.802957 per square
+  degree versus 350.140964 in development. The combined value is outside the
+  development 68% counting-only range but inside its 95% range; field and host-pair
+  density ranges overlap. All 24 safeguards pass. No selector or summary setting
+  changed, no development artifact changed, and no diagnostic circle is approved
+  as a scientific background. A larger off-target sample remains necessary for
+  the final latitude-dependent model and applicability range.
+  Fixed large-sky grid, 2026-07-19: Replaced the inherited unseeded random
+  coordinates with 500 reproducible, equal-sky-area positions over `|b| >= 20`
+  degrees. Broad sky blocks keep nearby fields together, producing 398 development
+  and 102 held-back fields while covering both hemispheres and every declared
+  Galactic- and ecliptic-latitude band. The minimum center separation is 6.429656
+  degrees. Known group, association, and project-host intersections are retained
+  as count-blind sensitivity flags rather than exclusions. All 16 checks pass; no
+  Gaia count or selector output was read, and no field is approved as a scientific
+  background.
+  Development retrieval pilot, 2026-07-19: Before querying any 0.8-degree grid
+  field, froze `sky_field_0000` as the position-only low-latitude performance
+  benchmark and selected one development representative from every hemisphere ×
+  equal-area Galactic-latitude band. Two stable-hash supplements complete the six
+  ecliptic-latitude bands, producing 12 development fields. All ten checks pass and
+  all 102 validation identifiers remain absent.
+  Development retrieval benchmark and pilot, 2026-07-19: The position-only
+  `sky_field_0000` benchmark measured 84,025 Gaia sources in 26 final strips; the
+  largest has 4,982 rows, controlled stop/resume succeeded, and all 18 checks pass.
+  The full 12-field pilot measured 275,404 Gaia sources and 11,583 passing
+  candidates over 24.127040 square degrees. Its passing densities span
+  239.233660–708.748370 per square degree. All nine aggregate checks pass, raw
+  checkpoints remain outside the repository, and all 102 validation fields remain
+  unopened.
+  Development continuation, 2026-07-19: Calculated the fixed 10th-percentile,
+  median, and 90th-percentile G-magnitude summaries from the 12 verified external
+  checkpoints without an archive query; all nine checks pass. A resumable
+  development-only continuation then processed `sky_field_0167` as one bounded
+  live test, raising completed coverage to 13 of 398 fields. Its 9,095 sources use
+  two verified strips, 540 pass the selector, and all ten field and 14 run checks
+  pass. A zero-query restart verified the receipt and started no new field. All 102
+  validation fields remain unopened.
+  Bounded scale-up, 2026-07-19: Increased measured development coverage to 65 of
+  398 fields. The latest 25-field batch retrieved 402,986 Gaia sources in 118
+  strips, selected 18,730, and wrote 83,087,504 checkpoint bytes in 647.913666
+  seconds. A repeated archive stall for `sky_field_0317` motivated measured
+  180-second per-request and 300-second whole-field ceilings, attempt-based batch
+  limits, permanent nonzero failure receipts, and default deferral until an
+  explicit retry. All 17 run safeguards pass and validation remains unopened.
+  Continued scale-up, 2026-07-19: A subsequent 50-field batch completed without
+  failure, retrieving 664,824 sources in 200 strips, selecting 36,993, and writing
+  136,550,316 checkpoint bytes in 1,102.252987 seconds. Overall development
+  coverage is 115 of 398 fields; 283 remain and validation is unopened.
+  Continued scale-up, 2026-07-19: A bounded 100-field batch completed without
+  failure, retrieving 1,751,980 sources in 505 strips, selecting 85,551, and
+  writing 361,142,579 checkpoint bytes in 2,736.647886 seconds. Overall development
+  coverage is 215 of 398 fields; 182 untouched fields and one deferred failure
+  remain, while validation stays unopened.
+  Completed development measurement, 2026-07-19: Bounded continuation runs now
+  cover all 398 development fields over 800.213480 square degrees. The verified
+  aggregate contains 8,001,113 Gaia sources, 403,920 passing sources, and 2,356
+  final strips. The dense final field resumed both its saved planning counts and
+  386 source strips across bounded attempts. All 17 safeguards pass, a zero-work
+  rerun verified every external record in 0.025172 seconds, and all 102 validation
+  fields remain unopened. The next step is the already frozen six-model comparison
+  on development data only.
+  Development model comparison, 2026-07-19: Compared all six predeclared methods
+  with whole sky blocks held together and selected the regression combining sky
+  position with measured Gaia conditions. Its final setting uses three spline knots
+  and `alpha = 0.1`; all 22 safeguards pass. The flagged `sky_field_0317` dominates
+  one test fold and remains an explicit applicability warning rather than being
+  deleted. The fitted model and residual ranges are frozen, while all 102 validation
+  selector results remain unopened pending review.
+  Direct background revision, 2026-08-11: Froze three procedures before comparing
+  outcomes and selected the simplest: use all measured development fields in the
+  same broad absolute-Galactic-latitude band. Its typical held-out density error is
+  a factor of 1.182; the measured 68% and 95% ranges cover 65.6% and 91.0% of
+  development fields. All 17 safeguards pass with no archive query. The fitted
+  model is diagnostic only, and all 102 large-sky validation fields remain unopened
+  for a fresh branch.
+  Review, 2026-08-11: The direct comparison preserves every comparison-field
+  identifier and measured density, reports both central values and measured ranges,
+  and keeps `sky_field_0317` as an explicit out-of-range result. The latitude-band
+  procedure is preferred because all three methods have nearly identical typical
+  development error, while the simplest method uses larger comparison pools and
+  has better measured-range coverage. The 102 reserved fields were not queried or
+  inspected; their one-time test belongs on a new branch.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.
@@ -526,6 +709,38 @@ Phase-specific execution tasks remain in `docs/plans/`.
   failures, timestamps, and an immutable run identifier. Aggregation includes only
   products from the selected run and can resume safely.
   Depends on: BT-002, BT-005.
+  Retrieval-component progress, 2026-07-18: A bounded Gaia test measured and split
+  500 entries into six final strips, stopped after two atomic checkpoints, resumed
+  by skipping those two and retrieving four, then detected and replaced one
+  deliberately damaged strip without changing five valid strips. The combined 500
+  identifiers match the independent reference exactly and all 15 checks pass in
+  21.68 seconds. Production row limits, full run identifiers, failure policy, and
+  host-level aggregation remain pending.
+  Full-column benchmark, 2026-07-18: Retrieved all 19 classifier inputs from 100
+  through 10,000 rows. Three 5,000-row runs returned identical identifiers in
+  1.948628--1.976649 seconds and serialized to 1,027,468 bytes; all ten checks pass
+  in 17.719464 seconds. Approved 5,000 rows as a provisional development checkpoint
+  limit, pending multi-field and full-column restart validation. This is not an
+  archive maximum.
+  Multi-field full-column validation, 2026-07-18: The first equal-radius test was
+  retained as failed because only the 13,010-row field split. After expanding only
+  the M60 performance circle, the accepted test measured 2,991, 6,497, and 13,010
+  rows and produced one, two, and four strips. Both split cases resumed from one
+  verified checkpoint; every combined identifier hash matches an independent
+  reference and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows per strip
+  for development and pilot runs under the current 19-column contract.
+  Radial-area integration, 2026-07-18: Verified strip-completion states now produce
+  per-ring requested, successfully queried, missing, masked, and usable areas.
+  Complete, partial, and overlapping-mask fixtures pass all 18 checks. The Gaia
+  path applies no external imaging masks and requires usable area to equal verified
+  queried area. At this stage, permanent run identifiers had not yet been added.
+  Per-galaxy receipt component, 2026-07-18: Three completed performance fields now
+  share one configuration-derived run identifier and retain separate permanent
+  receipts. A controlled partial M60 receipt uses a separate identifier, preserves
+  positive missing area, and records its incomplete retrieval in plain language.
+  Identical writes are reused, different content cannot overwrite an existing
+  receipt, and all 18 checks pass in 0.014978 seconds. Real host aggregation still
+  depends on declaring the physical ring request and central scientific exclusion.
 
 - [ ] **BT-011 - Build a host-aware master candidate catalog.**
   Evidence: The current 18 candidate files contain 18,552 rows but only 17,995
@@ -644,6 +859,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   global background sensitivity; and define any later membership analysis without
   selecting the background that maximizes excess.
   Depends on: BT-001.
+  Clarification, 2026-07-18: The approved BT-005 environment gate does not change
+  the selector or host-centered procedure and does not remove dense-environment
+  hosts. It preserves their exploratory measurements but withholds an inferential
+  field-background subtraction until the containing halo exclusion is known.
 
 - [ ] **BT-020 - Complete the mandatory host-property table.**
   Evidence: Luminosity, consistently measured `R50`, and morphology are required

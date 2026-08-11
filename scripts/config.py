@@ -97,6 +97,209 @@ GAIA_QUERIES_DIR = DATA_DIR / "gaia_queries"
 
 RESULTS_DIR = DATA_DIR / "results"
 BACKGROUND_RESULTS_DIR = RESULTS_DIR / "background"
+BACKGROUND_CONTROL_GEOMETRY_FIXTURE = (
+    BACKGROUND_RESULTS_DIR / "background_control_geometry_fixture_v1.csv"
+)
+BACKGROUND_CONTROL_GEOMETRY_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "background_control_geometry_validation_v1.json"
+)
+BACKGROUND_REVIEW_HOSTS = BACKGROUND_RESULTS_DIR / "background_review_hosts_v1.csv"
+BACKGROUND_REVIEW_HOSTS_MANIFEST = BACKGROUND_RESULTS_DIR / "background_review_hosts_v1.json"
+BACKGROUND_FIELD_CONDITIONS_BENCHMARK = (
+    BACKGROUND_RESULTS_DIR / "background_field_conditions_benchmark_v1.csv"
+)
+BACKGROUND_FIELD_CONDITIONS_BENCHMARK_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_field_conditions_benchmark_v1.json"
+)
+BACKGROUND_REVIEW_FIELD_POSITIONS = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_positions_v1.csv"
+)
+BACKGROUND_REVIEW_FIELD_POSITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_positions_v1.json"
+)
+BACKGROUND_REVIEW_FIELD_CONDITIONS = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_conditions_v1.csv"
+)
+BACKGROUND_REVIEW_FIELD_CONDITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "background_review_field_conditions_v1.json"
+)
+RADIAL_MEASUREMENT_GEOMETRY_AUDIT = (
+    BACKGROUND_RESULTS_DIR / "radial_measurement_geometry_audit_v1.csv"
+)
+RADIAL_MEASUREMENT_GEOMETRY_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "radial_measurement_geometry_audit_v1.json"
+)
+GAIA_QUERY_PARTITION_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_query_partition_sources_v1.csv"
+GAIA_QUERY_PARTITION_STRIPS = BACKGROUND_RESULTS_DIR / "gaia_query_partition_strips_v1.csv"
+GAIA_QUERY_PARTITION_VALIDATION = BACKGROUND_RESULTS_DIR / "gaia_query_partition_validation_v1.json"
+GAIA_ADAPTIVE_RETRIEVAL_SOURCES = BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_sources_v1.csv"
+GAIA_ADAPTIVE_RETRIEVAL_PLAN = BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_plan_v1.csv"
+GAIA_ADAPTIVE_RETRIEVAL_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "gaia_adaptive_retrieval_validation_v1.json"
+)
+GAIA_RESUMABLE_PLANNING_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "gaia_resumable_planning_validation_v1.json"
+)
+GAIA_FULL_SELECTOR_RETRIEVAL_BENCHMARK = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_selector_retrieval_benchmark_v1.csv"
+)
+GAIA_FULL_SELECTOR_RETRIEVAL_BENCHMARK_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_selector_retrieval_benchmark_v1.json"
+)
+GAIA_FULL_COLUMN_MULTIFIELD_RETRIEVAL = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_retrieval_v1.csv"
+)
+GAIA_FULL_COLUMN_MULTIFIELD_PLAN = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_plan_v1.csv"
+)
+GAIA_FULL_COLUMN_MULTIFIELD_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "gaia_full_column_multifield_validation_v1.json"
+)
+RADIAL_RING_AREA_ACCOUNTING = (
+    BACKGROUND_RESULTS_DIR / "radial_ring_area_accounting_validation_v1.csv"
+)
+RADIAL_RING_AREA_ACCOUNTING_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "radial_ring_area_accounting_validation_v1.json"
+)
+HOST_RUN_RECORDS_DIR = BACKGROUND_RESULTS_DIR / "host_run_records_v1"
+HOST_RUN_RECORD_INDEX = BACKGROUND_RESULTS_DIR / "host_run_record_index_v1.csv"
+HOST_RUN_RECORD_VALIDATION = BACKGROUND_RESULTS_DIR / "host_run_record_validation_v1.json"
+OFF_TARGET_FIELD_SPLIT = BACKGROUND_RESULTS_DIR / "off_target_field_split_v1.csv"
+OFF_TARGET_FIELD_SPLIT_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_field_split_v1.json"
+OFF_TARGET_DEVELOPMENT_SOURCES = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_selector_sources_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_selector_summary_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_development_selector_v1.json"
+OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_frozen_summary_v1.csv"
+)
+OFF_TARGET_DEVELOPMENT_FROZEN_SUMMARY_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "off_target_development_frozen_summary_v1.json"
+)
+OFF_TARGET_VALIDATION_SOURCES = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_selector_sources_v1.csv"
+)
+OFF_TARGET_VALIDATION_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_selector_summary_v1.csv"
+)
+OFF_TARGET_VALIDATION_FROZEN_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "off_target_validation_frozen_summary_v1.csv"
+)
+OFF_TARGET_VALIDATION_MANIFEST = BACKGROUND_RESULTS_DIR / "off_target_validation_selector_v1.json"
+LARGE_SKY_FIELD_GRID = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.csv"
+LARGE_SKY_FIELD_GRID_MANIFEST = BACKGROUND_RESULTS_DIR / "large_sky_field_grid_v1.json"
+LARGE_SKY_DEVELOPMENT_PILOT_FIELDS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_pilot_fields_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_PILOT_FIELDS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_pilot_fields_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_PLAN = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_plan_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_BENCHMARK_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_benchmark_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_RETRIEVAL_PLAN = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_retrieval_plan_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_RETRIEVAL_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_retrieval_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_RETRIEVAL_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_retrieval_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_field_conditions_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_FIELD_CONDITIONS_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_field_conditions_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_G_MAGNITUDE_SUMMARIES = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_g_magnitude_summaries_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_G_MAGNITUDE_SUMMARIES_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_g_magnitude_summaries_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_SCALE_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_scale_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_SCALE_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_scale_v1.json"
+)
+LARGE_SKY_MODEL_COMPARISON_CONTRACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_model_comparison_contract_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_summary_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_FOLD_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_fold_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_PREDICTIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_predictions_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_TUNING_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_tuning_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_ENVIRONMENT_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_environment_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_BAND_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_band_results_v1.csv"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_ARTIFACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_v1.joblib"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_comparison_v1.json"
+)
+LARGE_SKY_DEVELOPMENT_MODEL_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "large_sky_development_model_validation_v1.json"
+)
+LARGE_SKY_DIRECT_BACKGROUND_CONTRACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_contract_v1.json"
+)
+LARGE_SKY_DIRECT_BACKGROUND_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_summary_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_FOLD_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_fold_results_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_PREDICTIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_predictions_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_REFERENCE = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_reference_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_comparison_v1.json"
+)
+LARGE_SKY_DIRECT_BACKGROUND_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_validation_v1.json"
+)
+KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
+    GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
+)
+KOURKCHI_TULLY_ENVIRONMENT_AUDIT = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_environment_audit_v1.json"
+)
+KOURKCHI_TULLY_ENVIRONMENT_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_environment_validation_v1.json"
+)
+KOURKCHI_TULLY_HALO_EXCLUSION_ANALYSIS = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_halo_exclusion_analysis_v1.json"
+)
+KOURKCHI_TULLY_HALO_EXCLUSION_OUTLIERS = (
+    BACKGROUND_RESULTS_DIR / "kourkchi_tully_halo_exclusion_outliers_v1.csv"
+)
+KOURKCHI_TULLY_2017_PROVENANCE = LITERATURE_SOURCES / "kourkchi_tully_2017_groups.json"
 RADIAL_SEARCH_RESULTS_DIR = RESULTS_DIR / "radial_search"
 CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 
@@ -108,8 +311,14 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 # Falls back to data/external/ if not set.
 # ---------------------------------------------------------------------------
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
+LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
+ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"
+KOURKCHI_TULLY_2017_DIR = ENVIRONMENT_REFERENCE_DIR / "kourkchi2017"
+KOURKCHI_TULLY_2017_MEMBERS = KOURKCHI_TULLY_2017_DIR / "table3.dat.gz"
+KOURKCHI_TULLY_2017_GROUPS = KOURKCHI_TULLY_2017_DIR / "table2.dat.gz"
+KOURKCHI_TULLY_2017_ASSOCIATIONS = KOURKCHI_TULLY_2017_DIR / "table4.dat"
 EXTRAGALACTIC_REFERENCE_SOURCES = LITERATURE_SOURCES / "extragalactic_reference_catalogs.json"
 EXTRAGALACTIC_REFERENCE_AUDIT = LITERATURE_VALIDATION / "extragalactic_reference_catalog_audit.json"
 GAIA_MORPHOLOGY_HOST_FIELD_SOURCES = (

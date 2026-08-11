@@ -1,0 +1,24 @@
+{
+  "validation_version": "large_sky_direct_background_validation_v1",
+  "generated_at_utc": "2026-08-11T13:48:47.019296+00:00",
+  "plain_language_result": "The synthetic test selected measured comparison pools for 300 fields while keeping every held-out sky block separate and preserving every pool member.",
+  "synthetic_field_count": 300,
+  "synthetic_sky_block_count": 30,
+  "archive_queries_executed": 0,
+  "real_field_measurements_read": false,
+  "elapsed_seconds": 0.6658818330033682,
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "three_procedures_match_frozen_order": true,
+    "each_procedure_predicts_all_300_fields": true,
+    "five_folds_recorded_per_procedure": true,
+    "held_out_blocks_never_enter_comparison_pools": true,
+    "nearest_procedure_uses_exactly_twenty_fields": true,
+    "all_pools_exceed_frozen_minimum": true,
+    "pool_identifiers_and_density_values_align": true,
+    "exactly_one_procedure_selected": true,
+    "no_real_field_measurement_read": true,
+    "no_archive_query_executed": true
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "comparison_version": "large_sky_direct_background_comparison_v1",
+  "generated_at_utc": "2026-08-11T13:48:49.837000+00:00",
+  "status": "direct_random_field_procedure_selected_validation_unopened",
+  "contract_id": "direct_background_contract_fcf4570e7d04075f5f78",
+  "plain_language_scope": "Three ways of selecting directly measured comparison fields were tested on 398 development fields. No fitted curve supplies the primary reference.",
+  "selected_procedure_id": "galactic_latitude_band",
+  "field_count": 398,
+  "sky_block_count": 95,
+  "extreme_flagged_field_result": {
+    "field_id": "sky_field_0317",
+    "observed_selected_source_density_per_square_deg": 37714.86328320402,
+    "comparison_density_median_per_square_deg": 390.4333128132397,
+    "comparison_density_68_lower_per_square_deg": 288.4730209320752,
+    "comparison_density_68_upper_per_square_deg": 477.35321822373874,
+    "comparison_density_95_lower_per_square_deg": 177.32386859966917,
+    "comparison_density_95_upper_per_square_deg": 659.3846681046526,
+    "comparison_pool_field_count": 58,
+    "inside_comparison_95_percent_range": false
+  },
+  "applicability": {
+    "minimum_absolute_galactic_latitude_deg": 20.0,
+    "minimum_comparison_field_count": 10,
+    "unavailable_not_zero": true,
+    "total_gaia_density_is_comparison_property_not_source_cut": true
+  },
+  "host_reporting_interface": {
+    "report_valid_outer_annulus_measurement": true,
+    "report_direct_random_field_distribution": true,
+    "report_annulus_minus_random_median": true,
+    "report_annulus_divided_by_random_median": true,
+    "force_agreement": false,
+    "outer_annulus_boundaries_already_calibrated": false
+  },
+  "fitted_model_role": "diagnostic_interpolation_only",
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "scientific_background_approval": false,
+  "archive_queries_executed": 0,
+  "elapsed_seconds": 1.4048090829965076,
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_direct_background_contract_v1.json",
+      "sha256": "8471ada1d81cdd690f88b31313cf6d0336cb2ca1d2b37839f47eff9e0b2d121b"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_summary_v1.csv",
+      "sha256": "670e59ae0ef8179fa83cb8d61b8ec968b427d44827d91dd1860d125e9e996760"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_v1.json",
+      "sha256": "fa227e06d91b826566926acd2b9990e5d13410924439bb9d8028853c244c6a58"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/results/background/large_sky_direct_background_summary_v1.csv",
+      "sha256": "e32b5307add25016fa67569608f0c5dc36c6b48e08703b558d8dc223d07647ab"
+    },
+    {
+      "path": "data/results/background/large_sky_direct_background_fold_results_v1.csv",
+      "sha256": "6dbd168f09200648c17b274b18ee89bc3b81cd71fb22f67dff301f3eff526cc2"
+    },
+    {
+      "path": "data/results/background/large_sky_direct_background_predictions_v1.csv",
+      "sha256": "46ae481a2888f45a5ef6ae5d586cb1f84ac6df745bd58763f889115dda6202ad"
+    },
+    {
+      "path": "data/results/background/large_sky_direct_background_reference_v1.csv",
+      "sha256": "6d4f31e100e4716f881f25df094658d20725a5519823965cfbafc202c88818b2"
+    }
+  ],
+  "check_count": 17,
+  "passed_count": 17,
+  "checks": {
+    "frozen_contract_identifier_matches": true,
+    "frozen_contract_passed_all_checks": true,
+    "complete_measurements_passed_all_checks": true,
+    "all_three_procedures_evaluated": true,
+    "each_procedure_predicts_all_398_fields_once": true,
+    "no_held_out_sky_block_enters_its_comparison_pool": true,
+    "no_validation_field_used": true,
+    "all_comparison_pools_meet_minimum_size": true,
+    "all_measured_ranges_ordered": true,
+    "exactly_one_direct_procedure_selected": true,
+    "selected_procedure_satisfies_one_standard_error_rule": true,
+    "reference_preserves_398_selected_procedure_distributions": true,
+    "extreme_flagged_field_preserved": true,
+    "fitted_model_remains_diagnostic_only": true,
+    "validation_results_remain_unopened": true,
+    "no_field_scientifically_approved": true,
+    "no_archive_query_executed": true
+  }
+}

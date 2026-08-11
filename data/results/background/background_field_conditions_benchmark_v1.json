@@ -1,0 +1,36 @@
+{
+  "benchmark_version": "background_field_conditions_benchmark_v1",
+  "benchmark_scope": "one_target_two_comparisons_test_only_no_ucd_selector",
+  "generated_at_utc": "2026-07-18T08:25:08.375962+00:00",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "input": {
+    "path": "data/results/background/background_review_hosts_v1.csv",
+    "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+  },
+  "test_inputs": {
+    "patch_radius_deg": 0.1,
+    "group_radius_multiplier": 2.0,
+    "center_separation_multiplier": 1.2,
+    "minimum_g_magnitude": 11.26291847229004,
+    "maximum_g_magnitude": 21.75798797607422
+  },
+  "host_name": "NGC 4698",
+  "field_count": 3,
+  "total_elapsed_seconds": 11.193563082953915,
+  "check_count": 6,
+  "passed_count": 6,
+  "checks": {
+    "three_test_fields": true,
+    "same_galactic_latitude": true,
+    "low_transit_retrieval_complete": true,
+    "observation_counts_complete": true,
+    "positive_usable_area": true,
+    "no_selector_output_used": true
+  }
+}

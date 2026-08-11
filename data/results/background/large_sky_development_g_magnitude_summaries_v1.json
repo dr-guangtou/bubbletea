@@ -1,0 +1,138 @@
+{
+  "summary_version": "large_sky_development_g_magnitude_summaries_v1",
+  "generated_at_utc": "2026-07-18T23:12:52.370298+00:00",
+  "scope": "twelve_completed_development_fields_local_checkpoint_calculation",
+  "plain_language_definition": "For each field, sort the already downloaded Gaia G magnitudes and record the values below 10 percent, 50 percent, and 90 percent of sources.",
+  "quantile_method": "pandas_linear_interpolation",
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "archive_queries_executed": 0,
+  "field_count": 12,
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "elapsed_seconds": 1.4164420829620212,
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_development_pilot_fields_v1.csv",
+      "sha256": "067e95eaffa0230b6e4f0c1c1311284e15e70d0b2dc7bc160edecf63b0b18212"
+    },
+    {
+      "path": "data/results/background/large_sky_development_retrieval_summary_v1.csv",
+      "sha256": "cf08408d74a8d3db6a087ba4d74d337002114d61477b48e1a8e8d1688bac1672"
+    },
+    {
+      "path": "data/results/background/large_sky_development_retrieval_v1.json",
+      "sha256": "50ab0e6e696e248b627e4da882cd2427f7e4a851440d9daa843c0a1409274c04"
+    },
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    }
+  ],
+  "external_field_receipts": [
+    {
+      "field_id": "sky_field_0000",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/field_receipt.json",
+      "sha256": "04d12305c058943cd6d791ed0b7accbe7b542e341e3f400dc9089270b14e7a46",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0000/measured_plan.csv",
+      "measured_plan_sha256": "109aea2cf8a04d1a7e502f9627da075ee3819fe2acbf4f91793059703c661a90"
+    },
+    {
+      "field_id": "sky_field_0067",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0067/field_receipt.json",
+      "sha256": "af807167b00f69fdd3a83403bc87ddc8631a7aa186279df38cf7b2dbd4c43d1a",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0067/measured_plan.csv",
+      "measured_plan_sha256": "1f6d3017d76acfaa771004fb5023eaf18c4bc5dc8641f3441206ca7f51d013ce"
+    },
+    {
+      "field_id": "sky_field_0126",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0126/field_receipt.json",
+      "sha256": "5f9c533d62c0549fce8f7fb093ff3610bc0a4b37b671646a72fe47d6162729d2",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0126/measured_plan.csv",
+      "measured_plan_sha256": "f4871ddc7477ee74932ab265e01b439551006ee0c91c250b6f3883c8f8fa8b04"
+    },
+    {
+      "field_id": "sky_field_0151",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0151/field_receipt.json",
+      "sha256": "181dded4a65283bb5a91ff317b0f70b187c34f81289ddb82c4132bcf96d6d9f6",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0151/measured_plan.csv",
+      "measured_plan_sha256": "1977b4e8fe1315e90bd561368ea2b31f5e9b359a90e0749364ed544ba3679289"
+    },
+    {
+      "field_id": "sky_field_0220",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0220/field_receipt.json",
+      "sha256": "c24a4cd1ea93cffc1574b8c5534a24074299fbba70816ba4c810e845dc4ab0b9",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0220/measured_plan.csv",
+      "measured_plan_sha256": "90356b624add0634079eefc7663d5ca223982e8b83f79d7278b119813324cafa"
+    },
+    {
+      "field_id": "sky_field_0275",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0275/field_receipt.json",
+      "sha256": "2af8ae12677456f88c86e0b1ee7e59744fc9c00de049dfadee21c5ec6a0b99dd",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0275/measured_plan.csv",
+      "measured_plan_sha256": "68faa1e0c407eca60698b8da7c2ff10f5c2944ed478b4b687ecc42a50303da9f"
+    },
+    {
+      "field_id": "sky_field_0299",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0299/field_receipt.json",
+      "sha256": "ee292b5ab6775791e3571b6a922aaac87ac59b70d22f95018fccb8ac3b893770",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0299/measured_plan.csv",
+      "measured_plan_sha256": "2ae57819479308d544a5990a574a4003046683a3ae0cfacf92550b0102e607fc"
+    },
+    {
+      "field_id": "sky_field_0302",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0302/field_receipt.json",
+      "sha256": "71620bf2330bd1e005a4e87bffcc34e7c07c83754eb059ea2c072803c49dfb56",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0302/measured_plan.csv",
+      "measured_plan_sha256": "38ac5c3ff8aa143c4168c9592a86f02876ebeb6f78aa022cfd9b8099d1e08cac"
+    },
+    {
+      "field_id": "sky_field_0357",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0357/field_receipt.json",
+      "sha256": "9bc1f595953b9e7603b869b0b5f1403ba14140653a78749328addcaf7148f8a8",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0357/measured_plan.csv",
+      "measured_plan_sha256": "e69d8a5550ef39d8a3ce44329fb816d7267c02f5ba176ec304c2547c1a051883"
+    },
+    {
+      "field_id": "sky_field_0429",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0429/field_receipt.json",
+      "sha256": "2194a122e78363e71bdddd37e9e02494f8b668d34adcb0648f8c957994110f31",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0429/measured_plan.csv",
+      "measured_plan_sha256": "e12e8b008786e09aedcba1e9155a23d7a3d0b332b837bd507b8ad5b43864b379"
+    },
+    {
+      "field_id": "sky_field_0432",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0432/field_receipt.json",
+      "sha256": "0bd2618727f10e932cb4ca2ad28039d4121d859a18e29415acf8433ffcaa2545",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0432/measured_plan.csv",
+      "measured_plan_sha256": "9224ca76954d2bf0561f491e5ed2ea9e07df3460f91527a242a85a43eec36bd7"
+    },
+    {
+      "field_id": "sky_field_0483",
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0483/field_receipt.json",
+      "sha256": "94f307d34c281df10be90185eb9829c092f9177650a32f73a8eb23676fb02885",
+      "measured_plan_path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_large_sky_v1/sky_grid_446c747dcc7dde21be4f/development_pilot_7be256713067f1030f10/sky_field_0483/measured_plan.csv",
+      "measured_plan_sha256": "687c07fa71b81f864a76ccb829b1390d9afef79cf6436becb396aa76a65c3d87"
+    }
+  ],
+  "output": {
+    "path": "data/results/background/large_sky_development_g_magnitude_summaries_v1.csv",
+    "sha256": "7242b66e9cd68e9c94df624b13a3333aeb44ff8ac7f583eadf05cec2eb3b428f"
+  },
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "all_twelve_development_pilot_fields_summarized": true,
+    "no_validation_field_read": true,
+    "all_source_counts_match_retrieval": true,
+    "all_identifier_hashes_match_retrieval": true,
+    "all_g_magnitudes_present": true,
+    "all_summaries_finite": true,
+    "all_quantiles_ordered": true,
+    "retrieval_manifest_passed": true,
+    "no_archive_query_executed": true
+  }
+}

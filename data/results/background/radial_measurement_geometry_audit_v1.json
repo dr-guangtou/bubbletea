@@ -1,0 +1,54 @@
+{
+  "audit_version": "radial_measurement_geometry_audit_v1",
+  "generated_at_utc": "2026-07-18T09:21:13.370936+00:00",
+  "audit_scope": "count_blind_geometry_only_no_gaia_query",
+  "input": {
+    "path": "data/galaxy_sample/galaxy_sample_ranked.csv",
+    "sha256": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce"
+  },
+  "host_count": 2155,
+  "exploratory_physical_ring_edges_kpc": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    75,
+    100,
+    150,
+    200,
+    300,
+    600
+  ],
+  "ring_contract": {
+    "status": "recombinable_exploratory_view_not_final_signal_definition",
+    "continuous_source_radius_must_be_preserved": true,
+    "physical_kpc_profile_must_be_preserved": true,
+    "r50_normalized_profile_required_when_r50_available": true,
+    "central_exclusion_status": "not_calibrated"
+  },
+  "current_r50_columns": [],
+  "outer_600_kpc_angular_radius_deg": {
+    "minimum": 1.3748347805694052,
+    "median": 1.951085827544046,
+    "maximum": 13.064418017971123,
+    "host_count_above_2_deg": 1018,
+    "host_count_above_5_deg": 123,
+    "host_count_above_10_deg": 25
+  },
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "all_2155_hosts_present": true,
+    "all_distances_positive": true,
+    "angular_ring_edges_increase": true,
+    "no_fixed_two_degree_cap_applied": true,
+    "no_r50_field_currently_available": true,
+    "no_source_or_selector_counts_used": true,
+    "central_exclusion_not_assigned": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "contract_version": "large_sky_direct_background_contract_v1",
+  "contract_id": "direct_background_contract_fcf4570e7d04075f5f78",
+  "generated_at_utc": "2026-08-11T13:48:44.934002+00:00",
+  "status": "direct_procedures_frozen_before_outcome_comparison",
+  "procedures": [
+    {
+      "procedure_id": "galactic_latitude_band",
+      "complexity_rank": 1,
+      "plain_language_definition": "Use every available training field in the same one of five broad absolute-Galactic-latitude bands."
+    },
+    {
+      "procedure_id": "latitude_band_and_gaia_density_third",
+      "complexity_rank": 2,
+      "plain_language_definition": "Within the same latitude band, use training fields in the same low, middle, or high third of total Gaia source density.",
+      "density_division_rule": "training_band_tertiles"
+    },
+    {
+      "procedure_id": "twenty_nearest_latitude_and_gaia_density",
+      "complexity_rank": 3,
+      "plain_language_definition": "Use the 20 training fields closest in absolute Galactic latitude and log total Gaia source density after training-only standardization.",
+      "comparison_field_count": 20
+    }
+  ],
+  "response": {
+    "measured_density_column": "selected_source_density_per_square_deg",
+    "central_reference": "comparison_pool_median",
+    "additional_center": "comparison_pool_arithmetic_mean",
+    "central_quantile_probabilities": [
+      0.025,
+      0.16,
+      0.84,
+      0.975
+    ],
+    "preserve_comparison_field_identifiers": true
+  },
+  "evaluation": {
+    "group_column": "sky_block_id",
+    "grouped_fold_count": 5,
+    "primary_metric": "median_absolute_log_density_error_lower_is_better",
+    "selection_rule": "Choose the simplest procedure whose mean fold score is within one standard error of the lowest measured mean fold score.",
+    "secondary_metrics": [
+      "root_mean_square_log_density_error",
+      "empirical_68_percent_range_coverage",
+      "empirical_95_percent_range_coverage",
+      "comparison_pool_field_count",
+      "extreme_flagged_field_result"
+    ]
+  },
+  "applicability": {
+    "minimum_absolute_galactic_latitude_deg": 20.0,
+    "minimum_comparison_field_count": 10,
+    "unavailable_not_zero": true,
+    "total_gaia_density_is_comparison_property_not_source_cut": true
+  },
+  "host_reporting_interface": {
+    "report_valid_outer_annulus_measurement": true,
+    "report_direct_random_field_distribution": true,
+    "report_annulus_minus_random_median": true,
+    "report_annulus_divided_by_random_median": true,
+    "force_agreement": false,
+    "outer_annulus_boundaries_already_calibrated": false
+  },
+  "fitted_model_role": "diagnostic_interpolation_only",
+  "held_back_validation_use": "unopened_on_this_branch_new_branch_only",
+  "inputs": [
+    {
+      "path": "data/results/background/large_sky_field_grid_v1.csv",
+      "sha256": "276fe5012b82ba0a39d764315001bfb8b6204b0894f49ae68b67c4a61113fc7d"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_summary_v1.csv",
+      "sha256": "670e59ae0ef8179fa83cb8d61b8ec968b427d44827d91dd1860d125e9e996760"
+    },
+    {
+      "path": "data/results/background/large_sky_development_scale_v1.json",
+      "sha256": "fa227e06d91b826566926acd2b9990e5d13410924439bb9d8028853c244c6a58"
+    }
+  ],
+  "development_field_count": 398,
+  "held_back_validation_field_count": 102,
+  "validation_selector_results_opened": false,
+  "scientific_background_approval": false,
+  "check_count": 11,
+  "passed_count": 11,
+  "checks": {
+    "three_direct_procedures_declared": true,
+    "procedures_in_increasing_complexity": true,
+    "all_398_development_measurements_available": true,
+    "all_102_validation_fields_remain_absent": true,
+    "complete_measurement_manifest_passed": true,
+    "whole_sky_block_testing_declared": true,
+    "measured_distributions_preserved": true,
+    "outer_annulus_and_random_difference_required": true,
+    "fitted_model_is_diagnostic_only": true,
+    "validation_deferred_to_new_branch": true,
+    "no_field_scientifically_approved": true
+  }
+}

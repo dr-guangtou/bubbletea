@@ -1,0 +1,90 @@
+{
+  "validation_version": "gaia_full_column_multifield_validation_v1",
+  "generated_at_utc": "2026-07-18T10:25:52.901683+00:00",
+  "validation_scope": "three_field_full_column_adaptive_stop_and_resume",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "inputs": [
+    {
+      "path": "data/results/background/background_review_hosts_v1.csv",
+      "sha256": "f9999dbbdb964be20323e0e5c3edd8d9e307898808d01bb5a6508301dd0a9419"
+    },
+    {
+      "path": "data/results/background/gaia_full_selector_retrieval_benchmark_v1.json",
+      "sha256": "188180ea9649601919851d43a1f610199e09cf760a8edeae33d7cfd77ed7c864"
+    }
+  ],
+  "test_host_names": [
+    "NGC 4698",
+    "MESSIER 060",
+    "ESO 006- G 001"
+  ],
+  "test_radius_deg_by_host": {
+    "NGC 4698": 0.5,
+    "MESSIER 060": 0.75,
+    "ESO 006- G 001": 0.5
+  },
+  "preserved_initial_failed_test": {
+    "test_radius_deg_for_all_fields": 0.5,
+    "measured_rows_by_host": {
+      "NGC 4698": 2991,
+      "MESSIER 060": 3098,
+      "ESO 006- G 001": 13010
+    },
+    "split_field_count": 1,
+    "failed_requirement": "at_least_two_fields_required_splitting",
+    "disposition": "not_accepted_requirement_preserved"
+  },
+  "provisional_rows_per_strip": 5000,
+  "approved_rows_per_strip": 5000,
+  "approved_limit_scope": "development_and_pilot_current_19_column_contract",
+  "raw_selector_column_count": 19,
+  "raw_selector_columns": [
+    "source_id",
+    "ra",
+    "dec",
+    "phot_g_mean_mag",
+    "phot_bp_mean_mag",
+    "phot_rp_mean_mag",
+    "phot_bp_rp_excess_factor",
+    "astrometric_excess_noise",
+    "astrometric_excess_noise_sig",
+    "parallax",
+    "parallax_error",
+    "pmra",
+    "pmra_error",
+    "pmdec",
+    "pmdec_error",
+    "pmra_pmdec_corr",
+    "ruwe",
+    "ipd_frac_multi_peak",
+    "ipd_frac_odd_win"
+  ],
+  "selector_version": "point_source_logistic_model_v1",
+  "field_count": 3,
+  "total_available_rows": 22498,
+  "total_final_strip_count": 7,
+  "total_elapsed_seconds": 29.589340625097975,
+  "check_count": 13,
+  "passed_count": 13,
+  "checks": {
+    "three_predeclared_fields_measured": true,
+    "at_least_two_fields_required_splitting": true,
+    "at_least_one_field_required_no_split": true,
+    "every_leaf_within_provisional_limit": true,
+    "all_combined_counts_match_reference": true,
+    "all_combined_identifiers_unique": true,
+    "all_combined_identifier_hashes_match_reference": true,
+    "all_raw_selector_columns_present": true,
+    "all_selector_probabilities_finite": true,
+    "split_fields_stopped_after_first_checkpoint": true,
+    "split_fields_resumed_and_skipped_checkpoint": true,
+    "unsplit_fields_completed_in_first_pass": true,
+    "no_selector_prefilter_used": true
+  }
+}

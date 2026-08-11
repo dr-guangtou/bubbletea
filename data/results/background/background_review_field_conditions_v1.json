@@ -1,0 +1,31 @@
+{
+  "measurement_version": "background_review_field_conditions_v1",
+  "generated_at_utc": "2026-07-18T08:35:42.428238+00:00",
+  "measurement_scope": "five_hosts_pre_selector_diagnostic_only",
+  "data_source": {
+    "catalog_release": "Gaia DR3",
+    "table": "gaia_dr3.gaia_source",
+    "query_service": "https://datalab.noirlab.edu/tap",
+    "publication_bibcode": "2023A&A...674A...1G",
+    "publication_doi": "10.1051/0004-6361/202243940"
+  },
+  "input": {
+    "path": "data/results/background/background_review_field_positions_v1.csv",
+    "sha256": "e7edaca4a1ad2e5696b53720edf47c985fef4b6e992d256f540a4b551af57fb6"
+  },
+  "field_count": 13,
+  "total_elapsed_seconds": 46.93420520797372,
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "thirteen_fields_measured": true,
+    "five_hosts_measured": true,
+    "five_target_fields_measured": true,
+    "eight_comparison_fields_measured": true,
+    "low_transit_retrieval_complete": true,
+    "observation_counts_complete": true,
+    "positive_patch_area": true,
+    "no_selector_output_used": true,
+    "no_field_is_approved_scientific_background": true
+  }
+}

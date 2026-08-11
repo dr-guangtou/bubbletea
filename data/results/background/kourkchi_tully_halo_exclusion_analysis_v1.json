@@ -1,0 +1,48 @@
+{
+  "analysis_version": "kourkchi_tully_halo_exclusion_analysis_v1",
+  "analysis_status": "internal_catalog_consistency_only_safety_factor_not_frozen",
+  "accepted_host_count": 1792,
+  "accepted_group_member_count": 883,
+  "enclosure_by_r2t_factor": {
+    "1": {
+      "enclosed_count": 627,
+      "enclosed_fraction": 0.710079275198188,
+      "outside_count": 256
+    },
+    "1.25": {
+      "enclosed_count": 729,
+      "enclosed_fraction": 0.82559456398641,
+      "outside_count": 154
+    },
+    "1.5": {
+      "enclosed_count": 810,
+      "enclosed_fraction": 0.9173272933182333,
+      "outside_count": 73
+    },
+    "2": {
+      "enclosed_count": 863,
+      "enclosed_fraction": 0.9773499433748585,
+      "outside_count": 20
+    },
+    "3": {
+      "enclosed_count": 881,
+      "enclosed_fraction": 0.9977349943374858,
+      "outside_count": 2
+    }
+  },
+  "ratio_quantiles": {
+    "0.5": 0.6825943707679932,
+    "0.9": 1.456161783131991,
+    "0.95": 1.7383123771872047,
+    "0.99": 2.221377095135133,
+    "1": 7.221123037077482
+  },
+  "association_r1t_enclosure": {
+    "usable_count": 832,
+    "within_1_count": 763,
+    "within_1_fraction": 0.8640996602491506,
+    "maximum_ratio": 1.8323250464174543
+  },
+  "interpretation": "R2t and membership come from the same catalog construction; enclosure is not an independent halo validation. Review outliers and external environment evidence before freezing a safety factor.",
+  "outlier_output": "/Users/shuang/Dropbox/work/project/bubbletea/data/results/background/kourkchi_tully_halo_exclusion_outliers_v1.csv"
+}
