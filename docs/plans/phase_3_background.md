@@ -138,6 +138,9 @@ Large-sky grid progress, 2026-07-19:
 - [x] Complete the next 25-attempt batch without failure; cumulative coverage is 36
   fields, 533,034 Gaia sources, 30,972 passing sources, and 163 verified strips,
   with all 17 restart safeguards passing (2026-08-11).
+- [x] Complete a 35-attempt continuation without failure; cumulative coverage is 71
+  fields, 974,992 Gaia sources, 59,951 passing sources, and 291 verified strips,
+  with 31 fields remaining (2026-08-11).
 - [ ] Retrieve the 102 reserved fields in measured, explicitly bounded batches.
 - [ ] Apply the frozen direct reference and diagnostic model once, report differences
   from development performance, and do not retune either method.
