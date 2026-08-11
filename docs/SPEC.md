@@ -322,6 +322,59 @@ The unflagged-only result is a sensitivity check and cannot replace the selected
 model. The fitted model, preprocessing, settings, prediction ranges, and this
 warning are frozen before any held-back selector result is opened.
 
+The large-sky fitted model is a diagnostic interpolation only, not the primary
+background measurement. For each real host, report both the directly measured
+density in a valid outer annulus and a distribution of densities measured in
+comparable random fields. Report their numerical difference and ratio without
+forcing either measurement to agree with the other. The outer annulus remains
+unavailable until its physical radial boundary and central exclusion have been
+calibrated; a missing or invalid annulus is never converted to zero.
+
+Freeze and compare three direct random-field procedures using only the 398
+development fields. In increasing complexity, their comparison pools are:
+
+1. all training fields in the same one of five absolute-Galactic-latitude bands;
+2. training fields in the same latitude band and the same low, middle, or high
+   third of total Gaia source density, with the two dividing values learned from
+   that latitude band's training fields only; and
+3. the 20 training fields closest in absolute Galactic latitude and log total Gaia
+   source density after both quantities are centered and scaled using training
+   fields only.
+
+For every target field, preserve the comparison-field identifiers and measured
+passing-source densities. Report their median as the central reference, their
+arithmetic mean, and their central 68% and 95% measured ranges. These ranges describe
+real field-to-field variation and are not model confidence intervals. Testing keeps
+whole sky blocks out of the comparison pool. The primary score is the median
+absolute log difference between a held-out field's measured density and its
+comparison-pool median, summarized across five sky-block folds. Select the simplest
+procedure within one standard error of the lowest score. Also report root-mean-
+square log error, range coverage, comparison-pool size, and the behavior of the
+extreme flagged field.
+
+The random-field procedure applies only inside the measured domain
+`|b| >= 20 degrees`. A target outside that domain, or without enough valid
+comparison fields, receives an explicit unavailable state. Total Gaia source
+density is allowed only as a coarse comparison property; it must not become a
+source cut or a reason to force a host field to match controls exactly. The 102
+held-back validation fields remain unopened on this branch. Their one-time
+retrieval and evaluation begin only after this direct procedure is frozen on a new
+branch.
+
+The completed direct comparison selects the five-band absolute-Galactic-latitude
+procedure. Its mean fold median absolute log-density error is 0.165714, and its
+overall typical absolute error is a factor of 1.181874. The central 68% and 95%
+comparison-pool ranges contain 65.5779% and 90.9548% of held-out development
+fields. The more detailed Gaia-density and nearest-field procedures have nearly
+identical typical errors, use smaller pools, and have lower range coverage; they are
+not selected.
+
+For `sky_field_0317`, the selected direct procedure returns 58 comparison fields
+with median density 390.433313 and central 95% range 177.323869--659.384668 per
+square degree. The measured field density is 37,714.863283 per square degree, a
+factor of 96.597452 above the median. Preserve this explicit out-of-range result;
+do not stretch the general reference distribution to absorb it.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

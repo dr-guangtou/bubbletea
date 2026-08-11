@@ -263,6 +263,27 @@ LARGE_SKY_DEVELOPMENT_MODEL_MANIFEST = (
 LARGE_SKY_DEVELOPMENT_MODEL_VALIDATION = (
     BACKGROUND_RESULTS_DIR / "large_sky_development_model_validation_v1.json"
 )
+LARGE_SKY_DIRECT_BACKGROUND_CONTRACT = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_contract_v1.json"
+)
+LARGE_SKY_DIRECT_BACKGROUND_SUMMARY = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_summary_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_FOLD_RESULTS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_fold_results_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_PREDICTIONS = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_predictions_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_REFERENCE = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_reference_v1.csv"
+)
+LARGE_SKY_DIRECT_BACKGROUND_MANIFEST = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_comparison_v1.json"
+)
+LARGE_SKY_DIRECT_BACKGROUND_VALIDATION = (
+    BACKGROUND_RESULTS_DIR / "large_sky_direct_background_validation_v1.json"
+)
 KOURKCHI_TULLY_ENVIRONMENT_CANDIDATES = (
     GALAXY_SAMPLE_DIR / "kourkchi_tully_environment_candidates_v1.csv"
 )

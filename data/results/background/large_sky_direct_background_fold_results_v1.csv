@@ -1,0 +1,16 @@
+comparison_version,procedure_id,outer_fold,field_count,median_absolute_log_density_error,root_mean_square_log_density_error,empirical_68_percent_range_coverage,empirical_95_percent_range_coverage,minimum_comparison_pool_field_count,median_comparison_pool_field_count,maximum_comparison_pool_field_count
+large_sky_direct_background_comparison_v1,galactic_latitude_band,1,80,0.1545206063261952,0.2925467246458367,0.65,0.875,54,58.0,76
+large_sky_direct_background_comparison_v1,galactic_latitude_band,2,80,0.1515810601022171,0.25842498056314256,0.75,0.925,57,60.0,74
+large_sky_direct_background_comparison_v1,galactic_latitude_band,3,80,0.19080863458186575,0.3534134505448242,0.5875,0.8375,60,61.0,68
+large_sky_direct_background_comparison_v1,galactic_latitude_band,4,79,0.14862981733710792,0.28171325046322043,0.6835443037974683,0.9493670886075949,55,61.0,68
+large_sky_direct_background_comparison_v1,galactic_latitude_band,5,79,0.1830285204147746,0.6600563926802354,0.6075949367088608,0.9620253164556962,55,58.0,77
+large_sky_direct_background_comparison_v1,latitude_band_and_gaia_density_third,1,80,0.1520679006768284,0.2748055373085899,0.6875,0.9,18,20.0,26
+large_sky_direct_background_comparison_v1,latitude_band_and_gaia_density_third,2,80,0.14060279174257495,0.2360005499198559,0.7125,0.9,19,20.0,25
+large_sky_direct_background_comparison_v1,latitude_band_and_gaia_density_third,3,80,0.17758252444283606,0.3312781293905688,0.525,0.75,20,21.0,23
+large_sky_direct_background_comparison_v1,latitude_band_and_gaia_density_third,4,79,0.15805693479432334,0.2643833227789848,0.5569620253164557,0.8987341772151899,18,21.0,23
+large_sky_direct_background_comparison_v1,latitude_band_and_gaia_density_third,5,79,0.19530875232076553,0.6401507674725805,0.5316455696202531,0.8481012658227848,18,20.0,26
+large_sky_direct_background_comparison_v1,twenty_nearest_latitude_and_gaia_density,1,80,0.14629219478190014,0.2484629425326295,0.6625,0.875,20,20.0,20
+large_sky_direct_background_comparison_v1,twenty_nearest_latitude_and_gaia_density,2,80,0.13547260723878515,0.22658843424698302,0.7375,0.9,20,20.0,20
+large_sky_direct_background_comparison_v1,twenty_nearest_latitude_and_gaia_density,3,80,0.18052748256958512,0.3139474020905666,0.525,0.75,20,20.0,20
+large_sky_direct_background_comparison_v1,twenty_nearest_latitude_and_gaia_density,4,79,0.1587483890758879,0.26547473673262445,0.6075949367088608,0.8987341772151899,20,20.0,20
+large_sky_direct_background_comparison_v1,twenty_nearest_latitude_and_gaia_density,5,79,0.20268885961838823,0.5847716608736041,0.5189873417721519,0.8734177215189873,20,20.0,20

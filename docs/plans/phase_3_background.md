@@ -3,7 +3,8 @@
 **Goal:** Measure the spatially varying density of sources passing the frozen Gaia
 selector and provide valid host-specific controls.
 
-**Status:** Design review
+**Status:** Development procedure frozen; held-back validation deferred to a new
+branch
 
 ## III.1 Control design
 
@@ -105,10 +106,22 @@ Large-sky grid progress, 2026-07-19:
   its held-out density exceeds the selected prediction by a factor of 11.548; do
   not delete it or use the unflagged sensitivity fit as the primary model
   (2026-07-19).
-- [ ] Review and accept the frozen development model, prediction ranges, and extreme
-  flagged-field treatment before the single held-back validation run.
+- [x] Review the frozen model and demote it to a diagnostic interpolation after its
+  extreme-field failure clarified that direct measurements should remain primary
+  (2026-08-11).
 - [ ] Retrieve and evaluate the 102 held-back validation fields exactly once without
   retuning the model or changing its applicability warning.
+- [x] Freeze and compare the three approved direct random-field procedures using
+  only the 398 development fields; preserve comparison identities, measured
+  distributions, and the `|b| >= 20` applicability limit; the simple latitude-band
+  procedure is selected and all 17 safeguards pass (2026-08-11).
+- [x] Make the selected direct procedure primary for the large-sky reference and
+  demote the fitted model to a diagnostic interpolation (2026-08-11).
+- [x] Freeze the future host report to show the valid outer-annulus measurement,
+  direct random-field distribution, their difference, and their ratio
+  (2026-08-11).
+- [ ] Close this branch with all 102 large-sky validation fields still unopened;
+  perform their one-time retrieval and evaluation on a fresh branch.
 
 Off-target split progress, 2026-07-18:
 

@@ -686,6 +686,20 @@ Phase-specific execution tasks remain in `docs/plans/`.
   one test fold and remains an explicit applicability warning rather than being
   deleted. The fitted model and residual ranges are frozen, while all 102 validation
   selector results remain unopened pending review.
+  Direct background revision, 2026-08-11: Froze three procedures before comparing
+  outcomes and selected the simplest: use all measured development fields in the
+  same broad absolute-Galactic-latitude band. Its typical held-out density error is
+  a factor of 1.182; the measured 68% and 95% ranges cover 65.6% and 91.0% of
+  development fields. All 17 safeguards pass with no archive query. The fitted
+  model is diagnostic only, and all 102 large-sky validation fields remain unopened
+  for a fresh branch.
+  Review, 2026-08-11: The direct comparison preserves every comparison-field
+  identifier and measured density, reports both central values and measured ranges,
+  and keeps `sky_field_0317` as an explicit out-of-range result. The latitude-band
+  procedure is preferred because all three methods have nearly identical typical
+  development error, while the simplest method uses larger comparison pools and
+  has better measured-range coverage. The 102 reserved fields were not queried or
+  inspected; their one-time test belongs on a new branch.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

@@ -80,3 +80,10 @@ outer fold and limits the model's applicability in unusual crowded or physically
 associated regions. No validation selector result has been opened, and no
 large-sky field has been approved as a scientific background. See
 `docs/large_sky_development_model_comparison.md`.
+
+After reviewing the extreme-field failure, this fitted model was reassigned on
+2026-08-11 to a secondary diagnostic role. It can describe smooth trends, but it
+does not supply the primary background value. The primary large-sky reference is
+now the preserved distribution of directly measured development fields in the
+same broad absolute-Galactic-latitude band. See
+`docs/large_sky_direct_background_comparison.md`.

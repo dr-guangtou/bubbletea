@@ -1,6 +1,6 @@
 # BubbleTea — Master Development Plan
 
-**Last updated:** 2026-07-16
+**Last updated:** 2026-08-11
 
 ## Overview
 
@@ -45,13 +45,16 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Rank by luminosity, distance, galactic latitude, and imaging coverage
 - **Tracking:** `docs/plans/phase_2_galaxy_sample.md`
 
-### Phase III: Background Characterization (Planned)
+### Phase III: Background Characterization (Active)
 
 **Goal:** Characterize the "background density" of Gaia sources passing UCD selection.
 
-- Map background density vs galactic latitude using hundreds of random fields
-- Fit parametric model for density(|b|) and field-to-field variance
-- Design local background estimation strategy (annulus method)
+- Measure background density versus Galactic latitude using hundreds of random
+  fields
+- Use directly measured same-latitude field distributions as the primary large-sky
+  reference; keep the fitted model as a diagnostic only
+- Report the random-field distribution alongside a valid local outer annulus and
+  preserve their difference
 - Validate on known UCD hosts
 - **Tracking:** `docs/plans/phase_3_background.md`
 

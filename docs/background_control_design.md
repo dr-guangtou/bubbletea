@@ -457,6 +457,15 @@ tests; it remains in the fit and is recorded as an applicability warning rather
 than deleted. All 22 fitting safeguards pass, and the 102 held-back results remain
 unopened pending review. See `docs/large_sky_development_model_comparison.md`.
 
+The subsequent direct comparison supersedes the fitted model as the primary
+large-sky reference. The selected procedure uses every measured development field
+in the same broad absolute-Galactic-latitude band and reports their median, mean,
+central 68% and 95% ranges, count, and identities. It has a typical held-out density
+difference of about 18%, and its measured ranges cover 65.6% and 91.0% of held-out
+development fields. The future host result must show this distribution alongside a
+valid outer-annulus measurement and report their difference and ratio. See
+`docs/large_sky_direct_background_comparison.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

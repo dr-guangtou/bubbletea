@@ -13,7 +13,7 @@
 **Machine-readable result:**
 `data/results/background/large_sky_development_model_comparison_v1.json`
 
-## Outcome
+## Outcome and revised role
 
 The selected development model combines sky position with measured Gaia observing
 conditions. It uses Galactic and ecliptic latitude, Galactic hemisphere and
@@ -26,6 +26,12 @@ curve assembled from connected pieces; three knots allow a modest curved latitud
 trend without a highly flexible shape. `Alpha` is the strength of a penalty that
 discourages unnecessarily large regression coefficients. It is a model-stability
 setting, not a source-selection cut.
+
+This model is now a diagnostic interpolation only. Directly measured random-field
+distributions are the primary large-sky reference; see
+`docs/large_sky_direct_background_comparison.md`. The fitted model remains useful
+for showing smooth trends and as a robustness comparison, but it does not replace
+the measured comparison-field densities.
 
 ## Predictive comparison
 
@@ -94,11 +100,9 @@ The fitted development model and its prediction ranges are now frozen. No field 
 approved as a scientific background, and selector results for all 102 held-back
 validation fields remain unopened.
 
-## Required review before the next step
+## Superseded validation step
 
-Review this document together with
-`data/results/background/large_sky_development_model_summary_v1.csv` and
-`data/results/background/large_sky_development_model_comparison_v1.json`. The next
-step is the single held-back validation run. Its results cannot be used to retune
-the model, so validation should not begin until the selected model and the treatment
-of the extreme flagged field are understood and accepted.
+The earlier plan to validate this fitted model as the primary background procedure
+was superseded on 2026-08-11. The held-back fields remain unopened. Their future
+one-time use will evaluate the frozen direct random-field procedure, while this
+model is reported only as a secondary diagnostic.

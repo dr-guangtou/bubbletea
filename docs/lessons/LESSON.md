@@ -1363,3 +1363,47 @@ correctly stopped the manifest from being accepted.
 **Recommendation:** Convert table-wide checks to a NumPy array and call `.all()` on
 that array, or explicitly reduce both axes. Keep this form visible in scientific
 manifests so reviewers can see that the result is one Boolean.
+
+## 2026-08-11: Write normalized distances in the same form as the contract
+
+**Lesson:** Algebraically equivalent code can still obscure whether a frozen
+training-only transformation was implemented as declared.
+
+**Context:** The first nearest-comparison implementation divided training-to-target
+differences by the training scale. The training center cancels from that distance,
+so an assigned center appeared unused and Ruff stopped the validation run.
+
+**Recommendation:** Express both training and target values in the explicitly
+centered and scaled coordinates before calculating distance. This makes the absence
+of held-out preprocessing visible to reviewers and static checks.
+
+## 2026-08-11: Prefer preserved measurements when the background is directly observable
+
+**Lesson:** A fitted sky model is not automatically the best primary background
+reference when comparison-field densities can be measured directly.
+
+**Context:** Three direct procedures had nearly identical typical held-out errors.
+The simple Galactic-latitude bands used roughly 61 measured fields per comparison
+and gave better range coverage than two procedures using Gaia source density. They
+also exposed `sky_field_0317` as a factor of 96.597 above its comparison median
+rather than hiding it behind a smooth extrapolation.
+
+**Recommendation:** Preserve and report the comparison-field distribution and
+identities as the primary large-sky reference. Use fitted curves only for trend
+diagnostics, and report direct local-annulus and random-field measurements together
+without forcing agreement.
+
+## 2026-08-11: Scope automatic lint fixes before running them
+
+**Lesson:** A repository-wide pre-commit run can rewrite unrelated legacy files
+before reporting failures, even when the current task changes only a few scripts.
+
+**Context:** The final direct-background check reformatted archived notebooks and
+older phase scripts, then stopped on 13 pre-existing lint errors. The working tree
+had been inspected immediately beforehand, so those hook-created edits could be
+identified and restored without touching the direct-background work.
+
+**Recommendation:** Inspect the working tree first, run the required repository-wide
+check once to expose its true status, and restore only known hook-created edits if
+legacy failures stop it. Then run the same hooks explicitly on the files changed by
+the current task and report the repository-wide failures separately.

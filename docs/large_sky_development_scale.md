@@ -92,7 +92,11 @@ unopened.
 ## Interpretation
 
 This validates the complete development measurement, failure preservation, bounded
-waiting, planning and retrieval restarts, and local aggregate verification. It does
-not select a sky-background model or approve any field as a scientific background.
-The next step is to fit and compare the six already frozen model choices using only
-these 398 development rows, while keeping all validation results closed.
+waiting, planning and retrieval restarts, and local aggregate verification. The six
+frozen models were subsequently compared, then reassigned to a secondary diagnostic
+role after review. The primary large-sky reference now uses the directly measured
+density distribution of development fields in the same broad
+absolute-Galactic-latitude band. See
+`docs/large_sky_direct_background_comparison.md`. No individual field is thereby
+approved as a scientific background, and all 102 large-sky validation fields remain
+unopened.
