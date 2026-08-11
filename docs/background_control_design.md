@@ -466,6 +466,13 @@ development fields. The future host result must show this distribution alongside
 valid outer-annulus measurement and report their difference and ratio. See
 `docs/large_sky_direct_background_comparison.md`.
 
+The one-time large-sky validation is complete under the unchanged direct procedure.
+All 102 reserved fields were retrieved without failure. The direct 68% and 95%
+development ranges contain 61.76% and 92.16% of validation fields, compared with
+65.58% and 90.95% during development. The frozen fitted diagnostic is tighter on
+these fields but remains secondary by the pre-validation decision. See
+`docs/large_sky_validation_run.md`.
+
 ## Five-host field-condition result
 
 The same pre-selector measurements were extended to five review hosts using 13

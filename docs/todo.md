@@ -723,6 +723,14 @@ Phase-specific execution tasks remain in `docs/plans/`.
   without failure in 828.929929 seconds. Cumulative coverage is 71 reserved fields
   with 974,992 Gaia sources, 59,951 passing sources, and 291 verified strips; a
   zero-query restart passed all 17 safeguards with 31 fields remaining.
+  Validation completion, 2026-08-11: The final bounded batch completed all 102
+  reserved fields without failure. The verified total is 1,534,299 Gaia sources,
+  86,189 passing sources, 459 strips, and 205.079837 square degrees. The unchanged
+  direct procedure has a validation typical density factor of 1.197 and range
+  coverage of 63/102 at 68% and 94/102 at 95%, versus 65.58% and 90.95% in
+  development. The frozen fitted diagnostic has factor 1.128 and coverage of 66/102
+  and 100/102 but remains secondary. All 20 evaluation safeguards pass without
+  refitting or retuning.
 
 - [ ] **BT-010 - Make pilot runs atomic, resumable, and auditable.**
   Evidence: The current summary contains 17 targets rather than the intended 20.

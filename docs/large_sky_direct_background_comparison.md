@@ -92,5 +92,11 @@ The synthetic 300-field validation passes all ten safeguards in 0.666 seconds.
 The 398-field comparison passes all 17 safeguards in 1.405 seconds and makes no
 archive query. All comparison-field identities and measured densities are retained.
 The fitted model is now a diagnostic only. No field is approved as a scientific
-background, and all 102 large-sky validation fields remain unopened for a new
-branch.
+background. At this design-freeze point, all 102 large-sky validation fields were
+still unopened for a new branch.
+
+The reserved fields were subsequently opened once under the unchanged procedure.
+The direct validation typical difference is a factor of 1.197, with 63/102 fields
+inside the development 68% measured ranges and 94/102 inside the 95% ranges. The
+procedure was not retuned and remains the primary large-sky reference. See
+`docs/large_sky_validation_run.md`.

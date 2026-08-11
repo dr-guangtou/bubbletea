@@ -392,6 +392,28 @@ the same measurements only as a secondary diagnostic; it is not refitted and can
 replace or retune the direct procedure. Failed retrievals keep permanent receipts
 and remain missing rather than becoming zero-density measurements.
 
+The completed reserved-field retrieval contains all 102 fields, 1,534,299 Gaia
+sources, 86,189 passing sources, 459 verified strips, and 205.079837 square degrees.
+All external receipt and checkpoint hashes pass, no field failed, and a zero-query
+restart recovers the complete state without a new attempt.
+
+The frozen direct procedure has validation median absolute log-density difference
+0.180146, root-mean-square log difference 0.299110, 68% range coverage 63/102
+(61.7647%), and 95% range coverage 94/102 (92.1569%). The corresponding development
+values are 0.167102, 0.397446, 65.5779%, and 90.9548%. Thus the validation-minus-
+development differences are +0.013045, -0.098336, -3.8132 percentage points, and
++1.2021 percentage points. Preserve all of these differences; validation neither
+retunes the ranges nor changes the selected procedure.
+
+The frozen fitted diagnostic has validation median absolute log-density difference
+0.120432, root-mean-square log difference 0.157033, 68% range coverage 66/102
+(64.7059%), and 95% range coverage 100/102 (98.0392%). Its corresponding
+validation-minus-development differences are +0.014158, -0.062636, -3.1333
+percentage points, and +3.0643 percentage points. Its tighter validation values do
+not promote it to the primary method; the fitted curve remains a secondary check
+because that role was fixed before validation and because the development audit
+already demonstrated an extreme-field failure.
+
 The final analysis must compare the background methods and propagate their
 differences into the overdensity uncertainty or robustness assessment. A missing
 or contaminated control region must not be represented as a zero-density

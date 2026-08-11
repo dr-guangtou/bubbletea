@@ -85,3 +85,57 @@ A 35-attempt continuation completed every field without failure in 828.929929
 seconds. Cumulative coverage is 71 fields with 974,992 Gaia sources, 59,951 passing
 sources, and 291 verified strips. A zero-query restart passed all 17 safeguards
 with exactly 31 fields remaining.
+
+The final 31-attempt batch completed without failure in 989.520193 seconds. The
+complete retrieval contains all 102 fields, 1,534,299 Gaia sources, 86,189 passing
+sources, 459 verified strips, and 205.079837 square degrees. An independent audit
+verified all 102 receipts, every strip hash, and the complete source count. The
+final zero-query restart made no new attempt and passed all 17 safeguards.
+
+## One-time evaluation result
+
+The table reports both methods and their differences from development. A typical
+factor is the multiplicative difference corresponding to the median absolute log
+difference; for example, 1.197 means the measured density typically differs from
+the reference by a factor of about 1.197 in either direction.
+
+| Method | Sample | Typical factor | Root-mean-square log difference | Inside 68% range | Inside 95% range |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Direct latitude-band measurements | Development | 1.182 | 0.397446 | 65.58% | 90.95% |
+| Direct latitude-band measurements | Validation | 1.197 | 0.299110 | 61.76% (63/102) | 92.16% (94/102) |
+| Frozen fitted diagnostic | Development | 1.112 | 0.219669 | 67.84% | 94.97% |
+| Frozen fitted diagnostic | Validation | 1.128 | 0.157033 | 64.71% (66/102) | 98.04% (100/102) |
+
+During development, each field was tested against a reduced pool because its whole
+sky block had to be excluded from training. Validation uses all 398 already frozen
+development measurements because every reserved sky block is separate from them.
+The resulting validation pools contain 75--85 fields. The comparison therefore
+tests the final deployed reference rather than recreating the smaller development
+folds.
+
+For the direct method, validation minus development is +0.013045 in median absolute
+log difference, -0.098336 in root-mean-square log difference, -3.81 percentage
+points in 68% coverage, and +1.20 percentage points in 95% coverage. The validation
+95% coverage is closer to 95% than the development value, although it remains below
+95%; no range was changed after seeing this result.
+
+The eight direct results outside the frozen development 95% ranges are
+`sky_field_0016`, `sky_field_0215`, `sky_field_0236`, `sky_field_0256`,
+`sky_field_0269`, `sky_field_0290`, `sky_field_0332`, and `sky_field_0422`. They
+remain ordinary validation outcomes and are not deleted. The two fitted-diagnostic
+results outside its 95% range are `sky_field_0249` and `sky_field_0256`.
+
+For the fitted diagnostic, the corresponding differences are +0.014158, -0.062636,
+-3.13 percentage points, and +3.06 percentage points. The fitted diagnostic is
+numerically tighter on these 102 fields, but it remains secondary. That role was
+fixed before validation, and the development analysis had already shown that a
+smooth fitted curve can fail badly for an extreme field.
+
+The count-blind environment flag is descriptive only. Flagged validation fields
+happen to have smaller direct errors than unflagged fields in this fixed sample;
+this does not show that an environment intersection improves prediction and is not
+used to remove or reweight any field.
+
+All 20 evaluation safeguards pass. Every field-level direct comparison pool,
+measured range, fitted diagnostic value, and residual is preserved in
+`data/results/background/large_sky_validation_reference_v1.csv`.

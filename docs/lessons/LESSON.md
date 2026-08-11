@@ -1407,3 +1407,19 @@ identified and restored without touching the direct-background work.
 check once to expose its true status, and restore only known hook-created edits if
 legacy failures stop it. Then run the same hooks explicitly on the files changed by
 the current task and report the repository-wide failures separately.
+
+## 2026-08-11: Normalize metric labels before comparing frozen artifacts
+
+**Lesson:** Two artifacts can measure the same quantity while using slightly
+different column names, so direct dictionary subtraction is unsafe without an
+explicit mapping.
+
+**Context:** The first reserved-field evaluation reached the final comparison but
+stopped before writing its report because the older fitted-model table calls its
+coverage fields `empirical_68_percent_coverage` and
+`empirical_95_percent_coverage`, while the newer direct procedure includes the word
+`range`. No model was refitted and no scientific result was changed.
+
+**Recommendation:** Map historical column names to one declared report vocabulary
+before checking metric sets or calculating differences. Let missing mappings stop
+the run before an evaluation artifact is written.

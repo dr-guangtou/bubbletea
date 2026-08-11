@@ -1,7 +1,7 @@
 {
   "scale_version": "large_sky_validation_scale_v1",
   "contract_id": "validation_run_contract_d75e3ddea7013547c088",
-  "status": "partial_resumable_validation_measurement",
+  "status": "complete_validation_measurement",
   "plain_language_scope": "Only the 102 reserved validation fields may be processed. Completed fields keep verified external checkpoints and receipts; failures are not zeroes.",
   "grid_id": "sky_grid_446c747dcc7dde21be4f",
   "selector_version": "point_source_logistic_model_v1",
@@ -15,11 +15,11 @@
   "newly_completed_field_ids_this_run": [],
   "failed_field_attempts_this_run": [],
   "run_interrupted": false,
-  "completed_validation_field_count": 71,
-  "remaining_validation_field_count": 31,
+  "completed_validation_field_count": 102,
+  "remaining_validation_field_count": 0,
   "validation_selector_results_opened": true,
   "invalid_external_receipt_field_ids": [],
-  "elapsed_seconds_this_run": 0.007240792001539376,
+  "elapsed_seconds_this_run": 0.012343041998974513,
   "inputs": [
     {
       "path": "data/results/background/large_sky_validation_run_contract_v1.json",
@@ -48,7 +48,7 @@
   ],
   "output": {
     "path": "data/results/background/large_sky_validation_scale_summary_v1.csv",
-    "sha256": "7a27e99d1ee3e55bfb0e05b6d3b8862e92939ae42c49546a3396baf0dd183eda"
+    "sha256": "d5911df6abda9d6c82ce3c051a9e29f9c9c32c8177bb387e01a988148ef984d9"
   },
   "check_count": 17,
   "passed_count": 17,
