@@ -213,3 +213,27 @@ its permanent audit identifier; Gaia score, magnitude, and candidate priority ar
 omitted to reduce visual-review bias. Creating and inspecting the contact sheets does
 not itself assign a flag. Every review column remains “not reviewed” until a reviewer
 records an explicit assessment using the frozen rules.
+
+## G magnitude and BP/RP flux-excess distribution
+
+The raw Gaia BP/RP flux-excess factor is
+\((I_{BP}+I_{RP})/I_G\): Gaia's BP-window flux plus RP-window flux divided by its
+G-window flux. High values can reflect resolved structure, crowding, or problematic
+measurements; they do not by themselves establish that a source is a galaxy.
+
+The four-panel QA figure shows all 4,920 selector-retained sources in gray and the 400
+audit sources as blue open circles. The two reliable M60 UCD controls are marked
+separately. Of the complete population, 4,879 have finite positive values that can be
+plotted; 397 of 400 audit sources can be plotted. Missing measurements remain in the
+scientific tables.
+
+The full-population median excess factors are 2.1663, 5.1566, 6.5307, and 6.5464 from
+the innermost to outermost zone. The two reliable controls lie in the 50--150 kpc zone
+at G magnitudes 20.5266 and 20.3998 and excess factors 3.1222 and 3.1636. Because the
+distribution changes with radius, a single global visual boundary would obscure
+field-dependent behavior. The dotted value 1.7 is the Liu et al. (2020)
+sample-specific reference and is not a BubbleTea rejection rule.
+
+The figure is `figures/phase4/m60_flux_excess_by_radial_zone_v1.png`; exact counts and
+quantiles are recorded in
+`data/results/radial_search/m60_positive_control_flux_excess_by_radius_v1.json`.

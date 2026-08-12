@@ -31,6 +31,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   - 2026-08-12 image checkpoint: all 400 compact Legacy Survey images and four
     blinded contact sheets are complete. Explicit visual classification remains
     pending.
+  - 2026-08-12 flux-excess QA: 4,879 of 4,920 retained sources and 397 of 400 audit
+    sources have plottable G and raw BP/RP flux-excess measurements. Radial changes
+    rule out interpreting one display reference as a universal classification cut.
 
 ## Status and Priority
 

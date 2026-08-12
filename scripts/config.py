@@ -374,6 +374,9 @@ M60_POSITIVE_CONTROL_AUDIT_CUTOUT_MANIFEST = (
 M60_POSITIVE_CONTROL_AUDIT_CUTOUT_SUMMARY = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_cutouts_v1.json"
 )
+M60_POSITIVE_CONTROL_FLUX_EXCESS_DIAGNOSTICS = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_flux_excess_by_radius_v1.json"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 

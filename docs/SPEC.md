@@ -954,6 +954,14 @@ candidate priority. Image provenance and digests are complete, but all visual fi
 remain explicitly not reviewed. Image retrieval and contact-sheet generation assign
 no contamination label and change no Gaia area measurement.
 
+The M60 flux-excess QA preserves the raw Gaia quantity
+\((I_{BP}+I_{RP})/I_G\), shows the complete selector-retained population and frozen
+audit sample in four radial panels, and counts missing measurements explicitly. The
+full-population median changes from 2.1663 inside 50 kpc to 5.1566, 6.5307, and 6.5464
+in the three outer zones. Consequently, the plot is a radial diagnostic rather than
+a source-classification boundary. The Liu et al. (2020) value 1.7 remains a
+sample-specific reference and is not a BubbleTea cut.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

@@ -1,0 +1,72 @@
+{
+  "diagnostic_version": "m60_positive_control_flux_excess_by_radius_v1",
+  "generated_at_utc": "2026-08-12T14:55:13.782942+00:00",
+  "status": "complete_unclassified_distribution_qa",
+  "flux_excess_definition": "(I_BP + I_RP) / I_G",
+  "full_selector_retained_count": 4920,
+  "full_plotted_count": 4879,
+  "audit_count": 400,
+  "audit_plotted_count": 397,
+  "zone_summaries": [
+    {
+      "zone_name": "central_diagnostic_0_50_kpc",
+      "full_selector_retained_count": 154,
+      "full_plotted_count": 153,
+      "full_missing_or_nonpositive_flux_excess_count": 1,
+      "audit_count": 100,
+      "audit_plotted_count": 100,
+      "audit_missing_or_nonpositive_flux_excess_count": 0,
+      "full_flux_excess_10th_percentile": 1.5558636,
+      "full_flux_excess_median": 2.166326,
+      "full_flux_excess_90th_percentile": 6.495986200000001
+    },
+    {
+      "zone_name": "near_host_50_150_kpc",
+      "full_selector_retained_count": 377,
+      "full_plotted_count": 374,
+      "full_missing_or_nonpositive_flux_excess_count": 3,
+      "audit_count": 100,
+      "audit_plotted_count": 100,
+      "audit_missing_or_nonpositive_flux_excess_count": 0,
+      "full_flux_excess_10th_percentile": 1.8567155000000002,
+      "full_flux_excess_median": 5.1566295,
+      "full_flux_excess_90th_percentile": 11.835080199999998
+    },
+    {
+      "zone_name": "intermediate_150_300_kpc",
+      "full_selector_retained_count": 985,
+      "full_plotted_count": 980,
+      "full_missing_or_nonpositive_flux_excess_count": 5,
+      "audit_count": 100,
+      "audit_plotted_count": 99,
+      "audit_missing_or_nonpositive_flux_excess_count": 1,
+      "full_flux_excess_10th_percentile": 2.3292673,
+      "full_flux_excess_median": 6.530679,
+      "full_flux_excess_90th_percentile": 13.0899371
+    },
+    {
+      "zone_name": "far_300_600_kpc",
+      "full_selector_retained_count": 3404,
+      "full_plotted_count": 3372,
+      "full_missing_or_nonpositive_flux_excess_count": 32,
+      "audit_count": 100,
+      "audit_plotted_count": 98,
+      "audit_missing_or_nonpositive_flux_excess_count": 2,
+      "full_flux_excess_10th_percentile": 2.1671529,
+      "full_flux_excess_median": 6.5463535,
+      "full_flux_excess_90th_percentile": 13.269221700000003
+    }
+  ],
+  "check_count": 8,
+  "passed_count": 8,
+  "checks": {
+    "complete_selector_retained_population_used": true,
+    "four_frozen_radial_zones_used": true,
+    "audit_sample_identifiers_are_subset_of_passing_population": true,
+    "exactly_four_hundred_audit_sources_used": true,
+    "two_reliable_controls_are_plotted": true,
+    "missing_flux_excess_rows_are_counted": true,
+    "no_visual_classification_assigned": true,
+    "liu_reference_is_not_a_selection_boundary": true
+  }
+}

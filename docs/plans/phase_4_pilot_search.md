@@ -48,6 +48,9 @@
   - [x] Retrieve and verify all 400 compact Legacy Survey cutouts and create four
     blinded radial-zone contact sheets; keep every visual field not reviewed
     (2026-08-12).
+  - [x] Plot G magnitude against raw BP/RP flux-excess factor for the complete
+    selector-retained population and frozen audit sample in all four radial zones
+    (2026-08-12).
   - [ ] Keep possible contaminants as review flags; do not remove them from the
     selector-v1 radial profile during this first pass.
 
