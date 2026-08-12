@@ -454,6 +454,18 @@ POINT_SOURCE_ML_STABILITY_VALIDATION = (
 )
 POINT_SOURCE_LOGISTIC_MODEL = LITERATURE_VALIDATION / "point_source_logistic_model_v1.joblib"
 POINT_SOURCE_LOGISTIC_MODEL_MANIFEST = LITERATURE_VALIDATION / "point_source_logistic_model_v1.json"
+POINT_SOURCE_ASTROMETRIC_REJECTION_CONTRACT = (
+    LITERATURE_SOURCES / "point_source_astrometric_rejection_assessment_v1.json"
+)
+POINT_SOURCE_ASTROMETRIC_REJECTION_CURVE = (
+    LITERATURE_VALIDATION / "point_source_astrometric_rejection_curve_v1.csv"
+)
+POINT_SOURCE_ASTROMETRIC_REJECTION_SUMMARY = (
+    LITERATURE_VALIDATION / "point_source_astrometric_rejection_summary_v1.json"
+)
+POINT_SOURCE_ASTROMETRIC_REJECTION_VALIDATION = (
+    LITERATURE_VALIDATION / "point_source_astrometric_rejection_validation_v1.json"
+)
 
 # ---------------------------------------------------------------------------
 # Gaia UCD selection criteria (from pilot study)

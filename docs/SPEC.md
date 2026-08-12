@@ -877,6 +877,17 @@ Missing astrometry remains unknown and cannot be converted to zero significance.
 Do not choose the rule from the NGC 4698 star or any host-centered excess, and keep
 `point_source_logistic_model_v1` as the reproducible baseline.
 
+The development-only assessment contract is frozen before measurement as
+`point_source_astrometric_rejection_assessment_v1`. It applies selector version 1
+first and then tests a separate rule: reject a passing source when either available
+astrometric significance is above the trial boundary. The decision statistic is the
+larger available value; one missing measurement leaves the other usable, while two
+missing measurements cause no rejection. The curve contains zero, every distinct
+finite development-sample value, and the 3-sigma literature reference. It reports
+reliable-UCD retention and each contaminant cohort separately, with an equal-weight
+summary for ordinary stars, Gaia non-single stars, and spectroscopic QSOs. It does
+not select an operating point or inspect the validation partition.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

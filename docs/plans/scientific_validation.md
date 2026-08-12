@@ -238,6 +238,10 @@ inputs, and every exclusion has a recorded reason.
     significance exceeds a trial boundary; include 3 sigma as the Liu et al. (2020)
     literature reference, preserve null astrometry as unknown, and do not tune from
     the visually confirmed NGC 4698 star or a host excess.
+    Contract frozen 2026-08-12: the development-only assessment uses the larger
+    available parallax or proper-motion significance, does not reject when both are
+    missing, measures every distinct decision boundary plus the 3-sigma reference,
+    and cannot select an operating point or inspect validation data.
   - [ ] Review and approve one measured operating point before implementing and
     freezing the shared selector.
 - [ ] Measure selection behavior across magnitude, distance, inferred luminosity,
