@@ -42,8 +42,9 @@
   - [x] Recover both reliable UCD controls and all nine literature candidates with a
     unique Gaia identifier; keep 18 objects without a unique identifier explicitly
     not testable by exact identifier (2026-08-12).
-  - [ ] Freeze a representative contamination-audit sample separately from the
-    promising-candidate shortlist before visual inspection of the full field.
+  - [x] Freeze a representative 400-source contamination-audit sample separately
+    from the known controls and promising-candidate shortlist before visual
+    inspection (2026-08-12).
   - [ ] Keep possible contaminants as review flags; do not remove them from the
     selector-v1 radial profile during this first pass.
 

@@ -1487,3 +1487,19 @@ equal-weight priority-contaminant fraction unchanged from selector version 1.
 mandatory individual-review warning. Do not apply a universal hard boundary unless
 a future independently validated rule demonstrates a useful completeness-versus-
 contamination improvement.
+
+## 2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions
+
+**Lesson:** A Gaia source identifier has 19 digits and can be silently rounded when a
+CSV reader interprets it as a floating-point number. A set-membership check can then
+appear valid while excluding the wrong identifiers.
+
+**Context:** The first unopened M60 audit-sample freeze read the literature recovery
+table without an explicit string type. Eight of eleven known identifiers were rounded
+and remained eligible for random sampling. No image had been requested or inspected;
+the sample was regenerated after forcing the identifier column to string and directly
+checking that the overlap was empty.
+
+**Recommendation:** Read Gaia identifier columns explicitly as strings whenever they
+are used for matching, exclusion, provenance, or serialization. Add a direct expected-
+identifier overlap check rather than relying only on row counts.

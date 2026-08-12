@@ -25,6 +25,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   - 2026-08-12 complete-field result: selector version 1 retained 4,920 of 45,402
     sources. Both reliable controls and all nine exact-identifier literature
     candidates pass; representative contamination sampling remains pending.
+  - 2026-08-12 audit sample: froze 100 previously unidentified passing sources from
+    each of four radial zones, with population weights and all visual fields still
+    marked not reviewed. Image retrieval and inspection remain pending.
 
 ## Status and Priority
 

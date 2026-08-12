@@ -163,17 +163,38 @@ prioritize a source for inspection. They are stored as a separate Gaia warning a
 cannot assign this visual flag. The visual flag describes the reliability of the
 image interpretation; it is not a physical classification.
 
-## Next decision before the full field
+## Separation of the audit and candidate shortlist
 
 The individual Gaia rows have now been retrieved and selector version 1 has been
-applied locally. Before visually inspecting the 4,920 retained sources, the project
-must freeze two separate sets:
+applied locally. Visual inspection uses two separate sets:
 
 - a representative review sample used to measure what kinds of contaminants remain;
   and
 - a promising-candidate shortlist used to identify follow-up targets.
 
 Keeping these sets separate prevents a deliberately attractive shortlist from being
-misreported as the real contamination rate. Catalog-based flags can be computed for
-all passing sources; the number and allocation of image cutouts should be chosen only
-after the actual passing count is measured.
+misreported as the real contamination rate. The representative audit is frozen
+below. The promising shortlist will be designed separately after the audit images
+are retrieved.
+
+## Frozen representative visual audit
+
+The first visual audit contains 400 selector-retained sources that are not among the
+11 literature objects with exact Gaia identifiers. It includes 100 randomly selected
+sources from each of four radial zones: 0--50, 50--150, 150--300, and 300--600 kpc.
+Within a zone, sources are ordered by a permanent SHA-256 hash of the audit version
+and Gaia identifier, so every eligible source in that zone has the same selection
+chance and the selection can be reproduced without relying on a particular random-
+number generator.
+
+The eligible population contains 4,909 sources: 151, 372, 982, and 3,404 in the four
+zones respectively. Because the audit selects the same number from zones of different
+sizes, population summaries must use the stored weights 1.51, 3.72, 9.82, and 34.04.
+An unweighted average of the four reviewed groups would overrepresent the inner
+region. The sample is recorded in
+`data/results/radial_search/m60_positive_control_visual_audit_sample_v1.csv`.
+
+The known literature objects remain separate controls. The promising-candidate
+shortlist will also remain separate and cannot be used to estimate the contamination
+rate. At the time of freezing, every visual field in the audit sample remains marked
+“not reviewed,” and no audit image has been requested or opened.

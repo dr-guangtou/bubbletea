@@ -362,6 +362,12 @@ M60_POSITIVE_CONTROL_RUN_MANIFEST = (
 M60_POSITIVE_CONTROL_KNOWN_RECOVERY = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_known_recovery_v1.csv"
 )
+M60_POSITIVE_CONTROL_AUDIT_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_AUDIT_SAMPLE = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_sample_v1.csv"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 
@@ -377,6 +383,7 @@ LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky
 FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_host_profiles_v1"
 M60_POSITIVE_CONTROL_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "m60_positive_control_v1"
 M60_KNOWN_UCD_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "known_ucd_cutouts"
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "audit_cutouts"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

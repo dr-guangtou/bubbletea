@@ -939,6 +939,14 @@ The preserved profile shows substantially elevated source density inside the
 temporary 50 kpc diagnostic region; no contamination-corrected UCD excess or final
 outer radius has been inferred.
 
+The first representative M60 visual audit is frozen before image retrieval. It
+excludes the 11 literature objects with exact Gaia identifiers, leaving 4,909
+previously unidentified selector-retained sources. A stable identifier hash selects
+100 sources from each of the 0--50, 50--150, 150--300, and 300--600 kpc zones. Stored
+zone weights are mandatory for population summaries because equal audit counts do not
+mean equal population sizes. Known controls and the deliberately promising shortlist
+remain separate from the contamination audit.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:
