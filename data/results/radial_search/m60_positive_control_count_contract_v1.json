@@ -1,0 +1,56 @@
+{
+  "contract_version": "m60_positive_control_count_contract_v1",
+  "generated_at_utc": "2026-08-12T13:42:27.161012+00:00",
+  "status": "frozen_not_executed",
+  "plain_language_scope": "Return one count of Gaia sources in the frozen selector magnitude range inside M60's 600 kpc circle. This measures raw retrieval workload; it does not measure how many sources pass selector version 1.",
+  "host": {
+    "host_name": "MESSIER 060",
+    "literature_host_name": "M60",
+    "ra_deg": 190.9166453,
+    "dec_deg": 11.5526118,
+    "distance_mpc": 16.6571232806881,
+    "outer_radius_kpc": 600,
+    "outer_radius_deg": 2.062937915783204,
+    "requested_area_square_deg": 13.368271934895693,
+    "ring_edges_kpc": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50,
+      75,
+      100,
+      150,
+      200,
+      300,
+      600
+    ],
+    "temporary_central_review_radius_kpc": 50
+  },
+  "query_service": "https://datalab.noirlab.edu/tap",
+  "query": "SELECT COUNT(*) AS source_count FROM gaia_dr3.gaia_source WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 190.916645300000, 11.552611800000, 2.062937915783) AND phot_g_mean_mag BETWEEN 11.26291847229004 AND 21.75798797607422",
+  "query_sha256": "b6e5d7b7d2beb74bba546c66776ca67dd6f3acf12438d5d1a260f8e31b625934",
+  "design_contract": {
+    "path": "data/results/radial_search/m60_positive_control_v1.json",
+    "sha256": "d1ebae1e4e4e9349acf9e1cfae31db0ddc52a219efa5f95d327046b149163d78"
+  },
+  "maximum_archive_queries": 1,
+  "source_rows_requested": false,
+  "selector_applied": false,
+  "archive_queries_executed": 0,
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "m60_design_is_frozen": true,
+    "query_is_one_aggregate_count": true,
+    "query_reaches_frozen_600_kpc_radius": true,
+    "selector_is_not_applied_in_archive": true,
+    "source_rows_are_not_requested": true,
+    "maximum_archive_queries_is_one": true,
+    "contract_executes_no_query": true
+  }
+}

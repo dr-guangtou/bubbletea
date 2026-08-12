@@ -336,6 +336,18 @@ KOURKCHI_TULLY_HALO_EXCLUSION_OUTLIERS = (
 KOURKCHI_TULLY_2017_PROVENANCE = LITERATURE_SOURCES / "kourkchi_tully_2017_groups.json"
 RADIAL_SEARCH_RESULTS_DIR = RESULTS_DIR / "radial_search"
 CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
+M60_POSITIVE_CONTROL_CONTRACT = RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_v1.json"
+M60_POSITIVE_CONTROL_KNOWN_OBJECTS = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_known_objects_v1.csv"
+)
+M60_POSITIVE_CONTROL_COUNT_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_count_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_COUNT_BENCHMARK = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_count_benchmark_v1.json"
+)
+M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
+M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 
 # ---------------------------------------------------------------------------
 # External data (large catalogs not stored in the repo)
@@ -347,6 +359,8 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
 LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
 FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_host_profiles_v1"
+M60_POSITIVE_CONTROL_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "m60_positive_control_v1"
+M60_KNOWN_UCD_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "known_ucd_cutouts"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

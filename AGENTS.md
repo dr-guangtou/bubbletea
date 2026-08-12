@@ -141,6 +141,16 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - Keep any generic mask-intersection fixture labeled as geometry validation only.
   It must not be used as a Gaia scientific mask or density denominator.
 
+## M60 Positive-Control Review Policy
+
+- During the first M60 positive-control pass, possible stellar, non-single-star,
+  QSO, galaxy, H II-region, blend, and artifact contamination must be recorded as
+  review flags only. Do not automatically remove flagged sources from the frozen
+  Gaia selector output or radial profile.
+- Use compact Legacy Survey DR10 three-color cutouts for visual checks because the
+  intended targets are compact. Keep cutout availability, imaging masks, and image
+  classifications separate from Gaia coverage and area accounting.
+
 ## Git Conventions
 
 - Branch strategy: feature branches, never work directly on `main`

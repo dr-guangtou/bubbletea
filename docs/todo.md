@@ -7,6 +7,15 @@ during the project takeover review
 This file tracks cross-phase issues that do not belong to only one phase plan.
 Phase-specific execution tasks remain in `docs/plans/`.
 
+- [ ] **BT-023 - Complete the M60 positive-control search and contamination audit.**
+  Use the unchanged selector version 1 and the frozen 0--600 kpc physical rings.
+  Recover two reliable confirmed UCDs, report 21 literature candidates and six
+  rejected comparisons separately, and preserve every possible contamination type
+  as a visual-review flag during the first pass. Measure real-field contamination
+  from a representative sample; keep the deliberately promising new-candidate list
+  separate. Legacy Survey DR10 cutouts are compact imaging diagnostics and never
+  change Gaia coverage or area accounting.
+
 ## Status and Priority
 
 - Checkbox unchecked: open.

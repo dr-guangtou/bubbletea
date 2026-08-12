@@ -898,6 +898,21 @@ from selector version 1. No boundary is approved; the measured recommendation is
 to keep astrometric significance as an individual-review warning flag rather than
 a universal hard rejection until the project lead reviews the tradeoff.
 
+The M60 positive-control run preserves selector version 1 and the frozen physical
+rings through 600 kpc. Possible stellar, Gaia non-single-star, QSO, galaxy, H II,
+blend, and image-artifact contamination is recorded as review flags only during the
+first pass. These flags cannot remove sources from the Gaia radial profile. The two
+reliable M60 UCDs are recovery controls, not independent selector validation;
+literature candidates and rejected comparisons remain separately labeled.
+
+Legacy Survey DR10 three-color images provide compact visual-review cutouts. The
+initial image pilot uses only the two reliable M60 UCDs and a 64-by-64-pixel field
+at 0.262 arcseconds per pixel, for a measured width of 16.768 arcseconds. Cutout
+availability, imaging masks, and visual labels never change Gaia coverage or its
+area denominator. The full-field review sample and separate new-candidate shortlist
+must be frozen after the raw workload is measured and before the complete passing
+population is visually inspected.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

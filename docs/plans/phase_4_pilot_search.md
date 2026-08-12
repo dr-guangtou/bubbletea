@@ -26,6 +26,16 @@
   - [x] Check contrast against local background (22.6x)
 - [x] Run search around **NGC 5128** (Centaurus A) - (Processed in top tier)
 - [x] Verify selection completeness and purity statistics (2026-05-11)
+- [ ] Run the M60 positive control using the unchanged selector and frozen 0--600
+  kpc rings (started 2026-08-12)
+  - [ ] Freeze the count-blind design and known-object recovery table.
+  - [ ] Measure one aggregate Gaia source count for the raw retrieval workload.
+  - [ ] Verify compact Legacy Survey DR10 three-color cutouts using the two reliable
+    confirmed M60 UCDs.
+  - [ ] Freeze a representative contamination-audit sample separately from the
+    promising-candidate shortlist before visual inspection of the full field.
+  - [ ] Keep possible contaminants as review flags; do not remove them from the
+    selector-v1 radial profile during this first pass.
 
 ## IV.3 Pilot Search Execution
 
