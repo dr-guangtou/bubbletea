@@ -913,6 +913,14 @@ area denominator. The full-field review sample and separate new-candidate shortl
 must be frozen after the raw workload is measured and before the complete passing
 population is visually inspected.
 
+The bounded pre-retrieval pilot measured 45,402 raw Gaia sources in the frozen
+11.2629184723--21.7579879761 G-magnitude range and 600 kpc circle. This count is a
+retrieval-workload measurement only: no individual rows were downloaded and selector
+version 1 was not applied. The two reliable UCD controls both have usable compact
+Legacy Survey DR10 images at the frozen 16.768-arcsecond field width. Detailed scope,
+measurements, and proposed review-flag meanings are maintained in
+`docs/m60_positive_control.md`.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

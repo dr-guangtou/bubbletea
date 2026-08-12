@@ -1,0 +1,36 @@
+{
+  "cutout_version": "m60_known_ucd_legacy_cutouts_v1",
+  "generated_at_utc": "2026-08-12T13:44:13.252023+00:00",
+  "status": "known_ucd_cutout_pilot_complete",
+  "target_count": 2,
+  "file_count": 2,
+  "survey": "Legacy Survey DR10",
+  "layer": "ls-dr10",
+  "three_color_image": true,
+  "pixel_scale_arcsec": 0.262,
+  "size_pixels": 64,
+  "field_width_arcsec": 16.768,
+  "scientific_limits": [
+    "known_ucds_are_development_controls_not_independent_validation",
+    "jpeg_cutouts_do_not_establish_catalog_mask_or_fit_quality",
+    "visual_review_flags_do_not_remove_sources_from_gaia_profile",
+    "legacy_imaging_does_not_change_gaia_area_accounting"
+  ],
+  "inputs": {
+    "m60_contract_sha256": "d1ebae1e4e4e9349acf9e1cfae31db0ddc52a219efa5f95d327046b149163d78",
+    "known_objects_sha256": "adb64e0c935aaeafd6f1c2810951cf41f3b0a6e93eff848e02b8bc3f7d1a6a67",
+    "manifest_sha256": "f8a0b027444ea46a3b758e3b8e38ebe4ab3e82e8164297c08c5cd73b152a0aa8"
+  },
+  "files": [
+    {
+      "gaia_dr3_id": "3927559610063494784",
+      "file_path": "$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/known_ucd_cutouts/3927559610063494784_ls_dr10.jpg",
+      "sha256": "886717fc2fd74b40ee755cd86c7ac421c53eb36c3d233079537c8c652110d6ef"
+    },
+    {
+      "gaia_dr3_id": "3928458666977702912",
+      "file_path": "$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/known_ucd_cutouts/3928458666977702912_ls_dr10.jpg",
+      "sha256": "f7e9486760cd888d8a0964701779413e1fa672fb70734ee5ba223a7f3ab35c1c"
+    }
+  ]
+}

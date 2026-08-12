@@ -1,0 +1,57 @@
+{
+  "benchmark_version": "m60_positive_control_count_benchmark_v1",
+  "generated_at_utc": "2026-08-12T13:43:03.461577+00:00",
+  "status": "measured_raw_count_only",
+  "plain_language_result": "The archive returned one raw Gaia source count for M60's frozen 600 kpc circle. No individual rows were downloaded, so selector-v1 passing counts and contamination flags remain unmeasured.",
+  "host": {
+    "host_name": "MESSIER 060",
+    "literature_host_name": "M60",
+    "ra_deg": 190.9166453,
+    "dec_deg": 11.5526118,
+    "distance_mpc": 16.6571232806881,
+    "outer_radius_kpc": 600,
+    "outer_radius_deg": 2.062937915783204,
+    "requested_area_square_deg": 13.368271934895693,
+    "ring_edges_kpc": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50,
+      75,
+      100,
+      150,
+      200,
+      300,
+      600
+    ],
+    "temporary_central_review_radius_kpc": 50
+  },
+  "source_count_in_frozen_magnitude_domain": 45402,
+  "source_density_per_square_deg": 3396.250481820727,
+  "query_seconds": 2.610804249998182,
+  "query_service": "https://datalab.noirlab.edu/tap",
+  "query_sha256": "b6e5d7b7d2beb74bba546c66776ca67dd6f3acf12438d5d1a260f8e31b625934",
+  "count_contract": {
+    "path": "data/results/radial_search/m60_positive_control_count_contract_v1.json",
+    "sha256": "11582730d02e49f93bfec763469a77a63f56ee136442e1d64385dbc93762d6b7"
+  },
+  "archive_queries_executed": 1,
+  "source_rows_downloaded": 0,
+  "selector_applied": false,
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "frozen_contract_used": true,
+    "exact_query_executed": true,
+    "one_archive_query_executed": true,
+    "one_aggregate_row_returned": true,
+    "source_count_is_nonnegative": true,
+    "no_source_rows_downloaded": true,
+    "selector_not_applied": true
+  }
+}

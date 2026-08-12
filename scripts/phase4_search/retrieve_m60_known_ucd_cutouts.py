@@ -18,6 +18,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from scripts.config import (
+    EXTERNAL_DATA_DIR,
     M60_KNOWN_UCD_CUTOUT_DIR,
     M60_KNOWN_UCD_CUTOUT_MANIFEST,
     M60_KNOWN_UCD_CUTOUT_SUMMARY,
@@ -46,11 +47,20 @@ def parse_arguments() -> argparse.Namespace:
 
 
 def output_path_text(path: Path) -> str:
-    """Return a repository-relative path or an absolute external path."""
+    """Return a portable repository or external-data path."""
     try:
         return path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
     except ValueError:
-        return path.resolve().as_posix()
+        relative_path = path.resolve().relative_to(EXTERNAL_DATA_DIR.resolve())
+        return f"$BUBBLETEA_EXTERNAL_DATA/{relative_path.as_posix()}"
+
+
+def local_path(path_text: str) -> Path:
+    """Resolve a recorded repository or external-data path on this machine."""
+    prefix = "$BUBBLETEA_EXTERNAL_DATA/"
+    if path_text.startswith(prefix):
+        return EXTERNAL_DATA_DIR / path_text.removeprefix(prefix)
+    return PROJECT_ROOT / path_text
 
 
 def cutout_url(
@@ -81,7 +91,7 @@ def render_montage(rows: pd.DataFrame) -> None:
     plt.rcParams.update({"axes.grid": False, "font.family": "sans-serif"})
     figure, axes = plt.subplots(1, len(rows), figsize=(5.6, 3.0), squeeze=False)
     for axis, (_, row) in zip(axes[0], rows.iterrows(), strict=True):
-        image = imread(row["file_path"])
+        image = imread(local_path(row["file_path"]))
         axis.imshow(image, origin="upper")
         axis.set_title(
             f"{row['original_names']}\n{row['projected_radius_kpc']:.1f} kpc",

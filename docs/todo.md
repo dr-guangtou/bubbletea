@@ -15,6 +15,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   from a representative sample; keep the deliberately promising new-candidate list
   separate. Legacy Survey DR10 cutouts are compact imaging diagnostics and never
   change Gaia coverage or area accounting.
+  - 2026-08-12 checkpoint: the frozen 600 kpc magnitude-limited field contains
+    45,402 raw Gaia sources; both reliable UCD controls have usable
+    16.768-arcsecond Legacy Survey cutouts. Full source retrieval and review-sample
+    freezing remain pending.
 
 ## Status and Priority
 
