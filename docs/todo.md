@@ -19,6 +19,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
     45,402 raw Gaia sources; both reliable UCD controls have usable
     16.768-arcsecond Legacy Survey cutouts. Full source retrieval and review-sample
     freezing remain pending.
+  - 2026-08-12 review rule: incomplete H II-region and young-cluster catalogs cannot
+    provide negative evidence; color only prioritizes inspection, and blend or image
+    problems require visual inspection.
 
 ## Status and Priority
 

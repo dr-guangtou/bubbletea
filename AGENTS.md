@@ -150,6 +150,13 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
 - Use compact Legacy Survey DR10 three-color cutouts for visual checks because the
   intended targets are compact. Keep cutout availability, imaging masks, and image
   classifications separate from Gaia coverage and area accounting.
+- Do not assign a compact star-forming-region or young-cluster flag from color alone.
+  Require a catalog association or visual evidence; because such catalogs are rare
+  and incomplete, no catalog match is unknown evidence rather than evidence against
+  the flag.
+- Assign a nearby-source blend or image-problem flag only from visual inspection.
+  Gaia image-quality measurements may prioritize a source for inspection, but they
+  remain separate warnings and cannot assign the visual flag.
 
 ## Git Conventions
 

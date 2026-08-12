@@ -346,6 +346,9 @@ M60_POSITIVE_CONTROL_COUNT_CONTRACT = (
 M60_POSITIVE_CONTROL_COUNT_BENCHMARK = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_count_benchmark_v1.json"
 )
+M60_POSITIVE_CONTROL_REVIEW_RULES = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_review_rules_v1.json"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 

@@ -33,6 +33,9 @@
     45,402 sources in the frozen magnitude range (2026-08-12).
   - [x] Verify compact Legacy Survey DR10 three-color cutouts using the two reliable
     confirmed M60 UCDs (2026-08-12).
+  - [x] Freeze explicit visual-review columns: color alone cannot label a compact
+    star-forming region, incomplete catalog coverage is not negative evidence, and
+    blend or image-problem flags require visual inspection (2026-08-12).
   - [ ] Freeze a representative contamination-audit sample separately from the
     promising-candidate shortlist before visual inspection of the full field.
   - [ ] Keep possible contaminants as review flags; do not remove them from the

@@ -1,0 +1,129 @@
+{
+  "review_rules_version": "m60_positive_control_review_rules_v1",
+  "generated_at_utc": "2026-08-12T14:05:39.360758+00:00",
+  "status": "frozen_before_complete_field_retrieval",
+  "plain_language_scope": "Record possible contamination for human review without removing any source from selector version 1 or the radial profile.",
+  "assignment_rules": {
+    "star_forming_region_or_young_cluster": [
+      "Color may prioritize visual inspection but cannot assign the flag.",
+      "A yes flag requires a catalog association or visual evidence.",
+      "No catalog match provides no contrary evidence because catalogs are incomplete.",
+      "Uncertain evidence remains uncertain and does not become a rejection."
+    ],
+    "nearby_source_blend_or_image_problem": [
+      "The final flag requires visual inspection of the cutout.",
+      "Gaia image measurements may prioritize inspection but remain separate.",
+      "An unusable image remains unusable rather than being labeled clean."
+    ],
+    "effect_on_selection": "flags_only_no_automatic_removal"
+  },
+  "review_columns": [
+    {
+      "name": "star_forming_catalog_association",
+      "allowed_values": [
+        "yes",
+        "not_found",
+        "not_checked"
+      ],
+      "meaning": "Whether a published H II-region or young-cluster catalog contains the source. Not found does not count as contrary evidence because these catalogs are rare and incomplete; it remains unknown evidence."
+    },
+    {
+      "name": "star_forming_color_review_priority",
+      "allowed_values": [
+        "yes",
+        "no",
+        "not_available"
+      ],
+      "meaning": "Whether color makes the source worth inspecting for young stars. This column cannot assign the physical review flag by itself."
+    },
+    {
+      "name": "star_forming_visual_evidence",
+      "allowed_values": [
+        "yes",
+        "none_seen",
+        "uncertain",
+        "not_reviewed",
+        "image_unusable"
+      ],
+      "meaning": "Whether visual inspection shows association with visible star-forming structure or irregular compact emission."
+    },
+    {
+      "name": "possible_star_forming_region_or_young_cluster",
+      "allowed_values": [
+        "yes",
+        "no",
+        "uncertain",
+        "not_reviewed"
+      ],
+      "meaning": "Combined review flag. Yes requires a catalog association or visual evidence; color alone is never sufficient."
+    },
+    {
+      "name": "gaia_image_measurement_warning",
+      "allowed_values": [
+        "yes",
+        "no",
+        "not_available"
+      ],
+      "meaning": "A separate Gaia-based warning that can prioritize visual review. It cannot assign the visual blend or image-problem flag."
+    },
+    {
+      "name": "blend_or_image_problem_visual_evidence",
+      "allowed_values": [
+        "yes",
+        "none_seen",
+        "uncertain",
+        "not_reviewed",
+        "image_unusable"
+      ],
+      "meaning": "Visual evidence for overlapping or nearby sources, multiple peaks, asymmetry, position mismatch, saturation, boundaries, or artifacts."
+    },
+    {
+      "name": "possible_nearby_source_blend_or_image_problem",
+      "allowed_values": [
+        "yes",
+        "no",
+        "uncertain",
+        "not_reviewed"
+      ],
+      "meaning": "Visual-inspection flag; it cannot be assigned from Gaia measurements alone."
+    },
+    {
+      "name": "visual_review_note",
+      "allowed_values": [
+        "free_text"
+      ],
+      "meaning": "Short evidence note supporting any visual flag or uncertainty."
+    },
+    {
+      "name": "visual_reviewer",
+      "allowed_values": [
+        "free_text"
+      ],
+      "meaning": "Person or process responsible for the visual assessment."
+    },
+    {
+      "name": "visual_reviewed_at_utc",
+      "allowed_values": [
+        "iso_8601_time",
+        "empty_when_not_reviewed"
+      ],
+      "meaning": "Time of visual assessment so later revisions remain traceable."
+    }
+  ],
+  "input_contract": {
+    "path": "data/results/radial_search/m60_positive_control_v1.json",
+    "sha256": "d1ebae1e4e4e9349acf9e1cfae31db0ddc52a219efa5f95d327046b149163d78"
+  },
+  "check_count": 8,
+  "passed_count": 8,
+  "checks": {
+    "design_was_frozen_before_rules": true,
+    "review_columns_are_unique": true,
+    "catalog_absence_is_not_contrary_evidence": true,
+    "color_alone_cannot_assign_star_forming_flag": true,
+    "blend_flag_requires_visual_inspection": true,
+    "gaia_warning_is_separate": true,
+    "rules_open_no_complete_field": true,
+    "review_flags_remove_no_sources": true
+  }
+}

@@ -69,8 +69,9 @@ area used for the radial profile.
 
 ## Proposed review flags
 
-The following plain-language flags are proposed for the complete M60 field. Their
-exact numerical boundaries have not been approved yet.
+The following plain-language flags are approved for the complete M60 field. The
+review columns and allowed values are frozen in
+`data/results/radial_search/m60_positive_control_review_rules_v1.json`.
 
 ### Measured parallax or motion
 
@@ -107,15 +108,33 @@ background galaxy.
 Flag evidence that a source is an H II region, meaning gas ionized by young stars, or
 a young compact star cluster associated with a nearby galaxy. These objects can
 cluster around a host and therefore are more dangerous than a uniform background.
-Color, position relative to visible galaxy structure, and catalog associations can
-support the flag, but no single indicator is an automatic rejection in the first
-pass.
+
+The evidence is recorded separately:
+
+- A published H II-region or young-cluster catalog association can assign the flag.
+  These catalogs are rare and incomplete, so no catalog match provides no evidence
+  against the flag.
+- Color can prioritize a source for inspection but cannot assign the flag by itself.
+  Genuine UCDs can also be blue.
+- Visual inspection can assign the flag when the source is associated with visible
+  star-forming structure or shows irregular compact emission. Ambiguous appearance
+  is recorded as uncertain.
+
+A positive flag requires either a catalog association or visual evidence. It remains
+a review flag and is not an automatic rejection.
 
 ### Nearby-source blend or image problem
 
-Flag a source when the small image shows overlapping sources, a close neighbor, an
-image artifact, or ambiguous centering. This flag describes the reliability of the
-visual interpretation; it is not a physical classification.
+This flag requires visual inspection of the small image. Assign it when the image
+shows overlapping or nearby sources, multiple brightness peaks, asymmetric light,
+a mismatch between the Gaia position and image center, saturation, diffraction
+features, an image boundary, or another artifact. Ambiguous cases remain uncertain,
+and an unusable image is never labeled clean.
+
+Gaia measurements such as the multiple-peak fraction or BP/RP flux-excess factor can
+prioritize a source for inspection. They are stored as a separate Gaia warning and
+cannot assign this visual flag. The visual flag describes the reliability of the
+image interpretation; it is not a physical classification.
 
 ## Next decision before the full field
 

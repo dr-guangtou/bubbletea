@@ -921,6 +921,15 @@ Legacy Survey DR10 images at the frozen 16.768-arcsecond field width. Detailed s
 measurements, and proposed review-flag meanings are maintained in
 `docs/m60_positive_control.md`.
 
+For M60, color alone cannot assign a compact star-forming-region or young-cluster
+flag. A positive flag requires a published catalog association or visual evidence;
+because such catalogs are rare and incomplete, no catalog match is unknown evidence,
+not contrary evidence. A nearby-source blend or image-problem flag requires visual
+inspection. Gaia image-quality measurements may prioritize inspection but remain
+separate warnings. The exact review columns and allowed values are frozen before
+complete-field retrieval in
+`data/results/radial_search/m60_positive_control_review_rules_v1.json`.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:
