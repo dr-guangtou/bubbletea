@@ -27,7 +27,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
     candidates pass; representative contamination sampling remains pending.
   - 2026-08-12 audit sample: froze 100 previously unidentified passing sources from
     each of four radial zones, with population weights and all visual fields still
-    marked not reviewed. Image retrieval and inspection remain pending.
+    marked not reviewed. Explicit visual inspection remains pending.
+  - 2026-08-12 image checkpoint: all 400 compact Legacy Survey images and four
+    blinded contact sheets are complete. Explicit visual classification remains
+    pending.
 
 ## Status and Priority
 

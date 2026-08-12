@@ -45,6 +45,9 @@
   - [x] Freeze a representative 400-source contamination-audit sample separately
     from the known controls and promising-candidate shortlist before visual
     inspection (2026-08-12).
+  - [x] Retrieve and verify all 400 compact Legacy Survey cutouts and create four
+    blinded radial-zone contact sheets; keep every visual field not reviewed
+    (2026-08-12).
   - [ ] Keep possible contaminants as review flags; do not remove them from the
     selector-v1 radial profile during this first pass.
 

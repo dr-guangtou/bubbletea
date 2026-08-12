@@ -947,6 +947,13 @@ zone weights are mandatory for population summaries because equal audit counts d
 mean equal population sizes. Known controls and the deliberately promising shortlist
 remain separate from the contamination audit.
 
+All 400 frozen audit cutouts were retrieved successfully from the Legacy Survey DR10
+three-color JPEG service at the approved 16.768-arcsecond field width. Four blinded
+contact sheets display one radial zone each and omit Gaia score, magnitude, and
+candidate priority. Image provenance and digests are complete, but all visual fields
+remain explicitly not reviewed. Image retrieval and contact-sheet generation assign
+no contamination label and change no Gaia area measurement.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

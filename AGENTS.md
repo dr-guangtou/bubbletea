@@ -54,6 +54,10 @@ Reference paper folders follow the naming convention:
 If multiple papers by the same first author in one year, append a/b/c/d.
 Each folder contains: PDF, original data files, and a README.md with full provenance.
 
+- Always read and serialize Gaia source identifiers as strings when matching,
+  excluding, or recording provenance. Their 19 digits can be rounded by floating-
+  point conversion.
+
 ## Figure Convention
 
 Every figure gets TWO files:

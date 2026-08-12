@@ -198,3 +198,18 @@ The known literature objects remain separate controls. The promising-candidate
 shortlist will also remain separate and cannot be used to estimate the contamination
 rate. At the time of freezing, every visual field in the audit sample remains marked
 “not reviewed,” and no audit image has been requested or opened.
+
+## Complete unreviewed audit images
+
+All 400 frozen audit sources now have verified Legacy Survey DR10 three-color images.
+Each image is 64 by 64 pixels at 0.262 arcseconds per pixel, or 16.768 arcseconds
+wide. The files occupy 1.6 MB and are stored outside the repository under
+`$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/audit_cutouts/`.
+The manifest records the exact URL, portable path, byte count, and SHA-256 digest for
+every image.
+
+Four contact sheets show 100 sources per radial zone. Each panel is labeled only by
+its permanent audit identifier; Gaia score, magnitude, and candidate priority are
+omitted to reduce visual-review bias. Creating and inspecting the contact sheets does
+not itself assign a flag. Every review column remains “not reviewed” until a reviewer
+records an explicit assessment using the frozen rules.
