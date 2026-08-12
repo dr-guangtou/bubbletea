@@ -1,0 +1,27 @@
+{
+  "assessment_version": "point_source_astrometric_rejection_assessment_v1",
+  "check_count": 19,
+  "passed_count": 19,
+  "failed_count": 0,
+  "checks": {
+    "contract_frozen": true,
+    "contract_digest": true,
+    "curve_digest": true,
+    "curve_count": true,
+    "boundaries_unique_and_ordered": true,
+    "zero_endpoint_present": true,
+    "one_three_sigma_row": true,
+    "retention_monotonic_with_boundary": true,
+    "maximum_boundary_reproduces_baseline": true,
+    "three_sigma_summary_reproduced": true,
+    "ninety_percent_anchor_reproduced": true,
+    "priority_macro_reproduced": true,
+    "probability_parity": true,
+    "ucd_review_digest": true,
+    "ucd_review_scope": true,
+    "ucd_three_sigma_loss_reproduced": true,
+    "no_boundary_approved": true,
+    "validation_not_used": true,
+    "figure_caption_pair": true
+  }
+}

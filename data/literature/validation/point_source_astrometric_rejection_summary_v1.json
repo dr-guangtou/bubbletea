@@ -1,0 +1,153 @@
+{
+  "assessment_version": "point_source_astrometric_rejection_assessment_v1",
+  "status": "development_measurement_complete_no_boundary_approved",
+  "selector_model_version": "point_source_logistic_model_v1",
+  "selector_threshold": 0.8277833628791744,
+  "counts": {
+    "development_rows": 2877,
+    "curve_boundaries": 1885,
+    "model_fit_rows_checked_for_probability_parity": 2112
+  },
+  "measurement_availability": {
+    "confirmed_ucd": {
+      "row_count": 146,
+      "both_available_count": 69,
+      "one_or_both_available_count": 69,
+      "both_missing_count": 77,
+      "one_or_both_available_fraction": 0.4726027397260274
+    },
+    "spectroscopic_star": {
+      "row_count": 438,
+      "both_available_count": 306,
+      "one_or_both_available_count": 306,
+      "both_missing_count": 132,
+      "one_or_both_available_fraction": 0.6986301369863014
+    },
+    "gaia_non_single_star": {
+      "row_count": 1125,
+      "both_available_count": 1125,
+      "one_or_both_available_count": 1125,
+      "both_missing_count": 0,
+      "one_or_both_available_fraction": 1.0
+    },
+    "spectroscopic_qso": {
+      "row_count": 403,
+      "both_available_count": 321,
+      "one_or_both_available_count": 321,
+      "both_missing_count": 82,
+      "one_or_both_available_fraction": 0.7965260545905707
+    },
+    "spectroscopic_galaxy": {
+      "row_count": 638,
+      "both_available_count": 43,
+      "one_or_both_available_count": 43,
+      "both_missing_count": 595,
+      "one_or_both_available_fraction": 0.06739811912225706
+    },
+    "hii_region": {
+      "row_count": 127,
+      "both_available_count": 19,
+      "one_or_both_available_count": 19,
+      "both_missing_count": 108,
+      "one_or_both_available_fraction": 0.14960629921259844
+    }
+  },
+  "selector_v1_baseline": {
+    "cohorts": {
+      "confirmed_ucd": {
+        "row_count": 146,
+        "selected_count": 135,
+        "selected_fraction": 0.9246575342465754
+      },
+      "spectroscopic_star": {
+        "row_count": 438,
+        "selected_count": 13,
+        "selected_fraction": 0.02968036529680365
+      },
+      "gaia_non_single_star": {
+        "row_count": 1125,
+        "selected_count": 0,
+        "selected_fraction": 0.0
+      },
+      "spectroscopic_qso": {
+        "row_count": 403,
+        "selected_count": 8,
+        "selected_fraction": 0.019851116625310174
+      },
+      "spectroscopic_galaxy": {
+        "row_count": 638,
+        "selected_count": 560,
+        "selected_fraction": 0.877742946708464
+      },
+      "hii_region": {
+        "row_count": 127,
+        "selected_count": 93,
+        "selected_fraction": 0.7322834645669292
+      }
+    },
+    "macro_priority_selected_fraction": 0.01651049397403794
+  },
+  "three_sigma_literature_reference": {
+    "boundary_sigma": 3.0,
+    "is_three_sigma_literature_reference": true,
+    "confirmed_ucd_selected_count": 131,
+    "confirmed_ucd_selected_fraction": 0.8972602739726028,
+    "spectroscopic_star_selected_count": 12,
+    "spectroscopic_star_selected_fraction": 0.0273972602739726,
+    "gaia_non_single_star_selected_count": 0,
+    "gaia_non_single_star_selected_fraction": 0.0,
+    "spectroscopic_qso_selected_count": 7,
+    "spectroscopic_qso_selected_fraction": 0.017369727047146403,
+    "spectroscopic_galaxy_selected_count": 557,
+    "spectroscopic_galaxy_selected_fraction": 0.8730407523510971,
+    "hii_region_selected_count": 93,
+    "hii_region_selected_fraction": 0.7322834645669292,
+    "macro_priority_selected_fraction": 0.014922329107039667,
+    "reliable_ucd_removed_from_baseline_count": 4
+  },
+  "historical_ninety_percent_recall_anchor": {
+    "status": "descriptive_existing_selector_objective_not_an_approved_boundary",
+    "minimum_reliable_ucd_count": 132,
+    "boundary_sigma": 7.039717688271898,
+    "is_three_sigma_literature_reference": false,
+    "confirmed_ucd_selected_count": 132,
+    "confirmed_ucd_selected_fraction": 0.9041095890410958,
+    "spectroscopic_star_selected_count": 13,
+    "spectroscopic_star_selected_fraction": 0.02968036529680365,
+    "gaia_non_single_star_selected_count": 0,
+    "gaia_non_single_star_selected_fraction": 0.0,
+    "spectroscopic_qso_selected_count": 8,
+    "spectroscopic_qso_selected_fraction": 0.019851116625310174,
+    "spectroscopic_galaxy_selected_count": 560,
+    "spectroscopic_galaxy_selected_fraction": 0.877742946708464,
+    "hii_region_selected_count": 93,
+    "hii_region_selected_fraction": 0.7322834645669292,
+    "macro_priority_selected_fraction": 0.01651049397403794,
+    "reliable_ucd_removed_from_baseline_count": 3
+  },
+  "probability_parity": {
+    "maximum_absolute_difference": 4.440892098500626e-16,
+    "passed": true
+  },
+  "reliable_ucd_three_sigma_review": {
+    "above_three_sigma_count": 5,
+    "selected_by_selector_v1_count": 4,
+    "rejected_at_three_sigma_count": 4,
+    "all_publication_bibcodes": [
+      "2020ApJ...899..140V"
+    ],
+    "artifact_sha256": "bd03d5ab04d770098e6875d893cbcce43020b1999c30f1e37d7a4e9a1ca34b73"
+  },
+  "interpretation_limits": [
+    "development_sample_only",
+    "three_sigma_is_a_literature_reference_not_an_approved_boundary",
+    "no_operating_point_selected",
+    "validation_partition_not_used",
+    "ngc4698_star_not_used_to_choose_a_boundary",
+    "selector_v1_unchanged"
+  ],
+  "inputs": {
+    "contract_sha256": "0cf87d92c211a9e8ea1ea3b2381093c4649839b3734ee399aa37ddea6e31daab",
+    "curve_sha256": "91fbbcc34d52e590224b166ab0b40b57691fb166f0bb185e70268c4cfa9b4b21"
+  }
+}

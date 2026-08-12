@@ -591,6 +591,13 @@ Phase-specific execution tasks remain in `docs/plans/`.
   versioned astrometric-veto tradeoff is now required because its 48.468-sigma
   motion and 9.069-sigma parallax survived the soft model penalties. All eight
   checks pass without changing any selector or radial boundary.
+  Astrometric-rejection assessment, 2026-08-12: Froze a development-only contract
+  before measuring 1,885 exact boundaries. The 3-standard-deviation literature
+  reference loses four selector-passing reliable UCDs to remove one ordinary star
+  and one QSO. No measured boundary improves priority-contaminant rejection while
+  retaining at least 90% of all reliable UCDs. Recommend retaining motion evidence
+  as a mandatory review flag rather than a universal hard rejection; project-lead
+  review is pending.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

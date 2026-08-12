@@ -1,0 +1,75 @@
+{
+  "assessment_version": "point_source_astrometric_rejection_assessment_v1",
+  "status": "frozen_development_only_before_measurement",
+  "purpose": "Measure whether a separate astrometric rejection rule improves the frozen selector without changing point_source_logistic_model_v1.",
+  "selection_sequence": [
+    "apply_point_source_logistic_model_v1_and_its_frozen_threshold",
+    "reject_a_passing_source_only_if_either_available_astrometric_significance_exceeds_the_boundary"
+  ],
+  "statistics": {
+    "absolute_parallax_significance": "absolute(parallax) / parallax_error",
+    "proper_motion_significance": "covariance_aware_two_dimensional_distance_from_zero_using_pmra_pmdec_corr",
+    "decision_statistic": "maximum_of_the_available_two_significances",
+    "rejection_comparison": "decision_statistic_strictly_greater_than_boundary",
+    "missing_measurement_policy": "use_the_other_measurement_if_available; if_both_are_missing_do_not_reject"
+  },
+  "boundary_curve": {
+    "construction": "zero_plus_every_unique_finite_development_decision_statistic_plus_3_sigma",
+    "literature_reference": {
+      "boundary_sigma": 3.0,
+      "source": "Liu et al. (2020), DOI 10.3847/1538-4365/abad91",
+      "status": "reference_only_not_an_approved_bubbletea_boundary"
+    }
+  },
+  "cohorts": {
+    "positive": "benchmark_v3_development_reliable_ucds",
+    "priority_contaminants": [
+      "spectroscopic_star",
+      "gaia_non_single_star",
+      "spectroscopic_qso"
+    ],
+    "secondary_stress_sets": [
+      "spectroscopic_galaxy",
+      "hii_region"
+    ],
+    "priority_summary": "equal_weight_mean_of_the_three_priority_cohort_retentions"
+  },
+  "reported_measurements": [
+    "astrometric_measurement_availability_by_cohort",
+    "selector_v1_baseline_retention_by_cohort",
+    "post_rule_retention_by_cohort_at_every_boundary",
+    "reliable_ucd_loss_relative_to_selector_v1",
+    "priority_contaminant_reduction_relative_to_selector_v1",
+    "the_3_sigma_reference_result"
+  ],
+  "safeguards": {
+    "validation_partition_use": "prohibited",
+    "ngc4698_star_use": "external_demonstration_only_not_threshold_selection",
+    "host_profile_use": "prohibited_for_threshold_selection",
+    "automatic_operating_point_selection": false,
+    "selector_v1_modification": false,
+    "future_selector_v2_requirement": "new_independent_validation_cohort_and_predeclared_review_protocol"
+  },
+  "inputs": {
+    "development_features": {
+      "path": "data/literature/benchmarks/gaia_selector_development_features_v3.csv",
+      "sha256": "6faa90a6614edcce5b92535ee2f930a4130abc72315c439b5fde06dbca052060"
+    },
+    "spectroscopic_stars": {
+      "path": "data/literature/benchmarks/spectroscopic_stellar_reference_matches_v3.csv",
+      "sha256": "669ebc2bf4a9596500ee56521309d0588b11f03d71584a7920fcb7ce6ea8a134"
+    },
+    "selector_model": {
+      "path": "data/literature/validation/point_source_logistic_model_v1.joblib",
+      "sha256": "7cfd617874abf729bd33f798367687fedd14a1b26048af22569f3c02f0c66f1a"
+    },
+    "selector_model_manifest": {
+      "path": "data/literature/validation/point_source_logistic_model_v1.json",
+      "sha256": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+    },
+    "development_predictions": {
+      "path": "data/literature/validation/point_source_logistic_development_predictions_v1.csv",
+      "sha256": "5f4dfe96eb0689255d22c4878e429b85ec97eb14f6f6aee5d21061ac8b2720b8"
+    }
+  }
+}
