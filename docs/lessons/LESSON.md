@@ -1437,3 +1437,19 @@ removed immediately from a previously clean worktree.
 **Recommendation:** Run Ruff and pre-commit on every file changed by the active
 task. Reserve a repository-wide cleanup for its own approved branch so legacy
 formatting changes cannot enter a scientific task commit.
+
+## 2026-08-12: Show missing measurements beside selector feature plots
+
+**Lesson:** A high fitted selector score can be driven partly by the model's
+explicit missing-measurement indicators, so a feature-space plot that silently
+drops null rows can misrepresent most passing sources.
+
+**Context:** In the first NGC 4698 profile, 2,421 of 2,548 passing sources lack
+Gaia's five-parameter astrometric solution, compared with 16.31% of rejected
+sources. Only 127 passing sources can therefore appear in panels requiring RUWE,
+parallax significance, and proper-motion significance.
+
+**Recommendation:** Report feature availability next to every candidate
+feature-space diagnostic. Treat the logistic output as a selection score rather
+than a calibrated probability of physical UCD identity, and require imaging or
+spectroscopy before calling a high-score source compelling.

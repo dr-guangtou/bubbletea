@@ -582,6 +582,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   retains 2,548 sources. Beyond 50 kpc its density spans 317.377181--426.550743 per
   square degree. All fourteen run checks pass; no final outer boundary is selected
   from this one host.
+  Candidate diagnostics, 2026-08-12: Plotted every passing-source location and all
+  nine frozen selector inputs. The profile contains no clear host-centered
+  concentration; 2,421 of 2,548 passing sources lack five-parameter Gaia astrometry,
+  and the five labeled examples remain visual-review aids rather than a candidate
+  rank. All seven checks pass without changing any selector or radial boundary.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

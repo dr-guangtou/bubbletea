@@ -1,0 +1,55 @@
+{
+  "analysis_version": "first_stage_ngc4698_candidate_diagnostics_v1",
+  "generated_at_utc": "2026-08-12T05:24:20.436628+00:00",
+  "host_name": "NGC 4698",
+  "host_distance_mpc": 23.933157564053875,
+  "plain_language_result": "The passing sources do not form a prominent host-centered concentration. Most high scores belong to faint sources without a five-parameter Gaia astrometric solution, so score alone does not identify a compelling UCD.",
+  "all_source_count": 23811,
+  "selector_passing_source_count": 2548,
+  "selector_passing_inside_50_kpc_count": 18,
+  "selector_passing_50_to_150_kpc_count": 135,
+  "selector_passing_missing_five_parameter_astrometry_count": 2421,
+  "selector_passing_missing_five_parameter_astrometry_fraction": 0.9501569858712716,
+  "rejected_missing_five_parameter_astrometry_fraction": 0.163053190989042,
+  "selector_score_quantiles": {
+    "0.0": 0.8280654848670012,
+    "0.1": 0.9382897064546548,
+    "0.5": 0.9955397424279191,
+    "0.9": 0.9998839469652971,
+    "0.99": 0.9999991235041138,
+    "1.0": 0.999999999686474
+  },
+  "passing_sources_with_neighbor_within_2_arcsec": 56,
+  "review_examples": {
+    "count": 5,
+    "interpretation": "Examples make the plots auditable and do not define a candidate rank.",
+    "path": "data/results/background/first_stage_ngc4698_candidate_review_v1.csv",
+    "sha256": "02b4e3db3db3dc7f204596884303e3ec22d2c73a7d3b01fe8e4db316a378878e"
+  },
+  "feature_display_limits": {
+    "lower_quantile": 0.005,
+    "upper_quantile": 0.995,
+    "effect": "display_only_no_rows_removed_from_counts_or_outputs"
+  },
+  "inputs": [
+    {
+      "path": "/Users/shuang/Dropbox/work/data/bubbletea/gaia_host_profiles_v1/ngc_4698/scored_sources.csv",
+      "sha256": "4be6c11ba496adb43fa67388a372d38f5fabcc443fd8433dd78fd0a38808b39e"
+    },
+    {
+      "path": "/Users/shuang/Dropbox/work/project/bubbletea/data/results/background/first_stage_host_profile_fixture_v1.csv",
+      "sha256": "12a9ce1c2bc0eca66a757c300369b1a76247641c0dd42117949ba8f37de3fdc6"
+    }
+  ],
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "all_frozen_domain_sources_preserved": true,
+    "all_selector_passing_sources_preserved": true,
+    "review_examples_are_passing_sources": true,
+    "review_examples_are_not_inside_central_exclusion": true,
+    "review_examples_are_not_labeled_as_rank": true,
+    "model_threshold_unchanged": true,
+    "no_new_candidate_cut_applied": true
+  }
+}

@@ -101,3 +101,8 @@ The profile is shown in
 `figures/phase3/first_stage_ngc4698_radial_profile.png`. Vertical error bars are
 exact central 68.27% intervals from counting uncertainty; horizontal bars show the
 full physical width of each ring.
+
+The locations of all passing sources and their distributions in the nine frozen
+selector features are documented in
+`docs/first_stage_ngc4698_candidate_diagnostics.md`. That diagnostic finds no
+strong Gaia-only standout and changes no selector or radial boundary.
