@@ -42,7 +42,7 @@ def main() -> None:
         ),
         column(
             "star_forming_color_review_priority",
-            ["yes", "no", "not_available"],
+            ["yes", "no", "not_available", "not_evaluated"],
             (
                 "Whether color makes the source worth inspecting for young stars. "
                 "This column cannot assign the physical review flag by itself."
@@ -66,7 +66,7 @@ def main() -> None:
         ),
         column(
             "gaia_image_measurement_warning",
-            ["yes", "no", "not_available"],
+            ["yes", "no", "not_available", "not_evaluated"],
             (
                 "A separate Gaia-based warning that can prioritize visual review. "
                 "It cannot assign the visual blend or image-problem flag."

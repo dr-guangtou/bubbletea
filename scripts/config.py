@@ -349,6 +349,19 @@ M60_POSITIVE_CONTROL_COUNT_BENCHMARK = (
 M60_POSITIVE_CONTROL_REVIEW_RULES = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_review_rules_v1.json"
 )
+M60_POSITIVE_CONTROL_RETRIEVAL_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_retrieval_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_RETRIEVAL_PLAN = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_retrieval_plan_v1.csv"
+)
+M60_POSITIVE_CONTROL_PROFILE = RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_profile_v1.csv"
+M60_POSITIVE_CONTROL_RUN_MANIFEST = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_run_manifest_v1.json"
+)
+M60_POSITIVE_CONTROL_KNOWN_RECOVERY = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_known_recovery_v1.csv"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 

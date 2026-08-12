@@ -1,6 +1,6 @@
 {
   "review_rules_version": "m60_positive_control_review_rules_v1",
-  "generated_at_utc": "2026-08-12T14:05:39.360758+00:00",
+  "generated_at_utc": "2026-08-12T14:07:14.696719+00:00",
   "status": "frozen_before_complete_field_retrieval",
   "plain_language_scope": "Record possible contamination for human review without removing any source from selector version 1 or the radial profile.",
   "assignment_rules": {
@@ -32,7 +32,8 @@
       "allowed_values": [
         "yes",
         "no",
-        "not_available"
+        "not_available",
+        "not_evaluated"
       ],
       "meaning": "Whether color makes the source worth inspecting for young stars. This column cannot assign the physical review flag by itself."
     },
@@ -62,7 +63,8 @@
       "allowed_values": [
         "yes",
         "no",
-        "not_available"
+        "not_available",
+        "not_evaluated"
       ],
       "meaning": "A separate Gaia-based warning that can prioritize visual review. It cannot assign the visual blend or image-problem flag."
     },
