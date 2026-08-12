@@ -368,6 +368,12 @@ M60_POSITIVE_CONTROL_AUDIT_CONTRACT = (
 M60_POSITIVE_CONTROL_AUDIT_SAMPLE = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_sample_v1.csv"
 )
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_MANIFEST = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_cutouts_v1.csv"
+)
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_SUMMARY = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_cutouts_v1.json"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 
