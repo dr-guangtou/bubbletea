@@ -232,7 +232,7 @@ inputs, and every exclusion has a recorded reason.
   - [x] Complete the one-time frozen validation run (2026-07-18): 91.30% reliable-
     UCD recall and 0.57% macro retention across Gaia NSS and QSO. Retuning is closed;
     any future model generation requires a new independent validation cohort.
-  - [ ] Evaluate a versioned post-selector astrometric contradiction rule without
+  - [x] Evaluate a versioned post-selector astrometric contradiction rule without
     changing `point_source_logistic_model_v1`. Measure the full reliable-UCD versus
     contaminant tradeoff when either available parallax or proper-motion
     significance exceeds a trial boundary; include 3 sigma as the Liu et al. (2020)
@@ -242,8 +242,14 @@ inputs, and every exclusion has a recorded reason.
     available parallax or proper-motion significance, does not reject when both are
     missing, measures every distinct decision boundary plus the 3-sigma reference,
     and cannot select an operating point or inspect validation data.
-  - [ ] Review and approve one measured operating point before implementing and
-    freezing the shared selector.
+    Completed 2026-08-12: the 3-standard-deviation reference lowers reliable-UCD
+    retention from 92.47% to 89.73% while lowering equal-weight priority-contaminant
+    retention from 1.651% to 1.492%. Every measured boundary preserving at least
+    90% reliable-UCD retention leaves the contaminant result unchanged. Recommend
+    no universal hard boundary; project-lead review remains required.
+  - [ ] Review the measured recommendation and explicitly approve either no hard
+    astrometric boundary or one measured boundary before changing the shared
+    selection workflow.
 - [ ] Measure selection behavior across magnitude, distance, inferred luminosity,
   inferred size, Galactic latitude, and Gaia uncertainty properties (`BT-002`).
 - [ ] Freeze one versioned selector used identically for literature, control fields,

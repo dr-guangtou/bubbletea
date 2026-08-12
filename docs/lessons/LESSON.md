@@ -1470,3 +1470,20 @@ penalties, while its BP/RP flux-excess factor of 2.084 lies above the Liu et al.
 versioned hard astrometric contradiction rule. Report completeness and contaminant
 rejection across the full boundary curve, preserve missing astrometry as unknown,
 and do not select a boundary from one visually inspected source.
+
+## 2026-08-12: Large Gaia motion can be a review flag without being a safe hard cut
+
+**Lesson:** A large Gaia parallax or proper-motion significance is strong evidence
+against an unresolved extragalactic source, but it is not a safe universal rejection
+for barely resolved UCDs because image-shape changes can produce misleading Gaia
+motion.
+
+**Context:** After selector version 1, a 3-standard-deviation rule removed four
+reliable Voggel et al. NGC 5128 UCDs while removing only one ordinary star and one
+QSO. Every measured boundary retaining at least 90% of all reliable UCDs left the
+equal-weight priority-contaminant fraction unchanged from selector version 1.
+
+**Recommendation:** Keep parallax and proper-motion significance visible as a
+mandatory individual-review warning. Do not apply a universal hard boundary unless
+a future independently validated rule demonstrates a useful completeness-versus-
+contamination improvement.

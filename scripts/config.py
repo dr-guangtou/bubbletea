@@ -463,6 +463,9 @@ POINT_SOURCE_ASTROMETRIC_REJECTION_CURVE = (
 POINT_SOURCE_ASTROMETRIC_REJECTION_SUMMARY = (
     LITERATURE_VALIDATION / "point_source_astrometric_rejection_summary_v1.json"
 )
+POINT_SOURCE_ASTROMETRIC_REJECTION_UCD_REVIEW = (
+    LITERATURE_VALIDATION / "point_source_astrometric_rejection_ucd_review_v1.csv"
+)
 POINT_SOURCE_ASTROMETRIC_REJECTION_VALIDATION = (
     LITERATURE_VALIDATION / "point_source_astrometric_rejection_validation_v1.json"
 )

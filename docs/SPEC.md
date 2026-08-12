@@ -888,6 +888,16 @@ reliable-UCD retention and each contaminant cohort separately, with an equal-wei
 summary for ordinary stars, Gaia non-single stars, and spectroscopic QSOs. It does
 not select an operating point or inspect the validation partition.
 
+The completed development measurement evaluates 1,885 exact boundaries. Selector
+version 1 alone retains 135/146 reliable UCDs and an equal-weight 1.651% of the
+three priority contaminant cohorts. The 3-standard-deviation literature reference
+retains 131/146 UCDs and 1.492% of priority contaminants: it newly loses four UCDs
+to remove one ordinary star and one QSO. Every measured boundary that retains at
+least 90% of all reliable UCDs leaves the priority-contaminant fraction unchanged
+from selector version 1. No boundary is approved; the measured recommendation is
+to keep astrometric significance as an individual-review warning flag rather than
+a universal hard rejection until the project lead reviews the tradeoff.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:
