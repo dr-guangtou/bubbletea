@@ -207,6 +207,36 @@ Held-back validation progress, 2026-07-19:
   under BT-021 before a real host search.
 - [ ] Calibrate the central exclusion and final radial signal region under BT-021.
 
+Interview decisions, 2026-08-11:
+
+- [x] Require both physical-kpc and `R50`-normalized profiles when a verified
+  `R50` exists; missing `R50` makes only the normalized view unavailable.
+- [x] Use 0--50 kpc as a deliberately conservative first-stage contamination
+  region while preserving every inner component ring; do not treat it as final.
+- [x] Retain the exploratory profile through 600 kpc and inspect the measured outer
+  behavior before selecting the final outer signal boundary.
+- [x] Freeze and validate a count-blind first-stage profile fixture before any real
+  600 kpc Gaia query; five hosts retain 14 rings each, all 16 safeguards pass, and
+  NGC 4698 is the geometry-only first benchmark (2026-08-11).
+- [x] Measure the NGC 4698 600 kpc archive count before a full source retrieval:
+  23,811 frozen-domain Gaia sources over 6.478776 square degrees in 2.004 seconds,
+  with no source rows or selector output retrieved; all nine checks pass
+  (2026-08-11).
+- [x] Retrieve the frozen NGC 4698 circle in six measured non-overlapping strips,
+  preserve all 23,811 continuous source radii outside the repository, apply the
+  frozen point-source contamination selector locally, and report both profiles;
+  2,548 sources remain and all fourteen checks pass (2026-08-11).
+- [x] Plot all 2,548 passing-source locations and the nine frozen-selector feature
+  inputs; preserve five transparent review examples without inventing a candidate
+  rank, document the 95.02% missing five-parameter-astrometry fraction, and pass
+  all seven initial checks (2026-08-12).
+- [x] Add the literature-standard G-magnitude versus raw BP/RP flux-excess QA plane,
+  preserve Liu et al.'s 1.7 value as a reference rather than a new cut, and record
+  the project lead's visual classification of example E as a star; all eight
+  updated checks pass (2026-08-12).
+- [ ] Review the first profile, then select the next manageable host profile without
+  using its Gaia density; do not choose a final outer signal boundary from one host.
+
 Progress, 2026-07-18:
 
 - [x] Audit the count-blind angular geometry for all 2,155 hosts; all seven checks

@@ -1,0 +1,47 @@
+{
+  "contract_version": "first_stage_host_profile_count_contract_v1",
+  "generated_at_utc": "2026-08-11T15:47:31.654251+00:00",
+  "status": "frozen_not_executed",
+  "plain_language_scope": "Count Gaia sources in the frozen magnitude range inside the NGC 4698 600 kpc circle. Return one number and no source rows. This measures archive workload and does not select UCD candidates.",
+  "host_name": "NGC 4698",
+  "host_ra_deg": 192.0954797,
+  "host_dec_deg": 8.4873652,
+  "host_distance_mpc": 23.933157564053875,
+  "outer_radius_kpc": 600,
+  "outer_radius_deg": 1.4360941842776274,
+  "requested_area_square_deg": 6.478776272343008,
+  "minimum_g_magnitude": 11.26291847229004,
+  "maximum_g_magnitude": 21.75798797607422,
+  "query_service": "https://datalab.noirlab.edu/tap",
+  "query": "SELECT COUNT(*) AS source_count FROM gaia_dr3.gaia_source WHERE 't' = Q3C_RADIAL_QUERY(ra, dec, 192.095479700000, 8.487365200000, 1.436094184278) AND phot_g_mean_mag BETWEEN 11.26291847229004 AND 21.75798797607422",
+  "query_sha256": "029b17acd5bffe17b1c43e045dd5ee1928954146eef99612e3eee03048151e56",
+  "maximum_archive_queries": 1,
+  "source_rows_requested": false,
+  "selector_applied": false,
+  "scientific_boundaries_changed": false,
+  "inputs": [
+    {
+      "path": "data/results/background/first_stage_host_profile_fixture_v1.csv",
+      "sha256": "12a9ce1c2bc0eca66a757c300369b1a76247641c0dd42117949ba8f37de3fdc6"
+    },
+    {
+      "path": "data/results/background/first_stage_host_profile_fixture_v1.json",
+      "sha256": "51d14e99870e099a3a7069d52862846957e1a20d8925c57120a3e0766d5bdb4d"
+    }
+  ],
+  "archive_queries_executed": 0,
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "fixture_version_is_expected": true,
+    "fixture_checks_all_passed": true,
+    "fixture_file_matches_manifest": true,
+    "benchmark_host_is_frozen_ngc_4698": true,
+    "query_reaches_frozen_600_kpc_edge": true,
+    "query_returns_only_one_aggregate_count": true,
+    "query_uses_frozen_magnitude_domain": true,
+    "query_does_not_apply_selector_features": true,
+    "contract_executes_no_archive_query": true,
+    "maximum_live_query_count_is_one": true
+  }
+}

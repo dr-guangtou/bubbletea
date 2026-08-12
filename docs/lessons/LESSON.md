@@ -1423,3 +1423,50 @@ coverage fields `empirical_68_percent_coverage` and
 **Recommendation:** Map historical column names to one declared report vocabulary
 before checking metric sets or calculating differences. Let missing mappings stop
 the run before an evaluation artifact is written.
+
+## 2026-08-11: Scope formatting checks in the legacy research tree
+
+**Lesson:** A repository-wide pre-commit run can mechanically rewrite archived
+notebooks and legacy scripts that are unrelated to the active task before reporting
+their pre-existing lint failures.
+
+**Context:** The first NGC 4698 host-profile closeout ran pre-commit over the full
+tree. The hooks changed 22 unrelated legacy files; those hook-only edits were
+removed immediately from a previously clean worktree.
+
+**Recommendation:** Run Ruff and pre-commit on every file changed by the active
+task. Reserve a repository-wide cleanup for its own approved branch so legacy
+formatting changes cannot enter a scientific task commit.
+
+## 2026-08-12: Show missing measurements beside selector feature plots
+
+**Lesson:** A high fitted selector score can be driven partly by the model's
+explicit missing-measurement indicators, so a feature-space plot that silently
+drops null rows can misrepresent most passing sources.
+
+**Context:** In the first NGC 4698 profile, 2,421 of 2,548 passing sources lack
+Gaia's five-parameter astrometric solution, compared with 16.31% of rejected
+sources. Only 127 passing sources can therefore appear in panels requiring RUWE,
+parallax significance, and proper-motion significance.
+
+**Recommendation:** Report feature availability next to every candidate
+feature-space diagnostic. Treat the logistic output as a selection score rather
+than a calibrated probability of physical UCD identity, and require imaging or
+spectroscopy before calling a high-score source compelling.
+
+## 2026-08-12: Soft astrometric penalties can lose to extension diagnostics
+
+**Lesson:** Including parallax and proper-motion significance in a logistic model
+does not guarantee rejection of a source with strongly nonzero astrometry because
+other features can outweigh their negative coefficients.
+
+**Context:** The project lead visually classified NGC 4698 example E as a star. It
+passes selector v1 with score 0.974892 despite 48.468-sigma motion and 9.069-sigma
+parallax. Its strong excess-noise diagnostics dominate the soft astrometric
+penalties, while its BP/RP flux-excess factor of 2.084 lies above the Liu et al.
+(2020) 1.7 extended-source reference.
+
+**Recommendation:** Preserve selector v1 as the baseline and separately measure a
+versioned hard astrometric contradiction rule. Report completeness and contaminant
+rejection across the full boundary curve, preserve missing astrometry as unknown,
+and do not select a boundary from one visually inspected source.

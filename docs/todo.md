@@ -559,6 +559,38 @@ Phase-specific execution tasks remain in `docs/plans/`.
   invalid. Defined a recombinable exploratory physical-ring view while requiring
   continuous source radii, exact usable areas, and later `R50`-based calibration;
   all seven count-blind checks pass.
+  Interview decision, 2026-08-11: Report physical-kpc and `R50`-normalized profiles
+  whenever verified `R50` exists, while missing `R50` affects only the normalized
+  view. Use 0--50 kpc as a deliberately conservative first-stage contamination
+  region without discarding its component rings. Retain profiles through 600 kpc
+  and inspect their outer behavior before selecting a final outer signal boundary.
+  The 50 kpc exclusion and 600 kpc reach are first-stage working geometry, not final
+  scientific limits.
+  First-stage fixture, 2026-08-11: Froze 14 physical rings through 600 kpc for the
+  five count-blind review hosts. The requested 600 kpc areas span 6.478776--
+  491.177142 square degrees; the very nearby dwarf remains in the fixture rather
+  than being removed for difficult geometry. All 16 checks pass without a Gaia
+  query. NGC 4698 is the first live benchmark because it has the smallest 600 kpc
+  angular radius among the fixed resolved isolated cases.
+  Count benchmark, 2026-08-11: Measured 23,811 frozen-domain Gaia sources over
+  6.478776 square degrees in 2.004 seconds. The query returned one aggregate count,
+  downloaded no source rows, and did not apply the point-source selector; all nine
+  checks pass.
+  First measured profile, 2026-08-11: Retrieved all 23,811 unique sources in six
+  verified strips, retained continuous source radii outside the repository, and
+  measured all fourteen rings. The frozen point-source contamination selector
+  retains 2,548 sources. Beyond 50 kpc its density spans 317.377181--426.550743 per
+  square degree. All fourteen run checks pass; no final outer boundary is selected
+  from this one host.
+  Candidate diagnostics, 2026-08-12: Plotted every passing-source location and all
+  nine frozen selector inputs. The profile contains no clear host-centered
+  concentration; 2,421 of 2,548 passing sources lack five-parameter Gaia astrometry,
+  and the five labeled examples remain visual-review aids rather than a candidate
+  rank. Added the literature-standard G versus raw BP/RP flux-excess plane and
+  recorded the project lead's visual classification of example E as a star. A
+  versioned astrometric-veto tradeoff is now required because its 48.468-sigma
+  motion and 9.069-sigma parallax survived the soft model penalties. All eight
+  checks pass without changing any selector or radial boundary.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

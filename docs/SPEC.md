@@ -861,6 +861,22 @@ and frozen-threshold decision. The integration must reproduce stored development
 probabilities to floating-point precision before any live search. Its contract and
 validation evidence are maintained in `docs/point_source_selector_integration_v1.md`.
 
+The NGC 4698 QA review on 2026-08-12 records Gaia source
+`3734680398396995328` as a project-lead visually confirmed star. It passes selector
+v1 with score 0.974892 despite proper-motion significance 48.468 and absolute-
+parallax significance 9.069. The current model treats these measurements as soft
+negative features, so other extension or poor-fit diagnostics can outweigh them.
+This result does not authorize changing selector v1 in place.
+
+Before proposing a selector v2, measure a separate post-selector astrometric
+contradiction rule across the declared reliable-UCD and priority-contaminant data.
+Report the full retention-versus-rejection curve when either available parallax or
+proper-motion significance exceeds a trial boundary. Include 3 sigma as the
+Liu et al. (2020) literature reference, not as a pre-approved BubbleTea boundary.
+Missing astrometry remains unknown and cannot be converted to zero significance.
+Do not choose the rule from the NGC 4698 star or any host-centered excess, and keep
+`point_source_logistic_model_v1` as the reproducible baseline.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:
@@ -944,6 +960,43 @@ reaches 13.064418 degrees. The real retrieval therefore cannot use the inherited
 two-degree cap. It must use complete tiled or equivalent queries with explicit
 requested, retrieved, masked, and usable areas. Detailed calibration requirements
 are maintained in `docs/radial_measurement_design.md`.
+
+Interview decisions on 2026-08-11 fix the first-stage calibration policy. Report
+both the physical-kpc profile and the `R50`-normalized profile whenever a verified
+`R50` is available; a missing `R50` makes only the normalized view unavailable. The
+first-stage physical view retains all existing rings through 600 kpc so that the
+outer behavior can be inspected before a final outer boundary is chosen. Retrieval
+must attempt the declared large radius and record incomplete coverage explicitly;
+it must not silently replace the requested radius with an angular cap.
+
+The first-stage safety view treats 0--50 kpc as a conservative central
+contamination region and does not use it for UCD inference. This is a temporary,
+deliberately large physical exclusion chosen from an already declared ring edge,
+not a final universal boundary and not a substitute for `R50` calibration. The
+0--50 kpc component rings, their areas, counts, densities, and continuous source
+radii remain in the output. Candidate central boundaries at 20, 25, 30, 40, and
+50 kpc may be compared using contamination behavior, but not by selecting the
+boundary that produces the largest UCD excess. No outer signal boundary is approved
+until the large-radius profiles have been reviewed.
+
+The first-stage five-host fixture freezes 14 physical rings per host and passes all
+16 count-blind geometry checks without a Gaia query. The 600 kpc requested circle
+areas are 6.478776 square degrees for NGC 4698, 491.177142 for ESO 006-G001,
+9.492875 for NGC 1316, 13.368272 for M60, and 9.337623 for Arp 244. Preserve every
+host, including the difficult nearby dwarf. NGC 4698 is the initial live geometry
+benchmark because it has the smallest 600 kpc angular radius among the fixed,
+resolved isolated review hosts; this selection uses no Gaia count or selector
+result.
+
+The first NGC 4698 run completed on 2026-08-11. The 600 kpc circle contains 23,811
+unique Gaia sources in the frozen G-magnitude range; six measured retrieval strips
+contain at most 4,709 rows each. The frozen point-source contamination selector
+retains 2,548 sources. Both all-source and selector-passing counts and densities are
+stored in all fourteen rings, and continuous physical radius remains in the
+external source-level output. All fourteen run safeguards pass. Beyond the
+temporary 50 kpc central exclusion, the selector-passing density spans
+317.377181--426.550743 per square degree across the six preserved rings. This
+single-host profile does not approve an outer signal boundary.
 
 The approved retrieval building block partitions one exact circular query into
 non-overlapping declination ranges. Each subquery retains the original circle
