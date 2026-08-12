@@ -32,6 +32,8 @@ SOURCE_PATH = FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR / "ngc_4698" / "scored_sour
 CENTRAL_EXCLUSION_KPC = 50
 REVIEW_MAXIMUM_RADIUS_KPC = 150
 FEATURE_AXIS_QUANTILES = (0.005, 0.995)
+LIU_2020_FLUX_EXCESS_REFERENCE = 1.7
+LIU_STYLE_MAXIMUM_FLUX_EXCESS = 5.0
 
 FEATURE_LABELS = {
     "log1p_astrometric_excess_noise": "log(1 + astrometric excess noise)",
@@ -450,6 +452,109 @@ def plot_feature_spaces(
     plt.close(figure)
 
 
+def plot_flux_excess_qa(
+    sources: pd.DataFrame, selected: pd.DataFrame, review: pd.DataFrame
+) -> None:
+    """Plot the literature-standard G versus BP/RP flux-excess QA plane."""
+    configure_style()
+    complete = sources.loc[
+        sources[["phot_g_mean_mag", "phot_bp_rp_excess_factor"]].notna().all(axis=1)
+    ]
+    passing = complete.loc[complete["point_source_logistic_selected"].astype(bool)]
+    visually_confirmed_star = review.loc[review["user_visual_classification"].eq("star")]
+    figure, axes = plt.subplots(1, 2, figsize=(7.2, 3.25))
+    for panel_label, axis, full_range in zip(("A", "B"), axes, (False, True), strict=True):
+        axis.scatter(
+            complete["phot_g_mean_mag"],
+            complete["phot_bp_rp_excess_factor"],
+            s=2,
+            color="#999999",
+            alpha=0.12,
+            linewidths=0,
+            rasterized=True,
+            label="All Gaia sources",
+        )
+        axis.scatter(
+            passing["phot_g_mean_mag"],
+            passing["phot_bp_rp_excess_factor"],
+            s=9,
+            facecolors="none",
+            edgecolors="#0072B2",
+            alpha=0.38,
+            linewidths=0.55,
+            rasterized=True,
+            label="Passing sources",
+        )
+        axis.scatter(
+            visually_confirmed_star["phot_g_mean_mag"],
+            visually_confirmed_star["phot_bp_rp_excess_factor"],
+            marker="*",
+            s=90,
+            facecolor="#D55E00",
+            edgecolor="white",
+            linewidth=0.7,
+            zorder=5,
+            label="Visually confirmed star E",
+        )
+        axis.axhline(
+            LIU_2020_FLUX_EXCESS_REFERENCE,
+            color="#000000",
+            linestyle=":",
+            linewidth=1,
+        )
+        axis.text(
+            11.45,
+            LIU_2020_FLUX_EXCESS_REFERENCE * (1.04 if full_range else 1.02),
+            "Liu et al. (2020) reference: 1.7",
+            fontsize=6.5,
+            va="bottom",
+        )
+        axis.set_xlim(11.0, 22.0)
+        if full_range:
+            axis.set_yscale("log")
+            axis.set_ylim(0.45, 75)
+            axis.set_title("Full measured range", loc="left")
+        else:
+            axis.set_ylim(0.8, LIU_STYLE_MAXIMUM_FLUX_EXCESS)
+            axis.set_title("Liu et al. (2020) display range", loc="left")
+        axis.set_xlabel("Gaia G magnitude")
+        axis.set_ylabel(r"BP/RP flux-excess factor $(I_{BP}+I_{RP})/I_G$")
+        axis.text(
+            -0.14,
+            1.03,
+            panel_label,
+            transform=axis.transAxes,
+            fontsize=10,
+            fontweight="bold",
+        )
+        axis.spines[["top", "right"]].set_visible(False)
+    axes[0].legend(frameon=False, loc="upper left")
+    figure.tight_layout()
+    save_figure(
+        figure,
+        name="first_stage_ngc4698_gaia_flux_excess_qa",
+        phase=3,
+        script_path="scripts/phase3_background/plot_first_stage_host_candidates.py",
+        command="BUBBLETEA_EXTERNAL_DATA=~/Dropbox/work/data uv run python scripts/phase3_background/plot_first_stage_host_candidates.py",
+        data_source=(
+            "$BUBBLETEA_EXTERNAL_DATA/bubbletea/gaia_host_profiles_v1/ngc_4698/scored_sources.csv"
+        ),
+        description=(
+            "Gaia G magnitude versus the raw BP/RP flux-excess factor, defined as "
+            "(I_BP + I_RP) / I_G. The layout follows Figure 7 of Liu et al. (2020, "
+            "ApJS 250, 17; DOI 10.3847/1538-4365/abad91). Gray points are all Gaia "
+            "sources in the frozen G range, blue open circles pass the frozen BubbleTea "
+            "point-source contamination selector, and the orange star is example E, "
+            "visually classified by the project lead as a star. Panel A reproduces the "
+            "literature-style excess-factor display range; panel B shows the complete "
+            "measured range on a logarithmic axis. The dotted 1.7 line is Liu et al.'s "
+            "sample-specific reference and is not a new BubbleTea cut."
+        ),
+        title="NGC 4698 Gaia BP/RP flux-excess QA",
+    )
+    plt.close(figure)
+
+
 def main() -> None:
     """Write candidate diagnostics and both requested figures."""
     fixture = pd.read_csv(FIRST_STAGE_HOST_PROFILE_FIXTURE)
@@ -458,6 +563,15 @@ def main() -> None:
     selected = sources.loc[sources["point_source_logistic_selected"].astype(bool)].copy()
     selected = add_host_offsets(selected, host)
     review = build_review_examples(selected)
+    review["user_visual_classification"] = ""
+    review["user_visual_classification_date"] = ""
+    review["user_visual_classification_evidence"] = ""
+    star_example = review["review_label"].eq("E")
+    review.loc[star_example, "user_visual_classification"] = "star"
+    review.loc[star_example, "user_visual_classification_date"] = "2026-08-12"
+    review.loc[star_example, "user_visual_classification_evidence"] = (
+        "project_lead_visual_inspection"
+    )
     review = review.merge(
         selected[["source_id", "east_offset_kpc", "north_offset_kpc"]],
         on="source_id",
@@ -468,6 +582,7 @@ def main() -> None:
     review.to_csv(FIRST_STAGE_HOST_CANDIDATE_REVIEW, index=False)
     plot_locations(selected, review)
     plot_feature_spaces(sources, selected, review)
+    plot_flux_excess_qa(sources, selected, review)
 
     rejected = sources.loc[~sources["point_source_logistic_selected"].astype(bool)]
     selected_outside = selected.loc[selected["projected_radius_kpc"].gt(CENTRAL_EXCLUSION_KPC)]
@@ -475,6 +590,7 @@ def main() -> None:
     rejected_astrometry_missing = rejected["ruwe"].isna()
     coordinates = SkyCoord(selected["ra"].to_numpy() * u.deg, selected["dec"].to_numpy() * u.deg)
     _, nearest_separation, _ = coordinates.match_to_catalog_sky(coordinates, nthneighbor=2)
+    selected_flux_excess = selected["phot_bp_rp_excess_factor"].dropna()
     checks = {
         "all_frozen_domain_sources_preserved": len(sources) == 23811,
         "all_selector_passing_sources_preserved": len(selected) == 2548,
@@ -492,6 +608,11 @@ def main() -> None:
         )["threshold"]
         == 0.8277833628791744,
         "no_new_candidate_cut_applied": True,
+        "visually_confirmed_star_recorded": review.loc[
+            review["review_label"].eq("E"), "user_visual_classification"
+        ]
+        .eq("star")
+        .all(),
     }
     checks = {name: bool(value) for name, value in checks.items()}
     diagnostics = {
@@ -524,6 +645,21 @@ def main() -> None:
         "selector_score_quantiles": {
             str(quantile): float(selected["point_source_logistic_probability"].quantile(quantile))
             for quantile in (0.0, 0.1, 0.5, 0.9, 0.99, 1.0)
+        },
+        "selector_passing_flux_excess_summary": {
+            "available_count": len(selected_flux_excess),
+            "below_liu_2020_reference_1p7_count": int(
+                selected_flux_excess.lt(LIU_2020_FLUX_EXCESS_REFERENCE).sum()
+            ),
+            "between_1p7_and_5_count": int(
+                selected_flux_excess.between(
+                    LIU_2020_FLUX_EXCESS_REFERENCE,
+                    LIU_STYLE_MAXIMUM_FLUX_EXCESS,
+                    inclusive="both",
+                ).sum()
+            ),
+            "above_5_count": int(selected_flux_excess.gt(LIU_STYLE_MAXIMUM_FLUX_EXCESS).sum()),
+            "liu_2020_reference_role": ("qa_reference_only_not_a_bubbletea_selection_cut"),
         },
         "passing_sources_with_neighbor_within_2_arcsec": int(
             np.count_nonzero(nearest_separation.arcsec < 2)

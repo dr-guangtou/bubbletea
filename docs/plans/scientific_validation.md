@@ -232,6 +232,12 @@ inputs, and every exclusion has a recorded reason.
   - [x] Complete the one-time frozen validation run (2026-07-18): 91.30% reliable-
     UCD recall and 0.57% macro retention across Gaia NSS and QSO. Retuning is closed;
     any future model generation requires a new independent validation cohort.
+  - [ ] Evaluate a versioned post-selector astrometric contradiction rule without
+    changing `point_source_logistic_model_v1`. Measure the full reliable-UCD versus
+    contaminant tradeoff when either available parallax or proper-motion
+    significance exceeds a trial boundary; include 3 sigma as the Liu et al. (2020)
+    literature reference, preserve null astrometry as unknown, and do not tune from
+    the visually confirmed NGC 4698 star or a host excess.
   - [ ] Review and approve one measured operating point before implementing and
     freezing the shared selector.
 - [ ] Measure selection behavior across magnitude, distance, inferred luminosity,

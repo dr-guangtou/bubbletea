@@ -586,7 +586,11 @@ Phase-specific execution tasks remain in `docs/plans/`.
   nine frozen selector inputs. The profile contains no clear host-centered
   concentration; 2,421 of 2,548 passing sources lack five-parameter Gaia astrometry,
   and the five labeled examples remain visual-review aids rather than a candidate
-  rank. All seven checks pass without changing any selector or radial boundary.
+  rank. Added the literature-standard G versus raw BP/RP flux-excess plane and
+  recorded the project lead's visual classification of example E as a star. A
+  versioned astrometric-veto tradeoff is now required because its 48.468-sigma
+  motion and 9.069-sigma parallax survived the soft model penalties. All eight
+  checks pass without changing any selector or radial boundary.
   Depends on: BT-002, BT-006, BT-020.
 
 - [ ] **BT-022 - Calibrate and freeze the Galactic-latitude limit.**

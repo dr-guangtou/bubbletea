@@ -1453,3 +1453,20 @@ parallax significance, and proper-motion significance.
 feature-space diagnostic. Treat the logistic output as a selection score rather
 than a calibrated probability of physical UCD identity, and require imaging or
 spectroscopy before calling a high-score source compelling.
+
+## 2026-08-12: Soft astrometric penalties can lose to extension diagnostics
+
+**Lesson:** Including parallax and proper-motion significance in a logistic model
+does not guarantee rejection of a source with strongly nonzero astrometry because
+other features can outweigh their negative coefficients.
+
+**Context:** The project lead visually classified NGC 4698 example E as a star. It
+passes selector v1 with score 0.974892 despite 48.468-sigma motion and 9.069-sigma
+parallax. Its strong excess-noise diagnostics dominate the soft astrometric
+penalties, while its BP/RP flux-excess factor of 2.084 lies above the Liu et al.
+(2020) 1.7 extended-source reference.
+
+**Recommendation:** Preserve selector v1 as the baseline and separately measure a
+versioned hard astrometric contradiction rule. Report completeness and contaminant
+rejection across the full boundary curve, preserve missing astrometry as unknown,
+and do not select a boundary from one visually inspected source.

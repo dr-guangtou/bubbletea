@@ -861,6 +861,22 @@ and frozen-threshold decision. The integration must reproduce stored development
 probabilities to floating-point precision before any live search. Its contract and
 validation evidence are maintained in `docs/point_source_selector_integration_v1.md`.
 
+The NGC 4698 QA review on 2026-08-12 records Gaia source
+`3734680398396995328` as a project-lead visually confirmed star. It passes selector
+v1 with score 0.974892 despite proper-motion significance 48.468 and absolute-
+parallax significance 9.069. The current model treats these measurements as soft
+negative features, so other extension or poor-fit diagnostics can outweigh them.
+This result does not authorize changing selector v1 in place.
+
+Before proposing a selector v2, measure a separate post-selector astrometric
+contradiction rule across the declared reliable-UCD and priority-contaminant data.
+Report the full retention-versus-rejection curve when either available parallax or
+proper-motion significance exceeds a trial boundary. Include 3 sigma as the
+Liu et al. (2020) literature reference, not as a pre-approved BubbleTea boundary.
+Missing astrometry remains unknown and cannot be converted to zero significance.
+Do not choose the rule from the NGC 4698 star or any host-centered excess, and keep
+`point_source_logistic_model_v1` as the reproducible baseline.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

@@ -229,7 +229,11 @@ Interview decisions, 2026-08-11:
 - [x] Plot all 2,548 passing-source locations and the nine frozen-selector feature
   inputs; preserve five transparent review examples without inventing a candidate
   rank, document the 95.02% missing five-parameter-astrometry fraction, and pass
-  all seven checks (2026-08-12).
+  all seven initial checks (2026-08-12).
+- [x] Add the literature-standard G-magnitude versus raw BP/RP flux-excess QA plane,
+  preserve Liu et al.'s 1.7 value as a reference rather than a new cut, and record
+  the project lead's visual classification of example E as a star; all eight
+  updated checks pass (2026-08-12).
 - [ ] Review the first profile, then select the next manageable host profile without
   using its Gaia density; do not choose a final outer signal boundary from one host.
 
