@@ -377,6 +377,18 @@ M60_POSITIVE_CONTROL_AUDIT_CUTOUT_SUMMARY = (
 M60_POSITIVE_CONTROL_FLUX_EXCESS_DIAGNOSTICS = (
     RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_flux_excess_by_radius_v1.json"
 )
+UCD_LEGACY_REFERENCE_CONTRACT = LITERATURE_SOURCES / "ucd_legacy_reference_contract_v1.json"
+UCD_LEGACY_REFERENCE_TARGETS = LITERATURE_CATALOGS / "ucd_legacy_reference_targets_v1.csv"
+UCD_LEGACY_REFERENCE_GAIA_MEMBERSHIP = (
+    LITERATURE_CATALOGS / "ucd_legacy_reference_gaia_membership_v1.csv"
+)
+UCD_LEGACY_REFERENCE_TRACTOR_MATCHES = (
+    LITERATURE_CATALOGS / "ucd_legacy_reference_tractor_matches_v1.csv"
+)
+UCD_LEGACY_REFERENCE_TRACTOR_AUDIT = (
+    LITERATURE_VALIDATION / "ucd_legacy_reference_tractor_audit_v1.csv"
+)
+UCD_LEGACY_REFERENCE_MANIFEST = LITERATURE_SOURCES / "ucd_legacy_reference_manifest_v1.json"
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 
@@ -393,6 +405,8 @@ FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia
 M60_POSITIVE_CONTROL_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "m60_positive_control_v1"
 M60_KNOWN_UCD_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "known_ucd_cutouts"
 M60_POSITIVE_CONTROL_AUDIT_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "audit_cutouts"
+UCD_LEGACY_REFERENCE_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "ucd_legacy_reference_v1"
+UCD_LEGACY_REFERENCE_CUTOUT_DIR = UCD_LEGACY_REFERENCE_EXTERNAL_DIR / "cutouts"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

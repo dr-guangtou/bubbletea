@@ -962,6 +962,16 @@ in the three outer zones. Consequently, the plot is a radial diagnostic rather t
 a source-classification boundary. The Liu et al. (2020) value 1.7 remains a
 sample-specific reference and is not a BubbleTea cut.
 
+The UCD Legacy Survey reference side quest uses two provenance-defined cohorts: all
+680 canonical objects classified confirmed under `confirmation_rules_v1`, and the 44
+Saifollahi et al. (2021) objects published in the high-probability candidate table
+`tablea6.dat`. The latter remain candidates and cannot be relabeled confirmed. Gaia
+non-single-star, galaxy-candidate, and QSO-candidate membership is tested only by an
+exact unique Gaia source identifier; objects without one remain not testable. Legacy
+Survey DR10 imaging and Tractor-catalog coverage are tested at all 724 literature
+coordinates. Positional catalog matching retains ambiguity information, and Tractor
+model type or shape measurements are never treated as physical truth labels.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

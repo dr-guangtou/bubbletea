@@ -34,6 +34,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
   - 2026-08-12 flux-excess QA: 4,879 of 4,920 retained sources and 397 of 400 audit
     sources have plottable G and raw BP/RP flux-excess measurements. Radial changes
     rule out interpreting one display reference as a universal classification cut.
+  - 2026-08-12 side quest approved: build a visual and Legacy Survey catalog reference
+    from all 680 confirmed UCDs plus the 44 Saifollahi high-probability candidates;
+    preserve candidate status and report Gaia-catalog membership only where an exact
+    identifier makes the test possible.
 
 ## Status and Priority
 

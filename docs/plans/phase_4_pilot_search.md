@@ -51,6 +51,15 @@
   - [x] Plot G magnitude against raw BP/RP flux-excess factor for the complete
     selector-retained population and frozen audit sample in all four radial zones
     (2026-08-12).
+  - [ ] Build an empirical Legacy Survey appearance and photometry reference for 680
+    confirmed UCDs and 44 Saifollahi high-probability candidates.
+    - [ ] Freeze the two provenance-defined cohorts before inspecting catalog or
+      imaging outcomes.
+    - [ ] Record compact three-color cutouts or explicit unavailable outcomes.
+    - [ ] Test Gaia NSS, galaxy-candidate, and QSO-candidate membership by exact Gaia
+      identifier where possible.
+    - [ ] Retrieve auditable Legacy Survey DR10 Tractor matches with photometry,
+      quality flags, model type, and available shape measurements.
   - [ ] Keep possible contaminants as review flags; do not remove them from the
     selector-v1 radial profile during this first pass.
 

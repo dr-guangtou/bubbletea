@@ -1,0 +1,49 @@
+{
+  "contract_version": "ucd_legacy_reference_contract_v1",
+  "generated_at_utc": "2026-08-12T15:21:43.288123+00:00",
+  "status": "frozen_before_gaia_legacy_catalog_and_image_outcomes",
+  "plain_language_scope": "Build a visual and photometric reference from all approved confirmed UCDs and the published Saifollahi high-probability candidate subset.",
+  "cohort_definitions": {
+    "confirmed_ucd": "Canonical classification_state=confirmed under confirmation_rules_v1.",
+    "saifollahi_high_probability_candidate": "Accepted canonical objects from Saifollahi et al. 2021 tablea6.dat; these remain candidates, not confirmed UCDs."
+  },
+  "cohort_counts": {
+    "confirmed_ucd": 680,
+    "saifollahi_high_probability_candidate": 44
+  },
+  "gaia_exact_identifier_testable_counts": {
+    "confirmed_ucd": 175,
+    "saifollahi_high_probability_candidate": 0
+  },
+  "gaia_membership_policy": "Test NSS, galaxy-candidate, and QSO-candidate membership only by one exact literature Gaia DR3 source identifier.",
+  "legacy_tractor_policy": "Query within 2 arcseconds of each literature coordinate, retain every nearby match, and record nearest and second-nearest separations before selecting the closest row for per-object summaries.",
+  "legacy_image_policy": "Request one 64-by-64 ls-dr10 JPEG at 0.262 arcseconds per pixel for every coordinate and preserve unavailable or unusable outcomes explicitly.",
+  "interpretation_limits": [
+    "saifollahi_high_probability_does_not_mean_spectroscopically_confirmed",
+    "no_unique_gaia_identifier_means_not_testable_not_nonmember",
+    "tractor_psf_type_does_not_prove_star",
+    "tractor_extended_type_does_not_prove_galaxy",
+    "legacy_image_or_catalog_absence_does_not_disprove_ucd_status"
+  ],
+  "target_output": {
+    "path": "data/literature/catalogs/ucd_legacy_reference_targets_v1.csv",
+    "sha256": "b3f6a29203811b074604d18a8e855d7915fac3b89138b30a3edeff3f02efc407"
+  },
+  "inputs": {
+    "data/literature/database/ucd_reference_v2.db": "6f18ae36701eff9e423782a7fae01cbeadc823193d00d8db06898210da32f5e2"
+  },
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "confirmed_cohort_has_680_objects": true,
+    "saifollahi_cohort_has_44_candidates": true,
+    "cohorts_are_disjoint": true,
+    "saifollahi_objects_remain_candidates": true,
+    "all_objects_have_literature_coordinates": true,
+    "confirmed_gaia_testable_count_is_175": true,
+    "saifollahi_gaia_testable_count_is_zero": true,
+    "gaia_membership_requires_exact_identifier": true,
+    "no_catalog_or_image_outcome_inspected": true,
+    "tractor_model_type_is_not_physical_truth": true
+  }
+}
