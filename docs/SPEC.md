@@ -930,6 +930,15 @@ separate warnings. The exact review columns and allowed values are frozen before
 complete-field retrieval in
 `data/results/radial_search/m60_positive_control_review_rules_v1.json`.
 
+The verified complete-field run retrieved all 45,402 raw sources in 14 archive-safe
+declination strips and retained 4,920 with selector version 1. Both reliable controls
+and all nine literature candidates with unique Gaia identifiers pass. The 12
+literature candidates and six rejected comparisons without unique Gaia identifiers
+remain not testable by exact identifier. No review flag was assigned during this run.
+The preserved profile shows substantially elevated source density inside the
+temporary 50 kpc diagnostic region; no contamination-corrected UCD excess or final
+outer radius has been inferred.
+
 ## Host-Galaxy Properties
 
 The primary host-correlation analysis requires the following properties:

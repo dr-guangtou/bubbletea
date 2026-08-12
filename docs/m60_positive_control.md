@@ -48,6 +48,33 @@ This is a raw Gaia count. It does **not** say that 45,402 sources pass the UCD
 selector. Individual Gaia rows must be retrieved and evaluated locally before the
 selector-passing count, radial profile, or contamination rate can be measured.
 
+## Complete selector-version-1 result
+
+The complete field was retrieved in 14 verified declination strips and scored
+locally with the unchanged selector version 1. The selector retained 4,920 of 45,402
+sources, or 10.8365%. This is the observed candidate workload before any catalog or
+visual contamination review; it is not an estimated UCD fraction.
+
+Both reliable UCD controls were retrieved and retained, with selector scores 0.9810
+and 0.9249. All nine literature candidates that have one unique Gaia identifier were
+also retrieved and retained. Twelve other literature candidates and all six rejected
+comparisons lack a unique Gaia identifier in the frozen reference table, so an exact
+identifier test cannot determine whether they were recovered. They remain explicitly
+labeled as not testable rather than being counted as missed.
+
+The radial profile shows a strong density increase inside 50 kpc in both raw Gaia
+sources and selector-retained sources. This confirms the need to keep the inner
+region diagnostic. Outside 50 kpc, the selector-retained density declines from
+628.47 sources per square degree in the 50--75 kpc interval to 339.59 sources per
+square degree in the 300--600 kpc interval. These measurements have not yet been
+corrected for contamination and do not establish a UCD excess.
+
+Source-level tables are stored outside the repository under
+`$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/`. The checked profile,
+known-object recovery table, and run record are stored in
+`data/results/radial_search/`. The companion figure is
+`figures/phase4/m60_positive_control_radial_profile_v1.png`.
+
 ## Compact Legacy Survey image pilot
 
 The two reliable UCD controls were retrieved from the Legacy Survey DR10 three-color
@@ -138,10 +165,9 @@ image interpretation; it is not a physical classification.
 
 ## Next decision before the full field
 
-The next step is to retrieve the individual Gaia rows needed by selector version 1,
-apply the selector locally, and measure the passing count in every radial interval.
-Before visually inspecting those passing sources, the project should freeze two
-separate sets:
+The individual Gaia rows have now been retrieved and selector version 1 has been
+applied locally. Before visually inspecting the 4,920 retained sources, the project
+must freeze two separate sets:
 
 - a representative review sample used to measure what kinds of contaminants remain;
   and

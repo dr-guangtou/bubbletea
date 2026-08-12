@@ -22,6 +22,9 @@ Phase-specific execution tasks remain in `docs/plans/`.
   - 2026-08-12 review rule: incomplete H II-region and young-cluster catalogs cannot
     provide negative evidence; color only prioritizes inspection, and blend or image
     problems require visual inspection.
+  - 2026-08-12 complete-field result: selector version 1 retained 4,920 of 45,402
+    sources. Both reliable controls and all nine exact-identifier literature
+    candidates pass; representative contamination sampling remains pending.
 
 ## Status and Priority
 
