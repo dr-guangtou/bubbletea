@@ -11,6 +11,7 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+import numpy as np
 import pandas as pd
 from matplotlib.image import imread
 
@@ -18,9 +19,11 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from scripts.config import (
+    PROJECT_ROOT,
     UCD_LEGACY_REFERENCE_CONTRACT,
     UCD_LEGACY_REFERENCE_CUTOUT_DIR,
     UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST,
+    UCD_LEGACY_REFERENCE_MANIFEST,
     UCD_LEGACY_REFERENCE_TARGETS,
 )
 from scripts.phase1_literature.audit_reference_data import calculate_sha256
@@ -55,6 +58,19 @@ def valid_image(path: Path) -> bool:
         )
     except (OSError, ValueError):
         return False
+
+
+def image_content_measurements(path: Path) -> dict[str, object]:
+    """Distinguish image content from the viewer's low-color placeholder tiles."""
+    image = imread(path)
+    unique_rgb_count = len(np.unique(image.reshape(-1, image.shape[-1]), axis=0))
+    return {
+        "image_content_status": (
+            "viewer_placeholder_tile" if unique_rgb_count <= 10 else "nonuniform_image_content"
+        ),
+        "unique_rgb_count": unique_rgb_count,
+        "pixel_standard_deviation": float(np.std(image)),
+    }
 
 
 def request_image(url: str, object_id: str) -> tuple[bytes | None, str, str]:
@@ -134,6 +150,15 @@ def main() -> None:
                 else:
                     temporary.replace(path)
                     status = "downloaded_and_verified"
+        content_measurements = (
+            image_content_measurements(path)
+            if content is not None
+            else {
+                "image_content_status": "no_jpeg_available",
+                "unique_rgb_count": 0,
+                "pixel_standard_deviation": "",
+            }
+        )
         rows.append(
             {
                 "canonical_object_id": object_id,
@@ -155,6 +180,7 @@ def main() -> None:
                 "byte_count": len(content) if content is not None else 0,
                 "file_path": output_path_text(path) if content is not None else "",
                 "sha256": hashlib.sha256(content).hexdigest() if content is not None else "",
+                **content_measurements,
                 "visual_interpretation_status": "not_reviewed",
             }
         )
@@ -166,6 +192,7 @@ def main() -> None:
     available = manifest["retrieval_status"].isin(
         ["downloaded_and_verified", "reused_verified_checkpoint"]
     )
+    nonuniform = manifest["image_content_status"].eq("nonuniform_image_content")
     checks = {
         "all_724_targets_have_outcomes": len(manifest) == len(targets) == 724,
         "target_identifiers_are_unique": manifest["canonical_object_id"].is_unique,
@@ -179,6 +206,11 @@ def main() -> None:
         "all_images_remain_unreviewed": manifest["visual_interpretation_status"]
         .eq("not_reviewed")
         .all(),
+        "viewer_placeholder_tiles_are_distinguished_from_nonuniform_images": manifest.loc[
+            available, "image_content_status"
+        ]
+        .isin(["viewer_placeholder_tile", "nonuniform_image_content"])
+        .all(),
         "image_absence_does_not_change_ucd_status": True,
     }
     checks = {name: bool(value) for name, value in checks.items()}
@@ -188,6 +220,15 @@ def main() -> None:
         "status": "complete_with_explicit_unavailable_outcomes",
         "target_count": len(manifest),
         "available_verified_count": int(available.sum()),
+        "nonuniform_image_content_count": int(nonuniform.sum()),
+        "viewer_placeholder_tile_count": int(
+            manifest["image_content_status"].eq("viewer_placeholder_tile").sum()
+        ),
+        "placeholder_definition": (
+            "At most 10 distinct RGB values in the 64-by-64 JPEG. The observed count "
+            "distribution has a gap between 6 and 40 values; inspected examples at "
+            "or below 6 are flat viewer placeholders rather than sky images."
+        ),
         "unavailable_or_unusable_count": int((~available).sum()),
         "counts_by_cohort_and_status": [
             {
@@ -208,6 +249,27 @@ def main() -> None:
     }
     summary_path = UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST.with_suffix(".json")
     summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    combined_manifest = json.loads(UCD_LEGACY_REFERENCE_MANIFEST.read_text())
+    combined_manifest["status"] = "catalog_and_image_retrieval_complete"
+    combined_manifest["legacy_images"] = {
+        "method": "64_by_64_ls_dr10_three_color_jpeg_at_literature_coordinate",
+        "field_width_arcsec": FIELD_WIDTH_ARCSEC,
+        "readable_jpeg_count": int(available.sum()),
+        "nonuniform_image_content_count": int(nonuniform.sum()),
+        "viewer_placeholder_tile_count": int(
+            manifest["image_content_status"].eq("viewer_placeholder_tile").sum()
+        ),
+        "all_visual_interpretations_remain_not_reviewed": True,
+    }
+    combined_manifest["outputs"][
+        str(UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST.relative_to(PROJECT_ROOT))
+    ] = calculate_sha256(UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST)
+    combined_manifest["outputs"][str(summary_path.relative_to(PROJECT_ROOT))] = calculate_sha256(
+        summary_path
+    )
+    UCD_LEGACY_REFERENCE_MANIFEST.write_text(
+        json.dumps(combined_manifest, indent=2) + "\n", encoding="utf-8"
+    )
     if not all(checks.values()):
         raise RuntimeError(f"UCD Legacy cutout retrieval failed: {checks}")
 

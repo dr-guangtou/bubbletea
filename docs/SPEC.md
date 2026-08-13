@@ -469,6 +469,12 @@ used retrospectively to alter the Gaia-only statistical selection. Any analysis 
 an imaging-covered subset must be labeled as such and kept distinct from the
 all-Gaia population inference.
 
+The source-by-source review of the literature UCD reference — including two-scale
+Legacy Survey imaging, provenance, Gaia, host, and external-catalog evidence — is
+specified separately in `docs/plans/ucd_visual_review_tool.md`. Its output is a
+clean positive design reference for deriving detailed Gaia-plus-Legacy selection
+rules; it never changes the Gaia-only statistical selection.
+
 ## Extended-Source Probability Calibration
 
 The method for assigning a Gaia-only probability that a source is non-point-like
@@ -971,6 +977,18 @@ exact unique Gaia source identifier; objects without one remain not testable. Le
 Survey DR10 imaging and Tractor-catalog coverage are tested at all 724 literature
 coordinates. Positional catalog matching retains ambiguity information, and Tractor
 model type or shape measurements are never treated as physical truth labels.
+
+The completed retrieval returned 724 readable JPEG files, of which 707 contain
+nonuniform image content and 17 are low-color Legacy Survey viewer placeholders. The
+visual atlas therefore contains 663 confirmed UCDs and all 44 Saifollahi candidates;
+every image remains not reviewed. Exact Gaia identifiers test 175 confirmed-object
+rows representing 174 distinct Gaia sources. Gaia catalog overlap is 0 non-single
+stars, 8 QSO candidates, and 74 galaxy-candidate object rows representing 73 distinct
+sources. These are inspection flags, not rejection rules. The Legacy Survey catalog
+has a source within 2 arcseconds for 585 targets, including all 44 Saifollahi
+candidates; 101 matched targets have more than one possible association. Full plain-
+language definitions, provenance, and use limits are in
+`docs/ucd_legacy_survey_reference.md`.
 
 ## Host-Galaxy Properties
 
@@ -1565,3 +1583,6 @@ The following areas remain intentionally unspecified:
 The staged implementation and validation order is maintained in
 `docs/plans/scientific_validation.md`. The cross-phase issue register is
 `docs/todo.md`.
+
+The source-by-source UCD reference visual-review workbench is specified in
+`docs/plans/ucd_visual_review_tool.md`.

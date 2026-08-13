@@ -149,9 +149,12 @@ def retrieve_gaia_membership(
 ) -> tuple[pd.DataFrame, list[dict[str, object]]]:
     """Test Gaia catalog membership only for exact unique identifiers."""
     testable = targets.loc[targets["gaia_identifier_count"].eq(1)].copy()
+    unique_identifiers = pd.DataFrame(
+        {"gaia_dr3_ids": sorted(set(testable["gaia_dr3_ids"]), key=int)}
+    )
     frames = []
     records = []
-    for batch_number, batch in enumerate(chunks(testable, GAIA_BATCH_SIZE), start=1):
+    for batch_number, batch in enumerate(chunks(unique_identifiers, GAIA_BATCH_SIZE), start=1):
         identifiers = sorted(batch["gaia_dr3_ids"].tolist(), key=int)
         query = (
             f"SELECT {', '.join(GAIA_COLUMNS)} FROM gaia_dr3.gaia_source WHERE "
@@ -171,6 +174,8 @@ def retrieve_gaia_membership(
         )
     returned = pd.concat(frames, ignore_index=True)
     returned["source_id"] = returned["source_id"].map(lambda value: str(int(value)))
+    if returned["source_id"].duplicated().any():
+        raise RuntimeError("Gaia archive returned a repeated source identifier")
     output = targets[
         [
             "canonical_object_id",
@@ -187,12 +192,8 @@ def retrieve_gaia_membership(
         how="left",
         validate="m:1",
     )
-    testable_mask = (
-        output["gaia_identifier_count"].eq(1)
-        if "gaia_identifier_count" in output
-        else output["gaia_catalog_membership_testability"].eq(
-            "testable_exact_unique_gaia_identifier"
-        )
+    testable_mask = output["gaia_catalog_membership_testability"].eq(
+        "testable_exact_unique_gaia_identifier"
     )
     output["gaia_source_row_retrieved"] = output["source_id"].notna()
     output["gaia_membership_result_status"] = "not_testable_no_unique_gaia_identifier"
@@ -335,6 +336,15 @@ def main() -> None:
     tractor.to_csv(UCD_LEGACY_REFERENCE_TRACTOR_MATCHES, index=False)
     tractor_audit.to_csv(UCD_LEGACY_REFERENCE_TRACTOR_AUDIT, index=False)
     testable = gaia["gaia_membership_result_status"].eq("exact_identifier_tested")
+
+    def membership_counts(column: str) -> dict[str, int]:
+        """Count catalog overlaps by canonical object and distinct Gaia source."""
+        members = gaia.loc[testable & gaia[column].fillna(0).eq(1)]
+        return {
+            "canonical_object_count": len(members),
+            "unique_gaia_source_count": members["source_id"].nunique(),
+        }
+
     checks = {
         "all_724_targets_have_gaia_status": len(gaia) == len(targets) == 724,
         "exactly_175_gaia_identifiers_tested": int(testable.sum()) == 175,
@@ -358,16 +368,11 @@ def main() -> None:
         "status": "catalog_retrieval_complete_images_pending",
         "gaia_membership": {
             "method": "exact_unique_gaia_dr3_source_identifier",
-            "testable_count": int(testable.sum()),
-            "qso_candidate_membership_count": int(
-                gaia.loc[testable, "in_qso_candidates"].fillna(0).sum()
-            ),
-            "galaxy_candidate_membership_count": int(
-                gaia.loc[testable, "in_galaxy_candidates"].fillna(0).sum()
-            ),
-            "non_single_star_membership_count": int(
-                gaia.loc[testable, "non_single_star"].fillna(0).sum()
-            ),
+            "testable_canonical_object_count": int(testable.sum()),
+            "unique_tested_gaia_source_count": gaia.loc[testable, "source_id"].nunique(),
+            "qso_candidate_membership": membership_counts("in_qso_candidates"),
+            "galaxy_candidate_membership": membership_counts("in_galaxy_candidates"),
+            "non_single_star_membership": membership_counts("non_single_star"),
             "query_batches": gaia_queries,
         },
         "legacy_tractor": {

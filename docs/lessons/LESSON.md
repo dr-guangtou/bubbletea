@@ -1503,3 +1503,17 @@ checking that the overlap was empty.
 **Recommendation:** Read Gaia identifier columns explicitly as strings whenever they
 are used for matching, exclusion, provenance, or serialization. Add a direct expected-
 identifier overlap check rather than relying only on row counts.
+
+## 2026-08-12: A valid image response can be a survey-viewer placeholder
+
+**Lesson:** A readable JPEG with the requested dimensions does not prove that a sky
+image was returned.
+
+**Context:** The Legacy Survey viewer returned valid 64-by-64 JPEG files for all 724
+UCD reference coordinates, but 17 files were low-color blue or white placeholder
+tiles. Counting HTTP or JPEG success alone would have overstated usable image
+coverage.
+
+**Recommendation:** Record transport success and image-content status separately.
+Measure the returned-image distribution, inspect the low-information modes, and keep
+placeholder outcomes explicit without changing the literature classification.

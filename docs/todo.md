@@ -38,6 +38,12 @@ Phase-specific execution tasks remain in `docs/plans/`.
     from all 680 confirmed UCDs plus the 44 Saifollahi high-probability candidates;
     preserve candidate status and report Gaia-catalog membership only where an exact
     identifier makes the test possible.
+  - 2026-08-12 side quest complete: 707 non-placeholder three-color images form an
+    eight-page atlas; 17 confirmed-object requests returned viewer placeholders. Of
+    175 exactly testable confirmed-object rows, 0 overlap Gaia non-single stars, 8
+    overlap QSO candidates, and 74 overlap galaxy candidates. Legacy Survey catalog
+    matches exist for 585 targets, including all 44 Saifollahi candidates; all raw
+    associations and 101 multiple-match cases remain auditable.
 
 ## Status and Priority
 
@@ -647,6 +653,21 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Depends on: BT-002, BT-009.
 
 ## P1: Pilot Reproducibility and Scale-up
+
+- [ ] **BT-030 - Build the UCD reference visual-review workbench.**
+  Evidence: The UCD Legacy Survey reference (680 confirmed UCDs and 44 Saifollahi
+  high-probability candidates) now has compact three-color images, Legacy Survey
+  Tractor matches, and exact-identifier Gaia membership, but no source-by-source
+  visual review of appearance, centering, host context, or contamination. Mosaic
+  atlas pages are insufficient for per-source diagnosis.
+  Resolution criteria: A local single-user workbench reviews all 724 objects at two
+  image scales with provenance, Gaia, host, Legacy Survey, and external-catalog
+  evidence; records append-only visual observations and a manual positive-design-
+  reference decision; and exports a clean confirmed-UCD positive design reference
+  plus a separate Saifollahi follow-up pool, without altering any canonical data.
+  Specification: `docs/plans/ucd_visual_review_tool.md`.
+  Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-023, and a
+  separately audited host-association register.
 
 - [ ] **BT-009 - Recompute the background experiment with the canonical
   selection.**

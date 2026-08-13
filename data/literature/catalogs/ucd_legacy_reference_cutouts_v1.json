@@ -1,0 +1,35 @@
+{
+  "cutout_version": "ucd_legacy_reference_cutouts_v1",
+  "generated_at_utc": "2026-08-12T16:00:01.232101+00:00",
+  "status": "complete_with_explicit_unavailable_outcomes",
+  "target_count": 724,
+  "available_verified_count": 724,
+  "nonuniform_image_content_count": 707,
+  "viewer_placeholder_tile_count": 17,
+  "placeholder_definition": "At most 10 distinct RGB values in the 64-by-64 JPEG. The observed count distribution has a gap between 6 and 40 values; inspected examples at or below 6 are flat viewer placeholders rather than sky images.",
+  "unavailable_or_unusable_count": 0,
+  "counts_by_cohort_and_status": [
+    {
+      "reference_cohort": "confirmed_ucd",
+      "retrieval_status": "reused_verified_checkpoint",
+      "count": 680
+    },
+    {
+      "reference_cohort": "saifollahi_high_probability_candidate",
+      "retrieval_status": "reused_verified_checkpoint",
+      "count": 44
+    }
+  ],
+  "manifest_sha256": "9141ee5464125bc274070432441f9f16fa5b99c3f8b82eae5e0135126751e87b",
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "all_724_targets_have_outcomes": true,
+    "target_identifiers_are_unique": true,
+    "available_files_are_verified": true,
+    "unavailable_outcomes_are_explicit": true,
+    "all_images_remain_unreviewed": true,
+    "viewer_placeholder_tiles_are_distinguished_from_nonuniform_images": true,
+    "image_absence_does_not_change_ucd_status": true
+  }
+}
