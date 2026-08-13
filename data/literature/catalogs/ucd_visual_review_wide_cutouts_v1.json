@@ -1,0 +1,26 @@
+{
+  "wide_cutout_version": "ucd_visual_review_wide_cutouts_v1",
+  "generated_at_utc": "2026-08-13T14:44:45.709573+00:00",
+  "status": "complete_with_explicit_unavailable_outcomes",
+  "target_count": 724,
+  "downloaded_count": 38,
+  "reused_count": 669,
+  "skipped_viewer_placeholder_count": 17,
+  "unavailable_or_unusable_count": 0,
+  "field_width_arcsec": 67.072,
+  "pixel_scale_arcsec": 0.262,
+  "size_pixels": 256,
+  "placeholder_skip_policy": "Objects whose compact 64-by-64 image is a Legacy Survey viewer placeholder tile are not requested at wide scale because the wide view returns the same placeholder. Their literature classification and compact-image status are unchanged.",
+  "manifest_sha256": "2d7197e41e073c495699ffcdafa7140d218ab2d620b7278b51c36c4e5dd2d5fe",
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "all_724_targets_have_outcomes": true,
+    "target_identifiers_are_unique": true,
+    "exactly_17_placeholders_skipped": true,
+    "available_files_are_verified": true,
+    "unavailable_outcomes_are_explicit": true,
+    "all_images_remain_unreviewed": true,
+    "wide_does_not_alter_gaia_area_accounting": true
+  }
+}
