@@ -439,6 +439,15 @@ UCD_VISUAL_REVIEW_EXTERNAL_ASSOCIATIONS = (
 UCD_VISUAL_REVIEW_EXTERNAL_MANIFEST = (
     LITERATURE_SOURCES / "ucd_visual_review_external_manifest_v1.json"
 )
+UCD_VISUAL_REVIEW_BUNDLE_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "bundle"
+UCD_VISUAL_REVIEW_BUNDLE_INDEX = (
+    LITERATURE_CATALOGS / "ucd_visual_review_bundle_index_v1.csv"
+)
+UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = (
+    LITERATURE_SOURCES / "ucd_visual_review_bundle_manifest_v1.json"
+)
+UCD_VISUAL_REVIEW_REVIEW_DB = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "reviews" / "review_v1.db"
+UCD_VISUAL_REVIEW_EXPORT_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "exports"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

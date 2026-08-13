@@ -1,0 +1,20 @@
+{
+  "bundle_version": "ucd_visual_review_bundle_v1",
+  "generated_at_utc": "2026-08-13T15:27:44.611425+00:00",
+  "status": "bundle_complete",
+  "object_count": 724,
+  "bundle_directory": "bubbletea/ucd_visual_review_v1/bundle",
+  "inputs": {
+    "data/literature/catalogs/ucd_legacy_reference_targets_v1.csv": "b3f6a29203811b074604d18a8e855d7915fac3b89138b30a3edeff3f02efc407",
+    "data/literature/catalogs/host_association_register_v1.csv": "03a2af3827af571e6878d73574652bc57e73dd1e5ff603cef955eb2e9aaac683",
+    "data/literature/catalogs/ucd_legacy_reference_cutouts_v1.csv": "9141ee5464125bc274070432441f9f16fa5b99c3f8b82eae5e0135126751e87b",
+    "data/literature/catalogs/ucd_visual_review_wide_cutouts_v1.csv": "2d7197e41e073c495699ffcdafa7140d218ab2d620b7278b51c36c4e5dd2d5fe",
+    "data/literature/catalogs/ucd_legacy_reference_tractor_matches_v1.csv": "4f91fbea09772e2ec786f2ad1ec2115f42bf4f3f9fc290cadba1122a833189f1",
+    "data/literature/catalogs/ucd_legacy_reference_gaia_membership_v1.csv": "77b027852fb501e2cc29a80887a22a4dc4cae6a0be961a2d5baa2d03eab0285a",
+    "data/literature/catalogs/ucd_visual_review_gaia_neighbors_v1.csv": "00128a3112488833c0517f405d5359056cde5c65a4a69ae7dbe44fe5d7618985",
+    "data/literature/catalogs/ucd_visual_review_external_associations_v1.csv": "54ad1dcd989615f81911eb436666ac2f122f438e90721836ff8b78a0b3f16dc4"
+  },
+  "outputs": {
+    "data/literature/catalogs/ucd_visual_review_bundle_index_v1.csv": "1a3f492c6a0fbfb25bbeaeea6101a111c99e4d388d30ec006698a1b512a6d08f"
+  }
+}
