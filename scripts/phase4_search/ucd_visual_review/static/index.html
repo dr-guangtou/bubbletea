@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UCD Reference Review Workbench</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>UCD Reference Review</h1>
+    <div id="summary" class="summary"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="list-panel">
+      <div class="list-controls">
+        <input id="search" type="text" placeholder="Search names, ids, hosts, bibcodes…">
+        <div class="filters">
+          <select id="filter-cohort">
+            <option value="">All cohorts</option>
+            <option value="confirmed_ucd">Confirmed UCD</option>
+            <option value="saifollahi_high_probability_candidate">Saifollahi candidate</option>
+          </select>
+          <select id="filter-review">
+            <option value="">Any review status</option>
+            <option value="not_started">Not started</option>
+            <option value="incomplete">Incomplete</option>
+            <option value="complete">Complete</option>
+          </select>
+          <select id="filter-decision">
+            <option value="">Any decision</option>
+            <option value="include">Include</option>
+            <option value="exclude">Exclude</option>
+            <option value="hold">Hold</option>
+            <option value="prioritize">Prioritize</option>
+            <option value="standard">Standard</option>
+            <option value="deprioritize">Deprioritize</option>
+          </select>
+        </div>
+      </div>
+      <ul id="object-list" class="object-list"></ul>
+      <div class="pagination">
+        <button id="prev-page">‹ Prev</button>
+        <span id="page-info"></span>
+        <button id="next-page">Next ›</button>
+      </div>
+    </aside>
+
+    <main class="detail-panel" id="detail-panel">
+      <div class="empty-state">Select an object to begin.</div>
+    </main>
+  </div>
+
+  <div id="conflict-dialog" class="modal hidden">
+    <div class="modal-content">
+      <p>Another tab saved a newer revision. Reload the object to see it before saving again.</p>
+      <button id="conflict-close">OK</button>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
