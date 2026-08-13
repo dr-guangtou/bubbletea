@@ -907,6 +907,17 @@ been measured.
   candidates. The later candidate-selection review tool is a separate deliverable.
 - The 17 known viewer-placeholder objects receive only the compact image; the wide
   image is not retrieved for them.
+- Host-association policy (2026-08-13): a single published galaxy name resolves to
+  `verified_unique_host`; a published cluster/group name resolves to
+  `published_environment_only` and adopts the cluster/group distance; a galaxy pair
+  (`X/Y`) resolves to the named group; an empty host field resolves from the source
+  publication's documented environment rather than remaining unknown.
+- The 13 Voggel 2020 candidate stripped-nucleus / luminous-globular-cluster objects
+  are excluded from the confirmed positive design reference (see
+  `data/literature/sources/confirmed_ucd_design_reference_exclusions_v1.json`).
+- Adopted cluster distances: Virgo cluster 16.5 Mpc, Centaurus cluster 43.0 Mpc,
+  Hydra I (NGC 3311) 50.7 Mpc, NGC 5128 3.8 Mpc. The register is
+  `data/literature/catalogs/host_association_register_v1.csv`.
 - A complete review requires all applicable visual evidence and a final decision.
 - No review action changes literature classification, canonical coordinates, host
   identity, selector output, radial profiles, or source provenance.

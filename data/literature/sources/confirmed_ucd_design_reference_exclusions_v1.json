@@ -1,0 +1,28 @@
+{
+  "decision_version": "confirmed_ucd_design_reference_exclusions_v1",
+  "decided_at_utc": "2026-08-13T14:19:51.478772+00:00",
+  "decided_by": "project_lead_2026-08-13",
+  "reason": "Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",
+  "evidence": {
+    "catalog_title": "A Gaia-based Catalog of Candidate Stripped Nuclei and Luminous Globular Clusters in the Halo of Centaurus A",
+    "publication_bibcode": "2020ApJ...899..140V",
+    "source_reported_confirmation_status": "candidate",
+    "original_name": "null (no published name)"
+  },
+  "canonical_object_ids": [
+    "canonical_00ae5b07b9cf5390ba173953832e14ec",
+    "canonical_17804c7e74715d6ca3fe50787946d8de",
+    "canonical_1db589dfa6de50a68f2551e19e22fd16",
+    "canonical_1f25198096e95827a5aecdc802d30d79",
+    "canonical_44ad081b22cc542a9505c1efb27ec836",
+    "canonical_4a18b7fcd0b95832b2b2565874a33f5a",
+    "canonical_60fa53999c875aba803f200901f0e863",
+    "canonical_7cf56b44d12b50f9a7817b60a01acfef",
+    "canonical_906cad5350875a2ca12a432e141e726f",
+    "canonical_a55569533f1f597d80cbcc6afa5c7ee0",
+    "canonical_b41649ef486152a888f26dcb5fc7439c",
+    "canonical_d103508dbc135c0a9bade3b5055ceee7",
+    "canonical_fe9a542f1d9f5a13ac4185e2be17e940"
+  ],
+  "count": 13
+}

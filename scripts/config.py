@@ -391,6 +391,13 @@ UCD_LEGACY_REFERENCE_TRACTOR_AUDIT = (
 UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST = LITERATURE_CATALOGS / "ucd_legacy_reference_cutouts_v1.csv"
 UCD_LEGACY_REFERENCE_ATLAS_INDEX = LITERATURE_CATALOGS / "ucd_legacy_reference_atlas_index_v1.csv"
 UCD_LEGACY_REFERENCE_MANIFEST = LITERATURE_SOURCES / "ucd_legacy_reference_manifest_v1.json"
+HOST_ASSOCIATION_REGISTER = LITERATURE_CATALOGS / "host_association_register_v1.csv"
+HOST_ASSOCIATION_REGISTER_CONTRACT = (
+    LITERATURE_SOURCES / "host_association_register_contract_v1.json"
+)
+CONFIRMED_UCD_DESIGN_REFERENCE_EXCLUSIONS = (
+    LITERATURE_SOURCES / "confirmed_ucd_design_reference_exclusions_v1.json"
+)
 M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
 M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 

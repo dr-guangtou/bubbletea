@@ -1,0 +1,725 @@
+canonical_object_id,reference_cohort,host_association_state,host_name,design_reference_membership,exclusion_reason,host_ra,host_dec,host_table_row,adopted_distance_mpc,distance_source,M_Ks,log_L_K
+canonical_00ae5b07b9cf5390ba173953832e14ec,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_00c34e280a6254f9bc748c9c6f13dfe9,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_01770780de815d328a6fb6af1f9a12b3,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_017f18a4a770537ebc2e65c63f109b19,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_019375eac10450b4a54a2f7daa5043f6,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_01c7d416326a5f4e924ca260b8a3e762,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_02600268474e5e31949912ba83404c70,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_03422881b1e953e9b1468105ecaead90,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_0347e58bf794528b9a2c6be8176e3dcb,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_040e9176d7c65e2694658e0bf6fb537d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_05457a4d5b295aac849d155e737e2193,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_05948a0f97225ad497e50bf51a50e600,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_05c831a0088355dba7e8f8386eec6918,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_05ffd8c62fad5a6c9db84a7aa189971f,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_06105098e3675fa1911727ee54885a5e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_0672115045d555fa947ba1411d515e10,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_079e1b7284155f4f91eefacc53ec757f,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_07aabc9dd1c85e7a8dc3f7f7c3c0e259,confirmed_ucd,published_environment_only,NGC 1407 group,include,,,,,24.366884234595855,group member NGC 1400 (CF4),,
+canonical_07e315c01fcc5611b3dec52d19393f02,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_07e3fe2c0ca45c9797b222c4e98ed412,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_080da8b12b10510e89aa50a619048695,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_08822eb1da1652b08f50fe402527d918,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_08de50eae437546eb153da1733477855,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_08ff19f4df4a5acda76509b3ec15c4ce,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_09ae9cf0fdc353e39815f443973c3dc9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_0a0d45a7471b564fb9862c1b9c5c9014,confirmed_ucd,verified_unique_host,M60,include,,190.9166453,11.5526118,MESSIER 060,16.6571232806881,CF4,-25.368999999999996,11.4596
+canonical_0a77b43e1db756adad8b54a23cc00252,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_0a85d26586225ab29b7bb9d8a0741603,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_0b5eddb3b4dd5577ae750e3a57feaa0a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_0b64fde1df745c2fab1a9bf30dff9257,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_0b7bc289c99a5344bffbdf2a19902943,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_0b832ca1c61a5fcfaec6e9942684ee18,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_0c047500861b5179b271f4731e51575f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_0c44c4c6ebc05cec85e8e5f1fd8c2b60,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_0cfdb1fe10cd51b4a99c0f884dbd1df7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_0d0c680ce9655f5792a751c8c0345118,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_0d350233a79658d4b4bf705c7b9c0413,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_0d9de527f5fe588d8b90d0c33c8d9e33,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_0dac10fd9ba4579097e0683cf1be561f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_0dc7300cfa865b5d99ba22d6c9aaa31d,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_0e2ce78d28cb540caac7d2b750bd656f,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_0e43c5043cf15c6fbfb616de5b9e1544,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_0e6e68aff800518391e16ad34cd83d19,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_0f566775882252bfa376bda3500387a6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_0fec30ea57ea5d25ad5be855b86a1c78,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_10277a2a8a4f534e9bda44892b717ec4,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_106627b8140a50c9a7029519f9afa766,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_10d3123eb93e57a9b1b4210a0bb7f387,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_112ba66b83475a43b3330ca11cf77e03,confirmed_ucd,published_environment_only,NGC 1407 group,include,,,,,24.366884234595855,group member NGC 1400 (CF4),,
+canonical_11488c56ab6057c5924e47fc44b0d433,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_11d070ecaf8257b7afecef02a670b499,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_11de8fb3bf4a54ffaa857a5509020a2f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_11e55976a8ec5ac8b6e857ce65030f00,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_128814db4ccf5d6785db761fecbfa1f5,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_132241100eb45f309c983d17a495876e,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_132b0552c2405cc1a9d81403f967b937,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_136e188f7a18567a93f9c0caaa8cc854,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_13c2194557375764a1bc89d16b154b70,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_13dabd834b775ba5bbc0edbfc883f78b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_142e6ae6e61a59d7afe2b1508711c95d,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_145328bffd70579da82c32ec2debf0c3,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_14916df2077e5955af829396f537dd30,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_1494afb2b2c15a67b002d2b4e9167892,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_1507a36075bd536e9ee6d15b3c884504,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_15a1a7926f8d526fa62cf10e17089aa2,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_167c9ecc135e5449a0d9f6d5c3577731,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1768fc6664785de88b3533d963734073,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_17804c7e74715d6ca3fe50787946d8de,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_181ade47215258fe9e962e65303f3cca,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_186a9acb688d5fa6b244d717135ed02a,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1967a2c890d85b1ebb9e49303eafd2c6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_19faf9f24045563983a8fb4d68e96415,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1ac0676fa5c956a68ab6b7401dae59b0,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1ac46db7ae3259ba836098ea65e6c955,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_1b2502b4dc745da6840ee2bbdcd7529a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_1b355f2a2e2c59078b70759cbcf2f6fd,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_1b38cc86cec1533baa387447920da755,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_1b398bba86c35ca7bcd17994a000565e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1b5a10db9cf056ce9d96508f3e4043aa,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_1c8d48a5d647588b8d99472f206c0854,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1cfb18b4f72a57259fdfe74617930d2b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_1db589dfa6de50a68f2551e19e22fd16,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_1dc6861957d7531f94804b77a6dcea8a,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_1df9e80a7802548e80b38acbe7ff1f3e,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_1e9bb315ee9356ad81851841778f1027,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_1ed86e68c2c357d0a9ca89b94ed45c58,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_1f25198096e95827a5aecdc802d30d79,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_1fbb0ca4f87b5fd593b1df4dcf29cad1,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_1ffed85d81895fa587735d932f7bcefc,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2007b543659856b0b692d934ca387772,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_206629fc0dba5ad393c699702882c09e,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_206a95f63196576ea9bf97c65e0db2a3,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_20c440834b5e5eb2b29fa9e97057ec15,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_2131b89a12eb5fe29089c7d7e98176cb,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_21b38a91a6fe5ee283aa2ea2774beed1,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_21dfc18d16c45101882dc6815c37abfd,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_22220d11a4a256479126a4d9593476d7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_22e66ff79985571f940e45cbb7ebbe05,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_22eb48e342b356e1bdb85e2bc0b210ce,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_23488419452e52be85dfd1198fdcfa1f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_239b93d05e235a9cab4c2d1644545d3e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_23bb02922b0952f895c8bb615682365a,confirmed_ucd,published_environment_only,Dorado group,include,,,,,18.046791465567217,group member NGC 1553 (CF4),,
+canonical_253611c2664854af89a5c6e4559720e5,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_255417b2706658cfb102e69319576dd4,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_2588f675dd165b8081282d9edeefe7d4,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_259abbe20e4a50b1aafd79344b7659d3,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_262ec8bf9119519a89c4f600f56a5566,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_264e3788b45c518a8fe5f12a1ec6b607,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_271f8712ab555264b76020ce5d240f25,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_2785d500e15c5200945d73aa0ba4771e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_27ada00096485ed788e386a52dc228cd,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_27f0f9a463245d3492982046844750ae,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_280ba27cb0fa5182912bad7f682bb856,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_2847ddc63bb65ab8b8cd917d9a15c348,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_285e0b79783f584daa10d3e307e67e6f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_28e7c716069359089cda241801255443,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_28f2a52c4a685bbd8da77078bdd73f92,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2926c0b4346e5f36afbf5546631a63a4,confirmed_ucd,verified_unique_host,NGC 4546,include,,188.8729132,-3.7931266,NGC 4546,14.216739313080032,CF4,-23.373000000000005,10.661200000000004
+canonical_2990e8d5f43b53319c273891ab8bed30,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_29d290a3026a5489809a4035607b4dd1,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_2a1336469fd5553fae033752ff91463c,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_2ac2312ad5e45fb2958dc92278181e29,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_2beb1a7d5d855b46a8b84d7499738ddb,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_2c921f4341c85880b2646ef28e1d1b6a,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_2d30c8fa533d5fc2a0e1ed535824fa09,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_2d3bc615e3e05cec92b12f23637e6182,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_2d4da55aa5d05bfabdaece1772f062da,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2db1c9ff142d56acbf33dce5141622e1,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2e0889eff5e956df88763a31057cbd99,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2ebaaab6c9c650e9af449d3aa33654f4,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2ee43ab0d6e85e92a69af39c21c81bef,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_2f92ee1a6a255f74a8052c3f5bf374a2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_2ff8fccf3a9c5512bf8964af5cc885d2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3053c9292cfa53d8bf27c43903d33341,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3074ab1a31955dc1b376d3fcf4375ea9,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_30c985fc21b45babac6266b798ab10cd,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_30e4936510bd578db18db98068610d16,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3138dacd04005ad59cd4f18300896813,confirmed_ucd,published_environment_only,Dorado group,include,,,,,18.046791465567217,group member NGC 1553 (CF4),,
+canonical_313aeb4d039d52b58a1053259b86d507,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3154c84144e059d7aa92252ebd96980e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_315a636f7b7d54328e51ee79840622bb,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3167a27128cf5fd4a67ec5a0bd755119,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_317bdb3afab25e909deb2d43a9b4ebf2,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_32bfe0ce73745082bc539eec256f0614,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_32d3770e75b5565cbdb8a39948ff3fbb,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_32fc0e15237458899edcb936aef399c7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_32ff851268675e0080b4a633608fef0c,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_3348bbbbdfc353798186fecee7c3e5de,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3371f016d1f05914b4a1df0fe189a842,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_33dea053757457c2b208c7ce3ba0f8d7,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_34014729ce8c5449935a2af07b8dddd2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_343ddcfb97125a759a85a165a39a4c26,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_34780ee67d0b5b07a2ed61d97a357348,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_350f6effc3bd57e8a80888435fc205bf,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3529c6c422265cc9a2191c215b7cf3a2,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_35762f11b0fc57ffa8b4e67a98990363,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_3591d5b0a4d85756b1f0fdc924ec0b2c,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_36446f6170675a93943c154b5f98c539,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3737e94c1c265b4b9c6a6922ead27901,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_3757c3e3a92f5321a8e8bfb6e17538f9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3781dd8e51e45f15860ab7e285382bee,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_37d611a67ba25f94b97e6b86ab5c7c37,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_38213a1da74f5450b5af4b0c9ba0caf0,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_3851eb993571571ea9b3f3ddc04e35e6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3883901c64ad508aaae7b342444e48df,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_38baf4a0246a5655b6768fc80c028e56,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_38bc55b493265d3dae3f09b85f90aec2,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_391f2c4c60d55e06a23971c3158bbaee,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_39234c8054dd5f25aa082ca0c3f3a83d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_39949ca1263855e986ea6b7c8aeaa8f4,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_39d14643813e5a98adc5591788b5f4ae,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_3ab843892d705d9b996633b5fd207350,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_3ae54d762a34589687a115290bc36c22,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3ae691b06dc95d0fa9e6b925f2db3354,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_3b993887064e5438bc4c48552e546dc1,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3ba0f7c57cf65e028d125386a2072d53,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3bf36e1d49c75ef4bd7f1d1506a5d5e0,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3c11e9ea599456beb64a58bb2a8653b7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_3c1d7d870da6565cb9033e27b6a0b260,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3d08dbb4faf753379c89908d57c34088,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3d0eb0ba6e28550ba0222bdf7d591750,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3d1c894ae540571aaa5d4e860a4c6a15,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3deb68689a9657b8b9c126de9ed4a20d,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_3e00d298f3ee5c53b3bd090b9ecc0106,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_3e2dbde83c4953a48842a53b696fcde1,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_3e4240609e1956739051c289783987ed,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3e7083060c015228aef5ae001491c72c,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3f3fda92e2a3536b931bba339c2467be,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3f7b7d67adad54d98492bd87a81f5c53,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_3f91b330598f5c1e906387cfb2fd703f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_3fb7b04a6f7f54e2aa7d012c5bb27c82,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_3fcfb5e47c2e59cfa89588d04318e582,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_409f464d46d456e08ef7211201d8cc1e,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_40c026b38aa55522a9bdd46f339fd10f,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_419c13a7407d5e20938c66359e49980a,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_41b85d26ec605d258d4958f8ce85428e,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_41bc9b78efb958d2a013775494de0a70,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_41f3da1e8939535c802c6b99814c92f3,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_41f7a299429c55b1b31f6be81f857e92,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_422339fc49015b14a52c590f251707fa,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4233b3dfa1db503f9bfcf5a211c051e2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_429470f3f5ef519a80370c82e99b3e45,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_42ad7b31932f50d382d007555446bafa,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_42b8e0b5d3345dac9ee9418965e7c78e,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_42c81e8ff19e5b16a5802eaa2d2ec49b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_435dee0da8f7576c805fe7e5bb7d51e8,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_437764e87b225842874bb3d0b4785626,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4429cc8b96d951e1a3553ceb187d03ac,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_44ad081b22cc542a9505c1efb27ec836,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_4531e96b53a35daab18587d1cb06ee22,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_45471934e7f3536e86c6c1f77c808e51,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_45801bd225ee5c6ab6ca7910c2bad900,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_45c1ceb10f36581ea93b030f2f4809d8,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_466842d43cdb52d5abf81cce4f6f011a,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_46e451e7fc14572fbd09c864060c7830,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_47c1a0ddd24f5af0ade0f2be10e00e12,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_4808fa19415d5b619dc13d048904578a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_480b0321e2b150e3be3883e0c9ae00f6,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_48769c1129e65165bec91e27f5ca781a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_48bf563479c852cc874fd2e05f0608bd,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_490afacc7d4153c68292c09736e7a08d,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_49af5182b6f25808aecdb5d5bbeb0d8b,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_49b0e5081f6a5562b8d0a1f8946480ef,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_49fd770d2f0559818e9685562e49388e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_49ff45a0841f5ca7a5f56622b2d91b5b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4a0a1815c13d5887b5d9a02363e5a319,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4a18b7fcd0b95832b2b2565874a33f5a,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_4a2ee0b354645ac6b052d1e8b8b65982,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4ab8e2da2a4c5b7da4ac10959c96b268,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4ac72fc7ac3b52c6b91760482d788ddf,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4aefba279c0555b88074a2e883375f4c,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4b3a52247af159afac824526317b1d5d,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4c1da82cfe7651aa85ba1ed382e54289,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_4c31292bec8c52b7802d4e2b00d4d751,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4c69ad8f3dbb52aaa867dd3d2b9381a1,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_4c768ac2ab915bc6bec714ef427c4a5a,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_4ca95fdcb55c5583be5e15df849f5572,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4caae3829a8b584d82a925df6c38d74c,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4d9765c0c71558638426d4a7b0b35b2e,confirmed_ucd,verified_unique_host,M60,include,,190.9166453,11.5526118,MESSIER 060,16.6571232806881,CF4,-25.368999999999996,11.4596
+canonical_4e77c14988015fa693f2cb2051174373,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_4e795ed9c0b559cd9dd2507f47dc1c53,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_4e796234c3d85c12b9c40b8c94cfd16b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_4e9160f68ecb505cb4315f0f61187228,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4ed3d5aa569752da8d1a833d8f845cb3,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_4f22807ef5f35a5f888bd38ac2a384e2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_4f24bba62ecc5dbdb967d974f3b3410b,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_4f81a0c36198557e96a7a7a7ce7a1449,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_50a7fd16be625ea08cd27b9781a03f96,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_50acc55c5abf5943a0e4fd8a851d229a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_50bc2d96439c5295a2fcb3499f8ee77a,confirmed_ucd,verified_unique_host,NGC 3923,include,,177.7571327,-28.8059408,NGC 3923,21.777097723531604,CF4,-25.19,11.388
+canonical_50d121a9a43b5395b3eae756c85f85f2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_514066fbad52535a8f186e8737de7841,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_51f9a72a79ce5a65ac634f41ade5a673,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_52585dd735bf5f20a92af05be871030a,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_526c156a47945db8b32406d576754a82,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_528a4949ff5d5fe1ad59b77084aeb69c,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_53474123bcd25816b7dd490e8fda1981,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_536c9f8d9c91586eb7f323c81f0bf082,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_545902e2d21751c89e3ce668c3e10088,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_546b487bc2f555e98af3914d82aa0042,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_5487755524bd56f0935a07dda27412c1,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_54acec58ccd956438c6a84e82b62312c,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_5579df8f96825cd9b8de5ee754b8b7b6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_558804cae26a5237815d25ff93df5bd7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_558e92086391567093287aae7f1f8e83,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_559ca8de260c5407b851192cd043eee6,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_55ddb60c78fb5c47b05f9107f0f9ace1,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_55fd66d1304e5ffd9b5fd61c7486c0a2,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_56a232742f26505b971b939810d925c9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_5731f491535f5ba69aaaeb582045bcc7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5774aea180fb5df38ea9f827e29493d0,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_577b01200a155fd692d002f620fd373b,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_582e3ec722d95c1f99c8c97dd6cb0942,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5879e57aff065e6d8b0fb88b5963ba00,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_597af771a16954d2b48d8ba2e0de5698,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_598d1662442953e88c769009090d8f47,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_59a9dd6259ba58e084ff0d47b45d791e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_5a20f8ce0de95105bc6936286e4e5238,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_5a22c3d6fe745ae7af63c7137c555e03,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_5a3facb9aecc5172a84fab77470ce757,confirmed_ucd,verified_unique_host,M59,include,,190.5093968,11.6469518,MESSIER 059,15.4170045294956,CF4,-24.194000000000003,10.989600000000005
+canonical_5aa4e11c3cad5cae9bdf62c271fdd969,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_5aabf568bb825fb7b0ca79750bc6ba5b,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_5aca13ed30285f06ac33c45140c6fc67,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5b69b14a094250498950aca9a013607b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5b7cb70640a55270968a9a010d350596,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_5b9d26da2d335105aeac6e82bee52d59,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5cf8b589ccb155fd8c06450017ab1290,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_5d725e0fee6b5496ad71df5a871d6992,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_5e13e19af4be5fe8b7e8c31fa8d5ee2a,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5e98ae284bd25468a1eb75d1ba4adb7b,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_5f4934c299275efca44caa9e493d8ead,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_5fa37119c4265167ad041edd95985da0,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_5fc91d64603a51098b6f5acdbe7f6cba,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_5fe676199e5152979d21b2710c4c55ec,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_60040abbdcc851489d5705ab05135d69,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_60fa53999c875aba803f200901f0e863,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_615d472e865855d289e06268b8e60e85,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_616e9f3ea61055c69b90e6cad591dd6b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_6231188ad098511b97d9f3fd5de87417,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_62a7fcc301fa5fe38d14fbb7db610965,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_6312eecfa88a58a891d278b92aa74eea,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_6331daaad0e65ba49e7d960b8cb5a96e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_63808a5197435ab8bad4099a9373ebab,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_6386a42b0242566583c9ffe4727afba7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_63a1ffa06bc05e9c962ad1f9003e2515,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_63a6dc515d8d5a92a224f7e47a275192,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_63f0ed5f9c6b5d85b1149950ef3ed241,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_64a108b2a92a577eb7e78f61997c0d80,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_64e8273d913459b8b4d700f85c403276,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_650333c2cd365fa8b0868dd765ae0bd7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_655360e39c7550c58fbecdd282c03ad8,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_655a7981b52a5bf380a07d34c637fae5,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_66932710488258f6b7d6cab1919d3610,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_67d2e2e2919e55c3934a660327eb5601,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_68b1738bfd0c5b29973e622c2fb896f8,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_69aa2ccbc93d5f0bac3c4e94bd057559,confirmed_ucd,published_environment_only,Dorado group,include,,,,,18.046791465567217,group member NGC 1553 (CF4),,
+canonical_69aafa2e7d81539998caf32c2c7a064e,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_69e19fc5b68a5d37acfc1063f8e1d83a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_6a0e55b3ea7155568a5be83a2d6f6c19,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_6aeda5a94027569794b57b98d72bc1d1,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_6af30c97f59455b68515780e677be217,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_6b09dd6a6a595acdafe8e6315a935a43,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_6bb31494523d578ca3f02d9853c2466f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_6bd3cb4f07595b959e148fded2b77986,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_6cbb26ab2d6f55d1a4a6171e36faf17e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_6cbfea61123752f4bb6d23561f8a0003,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_6cd77494ce0e5e979c84aaf0a8dd5155,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_6d7980c7f94c5935b5a0c94c888b02b0,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_6ee769b91cc95465883db47e8eb308a8,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_6f681d7cdbad5a1098a72715e2ea0391,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_6f7f3be181505643abba40ba64f00f57,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_6fa49956069c5a3e8b4e57191ca18660,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_700800a861475b239fcf44b94e5a4894,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_7027c2c1e6e7533abad10e4a21a91385,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_709b19576f2e5705a85b23f944079567,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_70a0d9f7dd5f5d72a7b8b3c9959affcb,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_70c0bd4518d85401bab7d87c9b6eb940,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_70e16299e4ad5f71b10e63ad7c8d4b04,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_71694da046b059b190a9148a507b3d26,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_7248d235cd7e5ac2bd36a76ddc2eac23,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_72cb938d890150f78dff4dfc820d76b7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_73481d22863957d78570137e6bc83e19,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_7372aa11be895362ad9e55391a698a8b,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_73c521d2279a565b885e6c1ac521d0c6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_73dc9b0a5fa257698335bcb302937bfe,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_74aa02fc45405bbca3fc8734f89b6c4a,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_7500744984a85b1d8004324b780c2ff4,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_752a224831975f7fb07256738e54d2cf,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_752e1cb5bd305d459c410bc365592304,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_753f386967b450e9be9c08e1c1555bf0,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_7591895b33fa5a8bae26d4aa0b0d5b09,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_7646ed8fd3405ebaba283b20c10f02b9,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_76665b0b9e5c57cf85d1aa5c50c3db6a,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_76fefbf2da0858ef9368694182c22a9f,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_773f8eadab365c0d8e72c642f41eacff,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_77c3c7932c4a5eceb8d339d1ae4b63e8,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_7839ed68f2b25d12b128a33c05e4112c,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_78b83333b98e506087b2238b41727caa,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_78d3a1c923425a4ab914ceaece40fc76,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_79cf87ecf7d7531480562af232f7d1aa,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_7aa2271f7c38565b81cdf0dffaaae41b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_7ab37e5af3de51b5925107cc870270b7,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_7c20d6c0f8a653dfbea73fd04dfbad1e,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_7ca72646c8245620924b227c539cd742,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_7cf56b44d12b50f9a7817b60a01acfef,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_7d1ef25447a95ccd9c39c53a7c4f74dc,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_7dca5f435b985e099e4eb5cefc36bba4,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_7de5a7ab7ad0529faec0c74117e01a55,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_7e49ff26001e5d36b653496491699f1e,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_7ec7542de56c52f4a31df5198e7608f0,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_7f46d3c04faf5117be4bddb5ea62bde8,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_7fb5c45344575d0ab2f614e40000506f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_80be896d1b535140a1e2215a44821691,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_80bfa1a83467540c9acbbd608d31a542,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_810d2446e3c75edfb799abd6e4b8716b,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_8125de7210ac56d4bd805b37205e6eee,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_81346b88362653ec946c2075b21121f0,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_8170ac13ff915cd684573164e16ceb12,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_826d14610ee65772b8aadbf56a212714,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_826f2ca8797255da931e41c1bd972e08,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_828a4d016be555b197007460d776bef2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_83c0ef77859c59de9b26db31df60b5f3,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_83f32afa22e05a6aa5ddd40cba17ce22,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_84627cc6d18154a393c1360fabb8c123,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_85969893235d5305b174af9cb292fa1b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_85ca192ef9ff5fd3a6e1d6719d950310,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_8603e95c75625befbe4def50ef3c5a13,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_861c4ec757b55a3f98a6595a47f24c98,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_862879bc55625975be988637d1dd083f,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_865d1b7fead25084bf788c19b4217f2e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8721845ef81256c398b863c49a71f695,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8762fcc479aa5c8fbbe25ca1ae00b3c0,confirmed_ucd,verified_unique_host,M104,include,,189.9976312,-11.62308847,MESSIER 104,9.55,LVG,-24.93801685791873,11.287206743167491
+canonical_876476bb6569507d8e8b5c143bd98357,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_87c6a092ce20577b98474b5f00cb4104,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_87f81c1d47c851df8a7fc3084787febb,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_881fa621b2755ca9bb404fe0727a05e8,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_888dfc00e4bb5014a18aac563dd65268,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_88cfbe53694350ad99e71d1c76536cd0,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_88db7702251e56d6b521e3d00c177d28,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_890762ec55a3599f8201b79c4a410629,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_894862eb7d8357c29ee6c631b78da5fc,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_897c9b35ec80560d81ceb5130fa3d6ab,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_898de7f36b3d5ababb6bfc6553f28b25,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_89f5bbc363915fd38025a492b1acb4a8,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_8adc56f242265914979635e7f4036206,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8b49b4fd07475544b8b055bdf349a80d,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_8b651d323d285d92a9a00237e7cbaa4c,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_8b9947093bb05c5d91e62415d2cdef43,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8ba06604e595509888cab9e9af428915,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8bb9f4ddf17353f79c171751f9834f6f,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8be20ae0b2f85611b835408f987271b5,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_8c4158660b4c51fba752c610c175c113,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8caa49558ccb52bebffdd4696bf65575,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_8d736f1c9c895dd39d01570e4a6dde63,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8da2c397deaf572287633bc9e21bd226,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_8e1e95da232f5c168a5b571f616456fa,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8e22196ef63b5f58be730c0b102448c5,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8e3a92ad6c18508f93e0c53d26219d98,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8e5b168ebd7659f9abbe33edb6fdfa1d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8e9fd63e69455a509299ea087b5e4659,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_8edb218593b8534e8cd33b3ac4947f1c,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_8edc4b2649e753ebafa44bffde0afc9b,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_8efc969cf9a45ca2af57dabc221e03bc,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_8f74d34c5db85c738b66458d8b17b9f3,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_8fc3202eb6865f92a46bc3a815482625,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_8fde4838ceb45a479fcd943a76f07b36,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_8ffc8f4ec49357068a97d9ee8876cbb9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9007dc8363955f02812ebd63f19c223d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_905990cf78805df1884c84fcd6f92139,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_906cad5350875a2ca12a432e141e726f,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_91530e5570b55983888282904cd0619d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9193b523cfa05d3992b7e6e616691b0f,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_92520ea00da15f00a5937a786500e775,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_92ca0bb5339756dfb31f0b8273909dc8,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_92dfe373f2275ecd8379f528daf2de76,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_933be26e352b51d9afb3fd8831ba179d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_93451dbe9bc650b7b0ad99384802edf4,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_93c26382df595d2a94d3e901797f9009,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_93ce39d50879542baaa8504b35ca6e2f,confirmed_ucd,verified_unique_host,M59,include,,190.5093968,11.6469518,MESSIER 059,15.4170045294956,CF4,-24.194000000000003,10.989600000000005
+canonical_941842a0602056f59645df5b7865b7d0,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_946ddee9e0ce597c9f764b73668f053d,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_94c1650970ef51e0b80af86a3242d23c,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_94ce24179445577b852d9b8434eab56e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_95c3abe284d65ad788b1a1f5b3d7430c,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_9619f1bbbb1c5fb59fd4459f302496a6,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_962b3ba638165f599614536485abe1c2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_97a23c4e2a485f67a2bf680630d02c0a,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_97c6906d6ccf5c11b415d71fc172681b,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_97f948c7eda55314b9d055869d577435,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_9812b63d146a5e549ee3994f2a83c7be,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9856e2de92b25d3e92d9d56875dc13b3,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_98cc95d15d7e55189890af38771b0e9c,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_98cd49a9a71b598ca34cb897101314e9,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_98e6516907a75502b79447f8eb5b52cf,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_98fea3cc0f1555c68bac5f86a0d4d86f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_993424d3b2a25d9994100c4d585ca414,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_99c1f8500da0599aab925a9ff1c7ec66,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_99da0299ac345ab68310cdfa320193be,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9a2550b07c2e54d4a641d20d589a4372,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9b1f472ab4905059b65ee5c1c944fd1a,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_9b7ca32d990750dc9333a5f039c0524e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9c9543d5099350be99046931ab232591,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9ca641b11f4a559b8459ae3a9e8950f8,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_9ca7e670a15e571bb12921285e2c2640,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_9d2ca30f053e548987c78996a037a9b7,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_9d5f41e8ac225e55bae3b2073e4a9f6c,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9dd402bdd2e95f79a220c42248e23362,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9e184e4ef46f58b1bcb608bcefef21f7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9e40ce6559bb5c038771997fb17fb39a,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9eaa5e27f3ce5b51af985ea840d5f017,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9efcf4e43e635fd38bc4d25985e098a2,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_9efea6dce51954d4911192f3575a78f9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_9f71edbba3595384911f815d81699ea2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_9fabb821125250428da98151b2d03b55,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_9fb3eb5f3a235c33bab3e1d92a0f4cb9,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_9fdb1b63597554f1a040dc2cc22b9812,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_9fe256d8e4e8560a9b9e6d81f2a12785,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_a077f69591605e1ca0d23b3bbf9fb6f7,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_a0c4730a60175ac19601c040efc2a3e4,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_a1a393ad88985c40b6a7cb1ee44ef88a,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_a20f56329fe75b9eb76470381f7e3f1c,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a24b6bb4ade950bd8c4eb9b376f42564,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_a276203c42c950418381d8d8ae65913c,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_a3085801fafa52d5a8cdf0c789e634c9,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_a39afb9a84c756ec961773cc8435b553,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_a3d6d45d52305e61b81bb0042cfa1e49,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a4ea5a05b951582fb01d62a0f67e2a21,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_a55569533f1f597d80cbcc6afa5c7ee0,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_a5844190987052e7a5cf4291f799ef55,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a5b91ecafc98512688748aefdf343b4d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a6964916654f5cb1a2bba685de885084,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_a7517a7419fa5839aafd243ac3afc723,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_a78d9609dc005297b8f681f2407cb82d,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_a7be43ea36a15480b23b26d2cc8d791b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a7f081f9802b5f7d8535bedf8569d81d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a876888b57b150f580d51e2ed5a87253,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a8fafee13b3b55e9a1536ee497d38809,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_a95e177b10e45bc0bd41628664a76ea0,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a9a4e8da520c564abf7c285b9c072662,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_a9f976856c4551ad9d8879b1377b5086,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_aa68bd8be6f253e7a05940f272011f67,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_aaf1b7888c49550cad9155fe64770fa6,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_aaf63c5d5de85c948e93aa3e78285f1f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_acc56e76604a5ca381b33784cfaa14df,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ad15be738c5b5ebe9495d3ff99b8a832,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_ad306e77528350d59dd1dfc8f0df8764,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_adaf6eebc76b5e61b9d17cdfdabe5f85,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_adc54829b79155228d32faf191093bd3,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ae7a52ec01d6582baba8ce80ffbdc263,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_afb744f0270b57c8bbf50a1b2d36ec23,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_afdb865abb895d5c966f6f0c45848cef,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_b00b31a26fc85b71855822771cce93dc,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_b0dcadfcca415b488bca39a7bb3d48c9,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b12077eff3155653ad2173ba2d346ca2,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_b1576c8cefef5e8b84f534dcb0c51ce0,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_b1d0a8fa66465cb0809eeac47497e819,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_b1d51ea2253f55f481b7fb5860147267,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b2171438a5575c669052fc89406895eb,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_b25fb7c31dd257a8ad0afb8c5e35c46e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b3290928219c5d80a7f08f41f39f8329,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_b39d4a48135959f28ec37ce2f6a60192,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_b41649ef486152a888f26dcb5fc7439c,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_b490f3caee015abfbf117d44a4e456af,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_b4e8476855bf580998effe22c423a21c,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_b4facaa5c4f65825b330d736f45a6735,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b57a6281b1b559ce878f497400512d0e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b5808e099c355ce58b46a94114ca7b67,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_b5ff382627745d89895af05cfd82e8a4,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_b6012cb4f8d55d429c08e91e784da341,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_b82c5d9764d45f21ad9dcdadec6d7b51,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_b87207b802775f58b3a95386107ebd59,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_b91adfb1c44e5cf980f2abb24945ef4d,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_b9454a43616c54ba9a6aa28b4f596579,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_b9ecd1912dd454cabed4955057292c39,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_baa2f3c529e95689b56352cc0778f294,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_bb20104060e75bbe8a77c0ab559c60ec,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_bbd82cbab8ad5015866dd35a3a2537b7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_bc045f44ff015cf8b1b7e2f44ad2fd8a,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_bc0f9058ffb058fa80c81762f43c9056,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_bcab6947dd59518cb5f0d5c1c8a5a5cd,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_bd324f4104575926a78184402997fed0,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_bd6578f9b1a85a94a5ff201dd06ff724,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_be627b63ecd35f418d3bcbf0cc79b187,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_be7206d45e135c7c81728f9e8ab6ba1d,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_bebeb20f113e5bc5a24f1b7ae1e470e2,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_bed12f27b89555ff94bd8def62f01506,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_bee780b2508b5ba3b3e65135265b8c7c,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_bf18cc22e9145664aadb9ddb7c72aa40,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_bf78ac512ae75123beb4e202d53f5cce,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_c00a6b64725b5769b53e854bbfcea6c4,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_c02c3426ed9154e2825a5f8771caf7ab,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c1777ab2637a508c84753f425a1e8581,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c180e9d449bb5df29d0963dea668d1d5,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_c21728dbe2e15a808fd625771a182cfd,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_c258247b5d7355d9b17c7e167a588b92,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_c370b29b72bd5a338279b5a2a2da4a22,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c39300d6d5e054e69537d8b0d473efd0,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_c47c532be3585671981aa66d4372e402,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c48b73bfbd3550598451cc2c5224a576,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_c5e0974efd9457d29de04e827aec92c2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_c64baa4bdf8256adbe485ac63fbb387d,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_c72aa1cd69b350c68cd02906312e90cc,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_c88098241f395d2a92bdb7544310f809,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c8c722e8e76655f78c45bf40e65de682,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c92db822250c51289aa5af1aa350e5f6,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_c93f9b7d71fe5d07bb475d60248f2ddf,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_c9c23ef6291e5ba180c8f64dc170de9e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_c9c852418b785b5ab04014383666d8bf,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_c9f5032bc51e5f57b4fa0e671ad99ed7,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ca56608eeddc5ab38473368a99f9e108,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ca934833062f5fe6bef6480ead6b366c,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_cac33ff4c3a854bbbcd9f9bb75313d62,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_cacf7588c5535acea920098d69da122f,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_cad127db7f0f5fd0bffddb450a09efc6,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_cadf051d05355a838e43b3b873603fc2,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_cb458ae5eaa65277a591bccf327c4b35,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_cb74ef2e6e9854b79d346f884698e617,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_cbe511bf598b515d9cd9c1e3d2ae64e9,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_cc51bed1b32c5d6599d658f95eda60bd,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ccd07e0d422859b59552201ad9a24213,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_cce3c4013f7552dd8c254838ca2def99,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_cd329180934a56df91294c386ece694b,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_cd3db7baad1f54baaf8931b87282efbc,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_cd53ed1b8d385a96be65254424212195,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_cdc0af98fd7f5a68a2a13de81a963579,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_ce1754a435f157d482595dec914b72db,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ce1e8e133dda5431ad18bf56eecb031d,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_ce880ad923dd5f61af36d7c6fcc3f1d4,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ced4bf1f22fa547ba6724c556fea6284,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_cf458485be87513e9edd00c041729484,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_d0967f949850520d81f82e5db8bcffe7,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_d09d28388ee051eeba556cdd705a8053,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_d103508dbc135c0a9bade3b5055ceee7,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_d1ada00f5545578fb9d687fa372622e3,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d29555c6fa9a5cad9eedbb4e9cef3785,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_d29677874e5d5a22b73746a0dfae7ab0,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_d29722b945f658209e0279250111e683,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_d32d2ca0d7bf5e2bbe1613a44dc3b971,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_d39abdf6d9885193bfb2940b6427868f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_d459eafd5c6f502293b1a02dd46244d9,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_d45f951a8bca57e391133afd17cf54a0,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_d4f26299d246519584a0cc1ac0c27194,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_d5082e0394415aef99ab7db3472de782,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_d5d7df5c637451f09ef9f7456bda280b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d5ff7d6d8e8050199478d84825a8aa93,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d601891bc08e58dea43072de1807d0a6,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d6310506e3db524294b4d092ed3be347,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_d662266d07735f39aa704699ff3e1ab3,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d6663c300e6c5045977baf32b761fba3,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_d6f014a9895653ed842e6bd24003c084,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_d70f11800bc0538c8bf43443ed527824,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_d79545ee2dff58f2b9d6072bcb4e4f58,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d7ae5285de7056cdb6ed7c997fa814f5,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_d83ff433b0245cbf8941e409d930b9ee,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_d8487a1b1c455337b323f83bedfe13f7,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d8f231c052605263b3ce7a3b94549fed,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d8f87eb6434f5d9783202a74f2283a82,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_d97d94026aa85b999f8754c6e5edbd2a,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_d983a25f737b5dc1979c2e8637a647c0,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_d99ea910724a5f84a71603615525fdfb,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_da37fe4d78a85150ba55e540b4a7c8a4,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_da817cbc3721586abd9e5c83ee04711c,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_dacc356e8bd157e481493c89398cb049,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_dc27c9d8cf235436bf39e50ec3e670bc,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_dc35d134476850a7810cefcce43a5562,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_dc66c8a5b23353c0a331adf2c0f5ea81,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_dd280afa1e2e58c1b45752db97e67f42,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_dd292080f06c5daf829cac04e4c29c80,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_dd37042eb0e55d7a8f4c2a08efc88587,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_dd5b99562d4d538c85ad437e093b6d19,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_dda0e005ebac528cb5d49456dc87d38e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ddc148df84145863818e92a683bc1f4b,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_de0045a449715be9bc64b290a688c3fd,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_de882126582352f081c0b4c004271b84,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_df13d030f5d35be6aee7473e24f52ec4,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_df3c8a93879955c885840c684824d8d3,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_df493efc289e5c3f8c7fc78340deaf45,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_dfdf43a0cd5a596ca28c21dbfa212d6e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e028d80ac61356bf9496e8d20f6cb9ac,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e18e754f777d5331afb481fdea36b62d,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_e1bb305abed25d34a2a3cdd0d1490c2e,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_e20dcdf9f9f755118beb3dff0ebbabaf,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_e281b749a39f5a2a9d1ca81cea077898,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e2ded4079ea854ef870dc6d6fb8d08a6,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e386ff317fd15ac0b3e06a502b0dcab7,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_e3b4038dbc2f55a48d37d4959558d72a,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_e40b9ebc8b045edba8281c585c78f17a,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e48520812aa15dc8a17210881c89099a,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_e4d92cabb88f5d9db8fa29520882c102,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_e51cae89e11c5fd1978caa67ca2e6440,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_e590679c710b5adf926539c8186520f3,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e5af323dcb4854f993e81f65a6a1c17f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e5dc031817cf5a249824ac367d67b58d,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e607070f7ac65bb08e5cca23b5e33064,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e67c4474d652577186f9df7e3437f84d,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e68c3e9102a05deaaea060e01768e2f5,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e69d66b400ab53ddab594224d6af8c38,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e6ab74974d22591f9d19da3a4e945fb2,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_e795552581f25aec93a628e7d83ab50f,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e7bc4210667554529e2ab9a28c0d9b92,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_e7c4c7438f4556bfa070b7202243b31a,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e7d76106780055fb8d9381bf6408d8c2,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e7d9fdc0f28a5c679ef2eb08bc534a87,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_e8555e238c355b08ad2cc98cdce7ac50,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e8a51a6446395e68b93f9a67e948ed13,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e8ef688816635fff857a101993bc652e,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_e91a63f42ecf59e8a20068b7c9ee0d3e,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_e9e2ae7fd5c651ca998cdd8052776f08,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_ea1f8c9ddecb528cb1daa094980502cc,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ea6e3230b02a55f1b3936bcaccc5ac8e,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_eb2421dc6a2352c8aef579021fa5b5ca,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_eb95fe1dc5645acb8fe0e464521aed11,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_ebc616747ba25de38b0587543a167fac,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_eceb577fe35f5ff99a0bcae4d1d00da0,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_ed1bf8771c54517fb1b39158305ebf33,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ed6d51d513495553a33d1fa1373660a5,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_edb964022457584c8e8d2e5dffca5c63,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_edbf4d6d6bc850a3a9e9a2461fd97479,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ee130032d24257988e5a82fa9ee6fe37,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_ee84200092de562c92161235adcc02b6,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_eefb821ab4c252beaeece3c35912b413,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ef4747ccd3cd52d18e532648683a4820,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_ef4a4ec9a4b9599da1a580dd74ace1b3,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_ef5e9963064350db90ab20a8c2e3d6ea,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f00e1dd00ce454a797698a59e7924190,confirmed_ucd,verified_unique_host,M49,include,,187.44484125,8.00047583333,MESSIER 049,16.726304546595625,CF4,-25.720999999999997,11.6004
+canonical_f0446dff521958648f991cac86719192,confirmed_ucd,verified_unique_host,NGC 3923,include,,177.7571327,-28.8059408,NGC 3923,21.777097723531604,CF4,-25.19,11.388
+canonical_f13299dcd76f52d8a3abb534bb0cf050,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f1a1b5be174358e2a719be24223c28d0,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f1a301b36a385fbbaa1e9ff8c09ef50b,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_f1a4ce652f03509eb9854bdb66077816,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_f2e456273d665ea398fdccaa61c133e4,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f3212e1425c3502fb19170499bfa580e,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f36394c1d46955628f1f53f83ca7e2fa,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f36982d5b8b45de7af82c4577022693b,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f3d28993f08a5fcab4453be50d59b8ff,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_f467c4d274aa573e98be867c31d753e6,confirmed_ucd,published_environment_only,Coma cluster,include,,,,,100.0,Chiboucas 2011 approximate cluster distance,,
+canonical_f49632ef503055508b99856b209edd7a,confirmed_ucd,verified_unique_host,NGC 4696,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_f594c44838c45243ac60b9c5a6707a72,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_f64c84f2830a55debf73b658492a8003,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_f6b15d9acfb95c0db60fa7ff767e6386,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f6e7ce9865815f04bfd5f7dc8320d037,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f70f40fc55935bc593a4dba66e8bf218,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_f75e2171961e5d5588abfdf8f5b7769f,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f7b0ea983a0c52ee9ff1ed1cdbcdc208,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f7c39c5dc41355b2aed5f8041efd34ec,confirmed_ucd,verified_unique_host,NGC 1336,include,,51.6341547,-35.713506,NGC 1336,18.35692780898817,CF4,-21.513000000000005,9.917200000000005
+canonical_f7fa66c23dff52828575bdf4b7e38b8d,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f834904df19b5e04a97e054fa38a5da7,confirmed_ucd,verified_unique_host,M87,include,,187.705930779167,12.3911232583333,MESSIER 087,16.85776517828977,CF4,-25.322,11.4408
+canonical_f85efaca41135f7894667863e23daf54,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f8f2e62a6b7d5200a4aa3b04b4ae8c8c,confirmed_ucd,verified_unique_host,M85,include,,186.35022,18.19108,MESSIER 085,17.741894808901662,CF4,-25.100000000000005,11.352000000000004
+canonical_f93bc0bcdbc15ff3baf2e9732748a664,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_f9bf37b25d665fdfaee7938264222d19,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_f9c40a694aac501aa174de4b920830c3,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_f9ccb8781b6b58dfa7c119d3a2b1a617,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_f9db4ed1307a53b1b4bfb81d2a072058,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_fae72d6bbb0e5fb4b44148e33adfac02,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_fc125c84c3e9543e96318eb00ed9b389,confirmed_ucd,verified_unique_host,NGC 4709,include,,,,,43.0,Centaurus cluster distance (Mieske 2007),,
+canonical_fe251981e6685e1fb1d0070ccc9c2d09,confirmed_ucd,published_environment_only,Virgo cluster,include,,,,,16.5,Virgo cluster standard distance,,
+canonical_fe61743f29d65f21b352fdfeb91f372f,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
+canonical_fe7e281dc66d52619a03719133a27094,confirmed_ucd,published_environment_only,Fornax cluster,include,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_fe9960bde1ca53bdafb742fde800e288,saifollahi_high_probability_candidate,published_environment_only,Fornax cluster,candidate_saifollahi,,,,,20.0,Gregg 2009 / Saifollahi 2021 adopted cluster distance,,
+canonical_fe9a542f1d9f5a13ac4185e2be17e940,confirmed_ucd,verified_unique_host,NGC 5128,excluded_stripped_nucleus_or_luminous_gc,"Voggel 2020 candidate stripped nucleus or luminous globular cluster; source reports candidate status, not confirmed UCD",,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_fef6d77727675deba7108381ad2dd2c7,confirmed_ucd,verified_unique_host,NGC 3311,include,,,,,50.7,Misgeld 2011 Hydra I cluster distance,,
+canonical_ffcbf123290357a099d8c704cb3a9a2a,confirmed_ucd,verified_unique_host,NGC 5128,include,,,,,3.8,Voggel 2020 Centaurus A halo distance,,
+canonical_ffcda8f050675d29abe38beb0e762e01,confirmed_ucd,verified_unique_host,NGC 1399,include,,54.6209166666667,-35.4501944444444,NGC 1399,20.739582044538317,CF4,-25.277999999999995,11.4232
