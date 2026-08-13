@@ -1,0 +1,30 @@
+{
+  "validation_version": "ucd_visual_review_api_validation_v1",
+  "status": "passed",
+  "fixtures": {
+    "candidate": "canonical_02600268474e5e31949912ba83404c70",
+    "excluded": "canonical_00ae5b07b9cf5390ba173953832e14ec",
+    "confirmed": "canonical_00c34e280a6254f9bc748c9c6f13dfe9",
+    "cluster_host": "canonical_019375eac10450b4a54a2f7daa5043f6",
+    "placeholder": "canonical_00ae5b07b9cf5390ba173953832e14ec"
+  },
+  "check_count": 15,
+  "passed_count": 15,
+  "checks": {
+    "summary_200": true,
+    "summary_total_724": true,
+    "objects_filter_cohort": true,
+    "detail_grouped": true,
+    "compact_image_200": true,
+    "wide_image_200": true,
+    "valid_save_201": true,
+    "stale_save_409": true,
+    "invalid_state_400": true,
+    "candidate_include_400": true,
+    "excluded_include_400": true,
+    "exclude_requires_reason_400": true,
+    "off_center_requires_proposal_400": true,
+    "export_200": true,
+    "history_preserves_revision": true
+  }
+}
