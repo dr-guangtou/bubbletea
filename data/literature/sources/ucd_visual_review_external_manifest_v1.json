@@ -1,0 +1,21 @@
+{
+  "retrieval_version": "ucd_visual_review_external_associations_v1",
+  "generated_at_utc": "2026-08-13T15:11:23.471765+00:00",
+  "status": "external_catalog_associations_complete",
+  "association_method": "exact Gaia source identifier against the 5-arcsecond diagnostic neighbor set; the neighbor table already contains every Gaia source near each literature coordinate",
+  "association_counts": {
+    "sdss_dr16_gaia_dr3_clean_spectroscopic_extragalactic": 3
+  },
+  "provenance_registry": "data/literature/sources/extragalactic_reference_catalogs.json",
+  "outputs": {
+    "data/literature/catalogs/ucd_visual_review_external_associations_v1.csv": "54ad1dcd989615f81911eb436666ac2f122f438e90721836ff8b78a0b3f16dc4"
+  },
+  "check_count": 4,
+  "passed_count": 4,
+  "checks": {
+    "match_basis_is_binary": true,
+    "catalog_ids_are_known": true,
+    "catalog_source_ids_are_strings": true,
+    "evidence_types_are_never_collapsed": true
+  }
+}

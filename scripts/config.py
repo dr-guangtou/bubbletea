@@ -433,6 +433,12 @@ UCD_VISUAL_REVIEW_GAIA_NEIGHBOR_AUDIT = (
 UCD_VISUAL_REVIEW_GAIA_MANIFEST = (
     LITERATURE_SOURCES / "ucd_visual_review_gaia_manifest_v1.json"
 )
+UCD_VISUAL_REVIEW_EXTERNAL_ASSOCIATIONS = (
+    LITERATURE_CATALOGS / "ucd_visual_review_external_associations_v1.csv"
+)
+UCD_VISUAL_REVIEW_EXTERNAL_MANIFEST = (
+    LITERATURE_SOURCES / "ucd_visual_review_external_manifest_v1.json"
+)
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"
