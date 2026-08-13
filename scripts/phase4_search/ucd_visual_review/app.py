@@ -34,11 +34,13 @@ def resolve_portable_path(path_text: str) -> Path:
 
 
 def load_index() -> list[dict]:
-    """Load the bundle index rows in a stable order."""
+    """Load the bundle index rows in a stable order with NaN sanitized to None."""
     import pandas as pd
 
     frame = pd.read_csv(
-        UCD_VISUAL_REVIEW_BUNDLE_INDEX, dtype={"canonical_object_id": "string"}
+        UCD_VISUAL_REVIEW_BUNDLE_INDEX,
+        dtype={"canonical_object_id": "string"},
+        keep_default_na=False,
     )
     return frame.to_dict("records")
 
