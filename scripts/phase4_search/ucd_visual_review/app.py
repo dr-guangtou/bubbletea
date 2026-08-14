@@ -16,10 +16,10 @@ from scripts.config import (
     UCD_VISUAL_REVIEW_BUNDLE_DIR,
     UCD_VISUAL_REVIEW_BUNDLE_INDEX,
     UCD_VISUAL_REVIEW_BUNDLE_MANIFEST,
-    UCD_VISUAL_REVIEW_EXPORT_DIR,
     UCD_VISUAL_REVIEW_REVIEW_DB,
 )
 from scripts.phase1_literature.audit_reference_data import calculate_sha256
+from scripts.phase4_search.ucd_visual_review import export as export_module
 from scripts.phase4_search.ucd_visual_review import review_model, schema
 
 BUNDLE_VERSION = "ucd_visual_review_bundle_v1"
@@ -256,50 +256,8 @@ def create_app() -> Flask:
 
     @app.post("/api/export")
     def export():
-        UCD_VISUAL_REVIEW_EXPORT_DIR.mkdir(parents=True, exist_ok=True)
-        state_map = schema.review_state_map(get_db())
-        export_rows = []
-        for row in index:
-            review = state_map.get(row["canonical_object_id"])
-            export_rows.append(
-                {
-                    "canonical_object_id": row["canonical_object_id"],
-                    "reference_cohort": row["reference_cohort"],
-                    "host_name": row["host_name"],
-                    "final_decision": review["final_decision"] if review else None,
-                    "image_usability": review["image_usability"] if review else None,
-                    "complete": bool(
-                        review
-                        and review_model.review_complete(review, row["reference_cohort"])
-                    ),
-                }
-            )
-        included = [
-            row for row in export_rows
-            if row["reference_cohort"] == "confirmed_ucd"
-            and row["final_decision"] == "include"
-            and row["complete"]
-        ]
-        output = UCD_VISUAL_REVIEW_EXPORT_DIR / "review_state_v1.json"
-        output.write_text(
-            json.dumps(
-                {
-                    "total": len(export_rows),
-                    "included_confirmed": len(included),
-                    "rows": export_rows,
-                },
-                indent=2,
-            )
-            + "\n",
-            encoding="utf-8",
-        )
-        return jsonify(
-            {
-                "exported": str(output),
-                "total": len(export_rows),
-                "included_confirmed": len(included),
-            }
-        )
+        summary = export_module.generate_exports(get_db())
+        return jsonify(summary)
 
     return app
 

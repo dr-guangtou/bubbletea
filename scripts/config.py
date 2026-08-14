@@ -447,7 +447,7 @@ UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = (
     LITERATURE_SOURCES / "ucd_visual_review_bundle_manifest_v1.json"
 )
 UCD_VISUAL_REVIEW_REVIEW_DB = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "reviews" / "review_v1.db"
-UCD_VISUAL_REVIEW_EXPORT_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "exports"
+UCD_VISUAL_REVIEW_EXPORT_DIR = RESULTS_DIR / "ucd_visual_review"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

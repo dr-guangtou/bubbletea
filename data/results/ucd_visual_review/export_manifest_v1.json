@@ -1,0 +1,29 @@
+{
+  "export_version": "ucd_visual_review_export_v1",
+  "generated_at_utc": "2026-08-14T05:50:00.503131+00:00",
+  "status": "complete",
+  "inputs": {
+    "data/literature/catalogs/ucd_visual_review_bundle_index_v1.csv": "1a3f492c6a0fbfb25bbeaeea6101a111c99e4d388d30ec006698a1b512a6d08f",
+    "data/literature/catalogs/ucd_legacy_reference_gaia_membership_v1.csv": "77b027852fb501e2cc29a80887a22a4dc4cae6a0be961a2d5baa2d03eab0285a"
+  },
+  "outputs": {
+    "review_state_v1.csv": "3f354624fa83104cab87898d52e0c7aef14f6044cf609865e2953bba43381f4f",
+    "review_history_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "included_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "excluded_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "held_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "saifollahi_candidate_pool_v1.csv": "2e715ebf624792fa00faaa4fbe9f5fafee37cbf440da75be0fe5ba4a87a62e8b",
+    "coordinate_proposals_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary_counts_v1.json": "fb438b767107700022c256b59d853b20f1a624f5bfa9b1b44db94d5711e1ddf7"
+  },
+  "counts": {
+    "total": 724,
+    "reviewed": 0,
+    "complete": 0,
+    "included_confirmed": 0,
+    "excluded_confirmed": 0,
+    "held_confirmed": 0,
+    "candidate_pool": 44,
+    "coordinate_proposals": 0
+  }
+}
