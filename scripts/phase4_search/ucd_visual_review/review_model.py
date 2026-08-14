@@ -17,10 +17,9 @@ OBSERVATIONS = [
 
 COORDINATE_PROPOSAL_RESPONSES = [
     "no_correction_needed",
-    "selected_gaia_source",
-    "selected_legacy_source",
-    "manual_ra_dec",
     "no_correction_proposed",
+    "source_selected",
+    "manual_ra_dec",
 ]
 
 CONFIRMED_COHORT = "confirmed_ucd"
@@ -66,16 +65,17 @@ def validate_review(payload: dict, cohort: str) -> list[str]:
     off_center = observations.get("off_center")
     proposal = payload.get("coordinate_proposal") or {}
     if off_center in {"yes", "uncertain"}:
-        if proposal.get("response") not in COORDINATE_PROPOSAL_RESPONSES:
-            errors.append("a coordinate-proposal response is required when off_center is yes or uncertain")
-        elif proposal["response"] == "selected_gaia_source" and not proposal.get("source_id"):
-            errors.append("selected_gaia_source requires a source_id")
-        elif proposal["response"] == "selected_legacy_source" and not proposal.get("source_id"):
-            errors.append("selected_legacy_source requires a source_id")
-        elif proposal["response"] == "manual_ra_dec" and (
-            proposal.get("proposed_ra") is None or proposal.get("proposed_dec") is None
-        ):
-            errors.append("manual_ra_dec requires proposed_ra and proposed_dec")
+        response = proposal.get("response")
+        if response not in COORDINATE_PROPOSAL_RESPONSES or response == "no_correction_needed":
+            errors.append(
+                "a coordinate-proposal response is required when off_center is yes or uncertain"
+            )
+        elif response == "source_selected":
+            if not proposal.get("gaia_source_id") and not proposal.get("legacy_source_id"):
+                errors.append("source_selected requires a Gaia or Legacy source identifier")
+        elif response == "manual_ra_dec":
+            if proposal.get("proposed_ra") is None or proposal.get("proposed_dec") is None:
+                errors.append("manual_ra_dec requires proposed_ra and proposed_dec")
 
     if payload.get("image_usability") == "unusable":
         if decision != "hold":

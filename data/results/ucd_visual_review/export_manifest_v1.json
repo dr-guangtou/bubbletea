@@ -1,6 +1,6 @@
 {
   "export_version": "ucd_visual_review_export_v1",
-  "generated_at_utc": "2026-08-14T05:50:00.503131+00:00",
+  "generated_at_utc": "2026-08-14T14:15:12.600393+00:00",
   "status": "complete",
   "inputs": {
     "data/literature/catalogs/ucd_visual_review_bundle_index_v1.csv": "1a3f492c6a0fbfb25bbeaeea6101a111c99e4d388d30ec006698a1b512a6d08f",
@@ -14,7 +14,7 @@
     "held_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "saifollahi_candidate_pool_v1.csv": "2e715ebf624792fa00faaa4fbe9f5fafee37cbf440da75be0fe5ba4a87a62e8b",
     "coordinate_proposals_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "summary_counts_v1.json": "fb438b767107700022c256b59d853b20f1a624f5bfa9b1b44db94d5711e1ddf7"
+    "summary_counts_v1.json": "25fd0656fe04c5bdbfde1b6419d360719ff72a79bcc7dd8f9c8ccd75a91ae966"
   },
   "counts": {
     "total": 724,

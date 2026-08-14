@@ -13,13 +13,7 @@ const FOUR_STATE = ["not_reviewed", "yes", "no", "uncertain"];
 const IMAGE_USABILITY = ["not_reviewed", "usable", "partly_usable", "unusable"];
 const CONFIRMED_DECISIONS = ["not_reviewed", "include", "exclude", "hold"];
 const CANDIDATE_DECISIONS = ["not_reviewed", "prioritize", "standard", "deprioritize", "hold"];
-const PROPOSAL_RESPONSES = [
-  "no_correction_needed",
-  "selected_gaia_source",
-  "selected_legacy_source",
-  "manual_ra_dec",
-  "no_correction_proposed",
-];
+// Coordinate-proposal responses are derived from the Gaia / Legacy / manual selections.
 
 const OBSERVATION_LABELS = {
   resolved: "Resolved",
@@ -115,8 +109,7 @@ async function loadObject(oid) {
   state.dirty = false;
   state.scale = "compact";
   state.showMarkers = false;
-  state.pendingProposal = null;
-  state.selectedMarker = null;
+  state.proposal = emptyProposal();
   renderDetail();
 }
 
@@ -249,14 +242,21 @@ function renderImage() {
         `<div class="marker ${m.type}" style="left:${m.x}%;top:${m.y}%" title="${escapeHtml(m.label)} ${escapeHtml(m.sourceId)} ${fmtNum(m.sepArcsec)}″"></div>`
     )
     .join("");
-  const selectedHtml = state.selectedMarker
-    ? `<div class="marker selected" style="left:${state.selectedMarker.x}%;top:${state.selectedMarker.y}%" title="selected: ${escapeHtml(state.selectedMarker.label)}"><span class="marker-label">selected</span></div>`
-    : "";
+  const selectedHtml = [];
+  if (state.proposal.gaia) {
+    const position = sourcePixel(state.proposal.gaia.ra, state.proposal.gaia.dec);
+    if (position) selectedHtml.push(`<div class="marker selected-gaia" style="left:${position.x}%;top:${position.y}%" title="selected Gaia: ${escapeHtml(state.proposal.gaia.source_id)}"><span class="marker-label">Gaia</span></div>`);
+  }
+  if (state.proposal.legacy) {
+    const position = sourcePixel(state.proposal.legacy.ra, state.proposal.legacy.dec);
+    if (position) selectedHtml.push(`<div class="marker selected-legacy" style="left:${position.x}%;top:${position.y}%" title="selected Legacy: ${escapeHtml(state.proposal.legacy.source_id)}"><span class="marker-label">Legacy</span></div>`);
+  }
+  const selectedHtmlStr = selectedHtml.join("");
   stage.innerHTML = `
     <div class="image-content" id="image-content">
       ${image.file_path ? `<img id="current-img" src="/api/images/${obj.canonical_object_id}/${scale}" alt="${scale}">` : `<div class="empty-state">no image</div>`}
       <div class="crosshair"></div>
-      <div class="marker-layer">${markerHtml}${selectedHtml}</div>
+      <div class="marker-layer">${markerHtml}${selectedHtmlStr}</div>
     </div>`;
   $("#tab-compact").classList.toggle("active", scale === "compact");
   $("#tab-wide").classList.toggle("active", scale === "wide");
@@ -360,9 +360,8 @@ function reviewPanel(cohort) {
     <div class="field-label">Final decision</div>
     <div class="segmented" id="seg-decision"></div>
     <div id="proposal-section" class="hidden">
-      <div class="field-label">Coordinate proposal (off-center requires a response)</div>
-      <select id="proposal-response"></select>
-      <div id="proposal-fields"></div>
+      <div class="field-label">Coordinate correction</div>
+      <div id="proposal-content"></div>
     </div>
     <div class="field-label">Evidence note</div>
     <input type="text" id="note-evidence" placeholder="factual description of the image">
@@ -434,33 +433,103 @@ function renderReviewControls(cohort) {
   $("#btn-save-next").addEventListener("click", () => save(true));
 }
 
+function emptyProposal() {
+  return { response: "no_correction_needed", gaia: null, legacy: null, manual: null };
+}
+
+function deriveProposal(proposal) {
+  const gaia = proposal.gaia;
+  const legacy = proposal.legacy;
+  const manual = proposal.manual;
+  let coordinate_reference;
+  let proposed_ra;
+  let proposed_dec;
+  if (gaia) {
+    coordinate_reference = "gaia";
+    proposed_ra = gaia.ra;
+    proposed_dec = gaia.dec;
+  } else if (legacy) {
+    coordinate_reference = "legacy";
+    proposed_ra = legacy.ra;
+    proposed_dec = legacy.dec;
+  } else if (manual && manual.ra != null && manual.dec != null) {
+    coordinate_reference = "manual";
+    proposed_ra = manual.ra;
+    proposed_dec = manual.dec;
+  } else {
+    coordinate_reference = "none";
+    proposed_ra = null;
+    proposed_dec = null;
+  }
+  const reference_quality = gaia && legacy ? "both" : gaia ? "gaia_only" : legacy ? "legacy_only" : "none";
+  return { coordinate_reference, proposed_ra, proposed_dec, reference_quality };
+}
+
+function updateProposalResponse() {
+  const proposal = state.proposal;
+  if (proposal.gaia || proposal.legacy) proposal.response = "source_selected";
+  else if (proposal.manual && (proposal.manual.ra != null || proposal.manual.dec != null)) proposal.response = "manual_ra_dec";
+  else proposal.response = "no_correction_proposed";
+}
+
 function toggleProposal() {
   const offCenter = observationValue("off_center");
   const show = offCenter === "yes" || offCenter === "uncertain";
   $("#proposal-section").classList.toggle("hidden", !show);
-  if (!show) return;
-  const select = $("#proposal-response");
-  select.innerHTML = PROPOSAL_RESPONSES.map((r) => `<option value="${r}">${r.replace(/_/g, " ")}</option>`).join("");
-  select.value = state.review.coordinate_proposal?.response || "no_correction_needed";
-  select.addEventListener("change", () => { markDirty(); renderProposalFields(select.value); });
-  renderProposalFields(select.value);
+  if (show) renderProposalSection();
 }
 
-function renderProposalFields(response) {
-  const fields = $("#proposal-fields");
-  if (response === "selected_gaia_source" || response === "selected_legacy_source") {
-    fields.innerHTML = `<input type="text" id="proposal-source" placeholder="source identifier">`;
-    $("#proposal-source").value = state.review.coordinate_proposal?.source_id || "";
-    $("#proposal-source").addEventListener("input", markDirty);
-  } else if (response === "manual_ra_dec") {
-    fields.innerHTML = `<input type="text" id="proposal-ra" placeholder="proposed RA (deg)"><input type="text" id="proposal-dec" placeholder="proposed Dec (deg)">`;
-    $("#proposal-ra").value = state.review.coordinate_proposal?.proposed_ra ?? "";
-    $("#proposal-dec").value = state.review.coordinate_proposal?.proposed_dec ?? "";
-    $("#proposal-ra").addEventListener("input", markDirty);
-    $("#proposal-dec").addEventListener("input", markDirty);
-  } else {
-    fields.innerHTML = "";
-  }
+function renderProposalSection() {
+  const content = $("#proposal-content");
+  const proposal = state.proposal;
+  const derived = deriveProposal(proposal);
+  content.innerHTML = `
+    <div class="prop-row">
+      <span class="prop-label">Gaia (coordinate)</span>
+      <span class="prop-value">${proposal.gaia ? escapeHtml(proposal.gaia.source_id) : 'not selected — click a Gaia "use" button'}</span>
+      ${proposal.gaia ? '<button class="prop-clear" data-clear="gaia">clear</button>' : ""}
+    </div>
+    <div class="prop-row">
+      <span class="prop-label">Legacy (photometry)</span>
+      <span class="prop-value">${proposal.legacy ? escapeHtml(proposal.legacy.source_id) : 'not selected — click a Legacy "use" button'}</span>
+      ${proposal.legacy ? '<button class="prop-clear" data-clear="legacy">clear</button>' : ""}
+    </div>
+    <div class="prop-row">
+      <span class="prop-label">Manual RA/Dec</span>
+      <span class="prop-value manual"><input id="prop-manual-ra" placeholder="RA (deg)" value="${proposal.manual?.ra ?? ""}"><input id="prop-manual-dec" placeholder="Dec (deg)" value="${proposal.manual?.dec ?? ""}"></span>
+    </div>
+    <div class="prop-derived">
+      Coordinate: ${derived.coordinate_reference !== "none" ? `${fmtCoord(derived.proposed_ra)}, ${fmtCoord(derived.proposed_dec)} (from ${derived.coordinate_reference})` : "—"} ·
+      Quality: <b>${derived.reference_quality.replace(/_/g, " ")}</b>
+    </div>
+    <button class="prop-clear" data-clear="all">no correction proposed</button>
+  `;
+  content.querySelectorAll("[data-clear]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const what = btn.dataset.clear;
+      if (what === "gaia") state.proposal.gaia = null;
+      else if (what === "legacy") state.proposal.legacy = null;
+      else {
+        state.proposal.gaia = null;
+        state.proposal.legacy = null;
+        state.proposal.manual = null;
+      }
+      updateProposalResponse();
+      renderProposalSection();
+      renderImage();
+      markDirty();
+    });
+  });
+  const syncManual = () => {
+    const ra = parseFloat($("#prop-manual-ra").value);
+    const dec = parseFloat($("#prop-manual-dec").value);
+    state.proposal.manual = Number.isNaN(ra) && Number.isNaN(dec) ? null : { ra: Number.isNaN(ra) ? null : ra, dec: Number.isNaN(dec) ? null : dec };
+    updateProposalResponse();
+    renderImage();
+    markDirty();
+  };
+  $("#prop-manual-ra").addEventListener("input", syncManual);
+  $("#prop-manual-dec").addEventListener("input", syncManual);
 }
 
 function selectedValue(containerSel) {
@@ -485,33 +554,27 @@ function setObservation(name, value) {
 
 function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
   setObservation("off_center", "yes");
-  state.pendingProposal = {
-    response: sourceType === "gaia" ? "selected_gaia_source" : "selected_legacy_source",
-    source_id: sourceId,
-    proposed_ra: parseFloat(ra),
-    proposed_dec: parseFloat(dec),
-  };
-  const select = $("#proposal-response");
-  if (select) {
-    select.value = state.pendingProposal.response;
-    renderProposalFields(select.value);
-    const sourceField = $("#proposal-source");
-    if (sourceField) sourceField.value = sourceId;
+  if (sourceType === "gaia") {
+    state.proposal.gaia = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
+  } else {
+    state.proposal.legacy = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
   }
+  updateProposalResponse();
   if (button) {
-    document.querySelectorAll(".select-source").forEach((item) => (item.textContent = "use"));
+    document.querySelectorAll(`.select-source[data-source-type="${sourceType}"]`).forEach((item) => (item.textContent = "use"));
     button.textContent = "✓ selected";
   }
-  let position = sourcePixel(parseFloat(ra), parseFloat(dec));
-  if (!position && state.scale === "compact") {
-    state.scale = "wide";
-    position = sourcePixel(parseFloat(ra), parseFloat(dec));
-  }
-  state.selectedMarker = position ? { x: position.x, y: position.y, label: sourceId } : null;
   state.showMarkers = true;
+  const selected = sourceType === "gaia" ? state.proposal.gaia : state.proposal.legacy;
+  if (!sourcePixel(selected.ra, selected.dec) && state.scale === "compact") {
+    state.scale = "wide";
+    $("#tab-compact").classList.remove("active");
+    $("#tab-wide").classList.add("active");
+  }
   renderImage();
+  renderProposalSection();
   const saved = $("#review-saved");
-  if (saved) saved.textContent = `Selected ${sourceId} as coordinate correction (unsaved)`;
+  if (saved) saved.textContent = `Selected ${sourceId} as ${sourceType} reference (unsaved)`;
   markDirty();
 }
 
@@ -519,17 +582,16 @@ function collectReview() {
   const observations = Object.fromEntries(
     OBSERVATIONS.map((name) => [name, observationValue(name)])
   );
-  const proposal = { response: $("#proposal-response")?.value || "no_correction_needed" };
-  if (proposal.response === "selected_gaia_source" || proposal.response === "selected_legacy_source") {
-    proposal.source_id = $("#proposal-source")?.value || "";
-    if (state.pendingProposal) {
-      proposal.proposed_ra = state.pendingProposal.proposed_ra;
-      proposal.proposed_dec = state.pendingProposal.proposed_dec;
-    }
-  } else if (proposal.response === "manual_ra_dec") {
-    proposal.proposed_ra = parseFloat($("#proposal-ra")?.value) || null;
-    proposal.proposed_dec = parseFloat($("#proposal-dec")?.value) || null;
-  }
+  const derived = deriveProposal(state.proposal);
+  const proposal = {
+    response: state.proposal.response,
+    gaia_source_id: state.proposal.gaia?.source_id || null,
+    legacy_source_id: state.proposal.legacy?.source_id || null,
+    coordinate_reference: derived.coordinate_reference,
+    proposed_ra: derived.proposed_ra,
+    proposed_dec: derived.proposed_dec,
+    reference_quality: derived.reference_quality,
+  };
   return {
     client_revision: state.review.client_revision || 0,
     image_usability: selectedValue("#seg-usability"),

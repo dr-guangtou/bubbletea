@@ -109,11 +109,7 @@ def coordinate_proposal_rows(state_rows: list[dict], state_map: dict) -> list[di
         if not review:
             continue
         proposal = review.get("coordinate_proposal") or {}
-        if proposal.get("response") not in {
-            "selected_gaia_source",
-            "selected_legacy_source",
-            "manual_ra_dec",
-        }:
+        if proposal.get("response") not in {"source_selected", "manual_ra_dec"}:
             continue
         rows.append(
             {
@@ -121,11 +117,13 @@ def coordinate_proposal_rows(state_rows: list[dict], state_map: dict) -> list[di
                 "reference_cohort": row["reference_cohort"],
                 "revision_id": review["revision_id"],
                 "utc_timestamp": review["utc_timestamp"],
-                "proposal_response": proposal.get("response"),
+                "response": proposal.get("response"),
+                "gaia_source_id": proposal.get("gaia_source_id"),
+                "legacy_source_id": proposal.get("legacy_source_id"),
+                "coordinate_reference": proposal.get("coordinate_reference"),
                 "proposed_ra": proposal.get("proposed_ra"),
                 "proposed_dec": proposal.get("proposed_dec"),
-                "source_type": proposal.get("source_type"),
-                "source_id": proposal.get("source_id"),
+                "reference_quality": proposal.get("reference_quality"),
             }
         )
     return rows

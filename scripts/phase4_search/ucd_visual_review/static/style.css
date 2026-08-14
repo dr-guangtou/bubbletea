@@ -286,5 +286,18 @@ textarea, input[type="text"] {
 .collapsible > h3 { user-select: none; }
 .select-source { background: var(--panel-2); border: 1.5px solid var(--accent); color: var(--accent); border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; padding: 5px 10px; }
 .select-source:hover { background: var(--accent); color: #0c0d10; }
-.marker.selected { border-color: #ff5c5c; width: 18px; height: 18px; border-width: 3px; background: rgba(255, 92, 92, 0.35); box-shadow: 0 0 8px rgba(255, 92, 92, 0.9); z-index: 2; }
-.marker-label { position: absolute; left: 16px; top: -6px; white-space: nowrap; font-size: 11px; font-weight: 700; color: #ff5c5c; text-shadow: 0 0 3px #000; }
+.marker.selected-gaia, .marker.selected-legacy { width: 18px; height: 18px; border-width: 3px; z-index: 2; }
+.marker.selected-gaia { border-color: #ff5c5c; background: rgba(255, 92, 92, 0.35); box-shadow: 0 0 8px rgba(255, 92, 92, 0.9); }
+.marker.selected-legacy { border-color: #3aa655; background: rgba(58, 166, 85, 0.35); box-shadow: 0 0 8px rgba(58, 166, 85, 0.9); }
+.marker.selected-gaia .marker-label { color: #ff5c5c; }
+.marker.selected-legacy .marker-label { color: #3aa655; }
+.marker-label { position: absolute; left: 16px; top: -6px; white-space: nowrap; font-size: 11px; font-weight: 700; text-shadow: 0 0 3px #000; }
+
+.prop-row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 13px; }
+.prop-label { color: var(--muted); min-width: 115px; }
+.prop-value { flex: 1; font-family: monospace; font-size: 12px; overflow-wrap: anywhere; }
+.prop-value.manual { display: flex; gap: 4px; }
+.prop-value.manual input { width: 95px; padding: 4px 6px; background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 4px; font-size: 12px; }
+.prop-derived { font-size: 13px; margin: 6px 0; }
+.prop-clear { background: var(--panel-2); border: 1px solid var(--border); color: var(--muted); border-radius: 3px; cursor: pointer; font-size: 11px; padding: 2px 7px; }
+.prop-clear:hover { color: var(--text); }
