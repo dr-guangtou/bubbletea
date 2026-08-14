@@ -515,6 +515,7 @@ function renderProposalSection() {
         state.proposal.manual = null;
       }
       updateProposalResponse();
+      refreshSelectButtons();
       renderProposalSection();
       renderImage();
       markDirty();
@@ -552,29 +553,42 @@ function setObservation(name, value) {
   if (btn) btn.click();
 }
 
+function refreshSelectButtons() {
+  document.querySelectorAll(".select-source").forEach((btn) => {
+    const type = btn.dataset.sourceType;
+    const id = btn.dataset.sourceId;
+    const selected = type === "gaia" ? state.proposal.gaia : state.proposal.legacy;
+    btn.textContent = selected && selected.source_id === id ? "✓ selected" : "use";
+  });
+}
+
 function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
   setObservation("off_center", "yes");
-  if (sourceType === "gaia") {
-    state.proposal.gaia = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
+  const current = sourceType === "gaia" ? state.proposal.gaia : state.proposal.legacy;
+  const isSelected = current && current.source_id === sourceId;
+  if (isSelected) {
+    if (sourceType === "gaia") state.proposal.gaia = null;
+    else state.proposal.legacy = null;
   } else {
-    state.proposal.legacy = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
+    if (sourceType === "gaia") {
+      state.proposal.gaia = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
+    } else {
+      state.proposal.legacy = { source_id: sourceId, ra: parseFloat(ra), dec: parseFloat(dec) };
+    }
+    state.showMarkers = true;
+    const selected = sourceType === "gaia" ? state.proposal.gaia : state.proposal.legacy;
+    if (!sourcePixel(selected.ra, selected.dec) && state.scale === "compact") {
+      state.scale = "wide";
+      $("#tab-compact").classList.remove("active");
+      $("#tab-wide").classList.add("active");
+    }
   }
   updateProposalResponse();
-  if (button) {
-    document.querySelectorAll(`.select-source[data-source-type="${sourceType}"]`).forEach((item) => (item.textContent = "use"));
-    button.textContent = "✓ selected";
-  }
-  state.showMarkers = true;
-  const selected = sourceType === "gaia" ? state.proposal.gaia : state.proposal.legacy;
-  if (!sourcePixel(selected.ra, selected.dec) && state.scale === "compact") {
-    state.scale = "wide";
-    $("#tab-compact").classList.remove("active");
-    $("#tab-wide").classList.add("active");
-  }
+  refreshSelectButtons();
   renderImage();
   renderProposalSection();
   const saved = $("#review-saved");
-  if (saved) saved.textContent = `Selected ${sourceId} as ${sourceType} reference (unsaved)`;
+  if (saved) saved.textContent = isSelected ? `Cleared ${sourceId}` : `Selected ${sourceId} as ${sourceType} reference (unsaved)`;
   markDirty();
 }
 
