@@ -301,11 +301,20 @@ function gaiaPanel(gaia) {
 }
 
 function legacyPanel(legacy) {
-  if (!legacy || !legacy.length) return '<div class="value-na">no Legacy Survey association</div>';
-  const rows = legacy.map((row) => `
-    <tr><td>${escapeHtml(row.type || "")}</td><td>${escapeHtml(row.ls_id || "")}</td>
-    <td>${fmtNum(row.dist_arcsec)}″ · g=${fmtNum(row.mag_g)} r=${fmtNum(row.mag_r)}</td></tr>`).join("");
-  return `<table class="evidence"><tr><th>Type</th><th>ls_id</th><th>Match</th></tr>${rows}</table>`;
+  if (!legacy || !legacy.length) return '<div class="value-na">no Legacy Survey association (r &lt; 23)</div>';
+  const rows = legacy.map((row) => {
+    const ellipticity =
+      row.shape_e1 != null && row.shape_e2 != null
+        ? Math.sqrt(row.shape_e1 * row.shape_e1 + row.shape_e2 * row.shape_e2)
+        : null;
+    const shape =
+      row.type === "PSF"
+        ? `PSF FWHM ${fmtNum(row.psfsize_r)}″`
+        : `r_e ${fmtNum(row.shape_r)}″${row.sersic != null ? ` n=${fmtNum(row.sersic)}` : ""} e=${fmtNum(ellipticity)}`;
+    return `<tr><td>${escapeHtml(row.type || "")}</td><td>${escapeHtml(row.ls_id || "")}</td>
+      <td>${fmtNum(row.dist_arcsec)}″ · r=${fmtNum(row.mag_r)} · ${shape}</td></tr>`;
+  }).join("");
+  return `<table class="evidence"><tr><th>Type</th><th>ls_id</th><th>dist · r · shape</th></tr>${rows}</table>`;
 }
 
 function externalPanel(external) {

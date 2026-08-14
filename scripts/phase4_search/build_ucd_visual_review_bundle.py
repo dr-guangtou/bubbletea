@@ -201,6 +201,11 @@ def main() -> None:
     compact_images = load_indexed(UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST, "canonical_object_id")
     wide_images = load_indexed(UCD_VISUAL_REVIEW_WIDE_CUTOUT_MANIFEST, "canonical_object_id")
     tractor = load_indexed(UCD_LEGACY_REFERENCE_TRACTOR_MATCHES, "canonical_object_id")
+    # r-magnitude flux cut: keep only bright associations (r < 23.0).
+    tractor = {
+        oid: [row for row in rows if row.get("mag_r") is not None and row["mag_r"] < 23.0]
+        for oid, rows in tractor.items()
+    }
     gaia_membership = load_indexed(
         UCD_LEGACY_REFERENCE_GAIA_MEMBERSHIP, "canonical_object_id"
     )
