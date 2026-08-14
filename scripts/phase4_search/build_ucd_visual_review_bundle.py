@@ -8,7 +8,9 @@ and manifest.
 """
 
 import json
+import sqlite3
 import sys
+from collections import defaultdict
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -19,6 +21,7 @@ if __package__ in {None, ""}:
 
 from scripts.config import (
     HOST_ASSOCIATION_REGISTER,
+    LITERATURE_REFERENCE_DB_V2,
     PROJECT_ROOT,
     UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST,
     UCD_LEGACY_REFERENCE_GAIA_MEMBERSHIP,
@@ -34,6 +37,26 @@ from scripts.config import (
 from scripts.phase1_literature.audit_reference_data import calculate_sha256
 
 BUNDLE_VERSION = "ucd_visual_review_bundle_v1"
+
+FAHRION_TABLE = PROJECT_ROOT / "reference" / "fahrion2019" / "tableb1.dat"
+
+# Fahrion et al. 2019 table B1 reference numbers -> discovery bibcodes (ReadMe note 1).
+FAHRION_REF_BIBCODE = {
+    0: "2019A&A...625A..50F",
+    1: "2008A&A...487..921M",
+    2: "2011AJ....142..199B",
+    3: "2015ApJ...812...34L",
+    4: "2011MNRAS.414..739N",
+    5: "2003IAUJD...6E..18M",
+    6: "2017MNRAS.468.4513M",
+    7: "2007AJ....133.1722E",
+    8: "2007A&A...472..111M",
+    9: "2009A&A...498..705M",
+    10: "2011MNRAS.414.3699M",
+    11: "2004A&A...416..917G",
+    12: "2015ApJ...808L..32S",
+    13: "2016MNRAS.456..617J",
+}
 
 
 def safe(value: object) -> object:
@@ -112,6 +135,65 @@ def load_indexed(path: Path, key: str) -> dict[str, list[dict]]:
     return grouped
 
 
+def parse_tableb1_refs() -> list[int]:
+    """Parse the Fahrion 2019 table B1 discovery-reference column."""
+    refs = []
+    for line in FAHRION_TABLE.read_text().splitlines():
+        stripped = line.rstrip()
+        if stripped:
+            refs.append(int(stripped[-2:]))
+    return refs
+
+
+def discovery_map(targets: pd.DataFrame) -> dict[str, dict]:
+    """Determine the earliest discovery bibcode per reference object.
+
+    For objects sourced only from the Fahrion 2019 compilation, the true discovery
+    is read from that table's reference column rather than the compilation year.
+    """
+    connection = sqlite3.connect(LITERATURE_REFERENCE_DB_V2)
+    connection.row_factory = sqlite3.Row
+    query = """
+        SELECT co.canonical_object_id, p.bibcode, p.publication_year, p.title
+        FROM canonical_objects AS co
+        JOIN object_record_associations AS ora
+          ON ora.canonical_object_id = co.canonical_object_id
+         AND ora.association_status = 'accepted'
+        JOIN literature_records AS lr USING (record_id)
+        JOIN datasets AS d USING (dataset_id)
+        JOIN publications AS p USING (publication_id)
+    """
+    object_bibcodes: dict[str, list[tuple[int | None, str]]] = defaultdict(list)
+    bibcode_title: dict[str, tuple[int, str]] = {}
+    for row in connection.execute(query):
+        object_bibcodes[row["canonical_object_id"]].append(
+            (row["publication_year"], row["bibcode"])
+        )
+        bibcode_title[row["bibcode"]] = (row["publication_year"] or 0, row["title"] or "")
+    connection.close()
+
+    fahrion_refs = parse_tableb1_refs()
+    discovery: dict[str, dict] = {}
+    for _, target in targets.iterrows():
+        object_id = str(target["canonical_object_id"])
+        rows = object_bibcodes.get(object_id, [])
+        bibcodes = {bibcode for _, bibcode in rows}
+        if bibcodes == {"2019A&A...625A..50F"}:
+            locator = str(target["source_row_locators"] or "").split(";")[0]
+            suffix = int(locator.rsplit("_", 1)[-1])
+            bibcode = FAHRION_REF_BIBCODE.get(fahrion_refs[suffix], "2019A&A...625A..50F")
+        else:
+            _, bibcode = min(rows, key=lambda pair: (pair[0] or 9999, pair[1]))
+        year, title = bibcode_title.get(bibcode, (int(bibcode[:4]), ""))
+        discovery[object_id] = {
+            "bibcode": bibcode,
+            "year": year,
+            "title": title,
+            "ads_url": ads_url(bibcode),
+        }
+    return discovery
+
+
 def main() -> None:
     """Assemble one JSON object per reference object plus index and manifest."""
     targets = pd.read_csv(UCD_LEGACY_REFERENCE_TARGETS, dtype={"gaia_dr3_ids": "string"})
@@ -129,6 +211,7 @@ def main() -> None:
         str(row["canonical_object_id"]): row_to_dict(row)
         for row in host_register.to_dict("records")
     }
+    discovery_by_id = discovery_map(targets)
 
     UCD_VISUAL_REVIEW_BUNDLE_DIR.mkdir(parents=True, exist_ok=True)
     index_rows = []
@@ -158,6 +241,7 @@ def main() -> None:
             },
             "legacy_survey": tractor.get(object_id, []),
             "external_catalogs": external.get(object_id, []),
+            "discovery": discovery_by_id.get(object_id, {}),
             "links": build_links(core),
         }
         path = UCD_VISUAL_REVIEW_BUNDLE_DIR / f"{object_id}.json"

@@ -1,6 +1,6 @@
 {
   "retrieval_version": "ucd_visual_review_external_associations_v1",
-  "generated_at_utc": "2026-08-13T15:11:23.471765+00:00",
+  "generated_at_utc": "2026-08-14T01:51:01.642979+00:00",
   "status": "external_catalog_associations_complete",
   "association_method": "exact Gaia source identifier against the 5-arcsecond diagnostic neighbor set; the neighbor table already contains every Gaia source near each literature coordinate",
   "association_counts": {

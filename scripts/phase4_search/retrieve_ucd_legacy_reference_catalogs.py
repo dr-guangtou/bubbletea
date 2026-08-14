@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 RETRIEVAL_VERSION = "ucd_legacy_reference_catalog_retrieval_v1"
 GAIA_BATCH_SIZE = 100
 TRACTOR_BATCH_SIZE = 40
-TRACTOR_RADIUS_ARCSEC = 2.0
+TRACTOR_RADIUS_ARCSEC = 10.0
 MAXIMUM_ATTEMPTS = 3
 GAIA_COLUMNS = [
     "source_id",
@@ -350,7 +350,7 @@ def main() -> None:
         "exactly_175_gaia_identifiers_tested": int(testable.sum()) == 175,
         "all_testable_gaia_rows_retrieved": gaia.loc[testable, "gaia_source_row_retrieved"].all(),
         "all_targets_have_tractor_audit_rows": len(tractor_audit) == 724,
-        "all_tractor_associations_are_within_two_arcseconds": tractor["dist_arcsec"].le(2.0).all(),
+        "all_tractor_associations_are_within_ten_arcseconds": tractor["dist_arcsec"].le(10.0).all(),
         "closest_match_is_unique_per_matched_target": tractor.loc[
             tractor["selected_closest_match"]
         ]["canonical_object_id"].is_unique,
@@ -376,7 +376,7 @@ def main() -> None:
             "query_batches": gaia_queries,
         },
         "legacy_tractor": {
-            "method": "all positional associations within 2 arcseconds",
+            "method": "all positional associations within 10 arcseconds",
             "target_count": len(targets),
             "matched_target_count": int(tractor_audit["match_status"].eq("matched").sum()),
             "no_match_target_count": int(tractor_audit["match_status"].eq("no_match").sum()),

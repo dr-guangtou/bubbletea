@@ -89,7 +89,7 @@ separate states in the review application.
 
 ### Legacy Survey catalog measurements
 
-All Legacy Survey DR10 Tractor associations within 2 arcseconds are stored in:
+All Legacy Survey DR10 Tractor associations within 10 arcseconds are stored in:
 
 `data/literature/catalogs/ucd_legacy_reference_tractor_matches_v1.csv`
 
@@ -97,11 +97,11 @@ The per-target association audit is:
 
 `data/literature/validation/ucd_legacy_reference_tractor_audit_v1.csv`
 
-At least one association exists for 585 targets, including all 44 Saifollahi
-candidates. There is no association within 2 arcseconds for 139 confirmed UCDs. A
-total of 101 targets have more than one possible association. The tool must show all
-nearby associations and identify the closest row without presenting it as certainly
-correct.
+At least one association exists for 683 targets, including all 44 Saifollahi
+candidates. The 10-arcsecond radius was adopted (2026-08-13) after the 2-arcsecond
+pilot missed off-center literature coordinates, such as Hydra-UCD33. The tool must
+show all nearby associations and identify the closest row without presenting it as
+certainly correct.
 
 Available measurements include coordinates, separation, fitted light-profile type,
 g/r/i/z/W1/W2 fluxes and inverse variances, observed and dust-corrected magnitudes,
@@ -507,7 +507,7 @@ audited register explicitly verifies it.
 
 ### Legacy Survey panel
 
-Show every catalog association within 2 arcseconds, ordered by separation. Identify
+Show every catalog association within 10 arcseconds, ordered by separation. Identify
 the closest association but show an ambiguity warning whenever another source is
 also within the radius.
 

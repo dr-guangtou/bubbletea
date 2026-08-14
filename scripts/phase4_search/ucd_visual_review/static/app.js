@@ -129,6 +129,7 @@ function renderDetail() {
       <div class="meta">
         ${core.canonical_object_id} · RA ${fmtCoord(core.adopted_ra)} Dec ${fmtCoord(core.adopted_dec)} ·
         ${cohort === "saifollahi_high_probability_candidate" ? "Saifollahi candidate" : "Confirmed UCD"}
+        ${obj.discovery && obj.discovery.ads_url ? `<br>Discovery: <a href="${obj.discovery.ads_url}" target="_blank">${escapeHtml(obj.discovery.bibcode)}</a>${obj.discovery.title ? ` — ${escapeHtml(obj.discovery.title)}` : ""}` : ""}
       </div>
     </div>
     <div class="nav-row">

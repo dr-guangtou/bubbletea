@@ -41,7 +41,7 @@ from scripts.utils.crossmatch import build_datalab_cone_predicate
 logger = logging.getLogger(__name__)
 
 RETRIEVAL_VERSION = "ucd_visual_review_gaia_neighbors_v1"
-NEIGHBOR_RADIUS_ARCSEC = 5.0
+NEIGHBOR_RADIUS_ARCSEC = 10.0
 BATCH_SIZE = 40
 MAXIMUM_ATTEMPTS = 3
 
@@ -319,7 +319,7 @@ def main() -> None:
     audit = pd.DataFrame(audit_rows)
     checks = {
         "all_724_targets_have_audit_rows": len(audit) == 724,
-        "neighbor_separations_within_five_arcseconds": neighbors["dist_arcsec"].le(5.0).all(),
+        "neighbor_separations_within_ten_arcseconds": neighbors["dist_arcsec"].le(10.0).all(),
         "source_identifiers_are_strings": neighbors["source_id"].map(type).eq(str).all(),
         "match_basis_is_binary": neighbors["match_basis"].isin(
             {"accepted_identifier", "positional_neighbor"}
