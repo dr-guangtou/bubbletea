@@ -116,6 +116,7 @@ async function loadObject(oid) {
   state.scale = "compact";
   state.showMarkers = false;
   state.pendingProposal = null;
+  state.selectedMarker = null;
   renderDetail();
 }
 
@@ -196,27 +197,32 @@ function setScale(scale) {
   renderImage();
 }
 
-function computeMarkers() {
+function sourcePixel(ra, dec) {
   const obj = state.currentObject;
-  const scale = state.scale;
-  const size = scale === "compact" ? 64 : 256;
+  const size = state.scale === "compact" ? 64 : 256;
   const centerRa = Number(obj.object.adopted_ra);
   const centerDec = Number(obj.object.adopted_dec);
   const cx = (size - 1) / 2;
+  const draArcsec = (ra - centerRa) * Math.cos((centerDec * Math.PI) / 180) * 3600;
+  const ddecArcsec = (dec - centerDec) * 3600;
+  const px = cx - draArcsec / PIXEL_SCALE_ARCSEC; // east = left
+  const py = cx - ddecArcsec / PIXEL_SCALE_ARCSEC; // north = up
+  if (px < 0 || px > size || py < 0 || py > size) return null;
+  return { x: (px / size) * 100, y: (py / size) * 100 };
+}
+
+function computeMarkers() {
+  const obj = state.currentObject;
   const markers = [];
   const push = (sources, type, label) => {
     for (const s of sources || []) {
       const ra = Number(s.ra);
       const dec = Number(s.dec);
       if (Number.isNaN(ra) || Number.isNaN(dec)) continue;
-      const draArcsec = (ra - centerRa) * Math.cos((centerDec * Math.PI) / 180) * 3600;
-      const ddecArcsec = (dec - centerDec) * 3600;
-      const px = cx - draArcsec / PIXEL_SCALE_ARCSEC; // east = left
-      const py = cx - ddecArcsec / PIXEL_SCALE_ARCSEC; // north = up
-      if (px < 0 || px > size || py < 0 || py > size) continue;
+      const position = sourcePixel(ra, dec);
+      if (!position) continue;
       markers.push({
-        x: (px / size) * 100,
-        y: (py / size) * 100,
+        ...position,
         type,
         label: label || type,
         sourceId: s.source_id || s.ls_id || "",
@@ -243,11 +249,14 @@ function renderImage() {
         `<div class="marker ${m.type}" style="left:${m.x}%;top:${m.y}%" title="${escapeHtml(m.label)} ${escapeHtml(m.sourceId)} ${fmtNum(m.sepArcsec)}″"></div>`
     )
     .join("");
+  const selectedHtml = state.selectedMarker
+    ? `<div class="marker selected" style="left:${state.selectedMarker.x}%;top:${state.selectedMarker.y}%" title="selected: ${escapeHtml(state.selectedMarker.label)}"><span class="marker-label">selected</span></div>`
+    : "";
   stage.innerHTML = `
     <div class="image-content" id="image-content">
       ${image.file_path ? `<img id="current-img" src="/api/images/${obj.canonical_object_id}/${scale}" alt="${scale}">` : `<div class="empty-state">no image</div>`}
       <div class="crosshair"></div>
-      <div class="marker-layer">${markerHtml}</div>
+      <div class="marker-layer">${markerHtml}${selectedHtml}</div>
     </div>`;
   $("#tab-compact").classList.toggle("active", scale === "compact");
   $("#tab-wide").classList.toggle("active", scale === "wide");
@@ -493,6 +502,14 @@ function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
     document.querySelectorAll(".select-source").forEach((item) => (item.textContent = "use"));
     button.textContent = "✓ selected";
   }
+  let position = sourcePixel(parseFloat(ra), parseFloat(dec));
+  if (!position && state.scale === "compact") {
+    state.scale = "wide";
+    position = sourcePixel(parseFloat(ra), parseFloat(dec));
+  }
+  state.selectedMarker = position ? { x: position.x, y: position.y, label: sourceId } : null;
+  state.showMarkers = true;
+  renderImage();
   const saved = $("#review-saved");
   if (saved) saved.textContent = `Selected ${sourceId} as coordinate correction (unsaved)`;
   markDirty();
