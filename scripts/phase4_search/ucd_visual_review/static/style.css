@@ -284,3 +284,5 @@ textarea, input[type="text"] {
 .review-controls { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
 .collapsible.collapsed .panel-body { display: none; }
 .collapsible > h3 { user-select: none; }
+.select-source { background: var(--panel-2); border: 1px solid var(--accent); color: var(--accent); border-radius: 3px; cursor: pointer; font-size: 11px; padding: 2px 7px; }
+.select-source:hover { background: var(--accent); color: #0c0d10; }

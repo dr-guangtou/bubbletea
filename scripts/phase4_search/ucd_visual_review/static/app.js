@@ -115,6 +115,7 @@ async function loadObject(oid) {
   state.dirty = false;
   state.scale = "compact";
   state.showMarkers = false;
+  state.pendingProposal = null;
   renderDetail();
 }
 
@@ -286,20 +287,24 @@ function gaiaPanel(gaia) {
   const accepted = gaia.accepted_sources || [];
   const neighbors = gaia.positional_neighbors || [];
   const membership = gaia.accepted_membership;
+  const selectButton = (source) =>
+    `<button class="select-source" data-source-type="gaia" data-source-id="${escapeHtml(source.source_id)}" data-ra="${source.ra}" data-dec="${source.dec}">use</button>`;
   let rows = "";
   for (const source of accepted) {
     rows += `<tr><td><b>accepted</b></td><td>${source.source_id}</td>
-      <td>G=${fmtNum(source.phot_g_mean_mag)} AEN=${fmtNum(source.astrometric_excess_noise)} plx=${fmtNum(source.absolute_parallax_significance)}σ</td></tr>`;
+      <td>G=${fmtNum(source.phot_g_mean_mag)} AEN=${fmtNum(source.astrometric_excess_noise)}</td>
+      <td>${selectButton(source)}</td></tr>`;
   }
   for (const source of neighbors) {
     rows += `<tr><td>neighbor</td><td>${source.source_id}</td>
-      <td>${fmtNum(source.dist_arcsec)}″ · G=${fmtNum(source.phot_g_mean_mag)}</td></tr>`;
+      <td>${fmtNum(source.dist_arcsec)}″ · G=${fmtNum(source.phot_g_mean_mag)}</td>
+      <td>${selectButton(source)}</td></tr>`;
   }
   const membershipText = membership
     ? `QSO:${membership.in_qso_candidates} galaxy:${membership.in_galaxy_candidates} NSS:${membership.non_single_star}`
     : "";
   return `<div>${escapeHtml(membershipText)}</div>
-    <table class="evidence"><tr><th>Basis</th><th>Source</th><th>Measurements</th></tr>${rows || '<tr><td colspan="3" class="value-na">no Gaia sources</td></tr>'}</table>`;
+    <table class="evidence"><tr><th>Basis</th><th>Source</th><th>Measurements</th><th></th></tr>${rows || '<tr><td colspan="4" class="value-na">no Gaia sources</td></tr>'}</table>`;
 }
 
 function legacyPanel(legacy) {
@@ -313,10 +318,12 @@ function legacyPanel(legacy) {
       row.type === "PSF"
         ? `PSF FWHM ${fmtNum(row.psfsize_r)}″`
         : `r_e ${fmtNum(row.shape_r)}″${row.sersic != null ? ` n=${fmtNum(row.sersic)}` : ""} e=${fmtNum(ellipticity)}`;
+    const select = `<button class="select-source" data-source-type="legacy" data-source-id="${escapeHtml(row.ls_id)}" data-ra="${row.ra}" data-dec="${row.dec}">use</button>`;
     return `<tr><td>${escapeHtml(row.type || "")}</td><td>${escapeHtml(row.ls_id || "")}</td>
-      <td>${fmtNum(row.dist_arcsec)}″ · r=${fmtNum(row.mag_r)} · ${shape}</td></tr>`;
+      <td>${fmtNum(row.dist_arcsec)}″ · r=${fmtNum(row.mag_r)} · ${shape}</td>
+      <td>${select}</td></tr>`;
   }).join("");
-  return `<table class="evidence"><tr><th>Type</th><th>ls_id</th><th>dist · r · shape</th></tr>${rows}</table>`;
+  return `<table class="evidence"><tr><th>Type</th><th>ls_id</th><th>dist · r · shape</th><th></th></tr>${rows}</table>`;
 }
 
 function externalPanel(external) {
@@ -389,6 +396,7 @@ function renderReviewControls(cohort) {
   for (const name of OBSERVATIONS) {
     const row = document.createElement("div");
     row.className = "obs-row";
+    row.dataset.obsName = name;
     row.innerHTML = `<label>${OBSERVATION_LABELS[name]}</label>`;
     const group = document.createElement("div");
     group.className = "segmented";
@@ -452,6 +460,31 @@ function selectedValue(containerSel) {
   return btn ? btn.dataset.value : "not_reviewed";
 }
 
+function setObservation(name, value) {
+  const row = document.querySelector(`.obs-row[data-obs-name="${name}"]`);
+  if (!row) return;
+  const btn = row.querySelector(`button[data-value="${value}"]`);
+  if (btn) btn.click();
+}
+
+function selectCoordinateSource(sourceType, sourceId, ra, dec) {
+  setObservation("off_center", "yes");
+  state.pendingProposal = {
+    response: sourceType === "gaia" ? "selected_gaia_source" : "selected_legacy_source",
+    source_id: sourceId,
+    proposed_ra: parseFloat(ra),
+    proposed_dec: parseFloat(dec),
+  };
+  const select = $("#proposal-response");
+  if (select) {
+    select.value = state.pendingProposal.response;
+    renderProposalFields(select.value);
+    const sourceField = $("#proposal-source");
+    if (sourceField) sourceField.value = sourceId;
+  }
+  markDirty();
+}
+
 function collectReview() {
   const observations = Object.fromEntries(
     OBSERVATIONS.map((name) => [name, selectedValue("#observations")])
@@ -459,6 +492,10 @@ function collectReview() {
   const proposal = { response: $("#proposal-response")?.value || "no_correction_needed" };
   if (proposal.response === "selected_gaia_source" || proposal.response === "selected_legacy_source") {
     proposal.source_id = $("#proposal-source")?.value || "";
+    if (state.pendingProposal) {
+      proposal.proposed_ra = state.pendingProposal.proposed_ra;
+      proposal.proposed_dec = state.pendingProposal.proposed_dec;
+    }
   } else if (proposal.response === "manual_ra_dec") {
     proposal.proposed_ra = parseFloat($("#proposal-ra")?.value) || null;
     proposal.proposed_dec = parseFloat($("#proposal-dec")?.value) || null;
@@ -527,6 +564,17 @@ function escapeHtml(value) {
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   }[c]));
 }
+
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-select-source]");
+  if (!button) return;
+  selectCoordinateSource(
+    button.dataset.sourceType,
+    button.dataset.sourceId,
+    button.dataset.ra,
+    button.dataset.dec
+  );
+});
 
 document.addEventListener("keydown", (event) => {
   if ((event.ctrlKey || event.metaKey) && event.key === "s") {
