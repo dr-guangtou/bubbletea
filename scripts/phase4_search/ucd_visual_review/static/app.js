@@ -426,7 +426,7 @@ function renderReviewControls(cohort) {
 }
 
 function toggleProposal() {
-  const offCenter = selectedValue("#observations", "off_center");
+  const offCenter = observationValue("off_center");
   const show = offCenter === "yes" || offCenter === "uncertain";
   $("#proposal-section").classList.toggle("hidden", !show);
   if (!show) return;
@@ -460,6 +460,13 @@ function selectedValue(containerSel) {
   return btn ? btn.dataset.value : "not_reviewed";
 }
 
+function observationValue(name) {
+  const row = document.querySelector(`.obs-row[data-obs-name="${name}"]`);
+  if (!row) return "not_reviewed";
+  const btn = row.querySelector("button.selected");
+  return btn ? btn.dataset.value : "not_reviewed";
+}
+
 function setObservation(name, value) {
   const row = document.querySelector(`.obs-row[data-obs-name="${name}"]`);
   if (!row) return;
@@ -467,7 +474,7 @@ function setObservation(name, value) {
   if (btn) btn.click();
 }
 
-function selectCoordinateSource(sourceType, sourceId, ra, dec) {
+function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
   setObservation("off_center", "yes");
   state.pendingProposal = {
     response: sourceType === "gaia" ? "selected_gaia_source" : "selected_legacy_source",
@@ -482,12 +489,18 @@ function selectCoordinateSource(sourceType, sourceId, ra, dec) {
     const sourceField = $("#proposal-source");
     if (sourceField) sourceField.value = sourceId;
   }
+  if (button) {
+    document.querySelectorAll(".select-source").forEach((item) => (item.textContent = "use"));
+    button.textContent = "✓ selected";
+  }
+  const saved = $("#review-saved");
+  if (saved) saved.textContent = `Selected ${sourceId} as coordinate correction (unsaved)`;
   markDirty();
 }
 
 function collectReview() {
   const observations = Object.fromEntries(
-    OBSERVATIONS.map((name) => [name, selectedValue("#observations")])
+    OBSERVATIONS.map((name) => [name, observationValue(name)])
   );
   const proposal = { response: $("#proposal-response")?.value || "no_correction_needed" };
   if (proposal.response === "selected_gaia_source" || proposal.response === "selected_legacy_source") {
@@ -566,13 +579,14 @@ function escapeHtml(value) {
 }
 
 document.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-select-source]");
+  const button = event.target.closest(".select-source");
   if (!button) return;
   selectCoordinateSource(
     button.dataset.sourceType,
     button.dataset.sourceId,
     button.dataset.ra,
-    button.dataset.dec
+    button.dataset.dec,
+    button
   );
 });
 
