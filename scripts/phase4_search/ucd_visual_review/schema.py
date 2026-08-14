@@ -33,6 +33,9 @@ CREATE TABLE IF NOT EXISTS review_revisions (
     evidence_note TEXT,
     general_comment TEXT,
     decision_reason TEXT,
+    gaia_source_id TEXT,
+    legacy_source_id TEXT,
+    reference_quality TEXT,
     coordinate_proposal_json TEXT,
     FOREIGN KEY (prior_revision_id) REFERENCES review_revisions(revision_id)
 );
@@ -106,14 +109,18 @@ def save_revision(
             resolved, off_center, close_to_host_light, too_faint_to_judge,
             blend_or_nearby_source, image_artifact,
             star_forming_or_young_cluster_appearance, final_decision,
-            evidence_note, general_comment, decision_reason, coordinate_proposal_json
+            evidence_note, general_comment, decision_reason,
+            gaia_source_id, legacy_source_id, reference_quality,
+            coordinate_proposal_json
         ) VALUES (
             :canonical_object_id, :bundle_version, :bundle_digest, :utc_timestamp,
             :prior_revision_id, :client_revision, :image_usability,
             :resolved, :off_center, :close_to_host_light, :too_faint_to_judge,
             :blend_or_nearby_source, :image_artifact,
             :star_forming_or_young_cluster_appearance, :final_decision,
-            :evidence_note, :general_comment, :decision_reason, :coordinate_proposal_json
+            :evidence_note, :general_comment, :decision_reason,
+            :gaia_source_id, :legacy_source_id, :reference_quality,
+            :coordinate_proposal_json
         )
         """,
         {
@@ -132,6 +139,9 @@ def save_revision(
             "evidence_note": payload.get("evidence_note"),
             "general_comment": payload.get("general_comment"),
             "decision_reason": payload.get("decision_reason"),
+            "gaia_source_id": payload.get("gaia_source_id"),
+            "legacy_source_id": payload.get("legacy_source_id"),
+            "reference_quality": payload.get("reference_quality"),
             "coordinate_proposal_json": json.dumps(coordinate_proposal, sort_keys=True),
         },
     )
@@ -156,6 +166,9 @@ def revision_to_dict(row: sqlite3.Row) -> dict:
         "evidence_note": row["evidence_note"],
         "general_comment": row["general_comment"],
         "decision_reason": row["decision_reason"],
+        "gaia_source_id": row["gaia_source_id"],
+        "legacy_source_id": row["legacy_source_id"],
+        "reference_quality": row["reference_quality"],
         "coordinate_proposal": json.loads(row["coordinate_proposal_json"] or "{}"),
     }
 

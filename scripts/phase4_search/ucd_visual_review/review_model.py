@@ -71,7 +71,7 @@ def validate_review(payload: dict, cohort: str) -> list[str]:
                 "a coordinate-proposal response is required when off_center is yes or uncertain"
             )
         elif response == "source_selected":
-            if not proposal.get("gaia_source_id") and not proposal.get("legacy_source_id"):
+            if not payload.get("gaia_source_id") and not payload.get("legacy_source_id"):
                 errors.append("source_selected requires a Gaia or Legacy source identifier")
         elif response == "manual_ra_dec":
             if proposal.get("proposed_ra") is None or proposal.get("proposed_dec") is None:

@@ -63,6 +63,9 @@ def current_state_rows(index: list[dict], state_map: dict) -> list[dict]:
                 "final_decision": review["final_decision"] if review else "",
                 "decision_reason": review["decision_reason"] if review else "",
                 "evidence_note": review["evidence_note"] if review else "",
+                "gaia_source_id": review["gaia_source_id"] if review else "",
+                "legacy_source_id": review["legacy_source_id"] if review else "",
+                "reference_quality": review["reference_quality"] if review else "",
                 "revision_id": review["revision_id"] if review else "",
                 "utc_timestamp": review["utc_timestamp"] if review else "",
                 **observations,
@@ -92,6 +95,9 @@ def history_rows(index: list[dict], connection) -> list[dict]:
                     "decision_reason": revision["decision_reason"],
                     "evidence_note": revision["evidence_note"],
                     "general_comment": revision["general_comment"],
+                    "gaia_source_id": revision["gaia_source_id"],
+                    "legacy_source_id": revision["legacy_source_id"],
+                    "reference_quality": revision["reference_quality"],
                     "coordinate_proposal_json": json.dumps(
                         revision["coordinate_proposal"], sort_keys=True
                     ),
@@ -118,12 +124,12 @@ def coordinate_proposal_rows(state_rows: list[dict], state_map: dict) -> list[di
                 "revision_id": review["revision_id"],
                 "utc_timestamp": review["utc_timestamp"],
                 "response": proposal.get("response"),
-                "gaia_source_id": proposal.get("gaia_source_id"),
-                "legacy_source_id": proposal.get("legacy_source_id"),
+                "gaia_source_id": review.get("gaia_source_id"),
+                "legacy_source_id": review.get("legacy_source_id"),
                 "coordinate_reference": proposal.get("coordinate_reference"),
                 "proposed_ra": proposal.get("proposed_ra"),
                 "proposed_dec": proposal.get("proposed_dec"),
-                "reference_quality": proposal.get("reference_quality"),
+                "reference_quality": review.get("reference_quality"),
             }
         )
     return rows

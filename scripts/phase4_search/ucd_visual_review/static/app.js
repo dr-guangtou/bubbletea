@@ -357,12 +357,14 @@ function reviewPanel(cohort) {
     <div class="field-label">Image usability</div>
     <div class="segmented" id="seg-usability"></div>
     <div id="observations"></div>
-    <div class="field-label">Final decision</div>
-    <div class="segmented" id="seg-decision"></div>
+    <div class="field-label">Sources</div>
+    <div id="sources-section"></div>
     <div id="proposal-section" class="hidden">
       <div class="field-label">Coordinate correction</div>
       <div id="proposal-content"></div>
     </div>
+    <div class="field-label">Final decision</div>
+    <div class="segmented" id="seg-decision"></div>
     <div class="field-label">Evidence note</div>
     <input type="text" id="note-evidence" placeholder="factual description of the image">
     <div class="field-label">General comment (optional)</div>
@@ -425,6 +427,7 @@ function renderReviewControls(cohort) {
     obs.appendChild(row);
   }
   toggleProposal();
+  renderSourcesSection();
   $("#note-evidence").value = state.review.evidence_note || "";
   $("#note-general").value = state.review.general_comment || "";
   $("#note-reason").value = state.review.decision_reason || "";
@@ -434,7 +437,7 @@ function renderReviewControls(cohort) {
 }
 
 function emptyProposal() {
-  return { response: "no_correction_needed", gaia: null, legacy: null, manual: null };
+  return { gaia: null, legacy: null, manual: null };
 }
 
 function deriveProposal(proposal) {
@@ -465,12 +468,7 @@ function deriveProposal(proposal) {
   return { coordinate_reference, proposed_ra, proposed_dec, reference_quality };
 }
 
-function updateProposalResponse() {
-  const proposal = state.proposal;
-  if (proposal.gaia || proposal.legacy) proposal.response = "source_selected";
-  else if (proposal.manual && (proposal.manual.ra != null || proposal.manual.dec != null)) proposal.response = "manual_ra_dec";
-  else proposal.response = "no_correction_proposed";
-}
+// The coordinate-proposal response is derived in collectReview from the sources.
 
 function toggleProposal() {
   const offCenter = observationValue("off_center");
@@ -479,53 +477,53 @@ function toggleProposal() {
   if (show) renderProposalSection();
 }
 
+function renderSourcesSection() {
+  const content = $("#sources-section");
+  const proposal = state.proposal;
+  const derived = deriveProposal(proposal);
+  content.innerHTML = `
+    <div class="prop-row">
+      <span class="prop-label">Gaia (coordinate)</span>
+      <span class="prop-value">${proposal.gaia ? escapeHtml(proposal.gaia.source_id) : "not selected"}</span>
+      ${proposal.gaia ? '<button class="prop-clear" data-clear="gaia">clear</button>' : ""}
+    </div>
+    <div class="prop-row">
+      <span class="prop-label">Legacy (photometry)</span>
+      <span class="prop-value">${proposal.legacy ? escapeHtml(proposal.legacy.source_id) : "not selected"}</span>
+      ${proposal.legacy ? '<button class="prop-clear" data-clear="legacy">clear</button>' : ""}
+    </div>
+    <div class="prop-derived">Quality: <b>${derived.reference_quality.replace(/_/g, " ")}</b></div>
+  `;
+  content.querySelectorAll("[data-clear]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.clear === "gaia") state.proposal.gaia = null;
+      else state.proposal.legacy = null;
+      refreshSelectButtons();
+      renderSourcesSection();
+      if (observationValue("off_center") !== "no") renderProposalSection();
+      renderImage();
+      markDirty();
+    });
+  });
+}
+
 function renderProposalSection() {
   const content = $("#proposal-content");
   const proposal = state.proposal;
   const derived = deriveProposal(proposal);
   content.innerHTML = `
     <div class="prop-row">
-      <span class="prop-label">Gaia (coordinate)</span>
-      <span class="prop-value">${proposal.gaia ? escapeHtml(proposal.gaia.source_id) : 'not selected — click a Gaia "use" button'}</span>
-      ${proposal.gaia ? '<button class="prop-clear" data-clear="gaia">clear</button>' : ""}
-    </div>
-    <div class="prop-row">
-      <span class="prop-label">Legacy (photometry)</span>
-      <span class="prop-value">${proposal.legacy ? escapeHtml(proposal.legacy.source_id) : 'not selected — click a Legacy "use" button'}</span>
-      ${proposal.legacy ? '<button class="prop-clear" data-clear="legacy">clear</button>' : ""}
-    </div>
-    <div class="prop-row">
       <span class="prop-label">Manual RA/Dec</span>
       <span class="prop-value manual"><input id="prop-manual-ra" placeholder="RA (deg)" value="${proposal.manual?.ra ?? ""}"><input id="prop-manual-dec" placeholder="Dec (deg)" value="${proposal.manual?.dec ?? ""}"></span>
     </div>
     <div class="prop-derived">
-      Coordinate: ${derived.coordinate_reference !== "none" ? `${fmtCoord(derived.proposed_ra)}, ${fmtCoord(derived.proposed_dec)} (from ${derived.coordinate_reference})` : "—"} ·
-      Quality: <b>${derived.reference_quality.replace(/_/g, " ")}</b>
+      Coordinate: ${derived.coordinate_reference !== "none" ? `${fmtCoord(derived.proposed_ra)}, ${fmtCoord(derived.proposed_dec)} (from ${derived.coordinate_reference})` : "— (no correction proposed)"}
     </div>
-    <button class="prop-clear" data-clear="all">no correction proposed</button>
   `;
-  content.querySelectorAll("[data-clear]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const what = btn.dataset.clear;
-      if (what === "gaia") state.proposal.gaia = null;
-      else if (what === "legacy") state.proposal.legacy = null;
-      else {
-        state.proposal.gaia = null;
-        state.proposal.legacy = null;
-        state.proposal.manual = null;
-      }
-      updateProposalResponse();
-      refreshSelectButtons();
-      renderProposalSection();
-      renderImage();
-      markDirty();
-    });
-  });
   const syncManual = () => {
     const ra = parseFloat($("#prop-manual-ra").value);
     const dec = parseFloat($("#prop-manual-dec").value);
     state.proposal.manual = Number.isNaN(ra) && Number.isNaN(dec) ? null : { ra: Number.isNaN(ra) ? null : ra, dec: Number.isNaN(dec) ? null : dec };
-    updateProposalResponse();
     renderImage();
     markDirty();
   };
@@ -562,8 +560,7 @@ function refreshSelectButtons() {
   });
 }
 
-function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
-  setObservation("off_center", "yes");
+function selectSource(sourceType, sourceId, ra, dec, button) {
   const current = sourceType === "gaia" ? state.proposal.gaia : state.proposal.legacy;
   const isSelected = current && current.source_id === sourceId;
   if (isSelected) {
@@ -583,10 +580,10 @@ function selectCoordinateSource(sourceType, sourceId, ra, dec, button) {
       $("#tab-wide").classList.add("active");
     }
   }
-  updateProposalResponse();
   refreshSelectButtons();
+  renderSourcesSection();
+  if (observationValue("off_center") !== "no") renderProposalSection();
   renderImage();
-  renderProposalSection();
   const saved = $("#review-saved");
   if (saved) saved.textContent = isSelected ? `Cleared ${sourceId}` : `Selected ${sourceId} as ${sourceType} reference (unsaved)`;
   markDirty();
@@ -597,14 +594,23 @@ function collectReview() {
     OBSERVATIONS.map((name) => [name, observationValue(name)])
   );
   const derived = deriveProposal(state.proposal);
-  const proposal = {
-    response: state.proposal.response,
-    gaia_source_id: state.proposal.gaia?.source_id || null,
-    legacy_source_id: state.proposal.legacy?.source_id || null,
-    coordinate_reference: derived.coordinate_reference,
-    proposed_ra: derived.proposed_ra,
-    proposed_dec: derived.proposed_dec,
-    reference_quality: derived.reference_quality,
+  const offCenter = observationValue("off_center");
+  const needsCorrection = offCenter === "yes" || offCenter === "uncertain";
+  let response;
+  if (!needsCorrection) {
+    response = "no_correction_needed";
+  } else if (state.proposal.gaia || state.proposal.legacy) {
+    response = "source_selected";
+  } else if (state.proposal.manual && (state.proposal.manual.ra != null || state.proposal.manual.dec != null)) {
+    response = "manual_ra_dec";
+  } else {
+    response = "no_correction_proposed";
+  }
+  const coordinate_proposal = {
+    response,
+    coordinate_reference: needsCorrection ? derived.coordinate_reference : "none",
+    proposed_ra: needsCorrection ? derived.proposed_ra : null,
+    proposed_dec: needsCorrection ? derived.proposed_dec : null,
   };
   return {
     client_revision: state.review.client_revision || 0,
@@ -614,7 +620,10 @@ function collectReview() {
     evidence_note: $("#note-evidence").value,
     general_comment: $("#note-general").value,
     decision_reason: $("#note-reason").value,
-    coordinate_proposal: proposal,
+    gaia_source_id: state.proposal.gaia?.source_id || null,
+    legacy_source_id: state.proposal.legacy?.source_id || null,
+    reference_quality: derived.reference_quality,
+    coordinate_proposal,
   };
 }
 
@@ -674,7 +683,7 @@ function escapeHtml(value) {
 document.addEventListener("click", (event) => {
   const button = event.target.closest(".select-source");
   if (!button) return;
-  selectCoordinateSource(
+  selectSource(
     button.dataset.sourceType,
     button.dataset.sourceId,
     button.dataset.ra,
