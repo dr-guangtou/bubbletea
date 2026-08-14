@@ -31,6 +31,8 @@ const OBSERVATION_LABELS = {
   star_forming_or_young_cluster_appearance: "Star-forming / young-cluster appearance",
 };
 
+const PIXEL_SCALE_ARCSEC = 0.262;
+
 let state = {
   page: 1,
   cohort: "",
@@ -42,11 +44,13 @@ let state = {
   currentObject: null,
   review: null,
   dirty: false,
+  scale: "compact",
+  showMarkers: false,
 };
 
 const $ = (sel) => document.querySelector(sel);
 
-function emptyReview(cohort) {
+function emptyReview() {
   return {
     client_revision: 0,
     image_usability: "not_reviewed",
@@ -63,7 +67,7 @@ async function loadSummary() {
   const response = await fetch("/api/summary");
   const data = await response.json();
   $("#summary").textContent =
-    `${data.total} total · ${data.confirmed} confirmed · ${data.candidate} candidates · ` +
+    `${data.total} total · ${data.confirmed} confirmed · ${data.candidates ?? data.candidate} candidates · ` +
     `${data.reviewed_confirmed} reviewed (${data.included_confirmed} included)`;
 }
 
@@ -107,8 +111,10 @@ function selectObject(oid) {
 async function loadObject(oid) {
   const response = await fetch(`/api/objects/${oid}`);
   state.currentObject = await response.json();
-  state.review = state.currentObject.review || emptyReview(state.currentObject.object.reference_cohort);
+  state.review = state.currentObject.review || emptyReview();
   state.dirty = false;
+  state.scale = "compact";
+  state.showMarkers = false;
   renderDetail();
 }
 
@@ -130,74 +136,147 @@ function renderDetail() {
       <button id="next-obj">Next ›</button>
       <span id="saved-state" class="saved-state"></span>
     </div>
-    <div class="image-row">
-      ${imageCard("compact", obj.images.compact)}
-      ${imageCard("wide", obj.images.wide)}
+    <div class="top-panels">
+      <div class="panel half"><h3>Host</h3><div class="panel-body">${hostPanel(obj.host)}</div></div>
+      <div class="panel half"><h3>Links</h3><div class="panel-body">${linksPanel(obj.links)}</div></div>
     </div>
-    <div class="panel"><h3>Host</h3><div class="panel-body">${hostPanel(obj.host)}</div></div>
-    <div class="panel"><h3>Gaia</h3><div class="panel-body">${gaiaPanel(obj.gaia)}</div></div>
-    <div class="panel"><h3>Legacy Survey</h3><div class="panel-body">${legacyPanel(obj.legacy_survey)}</div></div>
-    <div class="panel"><h3>External catalogs</h3><div class="panel-body">${externalPanel(obj.external_catalogs)}</div></div>
-    <div class="panel"><h3>Links</h3><div class="panel-body">${linksPanel(obj.links)}</div></div>
-    ${reviewPanel(cohort)}
+    <div class="review-layout">
+      <div class="image-panel">
+        <div class="image-tabs">
+          <button id="tab-compact" class="tab">Compact (16.8″)</button>
+          <button id="tab-wide" class="tab">Wide (67.1″)</button>
+        </div>
+        <div class="image-stage" id="image-stage"></div>
+        <div class="image-toolbar">
+          <button id="zoom-in">+</button>
+          <button id="zoom-out">−</button>
+          <button id="zoom-reset">Reset</button>
+          <button id="toggle-markers">Show matches</button>
+          <span class="legend">
+            <span class="legend-item"><i class="dot accepted"></i>accepted Gaia</span>
+            <span class="legend-item"><i class="dot neighbor"></i>Gaia neighbor</span>
+            <span class="legend-item"><i class="dot legacy"></i>Legacy</span>
+          </span>
+        </div>
+      </div>
+      <div class="review-controls">
+        ${reviewPanel(cohort)}
+      </div>
+    </div>
+    <div class="panel collapsible"><h3>Gaia</h3><div class="panel-body">${gaiaPanel(obj.gaia)}</div></div>
+    <div class="panel collapsible"><h3>Legacy Survey</h3><div class="panel-body">${legacyPanel(obj.legacy_survey)}</div></div>
+    <div class="panel collapsible"><h3>External catalogs</h3><div class="panel-body">${externalPanel(obj.external_catalogs)}</div></div>
   `;
   $("#prev-obj").addEventListener("click", () => step(-1));
   $("#next-obj").addEventListener("click", () => step(1));
-  attachImageControls();
+  $("#tab-compact").addEventListener("click", () => setScale("compact"));
+  $("#tab-wide").addEventListener("click", () => setScale("wide"));
+  $("#zoom-in").addEventListener("click", () => zoom(1.3));
+  $("#zoom-out").addEventListener("click", () => zoom(0.77));
+  $("#zoom-reset").addEventListener("click", () => resetZoom());
+  $("#toggle-markers").addEventListener("click", toggleMarkers);
+  document.querySelectorAll(".collapsible > h3").forEach((header) => {
+    header.addEventListener("click", () => header.parentElement.classList.toggle("collapsed"));
+  });
+  renderImage();
   renderReviewControls(cohort);
   $("#saved-state").textContent = state.review.revision_id
     ? `Saved revision #${state.review.revision_id}`
     : "Not yet reviewed";
 }
 
-function imageCard(scale, image) {
-  const status = image.retrieval_status || "unavailable";
-  const label = image.image_content_status === "viewer_placeholder_tile" ? "placeholder" : "image";
-  return `
-    <div class="image-card">
-      <h3>${scale === "compact" ? "Compact (16.8″)" : "Wide (67.1″)"} · ${label}</h3>
-      <div class="image-stage" id="stage-${scale}">
-        ${image.file_path ? `<img id="img-${scale}" src="/api/images/${state.currentObject.canonical_object_id}/${scale}" alt="${scale}">` : `<div class="empty-state">no image</div>`}
-      </div>
-      <div class="image-toolbar">
-        <button data-zoom="${scale}" data-delta="1.3">+</button>
-        <button data-zoom="${scale}" data-delta="0.77">−</button>
-        <button data-reset="${scale}">Reset</button>
-        <span style="color:var(--muted);font-size:12px">${status}</span>
-      </div>
-    </div>`;
+function setScale(scale) {
+  state.scale = scale;
+  $("#tab-compact").classList.toggle("active", scale === "compact");
+  $("#tab-wide").classList.toggle("active", scale === "wide");
+  renderImage();
 }
 
-function attachImageControls() {
-  document.querySelectorAll("[data-zoom]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const img = $(`#img-${btn.dataset.zoom}`);
-      if (!img) return;
-      const current = parseFloat(img.dataset.scale || "1");
-      const next = Math.min(8, Math.max(0.2, current * parseFloat(btn.dataset.delta)));
-      img.dataset.scale = next;
-      img.style.transform = `scale(${next})`;
-    });
-  });
-  document.querySelectorAll("[data-reset]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const img = $(`#img-${btn.dataset.reset}`);
-      if (!img) return;
-      img.dataset.scale = 1;
-      img.style.transform = "scale(1)";
-    });
-  });
+function computeMarkers() {
+  const obj = state.currentObject;
+  const scale = state.scale;
+  const size = scale === "compact" ? 64 : 256;
+  const centerRa = Number(obj.object.adopted_ra);
+  const centerDec = Number(obj.object.adopted_dec);
+  const cx = (size - 1) / 2;
+  const markers = [];
+  const push = (sources, type, label) => {
+    for (const s of sources || []) {
+      const ra = Number(s.ra);
+      const dec = Number(s.dec);
+      if (Number.isNaN(ra) || Number.isNaN(dec)) continue;
+      const draArcsec = (ra - centerRa) * Math.cos((centerDec * Math.PI) / 180) * 3600;
+      const ddecArcsec = (dec - centerDec) * 3600;
+      const px = cx - draArcsec / PIXEL_SCALE_ARCSEC; // east = left
+      const py = cx - ddecArcsec / PIXEL_SCALE_ARCSEC; // north = up
+      if (px < 0 || px > size || py < 0 || py > size) continue;
+      markers.push({
+        x: (px / size) * 100,
+        y: (py / size) * 100,
+        type,
+        label: label || type,
+        sourceId: s.source_id || s.ls_id || "",
+        sepArcsec: s.dist_arcsec,
+      });
+    }
+  };
+  push(obj.gaia.accepted_sources, "accepted", "accepted");
+  push(obj.gaia.positional_neighbors, "neighbor", "neighbor");
+  push(obj.legacy_survey, "legacy", "legacy");
+  return markers;
+}
+
+function renderImage() {
+  const obj = state.currentObject;
+  const scale = state.scale;
+  const image = obj.images[scale] || {};
+  const stage = $("#image-stage");
+  const size = scale === "compact" ? 64 : 256;
+  const markers = state.showMarkers ? computeMarkers() : [];
+  const markerHtml = markers
+    .map(
+      (m) =>
+        `<div class="marker ${m.type}" style="left:${m.x}%;top:${m.y}%" title="${escapeHtml(m.label)} ${escapeHtml(m.sourceId)} ${fmtNum(m.sepArcsec)}″"></div>`
+    )
+    .join("");
+  stage.innerHTML = `
+    <div class="image-content" id="image-content">
+      ${image.file_path ? `<img id="current-img" src="/api/images/${obj.canonical_object_id}/${scale}" alt="${scale}">` : `<div class="empty-state">no image</div>`}
+      <div class="crosshair"></div>
+      <div class="marker-layer">${markerHtml}</div>
+    </div>`;
+  $("#tab-compact").classList.toggle("active", scale === "compact");
+  $("#tab-wide").classList.toggle("active", scale === "wide");
+  $("#toggle-markers").textContent = state.showMarkers ? "Hide matches" : "Show matches";
+}
+
+function zoom(factor) {
+  const content = $("#image-content");
+  if (!content) return;
+  const current = parseFloat(content.dataset.scale || "1");
+  const next = Math.min(8, Math.max(0.2, current * factor));
+  content.dataset.scale = next;
+  content.style.transform = `scale(${next})`;
+}
+
+function resetZoom() {
+  const content = $("#image-content");
+  if (!content) return;
+  content.dataset.scale = 1;
+  content.style.transform = "scale(1)";
+}
+
+function toggleMarkers() {
+  state.showMarkers = !state.showMarkers;
+  renderImage();
 }
 
 function hostPanel(host) {
   if (!host || !host.host_name) return '<div class="value-na">no host</div>';
-  return `
-    <table class="evidence">
-      <tr><th>Host</th><td>${escapeHtml(host.host_name)}</td></tr>
-      <tr><th>Association</th><td>${escapeHtml(host.host_association_state || "")}</td></tr>
-      <tr><th>Distance</th><td>${fmtDist(host.adopted_distance_mpc)} (${escapeHtml(host.distance_source || "")})</td></tr>
-      <tr><th>Design reference</th><td>${escapeHtml(host.design_reference_membership || "")}</td></tr>
-    </table>`;
+  return `<span class="inline"><b>${escapeHtml(host.host_name)}</b> ·
+    ${escapeHtml(host.host_association_state || "")} ·
+    ${fmtDist(host.adopted_distance_mpc)} ·
+    ${escapeHtml(host.design_reference_membership || "")}</span>`;
 }
 
 function gaiaPanel(gaia) {
@@ -207,7 +286,7 @@ function gaiaPanel(gaia) {
   let rows = "";
   for (const source of accepted) {
     rows += `<tr><td><b>accepted</b></td><td>${source.source_id}</td>
-      <td>G=${fmtNum(source.phot_g_mean_mag)} AEN=${fmtNum(source.astrometric_excess_noise)}</td></tr>`;
+      <td>G=${fmtNum(source.phot_g_mean_mag)} AEN=${fmtNum(source.astrometric_excess_noise)} plx=${fmtNum(source.absolute_parallax_significance)}σ</td></tr>`;
   }
   for (const source of neighbors) {
     rows += `<tr><td>neighbor</td><td>${source.source_id}</td>
@@ -238,40 +317,37 @@ function externalPanel(external) {
 
 function linksPanel(links) {
   if (!links) return '<div class="value-na">no links</div>';
-  let html = `<a href="${links.legacy_viewer}" target="_blank">Legacy viewer</a> · `;
+  let html = `<a href="${links.legacy_viewer}" target="_blank">Legacy</a> · `;
   html += `<a href="${links.simbad}" target="_blank">SIMBAD</a> · `;
   html += `<a href="${links.ned}" target="_blank">NED</a>`;
-  if (links.ads && links.ads.length) html += `<br>ADS: ${links.ads.map((u) => `<a href="${u}" target="_blank">${u.split("/abs/")[1]}</a>`).join(", ")}`;
+  if (links.ads && links.ads.length) html += ` · <a href="${links.ads[0]}" target="_blank">ADS</a>`;
   return html;
 }
 
 function reviewPanel(cohort) {
   return `
-    <div class="review-section">
-      <h3>Visual review</h3>
-      <div class="field-label">Image usability</div>
-      <div class="segmented" id="seg-usability"></div>
-      <div id="observations"></div>
-      <div class="field-label">Final decision</div>
-      <div class="segmented" id="seg-decision"></div>
-      <div id="proposal-section" class="hidden">
-        <div class="field-label">Coordinate proposal (off-center requires a response)</div>
-        <select id="proposal-response"></select>
-        <div id="proposal-fields"></div>
-      </div>
-      <div class="field-label">Evidence note</div>
-      <input type="text" id="note-evidence" placeholder="factual description of the image">
-      <div class="field-label">General comment (optional)</div>
-      <input type="text" id="note-general" placeholder="optional">
-      <div class="field-label">Decision reason</div>
-      <input type="text" id="note-reason" placeholder="required for exclude / hold / deprioritize">
-      <div class="review-actions">
-        <button class="btn-save" id="btn-save">Save (Ctrl+S)</button>
-        <button class="btn-save-next" id="btn-save-next">Save &amp; next</button>
-      </div>
-      <div class="saved-state" id="review-saved"></div>
-      <div class="error-text" id="review-error"></div>
-    </div>`;
+    <div class="field-label">Image usability</div>
+    <div class="segmented" id="seg-usability"></div>
+    <div id="observations"></div>
+    <div class="field-label">Final decision</div>
+    <div class="segmented" id="seg-decision"></div>
+    <div id="proposal-section" class="hidden">
+      <div class="field-label">Coordinate proposal (off-center requires a response)</div>
+      <select id="proposal-response"></select>
+      <div id="proposal-fields"></div>
+    </div>
+    <div class="field-label">Evidence note</div>
+    <input type="text" id="note-evidence" placeholder="factual description of the image">
+    <div class="field-label">General comment (optional)</div>
+    <input type="text" id="note-general" placeholder="optional">
+    <div class="field-label">Decision reason</div>
+    <input type="text" id="note-reason" placeholder="required for exclude / hold / deprioritize">
+    <div class="review-actions">
+      <button class="btn-save" id="btn-save">Save (Ctrl+S)</button>
+      <button class="btn-save-next" id="btn-save-next">Save &amp; next</button>
+    </div>
+    <div class="saved-state" id="review-saved"></div>
+    <div class="error-text" id="review-error"></div>`;
 }
 
 function renderReviewControls(cohort) {
@@ -327,15 +403,12 @@ function renderReviewControls(cohort) {
 
   $("#btn-save").addEventListener("click", () => save(false));
   $("#btn-save-next").addEventListener("click", () => save(true));
-  $("#seg-usability").addEventListener("click", toggleProposal);
 }
 
 function toggleProposal() {
   const offCenter = selectedValue("#observations", "off_center");
-  const usability = selectedValue("#seg-usability");
   const show = offCenter === "yes" || offCenter === "uncertain";
-  const section = $("#proposal-section");
-  section.classList.toggle("hidden", !show);
+  $("#proposal-section").classList.toggle("hidden", !show);
   if (!show) return;
   const select = $("#proposal-response");
   select.innerHTML = PROPOSAL_RESPONSES.map((r) => `<option value="${r}">${r.replace(/_/g, " ")}</option>`).join("");
@@ -361,7 +434,7 @@ function renderProposalFields(response) {
   }
 }
 
-function selectedValue(containerSel, field) {
+function selectedValue(containerSel) {
   const container = $(containerSel);
   const btn = container.querySelector("button.selected");
   return btn ? btn.dataset.value : "not_reviewed";
@@ -369,7 +442,7 @@ function selectedValue(containerSel, field) {
 
 function collectReview() {
   const observations = Object.fromEntries(
-    OBSERVATIONS.map((name) => [name, selectedValue("#observations", name)])
+    OBSERVATIONS.map((name) => [name, selectedValue("#observations")])
   );
   const proposal = { response: $("#proposal-response")?.value || "no_correction_needed" };
   if (proposal.response === "selected_gaia_source" || proposal.response === "selected_legacy_source") {
