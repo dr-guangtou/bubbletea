@@ -252,6 +252,8 @@ textarea, input[type="text"] {
 .inline { font-size: 13px; line-height: 1.4; }
 
 .review-layout { display: grid; grid-template-columns: 1fr 400px; gap: 14px; margin-bottom: 14px; align-items: start; }
+.left-column { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.left-column .panel { margin-bottom: 0; }
 
 .image-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
 .image-tabs { display: flex; border-bottom: 1px solid var(--border); }

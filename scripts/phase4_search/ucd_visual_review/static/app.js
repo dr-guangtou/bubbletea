@@ -142,31 +142,33 @@ function renderDetail() {
       <div class="panel half"><h3>Links</h3><div class="panel-body">${linksPanel(obj.links)}</div></div>
     </div>
     <div class="review-layout">
-      <div class="image-panel">
-        <div class="image-tabs">
-          <button id="tab-compact" class="tab">Compact (16.8″)</button>
-          <button id="tab-wide" class="tab">Wide (67.1″)</button>
+      <div class="left-column">
+        <div class="image-panel">
+          <div class="image-tabs">
+            <button id="tab-compact" class="tab">Compact (16.8″)</button>
+            <button id="tab-wide" class="tab">Wide (67.1″)</button>
+          </div>
+          <div class="image-stage" id="image-stage"></div>
+          <div class="image-toolbar">
+            <button id="zoom-in">+</button>
+            <button id="zoom-out">−</button>
+            <button id="zoom-reset">Reset</button>
+            <button id="toggle-markers">Show matches</button>
+            <span class="legend">
+              <span class="legend-item"><i class="dot accepted"></i>accepted Gaia</span>
+              <span class="legend-item"><i class="dot neighbor"></i>Gaia neighbor</span>
+              <span class="legend-item"><i class="dot legacy"></i>Legacy</span>
+            </span>
+          </div>
         </div>
-        <div class="image-stage" id="image-stage"></div>
-        <div class="image-toolbar">
-          <button id="zoom-in">+</button>
-          <button id="zoom-out">−</button>
-          <button id="zoom-reset">Reset</button>
-          <button id="toggle-markers">Show matches</button>
-          <span class="legend">
-            <span class="legend-item"><i class="dot accepted"></i>accepted Gaia</span>
-            <span class="legend-item"><i class="dot neighbor"></i>Gaia neighbor</span>
-            <span class="legend-item"><i class="dot legacy"></i>Legacy</span>
-          </span>
-        </div>
+        <div class="panel collapsible"><h3>Gaia</h3><div class="panel-body">${gaiaPanel(obj.gaia)}</div></div>
+        <div class="panel collapsible"><h3>Legacy Survey</h3><div class="panel-body">${legacyPanel(obj.legacy_survey)}</div></div>
+        <div class="panel collapsible"><h3>External catalogs</h3><div class="panel-body">${externalPanel(obj.external_catalogs)}</div></div>
       </div>
       <div class="review-controls">
         ${reviewPanel(cohort)}
       </div>
     </div>
-    <div class="panel collapsible"><h3>Gaia</h3><div class="panel-body">${gaiaPanel(obj.gaia)}</div></div>
-    <div class="panel collapsible"><h3>Legacy Survey</h3><div class="panel-body">${legacyPanel(obj.legacy_survey)}</div></div>
-    <div class="panel collapsible"><h3>External catalogs</h3><div class="panel-body">${externalPanel(obj.external_catalogs)}</div></div>
   `;
   $("#prev-obj").addEventListener("click", () => step(-1));
   $("#next-obj").addEventListener("click", () => step(1));
