@@ -16,6 +16,7 @@ from scripts.config import (
     UCD_VISUAL_REVIEW_BUNDLE_DIR,
     UCD_VISUAL_REVIEW_BUNDLE_INDEX,
     UCD_VISUAL_REVIEW_BUNDLE_MANIFEST,
+    UCD_VISUAL_REVIEW_PILOT_LIST,
     UCD_VISUAL_REVIEW_REVIEW_DB,
 )
 from scripts.phase1_literature.audit_reference_data import calculate_sha256
@@ -83,11 +84,22 @@ def get_db():
     return g.db
 
 
+def load_pilot_ids() -> set[str]:
+    """Load the canonical object identifiers of the 12-object pilot set."""
+    import pandas as pd
+
+    frame = pd.read_csv(
+        UCD_VISUAL_REVIEW_PILOT_LIST, dtype={"canonical_object_id": "string"}
+    )
+    return set(frame["canonical_object_id"].astype(str))
+
+
 def create_app() -> Flask:
     """Build and configure the review workbench application."""
     verify_bundle()
     UCD_VISUAL_REVIEW_REVIEW_DB.parent.mkdir(parents=True, exist_ok=True)
     index = load_index()
+    pilot_ids = load_pilot_ids()
 
     app = Flask(__name__)
     app.config["JSON_SORT_KEYS"] = False
@@ -133,6 +145,8 @@ def create_app() -> Flask:
     def objects():
         state_map = schema.review_state_map(get_db())
         rows = [dict(row) for row in index]
+        if request.args.get("pilot_only") == "1":
+            rows = [row for row in rows if row["canonical_object_id"] in pilot_ids]
         cohort_filter = request.args.get("cohort")
         decision_filter = request.args.get("decision")
         review_filter = request.args.get("review_status")

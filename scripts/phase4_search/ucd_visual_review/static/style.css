@@ -301,3 +301,5 @@ textarea, input[type="text"] {
 .prop-derived { font-size: 13px; margin: 6px 0; }
 .prop-clear { background: var(--panel-2); border: 1px solid var(--border); color: var(--muted); border-radius: 3px; cursor: pointer; font-size: 11px; padding: 2px 7px; }
 .prop-clear:hover { color: var(--text); }
+.pilot-toggle { display: flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 12px; color: var(--muted); cursor: pointer; }
+.pilot-toggle input { accent-color: var(--accent); }

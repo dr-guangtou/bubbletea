@@ -40,6 +40,7 @@ let state = {
   dirty: false,
   scale: "compact",
   showMarkers: false,
+  pilotOnly: true,
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -70,6 +71,7 @@ async function loadList() {
   if (state.cohort) params.set("cohort", state.cohort);
   if (state.reviewStatus) params.set("review_status", state.reviewStatus);
   if (state.decision) params.set("decision", state.decision);
+  if (state.pilotOnly) params.set("pilot_only", "1");
   if (state.query) params.set("q", state.query);
   const response = await fetch(`/api/objects?${params}`);
   const data = await response.json();
@@ -715,6 +717,7 @@ $("#search").addEventListener("input", (event) => {
 $("#filter-cohort").addEventListener("change", (e) => { state.cohort = e.target.value; state.page = 1; loadList(); });
 $("#filter-review").addEventListener("change", (e) => { state.reviewStatus = e.target.value; state.page = 1; loadList(); });
 $("#filter-decision").addEventListener("change", (e) => { state.decision = e.target.value; state.page = 1; loadList(); });
+$("#pilot-only").addEventListener("change", (e) => { state.pilotOnly = e.target.checked; state.page = 1; loadList(); });
 $("#prev-page").addEventListener("click", () => { state.page = Math.max(1, state.page - 1); loadList(); });
 $("#next-page").addEventListener("click", () => { state.page += 1; loadList(); });
 $("#conflict-close").addEventListener("click", () => $("#conflict-dialog").classList.add("hidden"));

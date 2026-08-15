@@ -448,6 +448,9 @@ UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = (
 )
 UCD_VISUAL_REVIEW_REVIEW_DB = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "reviews" / "review_v1.db"
 UCD_VISUAL_REVIEW_EXPORT_DIR = RESULTS_DIR / "ucd_visual_review"
+UCD_VISUAL_REVIEW_PILOT_LIST = (
+    LITERATURE_CATALOGS / "ucd_visual_review_pilot_v1.csv"
+)
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"
