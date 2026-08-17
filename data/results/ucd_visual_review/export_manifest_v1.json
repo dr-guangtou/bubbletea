@@ -1,26 +1,26 @@
 {
   "export_version": "ucd_visual_review_export_v1",
-  "generated_at_utc": "2026-08-17T02:12:09.557950+00:00",
+  "generated_at_utc": "2026-08-17T02:26:27.085082+00:00",
   "status": "complete",
   "inputs": {
     "data/literature/catalogs/ucd_visual_review_bundle_index_v1.csv": "1a3f492c6a0fbfb25bbeaeea6101a111c99e4d388d30ec006698a1b512a6d08f",
     "data/literature/catalogs/ucd_legacy_reference_gaia_membership_v1.csv": "77b027852fb501e2cc29a80887a22a4dc4cae6a0be961a2d5baa2d03eab0285a"
   },
   "outputs": {
-    "review_state_v1.csv": "f30665132999682abfe0f3e9bd478ab8a7fdd3f45911e3b0e839de287e9eec35",
-    "review_history_v1.csv": "f510cc37733f2a0d4fef7641533726f7f378f6053867a4686dedb6aa850ef96a",
-    "included_confirmed_ucds_v1.csv": "09125e8bb98b3d3206b57a3a83754e014d630e6a23ae5a91961ff65780dafc30",
+    "review_state_v1.csv": "fffe4f5a23459246f73d9e8fe58009b2f8800f3f2f847d377c44bbeb627af421",
+    "review_history_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "included_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "excluded_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "held_confirmed_ucds_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "saifollahi_candidate_pool_v1.csv": "e1a2500bb6085403b37208989f4ff59495f900d6c66733f757ae36f29e92510a",
+    "saifollahi_candidate_pool_v1.csv": "288248e291eaa5724f48658503a756dbcc0ed80f7d360cf519bd4addab2549d4",
     "coordinate_proposals_v1.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "summary_counts_v1.json": "01623c28d073b060ac48cd01bc351aef0cbe29c88b03faab02c84fdbb0c71e2c"
+    "summary_counts_v1.json": "d3ee42f6864a497049ad06f7f612d2fc03003312f4bc58672dbe4700d9316084"
   },
   "counts": {
     "total": 724,
-    "reviewed": 2,
-    "complete": 2,
-    "included_confirmed": 1,
+    "reviewed": 0,
+    "complete": 0,
+    "included_confirmed": 0,
     "excluded_confirmed": 0,
     "held_confirmed": 0,
     "candidate_pool": 44,

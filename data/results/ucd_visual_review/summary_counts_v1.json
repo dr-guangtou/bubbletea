@@ -1,11 +1,11 @@
 {
   "export_version": "ucd_visual_review_export_v1",
-  "generated_at_utc": "2026-08-17T02:12:09.556391+00:00",
+  "generated_at_utc": "2026-08-17T02:26:27.083431+00:00",
   "counts": {
     "total": 724,
-    "reviewed": 2,
-    "complete": 2,
-    "included_confirmed": 1,
+    "reviewed": 0,
+    "complete": 0,
+    "included_confirmed": 0,
     "excluded_confirmed": 0,
     "held_confirmed": 0,
     "candidate_pool": 44,
@@ -14,32 +14,26 @@
   "cross_tabulations": {
     "review_completion": {
       "confirmed_ucd": {
-        "not_started": 679,
-        "complete": 1
+        "not_started": 680
       },
       "saifollahi_high_probability_candidate": {
-        "complete": 1,
-        "not_started": 43
+        "not_started": 44
       }
     },
     "image_usability": {
       "confirmed_ucd": {
-        "not_reviewed": 679,
-        "usable": 1
+        "not_reviewed": 680
       },
       "saifollahi_high_probability_candidate": {
-        "usable": 1,
-        "not_reviewed": 43
+        "not_reviewed": 44
       }
     },
     "final_decision": {
       "confirmed_ucd": {
-        "not_reviewed": 679,
-        "include": 1
+        "not_reviewed": 680
       },
       "saifollahi_high_probability_candidate": {
-        "include": 1,
-        "not_reviewed": 43
+        "not_reviewed": 44
       }
     },
     "host_association_state": {
@@ -54,72 +48,58 @@
     "observations": {
       "resolved": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "off_center": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "close_to_host_light": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "too_faint_to_judge": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "blend_or_nearby_source": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "image_artifact": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       },
       "star_forming_or_young_cluster_appearance": {
         "confirmed_ucd": {
-          "not_reviewed": 679,
-          "no": 1
+          "not_reviewed": 680
         },
         "saifollahi_high_probability_candidate": {
-          "no": 1,
-          "not_reviewed": 43
+          "not_reviewed": 44
         }
       }
     }

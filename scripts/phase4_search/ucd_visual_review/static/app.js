@@ -39,7 +39,7 @@ let state = {
   dirty: false,
   scale: "compact",
   showMarkers: false,
-  pilotOnly: true,
+  pilotOnly: false,
 };
 
 const $ = (sel) => document.querySelector(sel);

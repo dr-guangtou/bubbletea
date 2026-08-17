@@ -1,3 +1,0 @@
-revision_id,canonical_object_id,utc_timestamp,prior_revision_id,client_revision,image_usability,final_decision,decision_reason,evidence_note,general_comment,gaia_source_id,legacy_source_id,reference_quality,coordinate_proposal_json,obs_resolved,obs_off_center,obs_close_to_host_light,obs_too_faint_to_judge,obs_blend_or_nearby_source,obs_image_artifact,obs_star_forming_or_young_cluster_appearance
-1,canonical_00c34e280a6254f9bc748c9c6f13dfe9,2026-08-17T02:12:09.533220+00:00,,0,usable,include,,validation,,,,,"{""response"": ""no_correction_needed""}",no,no,no,no,no,no,no
-2,canonical_02600268474e5e31949912ba83404c70,2026-08-17T02:12:09.535227+00:00,,0,usable,include,,validation,,,,,"{""response"": ""no_correction_needed""}",no,no,no,no,no,no,no
