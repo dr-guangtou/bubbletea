@@ -1,11 +1,11 @@
 canonical_object_id,reference_cohort,original_names,host_name,host_association_state,design_reference_membership,adopted_distance_mpc,review_status,image_usability,final_decision,decision_reason,evidence_note,gaia_source_id,legacy_source_id,reference_quality,revision_id,utc_timestamp,obs_resolved,obs_off_center,obs_close_to_host_light,obs_too_faint_to_judge,obs_blend_or_nearby_source,obs_image_artifact,obs_star_forming_or_young_cluster_appearance
 canonical_00ae5b07b9cf5390ba173953832e14ec,confirmed_ucd,,NGC 5128,verified_unique_host,excluded_stripped_nucleus_or_luminous_gc,3.8,not_started,,,,,,,,,,,,,,,,
-canonical_00c34e280a6254f9bc748c9c6f13dfe9,confirmed_ucd,Hydra-UCD33,NGC 3311,verified_unique_host,include,50.7,not_started,,,,,,,,,,,,,,,,
+canonical_00c34e280a6254f9bc748c9c6f13dfe9,confirmed_ucd,Hydra-UCD33,NGC 3311,verified_unique_host,include,50.7,complete,usable,include,,validation,,,,1,2026-08-17T02:12:09.533220+00:00,no,no,no,no,no,no,no
 canonical_01770780de815d328a6fb6af1f9a12b3,confirmed_ucd,J123110.14+121627.9;S6003,M87,verified_unique_host,include,16.85776517828977,not_started,,,,,,,,,,,,,,,,
 canonical_017f18a4a770537ebc2e65c63f109b19,confirmed_ucd,J122628.69+125642.6,M87,verified_unique_host,include,16.85776517828977,not_started,,,,,,,,,,,,,,,,
 canonical_019375eac10450b4a54a2f7daa5043f6,confirmed_ucd,NGVS-UCD826,Virgo cluster,published_environment_only,include,16.5,not_started,,,,,,,,,,,,,,,,
 canonical_01c7d416326a5f4e924ca260b8a3e762,confirmed_ucd,UCD-FORS 21,NGC 1399,verified_unique_host,include,20.739582044538317,not_started,,,,,,,,,,,,,,,,
-canonical_02600268474e5e31949912ba83404c70,saifollahi_high_probability_candidate,FDS-UCD-19,Fornax cluster,published_environment_only,candidate_saifollahi,20.0,not_started,,,,,,,,,,,,,,,,
+canonical_02600268474e5e31949912ba83404c70,saifollahi_high_probability_candidate,FDS-UCD-19,Fornax cluster,published_environment_only,candidate_saifollahi,20.0,complete,usable,include,,validation,,,,2,2026-08-17T02:12:09.535227+00:00,no,no,no,no,no,no,no
 canonical_03422881b1e953e9b1468105ecaead90,confirmed_ucd,H30401,M87,verified_unique_host,include,16.85776517828977,not_started,,,,,,,,,,,,,,,,
 canonical_0347e58bf794528b9a2c6be8176e3dcb,confirmed_ucd,J123020.05+115518.7;M87UCD-3;NGVS-UCD374,M87,verified_unique_host,include,16.85776517828977,not_started,,,,,,,,,,,,,,,,
 canonical_040e9176d7c65e2694658e0bf6fb537d,confirmed_ucd,NGVS-UCD761,Virgo cluster,published_environment_only,include,16.5,not_started,,,,,,,,,,,,,,,,

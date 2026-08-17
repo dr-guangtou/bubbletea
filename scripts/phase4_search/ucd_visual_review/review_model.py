@@ -3,7 +3,10 @@
 FOUR_STATE = ["not_reviewed", "yes", "no", "uncertain"]
 IMAGE_USABILITY = ["not_reviewed", "usable", "partly_usable", "unusable"]
 CONFIRMED_DECISIONS = ["not_reviewed", "include", "exclude", "hold"]
-CANDIDATE_DECISIONS = ["not_reviewed", "prioritize", "standard", "deprioritize", "hold"]
+
+# Both confirmed UCDs and Saifollahi candidates use the same three decisions
+# (include / exclude / hold) per the project-lead decision to simplify the flags.
+DECISIONS = CONFIRMED_DECISIONS
 
 OBSERVATIONS = [
     "resolved",
@@ -27,16 +30,12 @@ CANDIDATE_COHORT = "saifollahi_high_probability_candidate"
 
 
 def allowed_decisions(cohort: str) -> list[str]:
-    """Return the cohort-specific final-decision values."""
-    if cohort == CANDIDATE_COHORT:
-        return CANDIDATE_DECISIONS
-    return CONFIRMED_DECISIONS
+    """Return the allowed final-decision values for any cohort."""
+    return DECISIONS
 
 
 def decision_requires_reason(cohort: str, decision: str) -> bool:
     """Return whether a final decision requires a non-empty reason."""
-    if cohort == CANDIDATE_COHORT:
-        return decision in {"deprioritize", "hold"}
     return decision in {"exclude", "hold"}
 
 
@@ -54,8 +53,6 @@ def validate_review(payload: dict, cohort: str) -> list[str]:
     decision = payload.get("final_decision")
     if decision not in allowed_decisions(cohort):
         errors.append("final_decision is not allowed for this cohort")
-    if cohort == CANDIDATE_COHORT and decision == "include":
-        errors.append("a candidate cannot be included in the confirmed design reference")
 
     if decision_requires_reason(cohort, decision) and not str(
         payload.get("decision_reason") or ""

@@ -12,7 +12,6 @@ const OBSERVATIONS = [
 const FOUR_STATE = ["not_reviewed", "yes", "no", "uncertain"];
 const IMAGE_USABILITY = ["not_reviewed", "usable", "partly_usable", "unusable"];
 const CONFIRMED_DECISIONS = ["not_reviewed", "include", "exclude", "hold"];
-const CANDIDATE_DECISIONS = ["not_reviewed", "prioritize", "standard", "deprioritize", "hold"];
 // Coordinate-proposal responses are derived from the Gaia / Legacy / manual selections.
 
 const OBSERVATION_LABELS = {
@@ -372,7 +371,7 @@ function reviewPanel(cohort) {
     <div class="field-label">General comment (optional)</div>
     <input type="text" id="note-general" placeholder="optional">
     <div class="field-label">Decision reason</div>
-    <input type="text" id="note-reason" placeholder="required for exclude / hold / deprioritize">
+    <input type="text" id="note-reason" placeholder="required for exclude / hold">
     <div class="review-actions">
       <button class="btn-save" id="btn-save">Save (Ctrl+S)</button>
       <button class="btn-save-next" id="btn-save-next">Save &amp; next</button>
@@ -400,7 +399,7 @@ function renderReviewControls(cohort) {
   };
 
   seg("seg-usability", IMAGE_USABILITY, state.review.image_usability);
-  const decisions = cohort === "saifollahi_high_probability_candidate" ? CANDIDATE_DECISIONS : CONFIRMED_DECISIONS;
+  const decisions = CONFIRMED_DECISIONS;
   seg("seg-decision", decisions, state.review.final_decision);
 
   const obs = $("#observations");

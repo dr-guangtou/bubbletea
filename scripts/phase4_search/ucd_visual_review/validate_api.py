@@ -120,13 +120,13 @@ def main() -> None:
     invalid = client.post(f"/api/objects/{fixtures['confirmed']}/reviews", json=bad)
     checks["invalid_state_400"] = invalid.status_code == 400
 
-    # Candidate cannot be included.
+    # Candidate include is allowed (both cohorts share the include/exclude/hold set).
     candidate_include = valid_review()
     candidate_include["final_decision"] = "include"
     candidate_save = client.post(
         f"/api/objects/{fixtures['candidate']}/reviews", json=candidate_include
     )
-    checks["candidate_include_400"] = candidate_save.status_code == 400
+    checks["candidate_include_201"] = candidate_save.status_code == 201
 
     # Excluded object cannot be included.
     excluded_save = client.post(

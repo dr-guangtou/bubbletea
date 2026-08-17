@@ -611,7 +611,7 @@ Provide:
 
 - one concise evidence note associated with visual flags;
 - one optional general comment; and
-- a required decision reason for `exclude`, `hold`, `deprioritize`, or candidate
+- a required decision reason for `exclude`, `hold`, or candidate `exclude` / `hold`
   `hold`.
 
 The interface should encourage factual descriptions such as “central source is 1.2
@@ -664,16 +664,17 @@ The tool does not automatically translate any single catalog flag into exclusion
 
 ### Candidate follow-up decision
 
-For Saifollahi candidates, use a separate state:
+Saifollahi candidates use the same three decisions as confirmed UCDs:
 
 - `not_reviewed`
-- `prioritize`
-- `standard`
-- `deprioritize`
+- `include`
+- `exclude`
 - `hold`
 
-Candidates cannot enter the confirmed positive design-reference export. Their review output
-is a follow-up pool with all provenance and evidence retained.
+A candidate's `include` means "a good candidate to keep in the follow-up pool", not a
+promotion to confirmed. Candidates cannot enter the confirmed positive design-reference
+export even when marked `include`. Their review output remains a separate follow-up pool
+with all provenance and evidence retained.
 
 ### Completion rules
 
@@ -900,7 +901,8 @@ been measured.
 - Coordinate corrections are proposals for later provenance audit.
 - Design-reference membership is manual and separate from evidence flags.
 - Only confirmed UCDs can enter the positive design reference.
-- Saifollahi candidates receive a separate follow-up-priority decision.
+- Saifollahi candidates and confirmed UCDs share the same include/exclude/hold decisions;
+  a candidate `include` never enters the confirmed design reference.
 - The clean positive design reference supports deriving detailed UCD selection
   rules from combined Gaia and Legacy Survey measurements; it is not model training.
 - This workbench reviews only the literature confirmed UCDs and high-probability

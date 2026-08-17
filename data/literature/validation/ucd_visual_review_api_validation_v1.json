@@ -20,7 +20,7 @@
     "valid_save_201": true,
     "stale_save_409": true,
     "invalid_state_400": true,
-    "candidate_include_400": true,
+    "candidate_include_201": true,
     "excluded_include_400": true,
     "exclude_requires_reason_400": true,
     "off_center_requires_proposal_400": true,
