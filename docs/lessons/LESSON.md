@@ -1517,3 +1517,17 @@ coverage.
 **Recommendation:** Record transport success and image-content status separately.
 Measure the returned-image distribution, inspect the low-information modes, and keep
 placeholder outcomes explicit without changing the literature classification.
+
+## 2026-10-12: Preserve historical records without blocking new entries
+
+**Lesson:** Comparing the entire journal and lessons directories against a fixed
+Git checkpoint incorrectly rejects later journal additions and legitimate lesson
+appends.
+
+**Context:** The documentation consolidation validator passed before closeout but
+would reject the new closeout journal. This was a validation-design mistake, not
+a change to historical research evidence.
+
+**Recommendation:** Compare each original journal byte-for-byte, require existing
+lessons to retain their original byte prefix, and allow new files. Rebuild the HTML
+portal whenever new repository documentation is added.

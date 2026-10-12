@@ -33,6 +33,13 @@
 <li>Future development notes extend these topic records instead of creating another
   top-level report. This rule is persisted in AGENTS.md and CLAUDE.md.</li>
 </ul>
+<h2 id="closeout-preservation-correction">Closeout preservation correction</h2>
+<p>The 2026-10-12 closeout adds a new journal and appends a lesson; it does not rewrite
+historical journals or lessons. The validator now checks each original journal
+byte-for-byte and requires the original lesson bytes to remain an unchanged prefix,
+while allowing new files. The former directory-wide diff would incorrectly reject
+normal additions. Rebuild the portal after each addition; current source/page
+counts and navigation results are recorded in <code>docs/html/build_report.json</code>.</p>
 <h2 id="disposition-of-every-relocated-or-merged-markdown-document">Disposition of every relocated or merged Markdown document</h2>
 <p>The five existing project-level owners were retained: <code>PLAN.md</code> (roadmap),
 <code>SPEC.md</code> (approved requirements), <code>current_status.md</code> (dated status), <code>todo.md</code>
@@ -308,6 +315,7 @@ disposition table before beginning the separate observational-astronomy teaching
 <ul>
 <li><a href="#documentation-consolidation-audit">Documentation consolidation audit</a><ul>
 <li><a href="#decisions">Decisions</a></li>
+<li><a href="#closeout-preservation-correction">Closeout preservation correction</a></li>
 <li><a href="#disposition-of-every-relocated-or-merged-markdown-document">Disposition of every relocated or merged Markdown document</a></li>
 <li><a href="#machine-readable-traceability">Machine-readable traceability</a></li>
 <li><a href="#review-and-next-step">Review and next step</a></li>

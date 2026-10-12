@@ -41,8 +41,12 @@ summarizing progress, the science roadmap, repository layout, and document links
 An observational-astronomy teaching project follows separately; its course brief
 has not yet been provided.
 
-The old feature branch remains unmerged. The documentation branch starts from its
-latest committed state so the portal includes the workbench implementation.
+At branch creation, the old feature branch remained unmerged. The documentation
+branch started from its latest committed state so the portal includes the workbench
+implementation. The project lead authorized integration with `/wrap-up` on
+2026-10-12; the merge includes that inherited M60/workbench history. See the
+[closeout journal](../journal/2026-10-12_documentation_portal_closeout.md) and Git
+history for the integration outcome.
 
 ## Architecture
 

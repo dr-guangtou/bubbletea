@@ -1255,7 +1255,17 @@ tiles. Counting HTTP or JPEG success alone would have overstated usable image
 coverage.</p>
 <p><strong>Recommendation:</strong> Record transport success and image-content status separately.
 Measure the returned-image distribution, inspect the low-information modes, and keep
-placeholder outcomes explicit without changing the literature classification.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+placeholder outcomes explicit without changing the literature classification.</p>
+<h2 id="2026-10-12-preserve-historical-records-without-blocking-new-entries">2026-10-12: Preserve historical records without blocking new entries</h2>
+<p><strong>Lesson:</strong> Comparing the entire journal and lessons directories against a fixed
+Git checkpoint incorrectly rejects later journal additions and legitimate lesson
+appends.</p>
+<p><strong>Context:</strong> The documentation consolidation validator passed before closeout but
+would reject the new closeout journal. This was a validation-design mistake, not
+a change to historical research evidence.</p>
+<p><strong>Recommendation:</strong> Compare each original journal byte-for-byte, require existing
+lessons to retain their original byte prefix, and allow new files. Rebuild the HTML
+portal whenever new repository documentation is added.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
 <ul>
 <li><a href="#lessons-learned-ucd-search-project">Lessons Learned - UCD Search Project</a><ul>
 <li><a href="#2026-07-14-parse-cds-fixed-width-tables-from-their-byte-specification">2026-07-14: Parse CDS fixed-width tables from their byte specification</a></li>
@@ -1396,6 +1406,7 @@ placeholder outcomes explicit without changing the literature classification.</p
 <li><a href="#2026-08-12-large-gaia-motion-can-be-a-review-flag-without-being-a-safe-hard-cut">2026-08-12: Large Gaia motion can be a review flag without being a safe hard cut</a></li>
 <li><a href="#2026-08-12-preserve-gaia-source-identifiers-as-strings-during-joins-and-exclusions">2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions</a></li>
 <li><a href="#2026-08-12-a-valid-image-response-can-be-a-survey-viewer-placeholder">2026-08-12: A valid image response can be a survey-viewer placeholder</a></li>
+<li><a href="#2026-10-12-preserve-historical-records-without-blocking-new-entries">2026-10-12: Preserve historical records without blocking new entries</a></li>
 </ul>
 </li>
 </ul>

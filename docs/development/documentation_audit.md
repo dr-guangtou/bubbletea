@@ -28,6 +28,15 @@
 - Future development notes extend these topic records instead of creating another
   top-level report. This rule is persisted in AGENTS.md and CLAUDE.md.
 
+## Closeout preservation correction
+
+The 2026-10-12 closeout adds a new journal and appends a lesson; it does not rewrite
+historical journals or lessons. The validator now checks each original journal
+byte-for-byte and requires the original lesson bytes to remain an unchanged prefix,
+while allowing new files. The former directory-wide diff would incorrectly reject
+normal additions. Rebuild the portal after each addition; current source/page
+counts and navigation results are recorded in `docs/html/build_report.json`.
+
 ## Disposition of every relocated or merged Markdown document
 
 The five existing project-level owners were retained: `PLAN.md` (roadmap),

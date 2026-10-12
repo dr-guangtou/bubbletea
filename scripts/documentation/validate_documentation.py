@@ -187,13 +187,37 @@ def main():
             migrated_target(PROJECT_ROOT / original_path, "") == (destination, entry["anchor"]),
             f"Retired links route to retained evidence: {original_path}",
         )
-    unchanged_journals = subprocess.run(
-        ["git", "diff", registry["original_commit"], "--", "docs/journal", "docs/lessons"],
+    historical_records = subprocess.run(
+        [
+            "git",
+            "ls-tree",
+            "-r",
+            "--name-only",
+            registry["original_commit"],
+            "--",
+            "docs/journal",
+            "docs/lessons",
+        ],
         cwd=PROJECT_ROOT,
         check=True,
         capture_output=True,
-    ).stdout
-    require(not unchanged_journals, "Journals and append-only lessons are unchanged")
+        text=True,
+    ).stdout.splitlines()
+    for historical_path in historical_records:
+        original = subprocess.run(
+            ["git", "show", f"{registry['original_commit']}:{historical_path}"],
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        current_path = PROJECT_ROOT / historical_path
+        current = current_path.read_bytes() if current_path.is_file() else None
+        preserved = current is not None and (
+            current.startswith(original)
+            if historical_path.startswith("docs/lessons/")
+            else current == original
+        )
+        require(preserved, f"Historical journal or lesson preserved: {historical_path}")
     logger.info("All %s checks passed for %s source documents", len(checks), len(sources))
     logger.info(
         "Historical warnings retained: %s unavailable links, %s fragments",

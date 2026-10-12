@@ -1,8 +1,8 @@
 {
   "scope": "project",
   "pilot_limit": null,
-  "source_count": 58,
-  "html_page_count": 60,
+  "source_count": 59,
+  "html_page_count": 61,
   "source_sha256": {
     "AGENTS.md": "2f913ac0b17de9f98a40f124dc4e82c9e0b0824cd93e00d7621c31722f4ec4ba",
     "CLAUDE.md": "62753607cd9b459a2a60182de7db0bea35b1bfacf3dbf64355a4349907a3b43a",
@@ -12,7 +12,7 @@
     "docs/current_status.md": "dc843f742c96d03bde66d15edeb29f6044f0efc1386afa1e177aee66b9b2765e",
     "docs/development/background_geometry.md": "3bb0108ed48ac09b2af4d40dbb1ef3b05a5aca49e9c64d7606eb535d1ce5e1c8",
     "docs/development/background_measurements.md": "d49b298179861415cf8e2cbbd8106e78407d5ffb7723e7a9531d971ff6807f91",
-    "docs/development/documentation_audit.md": "041460435ca615627db6e6b1a7b589b3055ecfafd3eb23c396de0831995d1989",
+    "docs/development/documentation_audit.md": "06abc3ade2fade3f03f91b6cfcaf3d765088c7baaee0940d713cf5bbc9537ea9",
     "docs/development/extragalactic_checks.md": "7d23341f7c5f3c59f455c531f18bc3e603f1aac96ef17465a8cd8ae57cac0196",
     "docs/development/host_pilot_profiles.md": "3c0b83a1b811e5b91d7afc173bbc7dd69b471a9f1e3c91a369339eaebd6b229a",
     "docs/development/off_target_controls.md": "b5a198a9f16a6e6a3e7ae054785a0f79eac369cc3fcac459b60154a4e71804d2",
@@ -33,6 +33,7 @@
     "docs/journal/2026-07-15_stage1_literature_stabilization.md": "e8ecf8a4f6c285d72c7dfb0192e4e6560e2a20d075bd5090a125a410275fa60c",
     "docs/journal/2026-07-15_wave1_group_identity_audit.md": "a0ae9fd84586d3dcde04706631f15c0185e93a8236491dcb0fc3cafbd1243b3f",
     "docs/journal/2026-08-19_ucd_visual_review_workbench.md": "3fa81c1501797afc98923410adb4de9b6a37e9b3bc95898644cf3ddfe566b116",
+    "docs/journal/2026-10-12_documentation_portal_closeout.md": "fdf798fd8331a3f3c71425e6a030e510a6b010acf423d07bcd259742760f8561",
     "docs/journal/bubbletea_phase1_build_validation_benchmark_20260716_2026-07-16.md": "a32e237569a41d77ba3c758c91ceac943dcd4354220ce48530e20991f6ff3074",
     "docs/journal/bubbletea_phase1_calibrate_selector_20260716_2026-07-17.md": "8698b65d5e0d4d3670107948f35acca8321264a9502aa32b79cffa23be09bb89",
     "docs/journal/bubbletea_phase1_calibrate_selector_20260716_2026-07-18.md": "0ad9628970ac5b927f7755d2e53c1902f092db9a7e4480152768a7586ee076c6",
@@ -46,13 +47,13 @@
     "docs/journal/bubbletea_phase3_calibrate_host_annuli_20260811_2026-08-12.md": "662ff633e79066456f8e08c56ccfa4c80be8eb66d1a8eb21b834b0401fbcac44",
     "docs/journal/bubbletea_phase3_validate_direct_background_20260811_2026-08-11.md": "6ef3dbe9955000b0a70ea763c799e42c2baa5b2ce7b166bf318dab4ce3a3e8fb",
     "docs/journal/bubbletea_review_project_context_20260714_2026-07-14.md": "6f67303d399809d0d7d51493a59f05647ef8a1c1a7c76ebc47ab53d1727a5cf6",
-    "docs/lessons/LESSON.md": "fb6ca9f3b424be2b56cc6569d7f160b9312e133ddfa5e1bf8a7a6e4712637b04",
+    "docs/lessons/LESSON.md": "d67d40f58d402feb3546900e090562e98c21b4f9ea5f01472fd56b6fc7bed8a8",
     "docs/methods/contaminant_samples.md": "da904314f1d9674c89724990c1a627e73f3eb194b9278f12b3796431f5e7a880",
     "docs/methods/extragalactic_catalogs.md": "adb3df6a195ccd0cfecf8b37cf363664f80e41b1e2b9f4384f4d4b4005489d7d",
     "docs/methods/gaia_features.md": "313c1a7556183a6ee53a09a2aabdcf3a310509b4d23b4d59dbe72850011efff4",
     "docs/methods/radial_measurements.md": "cc1bc8e907386dac1fb12420195357f6b01719bcee58a160339d7c3db253af95",
     "docs/methods/reference_review.md": "2a2091f894283b976f3797605c027aa0b952df2c8a12389bb5e7d33fa3ebf5c3",
-    "docs/plans/documentation_site.md": "43951b0dd83f8ba0cfd27e7bc28defa93c43da0014e8e96bfd001fd51e8701c2",
+    "docs/plans/documentation_site.md": "1625dd3dd9e980c85f5be9b8db3add8124fe5a3a2cba38bc6f8680a5234ee310",
     "docs/plans/phase_1_literature_ucds.md": "edd7ed926ca59d6309f858e988113a303399c3449476168a0c66e0dc67d7874e",
     "docs/plans/phase_2_galaxy_sample.md": "edc21ae0471c9738f0e79d41c7f469e5dbceb46f2ab70d64f088f5c3aaa15029",
     "docs/plans/phase_3_background.md": "e6fb52fe1e51954564fcab942c710ca2ec3a6bf2ec7f52ec8b0c51255b4cc5c1",
@@ -73,6 +74,6 @@
   "unavailable_source_links": [],
   "unresolved_source_fragments": [],
   "generated_navigation_failures": [],
-  "elapsed_seconds": 0.800491,
-  "html_bytes": 1241152
+  "elapsed_seconds": 0.81495,
+  "html_bytes": 1250643
 }
