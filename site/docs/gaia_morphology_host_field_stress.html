@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Gaia Morphology-Galaxy Host-Field Stress Test · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Host and pilot work</span><a href="../../docs/gaia_morphology_host_field_stress.md">Markdown source ↗</a></div><h1 id="gaia-morphology-galaxy-host-field-stress-test">Gaia Morphology-Galaxy Host-Field Stress Test</h1>
+<p><strong>Date:</strong> 2026-07-17<br>
+<strong>Status:</strong> Exploratory predefined three-galaxy test sample; no selector or radial
+threshold approved</p>
+<h2 id="question">Question</h2>
+<p>Do compact or bright-core galaxies represented in Gaia occur at scientifically
+relevant surface densities around nearby hosts, and how often do the two inherited
+<code>Model C</code> selectors accept them?</p>
+<p>This is a failure-mode diagnostic, not an independent selector validation. The
+Gaia morphology catalog and the two legacy candidate-selection rules both use Gaia
+measurements.</p>
+<h2 id="fixed-fixture">Fixed Fixture</h2>
+<p>Before querying outcomes, the test selected the first three ranked current host
+rows satisfying all of the following:</p>
+<ul>
+<li>absolute Galactic latitude at least 30 degrees;</li>
+<li>distance between 15 and 25 Mpc, inclusive;</li>
+<li>600 kpc angular radius no larger than 2.1 degrees.</li>
+</ul>
+<p>The selected hosts are NGC 1316, M49, and NGC 2974. Every Gaia DR3
+<code>galaxy_candidates</code> source with <code>radius_sersic IS NOT NULL</code> was retrieved out to
+600 kpc by joining the morphology table to <code>gaiadr3.gaia_source</code>. No selector
+feature, magnitude, astrometry, or color prefilter was applied at the archive.</p>
+<p>The declared physical annuli are <code>[0, 25, 50, 100, 150, 300, 600]</code> kpc. The
+300--600 kpc annulus is only a local comparison region; it is not asserted to be
+free of host, group, or cluster galaxies.</p>
+<h2 id="measured-results">Measured Results</h2>
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th style="text-align: right;">Morphology galaxies</th>
+<th style="text-align: right;">Legacy 70/30 rule falsely selected</th>
+<th style="text-align: right;">Legacy 60/30/10 rule falsely selected</th>
+<th style="text-align: right;">PM/RUWE coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 1316</td>
+<td style="text-align: right;">395</td>
+<td style="text-align: right;">316 (80.0%)</td>
+<td style="text-align: right;">316 (80.0%)</td>
+<td style="text-align: right;">19.5%</td>
+</tr>
+<tr>
+<td>M49</td>
+<td style="text-align: right;">285</td>
+<td style="text-align: right;">276 (96.8%)</td>
+<td style="text-align: right;">276 (96.8%)</td>
+<td style="text-align: right;">2.8%</td>
+</tr>
+<tr>
+<td>NGC 2974</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">122 (91.0%)</td>
+<td style="text-align: right;">122 (91.0%)</td>
+<td style="text-align: right;">9.0%</td>
+</tr>
+<tr>
+<td>Combined</td>
+<td style="text-align: right;">814</td>
+<td style="text-align: right;">714 (87.7%)</td>
+<td style="text-align: right;">714 (87.7%)</td>
+<td style="text-align: right;">11.9%</td>
+</tr>
+</tbody>
+</table>
+<p>All 814 rows fall inside the broad <code>benchmark_v1</code> Gaia-magnitude applicability
+domain. Astrometric excess noise, its significance, and both IPD percentages are
+present for every row; BP/RP flux excess is present for 99.9%. RUWE and the
+covariance-aware proper-motion zero-significance are present for only 11.9%.</p>
+<p>The two legacy rules make identical decisions on every morphology candidate in this
+test sample. “Selected” means retained as a possible UCD candidate despite a
+successful Gaia galaxy-candidate Sersic fit; candidate membership does not prove
+that every row is a background galaxy. The rules' different weighting and color
+term therefore do not address
+this failure mode. Their 87.7% combined acceptance is much higher than their roughly
+55% acceptance of the small SDSS galaxy benchmark cohort. That contrast is not a
+population estimate: the morphology sample is deliberately Gaia-selected and
+conditioned on successful Sersic fitting.</p>
+<p>Across all three hosts, 164 morphology candidates occupy 7.5363 square degrees inside
+300 kpc, or 21.7614 per square degree. The 300--600 kpc annuli contain 650 across
+22.5914 square degrees, or 28.7721 per square degree. The individual profiles are
+sparse and heterogeneous. This test therefore does <strong>not</strong> establish a central
+candidate-density enhancement. It does establish that Gaia morphology candidates have a
+non-negligible absolute density and that the inherited selectors reject very few
+of them.</p>
+<h2 id="interpretation">Interpretation</h2>
+<ul>
+<li>The user's concern is confirmed as a selector-contamination problem: compact or
+  core-dominated Gaia galaxies readily satisfy both inherited selections.</li>
+<li>The small test sample does not confirm that these sources cluster toward host centers.
+  A larger, environment-stratified host/control experiment is required for that
+  population claim.</li>
+<li>Missing five-parameter astrometry is part of the failure mode. A selector cannot
+  rely on proper motion or RUWE without discarding most morphology candidates and a
+  large fraction of confirmed UCDs.</li>
+<li>The legacy 70/30 and 60/30/10 rules remain rejected comparison baselines, not
+  candidates for the final selector. They came from the old Phase III background
+  analysis and Phase IV pilot search, respectively; those historical project phases
+  are distinct from Stage 3 of the current scientific-validation plan.</li>
+<li>Archive-side selector prefilters must remain prohibited in contaminant audits;
+  applying them before retrieval would erase rejected objects and bias acceptance.</li>
+</ul>
+<h2 id="reproducibility">Reproducibility</h2>
+<ul>
+<li>Script: <code>scripts/phase1_literature/analyze_gaia_morphology_host_fields.py</code></li>
+<li>Validator: <code>scripts/phase1_literature/validate_gaia_morphology_host_fields.py</code></li>
+<li>Source associations: <code>data/literature/validation/gaia_morphology_host_field_sources.csv</code></li>
+<li>Radial metrics: <code>data/literature/validation/gaia_morphology_host_field_radial_metrics.csv</code></li>
+<li>Manifest: <code>data/literature/validation/gaia_morphology_host_field_manifest.json</code></li>
+<li>Validation: <code>data/literature/validation/gaia_morphology_host_field_validation.json</code></li>
+<li>Figure: <code>figures/phase1/gaia_morphology_host_field_stress.png</code></li>
+<li>Caption: <code>figures/phase1/gaia_morphology_host_field_stress.md</code></li>
+</ul>
+<p>The measured smoke run used one host and 100 kpc, returning 10 rows in 4.21 seconds
+and completing end-to-end in 6.8 seconds. The production query returned 814
+host-source associations with approximately 12 seconds of measured archive time.
+All 25 production validation checks pass.</p>
+<h2 id="required-next-experiment">Required Next Experiment</h2>
+<p>Before selector freezing, expand this design to declared environment and host-mass
+strata with off-target fields matched in Galactic latitude and Gaia scanning
+conditions. Preserve host and control results separately, use exact usable areas,
+and choose the cohort and weighting rules without reference to selector outcomes.</p>
+<p>The first expansion is complete and documented in
+<code>docs/gaia_morphology_host_control_comparison.md</code>. It uses luminosity and Galactic-
+latitude strata, not environment strata, because the existing environment flag is
+not scientifically defensible. The expanded comparison confirms the high false-
+selection rate but does not establish host-centered clustering.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#gaia-morphology-galaxy-host-field-stress-test">Gaia Morphology-Galaxy Host-Field Stress Test</a><ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#fixed-fixture">Fixed Fixture</a></li>
+<li><a href="#measured-results">Measured Results</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+<li><a href="#reproducibility">Reproducibility</a></li>
+<li><a href="#required-next-experiment">Required Next Experiment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="first_stage_host_profile_fixture.html">First-stage host profile fixture</a></li><li><a href="first_stage_ngc4698_candidate_diagnostics.html">First-stage NGC 4698 candidate diagnostics</a></li><li><a href="gaia_morphology_host_control_comparison.html">Gaia Morphology-Galaxy Host and Control Comparison</a></li><li><a href="host_run_records.html">Per-galaxy analysis receipts</a></li><li><a href="kourkchi_tully_environment_audit.html">Kourkchi-Tully environment audit</a></li><li><a href="m60_positive_control.html">M60 Positive-Control Search</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

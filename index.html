@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Research overview · BubbleTea</title><link rel="stylesheet" href="site/assets/style.css">
+<script src="site/assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="site/directory.html">All documents</a></nav></header>
+<main id="main"><section class="hero"><div><p class="eyebrow">A nearby-universe research notebook</p><h1>Small galaxies.<br><em>Careful evidence.</em></h1><p class="hero_description">Searching for ultra-compact dwarf galaxies with Gaia—and keeping the selection, the background, and the uncertainty in view.</p><a class="primary_link" href="site/docs/current_status.html">Read the current status <span aria-hidden="true">↗</span></a></div><aside class="checkpoint"><p class="eyebrow">Restart checkpoint · 12 October 2026</p><div class="orbit" aria-hidden="true"><span></span></div><h2>Review the reference.<br>Then measure contamination.</h2><p>The inspection tool is built. Source-by-source assessment is the next research step, not a completed result.</p><p class="small_note">Latest research journal: 19 August 2026.<br>These are dated checkpoints, not live counters.</p></aside></section><section class="overview_section"><div class="section_heading"><span class="section_number">01</span><h2>Where the project stands</h2><a href="site/docs/current_status.html">Source document ↗</a></div><div class="overview_content"><h3 id="what-has-been-completed">What has been completed</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Measured or recorded result</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Literature reference</td>
+<td>5,049 source records, 4,359 distinct catalog objects, and 30 publication provenance packages</td>
+<td><a href="data/literature/validation/project_status_counts.json">July 16 count audit</a></td>
+</tr>
+<tr>
+<td>Gaia selection baseline</td>
+<td>One shared version-1 logistic selector is used by reference, background, and host workflows</td>
+<td><a href="site/docs/point_source_selector_integration_v1.html">Selector integration</a></td>
+</tr>
+<tr>
+<td>Random comparison fields</td>
+<td>398 development fields and 102 independently reserved validation fields processed; direct latitude-band measurements are primary</td>
+<td><a href="site/docs/large_sky_validation_run.html">Validation report</a></td>
+</tr>
+<tr>
+<td>NGC 4698 profile</td>
+<td>23,811 magnitude-limited Gaia sources retrieved; 2,548 pass selector v1; 14 radial rings retained</td>
+<td><a href="site/docs/first_stage_host_profile_fixture.html">First-host profile</a></td>
+</tr>
+<tr>
+<td>M60 profile</td>
+<td>45,402 magnitude-limited Gaia sources retrieved; 4,920 pass selector v1; both reliable confirmed controls recovered</td>
+<td><a href="site/docs/m60_positive_control.html">M60 report</a></td>
+</tr>
+<tr>
+<td>M60 inspection sample</td>
+<td>400 representative passing sources and their cutouts prepared; visual classification pending</td>
+<td><a href="site/docs/plans/phase_4_pilot_search.html">Pilot tracking</a></td>
+</tr>
+<tr>
+<td>UCD image reference</td>
+<td>680 literature-confirmed UCDs and 44 Saifollahi high-probability candidates; 707 non-placeholder images and 17 placeholders (visual usability still unreviewed)</td>
+<td><a href="site/docs/ucd_legacy_survey_reference.html">Reference report</a></td>
+</tr>
+<tr>
+<td>Interactive review tool</td>
+<td>Full 724-object list, two image scales, catalog evidence, coordinate proposals, review history, and versioned exports implemented</td>
+<td><a href="site/docs/journal/2026-08-19_ucd_visual_review_workbench.html">August 19 checkpoint</a></td>
+</tr>
+</tbody>
+</table>
+<p>The 724-object image-review set is a selected reference, not the full literature
+database. The database's 740 confirmed objects and this set's 680 confirmed
+objects are different scopes, not contradictory counts.</p>
+<h3 id="where-work-stopped">Where work stopped</h3>
+<p>On 2026-10-12 the local review database contained <strong>zero saved review revisions</strong>.
+The checked-in August 17 exports also record zero reviewed objects. The workbench
+is implemented, but no clean, visually reviewed positive reference has yet been
+produced from it. The stored API validation reports 15 passing checks; this
+restart audit did not rerun browser tests.</p>
+<p>Both confirmed objects and candidates use <code>include</code>, <code>exclude</code>, or <code>hold</code> review
+decisions. For a candidate, <code>include</code> means retain in the follow-up pool, never
+promote to confirmed. Original data and classifications remain unchanged.</p></div></section><section class="overview_section"><div class="section_heading"><span class="section_number">02</span><h2>The science roadmap</h2><a href="site/docs/PLAN.html">Source document ↗</a></div><div class="overview_content"><h3 id="immediate-sequence">Immediate sequence</h3>
+<ol>
+<li>Verify the implemented review workbench with a small, varied reference pilot.</li>
+<li>Inspect the 724-object reference and export clean confirmed objects separately
+   from the candidate follow-up pool.</li>
+<li>Classify the representative 400-source M60 sample to measure real contamination.</li>
+<li>Evaluate selection improvements against the frozen Gaia-only baseline.</li>
+<li>Finish host geometry, background validity, and uncertainty before scientific scale-up.</li>
+</ol>
+<h3 id="phases">Phases</h3>
+<h3 id="phase-i-literature-ucds-reference-audit-complete-selection-validation-active">Phase I: Literature UCDs (Reference audit complete; selection validation active)</h3>
+<p><strong>Goal:</strong> Establish the known UCD population as a reference dataset. Understand their
+Gaia DR3 properties. Devise distance-dependent selection criteria.</p>
+<ul>
+<li>Preserve and validate 5,049 literature records from 14 record-contributing
+  publications as 4,359 canonical objects; retain 30 registered publication
+  provenance packages</li>
+<li>Rewrite core scripts (database management, VizieR ingestion, cross-matching)</li>
+<li>Maintain complete canonical Gaia DR3 and Legacy Survey DR10 cross-match audits</li>
+<li>Analyze AEN, color, proper motion, and classprob distributions</li>
+<li>Calibrate one versioned Gaia-only selector; historical thresholds are exploratory</li>
+<li>Shared selector v1 is implemented; the 724-object visual-reference tool is ready
+  but its local review database has zero saved reviews as of 2026-10-12</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/phase_1_literature_ucds.html">Literature tasks</a>,
+  <a href="site/docs/plans/ucd_visual_review_tool.html">review-tool specification</a></li>
+</ul>
+<h3 id="phase-ib-ancillary-data-collection-reference-subset-prepared-broader-work-pending">Phase Ib: Ancillary Data Collection (Reference subset prepared; broader work pending)</h3>
+<p><strong>Goal:</strong> Gather complementary data from public surveys.</p>
+<ul>
+<li>Identify DESI spectroscopic data in UCD candidate regions</li>
+<li>Catalog imaging survey coverage (LegacySurvey, DES, KiDS, HSC)</li>
+<li>Cross-match known UCDs with multi-wavelength catalogs (2MASS, WISE, GALEX)</li>
+<li>Legacy Survey reference images, catalog matches, and Gaia external-catalog flags
+  are already prepared; this is not complete multi-survey coverage</li>
+<li><strong>Tracking:</strong> <a href="site/docs/ucd_legacy_survey_reference.html">Reference report</a>,
+  <a href="site/docs/todo.html">open issues</a> (no separate Phase Ib checklist exists yet)</li>
+</ul>
+<h3 id="phase-ii-target-galaxy-sample-inherited-sample-audited-final-definition-open">Phase II: Target Galaxy Sample (Inherited sample audited; final definition open)</h3>
+<p><strong>Goal:</strong> Define and prioritize the nearby galaxy sample (D &lt; 50 Mpc).</p>
+<ul>
+<li>Build unified galaxy sample from LVG, CF4, NED-LVS, SGA-2020</li>
+<li>Collect photometry, morphology, star-formation properties</li>
+<li>Check imaging survey footprint overlap</li>
+<li>Rank by luminosity, distance, galactic latitude, and imaging coverage</li>
+<li>The inherited 2,155-host catalog has been audited; parent-sample completeness,
+  consistent morphology, and half-light radii remain open</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/phase_2_galaxy_sample.html">Host-sample tasks</a></li>
+</ul>
+<h3 id="phase-iii-background-characterization-random-fields-complete-host-calibration-open">Phase III: Background Characterization (Random fields complete; host calibration open)</h3>
+<p><strong>Goal:</strong> Characterize the "background density" of Gaia sources passing UCD selection.</p>
+<ul>
+<li>Measure background density versus Galactic latitude using hundreds of random
+  fields</li>
+<li>Use directly measured same-latitude field distributions as the primary large-sky
+  reference; keep the fitted model as a diagnostic only</li>
+<li>Report the random-field distribution alongside a valid local outer annulus and
+  preserve their difference</li>
+<li>Validate on known UCD hosts</li>
+<li>All 398 development and 102 independently reserved validation fields are complete</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/phase_3_background.html">Background tasks</a>,
+  <a href="site/docs/large_sky_validation_run.html">independent validation</a></li>
+</ul>
+<h3 id="phase-iv-pilot-search-exploratory-profiles-measured-visual-assessment-pending">Phase IV: Pilot Search (Exploratory profiles measured; visual assessment pending)</h3>
+<p><strong>Goal:</strong> Search around confirmed UCD hosts and high-priority targets.</p>
+<ul>
+<li>Validate search pipeline by recovering known UCDs</li>
+<li>Run radial search on high-priority targets from Phase II</li>
+<li>Compare radial profiles to local background</li>
+<li>Identify candidates (statistical excess + individual sources)</li>
+<li>Characterize contamination and false positive rate</li>
+<li>NGC 4698 and M60 profiles retain 14 rings through 600 kpc; M60's representative
+  400-source visual assessment remains pending</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/phase_4_pilot_search.html">Pilot tasks</a>, <a href="site/docs/m60_positive_control.html">M60 report</a></li>
+</ul>
+<h3 id="phase-v-cross-match-and-characterization-planned">Phase V: Cross-match and Characterization (Planned)</h3>
+<p><strong>Goal:</strong> Characterize candidates using multi-wavelength data.</p>
+<ul>
+<li>Legacy Survey morphology (TYPE, shape_r, colors)</li>
+<li>HST/Euclid archive search for high-resolution imaging</li>
+<li>DESI/SDSS spectroscopic cross-match</li>
+<li>Clean up sample based on multi-wavelength evidence</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/scientific_validation.html">Validation stages 5--6</a> and
+  <a href="site/docs/todo.html">open issues</a>; no dedicated Phase V checklist exists yet</li>
+</ul>
+<h3 id="phase-vi-statistical-analysis-and-discussion-planned">Phase VI: Statistical Analysis and Discussion (Planned)</h3>
+<p><strong>Goal:</strong> Review results, draw conclusions, discuss future work.</p>
+<ul>
+<li>Statistical review of detection rates across galaxy sample</li>
+<li>Comparison with literature expectations</li>
+<li>Perspectives for future surveys (Euclid, Rubin/LSST, 4MOST)</li>
+<li>Spin-off project ideas</li>
+<li><strong>Tracking:</strong> <a href="site/docs/plans/scientific_validation.html">Validation stage 6</a> and
+  <a href="site/docs/todo.html">open issues</a>; no dedicated Phase VI checklist exists yet</li>
+</ul></div></section><section class="overview_section"><div class="section_heading"><span class="section_number">03</span><h2>Inside the repository</h2><a href="site/README.html">Source document ↗</a></div><div class="overview_content"><h3 id="repository-structure">Repository Structure</h3>
+<pre><code>bubbletea/
+├── scripts/               # Python scripts organized by phase
+│   ├── config.py          # Central path configuration
+│   ├── documentation/     # Static HTML documentation builder and source assets
+│   ├── utils/             # Shared utilities (plotting, cross-match)
+│   ├── phase1_literature/ # Phase I: literature UCD compilation
+│   ├── phase2_galaxy_sample/
+│   ├── phase3_background/
+│   ├── phase4_search/
+│   ├── phase5_crossmatch/
+│   └── phase6_analysis/
+├── data/                  # Data products (large files gitignored)
+│   ├── literature/        # UCD literature database and catalogs
+│   ├── galaxy_sample/     # Target galaxy sample
+│   ├── gaia_queries/      # Cached Gaia query results
+│   └── results/           # Analysis results
+├── figures/               # Figures organized by phase (each with .md caption)
+├── reference/             # Literature: PDF + original data per paper
+├── docs/                  # Plans, journal, lessons
+│   ├── PLAN.md            # Master plan
+│   ├── SPEC.md            # Approved scientific and architectural requirements
+│   ├── current_status.md  # Dated restart summary
+│   ├── documentation_guide.md # Document ownership and reading routes
+│   ├── plans/             # Per-phase task tracking
+│   ├── journal/           # Research journal entries
+│   └── lessons/           # Lessons learned
+├── notebooks/             # Analysis notebooks
+├── index.html             # Generated documentation home page
+├── site/                  # Generated HTML views of Markdown documents
+└── ucd_project/           # Legacy code (frozen reference, gitignored)
+</code></pre></div></section><section class="overview_section"><div class="section_heading"><span class="section_number">04</span><h2>How the documents connect</h2><a href="site/docs/documentation_guide.html">Source document ↗</a></div><div class="overview_content"><h3 id="one-purpose-per-document">One purpose per document</h3>
+<table>
+<thead>
+<tr>
+<th>Document or location</th>
+<th>Its job</th>
+<th>What it must not become</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="site/README.html">README</a></td>
+<td>Entry point, setup, and repository layout</td>
+<td>A competing detailed task list</td>
+</tr>
+<tr>
+<td><a href="site/docs/current_status.html">Current status</a></td>
+<td>Dated restart summary and next research step</td>
+<td>A claim of continuously live measurements</td>
+</tr>
+<tr>
+<td><a href="site/docs/PLAN.html">PLAN</a></td>
+<td>Science roadmap and phase-level status</td>
+<td>A second scientific specification</td>
+</tr>
+<tr>
+<td><a href="site/docs/SPEC.html">SPEC</a></td>
+<td>Approved definitions, requirements, and architecture</td>
+<td>A log of every implementation detail</td>
+</tr>
+<tr>
+<td><a href="site/docs/todo.html">Issue register</a></td>
+<td>Cross-phase open issues and resolution requirements</td>
+<td>An unlabelled mixture of old and current status</td>
+</tr>
+<tr>
+<td><a href="site/docs/plans/scientific_validation.html">Validation stages</a></td>
+<td>Evidence needed before scientific scale-up</td>
+<td>Proof that unchecked stages are complete</td>
+</tr>
+<tr>
+<td>Phase plans in <code>docs/plans/</code></td>
+<td>Phase-specific checklists and delivery details</td>
+<td>Independent scientific policy</td>
+</tr>
+<tr>
+<td>Method and result reports in <code>docs/</code></td>
+<td>Reproducible evidence, limitations, and artifact pointers</td>
+<td>Current policy when explicitly superseded</td>
+</tr>
+<tr>
+<td><code>docs/journal/</code></td>
+<td>Dated decisions and session records</td>
+<td>Instructions that automatically override later decisions</td>
+</tr>
+<tr>
+<td><a href="site/docs/lessons/LESSON.html">Lessons</a></td>
+<td>Append-only explanations of mistakes and safeguards</td>
+<td>A current scientific status summary</td>
+</tr>
+<tr>
+<td><a href="data/README.md">Data guide</a>, <a href="reference/summary.md">literature guide</a>, and figure captions</td>
+<td>Provenance and interpretation of specific artifacts</td>
+<td>General roadmap or unchecked scientific claims</td>
+</tr>
+<tr>
+<td><a href="site/AGENTS.html">AGENTS</a></td>
+<td>Operational rules for agents</td>
+<td>Scientific evidence</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-these-documents-connect">How these documents connect</h3>
+<pre><code class="language-text">README / HTML home
+        |
+        +-- current_status: where we stopped
+        +-- PLAN: the scientific sequence
+                 |
+                 +-- SPEC: approved requirements
+                 +-- scientific_validation: evidence required
+                 +-- todo / phase plans: work still needed
+                          |
+                          +-- reports --&gt; data, scripts, figures, provenance
+                          +-- journals: dated decisions and checkpoints
+</code></pre>
+<p>When documents disagree, distinguish requirements from measurements and check
+their dates. Approved scientific requirements belong in SPEC; a later report
+cannot silently authorize a different method. The current-status page summarizes
+evidence but does not override it. Ask the project lead when approved decisions
+actually conflict.</p></div></section><section class="next_step"><p class="eyebrow">Next: observational astronomy in the classroom</p><h2>A teaching project, with its own brief.</h2><p>This portal organizes the research record. Student-facing lessons, exercises, and datasets come next, after the audience and learning goals are agreed.</p><a href="site/directory.html">Browse all 88 documents ↗</a></section></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

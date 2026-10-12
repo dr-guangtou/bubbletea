@@ -1580,6 +1580,24 @@ The following areas remain intentionally unspecified:
 
 ## Execution Plan
 
+### Documentation reading portal (2026-10-12)
+
+Markdown remains the editable source for project documentation. A generated,
+local static HTML portal provides navigation, a current-status summary, the science
+roadmap, repository layout, and rendered document pages. It must not modify
+scientific inputs, review databases, selectors, or profiles, and it is not a public
+deployment. Historical journals and superseded results retain their dates and
+provenance. The documentation guide defines document ownership and linking;
+generated HTML must link back to source Markdown and distinguish historical
+evidence from current requirements.
+
+See the [documentation architecture and checks](plans/documentation_site.md),
+[document guide](documentation_guide.md), and [dated status](current_status.md).
+Teaching materials will be specified separately after an audience and course
+brief are available; planned research is not to be presented as an established result.
+
+### Scientific execution
+
 The staged implementation and validation order is maintained in
 `docs/plans/scientific_validation.md`. The cross-phase issue register is
 `docs/todo.md`.

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>BubbleTea · BubbleTea</title><link rel="stylesheet" href="assets/style.css">
+<script src="assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../index.html">Overview</a><a href="directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Start here</span><a href="../README.md">Markdown source ↗</a></div><h1 id="bubbletea">BubbleTea</h1>
+<p>Searching for Ultra-Compact Dwarf (UCD) galaxies and other compact stellar systems
+in the nearby universe using Gaia DR3 astrometry and imaging survey photometry.</p>
+<p><strong>Restart checkpoint: 2026-10-12.</strong> The visual-review tool is implemented; the local
+724-object review database has no saved reviews. Start with
+<a href="docs/current_status.html">current status</a>, the <a href="docs/documentation_guide.html">documentation guide</a>,
+or the generated <a href="../index.html">HTML portal</a>.</p>
+<h2 id="scientific-goal">Scientific Goal</h2>
+<p>Perform a systematic Gaia-only search for UCD candidates around nearby galaxies.
+Gaia evidence of non-point-like structure is combined with host-centered excess
+statistics; external imaging and spectroscopy are value-added characterization,
+not inputs to the primary population selection.</p>
+<h2 id="method">Method</h2>
+<ol>
+<li><strong>Gaia-only source selection</strong>: Use the frozen version-1 logistic selector as a
+   reproducible baseline. Its score is not a probability of physical UCD identity;
+   final sensitivity and contamination calibration remain unfinished.</li>
+<li><strong>Host-centered statistics</strong>: Measure positive, null, and negative excesses
+   against validated local or control-field backgrounds.</li>
+<li><strong>Value-added characterization</strong>: Use Legacy Survey and other external data to
+   describe covered subsets without changing Gaia statistical membership.</li>
+</ol>
+<h2 id="project-phases">Project Phases</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Description</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong></td>
+<td>Literature reference, Gaia selection, and reference review</td>
+<td>Reference audit complete; visual review pending</td>
+</tr>
+<tr>
+<td><strong>Ib</strong></td>
+<td>Ancillary data collection (DESI, multi-wavelength)</td>
+<td>Legacy Survey reference prepared; wider enrichment pending</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td>Target galaxy sample definition and prioritization (D &lt; 50 Mpc)</td>
+<td>Inherited catalog audited; final sample and properties open</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td>Background density characterization (galactic latitude dependence)</td>
+<td>500 fields complete; host-specific calibration open</td>
+</tr>
+<tr>
+<td><strong>IV</strong></td>
+<td>Pilot search around confirmed UCD hosts + high-priority targets</td>
+<td>NGC 4698/M60 profiles measured; contamination review pending</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>Cross-match candidates with imaging and spectroscopic data</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td><strong>VI</strong></td>
+<td>Statistical analysis, discussion, and future perspectives</td>
+<td>Planned</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="docs/PLAN.html">roadmap</a>, <a href="docs/plans/scientific_validation.html">validation stages</a>,
+and <a href="docs/todo.html">issue register</a>. Early exploratory pilot claims are not final results.</p>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Install dependencies
+uv sync
+
+# Set up pre-commit hooks
+uv run pre-commit install
+
+# Set external data path (large catalogs not in repo)
+export BUBBLETEA_EXTERNAL_DATA=/path/to/your/data
+
+# Run a script
+PYTHONPATH=. uv run python scripts/phase1_literature/analyze_gaia_properties.py
+</code></pre>
+<p>To build the documentation portal, run
+<code>uv run python scripts/documentation/build_documentation.py</code>, then open <code>index.html</code>.
+The <a href="../scripts/phase4_search/ucd_visual_review/README.md">workbench README</a> explains how
+to launch the separate source-review application; the static portal does not save reviews.</p>
+<h2 id="repository-structure">Repository Structure</h2>
+<pre><code>bubbletea/
+├── scripts/               # Python scripts organized by phase
+│   ├── config.py          # Central path configuration
+│   ├── documentation/     # Static HTML documentation builder and source assets
+│   ├── utils/             # Shared utilities (plotting, cross-match)
+│   ├── phase1_literature/ # Phase I: literature UCD compilation
+│   ├── phase2_galaxy_sample/
+│   ├── phase3_background/
+│   ├── phase4_search/
+│   ├── phase5_crossmatch/
+│   └── phase6_analysis/
+├── data/                  # Data products (large files gitignored)
+│   ├── literature/        # UCD literature database and catalogs
+│   ├── galaxy_sample/     # Target galaxy sample
+│   ├── gaia_queries/      # Cached Gaia query results
+│   └── results/           # Analysis results
+├── figures/               # Figures organized by phase (each with .md caption)
+├── reference/             # Literature: PDF + original data per paper
+├── docs/                  # Plans, journal, lessons
+│   ├── PLAN.md            # Master plan
+│   ├── SPEC.md            # Approved scientific and architectural requirements
+│   ├── current_status.md  # Dated restart summary
+│   ├── documentation_guide.md # Document ownership and reading routes
+│   ├── plans/             # Per-phase task tracking
+│   ├── journal/           # Research journal entries
+│   └── lessons/           # Lessons learned
+├── notebooks/             # Analysis notebooks
+├── index.html             # Generated documentation home page
+├── site/                  # Generated HTML views of Markdown documents
+└── ucd_project/           # Legacy code (frozen reference, gitignored)
+</code></pre>
+<h2 id="data-provenance">Data Provenance</h2>
+<p>All data in this project is traceable to its original source. Each entry in the
+literature database records the ADS bibcode, DOI, and VizieR catalog ID. The
+<code>reference/</code> directory contains a folder per paper with the PDF and original data
+files. See <code>reference/summary.md</code> for the literature tracking table.</p>
+<h2 id="key-references">Key References</h2>
+<ul>
+<li>Voggel et al. (2020), ApJ 899, 140 — Gaia-based UCD selection methodology</li>
+<li>Wang et al. (2023), ApJ 954, 206 — Gaia GC search around M31</li>
+<li>Saifollahi et al. (2021), MNRAS 504, 3580 — Fornax UCD sample</li>
+</ul>
+<h2 id="validated-reference-state">Validated Reference State</h2>
+<ul>
+<li><strong>5,049 literature records</strong> from 14 record-contributing publications are
+  preserved in the non-destructive v2 database, which registers 30 publication
+  provenance packages in total.</li>
+<li><strong>4,359 canonical objects</strong> are classified as 740 confirmed, 1,515 candidate,
+  2,082 rejected, and 22 uncertain under <code>confirmation_rules_v1</code>.</li>
+<li><strong>963 canonical Gaia associations</strong> represent 962 unique Gaia DR3 sources.</li>
+<li><strong>3,723 Legacy Survey DR10 matches</strong> are retained as value-added enrichment;
+  complete audits include all 4,359 canonical targets.</li>
+<li>Historical pilot thresholds, match rates, and host contrasts remain exploratory.
+  The shared selector and direct background measurements now exist, but final
+  host-specific inference and selection sensitivity are still unfinished.</li>
+</ul>
+<p>The generated counts and validation state are recorded in
+<code>data/literature/validation/project_status_counts.json</code>.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#bubbletea">BubbleTea</a><ul>
+<li><a href="#scientific-goal">Scientific Goal</a></li>
+<li><a href="#method">Method</a></li>
+<li><a href="#project-phases">Project Phases</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#repository-structure">Repository Structure</a></li>
+<li><a href="#data-provenance">Data Provenance</a></li>
+<li><a href="#key-references">Key References</a></li>
+<li><a href="#validated-reference-state">Validated Reference State</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="docs/current_status.html">Current research status</a></li><li><a href="docs/documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="docs/PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="docs/SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="docs/todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="docs/CONTEXT.html">BubbleTea Project Context</a></li><li><a href="docs/PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="docs/SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="docs/current_status.html">Current research status</a></li><li><a href="docs/documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="docs/todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Linked from (1)</summary><ul><li><a href="docs/documentation_guide.html">How to read and maintain the documentation</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

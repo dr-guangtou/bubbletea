@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Development-only point-source ML comparison · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/point_source_ml_comparison.md">Markdown source ↗</a></div><h1 id="development-only-point-source-ml-comparison">Development-only point-source ML comparison</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This experiment tests whether a classical classifier improves on the interpretable
+rank score without changing the scientific objective. It is a development-only
+comparison, not a frozen selector and not a validation result.</p>
+<p>The positive class is the 175 confirmed development UCDs. The three priority
+negative cohorts are 525 matched SDSS spectroscopic stars, 1,125 Gaia non-single-
+star sources, and 403 spectroscopic QSOs. Each negative cohort receives equal total
+weight, irrespective of its row count. Spectroscopic galaxies and H II regions are
+secondary stress samples and never enter model fitting or threshold selection.</p>
+<h2 id="leakage-controls">Leakage controls</h2>
+<ul>
+<li>Five outer grouped folds measure held-out performance; four inner grouped folds
+  choose hyperparameters and the threshold targeting 90% confirmed-UCD recall.</li>
+<li>Every matched star inherits the spatial partition group of its matched UCD, so a
+  matched UCD-star neighborhood cannot occur on both sides of a fold.</li>
+<li>Preprocessing, missing-value imputation, empirical rank references, model fitting,
+  and threshold choice are all fit inside the relevant training fold.</li>
+<li>The 721-row validation partition remains sealed, and none of its Gaia source
+  identifiers appears in the prediction artifact.</li>
+</ul>
+<h2 id="features-and-models">Features and models</h2>
+<p>Regularized logistic regression and shallow histogram gradient boosting use nine
+Gaia measurements: transformed astrometric excess noise and its significance,
+BP/RP flux-excess factor, measured BP-RP color, transformed RUWE, the two IPD
+percentages, and transformed absolute-parallax and proper-motion zero-significance.
+Color is therefore a soft learned feature rather than a hard color cut.</p>
+<p>Gaia NSS membership, DSC class probabilities, Gaia galaxy/QSO-candidate membership,
+and Sersic parameters are excluded from primary inputs because they would be
+tautological, circular, or inappropriate parent-sample requirements. The hand-score
+baseline uses its previously approved 25/75 excess-noise/flux-excess core and 10%
+conditional astrometric penalty, but its empirical references and threshold are
+also refit inside grouped folds.</p>
+<h2 id="measured-result">Measured result</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Confirmed-UCD recall</th>
+<th style="text-align: right;">Stars retained</th>
+<th style="text-align: right;">NSS retained</th>
+<th style="text-align: right;">QSOs retained</th>
+<th style="text-align: right;">Equal-cohort mean retained</th>
+<th style="text-align: right;">Outer-fold UCD recall range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logistic regression</td>
+<td style="text-align: right;">93.71%</td>
+<td style="text-align: right;">7.24%</td>
+<td style="text-align: right;">0.36%</td>
+<td style="text-align: right;">4.47%</td>
+<td style="text-align: right;">4.02%</td>
+<td style="text-align: right;">81.82–100.00%</td>
+</tr>
+<tr>
+<td>Shallow gradient boosting</td>
+<td style="text-align: right;">88.57%</td>
+<td style="text-align: right;">7.43%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">3.23%</td>
+<td style="text-align: right;">3.55%</td>
+<td style="text-align: right;">70.59–100.00%</td>
+</tr>
+<tr>
+<td>Hand rank score</td>
+<td style="text-align: right;">89.14%</td>
+<td style="text-align: right;">6.86%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">4.71%</td>
+<td style="text-align: right;">3.86%</td>
+<td style="text-align: right;">76.47–97.06%</td>
+</tr>
+</tbody>
+</table>
+<p>Logistic regression is the only tested method whose pooled outer-fold predictions
+meet the nominal 90% recall target, while retaining 4.02% of the equal-weight
+priority contaminants. Its improvement over the hand score is modest, and its
+81.82–100% fold range shows that the result is not yet stable enough to freeze.
+Boosting obtains the lowest contaminant retention but misses the recall target and
+has the widest recall instability; it is not preferred at this stage.</p>
+<p>The secondary stress results are descriptive only. Majority decisions across the
+five outer models retain 98.59% of development spectroscopic galaxies and 89.76%
+of H II regions for logistic regression. This is consistent with their declared
+later imaging and separate color/morphology treatment; it is not evidence that the
+point-source layer solves those contaminants.</p>
+<h2 id="interpretation-and-next-decision">Interpretation and next decision</h2>
+<p>Classical ML is feasible and regularized logistic regression is a promising
+replacement for a sequence of linear cuts. The present comparison does not justify
+unsealing validation or freezing a model. The next defensible test is a repeated
+grouped nested-CV stability analysis, including coefficient/sign inspection and
+performance by magnitude and sky position. Only after that analysis is declared
+and reviewed should one candidate implementation and threshold be frozen for the
+single withheld-validation evaluation.</p>
+<p>That stability analysis was completed on 2026-07-17. The logistic model passes the
+predeclared repeated-CV gate, while identifying 11 persistently missed confirmed
+UCDs and magnitude/latitude-dependent limitations that require review. See
+<code>docs/point_source_ml_stability.md</code>; validation remains sealed.</p>
+<h2 id="reproduction">Reproduction</h2>
+<ul>
+<li>Script: <code>scripts/phase1_literature/compare_point_source_ml.py</code></li>
+<li>Validation: <code>scripts/phase1_literature/validate_point_source_ml.py</code></li>
+<li>Command: <code>uv run python scripts/phase1_literature/compare_point_source_ml.py</code></li>
+<li>Predictions: <code>data/literature/validation/point_source_ml_oof_predictions_v1.csv</code></li>
+<li>Fold metrics: <code>data/literature/validation/point_source_ml_fold_metrics_v1.csv</code></li>
+<li>Summary: <code>data/literature/validation/point_source_ml_comparison_v1.json</code></li>
+<li>Validation report: <code>data/literature/validation/point_source_ml_comparison_validation_v1.json</code></li>
+<li>Date: 2026-07-17</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#development-only-point-source-ml-comparison">Development-only point-source ML comparison</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#leakage-controls">Leakage controls</a></li>
+<li><a href="#features-and-models">Features and models</a></li>
+<li><a href="#measured-result">Measured result</a></li>
+<li><a href="#interpretation-and-next-decision">Interpretation and next decision</a></li>
+<li><a href="#reproduction">Reproduction</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="logistic_regularization_sensitivity.html">Logistic regularization sensitivity</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

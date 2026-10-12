@@ -20,6 +20,10 @@ DATA_DIR = PROJECT_ROOT / "data"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 REFERENCE_DIR = PROJECT_ROOT / "reference"
 DOCS_DIR = PROJECT_ROOT / "docs"
+DOCUMENTATION_SITE_DIR = PROJECT_ROOT / "site"
+DOCUMENTATION_HOME = PROJECT_ROOT / "index.html"
+DOCUMENTATION_ASSETS_DIR = SCRIPTS_DIR / "documentation" / "assets"
+DOCUMENTATION_BUILD_REPORT = DOCUMENTATION_SITE_DIR / "build_report.json"
 
 # ---------------------------------------------------------------------------
 # Data subdirectories
@@ -424,15 +428,11 @@ UCD_VISUAL_REVIEW_WIDE_CUTOUT_MANIFEST = (
 UCD_VISUAL_REVIEW_WIDE_CUTOUT_SUMMARY = (
     LITERATURE_CATALOGS / "ucd_visual_review_wide_cutouts_v1.json"
 )
-UCD_VISUAL_REVIEW_GAIA_NEIGHBORS = (
-    LITERATURE_CATALOGS / "ucd_visual_review_gaia_neighbors_v1.csv"
-)
+UCD_VISUAL_REVIEW_GAIA_NEIGHBORS = LITERATURE_CATALOGS / "ucd_visual_review_gaia_neighbors_v1.csv"
 UCD_VISUAL_REVIEW_GAIA_NEIGHBOR_AUDIT = (
     LITERATURE_CATALOGS / "ucd_visual_review_gaia_neighbor_audit_v1.csv"
 )
-UCD_VISUAL_REVIEW_GAIA_MANIFEST = (
-    LITERATURE_SOURCES / "ucd_visual_review_gaia_manifest_v1.json"
-)
+UCD_VISUAL_REVIEW_GAIA_MANIFEST = LITERATURE_SOURCES / "ucd_visual_review_gaia_manifest_v1.json"
 UCD_VISUAL_REVIEW_EXTERNAL_ASSOCIATIONS = (
     LITERATURE_CATALOGS / "ucd_visual_review_external_associations_v1.csv"
 )
@@ -440,17 +440,11 @@ UCD_VISUAL_REVIEW_EXTERNAL_MANIFEST = (
     LITERATURE_SOURCES / "ucd_visual_review_external_manifest_v1.json"
 )
 UCD_VISUAL_REVIEW_BUNDLE_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "bundle"
-UCD_VISUAL_REVIEW_BUNDLE_INDEX = (
-    LITERATURE_CATALOGS / "ucd_visual_review_bundle_index_v1.csv"
-)
-UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = (
-    LITERATURE_SOURCES / "ucd_visual_review_bundle_manifest_v1.json"
-)
+UCD_VISUAL_REVIEW_BUNDLE_INDEX = LITERATURE_CATALOGS / "ucd_visual_review_bundle_index_v1.csv"
+UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = LITERATURE_SOURCES / "ucd_visual_review_bundle_manifest_v1.json"
 UCD_VISUAL_REVIEW_REVIEW_DB = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "reviews" / "review_v1.db"
 UCD_VISUAL_REVIEW_EXPORT_DIR = RESULTS_DIR / "ucd_visual_review"
-UCD_VISUAL_REVIEW_PILOT_LIST = (
-    LITERATURE_CATALOGS / "ucd_visual_review_pilot_v1.csv"
-)
+UCD_VISUAL_REVIEW_PILOT_LIST = LITERATURE_CATALOGS / "ucd_visual_review_pilot_v1.csv"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Large-sky development continuation · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Background and radial measurements</span><a href="../../docs/large_sky_development_scale.md">Markdown source ↗</a></div><h1 id="large-sky-development-continuation">Large-sky development continuation</h1>
+<p><strong>Date:</strong> 2026-07-19</p>
+<p><strong>Scripts:</strong>
+<code>scripts/phase3_background/derive_large_sky_development_g_magnitude_summaries.py</code>
+and <code>scripts/phase3_background/run_large_sky_development_scale.py</code></p>
+<h2 id="what-was-added">What was added</h2>
+<p>The 12 pilot development fields include three fixed descriptions of their
+Gaia G-magnitude distributions:</p>
+<ul>
+<li>the magnitude below which 10% of the field's sources lie;</li>
+<li>the median magnitude;</li>
+<li>the magnitude below which 90% of the field's sources lie.</li>
+</ul>
+<p>These are calculated from already downloaded sources. The definitions were fixed
+before the remaining development fields are measured. They describe each entire
+field and are not cuts applied to individual sources.</p>
+<p>The continuation script combines four operations for every new development field:</p>
+<ol>
+<li>divide the circular Gaia request into measured, non-overlapping strips;</li>
+<li>save and verify the 19 columns required by the frozen source selector;</li>
+<li>apply that selector locally and count the passing sources;</li>
+<li>measure the pre-selector field conditions and calculate all fixed magnitude
+   summaries.</li>
+</ol>
+<p>After a field finishes, its raw files, measured strip plan, hashes, checks, and
+plain field summary are written outside the repository under the configured
+external-data directory. A later run checks that record and the saved file hashes
+before treating the field as complete. An interrupted field reuses valid strips and
+continues from the unfinished work.</p>
+<h2 id="safety-rules">Safety rules</h2>
+<ul>
+<li>Only rows marked <code>development</code> in the frozen grid may be processed.</li>
+<li>The 102 held-back validation identifiers are never placed in the processing list.</li>
+<li>The default command permits zero new remote fields. Starting remote work requires
+  an explicit nonnegative <code>--maximum-new-fields</code> value.</li>
+<li>Processing order is a reproducible hash of the run version and field identifier.
+  It uses no Gaia count, selector result, or host excess.</li>
+<li>A field with incomplete or invalid files is not represented as a zero count.</li>
+<li>This step measures inputs only. It fits no sky-background model and approves no
+  field as a scientific background.</li>
+</ul>
+<h2 id="measured-validation">Measured validation</h2>
+<p>The local magnitude calculation read all 12 completed fields in 1.416442 seconds,
+made zero archive queries, and passed all nine safeguards. Every field's source
+count and source-identifier fingerprint match the original retrieval.</p>
+<p>The continuation first completed a zero-query dry run, importing the 12 existing
+fields and passing all 14 run safeguards. It then processed exactly one new field,
+<code>sky_field_0167</code>, selected by the fixed count-blind order:</p>
+<ul>
+<li>9,095 Gaia sources in two verified strips;</li>
+<li>540 sources pass the frozen selector;</li>
+<li>total density 4,523.555389 sources per square degree;</li>
+<li>selected density 268.578330 sources per square degree;</li>
+<li>complete field processing in 13.655484 seconds;</li>
+<li>all ten field checks and all 14 run checks pass.</li>
+</ul>
+<p>A subsequent zero-query restart retained 13 completed development fields, started
+no new field, and finished its state check in 0.005078 seconds.</p>
+<p>Continued bounded runs completed all 398 development fields. Together they contain
+8,001,113 Gaia sources, of which 403,920 pass the frozen selector, over
+800.213480 square degrees. The external raw checkpoints contain 2,356 final strips
+and 1,640,878,040 CSV bytes. Total Gaia density spans 2,401.289216--618,195.694388
+sources per square degree; passing-source density spans
+99.970823--37,714.863283 per square degree. These are measured ranges, not
+projections from the pilot.</p>
+<p>One unusually dense field, <code>sky_field_0317</code>, contains 1,242,936 Gaia sources and
+75,829 passing sources in 386 final strips. Its adaptive planning repeatedly met
+the fixed time ceiling. The planner now saves every completed count measurement,
+checks its query and geometry before reuse, and resumes from that point. A local
+stop-and-restart test passed all eight safeguards without an archive query. The
+live field then resumed across bounded attempts until it completed; earlier failed
+attempts remain as permanent external records and are not converted to zero.</p>
+<p>The workflow retains a 180-second ceiling for each archive request and a 300-second
+ceiling for each complete field attempt. Failed fields are deferred by default so
+they cannot consume the first slot of every later batch, and retrying them requires
+the explicit <code>--retry-failed-fields</code> option. All 17 aggregate safeguards pass. A
+final zero-work run verified all 398 external field records, made no new field
+attempt, and finished in 0.025172 seconds. All 102 validation fields remain
+unopened.</p>
+<h2 id="interpretation">Interpretation</h2>
+<p>This validates the complete development measurement, failure preservation, bounded
+waiting, planning and retrieval restarts, and local aggregate verification. The six
+frozen models were subsequently compared, then reassigned to a secondary diagnostic
+role after review. The primary large-sky reference now uses the directly measured
+density distribution of development fields in the same broad
+absolute-Galactic-latitude band. See
+<code>docs/large_sky_direct_background_comparison.md</code>. No individual field is thereby
+approved as a scientific background, and all 102 large-sky validation fields remain
+unopened.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#large-sky-development-continuation">Large-sky development continuation</a><ul>
+<li><a href="#what-was-added">What was added</a></li>
+<li><a href="#safety-rules">Safety rules</a></li>
+<li><a href="#measured-validation">Measured validation</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_control_design.html">Background control design</a></li><li><a href="background_field_conditions_benchmark.html">Gaia field-condition benchmark</a></li><li><a href="background_review_field_conditions.html">Five-host Gaia field-condition review</a></li><li><a href="gaia_adaptive_retrieval_validation.html">Adaptive and restartable Gaia retrieval validation</a></li><li><a href="gaia_full_column_multifield_validation.html">Multi-field full-column Gaia retrieval validation</a></li><li><a href="gaia_full_selector_retrieval_benchmark.html">Full-selector-column Gaia retrieval benchmark</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

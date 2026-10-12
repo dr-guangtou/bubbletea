@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Per-galaxy analysis receipts · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Host and pilot work</span><a href="../../docs/host_run_records.md">Markdown source ↗</a></div><h1 id="per-galaxy-analysis-receipts">Per-galaxy analysis receipts</h1>
+<p><strong>Status:</strong> Receipt format and non-overwrite behavior validated
+<strong>Date:</strong> 2026-07-18
+<strong>Issue:</strong> BT-010</p>
+<h2 id="what-one-receipt-is">What one receipt is</h2>
+<p>A receipt is one JSON file describing what happened when one galaxy was processed
+under one declared analysis configuration. It records:</p>
+<ul>
+<li>the galaxy name and sky position;</li>
+<li>whether its work completed, stopped partway, or failed;</li>
+<li>which retrieval strips have verified saved files;</li>
+<li>the expected and retrieved Gaia row counts;</li>
+<li>the Gaia source-identifier checksums;</li>
+<li>the radial-ring requested, queried, missing, and usable areas;</li>
+<li>any failure in ordinary English; and</li>
+<li>the configuration checksum and time inherited from the source retrieval.</li>
+</ul>
+<p>A checksum is a short digital fingerprint of content. If the content changes, its
+checksum changes. The receipt index stores each receipt file's checksum so later
+validation can detect an accidental edit.</p>
+<h2 id="why-receipts-are-never-overwritten">Why receipts are never overwritten</h2>
+<p>The run identifier is calculated from the declared configuration and exact input
+file checksums. The per-galaxy identifier combines that run identifier with the
+galaxy identity. Therefore rerunning identical inputs finds the same receipt, while
+changed inputs or settings produce a different run identifier and a new receipt
+path.</p>
+<p>Writing is atomic: other code sees either no receipt or the complete receipt, never
+a half-written file. If the destination already contains identical content, it is
+reused. If it contains different content, the write fails rather than replacing the
+earlier result. The validation also exercises concurrent-safe file creation.</p>
+<h2 id="bounded-results">Bounded results</h2>
+<p>The three completed performance fields share run identifier
+<code>run_be3271012ea314b4a512</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Galaxy</th>
+<th>Status</th>
+<th style="text-align: right;">Completed strips</th>
+<th style="text-align: right;">Gaia rows</th>
+<th style="text-align: right;">Requested area (square degrees)</th>
+<th style="text-align: right;">Missing area (square degrees)</th>
+<th style="text-align: right;">Usable area (square degrees)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 4698</td>
+<td>complete</td>
+<td style="text-align: right;">1 of 1</td>
+<td style="text-align: right;">2,991</td>
+<td style="text-align: right;">0.785393</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">0.785393</td>
+</tr>
+<tr>
+<td>M60</td>
+<td>complete</td>
+<td style="text-align: right;">2 of 2</td>
+<td style="text-align: right;">6,497</td>
+<td style="text-align: right;">1.767121</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">1.767121</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td>complete</td>
+<td style="text-align: right;">4 of 4</td>
+<td style="text-align: right;">13,010</td>
+<td style="text-align: right;">0.785393</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">0.785393</td>
+</tr>
+</tbody>
+</table>
+<p>The tiny stored missing values in completed rows are below the declared numerical
+area tolerance and display as zero in this summary.</p>
+<p>A separate controlled M60 receipt uses run identifier
+<code>run_0462fc307c338f11120f</code>. It represents one of two strips complete, records
+<code>0.884062</code> square degree as queried and usable, preserves <code>0.883059</code> square degree
+as missing, and states: "Only one of two required sky strips has a verified file."
+It is a failure-handling fixture, not a scientific M60 result.</p>
+<p>All 18 checks pass in <code>0.014978</code> seconds. The checks cover stable identifiers,
+identical rerun reuse, rejection of changed content, absence of temporary files,
+receipt checksums, embedded configuration and query fingerprints, Gaia area
+identities, complete-run source counts and identifiers, plain-language failure
+recording, and separation of complete and controlled partial runs.</p>
+<h2 id="current-boundary">Current boundary</h2>
+<p>These receipts describe the existing archive performance circles and four
+fractional test rings. They are not real physical-kiloparsec search receipts. The
+same format can be used for real hosts after the exploratory physical ring request
+and central scientific exclusion are declared.</p>
+<h2 id="artifacts-and-reproduction">Artifacts and reproduction</h2>
+<ul>
+<li><code>data/results/background/host_run_records_v1/</code></li>
+<li><code>data/results/background/host_run_record_index_v1.csv</code></li>
+<li><code>data/results/background/host_run_record_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_host_run_records.py
+</code></pre></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#per-galaxy-analysis-receipts">Per-galaxy analysis receipts</a><ul>
+<li><a href="#what-one-receipt-is">What one receipt is</a></li>
+<li><a href="#why-receipts-are-never-overwritten">Why receipts are never overwritten</a></li>
+<li><a href="#bounded-results">Bounded results</a></li>
+<li><a href="#current-boundary">Current boundary</a></li>
+<li><a href="#artifacts-and-reproduction">Artifacts and reproduction</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="first_stage_host_profile_fixture.html">First-stage host profile fixture</a></li><li><a href="first_stage_ngc4698_candidate_diagnostics.html">First-stage NGC 4698 candidate diagnostics</a></li><li><a href="gaia_morphology_host_control_comparison.html">Gaia Morphology-Galaxy Host and Control Comparison</a></li><li><a href="gaia_morphology_host_field_stress.html">Gaia Morphology-Galaxy Host-Field Stress Test</a></li><li><a href="kourkchi_tully_environment_audit.html">Kourkchi-Tully environment audit</a></li><li><a href="m60_positive_control.html">M60 Positive-Control Search</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

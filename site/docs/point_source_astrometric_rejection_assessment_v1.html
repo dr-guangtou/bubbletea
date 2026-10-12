@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Point-source astrometric rejection assessment, version 1 · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/point_source_astrometric_rejection_assessment_v1.md">Markdown source ↗</a></div><h1 id="point-source-astrometric-rejection-assessment-version-1">Point-source astrometric rejection assessment, version 1</h1>
+<h2 id="question">Question</h2>
+<p>Can a simple Gaia motion rule remove additional stars and QSOs after the frozen
+point-source selector, without losing too many reliable ultra-compact dwarfs
+(UCDs)?</p>
+<p>Here, <strong>astrometric significance</strong> means how far a measured parallax or proper
+motion lies from zero after accounting for its reported uncertainty. A distant UCD
+should have effectively zero parallax and proper motion, so a large value can be
+evidence for a foreground star. However, Gaia can also report misleading motion for
+a barely resolved source whose changing image shape shifts its measured center.</p>
+<p>The tested second rule uses the larger available value from:</p>
+<ul>
+<li>absolute parallax divided by its uncertainty; and</li>
+<li>the two-dimensional proper-motion distance from zero, including the reported
+  correlation between the two proper-motion components.</li>
+</ul>
+<p>A source is rejected only when that value is strictly above the trial boundary. If
+one measurement is missing, the other can still be used. If both are missing, the
+rule does not reject the source.</p>
+<h2 id="scope-and-safeguards">Scope and safeguards</h2>
+<p>The contract in
+<code>data/literature/sources/point_source_astrometric_rejection_assessment_v1.json</code>
+was committed before the measurements were calculated. The analysis uses only the
+benchmark-v3 development sample and the ordinary-star development supplement. It
+applies <code>point_source_logistic_model_v1</code> and its frozen threshold first. It does not
+inspect validation data, change selector version 1, use the NGC 4698 star to choose
+a boundary, or select a new operating point automatically.</p>
+<p>The measured sample contains 146 reliable UCDs, 438 ordinary spectroscopic stars,
+1,125 Gaia non-single stars, and 403 spectroscopic QSOs. Galaxies and H II regions
+are reported as secondary checks. At least one usable motion measurement exists for
+69/146 UCDs, 306/438 ordinary stars, 1,125/1,125 non-single stars, and 321/403 QSOs.</p>
+<h2 id="measured-result">Measured result</h2>
+<table>
+<thead>
+<tr>
+<th>Treatment</th>
+<th style="text-align: right;">Reliable UCDs passing</th>
+<th style="text-align: right;">Ordinary stars passing</th>
+<th style="text-align: right;">Gaia non-single stars passing</th>
+<th style="text-align: right;">QSOs passing</th>
+<th style="text-align: right;">Equal-weight priority-contaminant fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selector version 1 alone</td>
+<td style="text-align: right;">135/146 (92.47%)</td>
+<td style="text-align: right;">13/438 (2.97%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">8/403 (1.99%)</td>
+<td style="text-align: right;">1.651%</td>
+</tr>
+<tr>
+<td>3-standard-deviation reference</td>
+<td style="text-align: right;">131/146 (89.73%)</td>
+<td style="text-align: right;">12/438 (2.74%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">7/403 (1.74%)</td>
+<td style="text-align: right;">1.492%</td>
+</tr>
+<tr>
+<td>First measured boundary retaining at least 90% of all UCDs: 7.0397</td>
+<td style="text-align: right;">132/146 (90.41%)</td>
+<td style="text-align: right;">13/438 (2.97%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">8/403 (1.99%)</td>
+<td style="text-align: right;">1.651%</td>
+</tr>
+</tbody>
+</table>
+<p>The 3-standard-deviation reference removes four UCDs that selector version 1 had
+retained, while removing one retained ordinary star and one retained QSO. At every
+measured boundary that preserves the historical goal of at least 90% reliable-UCD
+retention, the priority-contaminant fraction is unchanged from selector version 1.
+The full 1,885-boundary curve is preserved in
+<code>data/literature/validation/point_source_astrometric_rejection_curve_v1.csv</code>.</p>
+<p>Five reliable UCD associations exceed 3 standard deviations. All five are from the
+Voggel et al. (2020) NGC 5128 catalog (<code>2020ApJ...899..140V</code>) and retain the
+project's high-confidence spectroscopic classification. Four pass selector version
+1 and would be newly removed at the 3-standard-deviation reference; one is already
+below the selector threshold. Their Gaia identifiers, coordinates, source rows,
+selector scores, and motion measurements are preserved in
+<code>data/literature/validation/point_source_astrometric_rejection_ucd_review_v1.csv</code>.
+This shared origin makes extended-source astrometric corruption a plausible
+explanation and does not provide evidence that their published UCD classifications
+are wrong.</p>
+<h2 id="recommendation-for-review">Recommendation for review</h2>
+<p>Do not add a universal hard astrometric rejection boundary to the shared selector.
+In this development sample it cannot improve priority-contaminant rejection while
+maintaining the project's 90% UCD-retention goal. Preserve parallax and
+proper-motion significance as explicit warning flags instead: a high value should
+trigger individual imaging and literature review, as the NGC 4698 stellar example
+demonstrates, but should not by itself erase a source from the candidate list.</p>
+<p>The project lead should review
+<code>figures/phase1/point_source_astrometric_rejection_tradeoff_v1.png</code> and approve or
+reject this no-hard-boundary recommendation before the shared selection workflow is
+changed.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#point-source-astrometric-rejection-assessment-version-1">Point-source astrometric rejection assessment, version 1</a><ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#scope-and-safeguards">Scope and safeguards</a></li>
+<li><a href="#measured-result">Measured result</a></li>
+<li><a href="#recommendation-for-review">Recommendation for review</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="logistic_regularization_sensitivity.html">Logistic regularization sensitivity</a></li></ul></details><details><summary>Linked from (1)</summary><ul><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

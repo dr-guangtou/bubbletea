@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Kourkchi-Tully environment audit · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Host and pilot work</span><a href="../../docs/kourkchi_tully_environment_audit.md">Markdown source ↗</a></div><h1 id="kourkchi-tully-environment-audit">Kourkchi-Tully environment audit</h1>
+<p><strong>Date:</strong> 2026-07-18
+<strong>Catalog:</strong> VizieR <code>J/ApJ/843/16</code>
+<strong>Paper:</strong> Kourkchi &amp; Tully 2017, <code>2017ApJ...843...16K</code></p>
+<p>The raw ReadMe, group table, and member table are stored outside the repository
+under <code>BUBBLETEA_EXTERNAL_DATA/bubbletea/environment_reference/kourkchi2017</code>.
+Their SHA-256 digests and source identifiers are recorded in
+<code>data/literature/sources/kourkchi_tully_2017_groups.json</code>.
+The external files include the member table, group-property table, association-
+property table, and CDS ReadMe.</p>
+<p>The member table contains 15,004 unique PGC galaxies in 8,826 groups. A nearest
+spherical audit against all 2,155 current BubbleTea hosts finds 1,794 hosts with a
+catalog neighbor within 5 arcsec. Two hosts have two catalog galaxies inside that
+radius and remain manual ambiguities. The other 1,792 unique associations are
+accepted under <code>accepted_unique_spherical_5arcsec_v1</code>; 361 hosts remain unmatched.</p>
+<p>The 5-arcsec identity radius is empirically checked rather than assumed. Eight
+one-degree shifted control sets, spanning position angles in 45-degree steps,
+contain 17,240 shifted host positions and produce zero matches within 5 arcsec.
+The accepted real associations contain no repeated PGC identifier. Ten validation
+checks pass.</p>
+<p>Among the 1,792 accepted associations, the catalog roles are group member, group
+principal, or isolated principal. These are catalog-derived environment evidence,
+not permission to assign an inferential background. The two ambiguous and 361
+unmatched hosts retain explicit non-accepted states. Catalog distance disagreement
+is preserved as a diagnostic and does not invalidate an otherwise unique
+sub-arcsecond identity; the project host distance and the group-catalog distance
+have different provenance and uses.</p>
+<p>Here “principal” means the catalog's main or brightest galaxy for a group.
+“Isolated principal” means that the catalog treats the object as a one-member
+group; it does not prove that the galaxy is physically isolated or lacks faint
+satellites. <code>R2t</code> is the catalog's model-based size estimate for the smaller,
+collapsed group region. <code>R1t</code> is its model-based size estimate for the larger
+surrounding association. Neither is a directly measured sharp boundary.</p>
+<p>Artifacts:</p>
+<ul>
+<li><code>data/galaxy_sample/kourkchi_tully_environment_candidates_v1.csv</code></li>
+<li><code>data/results/background/kourkchi_tully_environment_audit_v1.json</code></li>
+<li><code>data/results/background/kourkchi_tully_environment_validation_v1.json</code></li>
+<li><code>data/results/background/kourkchi_tully_halo_exclusion_analysis_v1.json</code></li>
+<li><code>data/results/background/kourkchi_tully_halo_exclusion_outliers_v1.csv</code></li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#kourkchi-tully-environment-audit">Kourkchi-Tully environment audit</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="first_stage_host_profile_fixture.html">First-stage host profile fixture</a></li><li><a href="first_stage_ngc4698_candidate_diagnostics.html">First-stage NGC 4698 candidate diagnostics</a></li><li><a href="gaia_morphology_host_control_comparison.html">Gaia Morphology-Galaxy Host and Control Comparison</a></li><li><a href="gaia_morphology_host_field_stress.html">Gaia Morphology-Galaxy Host-Field Stress Test</a></li><li><a href="host_run_records.html">Per-galaxy analysis receipts</a></li><li><a href="m60_positive_control.html">M60 Positive-Control Search</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

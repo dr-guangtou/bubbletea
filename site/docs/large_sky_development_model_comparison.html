@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Large-sky development model comparison · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Background and radial measurements</span><a href="../../docs/large_sky_development_model_comparison.md">Markdown source ↗</a></div><h1 id="large-sky-development-model-comparison">Large-sky development model comparison</h1>
+<p><strong>Date:</strong> 2026-07-19</p>
+<p><strong>Script:</strong> <code>scripts/phase3_background/fit_large_sky_development_models.py</code></p>
+<p><strong>Command:</strong>
+<code>uv run python scripts/phase3_background/fit_large_sky_development_models.py</code></p>
+<p><strong>Input:</strong>
+<code>data/results/background/large_sky_development_scale_summary_v1.csv</code></p>
+<p><strong>Machine-readable result:</strong>
+<code>data/results/background/large_sky_development_model_comparison_v1.json</code></p>
+<h2 id="outcome-and-revised-role">Outcome and revised role</h2>
+<p>The selected development model combines sky position with measured Gaia observing
+conditions. It uses Galactic and ecliptic latitude, Galactic hemisphere and
+longitude, total Gaia source density, the local depth indicator called M10, mean
+visibility periods, mean matched transits, and three summaries of the Gaia G
+magnitude distribution.</p>
+<p>The final setting has three spline knots and <code>alpha = 0.1</code>. A spline is a smooth
+curve assembled from connected pieces; three knots allow a modest curved latitude
+trend without a highly flexible shape. <code>Alpha</code> is the strength of a penalty that
+discourages unnecessarily large regression coefficients. It is a model-stability
+setting, not a source-selection cut.</p>
+<p>This model is now a diagnostic interpolation only. Directly measured random-field
+distributions are the primary large-sky reference; see
+<code>docs/large_sky_direct_background_comparison.md</code>. The fitted model remains useful
+for showing smooth trends and as a robustness comparison, but it does not replace
+the measured comparison-field densities.</p>
+<h2 id="predictive-comparison">Predictive comparison</h2>
+<p>All fields in one broad sky block stayed together. Each score therefore measures
+prediction on sky blocks that were not used to fit that fold or choose its setting.
+Lower mean Poisson deviance is better.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Mean deviance</th>
+<th style="text-align: right;">Standard error</th>
+<th style="text-align: right;">Typical absolute log error</th>
+<th>Selected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One average rate</td>
+<td style="text-align: right;">798.187</td>
+<td style="text-align: right;">717.896</td>
+<td style="text-align: right;">0.318</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Galactic-latitude curve</td>
+<td style="text-align: right;">815.531</td>
+<td style="text-align: right;">711.334</td>
+<td style="text-align: right;">0.300</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Sky-position curves</td>
+<td style="text-align: right;">1,028.377</td>
+<td style="text-align: right;">657.758</td>
+<td style="text-align: right;">0.293</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Sky position plus Gaia conditions</td>
+<td style="text-align: right;">320.728</td>
+<td style="text-align: right;">304.598</td>
+<td style="text-align: right;">0.106</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Limited nonlinear tree</td>
+<td style="text-align: right;">664.273</td>
+<td style="text-align: right;">617.150</td>
+<td style="text-align: right;">0.123</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Gaia-condition model plus environment flag</td>
+<td style="text-align: right;">323.176</td>
+<td style="text-align: right;">306.884</td>
+<td style="text-align: right;">0.108</td>
+<td>Diagnostic only</td>
+</tr>
+</tbody>
+</table>
+<p>The Gaia-condition regression has the lowest eligible score. Its one-standard-error
+threshold is 625.326; no simpler eligible model lies below that threshold. The
+environment-flag version has a similar score but was declared diagnostic before
+measurement and cannot become the primary model.</p>
+<h2 id="prediction-ranges">Prediction ranges</h2>
+<p>Grouped predictions for fields excluded from their current fit give these frozen
+observed-to-predicted multipliers:</p>
+<ul>
+<li>central 68% range: 0.858 to 1.174;</li>
+<li>central 95% range: 0.685 to 1.374.</li>
+</ul>
+<p>For example, a prediction of 100 passing sources per square degree corresponds to
+a development residual range of about 86--117 for the central 68% and 68--137 for
+the central 95%. These are empirical field-to-field ranges from the development
+sample. They are not yet independently validated confidence intervals.</p>
+<h2 id="important-instability">Important instability</h2>
+<p>Four outer test folds have mean Poisson deviances between 14.030 and 18.337. The
+fifth has 1,539.116 because it contains an extreme development field,
+<code>sky_field_0317</code>. That field has an observed passing-source density of
+37,714.863 per square degree, while the model fitted without its sky block predicts
+3,265.938 per square degree. It is marked by the pre-existing count-blind
+environment flag and was retained exactly as required; it was not converted to a
+failure, removed, or used to alter the frozen comparison.</p>
+<p>This one field also drives the large residual summaries in Galactic equal-area band
+1 and the 75--90 degree absolute-ecliptic-latitude band. When the selected model is
+tested only on the 163 unflagged development fields, its mean outer-fold deviance is
+66.522 with a standard error of 57.344. That sensitivity result is substantially
+lower but remains diagnostic because excluding flagged fields was not allowed to
+choose the primary model.</p>
+<p>The practical conclusion is that Gaia observing conditions explain most ordinary
+development-field variation, but the model does not absorb every extreme crowded
+or physically associated sky region. The eventual applicability rule must retain
+this limitation rather than present one smooth prediction as universally reliable.</p>
+<h2 id="safeguards-and-status">Safeguards and status</h2>
+<p>The local 60-field synthetic comparison passed all ten checks before the real fit.
+The full comparison completed in 220.35 seconds with all 22 safeguards passing and
+no convergence warning. All transformations were fitted within training data, all
+six frozen model forms were evaluated, and residuals were recorded by Galactic
+band, ecliptic band, and environment-flag state.</p>
+<p>The fitted development model and its prediction ranges are now frozen. No field is
+approved as a scientific background, and selector results for all 102 held-back
+validation fields remain unopened.</p>
+<h2 id="reserved-field-diagnostic-result">Reserved-field diagnostic result</h2>
+<p>The earlier plan to validate this fitted model as the primary background procedure
+was superseded on 2026-08-11. The 102 reserved fields were later opened once to
+evaluate the frozen direct procedure, with this serialized model included only as a
+secondary diagnostic. Its validation typical difference is a factor of 1.128;
+66/102 fields lie inside its frozen 68% range and 100/102 inside its frozen 95%
+range. It was not refitted or retuned and remains secondary. See
+<code>docs/large_sky_validation_run.md</code>.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#large-sky-development-model-comparison">Large-sky development model comparison</a><ul>
+<li><a href="#outcome-and-revised-role">Outcome and revised role</a></li>
+<li><a href="#predictive-comparison">Predictive comparison</a></li>
+<li><a href="#prediction-ranges">Prediction ranges</a></li>
+<li><a href="#important-instability">Important instability</a></li>
+<li><a href="#safeguards-and-status">Safeguards and status</a></li>
+<li><a href="#reserved-field-diagnostic-result">Reserved-field diagnostic result</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_control_design.html">Background control design</a></li><li><a href="background_field_conditions_benchmark.html">Gaia field-condition benchmark</a></li><li><a href="background_review_field_conditions.html">Five-host Gaia field-condition review</a></li><li><a href="gaia_adaptive_retrieval_validation.html">Adaptive and restartable Gaia retrieval validation</a></li><li><a href="gaia_full_column_multifield_validation.html">Multi-field full-column Gaia retrieval validation</a></li><li><a href="gaia_full_selector_retrieval_benchmark.html">Full-selector-column Gaia retrieval benchmark</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -6,6 +6,13 @@ selector and provide valid host-specific controls.
 **Status:** Large-sky development and reserved-field validation complete; real-host
 annulus calibration remains
 
+**Checkpoint (2026-10-12):** All 500 random-field measurements and the one-time
+102-field validation are complete. Direct measurements, not a fitted sky model,
+are the primary large-sky reference. Host-specific background validity and full
+inferential uncertainty remain open. Earlier approved designs below are dated
+history; see [current status](../current_status.md), [validation report](../large_sky_validation_run.md),
+and [roadmap](../PLAN.md).
+
 ## III.1 Control design
 
 - [x] Audit the inherited random-field, annulus, and legacy background methods
@@ -49,8 +56,8 @@ annulus calibration remains
 - [x] Extend pre-selector measurements to all five review hosts using 13 frozen
   patches; all nine checks pass in 46.93 seconds, and no patch is approved as a
   scientific background (2026-07-18).
-- [ ] Recompute the random-field experiment with exact usable areas and the shared
-  frozen selector.
+- [x] Recompute the random-field experiment with exact usable areas and the shared
+  frozen selector (development 2026-07-19; validation 2026-08-11).
 - [x] Replace the unseeded random coordinates with a deterministic 500-field sky
   grid and freeze 398 development and 102 held-back fields; all 16 checks pass
   (2026-07-19).
@@ -205,6 +212,8 @@ Held-back validation progress, 2026-07-19:
   (2026-07-18).
 - [ ] Define the exploratory physical-kpc annuli and host-size-normalized annuli
   under BT-021 before a real host search.
+  Physical rings were frozen on 2026-08-11; the normalized view remains unavailable
+  where verified half-light radii are missing. This checkbox covers both views.
 - [ ] Calibrate the central exclusion and final radial signal region under BT-021.
 
 Interview decisions, 2026-08-11:
@@ -234,8 +243,9 @@ Interview decisions, 2026-08-11:
   preserve Liu et al.'s 1.7 value as a reference rather than a new cut, and record
   the project lead's visual classification of example E as a star; all eight
   updated checks pass (2026-08-12).
-- [ ] Review the first profile, then select the next manageable host profile without
-  using its Gaia density; do not choose a final outer signal boundary from one host.
+- [x] Review the first profile and select M60 as the next positive-control host
+  because of its known UCDs, not its Gaia density (2026-08-12); see the
+  [M60 design](../m60_positive_control.md). No final outer boundary was selected.
 
 Progress, 2026-07-18:
 
@@ -247,7 +257,8 @@ Progress, 2026-07-18:
   diagnostic radius exceeds two degrees for 1,018 hosts.
 - [ ] Acquire provenance-bearing `R50` measurements under BT-020 before calibrating
   the normalized central exclusion.
-- [ ] Implement and validate tiled retrieval and exact per-ring usable areas.
+- [x] Implement and validate strip-based retrieval and exact per-ring usable areas
+  (NGC 4698 completed 2026-08-11; M60 completed 2026-08-12).
 
 Query-partition progress, 2026-07-18:
 

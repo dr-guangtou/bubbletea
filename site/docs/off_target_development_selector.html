@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Frozen-selector results for off-target development fields · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Background and radial measurements</span><a href="../../docs/off_target_development_selector.md">Markdown source ↗</a></div><h1 id="frozen-selector-results-for-off-target-development-fields">Frozen-selector results for off-target development fields</h1>
+<p><strong>Status:</strong> Development fields measured; validation selector results remain unopened
+<strong>Date:</strong> 2026-07-18
+<strong>Issues:</strong> BT-005, BT-009</p>
+<h2 id="what-was-done">What was done</h2>
+<p>The four frozen development circles were queried for all 19 Gaia columns required
+by <code>point_source_logistic_model_v1</code>. The selector was then applied locally, using
+its frozen probability threshold of <code>0.8277833628791744</code>.</p>
+<p>A source that <strong>passes the frozen selector</strong> has a model probability at or above
+that threshold. It is a search candidate, not a confirmed UCD. These small circles
+measure the selector's off-target behavior and cannot establish an astrophysical
+background by themselves.</p>
+<h2 id="measured-development-results">Measured development results</h2>
+<p>Each circle has a 0.1-degree radius and an exact spherical area of 0.031416 square
+degree. Gaia usable area equals queried area, with no imaging masks.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Host system</th>
+<th style="text-align: right;">Gaia sources</th>
+<th style="text-align: right;">Sources passing selector</th>
+<th style="text-align: right;">Passing-source density per square degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1:east</code></td>
+<td>NGC 1316</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">572.957941</td>
+</tr>
+<tr>
+<td><code>1:west</code></td>
+<td>NGC 1316</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">254.647974</td>
+</tr>
+<tr>
+<td><code>58:east</code></td>
+<td>NGC 4698</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">381.971960</td>
+</tr>
+<tr>
+<td><code>58:west</code></td>
+<td>NGC 4698</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">190.985980</td>
+</tr>
+</tbody>
+</table>
+<p>The four fields contain 413 Gaia sources in total; 44 pass the selector over a
+combined usable area of 0.125664 square degree. The observed field-to-field
+difference must be tested explicitly; four fields from only two host systems do not
+by themselves show that one common density is invalid. No matching tolerance or
+final background model is selected by this measurement alone.</p>
+<h2 id="validation-isolation">Validation isolation</h2>
+<p>The held-back identifiers are <code>2115:east</code>, <code>2115:west</code>, <code>4:east</code>, and <code>4:west</code>.
+The script checks these identifiers before every query and again in both output
+tables. None was queried or summarized.</p>
+<p>Pre-selector observing-condition measurements already exist for those sky
+positions. “Unopened” here specifically means that no frozen-selector probability,
+decision, or selected-source count has been produced for the held-back fields.</p>
+<h2 id="validation-result">Validation result</h2>
+<p>All 18 checks pass in 10.560200 seconds. They verify:</p>
+<ul>
+<li>exactly the four frozen development fields were queried;</li>
+<li>the four held-back identifiers and their frozen host-role assignments are intact;</li>
+<li>no held-back field appears in a query or output;</li>
+<li>measured and retrieved row counts agree;</li>
+<li>all 19 raw Gaia columns and selector outputs are present;</li>
+<li>source identifiers are unique and have recorded fingerprints;</li>
+<li>probabilities are finite and use the frozen selector version;</li>
+<li>summary counts match the saved source decisions; and</li>
+<li>Gaia queried and usable areas agree, with zero missing or masked area.</li>
+</ul>
+<h2 id="artifacts-and-reproduction">Artifacts and reproduction</h2>
+<ul>
+<li><code>data/results/background/off_target_development_selector_sources_v1.csv</code></li>
+<li><code>data/results/background/off_target_development_selector_summary_v1.csv</code></li>
+<li><code>data/results/background/off_target_development_selector_v1.json</code></li>
+</ul>
+<p>Reproduction deliberately re-queries only development fields:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/run_off_target_development_selector.py
+</code></pre></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#frozen-selector-results-for-off-target-development-fields">Frozen-selector results for off-target development fields</a><ul>
+<li><a href="#what-was-done">What was done</a></li>
+<li><a href="#measured-development-results">Measured development results</a></li>
+<li><a href="#validation-isolation">Validation isolation</a></li>
+<li><a href="#validation-result">Validation result</a></li>
+<li><a href="#artifacts-and-reproduction">Artifacts and reproduction</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_control_design.html">Background control design</a></li><li><a href="background_field_conditions_benchmark.html">Gaia field-condition benchmark</a></li><li><a href="background_review_field_conditions.html">Five-host Gaia field-condition review</a></li><li><a href="gaia_adaptive_retrieval_validation.html">Adaptive and restartable Gaia retrieval validation</a></li><li><a href="gaia_full_column_multifield_validation.html">Multi-field full-column Gaia retrieval validation</a></li><li><a href="gaia_full_selector_retrieval_benchmark.html">Full-selector-column Gaia retrieval benchmark</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>bubbletea phase1 reassess astrometric rejection 20260812 2026-08-12 · BubbleTea</title><link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../../index.html">Overview</a><a href="../../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../../docs/journal/bubbletea_phase1_reassess_astrometric_rejection_20260812_2026-08-12.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><hr>
+<p>date: 2026-08-12
+repo: bubbletea
+branch: phase1_reassess_astrometric_rejection_20260812
+tags:
+  - journal
+  - phase1
+  - selector
+  - astrometry</p>
+<hr>
+<h2 id="progress">Progress</h2>
+<ul>
+<li>Froze the development-only astrometric-rejection contract before calculating any
+  retention-versus-rejection result.</li>
+<li>Applied the unchanged selector version 1 first and measured 1,885 exact boundaries
+  using the larger available parallax or proper-motion significance.</li>
+<li>Preserved missing parallax and proper motion as unknown; sources with both missing
+  were not rejected by the second rule.</li>
+<li>Measured that the 3-standard-deviation literature reference lowers reliable-UCD
+  retention from 135/146 to 131/146 while removing one retained ordinary star and
+  one retained QSO.</li>
+<li>Verified that every measured boundary retaining at least 90% of all reliable UCDs
+  leaves the equal-weight priority-contaminant retention unchanged from selector
+  version 1.</li>
+<li>Preserved the five reliable UCD associations above 3 standard deviations in a
+  source-level review table; all five originate in the Voggel et al. NGC 5128
+  catalog.</li>
+<li>Generated the full tradeoff curve and companion figure; all 19 deterministic
+  validation checks and task-specific Ruff and pre-commit checks passed.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Large Gaia motion significance is a useful warning for individual review but is
+  not a safe universal rejection rule for barely resolved UCDs.</li>
+<li>A contaminant-cohort retention fraction does not estimate real-field catalog
+  purity because ordinary stars are vastly more common than genuine UCDs.</li>
+<li>A real-host positive control must separate an unbiased contamination-audit sample
+  from a deliberately promising new-candidate shortlist.</li>
+</ul>
+<h2 id="key-issues">Key Issues</h2>
+<ul>
+<li>The approved recommendation is to keep selector version 1 unchanged and retain
+  significant astrometry as an explicit warning rather than a hard rejection.</li>
+<li>M60 is the next positive-control host. Its two reliable confirmed UCDs test
+  end-to-end recovery but are development objects, so their recovery is not an
+  independent selector validation.</li>
+<li>The M60 branch must freeze its radial geometry, known-object recovery list,
+  representative contamination sampling, and candidate-ranking rules before the
+  full passing-source list or ancillary images are inspected.</li>
+<li>Star, non-single-star, QSO, galaxy, and other contaminant treatments require
+  separate plain-language definitions and project-lead discussion before any
+  exclusion is implemented.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+<li><a href="#key-issues">Key Issues</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

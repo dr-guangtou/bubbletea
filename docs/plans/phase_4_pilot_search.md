@@ -1,8 +1,18 @@
 # Phase IV: Pilot Search — Task Tracking
 
-**Goal:** Execute the UCD search around Top 100 targets and identify new candidates using the radial excess method.
+**Goal:** Validate a small real-host search and contamination assessment before scale-up.
 
 **Status:** In progress
+
+**Current checkpoint (2026-10-12):** NGC 4698 and M60 have measured 14-ring profiles
+through 600 kpc. The reference-review workbench is implemented, but its local
+database has zero saved reviews. Review the UCD reference, then the representative
+400-source M60 sample (BT-031). See [current status](../current_status.md),
+[tool specification](ucd_visual_review_tool.md), and [roadmap](../PLAN.md).
+
+April--May checked items below describe the historical exploratory pipeline,
+including its old top-20/top-100 runs and significance diagnostics. They do not
+establish completeness, purity, or scientific significance for the current selector.
 
 ---
 

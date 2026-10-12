@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>bubbletea phase1 calibrate selector 20260716 2026-07-18 · BubbleTea</title><link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../../index.html">Overview</a><a href="../../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../../docs/journal/bubbletea_phase1_calibrate_selector_20260716_2026-07-18.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><hr>
+<p>date: 2026-07-18
+repo: bubbletea
+branch: phase1_calibrate_selector_20260716
+tags:
+  - journal
+  - phase1
+  - validation
+  - selector</p>
+<hr>
+<h2 id="progress">Progress</h2>
+<ul>
+<li>Audited Gaia contaminant definitions, feature semantics, extragalactic catalogs,
+  morphology controls, and source-level literature evidence without deleting
+  provenance records.</li>
+<li>Corrected the Fahrion <code>RV = 0.0</code> confirmation error: 309 rows retain velocity
+  evidence, 68 receive non-promotion review, and B409 is rejected as an incorrectly
+  classified UCD.</li>
+<li>Preserved benchmark v1, derived evidence-corrected v2, and derived v3 by
+  quarantining four published-UCD/Gaia-counterpart conflicts from reliable training.</li>
+<li>Built and validated matched stellar controls, linear calibration, classical-ML
+  comparisons, repeated grouped-CV stability, and source-level failure audits.</li>
+<li>Froze <code>point_source_logistic_policy_v1</code> with L2 logistic regression, <code>C = 1000</code>,
+  and grouped-OOF threshold <code>0.8277833628791744</code>.</li>
+<li>Serialized <code>point_source_logistic_model_v1</code>, exported transparent preprocessing
+  and coefficient parameters, and passed exact prediction-parity and blind-safety
+  checks.</li>
+<li>Completed the authorized one-time validation: reliable-UCD recall is 21/23
+  (91.30%), Gaia NSS retention is 0/287, and QSO retention is 1/88; all 13 frozen-
+  evaluation checks pass.</li>
+<li>Recorded Dorado1 as a post-validation Gaia-association conflict without revising
+  the frozen outcome; retained M85-HCC1 as a genuine hard-UCD false negative.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Numeric zero may encode unavailable evidence rather than a physical measurement;
+  source conventions must be checked before confirmation promotion.</li>
+<li>Published-object reliability and Gaia-counterpart reliability require separate
+  provenance states and separate training eligibility decisions.</li>
+<li>Repeated boundary selection does not enclose a regularization optimum; direct
+  convergence and paired fixed-policy comparisons supported a finite <code>C = 1000</code>.</li>
+<li>Persistent difficult UCDs must remain in completeness accounting unless evidence
+  invalidates the object or association; removing hard positives would bias the
+  selector toward point-like sources.</li>
+<li>A Gaia-only point-source selector can reject stars, NSS objects, and QSOs while
+  leaving galaxies and H II regions for ancillary imaging and photometric modeling.</li>
+</ul>
+<h2 id="key-issues">Key Issues</h2>
+<ul>
+<li>The frozen validation result prohibits retuning; any future selector generation
+  requires a new independent validation cohort.</li>
+<li>Dorado1 should be quarantined from reliable training in any future model generation,
+  while its current validation label and outcome remain immutable.</li>
+<li>The next implementation task is integrating the frozen selector into the Phase I/IV
+  search workflow with identical feature and null-handling parity.</li>
+<li>Repository-wide pre-commit remains blocked by 13 pre-existing Ruff errors in
+  archived notebooks and legacy phase scripts; targeted checks for this branch pass.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+<li><a href="#key-issues">Key Issues</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

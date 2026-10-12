@@ -3,6 +3,11 @@
 Searching for Ultra-Compact Dwarf (UCD) galaxies and other compact stellar systems
 in the nearby universe using Gaia DR3 astrometry and imaging survey photometry.
 
+**Restart checkpoint: 2026-10-12.** The visual-review tool is implemented; the local
+724-object review database has no saved reviews. Start with
+[current status](docs/current_status.md), the [documentation guide](docs/documentation_guide.md),
+or the generated [HTML portal](index.html).
+
 ## Scientific Goal
 
 Perform a systematic Gaia-only search for UCD candidates around nearby galaxies.
@@ -12,8 +17,9 @@ not inputs to the primary population selection.
 
 ## Method
 
-1. **Gaia-only source model**: Calibrate a versioned non-point-source probability
-   from Gaia observables; no final numerical threshold has been approved.
+1. **Gaia-only source selection**: Use the frozen version-1 logistic selector as a
+   reproducible baseline. Its score is not a probability of physical UCD identity;
+   final sensitivity and contamination calibration remain unfinished.
 2. **Host-centered statistics**: Measure positive, null, and negative excesses
    against validated local or control-field backgrounds.
 3. **Value-added characterization**: Use Legacy Survey and other external data to
@@ -23,15 +29,16 @@ not inputs to the primary population selection.
 
 | Phase | Description | Status |
 |-------|-------------|--------|
-| **I** | Literature UCDs: fetch, organize, cross-match, characterize Gaia properties | Active |
-| **Ib** | Ancillary data collection (DESI, multi-wavelength) | Planned |
-| **II** | Target galaxy sample definition and prioritization (D < 50 Mpc) | Planned |
-| **III** | Background density characterization (galactic latitude dependence) | Planned |
-| **IV** | Pilot search around confirmed UCD hosts + high-priority targets | Planned |
+| **I** | Literature reference, Gaia selection, and reference review | Reference audit complete; visual review pending |
+| **Ib** | Ancillary data collection (DESI, multi-wavelength) | Legacy Survey reference prepared; wider enrichment pending |
+| **II** | Target galaxy sample definition and prioritization (D < 50 Mpc) | Inherited catalog audited; final sample and properties open |
+| **III** | Background density characterization (galactic latitude dependence) | 500 fields complete; host-specific calibration open |
+| **IV** | Pilot search around confirmed UCD hosts + high-priority targets | NGC 4698/M60 profiles measured; contamination review pending |
 | **V** | Cross-match candidates with imaging and spectroscopic data | Planned |
 | **VI** | Statistical analysis, discussion, and future perspectives | Planned |
 
-See `docs/PLAN.md` for the full plan and `docs/plans/` for per-phase task tracking.
+See the [roadmap](docs/PLAN.md), [validation stages](docs/plans/scientific_validation.md),
+and [issue register](docs/todo.md). Early exploratory pilot claims are not final results.
 
 ## Quick Start
 
@@ -40,7 +47,7 @@ See `docs/PLAN.md` for the full plan and `docs/plans/` for per-phase task tracki
 uv sync
 
 # Set up pre-commit hooks
-pre-commit install
+uv run pre-commit install
 
 # Set external data path (large catalogs not in repo)
 export BUBBLETEA_EXTERNAL_DATA=/path/to/your/data
@@ -49,12 +56,18 @@ export BUBBLETEA_EXTERNAL_DATA=/path/to/your/data
 PYTHONPATH=. uv run python scripts/phase1_literature/analyze_gaia_properties.py
 ```
 
+To build the documentation portal, run
+`uv run python scripts/documentation/build_documentation.py`, then open `index.html`.
+The [workbench README](scripts/phase4_search/ucd_visual_review/README.md) explains how
+to launch the separate source-review application; the static portal does not save reviews.
+
 ## Repository Structure
 
 ```
 bubbletea/
 ├── scripts/               # Python scripts organized by phase
 │   ├── config.py          # Central path configuration
+│   ├── documentation/     # Static HTML documentation builder and source assets
 │   ├── utils/             # Shared utilities (plotting, cross-match)
 │   ├── phase1_literature/ # Phase I: literature UCD compilation
 │   ├── phase2_galaxy_sample/
@@ -71,10 +84,15 @@ bubbletea/
 ├── reference/             # Literature: PDF + original data per paper
 ├── docs/                  # Plans, journal, lessons
 │   ├── PLAN.md            # Master plan
+│   ├── SPEC.md            # Approved scientific and architectural requirements
+│   ├── current_status.md  # Dated restart summary
+│   ├── documentation_guide.md # Document ownership and reading routes
 │   ├── plans/             # Per-phase task tracking
 │   ├── journal/           # Research journal entries
 │   └── lessons/           # Lessons learned
 ├── notebooks/             # Analysis notebooks
+├── index.html             # Generated documentation home page
+├── site/                  # Generated HTML views of Markdown documents
 └── ucd_project/           # Legacy code (frozen reference, gitignored)
 ```
 
@@ -101,8 +119,9 @@ files. See `reference/summary.md` for the literature tracking table.
 - **963 canonical Gaia associations** represent 962 unique Gaia DR3 sources.
 - **3,723 Legacy Survey DR10 matches** are retained as value-added enrichment;
   complete audits include all 4,359 canonical targets.
-- Historical pilot thresholds, match rates, and host contrasts remain exploratory
-  until the unified selector and background model are validated.
+- Historical pilot thresholds, match rates, and host contrasts remain exploratory.
+  The shared selector and direct background measurements now exist, but final
+  host-specific inference and selection sensitivity are still unfinished.
 
 The generated counts and validation state are recorded in
 `data/literature/validation/project_status_counts.json`.

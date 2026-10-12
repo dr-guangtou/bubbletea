@@ -1,5 +1,11 @@
 # BubbleTea Project Context
 
+> **Historical context:** The body below describes the July 2026 takeover, not the
+> current implementation state. The selector, background experiment, M60 profile,
+> and visual-review tool have since advanced. Read [current status](current_status.md)
+> and the [roadmap](PLAN.md) first; use [SPEC](SPEC.md) for approved requirements.
+> This dated context is retained to preserve the rationale and earlier audit.
+
 **Reviewed:** 2026-07-14
 **Purpose:** Scientific and operational context for continuing the project
 

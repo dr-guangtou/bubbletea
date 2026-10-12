@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Point-source logistic model v1 · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/point_source_logistic_model_v1.md">Markdown source ↗</a></div><h1 id="point-source-logistic-model-v1">Point-source logistic model v1</h1>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Training scope:</strong> Benchmark-v3 development model-fit rows only<br>
+<strong>Validation:</strong> Sealed and uninspected</p>
+<p>The final development model is an L2 logistic-regression pipeline with frozen
+<code>C = 1000</code> and operating threshold <code>0.8277833628791744</code>. It uses the approved nine
+Gaia measurement features, median imputation with missingness indicators, standard
+scaling, and equal total weight for reliable UCDs versus the three equally weighted
+priority contaminant cohorts.</p>
+<p>The fit contains 146 reliable UCDs and 1,966 priority contaminants, including 438
+matched spectroscopic stars. Apparent full-development recall is 92.47% and macro
+priority retention is 1.65%; these are descriptive training-set values, not
+validation performance.</p>
+<p>The serialized 4.1 KB pipeline reproduces all stored development probabilities to
+a maximum absolute difference of <code>1.11e-16</code>. Eight checks pass, including model and
+prediction hashes, row-order parity, threshold parity, the feature contract, and
+absence of every validation Gaia identifier from fitting. The transparent manifest
+records imputer statistics, missing-indicator indices, scaler means and scales,
+coefficients, intercept, threshold, and provenance hashes.</p>
+<p>Artifacts:</p>
+<ul>
+<li><code>data/literature/validation/point_source_logistic_model_v1.joblib</code></li>
+<li><code>data/literature/validation/point_source_logistic_model_v1.json</code></li>
+<li><code>data/literature/validation/point_source_logistic_development_predictions_v1.csv</code></li>
+<li><code>data/literature/validation/point_source_logistic_model_validation_v1.json</code></li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#point-source-logistic-model-v1">Point-source logistic model v1</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="logistic_regularization_sensitivity.html">Logistic regularization sensitivity</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

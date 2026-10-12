@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Point-Source-Priority Selector Calibration · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/point_source_selector_calibration.md">Markdown source ↗</a></div><h1 id="point-source-priority-selector-calibration">Point-Source-Priority Selector Calibration</h1>
+<p><strong>Date:</strong> 2026-07-17<br>
+<strong>Status:</strong> Development operating points measured; no threshold frozen</p>
+<h2 id="approved-priority">Approved Priority</h2>
+<p>The primary Stage 3 objective is to reject ordinary stars, Gaia NSS/binary failure
+modes, and spectroscopic QSOs while retaining confirmed UCDs. Each point-source
+cohort contributes equally to the optimization objective, regardless of its row
+count. Spectroscopic galaxies are a secondary stress set intended for ancillary
+imaging or photometric rejection. H II regions and compact young clusters remain a
+separate host-correlated color/morphology safeguard.</p>
+<h2 id="score-architecture">Score Architecture</h2>
+<p>The complete-coverage core combines two empirical ranks:</p>
+<ul>
+<li>absolute astrometric excess noise; and</li>
+<li>BP/RP flux-excess factor.</li>
+</ul>
+<p>Each rank is the mean empirical CDF across the three equally weighted priority
+cohorts. A small conditional penalty may be applied using covariance-aware proper-
+motion and absolute-parallax zero-significance. Missing five-parameter astrometry
+receives no penalty; it never removes a source. Missing BP/RP flux excess leaves the
+AEN component rather than rejecting the source.</p>
+<p>The grid tests AEN core weights of 0.25, 0.50, and 0.75; astrometric penalty weights
+of 0.0, 0.1, 0.2, and 0.3; and empirical confirmed-UCD completeness targets of 80%,
+85%, 90%, and 95%. These are operating-point measurements, not approved values.</p>
+<h2 id="measured-trade-off">Measured Trade-off</h2>
+<p>The best equal-cohort point-source retention at each completeness target is:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Target UCD completeness</th>
+<th style="text-align: right;">Measured</th>
+<th style="text-align: right;">Mean priority retention</th>
+<th style="text-align: right;">Stars</th>
+<th style="text-align: right;">NSS</th>
+<th style="text-align: right;">QSOs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">80.0%</td>
+<td style="text-align: right;">2.22%</td>
+<td style="text-align: right;">4.19%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">2.48%</td>
+</tr>
+<tr>
+<td style="text-align: right;">85%</td>
+<td style="text-align: right;">85.1%</td>
+<td style="text-align: right;">2.56%</td>
+<td style="text-align: right;">4.95%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">2.73%</td>
+</tr>
+<tr>
+<td style="text-align: right;">90%</td>
+<td style="text-align: right;">90.3%</td>
+<td style="text-align: right;">3.73%</td>
+<td style="text-align: right;">6.48%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">4.71%</td>
+</tr>
+<tr>
+<td style="text-align: right;">95%</td>
+<td style="text-align: right;">95.4%</td>
+<td style="text-align: right;">6.84%</td>
+<td style="text-align: right;">13.33%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">7.20%</td>
+</tr>
+</tbody>
+</table>
+<p>The leading 90% operating point uses 25% AEN rank, 75% flux-excess rank, and a 10%
+conditional astrometric penalty. It retains 98.6% of spectroscopic galaxies, as
+expected under the approved secondary-galaxy policy. It also retains 90.6% of H II
+rows and only 53.6% of uncertain literature UCD candidates. The latter is a
+sensitivity warning, not evidence that confirmed-UCD completeness is wrong.</p>
+<h2 id="h-ii-color-safeguard">H II Color Safeguard</h2>
+<p>A standalone <code>BP-RP &gt;= 0.8588</code> development cut retains 90.3% of confirmed UCDs and
+19.7% of H II rows. Applying it simultaneously with the 90% core operating point
+would retain only 82.3% of confirmed UCDs. It therefore should not be silently added
+as a hard primary cut. The safer current treatment is an H II/color review flag or
+a separately calibrated second-round morphology/color rejection after the primary
+point-source selection.</p>
+<h2 id="decision-needed-before-freezing">Decision Needed Before Freezing</h2>
+<p>The recommended starting operating point is the measured 90% configuration because
+it rejects the three priority point-source cohorts strongly without accepting the
+larger stellar leakage of the 95% point. Freezing it still requires project-lead
+approval. The exact threshold, rank reference distributions, null behavior, and
+version must then move into one shared selector implementation before validation is
+opened.</p>
+<h2 id="reproducibility">Reproducibility</h2>
+<ul>
+<li>Calibration: <code>scripts/phase1_literature/calibrate_point_source_selector.py</code></li>
+<li>Validator: <code>scripts/phase1_literature/validate_point_source_selector_calibration.py</code></li>
+<li>Components: <code>data/literature/validation/point_source_selector_components_v1.csv</code></li>
+<li>Operating points: <code>data/literature/validation/point_source_selector_operating_points_v1.csv</code></li>
+<li>Summary: <code>data/literature/validation/point_source_selector_calibration_v1.json</code></li>
+<li>Validation: <code>data/literature/validation/point_source_selector_calibration_validation_v1.json</code></li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#point-source-priority-selector-calibration">Point-Source-Priority Selector Calibration</a><ul>
+<li><a href="#approved-priority">Approved Priority</a></li>
+<li><a href="#score-architecture">Score Architecture</a></li>
+<li><a href="#measured-trade-off">Measured Trade-off</a></li>
+<li><a href="#h-ii-color-safeguard">H II Color Safeguard</a></li>
+<li><a href="#decision-needed-before-freezing">Decision Needed Before Freezing</a></li>
+<li><a href="#reproducibility">Reproducibility</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="logistic_regularization_sensitivity.html">Logistic regularization sensitivity</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Logistic regularization sensitivity · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/logistic_regularization_sensitivity.md">Markdown source ↗</a></div><h1 id="logistic-regularization-sensitivity">Logistic regularization sensitivity</h1>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Benchmark:</strong> v3 development partition only<br>
+<strong>Validation partition:</strong> Sealed and uninspected</p>
+<p>The original grid ended at <code>C = 3</code>. All 50 repeated outer fits selected that
+boundary, so the nested comparison grid was expanded first through <code>C = 100</code> and
+then through <code>C = 3000</code>.</p>
+<p>With the grid ending at 100, four of five outer folds selected 100 and one selected
+30. With the grid ending at 3000, four folds selected 3000 and one selected 100.
+The resulting pooled logistic recall is 92.47%, and macro priority-contaminant
+retention is 2.18%. Individual-fold recall remains 80.77--97.30%, so the apparent
+contaminant improvement does not remove fold instability.</p>
+<p>This experiment shows that <code>C = 3</code> imposed more regularization than the current
+inner objective prefers. It does not justify selecting 3000: the preference remains
+at the search boundary, and repeatedly enlarging the grid would convert small,
+fold-specific retention differences into an effectively unregularized model choice.
+The correct next comparison is therefore explicit weakly regularized versus
+unregularized logistic regression, assessed for coefficient and prediction
+convergence as well as grouped-CV behavior. No <code>C</code> or threshold is frozen.</p>
+<p>That direct comparison uses <code>C = 100, 300, 1000, 3000</code> and an explicitly
+unregularized fit. At the fixed grouped-OOF 90% recall operating point, all models
+measure 90.41% UCD recall. Macro priority retention is 2.25%, 1.91%, 1.88%, 2.03%,
+and 2.03%, respectively. Thus <code>C = 3000</code> and the unregularized model already make
+identical aggregate selection decisions, while <code>C = 1000</code> is slightly better on
+this fixed split and retains a finite regularization safeguard. Full-development
+probability correlation with the unregularized model rises from 0.955 at <code>C = 100</code>
+to 0.991 at 1000 and 0.997 at 3000. Raw coefficient vectors converge more slowly,
+so coefficient equality is not claimed.</p>
+<p>The measured candidate for repeated stability is <code>C = 1000</code>, compared directly
+against <code>C = 3000</code> and unregularized logistic regression. This is a development-only
+candidate, not a frozen hyperparameter.</p>
+<p>Across ten fixed grouped repeats, all three configurations retain exactly 90.41%
+of reliable UCDs. Median macro priority retention is 1.96% for <code>C = 1000</code>, 2.11%
+for <code>C = 3000</code>, and 2.11% for the unregularized fit. <code>C = 1000</code> has the lowest
+paired retention in seven repeats, versus one for 3000 and two for unregularized.
+Its maximum fold coefficient-vector norm is 5.35, compared with 7.01 and 12.94.
+The evidence therefore recommends <code>C = 1000</code>: it gives the best repeated retention
+at identical measured recall and avoids unnecessary coefficient growth. Project-lead
+approval is still required before recording it as the frozen regularization policy.</p>
+<p>The project lead approved <code>C = 1000</code> on 2026-07-18. The frozen regularization and
+subsequently approved threshold are recorded in
+<code>data/literature/sources/point_source_logistic_policy_v1.json</code>.</p>
+<p>The frozen threshold is 0.8277833629, defined as the median of ten grouped-OOF
+thresholds individually calibrated to retain at least 90% of reliable UCDs. It is
+not an in-sample quantile and was not selected using validation data.</p>
+<p>Artifacts:</p>
+<ul>
+<li><code>data/literature/validation/point_source_ml_comparison_v4.json</code> (<code>C &lt;= 100</code>)</li>
+<li><code>data/literature/validation/point_source_ml_comparison_v5.json</code> (<code>C &lt;= 3000</code>)</li>
+<li><code>data/literature/validation/point_source_ml_fold_metrics_v5.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_convergence_v1.json</code></li>
+<li><code>data/literature/validation/logistic_regularization_convergence_coefficients_v1.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_v1.json</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_metrics_v1.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_validation_v1.json</code></li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#logistic-regularization-sensitivity">Logistic regularization sensitivity</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="point_source_astrometric_rejection_assessment_v1.html">Point-source astrometric rejection assessment, version 1</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

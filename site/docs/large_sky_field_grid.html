@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Fixed large-sky field grid · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Background and radial measurements</span><a href="../../docs/large_sky_field_grid.md">Markdown source ↗</a></div><h1 id="fixed-large-sky-field-grid">Fixed large-sky field grid</h1>
+<p><strong>Status:</strong> Count-blind field identities and partition frozen
+<strong>Date:</strong> 2026-07-19
+<strong>Issues:</strong> BT-005, BT-009, BT-022</p>
+<h2 id="purpose">Purpose</h2>
+<p>This grid replaces the inherited file of 500 unseeded random positions. It will be
+used to measure how the density of sources passing the frozen selector changes
+across the sky. It is separate from the galaxy-specific comparison regions used
+for primary background subtraction.</p>
+<p>No Gaia source count, selector probability, or passing-source density was read to
+generate a coordinate or choose its partition. All 500 fields remain diagnostic;
+none is approved as a scientific background.</p>
+<h2 id="why-there-are-500-fields-and-why-the-radius-is-08-degree">Why there are 500 fields and why the radius is 0.8 degree</h2>
+<p>The field count and radius preserve the scope of the inherited 500-field Phase III
+experiment. They are not a new statistical power calculation and do not define the
+real galaxy aperture.</p>
+<p>Every field is a 0.8-degree-radius circle. Its exact spherical area is
+2.010586633 square degrees. The earlier value 2.010619 is the flat-circle formula
+<code>pi * radius^2</code>; 2.0 is a further approximation. The new workflow uses the
+spherical area.</p>
+<h2 id="how-the-positions-are-distributed">How the positions are distributed</h2>
+<p>The existing galaxy catalog covers absolute Galactic latitude <code>|b| &gt;= 20</code> degrees,
+so the grid uses that same declared domain. It places 250 centers north and 250
+south of the Milky Way plane.</p>
+<p>Latitude is spaced uniformly in spherical area, not uniformly in degrees. In plain
+language, each successive latitude represents the same amount of sky even though
+lines of longitude converge toward a pole. Longitude advances by the fixed
+golden angle, 137.507764 degrees. This is a standard deterministic spacing that
+prevents successive points from lining up; it does not introduce randomness.</p>
+<p>The measured absolute Galactic-latitude range is 20.080258–87.060276 degrees, and
+the measured absolute ecliptic-latitude range is 0.098908–87.171146 degrees. The
+minimum separation between any two centers is 6.429656 degrees, so the
+0.8-degree-radius circles do not overlap.</p>
+<h2 id="development-and-held-back-validation">Development and held-back validation</h2>
+<p>A <strong>sky block</strong> is a broad fixed part of the sky used only for splitting this
+experiment. It combines one 30-degree Galactic-longitude band with one of five
+equal-sky-area absolute-Galactic-latitude bands and one Galactic hemisphere. All
+fields in a block remain on the same side of the split.</p>
+<p>The five latitude bands have edges at 20.000000, 28.269284, 37.244105, 47.460216,
+60.273704, and 90.000000 degrees. Within each hemisphere/latitude combination, two
+sky blocks are assigned to validation. Five of the ten combinations contribute a
+third validation block. Stable hashes choose both the extra combinations and the
+blocks, using positions and version strings only.</p>
+<p>The frozen split contains:</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th style="text-align: right;">Sky blocks</th>
+<th style="text-align: right;">Fields</th>
+<th>Allowed use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">398</td>
+<td>Measure field conditions, fit models, and choose rules</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">102</td>
+<td>Remain unopened until the development model and evaluation rules are fixed</td>
+</tr>
+</tbody>
+</table>
+<p>Both partitions contain northern and southern fields, every equal-area Galactic-
+latitude band, and every fixed 15-degree absolute-ecliptic-latitude band. The
+minimum development-to-validation center separation is 6.429656 degrees.</p>
+<p>Ecliptic latitude is only a sky-position indicator related to Gaia's scanning
+pattern. It does not prove that two fields have similar Gaia coverage. Observation
+counts, local depth, total source density, query completion, and usable area must
+be measured later. Those measurements begin with development fields only.</p>
+<h2 id="known-environment-flags">Known-environment flags</h2>
+<p>The grid records whether each field intersects catalog geometry represented in the
+current project:</p>
+<ul>
+<li>142 fields intersect at least one circle with radius <code>2 R2t</code> around a represented
+  Kourkchi-Tully group;</li>
+<li>283 intersect at least one represented association circle with radius <code>R1t</code>;</li>
+<li>47 contain the center of at least one galaxy in the 2,155-host project catalog;
+  and</li>
+<li>304 have one or more of these flags, while 196 have none.</li>
+</ul>
+<p>These are sensitivity labels, not automatic exclusions. Earlier audits showed that
+neither <code>2 R2t</code> nor <code>R1t</code> is a universal physical boundary, and excluding all
+flagged fields would strongly change the sky coverage before its effect is tested.
+The development analysis must report results both with the full diagnostic grid
+and with declared environment-flag sensitivity subsets before any exclusion rule
+is frozen.</p>
+<h2 id="validation-result-and-artifacts">Validation result and artifacts</h2>
+<p>All 16 checks pass. They verify coordinate uniqueness, exact spherical area,
+hemisphere and latitude coverage, whole-block partitioning, non-overlap, preserved
+environment flags, absence of Gaia-count and selector columns, and unchanged host
+and environment input row counts.</p>
+<ul>
+<li><code>data/results/background/large_sky_field_grid_v1.csv</code></li>
+<li><code>data/results/background/large_sky_field_grid_v1.json</code></li>
+</ul>
+<p>Reproduce the count-blind grid without querying Gaia:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/freeze_large_sky_field_grid.py
+</code></pre></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#fixed-large-sky-field-grid">Fixed large-sky field grid</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#why-there-are-500-fields-and-why-the-radius-is-08-degree">Why there are 500 fields and why the radius is 0.8 degree</a></li>
+<li><a href="#how-the-positions-are-distributed">How the positions are distributed</a></li>
+<li><a href="#development-and-held-back-validation">Development and held-back validation</a></li>
+<li><a href="#known-environment-flags">Known-environment flags</a></li>
+<li><a href="#validation-result-and-artifacts">Validation result and artifacts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_control_design.html">Background control design</a></li><li><a href="background_field_conditions_benchmark.html">Gaia field-condition benchmark</a></li><li><a href="background_review_field_conditions.html">Five-host Gaia field-condition review</a></li><li><a href="gaia_adaptive_retrieval_validation.html">Adaptive and restartable Gaia retrieval validation</a></li><li><a href="gaia_full_column_multifield_validation.html">Multi-field full-column Gaia retrieval validation</a></li><li><a href="gaia_full_selector_retrieval_benchmark.html">Full-selector-column Gaia retrieval benchmark</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

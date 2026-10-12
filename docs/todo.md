@@ -7,7 +7,13 @@ during the project takeover review
 This file tracks cross-phase issues that do not belong to only one phase plan.
 Phase-specific execution tasks remain in `docs/plans/`.
 
-- [ ] **BT-023 - Complete the M60 positive-control search and contamination audit.**
+**Status reviewed:** 2026-10-12. Start with [current status](current_status.md) and
+the [documentation guide](documentation_guide.md). Dated progress paragraphs are
+history, not necessarily the latest state. `BT-023` retains its original meaning
+(probabilistic host association); the accidentally duplicated M60 task is now
+`BT-031`. Historical journals keep their original labels.
+
+- [ ] **BT-031 - Complete the M60 positive-control search and contamination audit.**
   Use the unchanged selector version 1 and the frozen 0--600 kpc physical rings.
   Recover two reliable confirmed UCDs, report 21 literature candidates and six
   rejected comparisons separately, and preserve every possible contamination type
@@ -654,7 +660,8 @@ Phase-specific execution tasks remain in `docs/plans/`.
 
 ## P1: Pilot Reproducibility and Scale-up
 
-- [ ] **BT-030 - Build the UCD reference visual-review workbench.**
+- [x] **BT-030 - Build the UCD reference visual-review workbench (implemented
+  2026-08-19; status reconciled 2026-10-12).**
   Evidence: The UCD Legacy Survey reference (680 confirmed UCDs and 44 Saifollahi
   high-probability candidates) now has compact three-color images, Legacy Survey
   Tractor matches, and exact-identifier Gaia membership, but no source-by-source
@@ -666,8 +673,24 @@ Phase-specific execution tasks remain in `docs/plans/`.
   reference decision; and exports a clean confirmed-UCD positive design reference
   plus a separate Saifollahi follow-up pool, without altering any canonical data.
   Specification: `docs/plans/ucd_visual_review_tool.md`.
-  Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-023, and a
+  Completion evidence: [August 19 checkpoint](journal/2026-08-19_ucd_visual_review_workbench.md),
+  the implemented application, versioned exports, and the stored 15-check API
+  validation report. Both cohorts now use include/exclude/hold, but candidate
+  inclusion never promotes confirmation. Human source review is not part of this
+  build-completion checkbox: zero saved local reviews were found on 2026-10-12.
+  Resume the reference assessment before the M60 contamination audit in BT-031.
+  Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-031, and a
   separately audited host-association register.
+
+- [ ] **BT-032 - Organize project documentation and build the HTML reading portal.**
+  Scope: Correct stale summaries, make document ownership explicit, preserve
+  historical evidence, and generate an index plus linked HTML document views.
+  No selector changes, review classifications, or public deployment are included.
+  Specification: [Documentation-site plan](plans/documentation_site.md).
+  Implemented 2026-10-12: source ownership, dated status, corrected roadmap,
+  searchable directory, and 88 Markdown-to-HTML views are complete; 109 automated
+  checks pass. This issue remains open only for manual browser review before
+  accepting the portal's presentation. No scientific processing was changed.
 
 - [ ] **BT-009 - Recompute the background experiment with the canonical
   selection.**

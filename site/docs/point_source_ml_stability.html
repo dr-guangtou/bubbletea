@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Repeated point-source logistic-regression stability · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Selection and reference</span><a href="../../docs/point_source_ml_stability.md">Markdown source ↗</a></div><h1 id="repeated-point-source-logistic-regression-stability">Repeated point-source logistic-regression stability</h1>
+<h2 id="decision-status">Decision status</h2>
+<p>The provisional logistic model passes the predeclared development stability gate
+and is ready for selector-freeze review. It is not yet a frozen selector, and the
+721-row validation partition remains sealed.</p>
+<h2 id="design">Design</h2>
+<p>The analysis repeated five-outer/four-inner grouped cross-validation ten times
+using the deterministic seeds declared in <code>docs/SPEC.md</code>. Each of the 2,228 fitting
+rows receives one held-out prediction per repeat. Matched stars remain grouped with
+their matched UCD; preprocessing, imputation, hyperparameter selection, and the
+90% recall threshold remain fold-local.</p>
+<p>The model and scientific objective are unchanged from the first comparison:</p>
+<ul>
+<li>positive class: 175 confirmed development UCDs;</li>
+<li>equal-weight priority negatives: 525 matched spectroscopic stars, 1,125 Gaia NSS
+  sources, and 403 spectroscopic QSOs;</li>
+<li>nine Gaia measurement features, including BP-RP as a soft feature;</li>
+<li>no NSS membership, DSC class probability, candidate-catalog membership, or
+  Sersic model input; and</li>
+<li>no fitting to the galaxy or H II secondary stress cohorts.</li>
+</ul>
+<h2 id="stability-result">Stability result</h2>
+<table>
+<thead>
+<tr>
+<th>Metric across ten repeats</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirmed-UCD recall</td>
+<td style="text-align: right;">93.14%</td>
+<td style="text-align: right;">93.71%</td>
+<td style="text-align: right;">95.43%</td>
+</tr>
+<tr>
+<td>Equal-cohort priority retention</td>
+<td style="text-align: right;">3.75%</td>
+<td style="text-align: right;">3.96%</td>
+<td style="text-align: right;">4.42%</td>
+</tr>
+</tbody>
+</table>
+<p>All 50 outer fits selected logistic regularization <code>C = 3.0</code>. Their inner-selected
+probability thresholds range from 0.474 to 0.585, demonstrating that the numerical
+threshold is training-sample dependent and must be calibrated for the final
+full-development model rather than copied from one fold.</p>
+<p><code>C = 3.0</code> is also the least-regularized boundary of the tested grid. Unanimous
+selection therefore demonstrates reproducibility within this grid, not that the
+regularization optimum has been enclosed. A bounded development-only extension
+above <code>C = 3.0</code> is required before choosing the final regularization strength.</p>
+<p>Individual outer-fold recall still ranges from 81.82% to 100%. The ten-repeat
+pooled result is stable because every source rotates through held-out folds, but
+the remaining fold range warns that spatially concentrated failure modes still
+matter. This distinction is why the result advances to review rather than directly
+to validation.</p>
+<h2 id="coefficient-behavior">Coefficient behavior</h2>
+<p>All nine measurement-feature coefficients retain the same sign in all 50 fits.
+The coefficients are measured after fold-local standardization, so their magnitudes
+are comparable within the fitted model but are not causal feature importances.
+Correlated Gaia diagnostics can share predictive weight.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: right;">Median standardized coefficient</th>
+<th style="text-align: right;">Sign in 50/50 fits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log astrometric excess noise</td>
+<td style="text-align: right;">+0.587</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log excess-noise significance</td>
+<td style="text-align: right;">+0.259</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>BP/RP flux-excess factor</td>
+<td style="text-align: right;">+0.198</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log proper-motion zero-significance</td>
+<td style="text-align: right;">-0.197</td>
+<td style="text-align: right;">Negative</td>
+</tr>
+<tr>
+<td>Log absolute-parallax zero-significance</td>
+<td style="text-align: right;">-0.159</td>
+<td style="text-align: right;">Negative</td>
+</tr>
+<tr>
+<td>BP-RP color</td>
+<td style="text-align: right;">+0.066</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log IPD multi-peak percentage</td>
+<td style="text-align: right;">+0.066</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log RUWE</td>
+<td style="text-align: right;">+0.060</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log IPD odd-window percentage</td>
+<td style="text-align: right;">+0.055</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+</tbody>
+</table>
+<p>Positive coefficients increase the fitted UCD-like score; negative parallax and
+proper-motion coefficients correctly penalize significant nonzero astrometry.</p>
+<h2 id="persistent-failures">Persistent failures</h2>
+<p>A persistent failure means a confirmed UCD is selected in at most five of ten
+repeats, or a priority contaminant is selected in at least five repeats.</p>
+<table>
+<thead>
+<tr>
+<th>Cohort</th>
+<th style="text-align: right;">Persistent failures</th>
+<th style="text-align: right;">Cohort size</th>
+<th style="text-align: right;">Fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirmed UCD</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">6.29%</td>
+</tr>
+<tr>
+<td>Matched spectroscopic star</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">7.05%</td>
+</tr>
+<tr>
+<td>Gaia NSS</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1,125</td>
+<td style="text-align: right;">0.36%</td>
+</tr>
+<tr>
+<td>Spectroscopic QSO</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">403</td>
+<td style="text-align: right;">4.96%</td>
+</tr>
+</tbody>
+</table>
+<p>Three persistently missed UCDs share HEALPix group 34534, two share group 43262,
+and two share group 36290. Several have Gaia measurements that are very star-like:
+zero astrometric excess noise, RUWE near one, and significant proper motion. One
+particularly bright row has <code>G = 12.34</code> and extremely precise nonzero astrometry.
+These objects remain confirmed literature UCD labels; the diagnostic does not
+relabel them. Their literature identity, Gaia association, and possible foreground
+or nuclear interpretation require source-level audit before selector freezing.</p>
+<p>The complete source list, including identifiers, sky position, magnitude, mean
+score, and selection frequency, is preserved in
+<code>data/literature/validation/point_source_ml_stability_source_summary_v1.csv</code>.</p>
+<h2 id="fixed-stratum-behavior">Fixed-stratum behavior</h2>
+<table>
+<thead>
+<tr>
+<th>Confirmed-UCD stratum</th>
+<th style="text-align: right;">Sources</th>
+<th style="text-align: right;">Repeated recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>G &lt;= 18</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">85.71%</td>
+</tr>
+<tr>
+<td><code>18 &lt; G &lt;= 19</code></td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">90.59%</td>
+</tr>
+<tr>
+<td><code>19 &lt; G &lt;= 20</code></td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">86.36%</td>
+</tr>
+<tr>
+<td><code>G &gt; 20</code></td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">96.28%</td>
+</tr>
+<tr>
+<td><code>abs(b) &lt; 30 deg</code></td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">91.88%</td>
+</tr>
+<tr>
+<td><code>30 &lt;= abs(b) &lt; 60 deg</code></td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">85.22%</td>
+</tr>
+<tr>
+<td><code>abs(b) &gt;= 60 deg</code></td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">98.97%</td>
+</tr>
+<tr>
+<td><code>abs(ecliptic latitude) &lt; 30 deg</code></td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">99.03%</td>
+</tr>
+<tr>
+<td><code>30 &lt;= abs(ecliptic latitude) &lt; 60 deg</code></td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">88.17%</td>
+</tr>
+<tr>
+<td><code>abs(ecliptic latitude) &gt;= 60 deg</code></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>The final ecliptic bin contains one source and is not a population estimate. The
+magnitude and latitude differences are descriptive development diagnostics, not
+new cuts. They reinforce the need to audit failure cases and declare the final
+selector's applicability domain.</p>
+<h2 id="2026-07-17-preliminary-source-audit">2026-07-17 preliminary source audit</h2>
+<p>The 11 persistently missed UCDs occupy seven level-6 HEALPix groups rather than one
+group. Group 34534 contains three, groups 43262 and 36290 contain two each, and four
+groups contain one each. Their host contexts are four spectroscopically confirmed
+Fornax systems from Saifollahi table A1, two NGC 1400/1407 objects, two NGC 5128
+objects, and one each around M87, NGC 1553/1549, and M31.</p>
+<p>The normalized distance field is present for only 5/11 missed objects and 105/164
+other confirmed development UCDs. Its measured medians are 20.0 and 16.5 Mpc,
+respectively, but the asymmetric missingness prevents a conclusion that the missed
+objects are systematically farther away. The host mix contains no high-redshift
+population; the relevant quantity is local host distance and spectroscopic
+membership rather than cosmological redshift.</p>
+<p>The bright M31 row exposes a more serious evidence issue:</p>
+<ul>
+<li>literature name: <code>B409</code>;</li>
+<li>canonical ID: <code>canonical_a71db2a61b8856cb835b46670601f951</code>;</li>
+<li>Gaia DR3 source ID: <code>375037265841433344</code>;</li>
+<li>Gaia position: RA <code>12.663251280395 deg</code>, Dec <code>+41.293171078320 deg</code>;</li>
+<li>literature position: RA <code>12.663250000000 deg</code>, Dec <code>+41.293130555556 deg</code>;</li>
+<li>positional separation: approximately <code>0.146 arcsec</code>;</li>
+<li>Gaia G: <code>12.340369</code> mag;</li>
+<li>parallax: <code>1.126604 +/- 0.014465</code> mas (<code>77.9 sigma</code>);</li>
+<li>proper motion: <code>pmra = -5.316260 +/- 0.013725</code> and
+  <code>pmdec = +3.045072 +/- 0.010659</code> mas/yr; and</li>
+<li>Gaia radial velocity: <code>-37.13 +/- 2.25 km/s</code>.</li>
+</ul>
+<p>Fahrion table B1 lists B409 with <code>RV = 0.0</code>, <code>reff = 0.0</code>, and reference 11 to the
+M31 Revised Bologna Catalog. The confirmation review had interpreted every
+coordinate-bearing Fahrion row as supplying a radial velocity, but 68/377 such rows
+use <code>RV = 0.0</code>; 30 of those currently occur among the 175 confirmed development
+UCDs. For B409, the Gaia measurements are strongly consistent with a foreground
+Milky Way star. This could mean a foreground superposition was assigned to the real
+M31 compact object, or that the literature object itself should not be treated as a
+confirmed UCD. The current evidence does not distinguish those cases.</p>
+<p>Consequently, selector-freeze readiness is suspended pending a non-destructive
+re-audit of the 68 zero-RV Fahrion rows, their independent evidence, and their Gaia
+associations. No label or provenance record has been altered by this diagnostic.</p>
+<h2 id="readiness-gate-and-required-review">Readiness gate and required review</h2>
+<p>All predeclared numerical criteria pass:</p>
+<ul>
+<li>median repeated recall is at least 90%;</li>
+<li>no complete repeat falls below 85% recall; and</li>
+<li>every measurement coefficient has at least 80% sign agreement (measured: 100%).</li>
+</ul>
+<p>The later source audit supersedes numerical readiness. Before validation can be
+unsealed, the project must:</p>
+<ol>
+<li>audit the 11 persistently missed confirmed UCD associations without changing
+   labels merely because the classifier dislikes them;</li>
+<li>correct the zero-RV Fahrion evidence rule and rederive the benchmark while
+   preserving every source row and prior decision as provenance;</li>
+<li>review the 61 persistent priority-contaminant failures;</li>
+<li>extend the regularization sensitivity above the current <code>C = 3.0</code> grid boundary;</li>
+<li>define how the final full-development model receives one reproducible threshold;</li>
+<li>fit and serialize one versioned selector with its null policy and applicability
+   domain; and</li>
+<li>freeze all of the above before the single withheld-validation evaluation.</li>
+</ol>
+<h2 id="reproduction">Reproduction</h2>
+<ul>
+<li>Analysis: <code>scripts/phase1_literature/analyze_point_source_ml_stability.py</code></li>
+<li>Validation: <code>scripts/phase1_literature/validate_point_source_ml_stability.py</code></li>
+<li>Command: <code>uv run python scripts/phase1_literature/analyze_point_source_ml_stability.py</code></li>
+<li>Runtime measured on 2026-07-17: 45.19 seconds for the final ten-repeat run</li>
+<li>Summary: <code>data/literature/validation/point_source_ml_stability_summary_v1.json</code></li>
+<li>Validation report: <code>data/literature/validation/point_source_ml_stability_validation_v1.json</code></li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#repeated-point-source-logistic-regression-stability">Repeated point-source logistic-regression stability</a><ul>
+<li><a href="#decision-status">Decision status</a></li>
+<li><a href="#design">Design</a></li>
+<li><a href="#stability-result">Stability result</a></li>
+<li><a href="#coefficient-behavior">Coefficient behavior</a></li>
+<li><a href="#persistent-failures">Persistent failures</a></li>
+<li><a href="#fixed-stratum-behavior">Fixed-stratum behavior</a></li>
+<li><a href="#2026-07-17-preliminary-source-audit">2026-07-17 preliminary source audit</a></li>
+<li><a href="#readiness-gate-and-required-review">Readiness gate and required review</a></li>
+<li><a href="#reproduction">Reproduction</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_benchmark.html">Contaminant Benchmark Definitions and Limitations</a></li><li><a href="extragalactic_contaminant_catalogs.html">Extragalactic Contaminant Reference Strategy</a></li><li><a href="frozen_c1000_persistent_ucd_audit.html">Frozen-C1000 persistent UCD audit</a></li><li><a href="gaia_morphology_ucd_crossmatch.html">Gaia Morphology Membership and UCD Cross-Match</a></li><li><a href="gaia_selector_features.html">Gaia Selector Feature Definitions and Limitations</a></li><li><a href="logistic_regularization_sensitivity.html">Logistic regularization sensitivity</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

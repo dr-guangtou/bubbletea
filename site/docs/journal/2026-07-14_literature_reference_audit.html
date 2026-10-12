@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Literature Reference Audit · BubbleTea</title><link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../../index.html">Overview</a><a href="../../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../../docs/journal/2026-07-14_literature_reference_audit.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><h1 id="literature-reference-audit">Literature Reference Audit</h1>
+<p><strong>Date:</strong> 2026-07-14
+<strong>Stage:</strong> Stage 1 - Stabilize Reference Data
+<strong>Issues:</strong> <code>BT-003</code>, <code>BT-028</code></p>
+<h2 id="what-was-done">What Was Done</h2>
+<ul>
+<li>Verified that clean local <code>master</code> and <code>origin/master</code> both pointed to <code>c05b6bc</code>,
+  then created <code>phase1_stabilize_literature_20260714</code> before editing.</li>
+<li>Reviewed the handover, scientific specification, issue register, validation plan,
+  lessons, literature database utilities, ingestion, cross-match, and destructive
+  redundancy script.</li>
+<li>Added <code>scripts/phase1_literature/audit_reference_data.py</code>, which opens the SQLite
+  database read-only and produces deterministic source, label, and exact-coordinate
+  audit artifacts in <code>data/literature/validation/</code>.</li>
+<li>Ran the smallest local audit before writing the canonical outputs. The corrected
+  dry run completed in 2.96 seconds; the canonical run completed in 0.24 seconds.</li>
+</ul>
+<h2 id="decisions">Decisions</h2>
+<ul>
+<li>Exact coordinate equality is provisional identity evidence, not an approved
+  canonical-object definition.</li>
+<li>Existing <code>ucd_objects</code> rows are provenance-bearing literature rows. They must
+  remain immutable when separate canonical objects and many-to-many source
+  associations are introduced.</li>
+<li>Current <code>candidate</code> and <code>confirmed</code> values are source-ingestion labels, not
+  evidence-based object confirmation tiers.</li>
+<li>The destructive <code>redundancy_check.py</code> script was not run.</li>
+</ul>
+<h2 id="results">Results</h2>
+<ul>
+<li>The database SHA-256 remained
+  <code>d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806</code> before and
+  after the audit.</li>
+<li>Measured 2,108 literature rows, 1,928 exact coordinate pairs, and 180 duplicate
+  groups containing 360 rows. Every duplicate group has exactly two rows.</li>
+<li>Of the 180 groups, 148 connect different papers and all 148 conflict on stored
+  <code>candidate</code> versus <code>confirmed</code> labels. The other 32 are within-source duplicate
+  pairs; their payloads are identical after excluding row IDs and timestamps.</li>
+<li>No exact-coordinate group conflicts on <code>is_ucd</code> or stored Gaia source ID.</li>
+<li>The 95-row confirmed catalog <code>2015ApJ...802...30Z.csv</code> has no corresponding source
+  or object rows in the database.</li>
+<li>All nine database source rows lack DOI and declared object-count values. The
+  database contains zero Legacy Survey IDs, consistent with the prior handover.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li>Define and review separate canonical-object, literature-row association,
+   evidence, and confirmation-tier tables without migrating or deleting rows.</li>
+<li>Review the 32 identical within-source pairs against original catalog structure
+   and retain their original row/table provenance even if they map to one object.</li>
+<li>Resolve the missing <code>2015ApJ...802...30Z</code> database association and source-level
+   provenance gaps before using a confirmed-object denominator.</li>
+<li>Audit near-coordinate identity only after the spherical matching and ambiguity
+   policy for <code>BT-007</code> is specified.</li>
+</ol></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#literature-reference-audit">Literature Reference Audit</a><ul>
+<li><a href="#what-was-done">What Was Done</a></li>
+<li><a href="#decisions">Decisions</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_v2.html">Literature Reference v2 Build and Discovery</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

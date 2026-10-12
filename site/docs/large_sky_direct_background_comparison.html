@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Direct random-field background comparison · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Background and radial measurements</span><a href="../../docs/large_sky_direct_background_comparison.md">Markdown source ↗</a></div><h1 id="direct-random-field-background-comparison">Direct random-field background comparison</h1>
+<p><strong>Date:</strong> 2026-08-11</p>
+<p><strong>Contract script:</strong>
+<code>scripts/phase3_background/freeze_large_sky_direct_background_contract.py</code></p>
+<p><strong>Comparison script:</strong>
+<code>scripts/phase3_background/compare_large_sky_direct_backgrounds.py</code></p>
+<p><strong>Input:</strong>
+<code>data/results/background/large_sky_development_scale_summary_v1.csv</code></p>
+<p><strong>Machine-readable result:</strong>
+<code>data/results/background/large_sky_direct_background_comparison_v1.json</code></p>
+<h2 id="why-this-replaced-a-model-as-the-primary-reference">Why this replaced a model as the primary reference</h2>
+<p>The density of Gaia sources passing the frozen selector can be measured directly in
+random sky fields. A fitted mathematical curve is therefore not required to supply
+the primary large-sky background reference. The curve remains useful as a secondary
+check, but it can hide extreme fields behind a smooth prediction.</p>
+<p>The direct procedure preserves the actual comparison fields and their measured
+densities. It reports a median, an arithmetic mean, and central 68% and 95% ranges.
+These ranges show real field-to-field variation; they are not model confidence
+intervals.</p>
+<h2 id="procedures-compared">Procedures compared</h2>
+<p>The rules were frozen before their performance was measured:</p>
+<ol>
+<li>use all training fields in the same broad absolute-Galactic-latitude band;</li>
+<li>additionally require the same low, middle, or high third of total Gaia source
+   density; or</li>
+<li>use the 20 nearest training fields in Galactic latitude and total Gaia source
+   density.</li>
+</ol>
+<p>All fields in the same broad sky block stayed together. A field was therefore
+tested only against comparison fields outside its held-out block.</p>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th>Procedure</th>
+<th style="text-align: right;">Mean fold typical log error</th>
+<th style="text-align: right;">Overall typical log error</th>
+<th style="text-align: right;">Root-mean-square log error</th>
+<th style="text-align: right;">68% range coverage</th>
+<th style="text-align: right;">95% range coverage</th>
+<th style="text-align: right;">Typical pool size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Galactic-latitude band</td>
+<td style="text-align: right;">0.1657</td>
+<td style="text-align: right;">0.1671</td>
+<td style="text-align: right;">0.3974</td>
+<td style="text-align: right;">65.6%</td>
+<td style="text-align: right;">91.0%</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr>
+<td>Latitude and Gaia-density third</td>
+<td style="text-align: right;">0.1647</td>
+<td style="text-align: right;">0.1673</td>
+<td style="text-align: right;">0.3790</td>
+<td style="text-align: right;">60.3%</td>
+<td style="text-align: right;">85.9%</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>Twenty nearest fields</td>
+<td style="text-align: right;">0.1647</td>
+<td style="text-align: right;">0.1564</td>
+<td style="text-align: right;">0.3527</td>
+<td style="text-align: right;">61.1%</td>
+<td style="text-align: right;">85.9%</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+<p>The latitude-band procedure is selected by the frozen one-standard-error rule. Its
+score differs from the best measured score by only 0.0010, while it is simpler,
+uses roughly three times as many comparison fields, and gives better measured-range
+coverage. Its overall typical absolute error corresponds to a density factor of
+1.182, or about an 18% difference between a held-out field and the comparison-pool
+median.</p>
+<p>The central ranges do not contain exactly 68% and 95% of held-out fields. Their
+measured coverage is 65.6% and 91.0%, respectively. This shortfall must remain
+visible and can be checked once on the still-unopened validation fields.</p>
+<h2 id="extreme-flagged-field">Extreme flagged field</h2>
+<p><code>sky_field_0317</code> has a measured passing-source density of 37,714.863 per square
+degree. Its 58 same-latitude comparison fields have a median of 390.433 and a
+central 95% range of 177.324--659.385 per square degree. The field is therefore a
+factor of 96.597 above the median and far outside the measured range.</p>
+<p>This is more informative than forcing a smooth prediction: the direct procedure
+plainly identifies the field as unlike ordinary random fields in its latitude band.
+The field remains preserved with its count-blind environment flag. It is not
+deleted, converted to zero, or allowed to redefine the general background.</p>
+<h2 id="interface-with-a-real-host">Interface with a real host</h2>
+<p>For each real galaxy, the future result must report both:</p>
+<ul>
+<li>the density measured in a valid outer annulus around the galaxy; and</li>
+<li>the median, mean, central ranges, and field count from the direct random-field
+  reference.</li>
+</ul>
+<p>It must also report the annulus density minus the random-field median and their
+ratio. Neither measurement is forced to agree with the other. A missing or invalid
+outer annulus remains unavailable, not zero.</p>
+<p>The random-field reference applies only to <code>|b| &gt;= 20 degrees</code>, the domain actually
+measured by the frozen grid. The real outer-annulus boundaries and central excluded
+region still require separate calibration before the official host run.</p>
+<h2 id="status">Status</h2>
+<p>The synthetic 300-field validation passes all ten safeguards in 0.666 seconds.
+The 398-field comparison passes all 17 safeguards in 1.405 seconds and makes no
+archive query. All comparison-field identities and measured densities are retained.
+The fitted model is now a diagnostic only. No field is approved as a scientific
+background. At this design-freeze point, all 102 large-sky validation fields were
+still unopened for a new branch.</p>
+<p>The reserved fields were subsequently opened once under the unchanged procedure.
+The direct validation typical difference is a factor of 1.197, with 63/102 fields
+inside the development 68% measured ranges and 94/102 inside the 95% ranges. The
+procedure was not retuned and remains the primary large-sky reference. See
+<code>docs/large_sky_validation_run.md</code>.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#direct-random-field-background-comparison">Direct random-field background comparison</a><ul>
+<li><a href="#why-this-replaced-a-model-as-the-primary-reference">Why this replaced a model as the primary reference</a></li>
+<li><a href="#procedures-compared">Procedures compared</a></li>
+<li><a href="#result">Result</a></li>
+<li><a href="#extreme-flagged-field">Extreme flagged field</a></li>
+<li><a href="#interface-with-a-real-host">Interface with a real host</a></li>
+<li><a href="#status">Status</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_control_design.html">Background control design</a></li><li><a href="background_field_conditions_benchmark.html">Gaia field-condition benchmark</a></li><li><a href="background_review_field_conditions.html">Five-host Gaia field-condition review</a></li><li><a href="gaia_adaptive_retrieval_validation.html">Adaptive and restartable Gaia retrieval validation</a></li><li><a href="gaia_full_column_multifield_validation.html">Multi-field full-column Gaia retrieval validation</a></li><li><a href="gaia_full_selector_retrieval_benchmark.html">Full-selector-column Gaia retrieval benchmark</a></li></ul></details><details><summary>Linked from (1)</summary><ul><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>BubbleTea Issue Register · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Start here</span><a href="../../docs/todo.md">Markdown source ↗</a></div><h1 id="bubbletea-issue-register">BubbleTea Issue Register</h1>
+<p><strong>Created:</strong> 2026-07-14
+<strong>Scope:</strong> Open scientific, data, reproducibility, and implementation issues found
+during the project takeover review</p>
+<p>This file tracks cross-phase issues that do not belong to only one phase plan.
+Phase-specific execution tasks remain in <code>docs/plans/</code>.</p>
+<p><strong>Status reviewed:</strong> 2026-10-12. Start with <a href="current_status.html">current status</a> and
+the <a href="documentation_guide.html">documentation guide</a>. Dated progress paragraphs are
+history, not necessarily the latest state. <code>BT-023</code> retains its original meaning
+(probabilistic host association); the accidentally duplicated M60 task is now
+<code>BT-031</code>. Historical journals keep their original labels.</p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-031 - Complete the M60 positive-control search and contamination audit.</strong>
+  Use the unchanged selector version 1 and the frozen 0--600 kpc physical rings.
+  Recover two reliable confirmed UCDs, report 21 literature candidates and six
+  rejected comparisons separately, and preserve every possible contamination type
+  as a visual-review flag during the first pass. Measure real-field contamination
+  from a representative sample; keep the deliberately promising new-candidate list
+  separate. Legacy Survey DR10 cutouts are compact imaging diagnostics and never
+  change Gaia coverage or area accounting.</li>
+<li>2026-08-12 checkpoint: the frozen 600 kpc magnitude-limited field contains
+    45,402 raw Gaia sources; both reliable UCD controls have usable
+    16.768-arcsecond Legacy Survey cutouts. Full source retrieval and review-sample
+    freezing remain pending.</li>
+<li>2026-08-12 review rule: incomplete H II-region and young-cluster catalogs cannot
+    provide negative evidence; color only prioritizes inspection, and blend or image
+    problems require visual inspection.</li>
+<li>2026-08-12 complete-field result: selector version 1 retained 4,920 of 45,402
+    sources. Both reliable controls and all nine exact-identifier literature
+    candidates pass; representative contamination sampling remains pending.</li>
+<li>2026-08-12 audit sample: froze 100 previously unidentified passing sources from
+    each of four radial zones, with population weights and all visual fields still
+    marked not reviewed. Explicit visual inspection remains pending.</li>
+<li>2026-08-12 image checkpoint: all 400 compact Legacy Survey images and four
+    blinded contact sheets are complete. Explicit visual classification remains
+    pending.</li>
+<li>2026-08-12 flux-excess QA: 4,879 of 4,920 retained sources and 397 of 400 audit
+    sources have plottable G and raw BP/RP flux-excess measurements. Radial changes
+    rule out interpreting one display reference as a universal classification cut.</li>
+<li>2026-08-12 side quest approved: build a visual and Legacy Survey catalog reference
+    from all 680 confirmed UCDs plus the 44 Saifollahi high-probability candidates;
+    preserve candidate status and report Gaia-catalog membership only where an exact
+    identifier makes the test possible.</li>
+<li>2026-08-12 side quest complete: 707 non-placeholder three-color images form an
+    eight-page atlas; 17 confirmed-object requests returned viewer placeholders. Of
+    175 exactly testable confirmed-object rows, 0 overlap Gaia non-single stars, 8
+    overlap QSO candidates, and 74 overlap galaxy candidates. Legacy Survey catalog
+    matches exist for 585 targets, including all 44 Saifollahi candidates; all raw
+    associations and 101 multiple-match cases remain auditable.</li>
+</ul>
+<h2 id="status-and-priority">Status and Priority</h2>
+<ul>
+<li>Checkbox unchecked: open.</li>
+<li>Checkbox checked: resolved and verified.</li>
+<li>P0: blocks scientific interpretation or a reliable pilot rerun.</li>
+<li>P1: required before scaling or publishing a candidate catalog.</li>
+<li>P2: project-quality or maintenance work that does not currently block analysis.</li>
+</ul>
+<h2 id="p0-scientific-definition-and-validity">P0: Scientific Definition and Validity</h2>
+<ul>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-001 - Define the scientific target population and create <code>docs/SPEC.md</code>
+  (completed 2026-07-14).</strong>
+  Evidence: The repository alternates among UCDs, stripped nuclei, luminous or
+  extended globular clusters, and generic compact stellar systems. <code>docs/SPEC.md</code>
+  is required by <code>AGENTS.md</code> but is absent.
+  Interview decision, 2026-07-14: The primary target is UCDs, not ordinary
+  globular clusters. Because their physical boundary is fuzzy, retain Gaia-resolved
+  objects that are probably too luminous or too large for ordinary globular
+  clusters. The ordered outputs are: first, conclusive population-level evidence
+  for or against an overdensity around nearby galaxies; second, correlations of
+  that excess or non-detection with host properties; third, prominent unidentified
+  UCD candidate lists ranked by the probability of being non-point-like.
+  Distance is sensitivity-driven: seek greater completeness within 25 Mpc and only
+  the most obvious Gaia-detectable UCDs from 25 to 50 Mpc. Quantitative luminosity
+  and size limits must be measured as functions of distance and Gaia uncertainty
+  properties. Other operational boundaries remain open as separately registered
+  research issues. <code>docs/SPEC.md</code> records the approved initial specification.
+  Resolution criteria: The project lead approves definitions, labels, distance
+  scope, environmental questions, validation standards, and the role of Gaia
+  selection. The decisions are recorded in <code>docs/SPEC.md</code>.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-002 - Freeze one versioned compact-source selection function.</strong>
+  Evidence: Phase I and Phase III use a 70/30 AEN-significance and BP/RP-excess
+  score, while Phase IV uses a 60/30/10 score with a color term and different
+  prefilters. All are called <code>Model C</code>.
+  Interview decision, 2026-07-14: The primary statistical selector must use Gaia
+  data alone. External imaging is value-added and must not change statistical
+  sample membership or Gaia source counts. Gaia <code>BP-RP</code> is the starting color for
+  rejecting obvious very blue star-forming or H II contaminants, and other
+  Gaia-native color combinations may be explored. Exact thresholds require
+  validation; no additional H II criterion is approved yet.
+  Resolution criteria: One shared implementation contains all query prefilters,
+  null handling, score terms, thresholds, and a version identifier. Literature,
+  background, and radial-search scripts call the same implementation.
+  Depends on: BT-001.</p>
+</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Integrate <code>point_source_logistic_model_v1</code> into the Phase I/IV workflow
+    through one shared inference implementation; preserve the full measured
+    magnitude-domain denominator and validate exact stored-prediction parity
+    before a live search (completed 2026-07-18). All seven integration checks pass;
+    maximum stored-probability difference is <code>1.11e-16</code>, and no live pilot was run.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit the three inherited <code>Model C</code> definitions and confirm their weights,
+    color terms, and query prefilters are inconsistent (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Build a development-only Gaia DR3 feature enrichment by exact source ID,
+    with a manifest proving zero validation-partition identifiers were queried
+    (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Measure feature coverage and discrimination under the primary confirmed-
+    UCD labels and declared candidate/H II sensitivity scenarios (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Review development results and approve the selector architecture before
+    defining a numerical threshold (2026-07-17): prioritize equal-weight rejection
+    of ordinary stars, NSS/binaries, and QSOs; use a complete-coverage core plus
+    conditional astrometry; keep galaxies secondary and H II/young clusters as
+    separate color/morphology safeguards.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Consolidate every contaminant source definition, inclusion rule, intended
+    failure mode, and selection-bias limitation in
+    <code>docs/contaminant_benchmark.md</code> (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Define every measured Gaia feature, unit, derivation, null behavior, and
+    interpretation safeguard with official Gaia DR3 references in
+    <code>docs/gaia_selector_features.md</code>; correct the IPD labels to percentages and
+    replace the diagonal proper-motion approximation with its covariance-aware
+    zero-significance statistic (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Document the raw and direction-adjusted ROC AUC definitions, rank
+    interpretation, displayed direction loss, and limits on accuracy, purity,
+    completeness, and prevalence claims (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Add a benchmark-disjoint, magnitude- and sky-latitude-matched SDSS
+    spectroscopic stellar cohort (2026-07-17). The 525 unique controls are matched
+    3:1 to confirmed development UCDs, use no selector feature in selection or
+    matching, and are explicitly not claimed to be physically single; Gaia NSS
+    remains a separate binary failure-mode sample.</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Record the treatment of compact galaxies, planetary nebulae, and final-
+    footprint or Galactic-latitude mismatch before selector freezing.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Calibrate a point-source-priority rank score across 48 development operating
+    points with equal cohort weight for matched spectroscopic stars, Gaia NSS, and
+    SDSS QSOs (2026-07-17). The leading 90% UCD-completeness point retains 3.73% of
+    priority contaminants; no threshold is frozen pending review.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Compare regularized logistic regression, shallow histogram boosting, and
+    the hand rank score with development-only nested grouped cross-validation
+    (2026-07-17). Logistic regression reaches 93.7% pooled confirmed-UCD recall and
+    4.02% equal-cohort priority retention, but its 81.8--100% fold recall range
+    requires stability testing before any selector freeze.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Repeat grouped nested cross-validation across declared seeds, inspect
+    logistic coefficients and failure cases, and stratify performance by magnitude
+    and sky position before choosing a model family (2026-07-17).
+    Predeclared design: ten seeds separated by 1009, fixed G/absolute Galactic-
+    latitude/absolute ecliptic-latitude bins, source-level failure frequencies, and
+    fold-local standardized coefficients. Readiness requires median recall at least
+    90%, no repeat below 85%, and at least 80% coefficient-sign agreement.
+    Result: all gates pass; recall is 93.14--95.43% across repeats, priority
+    retention is 3.75--4.42%, all 50 fits choose <code>C = 3.0</code>, and all measurement
+    signs agree. Eleven confirmed UCDs require source-level review before freezing.</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Audit the 11 persistently missed confirmed UCD associations and 61
+    persistent priority-contaminant failures; record whether each issue reflects
+    provenance, Gaia association, true overlap, or selector limitation.
+    Blocker found 2026-07-17: Fahrion table B1 uses <code>RV = 0.0</code> for 68/377
+    coordinate-bearing rows, while the confirmation review treated all 377 as
+    positive velocity evidence. Thirty zero-RV objects occur in the confirmed
+    development benchmark, including B409 with a 77.9-sigma Gaia parallax.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Correct and validate the Fahrion zero-RV evidence policy non-destructively
+    (2026-07-17). All 68 rows retain source provenance and receive non-promotion
+    reviews; independent evidence retains 8 confirmed objects, 59 become candidates,
+    and B409 alone is rejected as an incorrectly classified UCD. Reference validation
+    passes with 680 confirmed, 1,574 candidate, 2,083 rejected, and 22 uncertain
+    canonical objects.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Derive benchmark v2 and development-feature v2 artifacts without new Gaia
+    queries or changes to row identity, measurements, spatial groups, or partitions
+    (2026-07-17). Twenty-six Gaia-linked literature labels change: 25 confirmed to
+    candidate and B409 to rejected. Benchmark v1 remains immutable.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Rebuild the matched stellar reference and all development-only selector and
+    ML artifacts against benchmark v2 (2026-07-18). The rematch uses 150 confirmed
+    UCDs and 450 unique stars. Ten-repeat logistic recall is 94.67--96.00% and macro
+    priority retention is 3.77--4.39%; all 50 fits again choose boundary <code>C = 3.0</code>.
+    All validators pass and validation remains sealed.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit the seven benchmark-v2 persistently missed confirmed UCDs and implement
+    the approved reliability treatment (2026-07-18).
+    Audit, 2026-07-18: all seven retain spectroscopic evidence. Four Gaia links have
+    9.91--44.87-sigma proper motion and are recommended for association quarantine,
+    while three faint Saifollahi objects are plausible hard positives. The approved
+    five-case evidence register includes rejected B409; benchmark v3 excludes the
+    four conflicted Gaia links without relabeling their published UCDs.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Rebuild and validate the development chain under benchmark v3 (2026-07-18).
+    The reliable sample has 146 UCDs and 438 stars. Ten-repeat recall is
+    93.84--96.58% and macro priority retention is 3.61--4.00%; all gates pass,
+    validation remains sealed, and nine reliable UCDs are persistent misses.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Extend the logistic regularization grid and freeze a defensible finite
+    policy (completed 2026-07-18). The original boundary <code>C = 3.0</code> did not enclose
+    an optimum, so convergence and repeated paired comparisons were required.
+    Sensitivity, 2026-07-18: grids ending at 100 and 3000 both leave four of five
+    outer folds at the upper boundary. <code>C = 3</code> is too restrictive, but no finite
+    optimum is enclosed; replace further blind grid expansion with an explicit
+    weakly-regularized versus unregularized convergence comparison.
+    Convergence result: at 90.41% fixed grouped-OOF recall, macro retention is 1.88%
+    for <code>C = 1000</code> and 2.03% for both <code>C = 3000</code> and unregularized. Treat 1000 as
+    the finite candidate and compare all three across repeated grouped splits.
+    Repeated result: all retain exactly 90.41% UCDs; median macro retention is 1.96%,
+    2.11%, and 2.11%. <code>C = 1000</code> wins 7/10 paired repeats and has the smallest
+    coefficient norm. Project lead approved and froze <code>C = 1000</code> on 2026-07-18;
+    the threshold and validation partition remain unfrozen and sealed.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Recompute and audit persistent UCD failures under frozen <code>C = 1000</code>
+    (2026-07-18). Ten reliable UCDs fail in all repeats: five faint multiply
+    published Virgo UCDs, three Saifollahi spectroscopic systems, one Gregg object,
+    and one Voggel object with likely extended-source Gaia astrometric corruption.
+    No further training exclusions are justified; all remain in completeness counts.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze the grouped-OOF threshold calibration rule and operating value
+    (2026-07-18). The project lead approved the median of ten repeat thresholds,
+    <code>0.8277833629</code>; each repeat independently targets at least 90% reliable-UCD
+    recall. Validation remains sealed pending final-model and parity checks.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Fit and validate <code>point_source_logistic_model_v1</code> on full development data
+    (2026-07-18). The transparent manifest records all preprocessing and fitted
+    parameters; eight checks pass and serialized prediction parity is <code>1.11e-16</code>.
+    Validation remains sealed pending explicit authorization to evaluate it once.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Run the authorized one-time frozen validation evaluation (2026-07-18).
+    Reliable-UCD recall is 21/23 (91.30%); Gaia NSS retention is 0/287 and QSO
+    retention is 1/88, giving 0.57% macro available-priority retention. No retuning
+    is authorized. Dorado1 is recorded as a post-validation Gaia-association conflict
+    without revising the frozen result; M85-HCC1 is a genuine hard false negative.</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Approve a grouped-OOF threshold-calibration rule and full-development
+    applicability domain before fitting the versioned logistic selector.
+  Review, 2026-07-17: All 20 comparison checks pass, including validation-ID
+  exclusion, grouped-fold isolation, matched-star/UCD fold coupling, artifact
+  hashes, and metric reproduction. The experiment supports continued logistic-
+  regression evaluation but does not approve a selector or validation unsealing.
+  Stability review, 2026-07-17: All 25 repeated-analysis checks pass. The model
+  meets the predeclared development gate, but failure-case and threshold-policy
+  review remain mandatory before selector freezing.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit large Gaia and external extragalactic catalogs; stage 747,153 clean
+    SDSS galaxies, 494,203 clean SDSS QSOs, 914,837 Gaia morphology galaxies,
+    and 755,850 Quaia QSOs outside the repository; preserve <code>benchmark_v1</code> and
+    separate calibration, failure-mode, and density roles (2026-07-17).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Run the predefined three-galaxy Gaia-morphology stress test through 600 kpc;
+    measure radial surface density, feature coverage, and both inherited selector
+    acceptance fractions without archive-side selector prefilters or threshold
+    tuning (2026-07-17). Result: 814 associations, 87.7% acceptance by both
+    false selection by both legacy rules, 11.9% PM/RUWE coverage, and no measured inner-density
+    enhancement over the 300--600 kpc comparison annulus.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze and run a 12-host/12-control expansion across measured K-band
+    luminosity and absolute Galactic-latitude strata; preserve environment as
+    unresolved, retrieve 9,144 morphology galaxies, and measure 85--88% false
+    selection by both legacy rules without claiming host clustering (2026-07-17).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Correct the Gaia Sersic-fit subset from “known galaxies” to galaxy
+    candidates, prohibit it as a UCD parent-sample requirement, and cross-match the
+    development partition by exact Gaia DR3 identifier (2026-07-17). Result: 0/175
+    confirmed UCDs, 1/569 uncertain UCD candidates, and 0/127 H II regions match;
+    all 721 validation rows remain blind.</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> After selector and morphology-use freezing, evaluate the predeclared
+    validation-partition morphology cross-match without retuning thresholds.
+  Progress, 2026-07-16: Enriched all 3,136 development sources with Gaia-native
+  flux-excess, flux-S/N, DSC, and catalog-membership fields in 13 exact-ID query
+  batches; no validation identifier was queried. The analysis produces 190
+  feature/scenario measurements with 500-resample confidence intervals and two
+  publication figures. Covariance-aware proper-motion and absolute-parallax
+  zero-significance lead conditional discrimination at AUC 0.850 and 0.847 but
+  cover only 46.9% of confirmed UCDs. Fully observed AEN has
+  AUC 0.737. Candidate sensitivity materially raises IPD and RUWE importance.
+  The inherited Phase III and IV selectors retain only 66.3% and 64.0% of
+  confirmed UCDs while accepting 20.7% and 20.2% of primary contaminants; both
+  accept about 55% of SDSS galaxies and roughly half of H II rows. All 19
+  development-artifact checks pass; no selector or threshold is approved.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-003 - Reconcile the literature database non-destructively (completed
+  2026-07-15).</strong>
+  Evidence: The database contains 2,108 rows, 2,064 UCD-flagged rows, 1,928 exact
+  coordinate pairs, and 180 exact duplicate-coordinate groups. Candidate and
+  confirmed labels are mixed. The existing redundancy script deletes rows.
+  Resolution criteria: Preserve every source record, define canonical objects and
+  source associations, document confirmation labels, and produce a validation
+  report without deleting provenance-bearing rows.
+  Progress, 2026-07-14: Added a read-only audit and separate v2 schema/build, then
+  reconciled the Saifollahi source into 61 operational
+  spectroscopic reference UCDs and 587 comparison records from table A1, 44
+  unconfirmed final candidates from table A6, and a separate 1,155-record table A5
+  selection pool. The initial v2 checkpoint preserved 2,710 literature records and 2,331
+  canonical objects, all 180 legacy duplicate-coordinate groups, and 26 non-exact
+  Gaia association proposals across eight groups. Structural checks pass with five
+  scientific-review gates still open. No legacy row was changed or deleted.
+  Progress, 2026-07-14: The pending-row audit shows that the 79 Liu rows split
+  into 51 <code>UCD=1</code> candidates already represented by sub-arcsecond v2 counterparts
+  and 28 explicit <code>UCD=0</code> comparison rows with no counterpart within five
+  arcseconds. Of 57 Voggel reference objects, 35 have exact or sub-arcsecond v2
+  counterparts, one lies within five arcseconds, and 22 have none within five
+  arcseconds. Four Fahrion rows remain coordinate-null. Membership is unchanged
+  pending project-lead review.
+  Progress, 2026-07-14: The project lead approved and the builder implemented the
+  pending-row treatment. It preserves all 140 rows, accepts 51 Liu and 35 Voggel
+  source associations, creates 28 Liu negative-comparison and 22 new Voggel
+  reference objects, and retains four coordinate-null Fahrion records without
+  canonical associations. T17-1596 is associated with HHH86-C15 through the
+  published Taylor and Woodley alias chain, with its 1.37-arcsecond offset
+  retained. The review queue contains 728 items and all invariants pass.
+  Progress, 2026-07-14: Authoritative Gaia DR3 coordinates were retrieved for all
+  117 source IDs represented by the 140 non-exact proposals. Spherical validation
+  routes 72 groups to recommended shared-identity acceptance and retains 45 for
+  explicit review: 23 Gaia image-ambiguity, 8 multi-position, and 14 combined
+  identity/classification cases. No canonical membership changed. The largest
+  measured difference from the legacy planar distance is 0.176110481759 arcsec.
+  Progress, 2026-07-14: The project lead approved the 72 clean shared-Gaia
+  identities. The builder merges those groups, records 72 approved identity
+  evidence rows, retains 72 retired canonical identifiers as aliases, and leaves
+  the other 45 groups as 65 explicitly routed proposals. The current build has
+  2,368 canonical objects and 649 review items; all invariants pass.
+  Progress, 2026-07-14: The project lead separately approved the 14 shared-Gaia
+  identity groups with conflicting reported UCD/GC roles. They are merged as
+  identities and labeled <code>uncertain / reported_ucd_role_conflict</code>, with both
+  source labels preserved. The build now has 2,354 canonical objects, 86 retained
+  canonical aliases, 49 proposals across 31 groups, and 642 review items.
+  Progress, 2026-07-14: The 23 two-position image-ambiguity groups now have
+  provenance-tracked five-arcsecond Gaia DR3 neighborhoods and Legacy Survey DR10
+  data/model/residual cutouts. No group has a competing Gaia source within two
+  arcseconds; one has a separate neighbor at 4.710023680999 arcseconds. Visual and
+  source-table review recommends accepting 22 shared identities while retaining
+  S547 and VUCD3 as separate objects sharing one unresolved Gaia source. No
+  identity decision or database membership has changed pending project-lead
+  review.
+  Progress, 2026-07-14: The project lead approved and the builder implemented the
+  split image-review treatment. Twenty-two groups are merged identities. Zhang
+  and Fahrion S547 are consolidated at a measured 0.058627924650-arcsecond
+  separation, while S547 and VUCD3 remain separate canonical objects with two
+  approved <code>ambiguous_shared_gaia_dr3</code> evidence rows. The deterministic build has
+  2,331 canonical objects, 109 retained aliases, 26 proposals across eight
+  multi-position groups, and 618 review items. All invariants pass.
+  Progress, 2026-07-14: The final eight multi-position groups were audited against
+  authoritative Gregg, Fahrion, and Saifollahi tables, Brüns aliases, and a
+  five-paper ADS metadata query. All eight combine three sub-arcsecond positions
+  around one clean Gaia source with positive reported roles and consistent Fornax
+  membership. Seven velocity comparisons agree within 1.7 Gregg uncertainties;
+  F-6/Gregg 27 has a preserved 268 km/s (2.65-sigma) measurement tension. The
+  audit recommends eight shared identities but changes no memberships pending
+  project-lead review.
+  Progress, 2026-07-15: The project lead approved all eight three-position
+  shared-Gaia identities. The builder now merges them generically by declared
+  position count, retains 16 additional canonical aliases, preserves the
+  F-6/Gregg 27 velocity tension and both identical Saifollahi F-1/UCD2 rows, and
+  leaves no shared-Gaia proposals. The deterministic build contains 2,315
+  canonical objects (1,726 candidate, 575 rejected, 14 uncertain), 125 aliases,
+  116 approved shared-Gaia identity evidence rows, and 584 review items. All 180
+  legacy exact duplicate-coordinate groups remain represented, and the immutable
+  legacy database hash is unchanged.
+  Progress, 2026-07-15: A targeted 2015-2026 ADS title query exposed 45 papers
+  absent from the original citation-led discovery set, including seven relevant
+  object studies from 2015-2018. The exact 345-paper union was screened by title
+  and abstract with corpus SHA-256
+  <code>54619aad14b33d82ff9408d7da7db0190d2f14709673c0b7a4e4fcf702788f79</code>.
+  Five sources are already ingested, 313 are context-only, and 27 are proposed
+  for retrieval; no source membership changes are authorized pending project-lead
+  review of the retrieval cohort.
+  Progress, 2026-07-15: The project lead approved and the builder implemented the
+  five-part Wave 1 treatment. The deterministic v2 product now preserves 5,049
+  literature records and 2,059 separate pool records across 30 publications and
+  22 datasets. Wave 1 contributes 855 unconfirmed positive records, 1,484 negative
+  comparisons, a 904-row Wittmann mixed compact-system pool, and one Ahn evidence
+  record referencing all 109 M59-UCD3 spatial bins. Four exact Ko UCD/GC conflicts
+  remain <code>uncertain / reported_ucd_role_conflict</code>. Four S999 source rows share the
+  Gaia-bearing Fahrion canonical, and the prior Zhang canonical identifier remains
+  an alias. The build has 4,623 canonicals, 126 aliases, 587 review items, and no
+  association proposals; all invariants pass and the legacy database is unchanged.
+  Progress, 2026-07-15: A name-led audit screened all 2,324 Wave 1 rows not already
+  linked to pre-Wave identities. It found 161 rows with direct-name or published-
+  alias evidence. Seven rows have one unique nearest baseline canonical within one
+  arcsecond and are proposed for project-lead approval; 153 rows intersect multiple
+  baseline canonicals within one arcsecond and require group-level identity review.
+  Four reused Fornax-style identifiers are spatially inconsistent by more than
+  474,000 arcseconds and are explicitly not recommended. No general radius rule or
+  database change was made.
+  Progress, 2026-07-15: The project lead approved the seven-row high-confidence
+  cohort. The builder links those rows to six reviewed pre-Wave candidates using
+  <code>approved_wave1_name_or_alias_identity</code>, stores seven approved evidence records,
+  and retains all seven superseded Wave canonical identifiers as aliases. The
+  deterministic build now has 4,616 canonicals (2,547 candidate, 2,051 rejected,
+  and 18 uncertain), 133 aliases, and 587 review items. The 153 multi-canonical
+  cases and four distant identifier collisions remain unchanged.
+  Progress, 2026-07-15: A read-only group audit covers all 153 multi-canonical
+  rows in 91 connected groups and retains all 200 nearby pre-Wave canonical
+  contenders. Twelve groups containing 16 Wave rows and 24 pre-Wave canonicals
+  have complete shared-identifier coverage, identical retained velocities, no
+  distinct-Gaia conflict, and no reported-role conflict; they are proposed for
+  project-lead review. Of the 79 unchanged manual groups, 74 contain at least one
+  nearby canonical without an identifier link and five retain non-identical
+  published velocities. No identity, membership, classification, or production
+  database state changed.
+  Progress, 2026-07-15: The project lead approved all 12 complete shared-identifier
+  groups. The builder now consolidates their 40 prior canonicals into 12 candidate
+  objects, stores 12 approved group-level identity evidence records, and retains
+  all 28 superseded canonical identifiers as aliases. The deterministic v2 product
+  has 4,588 canonicals (2,519 candidate, 2,051 rejected, and 18 uncertain), 161
+  aliases, and 575 review items. A post-build audit leaves exactly 79 manual groups
+  covering 137 Wave rows and produces no new proposals. All 180 exact duplicate-
+  coordinate groups remain preserved and the legacy database is unchanged.
+  Progress, 2026-07-15: Under the project lead's delegated source-audit authority,
+  the remaining 79 groups resolve into 80 identities. Seventy-two follow exact Liu
+  2015 NGVS keys and published aliases, two use Brodie catalog evidence, four
+  preserve differing independent or weighted velocity measurements, and S547 and
+  VUCD3 remain two distinct identities. The builder moves 238 records, stores 80
+  approved source-lineage evidence records, and retains 229 additional superseded
+  canonical identifiers as aliases. The deterministic v2 product now has 4,359
+  canonicals (2,290 candidate, 2,048 rejected, and 21 uncertain), 390 aliases, and
+  493 review items. The post-build Wave 1 multi-canonical audit is empty; all 5,049
+  literature records, all 180 exact duplicate-coordinate groups, and the unchanged
+  legacy database remain preserved.
+  Completion, 2026-07-15: Closed all four remaining validation gates. The 168
+  supporting raw rows are object-linked as measurements; host and distance
+  normalization is source-scoped; 1,316 approved spectroscopic evidence rows
+  produce 740 confirmed canonicals; and the hashed 345-paper literature screen has
+  zero pending decisions. The final v2 database preserves 5,049 literature records
+  and 4,359 canonical objects classified as 740 confirmed, 1,515 candidate, 2,082
+  rejected, and 22 uncertain. The only remaining review rows are four coordinate-
+  null Fahrion provenance records. Validation passes with no open Stage 1 gates,
+  all 180 legacy duplicate-coordinate groups are reproduced, the legacy SHA-256 is
+  unchanged, and no destructive redundancy operation was used.
+  Depends on: BT-001.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-004 - Synchronize Gaia and Legacy Survey cross-match products.</strong>
+  Evidence: The database has 1,097 Gaia matches, while the Gaia export has 632
+  rows. The Legacy export has 917 rows, while the current database has zero Legacy
+  IDs.
+  Resolution criteria: A reproducible export from the canonical database matches
+  database counts and records query service, catalog release, radius, timestamp,
+  and match-quality fields.
+  Completed, 2026-07-15: The reproducible canonical export preserves all 963 Gaia
+  associations represented by 1,097 literature rows and 962 unique Gaia sources;
+  all lie within the one-arcsecond diagnostic radius. A fresh two-arcsecond Legacy
+  Survey DR10 match of all 4,359 canonical targets produces 3,723 matches and 636
+  no-matches. It retains 620 multi-candidate targets and flags 220 selected Legacy
+  sources shared across canonical targets without merging identities. Complete
+  target audits, measured batch records, UTC timestamps, release metadata, file
+  hashes, and the hashes of the superseded 632-row and 917-row products are stored
+  in the manifest. Standalone validation passes, and both database hashes remain
+  unchanged.
+  Depends on: BT-003, BT-007.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-005 - Make local-background estimation valid for nearby galaxies.</strong>
+  Evidence: The 2-degree query cap reaches only 129.2 kpc at 3.7 Mpc. M81 and
+  NGC 253 therefore contain no data in the declared 150-300 kpc background
+  annulus, producing zero background densities and undefined contrasts.
+  Resolution criteria: The search either covers the full background annulus or
+  uses documented large-area and off-target circular or annular controls. Controls
+  match or model Galactic latitude, lie beyond a conservatively buffered upper
+  estimate of <code>R200c</code>, and exclude regions influenced by other nearby galaxies.
+  Competing valid methods are compared and their differences propagated. The
+  workflow must fail explicitly when required area is missing rather than
+  reporting zero background.
+  Depends on: BT-001, BT-002.
+  Progress, 2026-07-18: Audited the inherited Phase III random fields, Phase IV
+  annulus, and frozen legacy method. Drafted <code>docs/background_control_design.md</code>
+  with paired off-target controls, a halo-excluded local annulus, and a stratified
+  large-field diagnostic. Implementation awaits project-lead decisions on method
+  hierarchy, unresolved environments, and the first <code>R200c</code> proxy.
+  Decision, 2026-07-18: Project lead approved paired off-target apertures as the
+  primary estimator, with a valid halo-excluded local annulus and a stratified
+  large-field model as robustness methods. Unresolved group or cluster membership
+  blocks inference but not exploratory profiles. A conservative K-luminosity upper
+  <code>R200c</code> proxy is permitted only for isolated centrals in the geometry fixture.
+  Geometry validation, 2026-07-18: The five-case synthetic fixture generates 20
+  count-blind symmetric candidates; 11 are accepted and 9 rejected. All nine checks
+  pass, including constant Galactic latitude, removal of the two-degree cap,
+  environment blocking, neighbor-halo rejection, and preservation of alternatives.
+  Query-partition validation, 2026-07-18: A bounded 0.2-degree NGC 4698 test
+  retrieved exactly 500 unique Gaia identifiers both as one complete circle and as
+  four non-overlapping horizontal sky strips containing 82, 154, 149, and 115 rows.
+  All nine geometry, boundary, exact-membership, and selector-independence checks
+  pass in 12.96 seconds. Adaptive row-count splitting and resumable production
+  retrieval remain pending.
+  Environment audit, 2026-07-18: Staged Kourkchi-Tully 2017 externally and audited
+  all 2,155 hosts. A shift-calibrated 5-arcsec rule accepts 1,792 unique associations,
+  preserves 2 multiple-catalog ambiguities, and leaves 361 unmatched; all ten
+  provenance and identity validations pass.
+  Halo-scale audit, 2026-07-18: Among 883 accepted group members, <code>1.5 R2t</code>,
+  <code>2 R2t</code>, and <code>3 R2t</code> enclose 91.73%, 97.73%, and 99.77%, respectively. One
+  association <code>R1t</code> encloses 86.41% of 832 usable members. These internally coupled
+  catalog tests do not justify one universal exclusion factor; no factor is frozen.
+  Field-condition benchmark, 2026-07-18: Selected five real review hosts without
+  Gaia source counts, then queried one target and two equal comparison patches at
+  exactly the same Galactic latitude without applying the UCD selector. The patches
+  contain 121, 100, and 122 Gaia sources in the allowed magnitude range and differ
+  in average observation counts; all six data-contract checks pass in 11.19 seconds.
+  This bounded result justifies measuring Gaia field conditions but does not freeze
+  a matching tolerance.
+  Five-host expansion, 2026-07-18: Measured 13 frozen target and provisional
+  comparison patches without applying the selector; all nine checks pass in 46.93
+  seconds. Arp 244 has a target measurement but no invented comparison because its
+  environment remains unresolved. M60 has 289 total Gaia sources in its target
+  patch versus 59 and 130 in diagnostic patches, showing that total target-field
+  density can contain real host or group populations and must not become a rigid
+  matching rule.
+  Large-sky pilot conditions, 2026-07-19: Measured total pre-selector Gaia source
+  density, M10, mean visibility periods, and mean matched transits in the 12 frozen
+  development pilot fields. The compact source retrieval agrees exactly with the
+  existing full-column counts, all 12 safeguards pass in 66.501269 seconds, and all
+  102 validation fields remain unopened.
+  Model-comparison freeze, 2026-07-19: Frozen five eligible candidate models of
+  increasing complexity, one environment-flag sensitivity comparison, whole-sky-
+  block prediction tests, internal setting selection, scores, and the simple-model
+  preference as <code>model_contract_8da80ba5e4bd6d3027e6</code>. All 13 safeguards pass; no
+  model is fitted and no field is scientifically approved.
+  Radial-area component, 2026-07-18: Defined requested, successfully queried,
+  missing, masked, and usable spherical area for each ring. Verified completed
+  strips reproduce the requested area, interrupted retrieval retains positive
+  missing area, and overlapping synthetic masks are subtracted once. The approved
+  Gaia path applies no bright-star, dust, or ancillary-imaging masks, so Gaia usable
+  area equals successfully queried area. All 18 checks pass in 0.216274 seconds.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-006 - Replace the pilot significance diagnostic with a validated
+  statistical model.</strong>
+  Evidence: Significance is currently <code>(observed - expected) / sqrt(expected)</code> and
+  does not propagate local-background uncertainty, selection effects, overlapping
+  apertures, or small-count behavior.
+  Interview decision, 2026-07-14: Use an initial 3-sigma overdensity standard
+  within a defined radial range, retain positive, zero, and negative measurements,
+  and include every eligible galaxy in population analyses. Null results are
+  acceptable. Low-mass dwarfs should help diagnose false positives, including
+  compact star-forming and H II regions.
+  Resolution criteria: <code>docs/SPEC.md</code> defines the null hypothesis and statistic;
+  simulations or control fields calibrate the radial range and full background
+  uncertainty; trial factors are handled; outputs distinguish exploratory ranking
+  metrics from inferential significance.
+  Depends on: BT-001, BT-002, BT-005, BT-021.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-007 - Correct and validate spherical cross-match geometry.</strong>
+  Evidence: Gaia and Legacy scripts retrieve rectangular boxes, calculate planar
+  coordinate differences without the right-ascension cosine factor, and retain
+  the nearest row without enforcing the requested cone radius.
+  Resolution criteria: Use a spherical separation or service-side cone match,
+  enforce the radius, retain ambiguity diagnostics, and validate against known
+  matches at representative declinations.
+  Completed, 2026-07-15: Both matchers now use NOIRLab Q3C service-side cones and
+  independently enforce great-circle radii with Astropy. Matched exports retain
+  all in-radius alternatives, counts, second-nearest distances, and neighbor
+  gaps; companion audit exports retain matched, no-match, and query-error states.
+  Deterministic fixtures cover the equator, declinations of plus and minus 80
+  degrees, right-ascension wraparound, strict radius exclusion, ambiguity, and
+  stable ties. Cached authoritative Gaia matches at -35.92 and +13.26 degrees
+  and one bounded live query per catalog pass. Existing one- and two-arcsecond
+  defaults were preserved as parameters rather than treated as calibrated cuts.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-008 - Repair literature-recovery and new-candidate validation.</strong>
+  Evidence: Each host is matched against the full literature database rather than
+  an eligible host-region subset. The unmatched-candidate calculation uses
+  literature indices against candidate row indices.
+  Resolution criteria: Define the eligible literature denominator per host, match
+  in the correct index direction, report completeness with denominators, and test
+  on at least one known rich host and one control target.
+  Depends on: BT-002, BT-003, BT-007.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-019 - Build a labeled reference and contaminant benchmark (completed
+  2026-07-16).</strong>
+  Evidence: The Gaia-only non-point-source probability is an open research
+  question. The literature collection mixes confirmed UCDs with candidates that
+  may be wrong, while the present selector has no documented point-source and
+  contaminant benchmark.
+  Interview decision, 2026-07-14: Explore the existing UCD sample with label
+  uncertainty; spectroscopic QSOs and compact galaxies in the relevant magnitude
+  range from surveys such as SDSS, GAMA, and DESI; published Gaia binary-star
+  references with Gaia binarity evidence; and compact star-forming or H II regions
+  around star-forming, spiral, and dwarf galaxies.
+  Resolution criteria: Produce a provenance-complete benchmark with confidence
+  tiers, relevant magnitude and sky coverage, fixed development and validation
+  partitions, and explicit tests of sensitivity to uncertain UCD labels.
+  Depends on: BT-003, BT-014.</p>
+</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit literature-label eligibility, Gaia coverage, source concentration,
+    and leakage groups (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Select provenance-bearing SDSS DR16 spectroscopic and Gaia DR3
+    non-single-star comparison sources, and identify PHANGS-MUSE as the
+    host-dependent H II source cohort (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Generate and validate <code>benchmark_v1</code> with immutable spatial-group
+    partitions and sensitivity-only uncertain UCD labels (2026-07-16).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Calibrate PHANGS-MUSE-to-Gaia association geometry with eight displaced
+    controls and approve 175 unique matches within 0.3 arcseconds as a
+    moderate-confidence, sensitivity-removable cohort (2026-07-16).</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> Search for and assess an object-level dwarf-galaxy H II catalog; approve
+    13 Gaia associations representing 12 unique Gaia sources from the van Zee et
+    al. long-slit spectroscopy sample within its separately calibrated
+    3.0-arcsecond radius (2026-07-16).
+  Completion, 2026-07-16: Built 3,857 benchmark rows representing 3,857 unique
+  Gaia DR3 sources across six provenance-bearing cohorts. The immutable spatial
+  split contains 3,136 development and 721 validation rows. Uncertain UCD labels
+  are sensitivity-only; the 175 PHANGS-MUSE and 12 unique van Zee dwarf-host H II
+  sources are moderate-confidence, cohort-removable contaminants. All 32 release
+  checks pass, including input hashes, source-specific association radii, label
+  contracts, unique Gaia sources, and partition leakage. The exact ADS dwarf-H II
+  search and source dispositions are retained in
+  <code>data/literature/discovery/validation_benchmark_literature_search_2026-07-16.json</code>.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-021 - Calibrate the host-scaled signal aperture and inner mask.</strong>
+  Evidence: Fixed physical bins do not scale with galaxy size, while central galaxy
+  substructure and compact star-forming regions can create false excesses. The
+  final <code>[M, N] x R50</code> signal region and inner exclusion are not yet defined.
+  Interview decision, 2026-07-14: Preserve annular profiles during exploration;
+  use measured <code>R50</code> where possible; allow a calibrated luminosity- or stellar-mass
+  to-<code>R50</code> relation for temporary estimates; and explore an inner mask such as
+  <code>2 x R50</code> without fixing that example in advance. Retain physical-kpc profiles.
+  Resolution criteria: Declare development and validation data; calibrate <code>M</code>,
+  <code>N</code>, and the inner limit with uncertainty; test sensitivity to the <code>R50</code> band and
+  estimation method; and account for radial-scan trial factors.
+  Clarification, 2026-07-18: The 0.1-degree circles used for Gaia archive benchmarks
+  are query diagnostics only and must not define real host measurements. Real host
+  measurements use concentric circular annuli and retain physical-kpc and
+  host-size-normalized radial profiles. A separately calibrated inner region is
+  excluded from UCD inference because galaxy substructure, compact star-forming
+  regions, and H II regions can dominate it.
+  Geometry audit, 2026-07-18: All 2,155 hosts have positive distances but the table
+  has no <code>R50</code> field. A provisional 600 kpc diagnostic radius exceeds two degrees
+  for 1,018 hosts and reaches 13.064418 degrees, so the inherited angular cap is
+  invalid. Defined a recombinable exploratory physical-ring view while requiring
+  continuous source radii, exact usable areas, and later <code>R50</code>-based calibration;
+  all seven count-blind checks pass.
+  Interview decision, 2026-08-11: Report physical-kpc and <code>R50</code>-normalized profiles
+  whenever verified <code>R50</code> exists, while missing <code>R50</code> affects only the normalized
+  view. Use 0--50 kpc as a deliberately conservative first-stage contamination
+  region without discarding its component rings. Retain profiles through 600 kpc
+  and inspect their outer behavior before selecting a final outer signal boundary.
+  The 50 kpc exclusion and 600 kpc reach are first-stage working geometry, not final
+  scientific limits.
+  First-stage fixture, 2026-08-11: Froze 14 physical rings through 600 kpc for the
+  five count-blind review hosts. The requested 600 kpc areas span 6.478776--
+  491.177142 square degrees; the very nearby dwarf remains in the fixture rather
+  than being removed for difficult geometry. All 16 checks pass without a Gaia
+  query. NGC 4698 is the first live benchmark because it has the smallest 600 kpc
+  angular radius among the fixed resolved isolated cases.
+  Count benchmark, 2026-08-11: Measured 23,811 frozen-domain Gaia sources over
+  6.478776 square degrees in 2.004 seconds. The query returned one aggregate count,
+  downloaded no source rows, and did not apply the point-source selector; all nine
+  checks pass.
+  First measured profile, 2026-08-11: Retrieved all 23,811 unique sources in six
+  verified strips, retained continuous source radii outside the repository, and
+  measured all fourteen rings. The frozen point-source contamination selector
+  retains 2,548 sources. Beyond 50 kpc its density spans 317.377181--426.550743 per
+  square degree. All fourteen run checks pass; no final outer boundary is selected
+  from this one host.
+  Candidate diagnostics, 2026-08-12: Plotted every passing-source location and all
+  nine frozen selector inputs. The profile contains no clear host-centered
+  concentration; 2,421 of 2,548 passing sources lack five-parameter Gaia astrometry,
+  and the five labeled examples remain visual-review aids rather than a candidate
+  rank. Added the literature-standard G versus raw BP/RP flux-excess plane and
+  recorded the project lead's visual classification of example E as a star. A
+  versioned astrometric-veto tradeoff is now required because its 48.468-sigma
+  motion and 9.069-sigma parallax survived the soft model penalties. All eight
+  checks pass without changing any selector or radial boundary.
+  Astrometric-rejection assessment, 2026-08-12: Froze a development-only contract
+  before measuring 1,885 exact boundaries. The 3-standard-deviation literature
+  reference loses four selector-passing reliable UCDs to remove one ordinary star
+  and one QSO. No measured boundary improves priority-contaminant rejection while
+  retaining at least 90% of all reliable UCDs. Recommend retaining motion evidence
+  as a mandatory review flag rather than a universal hard rejection; project-lead
+  review is pending.
+  Depends on: BT-002, BT-006, BT-020.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-022 - Calibrate and freeze the Galactic-latitude limit.</strong>
+  Evidence: Milky Way contamination varies strongly with Galactic latitude. The
+  inherited sample uses <code>|b| &gt; 20</code> degrees and the pilot uses 30 degrees, but those
+  values were not calibrated with one canonical selection function.
+  Interview decision, 2026-07-14: Experiment across Galactic latitude, identify
+  where background density is too high for meaningful constraints, and apply a
+  conservative <code>|b|</code> cut to the final sample. No minimum sensitivity is known in
+  advance; deriving a defensible criterion from the data is part of the research.
+  Resolution criteria: Define a meaningful-constraint metric; measure background
+  density and variance across <code>|b|</code> with the canonical selector; freeze and record
+  the conservative threshold before final host inference; preserve excluded fields
+  as contamination diagnostics.
+  Depends on: BT-002, BT-009.</p>
+</li>
+</ul>
+<h2 id="p1-pilot-reproducibility-and-scale-up">P1: Pilot Reproducibility and Scale-up</h2>
+<ul>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-030 - Build the UCD reference visual-review workbench (implemented
+  2026-08-19; status reconciled 2026-10-12).</strong>
+  Evidence: The UCD Legacy Survey reference (680 confirmed UCDs and 44 Saifollahi
+  high-probability candidates) now has compact three-color images, Legacy Survey
+  Tractor matches, and exact-identifier Gaia membership, but no source-by-source
+  visual review of appearance, centering, host context, or contamination. Mosaic
+  atlas pages are insufficient for per-source diagnosis.
+  Resolution criteria: A local single-user workbench reviews all 724 objects at two
+  image scales with provenance, Gaia, host, Legacy Survey, and external-catalog
+  evidence; records append-only visual observations and a manual positive-design-
+  reference decision; and exports a clean confirmed-UCD positive design reference
+  plus a separate Saifollahi follow-up pool, without altering any canonical data.
+  Specification: <code>docs/plans/ucd_visual_review_tool.md</code>.
+  Completion evidence: <a href="journal/2026-08-19_ucd_visual_review_workbench.html">August 19 checkpoint</a>,
+  the implemented application, versioned exports, and the stored 15-check API
+  validation report. Both cohorts now use include/exclude/hold, but candidate
+  inclusion never promotes confirmation. Human source review is not part of this
+  build-completion checkbox: zero saved local reviews were found on 2026-10-12.
+  Resume the reference assessment before the M60 contamination audit in BT-031.
+  Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-031, and a
+  separately audited host-association register.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-032 - Organize project documentation and build the HTML reading portal.</strong>
+  Scope: Correct stale summaries, make document ownership explicit, preserve
+  historical evidence, and generate an index plus linked HTML document views.
+  No selector changes, review classifications, or public deployment are included.
+  Specification: <a href="plans/documentation_site.html">Documentation-site plan</a>.
+  Implemented 2026-10-12: source ownership, dated status, corrected roadmap,
+  searchable directory, and 88 Markdown-to-HTML views are complete; 109 automated
+  checks pass. This issue remains open only for manual browser review before
+  accepting the portal's presentation. No scientific processing was changed.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-009 - Recompute the background experiment with the canonical
+  selection.</strong>
+  Evidence: Phase III omits the Phase IV proper-motion filter and color score. Its
+  density model is therefore not calibrated to the pilot selector. It also divides
+  by 2.0 square degrees instead of the exact spherical area of 2.010586633 square
+  degrees for a 0.8-degree-radius circle. The previously cited 2.010619 value is
+  the flat-circle approximation.
+  Resolution criteria: Background and pilot use BT-002, exact usable areas are
+  recorded, failures are preserved, and the latitude model includes uncertainty
+  and a stated applicability domain.
+  Depends on: BT-002.
+  Preparation, 2026-07-18: The bounded three-patch field-condition benchmark used
+  only pre-selector quantities and passed all six checks. The canonical-selector
+  random-field experiment and spatially separate validation fields remain pending.
+  Five-host preparation, 2026-07-18: Thirteen pre-selector field measurements
+  confirm that exact Galactic-latitude matching does not ensure identical Gaia
+  coverage. Calibration must use off-target development fields and spatially
+  separate validation fields so target-associated sources cannot tune the rule.
+  Frozen field split, 2026-07-18: Assigned the NGC 4698 and NGC 1316 east/west
+  circles to development and held the ESO 006-G001 and M60 east/west circles for
+  validation. Both fields from one host remain together; each partition contains
+  isolated/grouped and positive/negative-latitude cases. The assignment reads no
+  Gaia counts or selector outputs, promotes no field to scientific-background
+  status, and passes all 14 checks. This is a bounded diagnostic split, not a final
+  survey-wide validation set.
+  Development selector run, 2026-07-18: Retrieved all 19 frozen inputs for only the
+  four development circles and applied <code>point_source_logistic_model_v1</code> locally.
+  Among 413 Gaia sources, 44 pass the threshold over 0.125664 square degree; the
+  four field counts are 18, 8, 12, and 6. All 18 checks pass. No held-back field was
+  queried or written to selector outputs. These passing sources are candidates, not
+  confirmed UCDs, and the small experiment does not set a final background model.
+  Frozen development summary, 2026-07-18: Preserved four field rows, combined
+  east/west only within each of the two host systems, and retained one
+  all-development row for descriptive auditing. Added exact 68% and 95% ranges for
+  random small-count variation while documenting that they exclude real
+  field-to-field and observing-condition differences. Counts and areas are
+  conserved, the selector threshold is unchanged, validation fields remain absent,
+  and all 16 checks pass.
+  Held-back validation, 2026-07-19: Opened exactly the four frozen validation
+  circles after fixing the procedure. Among 1,233 Gaia sources, 52 pass over
+  0.125664 square degree, for a descriptive density of 413.802957 per square
+  degree versus 350.140964 in development. The combined value is outside the
+  development 68% counting-only range but inside its 95% range; field and host-pair
+  density ranges overlap. All 24 safeguards pass. No selector or summary setting
+  changed, no development artifact changed, and no diagnostic circle is approved
+  as a scientific background. A larger off-target sample remains necessary for
+  the final latitude-dependent model and applicability range.
+  Fixed large-sky grid, 2026-07-19: Replaced the inherited unseeded random
+  coordinates with 500 reproducible, equal-sky-area positions over <code>|b| &gt;= 20</code>
+  degrees. Broad sky blocks keep nearby fields together, producing 398 development
+  and 102 held-back fields while covering both hemispheres and every declared
+  Galactic- and ecliptic-latitude band. The minimum center separation is 6.429656
+  degrees. Known group, association, and project-host intersections are retained
+  as count-blind sensitivity flags rather than exclusions. All 16 checks pass; no
+  Gaia count or selector output was read, and no field is approved as a scientific
+  background.
+  Development retrieval pilot, 2026-07-19: Before querying any 0.8-degree grid
+  field, froze <code>sky_field_0000</code> as the position-only low-latitude performance
+  benchmark and selected one development representative from every hemisphere ×
+  equal-area Galactic-latitude band. Two stable-hash supplements complete the six
+  ecliptic-latitude bands, producing 12 development fields. All ten checks pass and
+  all 102 validation identifiers remain absent.
+  Development retrieval benchmark and pilot, 2026-07-19: The position-only
+  <code>sky_field_0000</code> benchmark measured 84,025 Gaia sources in 26 final strips; the
+  largest has 4,982 rows, controlled stop/resume succeeded, and all 18 checks pass.
+  The full 12-field pilot measured 275,404 Gaia sources and 11,583 passing
+  candidates over 24.127040 square degrees. Its passing densities span
+  239.233660–708.748370 per square degree. All nine aggregate checks pass, raw
+  checkpoints remain outside the repository, and all 102 validation fields remain
+  unopened.
+  Development continuation, 2026-07-19: Calculated the fixed 10th-percentile,
+  median, and 90th-percentile G-magnitude summaries from the 12 verified external
+  checkpoints without an archive query; all nine checks pass. A resumable
+  development-only continuation then processed <code>sky_field_0167</code> as one bounded
+  live test, raising completed coverage to 13 of 398 fields. Its 9,095 sources use
+  two verified strips, 540 pass the selector, and all ten field and 14 run checks
+  pass. A zero-query restart verified the receipt and started no new field. All 102
+  validation fields remain unopened.
+  Bounded scale-up, 2026-07-19: Increased measured development coverage to 65 of
+  398 fields. The latest 25-field batch retrieved 402,986 Gaia sources in 118
+  strips, selected 18,730, and wrote 83,087,504 checkpoint bytes in 647.913666
+  seconds. A repeated archive stall for <code>sky_field_0317</code> motivated measured
+  180-second per-request and 300-second whole-field ceilings, attempt-based batch
+  limits, permanent nonzero failure receipts, and default deferral until an
+  explicit retry. All 17 run safeguards pass and validation remains unopened.
+  Continued scale-up, 2026-07-19: A subsequent 50-field batch completed without
+  failure, retrieving 664,824 sources in 200 strips, selecting 36,993, and writing
+  136,550,316 checkpoint bytes in 1,102.252987 seconds. Overall development
+  coverage is 115 of 398 fields; 283 remain and validation is unopened.
+  Continued scale-up, 2026-07-19: A bounded 100-field batch completed without
+  failure, retrieving 1,751,980 sources in 505 strips, selecting 85,551, and
+  writing 361,142,579 checkpoint bytes in 2,736.647886 seconds. Overall development
+  coverage is 215 of 398 fields; 182 untouched fields and one deferred failure
+  remain, while validation stays unopened.
+  Completed development measurement, 2026-07-19: Bounded continuation runs now
+  cover all 398 development fields over 800.213480 square degrees. The verified
+  aggregate contains 8,001,113 Gaia sources, 403,920 passing sources, and 2,356
+  final strips. The dense final field resumed both its saved planning counts and
+  386 source strips across bounded attempts. All 17 safeguards pass, a zero-work
+  rerun verified every external record in 0.025172 seconds, and all 102 validation
+  fields remain unopened. The next step is the already frozen six-model comparison
+  on development data only.
+  Development model comparison, 2026-07-19: Compared all six predeclared methods
+  with whole sky blocks held together and selected the regression combining sky
+  position with measured Gaia conditions. Its final setting uses three spline knots
+  and <code>alpha = 0.1</code>; all 22 safeguards pass. The flagged <code>sky_field_0317</code> dominates
+  one test fold and remains an explicit applicability warning rather than being
+  deleted. The fitted model and residual ranges are frozen, while all 102 validation
+  selector results remain unopened pending review.
+  Direct background revision, 2026-08-11: Froze three procedures before comparing
+  outcomes and selected the simplest: use all measured development fields in the
+  same broad absolute-Galactic-latitude band. Its typical held-out density error is
+  a factor of 1.182; the measured 68% and 95% ranges cover 65.6% and 91.0% of
+  development fields. All 17 safeguards pass with no archive query. The fitted
+  model is diagnostic only, and all 102 large-sky validation fields remain unopened
+  for a fresh branch.
+  Review, 2026-08-11: The direct comparison preserves every comparison-field
+  identifier and measured density, reports both central values and measured ranges,
+  and keeps <code>sky_field_0317</code> as an explicit out-of-range result. The latitude-band
+  procedure is preferred because all three methods have nearly identical typical
+  development error, while the simplest method uses larger comparison pools and
+  has better measured-range coverage. The 102 reserved fields were not queried or
+  inspected; their one-time test belongs on a new branch.
+  Validation freeze, 2026-08-11: On the fresh validation branch, contract
+  <code>validation_run_contract_d75e3ddea7013547c088</code> fixes all 102 reserved field
+  identifiers, their count-blind processing order, bounded retrieval rules, direct
+  comparison metrics, and the fitted model's secondary diagnostic role. A zero-query
+  start passes all 17 run safeguards with zero completed fields and confirms that no
+  reserved selector result has yet been opened.
+  Validation first field, 2026-08-11: The bounded first run opened only
+  <code>sky_field_0422</code>, measured 11,680 Gaia sources and 1,108 passing sources in four
+  verified strips, and completed in 35.113735 seconds. A zero-query restart reused
+  the immutable external receipt, attempted nothing, and passed all 17 safeguards
+  with 101 reserved fields remaining.
+  Validation scale-up, 2026-08-11: A ten-attempt batch completed every field without
+  failure in 238.688603 seconds. Cumulative coverage is 11 reserved fields with
+  142,703 Gaia sources, 9,908 passing sources, and 42 verified strips; a zero-query
+  restart reused all receipts and passed all 17 safeguards.
+  Validation continuation, 2026-08-11: The next 25-attempt batch completed without
+  failure in 712.880576 seconds. Cumulative coverage is 36 reserved fields with
+  533,034 Gaia sources, 30,972 passing sources, and 163 verified strips; the next
+  zero-query restart passed all 17 safeguards with 66 fields remaining.
+  Validation continuation, 2026-08-11: A 35-attempt batch completed every field
+  without failure in 828.929929 seconds. Cumulative coverage is 71 reserved fields
+  with 974,992 Gaia sources, 59,951 passing sources, and 291 verified strips; a
+  zero-query restart passed all 17 safeguards with 31 fields remaining.
+  Validation completion, 2026-08-11: The final bounded batch completed all 102
+  reserved fields without failure. The verified total is 1,534,299 Gaia sources,
+  86,189 passing sources, 459 strips, and 205.079837 square degrees. The unchanged
+  direct procedure has a validation typical density factor of 1.197 and range
+  coverage of 63/102 at 68% and 94/102 at 95%, versus 65.58% and 90.95% in
+  development. The frozen fitted diagnostic has factor 1.128 and coverage of 66/102
+  and 100/102 but remains secondary. All 20 evaluation safeguards pass without
+  refitting or retuning.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-010 - Make pilot runs atomic, resumable, and auditable.</strong>
+  Evidence: The current summary contains 17 targets rather than the intended 20.
+  M49, M59, and NGC 1097 are absent, while a stale M49 candidate/profile pair
+  remains on disk. A rerun overwrites the summary without a run identifier.
+  Resolution criteria: Each run has configuration metadata, target status,
+  failures, timestamps, and an immutable run identifier. Aggregation includes only
+  products from the selected run and can resume safely.
+  Depends on: BT-002, BT-005.
+  Retrieval-component progress, 2026-07-18: A bounded Gaia test measured and split
+  500 entries into six final strips, stopped after two atomic checkpoints, resumed
+  by skipping those two and retrieving four, then detected and replaced one
+  deliberately damaged strip without changing five valid strips. The combined 500
+  identifiers match the independent reference exactly and all 15 checks pass in
+  21.68 seconds. Production row limits, full run identifiers, failure policy, and
+  host-level aggregation remain pending.
+  Full-column benchmark, 2026-07-18: Retrieved all 19 classifier inputs from 100
+  through 10,000 rows. Three 5,000-row runs returned identical identifiers in
+  1.948628--1.976649 seconds and serialized to 1,027,468 bytes; all ten checks pass
+  in 17.719464 seconds. Approved 5,000 rows as a provisional development checkpoint
+  limit, pending multi-field and full-column restart validation. This is not an
+  archive maximum.
+  Multi-field full-column validation, 2026-07-18: The first equal-radius test was
+  retained as failed because only the 13,010-row field split. After expanding only
+  the M60 performance circle, the accepted test measured 2,991, 6,497, and 13,010
+  rows and produced one, two, and four strips. Both split cases resumed from one
+  verified checkpoint; every combined identifier hash matches an independent
+  reference and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows per strip
+  for development and pilot runs under the current 19-column contract.
+  Radial-area integration, 2026-07-18: Verified strip-completion states now produce
+  per-ring requested, successfully queried, missing, masked, and usable areas.
+  Complete, partial, and overlapping-mask fixtures pass all 18 checks. The Gaia
+  path applies no external imaging masks and requires usable area to equal verified
+  queried area. At this stage, permanent run identifiers had not yet been added.
+  Per-galaxy receipt component, 2026-07-18: Three completed performance fields now
+  share one configuration-derived run identifier and retain separate permanent
+  receipts. A controlled partial M60 receipt uses a separate identifier, preserves
+  positive missing area, and records its incomplete retrieval in plain language.
+  Identical writes are reused, different content cannot overwrite an existing
+  receipt, and all 18 checks pass in 0.014978 seconds. Real host aggregation still
+  depends on declaring the physical ring request and central scientific exclusion.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-011 - Build a host-aware master candidate catalog.</strong>
+  Evidence: The current 18 candidate files contain 18,552 rows but only 17,995
+  unique Gaia source IDs; 557 sources occur in multiple host files.
+  Interview decision, 2026-07-14: Treat each host-centered case independently in
+  the first round and allow one Gaia source to contribute to multiple hosts. Do not
+  collapse or silently double-count these associations in aggregate products.
+  Resolution criteria: Store one Gaia-source record with one-to-many host
+  associations, projected radii, selection version, and per-host statistics.
+  Depends on: BT-010.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-023 - Develop probabilistic host association after the first round.</strong>
+  Evidence: Overlapping halos create one-to-many source-host associations, and a
+  uniquely assigned host is not justified during the exploratory search.
+  Interview decision, 2026-07-14: Preserve independent host measurements first;
+  later assign the probability that a source is a UCD associated with each target.
+  Resolution criteria: Define and validate host-membership probabilities, retain
+  ambiguous associations, and quantify the effect of shared sources on population
+  correlations and uncertainties.
+  Depends on: BT-011, BT-012, BT-021.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-024 - Test whether host overdensity improves candidate probability.</strong>
+  Evidence: A real host excess may make individual UCD candidates more plausible,
+  but no current result establishes how large that effect is or whether it is
+  useful.
+  Interview decision, 2026-07-14: Pin this question until more results are
+  available. Preserve Gaia-only source evidence and host overdensity separately in
+  the first round.
+  Resolution criteria: Define a non-circular statistical model or independent
+  validation design; test calibration and ranking improvement on held-out hosts or
+  controls; document whether host context is retained as a candidate prior.
+  Depends on: BT-006, BT-008, BT-011, BT-019.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-028 - Implement explicit candidate and confirmation labels.</strong>
+  Evidence: Current catalogs mix confirmed and candidate literature entries, while
+  Gaia-selected sources do not have a defined evidence-level schema.
+  Interview decision, 2026-07-14: Candidate-level conclusions are sufficient.
+  Confirmation requires either space-based high-resolution imaging establishing
+  UCD-like resolved structure or spectroscopy consistent with the nearby system.
+  Confirmation opportunities may be rare and are not mandatory.
+  Resolution criteria: Define provenance-bearing evidence and status fields;
+  migrate literature labels without overstating certainty; keep Gaia-only and
+  overdensity-selected sources as candidates; validate status transitions.
+  Progress, 2026-07-14: Implemented versioned <code>confirmation_rules_v1</code>, evidence
+  records, four derived states, transition fixtures, and mandatory review for
+  every confirmation promotion. The current draft deliberately contains no
+  confirmed objects until evidence reviews are approved.
+  Depends on: BT-003, BT-008, BT-013, BT-023.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-025 - Compare and validate per-galaxy excess metrics.</strong>
+  Evidence: No established metric currently defines how background-subtracted
+  counts or densities should be normalized across galaxies of different size and
+  luminosity, and there is no direct literature precedent for this Gaia-UCD use
+  case.
+  Interview decision, 2026-07-14: Experiment broadly and seek methods from relevant
+  fields with analogous statistical problems. Do not select a metric because it
+  strengthens a preferred host correlation.
+  Resolution criteria: Compare candidate metrics using controls or simulations,
+  uncertainty calibration, background robustness, distance sensitivity, and
+  interpretability; document the approved primary and secondary metrics before the
+  final correlation analysis.
+  Depends on: BT-002, BT-005, BT-006, BT-021.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-026 - Define the complete primary and broad diversity samples.</strong>
+  Evidence: The current Top-100 pilot is luminosity-ranked and cannot support
+  unbiased host-property correlations. The completeness of the 2,155-galaxy parent
+  table has not been measured against a defined galaxy census.
+  Interview decision, 2026-07-14: Define a lower luminosity limit and volume giving
+  a nearly luminosity-complete primary correlation sample; greater than 80 percent
+  is an example, not a fixed requirement. Also use the entire valid sample to show
+  the diversity of UCD excess across host-property space.
+  Resolution criteria: Select a parent census; measure completeness versus
+  luminosity, distance, and sky position; freeze the primary sample limits; record
+  all exclusions; and label broader-sample results as descriptive or exploratory
+  where unbiased inference is unsupported.
+  Depends on: BT-001, BT-015, BT-020, BT-022, BT-027.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-027 - Select a published completeness-calibrated galaxy census.</strong>
+  Evidence: The current galaxy table is merged from several sources and does not
+  carry one documented selection function suitable for primary population
+  inference.
+  Interview decision, 2026-07-14: Draw the parent sample from published nearby-
+  galaxy work with a completeness analysis, including consideration of catalogs
+  built for gravitational-wave counterpart searches or dark-siren cosmology. Use
+  a publicly available selection function when one is provided; keep enrichment
+  from secondary catalogs separate from the parent denominator.
+  Resolution criteria: Review candidate catalogs and their papers; compare sky,
+  distance, luminosity, completeness, identifier, and property coverage; select and
+  document the parent census; reproduce or verify the relevant published
+  completeness result for BubbleTea's mask.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-029 - Test Gaia scanning-pattern systematics before final inference.</strong>
+  Evidence: Gaia's scan pattern can change observation geometry, astrometric
+  quality, and effective sensitivity to marginal source extension across the sky.
+  The current pipeline does not test this dependence.
+  Interview decision, 2026-07-14: Assume Gaia is uniform enough for first-stage
+  exploration, but retain scan-pattern sensitivity as a required final check.
+  Resolution criteria: Test selected-source density, extendedness probability, and
+  overdensity residuals against available Gaia coverage and astrometric-quality
+  indicators or scan-law-related spatial patterns; model the effect, propagate it,
+  or define a justified quality mask if it is material.
+  Depends on: BT-002, BT-006, BT-009, BT-022.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-012 - Flag dense environments for dedicated secondary analysis.</strong>
+  Evidence: The pilot <code>is_cluster</code> flag uses rough sky circles around Virgo and
+  Fornax. The reported 93 field targets are therefore not a defensible field
+  sample.
+  Interview decision, 2026-07-14: Environment is optional rather than mandatory
+  for the primary host-correlation analysis. Use it only if a significant and
+  scientifically usable fraction of the sample receives defensible measurements.
+  Apply the same first-stage host-centered procedure to all galaxies, flag the
+  small set of well-known groups and clusters within 50 Mpc, and analyze them
+  separately later. Compare local and global backgrounds in dense environments.
+  Resolution criteria: Replace the rough proxy with provenance-bearing flags for
+  known dense systems; preserve first-stage measurements; quantify local-versus-
+  global background sensitivity; and define any later membership analysis without
+  selecting the background that maximizes excess.
+  Depends on: BT-001.
+  Clarification, 2026-07-18: The approved BT-005 environment gate does not change
+  the selector or host-centered procedure and does not remove dense-environment
+  hosts. It preserves their exploratory measurements but withholds an inferential
+  field-background subtraction until the containing halo exclusion is known.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-020 - Complete the mandatory host-property table.</strong>
+  Evidence: Luminosity, consistently measured <code>R50</code>, and morphology are required
+  for the primary host-correlation analysis. The current 2,155-galaxy sample has
+  K-band luminosity for all rows, morphology for only 200 rows in the base table,
+  and no <code>R50</code> column. The separate HyperLEDA product has morphology for 457 rows.
+  Interview decision, 2026-07-14: Missing <code>R50</code> or morphology never removes an
+  otherwise eligible host from the primary overdensity analysis. Retrieve the
+  missing information through careful literature and database cross-matching; only
+  the relevant correlation analysis is limited while a property remains missing.
+  The luminosity band is flexible and should maximize consistent usable coverage;
+  the current complete K-band measurement is a practical starting point.
+  Resolution criteria: Compile provenance-bearing luminosity, consistent-band
+  <code>R50</code>, and morphology with uncertainties or quality indicators; quantify
+  coverage and missingness; define the analysis policy for missing required
+  properties without altering the Gaia overdensity measurements.
+  Depends on: BT-001, BT-015.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-013 - Document ancillary imaging coverage without selection bias.</strong>
+  Evidence: Legacy Survey coverage was checked for only 500 galaxy centers with a
+  small box. Center coverage does not establish usable imaging across a 300 kpc
+  candidate region, and HSC coverage remains unchecked.
+  Interview decision, 2026-07-14: Imaging is value-added only. Multi-band data may
+  support SED or color-color checks, and HST, Euclid, or other high-resolution data
+  may test morphology. Significant Gaia excesses may receive targeted imaging
+  analysis later.
+  Resolution criteria: Record footprint and depth over the relevant aperture for
+  each ancillary survey, but do not use coverage to determine membership in the
+  Gaia statistical sample. Label all covered-subset and follow-up analyses.
+  Depends on: BT-001.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-014 - Complete literature provenance packages.</strong>
+  Evidence: Nine sources are ingested, but only <code>reference/voggel2020/</code> and
+  <code>reference/wang2023/</code> follow the required paper-folder convention. Several
+  source metadata files and counts are stale or contradictory.
+  Resolution criteria: Every ingested source has a correctly named folder,
+  bibliographic identifiers, source PDF or documented access status, original
+  machine-readable data, and a provenance README.
+  Progress, 2026-07-14: Retrieved 34 authoritative VizieR files into 11 source
+  packages, recorded SHA-256 hashes and row counts, and added provenance READMEs.
+  PDF acquisition or documented access status and raw-row reconciliation remain
+  open.
+  Progress, 2026-07-15: Retrieved the project-lead-approved 19-source Wave 1
+  cohort: 19 structurally valid PDFs (365 pages), five VizieR packages (11 tables,
+  4,535 preserved rows), and four publisher XLSX source-data files. The retrieval
+  report is deterministic and every file has a SHA-256 digest. The table-role and
+  positional-overlap review remains open; no new source row has changed canonical
+  membership, identity, classification, or confirmation.
+  Progress, 2026-07-15: Registered the five Wave 1 VizieR packages as 16 hashed raw
+  provenance files and implemented the approved row roles in v2. The 19 PDFs and
+  four publisher workbooks remain source-package provenance; no reported
+  confirmation was promoted automatically. Object-level evidence review for the
+  remaining PDF-only sources is still open.
+  Completed, 2026-07-16: All 30 v2 publications map one-to-one to approved
+  reference folders, and the separate Wang methodology package brings the tracked
+  folder count to 31. Twenty-one registered packages retain local PDFs; nine
+  older VizieR packages now explicitly document DOI-based paper access without a
+  local PDF. Every package records bibliographic identifiers, machine-readable
+  data or explicit no-package status, and file digests. The audit also documented
+  three retained files previously absent from package tables: Mieske table 2,
+  Gregg table 3, and the Saifollahi image list. All 275 provenance and
+  documentation checks pass without restructuring <code>reference/</code>.
+  Depends on: BT-003.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-015 - Reconcile plans, journals, summaries, and data manifests.</strong>
+  Evidence: <code>README.md</code>, <code>docs/PLAN.md</code>, <code>data/README.md</code>, <code>reference/summary.md</code>,
+  and phase trackers disagree about sample sizes, match rates, distance limits,
+  and phase status.
+  Resolution criteria: All headline counts are generated or verified from the
+  canonical products, statuses reflect unresolved validation work, and documents
+  link to the applicable selection and run versions.
+  Completed, 2026-07-16: <code>project_status_counts.json</code> now generates the canonical
+  headline counts from the v2 database and synchronized products. <code>README.md</code>,
+  <code>docs/PLAN.md</code>, <code>docs/CONTEXT.md</code>, <code>data/README.md</code>, <code>reference/summary.md</code>, and
+  the Phase I tracker cite 5,049 literature records, 4,359 canonical objects, the
+  versioned classification counts, and current cross-match totals. Historical
+  journals remain dated snapshots; the stale key-paper and VizieR inventories are
+  explicitly marked as superseded and link to their authoritative replacements.
+  Depends on: BT-001 through BT-014 where applicable.</p>
+</li>
+</ul>
+<h2 id="p2-implementation-quality">P2: Implementation Quality</h2>
+<ul>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-016 - Pass the configured Ruff and pre-commit checks.</strong>
+  Evidence: All 23 active Python files parse, but <code>ruff check scripts</code> reports 397
+  violations, including unfinished and unused code in addition to formatting.
+  Resolution criteria: <code>uv run ruff check scripts</code> and
+  <code>uv run pre-commit run --all-files</code> complete successfully without changing
+  scientific behavior.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-017 - Move shared scientific constants and calculations out of scripts.</strong>
+  Evidence: Magnitude limits, score weights, radial bins, proper-motion rules,
+  query radii, and background definitions are duplicated across phases and have
+  already diverged.
+  Resolution criteria: Versioned configuration and shared utilities are the sole
+  sources for BT-002 and BT-006 behavior, with scripts recording the values used.
+  Depends on: BT-001, BT-002, BT-006.</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-018 - Add script-level validation for deterministic calculations.</strong>
+  Evidence: The repository intentionally does not use pytest, but currently lacks
+  equivalent checks for selector parity, angular conversions, annular areas,
+  cross-match geometry, duplicate handling, and recovery indexing.
+  Resolution criteria: Standalone validation scripts run quickly on fixed fixtures
+  and fail with a nonzero status when an invariant is violated.
+  Depends on: BT-002, BT-003, BT-005 through BT-008.</p>
+</li>
+</ul>
+<h2 id="review-of-this-registration">Review of This Registration</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Review findings were converted into persistent, uniquely identified issues
+  on 2026-07-14.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Each issue records observed evidence and verifiable resolution criteria.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Scientific-validity blockers are separated from scale-up and maintenance
+  work.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> No issue was marked resolved merely because it was documented.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#bubbletea-issue-register">BubbleTea Issue Register</a><ul>
+<li><a href="#status-and-priority">Status and Priority</a></li>
+<li><a href="#p0-scientific-definition-and-validity">P0: Scientific Definition and Validity</a></li>
+<li><a href="#p1-pilot-reproducibility-and-scale-up">P1: Pilot Reproducibility and Scale-up</a></li>
+<li><a href="#p2-implementation-quality">P2: Implementation Quality</a></li>
+<li><a href="#review-of-this-registration">Review of This Registration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="../README.html">BubbleTea</a></li><li><a href="CONTEXT.html">BubbleTea Project Context</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li></ul></details><details><summary>Linked from (4)</summary><ul><li><a href="../README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">How to read and maintain the documentation</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>
