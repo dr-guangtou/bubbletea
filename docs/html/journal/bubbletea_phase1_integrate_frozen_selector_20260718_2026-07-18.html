@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>bubbletea phase1 integrate frozen selector 20260718 2026-07-18 · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../journal/bubbletea_phase1_integrate_frozen_selector_20260718_2026-07-18.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><hr>
+<p>date: 2026-07-18
+repo: bubbletea
+branch: phase1_integrate_frozen_selector_20260718
+tags:
+  - journal
+  - phase1
+  - selector
+  - phase4</p>
+<hr>
+<h2 id="progress">Progress</h2>
+<ul>
+<li>Added <code>scripts/utils/point_source_selector.py</code> as the shared inference path for
+  <code>point_source_logistic_model_v1</code>.</li>
+<li>Replaced the historical Phase IV Model C calculation and removed its excess-noise
+  and proper-motion query prefilters.</li>
+<li>Restricted retrieval to the measured benchmark Gaia G-magnitude domain and added
+  probability, decision, and selector-version fields to scored rows.</li>
+<li>Added a seven-check integration validator; stored development probabilities agree
+  to <code>1.11e-16</code>, and all decisions match exactly.</li>
+<li>Updated <code>docs/SPEC.md</code>, <code>docs/todo.md</code>, and the Phase IV plan with the frozen
+  integration contract and review evidence.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Selector parity includes the archive query denominator; upstream prefilters can
+  silently create a different selection function even when the model is unchanged.</li>
+<li>A serialized model must be loaded only after its digest, version, and input-feature
+  order have been verified.</li>
+<li>Live search execution must remain separate from selector integration while the
+  background geometry and significance model are scientifically unresolved.</li>
+</ul>
+<h2 id="key-issues">Key Issues</h2>
+<ul>
+<li>BT-005 remains open because the two-degree query cap does not cover the declared
+  background annulus for the nearest hosts.</li>
+<li>BT-006 remains open because the pilot significance diagnostic omits background
+  uncertainty and small-count calibration.</li>
+<li>The next task is a new-branch background-method design that compares valid local
+  and off-target controls without running the legacy pilot as scientific evidence.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+<li><a href="#key-issues">Key Issues</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

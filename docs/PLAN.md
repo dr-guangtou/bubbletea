@@ -55,7 +55,7 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Cross-match known UCDs with multi-wavelength catalogs (2MASS, WISE, GALEX)
 - Legacy Survey reference images, catalog matches, and Gaia external-catalog flags
   are already prepared; this is not complete multi-survey coverage
-- **Tracking:** [Reference report](ucd_legacy_survey_reference.md),
+- **Tracking:** [Reference report](development/reference_imaging.md#record-ucd_legacy_survey_reference),
   [open issues](todo.md) (no separate Phase Ib checklist exists yet)
 
 ### Phase II: Target Galaxy Sample (Inherited sample audited; final definition open)
@@ -83,7 +83,7 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Validate on known UCD hosts
 - All 398 development and 102 independently reserved validation fields are complete
 - **Tracking:** [Background tasks](plans/phase_3_background.md),
-  [independent validation](large_sky_validation_run.md)
+  [independent validation](development/background_measurements.md#record-large_sky_validation_run)
 
 ### Phase IV: Pilot Search (Exploratory profiles measured; visual assessment pending)
 
@@ -96,7 +96,7 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Characterize contamination and false positive rate
 - NGC 4698 and M60 profiles retain 14 rings through 600 kpc; M60's representative
   400-source visual assessment remains pending
-- **Tracking:** [Pilot tasks](plans/phase_4_pilot_search.md), [M60 report](m60_positive_control.md)
+- **Tracking:** [Pilot tasks](plans/phase_4_pilot_search.md), [M60 report](development/host_pilot_profiles.md#record-m60_positive_control)
 
 ### Phase V: Cross-match and Characterization (Planned)
 

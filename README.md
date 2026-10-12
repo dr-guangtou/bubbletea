@@ -6,7 +6,7 @@ in the nearby universe using Gaia DR3 astrometry and imaging survey photometry.
 **Restart checkpoint: 2026-10-12.** The visual-review tool is implemented; the local
 724-object review database has no saved reviews. Start with
 [current status](docs/current_status.md), the [documentation guide](docs/documentation_guide.md),
-or the generated [HTML portal](index.html).
+or the generated [HTML portal](docs/index.html).
 
 ## Scientific Goal
 
@@ -57,7 +57,7 @@ PYTHONPATH=. uv run python scripts/phase1_literature/analyze_gaia_properties.py
 ```
 
 To build the documentation portal, run
-`uv run python scripts/documentation/build_documentation.py`, then open `index.html`.
+`uv run python scripts/documentation/build_documentation.py`, then open `docs/index.html`.
 The [workbench README](scripts/phase4_search/ucd_visual_review/README.md) explains how
 to launch the separate source-review application; the static portal does not save reviews.
 
@@ -87,12 +87,15 @@ bubbletea/
 │   ├── SPEC.md            # Approved scientific and architectural requirements
 │   ├── current_status.md  # Dated restart summary
 │   ├── documentation_guide.md # Document ownership and reading routes
+│   ├── science_guide.md    # Plain-language science and evidence reading map
+│   ├── methods/            # Permanent scientific explanations
+│   ├── development/        # Consolidated implementation and experiment records
 │   ├── plans/             # Per-phase task tracking
 │   ├── journal/           # Research journal entries
-│   └── lessons/           # Lessons learned
+│   ├── lessons/           # Lessons learned
+│   ├── index.html          # Generated documentation home page
+│   └── html/               # Generated document pages and shared assets
 ├── notebooks/             # Analysis notebooks
-├── index.html             # Generated documentation home page
-├── site/                  # Generated HTML views of Markdown documents
 └── ucd_project/           # Legacy code (frozen reference, gitignored)
 ```
 

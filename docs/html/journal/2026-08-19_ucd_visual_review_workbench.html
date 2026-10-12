@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>UCD Visual Review Workbench — built and frozen for production · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../journal/2026-08-19_ucd_visual_review_workbench.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><h1 id="ucd-visual-review-workbench-built-and-frozen-for-production">UCD Visual Review Workbench — built and frozen for production</h1>
+<p><strong>Date:</strong> 2026-08-19
+<strong>Scope:</strong> Phase IV — interactive review tool for the UCD reference (680 confirmed + 44 Saifollahi candidates)</p>
+<h2 id="what-was-done">What was done</h2>
+<p>Built the full data-preparation and application pipeline specified in
+<code>docs/plans/ucd_visual_review_tool.md</code>:</p>
+<ul>
+<li><strong>Host-association register</strong> — 724 objects resolved to <code>verified_unique_host</code>
+  (411), <code>published_environment_only</code> (313), <code>host_unavailable</code> (0). 13 Voggel 2020
+  "candidate stripped-nucleus / luminous-GC" objects excluded from the confirmed
+  design reference. Cluster/group hosts adopt the cluster distance.</li>
+<li><strong>Retrievals</strong> — wide (67″) Legacy Survey cutouts (707 + 17 placeholders skipped),
+  10″ Gaia neighbors, external-catalog associations (SDSS/Quaia/morphology/NSS),
+  all with versioned manifests + SHA-256 digests.</li>
+<li><strong>Review-input bundle</strong> — one JSON per object + index + manifest.</li>
+<li><strong>Flask workbench</strong> — append-only review DB, local API, image-dominant UI with
+  two-scale images, match markers, source identification, and coordinate correction.</li>
+</ul>
+<h2 id="decisions-made-project-lead">Decisions made (project lead)</h2>
+<ul>
+<li>Cross-match radii: Legacy Survey and Gaia neighbors both <strong>10″</strong> (was 2″/5″) to
+  recover off-center literature coordinates.</li>
+<li>Legacy Survey matches filtered to <strong>r &lt; 23.0</strong>.</li>
+<li>Decision flags <strong>unified</strong> to <code>include</code> / <code>exclude</code> / <code>hold</code> for both confirmed
+  UCDs and candidates; candidate <code>include</code> = "keep in follow-up pool", never a
+  promotion to confirmed.</li>
+<li>Gaia source = coordinate reference; Legacy source = photometry reference;
+  <code>reference_quality</code> (<code>both</code>/<code>gaia_only</code>/<code>legacy_only</code>/<code>none</code>) is informational only.</li>
+<li>Discovery paper recorded per object (earliest year, or Fahrion <code>tableb1.dat</code> ref
+  for Fahrion-only objects).</li>
+</ul>
+<h2 id="current-state">Current state</h2>
+<ul>
+<li>Production version frozen: bundle <code>ucd_visual_review_bundle_v1</code>, schema
+  <code>review_schema_v1</code>, unified decision model.</li>
+<li>Review DB <strong>reset</strong> (empty); exports regenerated clean.</li>
+<li>"Pilot only" list filter defaults to off (full 724 objects).</li>
+<li><code>validate_api.py</code> passes 15/15; all scripts ruff-clean.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li>Run the full source-by-source assessment of all 724 objects.</li>
+<li>Export periodically (<code>scripts/phase4_search/export_ucd_visual_review.py</code>) and
+   commit the versioned artifacts.</li>
+<li>After review: derive the clean positive design reference (confirmed <code>include</code>)
+   for designing Gaia + Legacy Survey selection rules.</li>
+</ol></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#ucd-visual-review-workbench-built-and-frozen-for-production">UCD Visual Review Workbench — built and frozen for production</a><ul>
+<li><a href="#what-was-done">What was done</a></li>
+<li><a href="#decisions-made-project-lead">Decisions made (project lead)</a></li>
+<li><a href="#current-state">Current state</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../methods/reference_review.html">UCD reference review: scope, evidence, and decisions</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

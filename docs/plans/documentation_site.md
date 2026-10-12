@@ -4,7 +4,31 @@
 **Issue:** BT-032  
 **Scope:** Documentation only; no scientific processing or public deployment.
 
-**Status:** Implemented and automatically checked; manual browser review pending.
+**Status:** Original appearance approved; document consolidation and HTML relocation complete.
+
+## Approved organization revision
+
+The project lead reviewed and approved the visual style on 2026-10-12 and requested
+further cleanup: move the entrance to `docs/index.html`, consolidate same-topic
+notes, remove superseded standalone files, and keep only key project documents at
+the top of `docs/`. Development records are distinct from automatic journals.
+
+The revised layout has six project-level Markdown documents; permanent scientific
+explanations live in `methods/`; merged implementation and experiment records live
+in `development/`. Keep `plans/`, `journal/`, and `lessons/` separate. Generated
+pages and assets move from root `site/` to `docs/html/`, with the same approved design.
+
+Before removing a note, retain its unique measurements, commands, limitations, and
+scientific provenance in a dated section of the owning topic document. Preserve
+journals unchanged. Record old-to-new paths and section anchors in a machine-readable
+migration register so historical references remain interpretable. Update live links
+and script citations; do not leave obsolete top-level compatibility documents.
+
+- [x] Audit and classify every top-level document (2026-10-12).
+- [x] Consolidate development records and relocate scientific explanations (2026-10-12).
+- [x] Add a short project science guide and a complete disposition register (2026-10-12).
+- [x] Persist the new organization rule for future agents (2026-10-12).
+- [x] Move generated HTML, rebuild, and validate current and historical links (2026-10-12).
 
 [Documentation guide](../documentation_guide.md) · [Current status](../current_status.md)
 
@@ -29,7 +53,7 @@ latest committed state so the portal includes the workbench implementation.
   headings, and a per-page contents list. No frontend framework or remote service
   is needed.
 - Inputs and outputs are configured centrally in `scripts/config.py`.
-- Root `index.html` is the generated entrance; `site/` contains mirrored document
+- `docs/index.html` is the generated entrance; `docs/html/` contains mirrored document
   pages, a complete directory, shared CSS/JavaScript, and a build report.
 - Root/project guides and documents are discoverable by category. The project lead
   selected root guides plus `docs/` for the first build, with supporting documents
@@ -70,16 +94,34 @@ Measure build time and output size. Inspect desktop and narrow layouts in a brow
 - [x] Implement reproducible Markdown-to-HTML builder and local navigation (2026-10-12).
 - [x] Build all selected documents and check generated navigation (2026-10-12).
 - [x] Record checks, limitations, and the teaching-project next step (2026-10-12).
-- [ ] Review the home page, directory filter, and a long document visually at desktop
-  and narrow widths. Automated browser inspection was unavailable during this task.
+- [x] Receive project-lead approval of the home-page appearance (2026-10-12).
+  Automated browser inspection and narrow-width visual checks were unavailable;
+  these remain presentation limitations, not completed tests.
 
 ## Review
+
+### Consolidated revision
+
+The revised build covers 58 Markdown documents and produces 60 HTML pages. The
+top-level Markdown count fell from 52 to six. Forty-two development reports became
+ten topic records; five permanent-definition reports became four methods
+documents, alongside a new reference-review guide. All 47 retired paths have
+registered destinations and original source hashes. A preservation audit compares
+retained text, commands, measurements, and caveats with the original Git checkpoint.
+Journals, lessons, scientific data, figures, and reference-paper packages are unchanged.
+
+The site entrance is `docs/index.html`, all generated pages/assets are in
+`docs/html/`, and obsolete root copies are removed. The original visual style was
+approved by the project lead; the new structure is ready for review. Exact timing,
+file size, source hashes, and link-check results are in the current build report.
+
+### Original first-build measurements (historical)
 
 - A five-document pilot built seven pages in 0.216 seconds before full execution.
 - The complete build covers 88 root/docs Markdown documents and 90 HTML pages.
   One measured full build took 0.927184 seconds and wrote 1,238,774 HTML bytes
   before this review text was added. Exact current measurements are recorded in
-  [the generated build report](../../site/build_report.json).
+  [the generated build report](../html/build_report.json).
 - The standalone validator passed 109 checks: source coverage and digests,
   Markdown rendering, local links, anchors, and identifier preservation. No
   unavailable source links or unresolved fragments were found in the selected scope.
@@ -90,7 +132,7 @@ Measure build time and output size. Inspect desktop and narrow layouts in a brow
 - Browser review was not completed: the in-app browser was unavailable, and native
   Chrome interaction was stopped after concurrent-user-activity guards. The
   responsive stylesheet is implemented, but its visual appearance still needs
-  manual inspection. Open [the home page](../../index.html), then a long specification
+  manual inspection. Open [the home page](../index.html), then a long specification
   and the directory filter. No public deployment was performed.
 - Teaching content is intentionally deferred until audience, learning goals, time
   available, and student data access are specified.

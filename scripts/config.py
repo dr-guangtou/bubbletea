@@ -20,10 +20,11 @@ DATA_DIR = PROJECT_ROOT / "data"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 REFERENCE_DIR = PROJECT_ROOT / "reference"
 DOCS_DIR = PROJECT_ROOT / "docs"
-DOCUMENTATION_SITE_DIR = PROJECT_ROOT / "site"
-DOCUMENTATION_HOME = PROJECT_ROOT / "index.html"
+DOCUMENTATION_SITE_DIR = DOCS_DIR / "html"
+DOCUMENTATION_HOME = DOCS_DIR / "index.html"
 DOCUMENTATION_ASSETS_DIR = SCRIPTS_DIR / "documentation" / "assets"
 DOCUMENTATION_BUILD_REPORT = DOCUMENTATION_SITE_DIR / "build_report.json"
+DOCUMENTATION_MIGRATION = DOCS_DIR / "development" / "documentation_migration.json"
 
 # ---------------------------------------------------------------------------
 # Data subdirectories

@@ -7,6 +7,8 @@ after build_documentation.py; no scientific data or review database is opened.
 import hashlib
 import json
 import logging
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -17,11 +19,14 @@ from scripts.config import (
     DOCS_DIR,
     DOCUMENTATION_BUILD_REPORT,
     DOCUMENTATION_HOME,
+    DOCUMENTATION_MIGRATION,
     DOCUMENTATION_SITE_DIR,
     PROJECT_ROOT,
 )
 from scripts.documentation.build_documentation import (
     discover_sources,
+    migrated_target,
+    output_path,
     page_inspector,
     render,
     rewrite,
@@ -60,10 +65,10 @@ def main():
     require("#repeated_1" in contents, "Contents follows repeated headings")
 
     source = DOCS_DIR / "documentation_guide.md"
-    output = DOCUMENTATION_SITE_DIR / "docs" / "documentation_guide.html"
+    output = output_path(source)
     target = DOCS_DIR / "PLAN.md"
-    page_map = {target: DOCUMENTATION_SITE_DIR / "docs" / "PLAN.html"}
-    fixture = '<a href="PLAN.md?view=full#phases">Roadmap</a><a href="https://example.org/paper">Paper</a><a href="#local">Local</a><a href="../reference/summary.md">Sources</a><img src="hsc_example.png"><code>PLAN.md</code>'
+    page_map = {target: output_path(target)}
+    fixture = '<a href="PLAN.md?view=full#phases">Roadmap</a><a href="https://example.org/paper">Paper</a><a href="#local">Local</a><a href="../reference/summary.md">Sources</a><img src="development/assets/hsc_example.png"><code>PLAN.md</code>'
     rewritten = rewrite(fixture, source, output, page_map)
     text = "".join(rewritten.parts)
     require(
@@ -75,7 +80,7 @@ def main():
         'href="../../reference/summary.md"' in text, "Supporting Markdown remains source-linked"
     )
     require(
-        'src="../../docs/hsc_example.png"' in text,
+        'src="../development/assets/hsc_example.png"' in text,
         "Images resolve against original source location",
     )
     require("<code>PLAN.md</code>" in text, "Code is not rewritten as a link")
@@ -98,11 +103,13 @@ def main():
             hashlib.sha256((PROJECT_ROOT / name).read_bytes()).hexdigest() == digest,
             f"Source digest matches: {name}",
         )
+    for name, digest in report["build_inputs_sha256"].items():
+        require(
+            hashlib.sha256((PROJECT_ROOT / name).read_bytes()).hexdigest() == digest,
+            f"Build input digest matches: {name}",
+        )
     outputs = [DOCUMENTATION_HOME, DOCUMENTATION_SITE_DIR / "directory.html"]
-    outputs.extend(
-        DOCUMENTATION_SITE_DIR / path.relative_to(PROJECT_ROOT).with_suffix(".html")
-        for path in sources
-    )
+    outputs.extend(output_path(path) for path in sources)
     require(all(path.is_file() for path in outputs), "All source views and entry pages exist")
     failures, warnings = validate_pages(outputs)
     require(not failures, "Generated local navigation has no broken destinations")
@@ -111,6 +118,82 @@ def main():
         not report["generated_navigation_failures"],
         "Build report has no generated navigation failures",
     )
+    registry = json.loads(DOCUMENTATION_MIGRATION.read_text(encoding="utf-8"))
+    old_fixture = DOCS_DIR / "background_control_design.md"
+    new_fixture, anchor = migrated_target(old_fixture, "purpose")
+    moved_link = rewrite(
+        '<a href="background_control_design.md#purpose">Old design</a>',
+        source,
+        output,
+        {new_fixture: output_path(new_fixture)},
+    )
+    require(
+        f"development/background_geometry.html#{anchor}" in "".join(moved_link.parts)
+        and not moved_link.unavailable,
+        "Historical links render to retained source sections",
+    )
+    expected_root = {
+        "SPEC.md",
+        "PLAN.md",
+        "current_status.md",
+        "todo.md",
+        "documentation_guide.md",
+        "science_guide.md",
+    }
+    require(
+        {path.name for path in DOCS_DIR.glob("*.md")} == expected_root,
+        "Only six key Markdown documents remain at docs root",
+    )
+    require(DOCUMENTATION_HOME == DOCS_DIR / "index.html", "HTML entrance is under docs")
+    require(
+        DOCUMENTATION_SITE_DIR == DOCS_DIR / "html", "Generated HTML has one dedicated directory"
+    )
+    require(
+        not (PROJECT_ROOT / "index.html").exists() and not (PROJECT_ROOT / "site").exists(),
+        "Obsolete root HTML copies are removed",
+    )
+    for original_path, entry in registry["documents"].items():
+        require(
+            not (PROJECT_ROOT / original_path).exists(),
+            f"Retired standalone file removed: {original_path}",
+        )
+        original = subprocess.run(
+            ["git", "show", f"{registry['original_commit']}:{original_path}"],
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        require(
+            hashlib.sha256(original).hexdigest() == entry["original_sha256"],
+            f"Original source provenance verifies: {original_path}",
+        )
+        destination = PROJECT_ROOT / entry["destination"]
+        content = destination.read_text(encoding="utf-8")
+        retained = content.split(f"<!-- preserved_source_start: {original_path} -->\n", 1)[1].split(
+            f"\n<!-- preserved_source_end: {original_path} -->", 1
+        )[0]
+        retained = re.sub(
+            r"^(#{2,6}) ", lambda match: match[1][1:] + " ", retained, flags=re.MULTILINE
+        )
+
+        def without_link_targets(text):
+            return re.sub(r"(!?\[[^\]\n]*\]\()([^) \n]+)(\))", r"\1document_target\3", text).strip()
+
+        require(
+            without_link_targets(retained) == without_link_targets(original.decode()),
+            f"Scientific source text preserved: {original_path}",
+        )
+        require(
+            migrated_target(PROJECT_ROOT / original_path, "") == (destination, entry["anchor"]),
+            f"Retired links route to retained evidence: {original_path}",
+        )
+    unchanged_journals = subprocess.run(
+        ["git", "diff", registry["original_commit"], "--", "docs/journal", "docs/lessons"],
+        cwd=PROJECT_ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    require(not unchanged_journals, "Journals and append-only lessons are unchanged")
     logger.info("All %s checks passed for %s source documents", len(checks), len(sources))
     logger.info(
         "Historical warnings retained: %s unavailable links, %s fragments",

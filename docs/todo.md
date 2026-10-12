@@ -115,10 +115,10 @@ history, not necessarily the latest state. `BT-023` retains its original meaning
     separate color/morphology safeguards.
   - [x] Consolidate every contaminant source definition, inclusion rule, intended
     failure mode, and selection-bias limitation in
-    `docs/contaminant_benchmark.md` (2026-07-16).
+    `docs/methods/contaminant_samples.md#record-contaminant_benchmark` (2026-07-16).
   - [x] Define every measured Gaia feature, unit, derivation, null behavior, and
     interpretation safeguard with official Gaia DR3 references in
-    `docs/gaia_selector_features.md`; correct the IPD labels to percentages and
+    `docs/methods/gaia_features.md#record-gaia_selector_features`; correct the IPD labels to percentages and
     replace the diagonal proper-motion approximation with its covariance-aware
     zero-significance statistic (2026-07-16).
   - [x] Document the raw and direction-adjusted ROC AUC definitions, rank
@@ -441,7 +441,7 @@ history, not necessarily the latest state. `BT-023` retains its original meaning
   reporting zero background.
   Depends on: BT-001, BT-002.
   Progress, 2026-07-18: Audited the inherited Phase III random fields, Phase IV
-  annulus, and frozen legacy method. Drafted `docs/background_control_design.md`
+  annulus, and frozen legacy method. Drafted `docs/development/background_geometry.md#record-background_control_design`
   with paired off-target controls, a halo-excluded local annulus, and a stratified
   large-field diagnostic. Implementation awaits project-lead decisions on method
   hierarchy, unresolved environments, and the first `R200c` proxy.
@@ -682,15 +682,21 @@ history, not necessarily the latest state. `BT-023` retains its original meaning
   Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-031, and a
   separately audited host-association register.
 
-- [ ] **BT-032 - Organize project documentation and build the HTML reading portal.**
+- [x] **BT-032 - Organize project documentation and build the HTML reading portal
+  (completed 2026-10-12).**
   Scope: Correct stale summaries, make document ownership explicit, preserve
   historical evidence, and generate an index plus linked HTML document views.
   No selector changes, review classifications, or public deployment are included.
   Specification: [Documentation-site plan](plans/documentation_site.md).
-  Implemented 2026-10-12: source ownership, dated status, corrected roadmap,
-  searchable directory, and 88 Markdown-to-HTML views are complete; 109 automated
-  checks pass. This issue remains open only for manual browser review before
-  accepting the portal's presentation. No scientific processing was changed.
+  Initial implementation, 2026-10-12: 88 Markdown views and 109 automated checks;
+  project lead approved the appearance. The requested follow-up consolidates
+  development notes, keeps six project-level documents at docs root, moves the
+  entrance to docs/index.html and generated pages to docs/html/, and persists
+  placement rules for future agents. See the
+  [disposition audit](development/documentation_audit.md). The revised build renders
+  58 Markdown documents as 60 HTML pages, checks retained original evidence and
+  historical link routing, and preserves journals unchanged. No scientific
+  processing is changed. The new organization is ready for project-lead review.
 
 - [ ] **BT-009 - Recompute the background experiment with the canonical
   selection.**
@@ -1082,7 +1088,7 @@ history, not necessarily the latest state. `BT-023` retains its original meaning
   link to the applicable selection and run versions.
   Completed, 2026-07-16: `project_status_counts.json` now generates the canonical
   headline counts from the v2 database and synchronized products. `README.md`,
-  `docs/PLAN.md`, `docs/CONTEXT.md`, `data/README.md`, `reference/summary.md`, and
+  `docs/PLAN.md`, `docs/development/project_history.md#record-CONTEXT`, `data/README.md`, `reference/summary.md`, and
   the Phase I tracker cite 5,049 literature records, 4,359 canonical objects, the
   versioned classification counts, and current cross-match totals. Historical
   journals remain dated snapshots; the stale key-paper and VizieR inventories are

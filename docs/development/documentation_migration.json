@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-12",
+  "original_commit": "9dd2569",
+  "root_markdown_before": 52,
+  "root_markdown_after": 6,
+  "policy": "Consolidate redundant standalone files; retain scientific content in dated sections; preserve journals and source provenance.",
+  "documents": {
+    "docs/point_source_selector_calibration.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_selector_calibration",
+      "action": "merge",
+      "original_sha256": "cee39bdec70adf908e03ccb2eee14283712f13494c11b930c75da363291d8d5f"
+    },
+    "docs/point_source_ml_comparison.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_ml_comparison",
+      "action": "merge",
+      "original_sha256": "ae576eefa8ec3c606bb7b270272d882b4e0135677481274439b62f6674960b27"
+    },
+    "docs/point_source_ml_stability.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_ml_stability",
+      "action": "merge",
+      "original_sha256": "a8950c79b266b70055f3ec7174896a98795a5bfcac4784000670fa2f1fe36d3f"
+    },
+    "docs/point_source_ml_stability_v2.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_ml_stability_v2",
+      "action": "merge",
+      "original_sha256": "291a1186cd581f7b800d8abafd6acce1ed9ce27820b47b7aec81975d77486c25"
+    },
+    "docs/point_source_ml_v2_failure_audit.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_ml_v2_failure_audit",
+      "action": "merge",
+      "original_sha256": "228dc2754c5178fb987c5202335ac85ac960d349dd9bc43b9a7f544b435225dd"
+    },
+    "docs/logistic_regularization_sensitivity.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-logistic_regularization_sensitivity",
+      "action": "merge",
+      "original_sha256": "a1d205a8e65232a08aa5d6a106081304d1e83c3938c2614a9b4d818209166459"
+    },
+    "docs/frozen_c1000_persistent_ucd_audit.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-frozen_c1000_persistent_ucd_audit",
+      "action": "merge",
+      "original_sha256": "33b7456bd73964f725b98e7c902954cbf7824e8e6bdacea9e247210d6752b991"
+    },
+    "docs/point_source_logistic_model_v1.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_logistic_model_v1",
+      "action": "merge",
+      "original_sha256": "00ea41c67c8ca86cde2f3634c501d31f4d2fa275879bb1625eca179bbebb1e21"
+    },
+    "docs/point_source_selector_integration_v1.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_selector_integration_v1",
+      "action": "merge",
+      "original_sha256": "60242fc0ff8b2651a0dcf1134fa8d019504acbbf7ef187d2a1b45706fbeea1ae"
+    },
+    "docs/point_source_logistic_validation_v1.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_logistic_validation_v1",
+      "action": "merge",
+      "original_sha256": "1eb4e199d2f8d7540d941f0c5a9333af893344fdb7d7d49d05817791a4c8705e"
+    },
+    "docs/point_source_astrometric_rejection_assessment_v1.md": {
+      "destination": "docs/development/selector_experiments.md",
+      "anchor": "record-point_source_astrometric_rejection_assessment_v1",
+      "action": "merge",
+      "original_sha256": "a823fef4dff4505b79661afd5e3d261ea0c53852a43aa15c9b0211467b8a1340"
+    },
+    "docs/gaia_query_partition_validation.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-gaia_query_partition_validation",
+      "action": "merge",
+      "original_sha256": "3b2f2cc2fb4eb75ce0ea1faf3fa88e7b949a697f0d87585067f7dadcc66ee296"
+    },
+    "docs/gaia_adaptive_retrieval_validation.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-gaia_adaptive_retrieval_validation",
+      "action": "merge",
+      "original_sha256": "1c05e043008ce8eaf8e8f2529550e4dd13d0486f6c955fd9cc75931accc2fd08"
+    },
+    "docs/gaia_full_selector_retrieval_benchmark.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-gaia_full_selector_retrieval_benchmark",
+      "action": "merge",
+      "original_sha256": "897660377199891c039efa22bd4a4ae5b593f749163a1a553b4cdb95d5c004cf"
+    },
+    "docs/gaia_full_column_multifield_validation.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-gaia_full_column_multifield_validation",
+      "action": "merge",
+      "original_sha256": "f8fb6bf081b4bd41ed08c1f212297a96fc6fe8ec50c482e0226b2f35313a185c"
+    },
+    "docs/radial_ring_area_accounting.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-radial_ring_area_accounting",
+      "action": "merge",
+      "original_sha256": "e2f0cbc0a78b85408666b22ab7424202151446aca5886a673d8c5de66626d239"
+    },
+    "docs/host_run_records.md": {
+      "destination": "docs/development/retrieval_and_area.md",
+      "anchor": "record-host_run_records",
+      "action": "merge",
+      "original_sha256": "37741f6009f212e124da623e99a82bb5d02bcbaab35f34090c829ef511210ea6"
+    },
+    "docs/background_field_conditions_benchmark.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-background_field_conditions_benchmark",
+      "action": "merge",
+      "original_sha256": "2fb1b95f734bd45901f9dcddf90d238782bad11ec35ce380c33ac3e3247f24b3"
+    },
+    "docs/background_review_field_conditions.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-background_review_field_conditions",
+      "action": "merge",
+      "original_sha256": "123487aa054f94482bdd90eba72227a1116c1a11b2719fcfab9436a763eb3d61"
+    },
+    "docs/off_target_field_split.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-off_target_field_split",
+      "action": "merge",
+      "original_sha256": "111971087a3ee08d9e05fd7096e46c3e09f6c483c0f2fc8b855be1071f8c976c"
+    },
+    "docs/off_target_development_selector.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-off_target_development_selector",
+      "action": "merge",
+      "original_sha256": "08c71b9fad4598f067634f33d5945d8c437958ed1d42e3070c50187687ce4802"
+    },
+    "docs/off_target_development_summary.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-off_target_development_summary",
+      "action": "merge",
+      "original_sha256": "e1f77bd8a49d8cb95b477d8ad137f3952f1bd464eb768bd0fe87ea194e7ef5c5"
+    },
+    "docs/off_target_validation_selector.md": {
+      "destination": "docs/development/off_target_controls.md",
+      "anchor": "record-off_target_validation_selector",
+      "action": "merge",
+      "original_sha256": "8bc26ec801a32f6ea44edbd4ef786279c0974452c818d35bb1426c316207c7cf"
+    },
+    "docs/large_sky_field_grid.md": {
+      "destination": "docs/development/sky_retrieval.md",
+      "anchor": "record-large_sky_field_grid",
+      "action": "merge",
+      "original_sha256": "aaa74233dd75ca235e26ed9c8f65aae0af52c12a1f59283e99991fc6d2b0f288"
+    },
+    "docs/large_sky_development_pilot.md": {
+      "destination": "docs/development/sky_retrieval.md",
+      "anchor": "record-large_sky_development_pilot",
+      "action": "merge",
+      "original_sha256": "bd32d6bf7b36947fc1caf855e0763df9a45361efdb7bb8c84c52b80c931dd464"
+    },
+    "docs/large_sky_development_retrieval.md": {
+      "destination": "docs/development/sky_retrieval.md",
+      "anchor": "record-large_sky_development_retrieval",
+      "action": "merge",
+      "original_sha256": "a26dd6eb54da750e3617e66ec2b6732bfee175ea907fb50c84942db6db36a7ae"
+    },
+    "docs/large_sky_development_field_conditions.md": {
+      "destination": "docs/development/sky_retrieval.md",
+      "anchor": "record-large_sky_development_field_conditions",
+      "action": "merge",
+      "original_sha256": "c78c1ee978be2f1aac89a8094ac3fe37e2ce5840c2257e534481aeae9ab45f89"
+    },
+    "docs/large_sky_development_scale.md": {
+      "destination": "docs/development/sky_retrieval.md",
+      "anchor": "record-large_sky_development_scale",
+      "action": "merge",
+      "original_sha256": "8f7872e95c09350aba6b46b5ebd15f7805b381d1fa361df63985503d2a0ea85a"
+    },
+    "docs/large_sky_model_comparison_contract.md": {
+      "destination": "docs/development/background_measurements.md",
+      "anchor": "record-large_sky_model_comparison_contract",
+      "action": "merge",
+      "original_sha256": "4d338ecebb77aadb6f25330114303a011a49a3814d6979b4dd75d15f46a785b6"
+    },
+    "docs/large_sky_development_model_comparison.md": {
+      "destination": "docs/development/background_measurements.md",
+      "anchor": "record-large_sky_development_model_comparison",
+      "action": "merge",
+      "original_sha256": "1a30d1da324d67e308c7ec14e7be7a0f77e569f341aa945ec5c73356c6f4ebaf"
+    },
+    "docs/large_sky_direct_background_comparison.md": {
+      "destination": "docs/development/background_measurements.md",
+      "anchor": "record-large_sky_direct_background_comparison",
+      "action": "merge",
+      "original_sha256": "98a86bb521c78ea4fad96cac044a20508d6a824fa468794f1c8ab3375157b149"
+    },
+    "docs/large_sky_validation_run.md": {
+      "destination": "docs/development/background_measurements.md",
+      "anchor": "record-large_sky_validation_run",
+      "action": "merge",
+      "original_sha256": "5980952a3f9517a1dd874263d380419d7c001f07866735e10dd9d214728d896e"
+    },
+    "docs/background_control_design.md": {
+      "destination": "docs/development/background_geometry.md",
+      "anchor": "record-background_control_design",
+      "action": "merge",
+      "original_sha256": "5551fcc115c85ffa1340ce2fe2d17101dc99c58475b497fd8c83de5e295a63bf"
+    },
+    "docs/kourkchi_tully_environment_audit.md": {
+      "destination": "docs/development/background_geometry.md",
+      "anchor": "record-kourkchi_tully_environment_audit",
+      "action": "merge",
+      "original_sha256": "1669dac9872b844f4a19234f2ded1dd38c50453535cb4f571024f42e131c4155"
+    },
+    "docs/gaia_morphology_host_field_stress.md": {
+      "destination": "docs/development/extragalactic_checks.md",
+      "anchor": "record-gaia_morphology_host_field_stress",
+      "action": "merge",
+      "original_sha256": "a4c732060ca98d2c993a45d61a5469b49b55fd012c615596bb454f8cc6eb4578"
+    },
+    "docs/gaia_morphology_host_control_comparison.md": {
+      "destination": "docs/development/extragalactic_checks.md",
+      "anchor": "record-gaia_morphology_host_control_comparison",
+      "action": "merge",
+      "original_sha256": "8742682fc0a5f04cb6067a85ab12610aa9211f96c1a219ff8615a6d1679fb594"
+    },
+    "docs/gaia_morphology_ucd_crossmatch.md": {
+      "destination": "docs/development/extragalactic_checks.md",
+      "anchor": "record-gaia_morphology_ucd_crossmatch",
+      "action": "merge",
+      "original_sha256": "527e56ab91fcf624677b6e5862fe51cb1a76f3876c79467a9fa3c0ddaac77ee8"
+    },
+    "docs/first_stage_host_profile_fixture.md": {
+      "destination": "docs/development/host_pilot_profiles.md",
+      "anchor": "record-first_stage_host_profile_fixture",
+      "action": "merge",
+      "original_sha256": "5de2462c789b477565ef6b2b1f8f9be1415d17118e06a2cabd89068d698b7930"
+    },
+    "docs/first_stage_ngc4698_candidate_diagnostics.md": {
+      "destination": "docs/development/host_pilot_profiles.md",
+      "anchor": "record-first_stage_ngc4698_candidate_diagnostics",
+      "action": "merge",
+      "original_sha256": "c1e711146d586b7ae30ecdd11b3afea9ad227e9362e8b0016e6f90f71bfbe855"
+    },
+    "docs/m60_positive_control.md": {
+      "destination": "docs/development/host_pilot_profiles.md",
+      "anchor": "record-m60_positive_control",
+      "action": "merge",
+      "original_sha256": "b3a079afbd8b90483b03b641350b64bbe250dfbe9ac237642fce77fb6c2011ac"
+    },
+    "docs/ucd_legacy_survey_reference.md": {
+      "destination": "docs/development/reference_imaging.md",
+      "anchor": "record-ucd_legacy_survey_reference",
+      "action": "merge",
+      "original_sha256": "0fb16cfe6d72f2af98fdc557b53969d164cd9c035d558499327cc3071450f90a"
+    },
+    "docs/CONTEXT.md": {
+      "destination": "docs/development/project_history.md",
+      "anchor": "record-CONTEXT",
+      "action": "retire_entry_point",
+      "original_sha256": "58c23a1697cedf42c5f70671b9a0dc71bf7ae432b7823d4f4c752d703adcbf61"
+    },
+    "docs/gaia_selector_features.md": {
+      "destination": "docs/methods/gaia_features.md",
+      "anchor": "record-gaia_selector_features",
+      "action": "relocate_definitions",
+      "original_sha256": "7124f4d71ac577fffe911843d65d2151575e27c9f2b1033a7cdc193a02b84e91"
+    },
+    "docs/contaminant_benchmark.md": {
+      "destination": "docs/methods/contaminant_samples.md",
+      "anchor": "record-contaminant_benchmark",
+      "action": "merge_definitions",
+      "original_sha256": "e39a2bc626a7af14b4d1ed261544af3df59d2d50e85f5d9aae46af74e2581e0e"
+    },
+    "docs/spectroscopic_stellar_reference.md": {
+      "destination": "docs/methods/contaminant_samples.md",
+      "anchor": "record-spectroscopic_stellar_reference",
+      "action": "merge_definitions",
+      "original_sha256": "5aaacc4f3dac1ba55a9c71277772f8389ca8a0626832d5ec6184519fb301e66b"
+    },
+    "docs/extragalactic_contaminant_catalogs.md": {
+      "destination": "docs/methods/extragalactic_catalogs.md",
+      "anchor": "record-extragalactic_contaminant_catalogs",
+      "action": "relocate_definitions",
+      "original_sha256": "ddd3de87f7fd2ffc39e03f626d739b266620b28051750d1f3a26e31a2c35cb76"
+    },
+    "docs/radial_measurement_design.md": {
+      "destination": "docs/methods/radial_measurements.md",
+      "anchor": "record-radial_measurement_design",
+      "action": "relocate_definitions",
+      "original_sha256": "0787448e2850361fee05fc6de4c00f76cca4bdf1456b6fa682ac73e74032ce1a"
+    }
+  }
+}

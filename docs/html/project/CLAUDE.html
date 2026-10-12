@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>CLAUDE.md — BubbleTea Project Instructions · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Operating guides</span><a href="../../../CLAUDE.md">Markdown source ↗</a></div><h1 id="claudemd-bubbletea-project-instructions">CLAUDE.md — BubbleTea Project Instructions</h1>
+<h2 id="project-identity">Project Identity</h2>
+<ul>
+<li><strong>What this is</strong>: A reproducible research project for searching UCD galaxies using Gaia data.
+  NOT a Python package or library. Contains scripts, figures, notebooks, and data.</li>
+<li><strong>Goal</strong>: Publication-ready pipeline with clear data provenance.</li>
+<li><strong>Language</strong>: English only. <code>snake_case</code> everywhere (files, functions, variables).</li>
+</ul>
+<h2 id="tools-and-environment">Tools and Environment</h2>
+<ul>
+<li><strong>Python</strong>: 3.12+, managed exclusively by <code>uv</code> (<code>uv sync</code>, <code>uv run</code>, <code>uv add</code>)</li>
+<li><strong>Linting/formatting</strong>: <code>ruff</code> (configured in pyproject.toml)</li>
+<li><strong>Pre-commit</strong>: <code>pre-commit run --all-files</code> — uses ruff as single source of truth</li>
+<li><strong>No pytest</strong>: Scripts are the unit of work. Each script is standalone and runnable.</li>
+<li><strong>Run scripts</strong>: <code>uv run python scripts/phase1_literature/some_script.py</code></li>
+</ul>
+<h2 id="directory-conventions">Directory Conventions</h2>
+<pre><code>scripts/phase{N}_{name}/   — Scripts organized by research phase
+scripts/config.py          — Central path configuration (ALL paths go here)
+scripts/utils/             — Shared utilities (plotting, cross-match)
+data/                      — All data products
+data/external/             — Large catalogs (gitignored, accessed via env var)
+data/literature/           — UCD literature database and catalogs
+figures/phase{N}/          — Figures with companion .md caption files
+reference/                 — Literature: [first_author_last_name][year]/ folders
+docs/journal/              — Research journal (YYYY-MM-DD_topic.md)
+docs/lessons/              — Lessons learned (append with date headers)
+docs/plans/                — Per-phase task tracking with checkboxes
+ucd_project/               — Legacy code (FROZEN, gitignored, read-only reference)
+</code></pre>
+<h2 id="path-configuration">Path Configuration</h2>
+<ul>
+<li>ALL paths are defined in <code>scripts/config.py</code>. Import from there.</li>
+<li>NEVER hardcode absolute paths in scripts.</li>
+<li>External data (large catalogs): set <code>BUBBLETEA_EXTERNAL_DATA</code> environment variable.
+  <code>config.py</code> falls back to <code>data/external/</code> if the env var is not set.</li>
+<li>Note: <code>/Users/shuang/data/</code> references appear in legacy <code>ucd_project/</code> code.
+  Do not change them there; do not replicate them in new scripts.</li>
+</ul>
+<h2 id="provenance-rules-critical">Provenance Rules (CRITICAL)</h2>
+<p>Every data file must be traceable to its original source:
+- <strong>ADS bibcode</strong> (e.g., 2020ApJ...899..140W)
+- <strong>DOI</strong> (e.g., 10.3847/1538-4357/aba842)
+- <strong>VizieR catalog ID</strong> (e.g., J/ApJ/899/140)
+- <strong>PDF file</strong> stored in <code>reference/[author][year]/</code></p>
+<p>Reference paper folders follow the naming convention:
+<code>reference/[LAST_NAME_OF_FIRST_AUTHOR][YEAR_OF_PUBLICATION]/</code>
+If multiple papers by the same first author in one year, append a/b/c/d.
+Each folder contains: PDF, original data files, and a README.md with full provenance.</p>
+<h2 id="figure-convention">Figure Convention</h2>
+<p>Every figure gets TWO files:</p>
+<pre><code>figures/phase{N}/descriptive_name.png
+figures/phase{N}/descriptive_name.md    # Caption file
+</code></pre>
+<p>Caption <code>.md</code> format:</p>
+<pre><code class="language-markdown"># Figure: [Title]
+
+**Script:** `scripts/phase1_literature/analyze_gaia_properties.py`
+**Command:** `uv run python scripts/phase1_literature/analyze_gaia_properties.py`
+**Data:** `data/literature/database/ucd_collection.db`
+**Date:** YYYY-MM-DD
+
+**Description:**
+[What the figure shows and key takeaways]
+</code></pre>
+<p>Use <code>scripts/utils/plotting.py</code> for consistent matplotlib style.
+The <code>save_figure()</code> helper saves both PNG and companion .md simultaneously.</p>
+<h2 id="documentation-organization">Documentation Organization</h2>
+<p>Follow the documentation organization rules in <code>AGENTS.md</code> and
+<code>docs/documentation_guide.md</code>: only project-level key documents belong directly in
+<code>docs/</code>; implementation notes, benchmarks, experiment records, and audits belong
+in topic-organized <code>docs/development/</code> documents. Permanent scientific explanations
+belong in <code>docs/methods/</code>. Extend an existing topic before adding a new document.
+Journals and lessons retain their separate folders. The generated HTML entrance
+is <code>docs/index.html</code>; rebuild and validate HTML after document moves or merges.</p>
+<h2 id="journal-convention">Journal Convention</h2>
+<ul>
+<li><strong>Location:</strong> <code>docs/journal/YYYY-MM-DD_brief_topic.md</code></li>
+<li><strong>Format:</strong> What was done, decisions made, results, next steps</li>
+<li><strong>Reference</strong> specific scripts, data files, and figures by path</li>
+</ul>
+<h2 id="lessons-convention">Lessons Convention</h2>
+<ul>
+<li><strong>Location:</strong> <code>docs/lessons/LESSON.md</code> (single file, append-only)</li>
+<li><strong>Format:</strong> New lessons appended with date headers:
+  <code>## YYYY-MM-DD: Topic
+  **Lesson:** What was learned
+  **Context:** Why it matters
+  **Recommendation:** What to do about it</code></li>
+</ul>
+<h2 id="task-tracking">Task Tracking</h2>
+<ul>
+<li><code>docs/plans/phase_{N}_{name}.md</code> contains task checklists per phase</li>
+<li>Use markdown checkboxes: <code>- [ ]</code> pending, <code>- [x]</code> done</li>
+<li>Add date completed next to done items</li>
+</ul>
+<h2 id="code-style">Code Style</h2>
+<ul>
+<li><code>snake_case</code> for everything — files, functions, variables, constants</li>
+<li>Use specific, complete words for names (no abbreviations unless standard: ra, dec, mag)</li>
+<li>Scripts have docstrings explaining purpose, inputs, outputs</li>
+<li>No wildcard imports</li>
+<li><code>pathlib.Path</code> for all file paths</li>
+<li><code>logging</code> module (not <code>print</code>) for scripts that run long</li>
+<li>No redundant comments that restate function/variable names</li>
+</ul>
+<h2 id="git-conventions">Git Conventions</h2>
+<ul>
+<li>Branch strategy: feature branches, never work directly on <code>main</code></li>
+<li>Commit messages: <code>phase{N}: what changed</code> (e.g., <code>phase1: add Gaia cross-match script</code>)</li>
+<li>Do NOT commit: large data files (&gt;10MB), .db files, .fits files, <strong>pycache</strong></li>
+<li><code>ucd_project/</code> is gitignored (frozen legacy reference)</li>
+<li><code>notebooks/archive/</code>, <code>reference/data/</code>, <code>doc/sql/</code> are ignored (legacy)</li>
+</ul>
+<h2 id="what-not-to-do">What NOT to Do</h2>
+<ul>
+<li>Do not restructure <code>reference/</code> without asking</li>
+<li>Do not delete or modify anything in <code>ucd_project/</code> (read-only reference)</li>
+<li>Do not install packages outside of <code>uv</code></li>
+<li>Do not create Jupyter notebooks in the root directory</li>
+<li>Do not use camelCase anywhere</li>
+<li>Do not estimate numerical values — always benchmark and measure</li>
+<li>Do not add features, refactor, or "improve" beyond what was asked</li>
+</ul>
+<h2 id="development-phases">Development Phases</h2>
+<p>Active development follows a phased plan documented in <code>docs/PLAN.md</code>:
+- Phase I: Literature UCDs (current)
+- Phase Ib: Ancillary data
+- Phase II: Galaxy sample
+- Phase III: Background characterization
+- Phase IV: Pilot search
+- Phase V: Cross-match and characterization
+- Phase VI: Statistical analysis</p>
+<p>Migration from <code>ucd_project/</code> is demand-driven: scripts are rewritten (not copied)
+when the corresponding phase begins. Always check the original script in
+<code>ucd_project/scripts/</code> for reference before writing new code.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#claudemd-bubbletea-project-instructions">CLAUDE.md — BubbleTea Project Instructions</a><ul>
+<li><a href="#project-identity">Project Identity</a></li>
+<li><a href="#tools-and-environment">Tools and Environment</a></li>
+<li><a href="#directory-conventions">Directory Conventions</a></li>
+<li><a href="#path-configuration">Path Configuration</a></li>
+<li><a href="#provenance-rules-critical">Provenance Rules (CRITICAL)</a></li>
+<li><a href="#figure-convention">Figure Convention</a></li>
+<li><a href="#documentation-organization">Documentation Organization</a></li>
+<li><a href="#journal-convention">Journal Convention</a></li>
+<li><a href="#lessons-convention">Lessons Convention</a></li>
+<li><a href="#task-tracking">Task Tracking</a></li>
+<li><a href="#code-style">Code Style</a></li>
+<li><a href="#git-conventions">Git Conventions</a></li>
+<li><a href="#what-not-to-do">What NOT to Do</a></li>
+<li><a href="#development-phases">Development Phases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="AGENTS.html">CLAUDE.md — BubbleTea Project Instructions</a></li><li><a href="../lessons/LESSON.html">Lessons Learned - UCD Search Project</a></li><li><a href="handover.html">BubbleTea - Search for fun compact galaxies using Gaia data </a></li></ul></details><details><summary>Linked from (1)</summary><ul><li><a href="../documentation_guide.html">Documentation guide</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -5,7 +5,7 @@
 **Purpose:** A dated restart summary, not a live dashboard or a new scientific result.
 
 [Documentation guide](documentation_guide.md) · [Science roadmap](PLAN.md) ·
-[Scientific requirements](SPEC.md) · [Open issues](todo.md)
+[Science guide](science_guide.md) · [Scientific requirements](SPEC.md) · [Open issues](todo.md)
 
 ## The question we are trying to answer
 
@@ -23,12 +23,12 @@ area in the frozen Gaia-only measurements.
 | Work | Measured or recorded result | Evidence |
 | --- | --- | --- |
 | Literature reference | 5,049 source records, 4,359 distinct catalog objects, and 30 publication provenance packages | [July 16 count audit](../data/literature/validation/project_status_counts.json) |
-| Gaia selection baseline | One shared version-1 logistic selector is used by reference, background, and host workflows | [Selector integration](point_source_selector_integration_v1.md) |
-| Random comparison fields | 398 development fields and 102 independently reserved validation fields processed; direct latitude-band measurements are primary | [Validation report](large_sky_validation_run.md) |
-| NGC 4698 profile | 23,811 magnitude-limited Gaia sources retrieved; 2,548 pass selector v1; 14 radial rings retained | [First-host profile](first_stage_host_profile_fixture.md) |
-| M60 profile | 45,402 magnitude-limited Gaia sources retrieved; 4,920 pass selector v1; both reliable confirmed controls recovered | [M60 report](m60_positive_control.md) |
+| Gaia selection baseline | One shared version-1 logistic selector is used by reference, background, and host workflows | [Selector integration](development/selector_experiments.md#record-point_source_selector_integration_v1) |
+| Random comparison fields | 398 development fields and 102 independently reserved validation fields processed; direct latitude-band measurements are primary | [Validation report](development/background_measurements.md#record-large_sky_validation_run) |
+| NGC 4698 profile | 23,811 magnitude-limited Gaia sources retrieved; 2,548 pass selector v1; 14 radial rings retained | [First-host profile](development/host_pilot_profiles.md#record-first_stage_host_profile_fixture) |
+| M60 profile | 45,402 magnitude-limited Gaia sources retrieved; 4,920 pass selector v1; both reliable confirmed controls recovered | [M60 report](development/host_pilot_profiles.md#record-m60_positive_control) |
 | M60 inspection sample | 400 representative passing sources and their cutouts prepared; visual classification pending | [Pilot tracking](plans/phase_4_pilot_search.md) |
-| UCD image reference | 680 literature-confirmed UCDs and 44 Saifollahi high-probability candidates; 707 non-placeholder images and 17 placeholders (visual usability still unreviewed) | [Reference report](ucd_legacy_survey_reference.md) |
+| UCD image reference | 680 literature-confirmed UCDs and 44 Saifollahi high-probability candidates; 707 non-placeholder images and 17 placeholders (visual usability still unreviewed) | [Reference report](development/reference_imaging.md#record-ucd_legacy_survey_reference) |
 | Interactive review tool | Full 724-object list, two image scales, catalog evidence, coordinate proposals, review history, and versioned exports implemented | [August 19 checkpoint](journal/2026-08-19_ucd_visual_review_workbench.md) |
 
 The 724-object image-review set is a selected reference, not the full literature
@@ -79,7 +79,12 @@ requirements; completed software is not equivalent to completed science.
 ## Documentation and teaching pivot
 
 The current task is documentation maintenance and a static HTML reading portal.
-It does not change any scientific selector, catalog, image classification, or
+The entrance is [docs/index.html](index.html), with generated pages under
+`docs/html/`. Six project-level Markdown documents remain directly under `docs/`;
+scientific explanations live in `methods/`, and consolidated development records
+live in `development/`. The [consolidation audit](development/documentation_audit.md)
+records each retired document and its retained evidence.
+Documentation maintenance does not change any scientific selector, catalog, image classification, or
 radial measurement. An observational-astronomy teaching project will follow as a
 separate brief. Audience, lesson scope, exercises, and student data access have
 not yet been specified; research plans must not be presented as established results.

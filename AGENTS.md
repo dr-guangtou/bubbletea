@@ -29,6 +29,7 @@ reference/                 — Literature: [first_author_last_name][year]/ folde
 docs/journal/              — Research journal (YYYY-MM-DD_topic.md)
 docs/lessons/              — Lessons learned (append with date headers)
 docs/plans/                — Per-phase task tracking with checkboxes
+docs/development/          — Topic-organized implementation notes, benchmarks, and audits
 ucd_project/               — Legacy code (FROZEN, gitignored, read-only reference)
 ```
 
@@ -81,6 +82,25 @@ Caption `.md` format:
 
 Use `scripts/utils/plotting.py` for consistent matplotlib style.
 The `save_figure()` helper saves both PNG and companion .md simultaneously.
+
+## Documentation Organization
+
+- Keep only project-level key Markdown documents directly under `docs/`:
+  scientific specification, roadmap, current status, issue register, documentation
+  guide, and the project science guide. The HTML entrance is `docs/index.html`.
+- Put implementation notes, experiment logs, retrieval benchmarks, debugging
+  records, and development audits under `docs/development/`, organized by topic.
+  Extend an existing topic document rather than creating another top-level note.
+- Keep permanent scientific definitions and reference explanations under
+  `docs/methods/`; keep task checklists under `docs/plans/`.
+- Journals remain under `docs/journal/` and lessons under `docs/lessons/`.
+  Development notes are not a replacement for either.
+- Before adding a document, consult `docs/documentation_guide.md` and link to the
+  existing owner of the topic. Record consolidation and removal decisions in the
+  development documentation audit. Preserve unique scientific evidence and
+  provenance; do not treat a superseded result as current policy.
+- HTML is generated, not hand-maintained. Rebuild it after moving or merging
+  Markdown documents and validate internal links and script output destinations.
 
 ## Journal Convention
 

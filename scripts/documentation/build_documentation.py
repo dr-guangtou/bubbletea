@@ -1,7 +1,7 @@
 """Build a local HTML reading portal from repository Markdown, without scientific writes.
 
 Inputs: Markdown guides, plans, reports, and provenance in the Git working tree.
-Outputs: root index.html and mirrored site/ pages, assets, directory, and link report.
+Outputs: docs/index.html and docs/html/ pages, assets, directory, and link report.
 Run with --limit 5 for a small build before the complete build. No archive queries,
 review-database access, source-file edits, or public deployment are performed.
 """
@@ -18,6 +18,7 @@ import subprocess
 import sys
 import time
 from collections import defaultdict
+from functools import cache
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit, urlunsplit
@@ -32,6 +33,7 @@ from scripts.config import (
     DOCUMENTATION_ASSETS_DIR,
     DOCUMENTATION_BUILD_REPORT,
     DOCUMENTATION_HOME,
+    DOCUMENTATION_MIGRATION,
     DOCUMENTATION_SITE_DIR,
     PROJECT_ROOT,
 )
@@ -41,6 +43,8 @@ logger = logging.getLogger(__name__)
 groups = (
     "Start here",
     "Plans and requirements",
+    "Scientific reference",
+    "Development records",
     "Selection and reference",
     "Background and radial measurements",
     "Host and pilot work",
@@ -56,12 +60,41 @@ entry_paths = (
     "docs/PLAN.md",
     "docs/SPEC.md",
     "docs/todo.md",
+    "docs/science_guide.md",
 )
 
 
 def relative_url(target: Path, output: Path) -> str:
     """Create a portable URL relative to an output page."""
     return quote(Path(os.path.relpath(target, output.parent)).as_posix(), safe="/")
+
+
+def output_path(source: Path) -> Path:
+    """Mirror docs without a redundant docs prefix; group other sources as project guides."""
+    if source.is_relative_to(DOCS_DIR):
+        return DOCUMENTATION_SITE_DIR / source.relative_to(DOCS_DIR).with_suffix(".html")
+    return (
+        DOCUMENTATION_SITE_DIR / "project" / source.relative_to(PROJECT_ROOT).with_suffix(".html")
+    )
+
+
+@cache
+def document_migrations() -> dict:
+    """Read the old-to-new document register without modifying historical sources."""
+    if not DOCUMENTATION_MIGRATION.is_file():
+        return {}
+    return json.loads(DOCUMENTATION_MIGRATION.read_text(encoding="utf-8"))["documents"]
+
+
+def migrated_target(target: Path, fragment: str) -> tuple[Path, str]:
+    """Route retired source links to their retained, explicitly dated sections."""
+    entry = document_migrations().get(target.relative_to(PROJECT_ROOT).as_posix())
+    if not entry:
+        return target, fragment
+    destination = (PROJECT_ROOT / entry["destination"]).resolve()
+    if not destination.is_relative_to(PROJECT_ROOT):
+        raise RuntimeError("Migration destinations must remain inside the repository")
+    return destination, entry["anchor"]
 
 
 def discover_sources(scope: str) -> list[Path]:
@@ -89,10 +122,14 @@ def discover_sources(scope: str) -> list[Path]:
 def category(path: Path) -> str:
     """Separate current entry points from detailed evidence and historical records."""
     name = path.relative_to(PROJECT_ROOT).as_posix()
-    if name in entry_paths or name in {"README.md", "docs/CONTEXT.md"}:
+    if name in entry_paths or name == "README.md":
         return "Start here"
     if name.startswith("docs/plans/"):
         return "Plans and requirements"
+    if name.startswith("docs/methods/"):
+        return "Scientific reference"
+    if name.startswith("docs/development/"):
+        return "Development records"
     if name.startswith("docs/journal/"):
         return "Research journals"
     if name.startswith(("reference/", "data/")):
@@ -157,7 +194,7 @@ class link_rewriter(HTMLParser):
             if name in {"href", "src"} and value:
                 resolved = local_target(value, self.source)
                 if resolved:
-                    target, fragment = resolved
+                    target, fragment = migrated_target(*resolved)
                     if not target.exists():
                         missing = True
                         self.unavailable.append(
@@ -314,10 +351,7 @@ def build(scope: str, limit: int | None) -> dict:
     if limit:
         first = [PROJECT_ROOT / name for name in entry_paths if PROJECT_ROOT / name in sources]
         sources = (first + [path for path in sources if path not in first])[:limit]
-    page_map = {
-        source: DOCUMENTATION_SITE_DIR / source.relative_to(PROJECT_ROOT).with_suffix(".html")
-        for source in sources
-    }
+    page_map = {source: output_path(source) for source in sources}
     titles = {source: title_of(source, source.read_text(encoding="utf-8")) for source in sources}
     bodies = {}
     backlinks = defaultdict(set)
@@ -349,7 +383,7 @@ def build(scope: str, limit: int | None) -> dict:
         historical = (
             group == "Research journals"
             or source.name == "handover.md"
-            or source.name == "CONTEXT.md"
+            or source.name == "project_history.md"
         )
         notice = (
             '<p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p>'
@@ -404,7 +438,11 @@ def build(scope: str, limit: int | None) -> dict:
             "04",
             "How the documents connect",
             "docs/documentation_guide.md",
-            ["One purpose per document", "How these documents connect"],
+            [
+                "The six key project documents",
+                "What belongs in each folder",
+                "How these documents connect",
+            ],
         ),
     )
     for number, heading, name, selected_sections in sections:
@@ -436,6 +474,16 @@ def build(scope: str, limit: int | None) -> dict:
         "source_sha256": {
             str(path.relative_to(PROJECT_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in sources
+        },
+        "build_inputs_sha256": {
+            str(path.relative_to(PROJECT_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in (
+                Path(__file__).resolve(),
+                PROJECT_ROOT / "scripts/config.py",
+                DOCUMENTATION_MIGRATION,
+                DOCUMENTATION_ASSETS_DIR / "style.css",
+                DOCUMENTATION_ASSETS_DIR / "navigation.js",
+            )
         },
         "unavailable_source_links": unavailable,
         "unresolved_source_fragments": warnings,

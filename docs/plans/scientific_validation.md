@@ -263,7 +263,7 @@ inputs, and every exclusion has a recorded reason.
   and host searches (`BT-002`, `BT-017`; 2026-07-18). Final sensitivity calibration
   and any successor selector remain separate open work.
 - [x] Add deterministic validation for selector parity and null handling
-  (`BT-018`; 2026-07-18); see [integration report](../point_source_selector_integration_v1.md).
+  (`BT-018`; 2026-07-18); see [integration report](../development/selector_experiments.md#record-point_source_selector_integration_v1).
 
 **Gate:** The selector has measured completeness and contamination behavior over a
 declared applicability domain and one implementation produces all selections.
@@ -272,7 +272,7 @@ declared applicability domain and one implementation produces all selections.
 
 - [x] Recompute the 500 random fields with the canonical selector and exact usable
   areas (`BT-009`; independent validation completed 2026-08-11). Host-specific
-  background approval remains open; see [validation](../large_sky_validation_run.md).
+  background approval remains open; see [validation](../development/background_measurements.md#record-large_sky_validation_run).
 - [ ] Compare large-field, off-target circular, and off-target annular backgrounds
   matched in Galactic latitude and screened for nearby halos (`BT-005`).
 - [ ] Calibrate exploratory physical and `R50`-normalized annuli, including the

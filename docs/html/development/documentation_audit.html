@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Documentation consolidation audit · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Development records</span><a href="../../development/documentation_audit.md">Markdown source ↗</a></div><h1 id="documentation-consolidation-audit">Documentation consolidation audit</h1>
+<p><strong>Date:</strong> 2026-10-12<br>
+<strong>Original checkpoint:</strong> <code>9dd2569</code><br>
+<strong>Scope:</strong> Documentation organization only; no scientific data or classification changes.</p>
+<p><a href="../documentation_guide.html">Documentation guide</a> · <a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a></p>
+<h2 id="decisions">Decisions</h2>
+<ul>
+<li>Keep six project-level Markdown documents directly in <code>docs/</code>: SPEC, PLAN,
+  current status, issue register, documentation guide, and science guide.</li>
+<li>Move permanent feature, contaminant, catalog, and radial definitions to <code>methods/</code>.</li>
+<li>Merge 42 development reports into ten topic records. Preserve each report's
+  unique scientific content and original-date limitations in a labelled section;
+  the section wrappers distinguish past decisions from current reading guidance.</li>
+<li>Retire the July CONTEXT entry point into project history. Its stale setup and
+  next-step instructions are no longer recommended; current status replaces that role.</li>
+<li>Remove the 47 old standalone files only after their content is retained below.
+  No unique measurement or provenance is deliberately discarded. Git retains the
+  original checkpoint, and the register stores original source hashes.</li>
+<li>Keep journals and lessons unchanged. Existing historical path citations can be
+  resolved with this table and the HTML renderer's migration register.</li>
+<li>Keep the unreferenced HSC example image and legacy SQL in development assets,
+  not at the project-document level. They are historical examples, not active pipeline inputs.</li>
+<li>Place the HTML entrance at <code>docs/index.html</code> and all generated pages/assets at
+  <code>docs/html/</code>. Remove the obsolete root index and root site copies.</li>
+<li>Future development notes extend these topic records instead of creating another
+  top-level report. This rule is persisted in AGENTS.md and CLAUDE.md.</li>
+</ul>
+<h2 id="disposition-of-every-relocated-or-merged-markdown-document">Disposition of every relocated or merged Markdown document</h2>
+<p>The five existing project-level owners were retained: <code>PLAN.md</code> (roadmap),
+<code>SPEC.md</code> (approved requirements), <code>current_status.md</code> (dated status), <code>todo.md</code>
+(issues), and <code>documentation_guide.md</code> (organization). The sixth,
+<code>science_guide.md</code>, is a new plain-language reading map, not a competing specification.</p>
+<p>“Merge” removes the former standalone file but keeps its content in a dated section.
+“Relocate definitions” preserves a permanent scientific explanation below methods.
+“Retire entry point” keeps the old context only as historical evidence.</p>
+<table>
+<thead>
+<tr>
+<th>Original path</th>
+<th>Action</th>
+<th>New owner and retained section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docs/point_source_selector_calibration.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_selector_calibration">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_ml_comparison.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_ml_comparison">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_ml_stability.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_ml_stability">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_ml_stability_v2.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_ml_stability_v2">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_ml_v2_failure_audit.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_ml_v2_failure_audit">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/logistic_regularization_sensitivity.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-logistic_regularization_sensitivity">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/frozen_c1000_persistent_ucd_audit.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-frozen_c1000_persistent_ucd_audit">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_logistic_model_v1.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_logistic_model_v1">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_selector_integration_v1.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_selector_integration_v1">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_logistic_validation_v1.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_logistic_validation_v1">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/point_source_astrometric_rejection_assessment_v1.md</code></td>
+<td>merge</td>
+<td><a href="selector_experiments.html#record-point_source_astrometric_rejection_assessment_v1">selector_experiments.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_query_partition_validation.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-gaia_query_partition_validation">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_adaptive_retrieval_validation.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-gaia_adaptive_retrieval_validation">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_full_selector_retrieval_benchmark.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-gaia_full_selector_retrieval_benchmark">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_full_column_multifield_validation.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-gaia_full_column_multifield_validation">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/radial_ring_area_accounting.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-radial_ring_area_accounting">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/host_run_records.md</code></td>
+<td>merge</td>
+<td><a href="retrieval_and_area.html#record-host_run_records">retrieval_and_area.md</a></td>
+</tr>
+<tr>
+<td><code>docs/background_field_conditions_benchmark.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-background_field_conditions_benchmark">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/background_review_field_conditions.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-background_review_field_conditions">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/off_target_field_split.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-off_target_field_split">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/off_target_development_selector.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-off_target_development_selector">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/off_target_development_summary.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-off_target_development_summary">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/off_target_validation_selector.md</code></td>
+<td>merge</td>
+<td><a href="off_target_controls.html#record-off_target_validation_selector">off_target_controls.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_field_grid.md</code></td>
+<td>merge</td>
+<td><a href="sky_retrieval.html#record-large_sky_field_grid">sky_retrieval.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_development_pilot.md</code></td>
+<td>merge</td>
+<td><a href="sky_retrieval.html#record-large_sky_development_pilot">sky_retrieval.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_development_retrieval.md</code></td>
+<td>merge</td>
+<td><a href="sky_retrieval.html#record-large_sky_development_retrieval">sky_retrieval.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_development_field_conditions.md</code></td>
+<td>merge</td>
+<td><a href="sky_retrieval.html#record-large_sky_development_field_conditions">sky_retrieval.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_development_scale.md</code></td>
+<td>merge</td>
+<td><a href="sky_retrieval.html#record-large_sky_development_scale">sky_retrieval.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_model_comparison_contract.md</code></td>
+<td>merge</td>
+<td><a href="background_measurements.html#record-large_sky_model_comparison_contract">background_measurements.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_development_model_comparison.md</code></td>
+<td>merge</td>
+<td><a href="background_measurements.html#record-large_sky_development_model_comparison">background_measurements.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_direct_background_comparison.md</code></td>
+<td>merge</td>
+<td><a href="background_measurements.html#record-large_sky_direct_background_comparison">background_measurements.md</a></td>
+</tr>
+<tr>
+<td><code>docs/large_sky_validation_run.md</code></td>
+<td>merge</td>
+<td><a href="background_measurements.html#record-large_sky_validation_run">background_measurements.md</a></td>
+</tr>
+<tr>
+<td><code>docs/background_control_design.md</code></td>
+<td>merge</td>
+<td><a href="background_geometry.html#record-background_control_design">background_geometry.md</a></td>
+</tr>
+<tr>
+<td><code>docs/kourkchi_tully_environment_audit.md</code></td>
+<td>merge</td>
+<td><a href="background_geometry.html#record-kourkchi_tully_environment_audit">background_geometry.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_morphology_host_field_stress.md</code></td>
+<td>merge</td>
+<td><a href="extragalactic_checks.html#record-gaia_morphology_host_field_stress">extragalactic_checks.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_morphology_host_control_comparison.md</code></td>
+<td>merge</td>
+<td><a href="extragalactic_checks.html#record-gaia_morphology_host_control_comparison">extragalactic_checks.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_morphology_ucd_crossmatch.md</code></td>
+<td>merge</td>
+<td><a href="extragalactic_checks.html#record-gaia_morphology_ucd_crossmatch">extragalactic_checks.md</a></td>
+</tr>
+<tr>
+<td><code>docs/first_stage_host_profile_fixture.md</code></td>
+<td>merge</td>
+<td><a href="host_pilot_profiles.html#record-first_stage_host_profile_fixture">host_pilot_profiles.md</a></td>
+</tr>
+<tr>
+<td><code>docs/first_stage_ngc4698_candidate_diagnostics.md</code></td>
+<td>merge</td>
+<td><a href="host_pilot_profiles.html#record-first_stage_ngc4698_candidate_diagnostics">host_pilot_profiles.md</a></td>
+</tr>
+<tr>
+<td><code>docs/m60_positive_control.md</code></td>
+<td>merge</td>
+<td><a href="host_pilot_profiles.html#record-m60_positive_control">host_pilot_profiles.md</a></td>
+</tr>
+<tr>
+<td><code>docs/ucd_legacy_survey_reference.md</code></td>
+<td>merge</td>
+<td><a href="reference_imaging.html#record-ucd_legacy_survey_reference">reference_imaging.md</a></td>
+</tr>
+<tr>
+<td><code>docs/CONTEXT.md</code></td>
+<td>retire entry point</td>
+<td><a href="project_history.html#record-CONTEXT">project_history.md</a></td>
+</tr>
+<tr>
+<td><code>docs/gaia_selector_features.md</code></td>
+<td>relocate definitions</td>
+<td><a href="../methods/gaia_features.html#record-gaia_selector_features">gaia_features.md</a></td>
+</tr>
+<tr>
+<td><code>docs/contaminant_benchmark.md</code></td>
+<td>merge definitions</td>
+<td><a href="../methods/contaminant_samples.html#record-contaminant_benchmark">contaminant_samples.md</a></td>
+</tr>
+<tr>
+<td><code>docs/spectroscopic_stellar_reference.md</code></td>
+<td>merge definitions</td>
+<td><a href="../methods/contaminant_samples.html#record-spectroscopic_stellar_reference">contaminant_samples.md</a></td>
+</tr>
+<tr>
+<td><code>docs/extragalactic_contaminant_catalogs.md</code></td>
+<td>relocate definitions</td>
+<td><a href="../methods/extragalactic_catalogs.html#record-extragalactic_contaminant_catalogs">extragalactic_catalogs.md</a></td>
+</tr>
+<tr>
+<td><code>docs/radial_measurement_design.md</code></td>
+<td>relocate definitions</td>
+<td><a href="../methods/radial_measurements.html#record-radial_measurement_design">radial_measurements.md</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="machine-readable-traceability">Machine-readable traceability</h2>
+<p><a href="../../development/documentation_migration.json">documentation_migration.json</a> records original
+paths, source SHA-256 hashes, destination paths, and stable section anchors. The
+original content is recoverable with <code>git show 9dd2569:path/to/original.md</code>.
+Reorganization changes heading depth and relative document links mechanically;
+measurements, commands, tables, and caveats are retained. A separate preservation
+check compares these transformations against the original source reports.</p>
+<h2 id="review-and-next-step">Review and next step</h2>
+<p>The revised 58-document, 60-page build passed 278 checks, including original-source
+hashes, preservation of scientific text and commands, migration routing, source
+coverage, and generated local links. No unavailable links or unresolved fragments
+were found. Two builds produced identical content for all 62 HTML and asset files.
+Scoped Ruff and pre-commit checks passed. No scientific data, figures, source-paper
+packages, journals, or lessons were changed.</p>
+<p>The project lead approved the existing website appearance. Rebuild the relocated
+portal and validate links, source coverage, all retained report sections, unchanged
+journals, and the six-document top-level policy. Review the science guide and this
+disposition table before beginning the separate observational-astronomy teaching brief.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#documentation-consolidation-audit">Documentation consolidation audit</a><ul>
+<li><a href="#decisions">Decisions</a></li>
+<li><a href="#disposition-of-every-relocated-or-merged-markdown-document">Disposition of every relocated or merged Markdown document</a></li>
+<li><a href="#machine-readable-traceability">Machine-readable traceability</a></li>
+<li><a href="#review-and-next-step">Review and next step</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="off_target_controls.html">Off-target control experiments</a></li><li><a href="project_history.html">Historical project context</a></li></ul></details><details><summary>Linked from (14)</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="off_target_controls.html">Off-target control experiments</a></li><li><a href="project_history.html">Historical project context</a></li><li><a href="reference_imaging.html">UCD image-reference preparation</a></li><li><a href="retrieval_and_area.html">Gaia retrieval, radial areas, and run records</a></li><li><a href="selector_experiments.html">Gaia selector development and validation</a></li><li><a href="sky_retrieval.html">Random-sky field preparation and retrieval</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

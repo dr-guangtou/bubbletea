@@ -10,7 +10,7 @@ annulus calibration remains
 102-field validation are complete. Direct measurements, not a fitted sky model,
 are the primary large-sky reference. Host-specific background validity and full
 inferential uncertainty remain open. Earlier approved designs below are dated
-history; see [current status](../current_status.md), [validation report](../large_sky_validation_run.md),
+history; see [current status](../current_status.md), [validation report](../development/background_measurements.md#record-large_sky_validation_run),
 and [roadmap](../PLAN.md).
 
 ## III.1 Control design
@@ -245,7 +245,7 @@ Interview decisions, 2026-08-11:
   updated checks pass (2026-08-12).
 - [x] Review the first profile and select M60 as the next positive-control host
   because of its known UCDs, not its Gaia density (2026-08-12); see the
-  [M60 design](../m60_positive_control.md). No final outer boundary was selected.
+  [M60 design](../development/host_pilot_profiles.md#record-m60_positive_control). No final outer boundary was selected.
 
 Progress, 2026-07-18:
 

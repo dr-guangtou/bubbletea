@@ -481,7 +481,7 @@ def plot_auc_heatmap(metrics: pd.DataFrame) -> None:
             "separates the two roles in either direction and 0.5 for no rank separation. "
             "The companion metrics table reports deterministic stratified-bootstrap 95% "
             "confidence intervals from 500 resamples. Feature definitions and safeguards "
-            "are recorded in docs/gaia_selector_features.md."
+            "are recorded in docs/methods/gaia_features.md."
         ),
         title="Development-only univariate Gaia feature discrimination",
     )

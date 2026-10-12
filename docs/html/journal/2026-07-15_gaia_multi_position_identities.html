@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>2026-07-15 gaia multi position identities · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../journal/2026-07-15_gaia_multi_position_identities.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><hr>
+<p>date: 2026-07-15
+repo: bubbletea
+branch: phase1_stabilize_literature_20260714
+tags:
+  - journal
+  - phase1
+  - literature
+  - provenance</p>
+<hr>
+<h2 id="progress">Progress</h2>
+<ul>
+<li>Recorded project-lead approval for all eight three-position shared-Gaia identities in <code>data/literature/sources/gaia_multi_position_reviews.json</code>.</li>
+<li>Generalized the v2 builder to merge approved two- or three-position groups while retaining every retired canonical identifier as an alias.</li>
+<li>Preserved the F-6/Gregg 27 velocity tension and both identical Saifollahi F-1/UCD2 source rows as explicit provenance.</li>
+<li>Closed the shared-Gaia proposal queue: 116 approved identity groups, 126 moved record associations, 125 aliases, and zero proposals remain.</li>
+<li>Measured 2,315 canonical objects: 1,726 candidate, 575 rejected, and 14 uncertain; 584 review items remain.</li>
+<li>Reproduced all 180 legacy exact duplicate-coordinate groups and kept four coordinate-null records unassociated.</li>
+<li>Ran two clean build-and-validation cycles in 0.94/0.24 and 0.86/0.24 seconds.</li>
+<li>Both cycles produced database SHA-256 <code>d9978289cc74b47660d352397d17e47c1935a13eee4f1b240ef33320d15f05bb</code> and canonical export SHA-256 <code>7457a3482ec1057a41e8a86f9435cbe05b23ccd83d6ee1c2bd1cc0fd3bb197ca</code>.</li>
+<li>Confirmed the legacy database SHA-256 remained <code>d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806</code>.</li>
+<li>Added a ninth ADS query targeting 2015-2026 UCD titles and expanded the discovery union from 300 to 345 papers.</li>
+<li>Screened the exact metadata corpus with SHA-256 <code>54619aad14b33d82ff9408d7da7db0190d2f14709673c0b7a4e4fcf702788f79</code>: 5 already ingested, 313 context-only, and 27 proposed for retrieval.</li>
+<li>Retrieved the approved high-priority Wave 1 cohort: 19 PDFs, 365 pages, and
+  90,501,988 bytes, with all PDFs structurally valid and first pages visually
+  checked.</li>
+<li>Retrieved five authoritative VizieR packages containing 11 tables and 4,535
+  preserved rows; 4,426 rows have direct or explicitly linked coordinates.</li>
+<li>Preserved four Nature publisher source-data workbooks byte-for-byte and recorded
+  their source URLs, hashes, package integrity, and worksheet inventories.</li>
+<li>Measured Wave 1 overlap without changing v2: 16 exact-coordinate rows, 1,315
+  within one arcsecond, 28 within five arcseconds, 3,067 beyond five arcseconds,
+  and 109 non-object spatial bins.</li>
+<li>Identified two existing S999 canonicals separated by 0.277550692557 arcseconds;
+  both remain separate pending explicit identity review.</li>
+<li>Recorded project-lead approval of the five-part Wave 1 treatment and rebuilt v2
+  with 855 unconfirmed positive rows, 1,484 negative comparison rows, and a
+  separate 904-row Wittmann mixed compact-system pool.</li>
+<li>Attached all 109 Ahn spatial-kinematic bins to M59-UCD3 as one supporting
+  evidence dataset rather than independent objects.</li>
+<li>Consolidated four Zhang, Fahrion, Ko, and Liu S999 rows under the Gaia-bearing
+  Fahrion position while retaining the prior Zhang canonical identifier as an
+  alias and preserving every coordinate and velocity measurement.</li>
+<li>Preserved four exact Ko GC/UCD table conflicts as
+  <code>uncertain / reported_ucd_role_conflict</code> rather than selecting either label.</li>
+<li>Rebuilt and validated twice in 1.28/0.41 and 1.22/0.40 seconds. Both cycles
+  produced database SHA-256
+  <code>6e3811c5eb45898c2fd5aa896374822758c69f664f6d513ba8bd9b1cfee1a8a7</code>
+  and canonical export SHA-256
+  <code>6d16fdbcf036791b9cf49a27d1470212c6c5098d13bdc783242de89f56b2975b</code>.</li>
+<li>Measured 5,049 literature records, 2,059 pool records, 4,623 canonicals, 126
+  retained aliases, and 587 review items; the legacy database hash remains
+  <code>d5a2890a10244d78c9be0b54852e8a6667c6ae766053698c450413a9f3ef1806</code>.</li>
+<li>Audited 2,324 remaining Wave 1 rows against 2,314 pre-Wave canonical identities
+  using direct names and published aliases before positional context. Seven rows
+  form a high-confidence proposed association cohort at 0.007032699785 to
+  0.136000985070 arcseconds; all seven targets and source rows are candidates.</li>
+<li>Routed 175 match pairs from 153 Wave rows to manual group review because more
+  than one baseline canonical lies within one arcsecond. Rejected four distant
+  identifier collisions rather than treating reused names as identities.</li>
+<li>Implemented project-lead approval for the seven-row high-confidence cohort.
+  Seven Wave rows now share six pre-Wave candidate identities, with seven approved
+  name-or-alias evidence records and seven retired Wave canonical identifiers
+  preserved as aliases.</li>
+<li>Rebuilt and validated twice in 1.29/0.41 and 1.27/0.41 seconds. Both cycles
+  produced database SHA-256
+  <code>15ddd262ef12e2f62b6353266a9e5c08fe48a19a38ff52e7e70d7824d48e27f4</code>
+  and canonical export SHA-256
+  <code>140a8b2bbccf8ae255d6bd6bab8fe026357c2e076e1d74b462f862c8fcf82cc6</code>.</li>
+<li>Measured 4,616 canonical objects: 2,547 candidate, 2,051 rejected, and 18
+  uncertain. The database retains 133 canonical aliases and 587 review items.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Identity consolidation must support a declared number of unique source positions rather than assuming every reviewed Gaia group is a pair.</li>
+<li>Duplicate source rows and discordant measurements are provenance to retain, even when the corresponding positional identities are approved.</li>
+<li>Citation-led discovery alone missed seven relevant 2015-2018 object studies; a targeted title query is required for recall.</li>
+<li>Source tables must be routed by scientific row role before association: positive
+  UCD rows, mixed compact-system compilations, comparison rows, and spatial bins
+  cannot share one automatic ingestion rule.</li>
+</ul>
+<h2 id="key-issues">Key Issues</h2>
+<ul>
+<li>Stage 1 still has raw-row, host-distance, confirmation-evidence, and new-literature screening gates.</li>
+<li>Non-exact Wave 1 positional overlaps other than S999 remain separate identities;
+  the audit is not a general one-arcsecond association rule.</li>
+<li>Object-level confirmation evidence remains to be reviewed, including the
+  retrieved PDF-only Wave 1 sources, before selector labels can be frozen.</li>
+<li>The 153 multi-canonical cases require a separate group-level audit; none was
+  changed by the seven-row approval.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+<li><a href="#key-issues">Key Issues</a></li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

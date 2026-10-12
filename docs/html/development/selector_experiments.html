@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Gaia selector development and validation · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Development records</span><a href="../../development/selector_experiments.md">Markdown source ↗</a></div><h1 id="gaia-selector-development-and-validation">Gaia selector development and validation</h1>
+<p><strong>Consolidated:</strong> 2026-10-12<br>
+<strong>Role:</strong> Topic-organized development evidence, not a replacement for current scientific requirements.</p>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a> · <a href="documentation_audit.html">Documentation audit</a></p>
+<h2 id="current-reading-guidance">Current reading guidance</h2>
+<p>Selector v1 is the reproducible baseline, not a physical-UCD probability. The one-time benchmark validation is complete; later real-field contamination and sensitivity work remains open. Read the frozen-model and validation records before older exploratory scores. The astrometric assessment did not support a universal hard veto at the required reliable-UCD retention.</p>
+<h2 id="dated-evidence">Dated evidence</h2>
+<p>Each section below retains an original report's scientific content, measurements,
+commands, and limitations. Status statements apply to that report's original date;
+read the guidance above and current SPEC before following an old next step.</p>
+<p><a id="record-point_source_selector_calibration"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_selector_calibration.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_selector_calibration.md -->
+<h2 id="point-source-priority-selector-calibration">Point-Source-Priority Selector Calibration</h2>
+<p><strong>Date:</strong> 2026-07-17<br>
+<strong>Status:</strong> Development operating points measured; no threshold frozen</p>
+<h3 id="approved-priority">Approved Priority</h3>
+<p>The primary Stage 3 objective is to reject ordinary stars, Gaia NSS/binary failure
+modes, and spectroscopic QSOs while retaining confirmed UCDs. Each point-source
+cohort contributes equally to the optimization objective, regardless of its row
+count. Spectroscopic galaxies are a secondary stress set intended for ancillary
+imaging or photometric rejection. H II regions and compact young clusters remain a
+separate host-correlated color/morphology safeguard.</p>
+<h3 id="score-architecture">Score Architecture</h3>
+<p>The complete-coverage core combines two empirical ranks:</p>
+<ul>
+<li>absolute astrometric excess noise; and</li>
+<li>BP/RP flux-excess factor.</li>
+</ul>
+<p>Each rank is the mean empirical CDF across the three equally weighted priority
+cohorts. A small conditional penalty may be applied using covariance-aware proper-
+motion and absolute-parallax zero-significance. Missing five-parameter astrometry
+receives no penalty; it never removes a source. Missing BP/RP flux excess leaves the
+AEN component rather than rejecting the source.</p>
+<p>The grid tests AEN core weights of 0.25, 0.50, and 0.75; astrometric penalty weights
+of 0.0, 0.1, 0.2, and 0.3; and empirical confirmed-UCD completeness targets of 80%,
+85%, 90%, and 95%. These are operating-point measurements, not approved values.</p>
+<h3 id="measured-trade-off">Measured Trade-off</h3>
+<p>The best equal-cohort point-source retention at each completeness target is:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Target UCD completeness</th>
+<th style="text-align: right;">Measured</th>
+<th style="text-align: right;">Mean priority retention</th>
+<th style="text-align: right;">Stars</th>
+<th style="text-align: right;">NSS</th>
+<th style="text-align: right;">QSOs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">80.0%</td>
+<td style="text-align: right;">2.22%</td>
+<td style="text-align: right;">4.19%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">2.48%</td>
+</tr>
+<tr>
+<td style="text-align: right;">85%</td>
+<td style="text-align: right;">85.1%</td>
+<td style="text-align: right;">2.56%</td>
+<td style="text-align: right;">4.95%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">2.73%</td>
+</tr>
+<tr>
+<td style="text-align: right;">90%</td>
+<td style="text-align: right;">90.3%</td>
+<td style="text-align: right;">3.73%</td>
+<td style="text-align: right;">6.48%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">4.71%</td>
+</tr>
+<tr>
+<td style="text-align: right;">95%</td>
+<td style="text-align: right;">95.4%</td>
+<td style="text-align: right;">6.84%</td>
+<td style="text-align: right;">13.33%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">7.20%</td>
+</tr>
+</tbody>
+</table>
+<p>The leading 90% operating point uses 25% AEN rank, 75% flux-excess rank, and a 10%
+conditional astrometric penalty. It retains 98.6% of spectroscopic galaxies, as
+expected under the approved secondary-galaxy policy. It also retains 90.6% of H II
+rows and only 53.6% of uncertain literature UCD candidates. The latter is a
+sensitivity warning, not evidence that confirmed-UCD completeness is wrong.</p>
+<h3 id="h-ii-color-safeguard">H II Color Safeguard</h3>
+<p>A standalone <code>BP-RP &gt;= 0.8588</code> development cut retains 90.3% of confirmed UCDs and
+19.7% of H II rows. Applying it simultaneously with the 90% core operating point
+would retain only 82.3% of confirmed UCDs. It therefore should not be silently added
+as a hard primary cut. The safer current treatment is an H II/color review flag or
+a separately calibrated second-round morphology/color rejection after the primary
+point-source selection.</p>
+<h3 id="decision-needed-before-freezing">Decision Needed Before Freezing</h3>
+<p>The recommended starting operating point is the measured 90% configuration because
+it rejects the three priority point-source cohorts strongly without accepting the
+larger stellar leakage of the 95% point. Freezing it still requires project-lead
+approval. The exact threshold, rank reference distributions, null behavior, and
+version must then move into one shared selector implementation before validation is
+opened.</p>
+<h3 id="reproducibility">Reproducibility</h3>
+<ul>
+<li>Calibration: <code>scripts/phase1_literature/calibrate_point_source_selector.py</code></li>
+<li>Validator: <code>scripts/phase1_literature/validate_point_source_selector_calibration.py</code></li>
+<li>Components: <code>data/literature/validation/point_source_selector_components_v1.csv</code></li>
+<li>Operating points: <code>data/literature/validation/point_source_selector_operating_points_v1.csv</code></li>
+<li>Summary: <code>data/literature/validation/point_source_selector_calibration_v1.json</code></li>
+<li>Validation: <code>data/literature/validation/point_source_selector_calibration_validation_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/point_source_selector_calibration.md -->
+
+<p><a id="record-point_source_ml_comparison"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_ml_comparison.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_ml_comparison.md -->
+<h2 id="development-only-point-source-ml-comparison">Development-only point-source ML comparison</h2>
+<h3 id="purpose">Purpose</h3>
+<p>This experiment tests whether a classical classifier improves on the interpretable
+rank score without changing the scientific objective. It is a development-only
+comparison, not a frozen selector and not a validation result.</p>
+<p>The positive class is the 175 confirmed development UCDs. The three priority
+negative cohorts are 525 matched SDSS spectroscopic stars, 1,125 Gaia non-single-
+star sources, and 403 spectroscopic QSOs. Each negative cohort receives equal total
+weight, irrespective of its row count. Spectroscopic galaxies and H II regions are
+secondary stress samples and never enter model fitting or threshold selection.</p>
+<h3 id="leakage-controls">Leakage controls</h3>
+<ul>
+<li>Five outer grouped folds measure held-out performance; four inner grouped folds
+  choose hyperparameters and the threshold targeting 90% confirmed-UCD recall.</li>
+<li>Every matched star inherits the spatial partition group of its matched UCD, so a
+  matched UCD-star neighborhood cannot occur on both sides of a fold.</li>
+<li>Preprocessing, missing-value imputation, empirical rank references, model fitting,
+  and threshold choice are all fit inside the relevant training fold.</li>
+<li>The 721-row validation partition remains sealed, and none of its Gaia source
+  identifiers appears in the prediction artifact.</li>
+</ul>
+<h3 id="features-and-models">Features and models</h3>
+<p>Regularized logistic regression and shallow histogram gradient boosting use nine
+Gaia measurements: transformed astrometric excess noise and its significance,
+BP/RP flux-excess factor, measured BP-RP color, transformed RUWE, the two IPD
+percentages, and transformed absolute-parallax and proper-motion zero-significance.
+Color is therefore a soft learned feature rather than a hard color cut.</p>
+<p>Gaia NSS membership, DSC class probabilities, Gaia galaxy/QSO-candidate membership,
+and Sersic parameters are excluded from primary inputs because they would be
+tautological, circular, or inappropriate parent-sample requirements. The hand-score
+baseline uses its previously approved 25/75 excess-noise/flux-excess core and 10%
+conditional astrometric penalty, but its empirical references and threshold are
+also refit inside grouped folds.</p>
+<h3 id="measured-result">Measured result</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Confirmed-UCD recall</th>
+<th style="text-align: right;">Stars retained</th>
+<th style="text-align: right;">NSS retained</th>
+<th style="text-align: right;">QSOs retained</th>
+<th style="text-align: right;">Equal-cohort mean retained</th>
+<th style="text-align: right;">Outer-fold UCD recall range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logistic regression</td>
+<td style="text-align: right;">93.71%</td>
+<td style="text-align: right;">7.24%</td>
+<td style="text-align: right;">0.36%</td>
+<td style="text-align: right;">4.47%</td>
+<td style="text-align: right;">4.02%</td>
+<td style="text-align: right;">81.82–100.00%</td>
+</tr>
+<tr>
+<td>Shallow gradient boosting</td>
+<td style="text-align: right;">88.57%</td>
+<td style="text-align: right;">7.43%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">3.23%</td>
+<td style="text-align: right;">3.55%</td>
+<td style="text-align: right;">70.59–100.00%</td>
+</tr>
+<tr>
+<td>Hand rank score</td>
+<td style="text-align: right;">89.14%</td>
+<td style="text-align: right;">6.86%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">4.71%</td>
+<td style="text-align: right;">3.86%</td>
+<td style="text-align: right;">76.47–97.06%</td>
+</tr>
+</tbody>
+</table>
+<p>Logistic regression is the only tested method whose pooled outer-fold predictions
+meet the nominal 90% recall target, while retaining 4.02% of the equal-weight
+priority contaminants. Its improvement over the hand score is modest, and its
+81.82–100% fold range shows that the result is not yet stable enough to freeze.
+Boosting obtains the lowest contaminant retention but misses the recall target and
+has the widest recall instability; it is not preferred at this stage.</p>
+<p>The secondary stress results are descriptive only. Majority decisions across the
+five outer models retain 98.59% of development spectroscopic galaxies and 89.76%
+of H II regions for logistic regression. This is consistent with their declared
+later imaging and separate color/morphology treatment; it is not evidence that the
+point-source layer solves those contaminants.</p>
+<h3 id="interpretation-and-next-decision">Interpretation and next decision</h3>
+<p>Classical ML is feasible and regularized logistic regression is a promising
+replacement for a sequence of linear cuts. The present comparison does not justify
+unsealing validation or freezing a model. The next defensible test is a repeated
+grouped nested-CV stability analysis, including coefficient/sign inspection and
+performance by magnitude and sky position. Only after that analysis is declared
+and reviewed should one candidate implementation and threshold be frozen for the
+single withheld-validation evaluation.</p>
+<p>That stability analysis was completed on 2026-07-17. The logistic model passes the
+predeclared repeated-CV gate, while identifying 11 persistently missed confirmed
+UCDs and magnitude/latitude-dependent limitations that require review. See
+<code>docs/point_source_ml_stability.md</code>; validation remains sealed.</p>
+<h3 id="reproduction">Reproduction</h3>
+<ul>
+<li>Script: <code>scripts/phase1_literature/compare_point_source_ml.py</code></li>
+<li>Validation: <code>scripts/phase1_literature/validate_point_source_ml.py</code></li>
+<li>Command: <code>uv run python scripts/phase1_literature/compare_point_source_ml.py</code></li>
+<li>Predictions: <code>data/literature/validation/point_source_ml_oof_predictions_v1.csv</code></li>
+<li>Fold metrics: <code>data/literature/validation/point_source_ml_fold_metrics_v1.csv</code></li>
+<li>Summary: <code>data/literature/validation/point_source_ml_comparison_v1.json</code></li>
+<li>Validation report: <code>data/literature/validation/point_source_ml_comparison_validation_v1.json</code></li>
+<li>Date: 2026-07-17</li>
+</ul>
+<!-- preserved_source_end: docs/point_source_ml_comparison.md -->
+
+<p><a id="record-point_source_ml_stability"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_ml_stability.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_ml_stability.md -->
+<h2 id="repeated-point-source-logistic-regression-stability">Repeated point-source logistic-regression stability</h2>
+<h3 id="decision-status">Decision status</h3>
+<p>The provisional logistic model passes the predeclared development stability gate
+and is ready for selector-freeze review. It is not yet a frozen selector, and the
+721-row validation partition remains sealed.</p>
+<h3 id="design">Design</h3>
+<p>The analysis repeated five-outer/four-inner grouped cross-validation ten times
+using the deterministic seeds declared in <code>docs/SPEC.md</code>. Each of the 2,228 fitting
+rows receives one held-out prediction per repeat. Matched stars remain grouped with
+their matched UCD; preprocessing, imputation, hyperparameter selection, and the
+90% recall threshold remain fold-local.</p>
+<p>The model and scientific objective are unchanged from the first comparison:</p>
+<ul>
+<li>positive class: 175 confirmed development UCDs;</li>
+<li>equal-weight priority negatives: 525 matched spectroscopic stars, 1,125 Gaia NSS
+  sources, and 403 spectroscopic QSOs;</li>
+<li>nine Gaia measurement features, including BP-RP as a soft feature;</li>
+<li>no NSS membership, DSC class probability, candidate-catalog membership, or
+  Sersic model input; and</li>
+<li>no fitting to the galaxy or H II secondary stress cohorts.</li>
+</ul>
+<h3 id="stability-result">Stability result</h3>
+<table>
+<thead>
+<tr>
+<th>Metric across ten repeats</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirmed-UCD recall</td>
+<td style="text-align: right;">93.14%</td>
+<td style="text-align: right;">93.71%</td>
+<td style="text-align: right;">95.43%</td>
+</tr>
+<tr>
+<td>Equal-cohort priority retention</td>
+<td style="text-align: right;">3.75%</td>
+<td style="text-align: right;">3.96%</td>
+<td style="text-align: right;">4.42%</td>
+</tr>
+</tbody>
+</table>
+<p>All 50 outer fits selected logistic regularization <code>C = 3.0</code>. Their inner-selected
+probability thresholds range from 0.474 to 0.585, demonstrating that the numerical
+threshold is training-sample dependent and must be calibrated for the final
+full-development model rather than copied from one fold.</p>
+<p><code>C = 3.0</code> is also the least-regularized boundary of the tested grid. Unanimous
+selection therefore demonstrates reproducibility within this grid, not that the
+regularization optimum has been enclosed. A bounded development-only extension
+above <code>C = 3.0</code> is required before choosing the final regularization strength.</p>
+<p>Individual outer-fold recall still ranges from 81.82% to 100%. The ten-repeat
+pooled result is stable because every source rotates through held-out folds, but
+the remaining fold range warns that spatially concentrated failure modes still
+matter. This distinction is why the result advances to review rather than directly
+to validation.</p>
+<h3 id="coefficient-behavior">Coefficient behavior</h3>
+<p>All nine measurement-feature coefficients retain the same sign in all 50 fits.
+The coefficients are measured after fold-local standardization, so their magnitudes
+are comparable within the fitted model but are not causal feature importances.
+Correlated Gaia diagnostics can share predictive weight.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: right;">Median standardized coefficient</th>
+<th style="text-align: right;">Sign in 50/50 fits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log astrometric excess noise</td>
+<td style="text-align: right;">+0.587</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log excess-noise significance</td>
+<td style="text-align: right;">+0.259</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>BP/RP flux-excess factor</td>
+<td style="text-align: right;">+0.198</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log proper-motion zero-significance</td>
+<td style="text-align: right;">-0.197</td>
+<td style="text-align: right;">Negative</td>
+</tr>
+<tr>
+<td>Log absolute-parallax zero-significance</td>
+<td style="text-align: right;">-0.159</td>
+<td style="text-align: right;">Negative</td>
+</tr>
+<tr>
+<td>BP-RP color</td>
+<td style="text-align: right;">+0.066</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log IPD multi-peak percentage</td>
+<td style="text-align: right;">+0.066</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log RUWE</td>
+<td style="text-align: right;">+0.060</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+<tr>
+<td>Log IPD odd-window percentage</td>
+<td style="text-align: right;">+0.055</td>
+<td style="text-align: right;">Positive</td>
+</tr>
+</tbody>
+</table>
+<p>Positive coefficients increase the fitted UCD-like score; negative parallax and
+proper-motion coefficients correctly penalize significant nonzero astrometry.</p>
+<h3 id="persistent-failures">Persistent failures</h3>
+<p>A persistent failure means a confirmed UCD is selected in at most five of ten
+repeats, or a priority contaminant is selected in at least five repeats.</p>
+<table>
+<thead>
+<tr>
+<th>Cohort</th>
+<th style="text-align: right;">Persistent failures</th>
+<th style="text-align: right;">Cohort size</th>
+<th style="text-align: right;">Fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirmed UCD</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">6.29%</td>
+</tr>
+<tr>
+<td>Matched spectroscopic star</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">7.05%</td>
+</tr>
+<tr>
+<td>Gaia NSS</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1,125</td>
+<td style="text-align: right;">0.36%</td>
+</tr>
+<tr>
+<td>Spectroscopic QSO</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">403</td>
+<td style="text-align: right;">4.96%</td>
+</tr>
+</tbody>
+</table>
+<p>Three persistently missed UCDs share HEALPix group 34534, two share group 43262,
+and two share group 36290. Several have Gaia measurements that are very star-like:
+zero astrometric excess noise, RUWE near one, and significant proper motion. One
+particularly bright row has <code>G = 12.34</code> and extremely precise nonzero astrometry.
+These objects remain confirmed literature UCD labels; the diagnostic does not
+relabel them. Their literature identity, Gaia association, and possible foreground
+or nuclear interpretation require source-level audit before selector freezing.</p>
+<p>The complete source list, including identifiers, sky position, magnitude, mean
+score, and selection frequency, is preserved in
+<code>data/literature/validation/point_source_ml_stability_source_summary_v1.csv</code>.</p>
+<h3 id="fixed-stratum-behavior">Fixed-stratum behavior</h3>
+<table>
+<thead>
+<tr>
+<th>Confirmed-UCD stratum</th>
+<th style="text-align: right;">Sources</th>
+<th style="text-align: right;">Repeated recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>G &lt;= 18</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">85.71%</td>
+</tr>
+<tr>
+<td><code>18 &lt; G &lt;= 19</code></td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">90.59%</td>
+</tr>
+<tr>
+<td><code>19 &lt; G &lt;= 20</code></td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">86.36%</td>
+</tr>
+<tr>
+<td><code>G &gt; 20</code></td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">96.28%</td>
+</tr>
+<tr>
+<td><code>abs(b) &lt; 30 deg</code></td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">91.88%</td>
+</tr>
+<tr>
+<td><code>30 &lt;= abs(b) &lt; 60 deg</code></td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">85.22%</td>
+</tr>
+<tr>
+<td><code>abs(b) &gt;= 60 deg</code></td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">98.97%</td>
+</tr>
+<tr>
+<td><code>abs(ecliptic latitude) &lt; 30 deg</code></td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">99.03%</td>
+</tr>
+<tr>
+<td><code>30 &lt;= abs(ecliptic latitude) &lt; 60 deg</code></td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">88.17%</td>
+</tr>
+<tr>
+<td><code>abs(ecliptic latitude) &gt;= 60 deg</code></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>The final ecliptic bin contains one source and is not a population estimate. The
+magnitude and latitude differences are descriptive development diagnostics, not
+new cuts. They reinforce the need to audit failure cases and declare the final
+selector's applicability domain.</p>
+<h3 id="2026-07-17-preliminary-source-audit">2026-07-17 preliminary source audit</h3>
+<p>The 11 persistently missed UCDs occupy seven level-6 HEALPix groups rather than one
+group. Group 34534 contains three, groups 43262 and 36290 contain two each, and four
+groups contain one each. Their host contexts are four spectroscopically confirmed
+Fornax systems from Saifollahi table A1, two NGC 1400/1407 objects, two NGC 5128
+objects, and one each around M87, NGC 1553/1549, and M31.</p>
+<p>The normalized distance field is present for only 5/11 missed objects and 105/164
+other confirmed development UCDs. Its measured medians are 20.0 and 16.5 Mpc,
+respectively, but the asymmetric missingness prevents a conclusion that the missed
+objects are systematically farther away. The host mix contains no high-redshift
+population; the relevant quantity is local host distance and spectroscopic
+membership rather than cosmological redshift.</p>
+<p>The bright M31 row exposes a more serious evidence issue:</p>
+<ul>
+<li>literature name: <code>B409</code>;</li>
+<li>canonical ID: <code>canonical_a71db2a61b8856cb835b46670601f951</code>;</li>
+<li>Gaia DR3 source ID: <code>375037265841433344</code>;</li>
+<li>Gaia position: RA <code>12.663251280395 deg</code>, Dec <code>+41.293171078320 deg</code>;</li>
+<li>literature position: RA <code>12.663250000000 deg</code>, Dec <code>+41.293130555556 deg</code>;</li>
+<li>positional separation: approximately <code>0.146 arcsec</code>;</li>
+<li>Gaia G: <code>12.340369</code> mag;</li>
+<li>parallax: <code>1.126604 +/- 0.014465</code> mas (<code>77.9 sigma</code>);</li>
+<li>proper motion: <code>pmra = -5.316260 +/- 0.013725</code> and
+  <code>pmdec = +3.045072 +/- 0.010659</code> mas/yr; and</li>
+<li>Gaia radial velocity: <code>-37.13 +/- 2.25 km/s</code>.</li>
+</ul>
+<p>Fahrion table B1 lists B409 with <code>RV = 0.0</code>, <code>reff = 0.0</code>, and reference 11 to the
+M31 Revised Bologna Catalog. The confirmation review had interpreted every
+coordinate-bearing Fahrion row as supplying a radial velocity, but 68/377 such rows
+use <code>RV = 0.0</code>; 30 of those currently occur among the 175 confirmed development
+UCDs. For B409, the Gaia measurements are strongly consistent with a foreground
+Milky Way star. This could mean a foreground superposition was assigned to the real
+M31 compact object, or that the literature object itself should not be treated as a
+confirmed UCD. The current evidence does not distinguish those cases.</p>
+<p>Consequently, selector-freeze readiness is suspended pending a non-destructive
+re-audit of the 68 zero-RV Fahrion rows, their independent evidence, and their Gaia
+associations. No label or provenance record has been altered by this diagnostic.</p>
+<h3 id="readiness-gate-and-required-review">Readiness gate and required review</h3>
+<p>All predeclared numerical criteria pass:</p>
+<ul>
+<li>median repeated recall is at least 90%;</li>
+<li>no complete repeat falls below 85% recall; and</li>
+<li>every measurement coefficient has at least 80% sign agreement (measured: 100%).</li>
+</ul>
+<p>The later source audit supersedes numerical readiness. Before validation can be
+unsealed, the project must:</p>
+<ol>
+<li>audit the 11 persistently missed confirmed UCD associations without changing
+   labels merely because the classifier dislikes them;</li>
+<li>correct the zero-RV Fahrion evidence rule and rederive the benchmark while
+   preserving every source row and prior decision as provenance;</li>
+<li>review the 61 persistent priority-contaminant failures;</li>
+<li>extend the regularization sensitivity above the current <code>C = 3.0</code> grid boundary;</li>
+<li>define how the final full-development model receives one reproducible threshold;</li>
+<li>fit and serialize one versioned selector with its null policy and applicability
+   domain; and</li>
+<li>freeze all of the above before the single withheld-validation evaluation.</li>
+</ol>
+<h3 id="reproduction_1">Reproduction</h3>
+<ul>
+<li>Analysis: <code>scripts/phase1_literature/analyze_point_source_ml_stability.py</code></li>
+<li>Validation: <code>scripts/phase1_literature/validate_point_source_ml_stability.py</code></li>
+<li>Command: <code>uv run python scripts/phase1_literature/analyze_point_source_ml_stability.py</code></li>
+<li>Runtime measured on 2026-07-17: 45.19 seconds for the final ten-repeat run</li>
+<li>Summary: <code>data/literature/validation/point_source_ml_stability_summary_v1.json</code></li>
+<li>Validation report: <code>data/literature/validation/point_source_ml_stability_validation_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/point_source_ml_stability.md -->
+
+<p><a id="record-point_source_ml_stability_v2"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_ml_stability_v2.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_ml_stability_v2.md -->
+<h2 id="point-source-ml-stability-after-the-fahrion-evidence-correction">Point-source ML stability after the Fahrion evidence correction</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Partition:</strong> Development only; validation remains sealed<br>
+<strong>Benchmark:</strong> <code>benchmark_v2</code> with <code>benchmark_partition_v1</code></p>
+<h3 id="evidence-corrected-training-cohort">Evidence-corrected training cohort</h3>
+<p>Benchmark v2 preserves every benchmark row, Gaia feature, spatial group, and
+partition from v1. It updates 26 Gaia-linked literature labels after treating
+Fahrion table B1 <code>RV = 0.0</code> as unavailable evidence: 25 objects become candidates
+and B409 becomes a rejected foreground object. Twenty-five of those corrections
+occur in development. The high-confidence positive class therefore decreases from
+175 to 150 development UCDs. The external spectroscopic-star pool was reused and
+rematched, yielding 450 unique controls at the unchanged three-to-one ratio.</p>
+<h3 id="repeated-grouped-nested-cross-validation">Repeated grouped nested cross-validation</h3>
+<p>The same ten repeat seeds, five outer folds, four inner folds, nine measured
+features, equal priority-cohort weighting, and 90% target recall were rerun.</p>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirmed-UCD recall</td>
+<td style="text-align: right;">94.67%</td>
+<td style="text-align: right;">95.33%</td>
+<td style="text-align: right;">96.00%</td>
+</tr>
+<tr>
+<td>Equal-cohort priority retention</td>
+<td style="text-align: right;">3.77%</td>
+<td style="text-align: right;">4.23%</td>
+<td style="text-align: right;">4.39%</td>
+</tr>
+</tbody>
+</table>
+<p>All 50 outer fits again select <code>C = 3.0</code>, the least-regularized tested boundary,
+and all measurement-feature coefficients retain 100% sign agreement. Seven of 150
+confirmed UCDs are missed in every repeat, compared with 11 of 175 under the
+superseded v1 labels. Persistent priority-contaminant failures comprise 30 matched
+spectroscopic stars, four Gaia NSS objects, and 21 spectroscopic QSOs.</p>
+<p>The single nested comparison repeat gives logistic regression 95.33% UCD recall
+and 4.32% macro priority retention. Histogram gradient boosting falls below the
+target at 84.0% recall. The hand-ranked score reaches exactly 90.0% recall with
+4.02% macro priority retention. Galaxies and H II regions remain secondary stress
+cohorts rather than optimization targets.</p>
+<h3 id="interpretation">Interpretation</h3>
+<p>The corrected labels strengthen rather than reverse the development-only result:
+logistic regression remains the preferred model family and passes the predeclared
+repeat-stability gates. This does not freeze a model or threshold. The unanimous
+selection of boundary value <code>C = 3.0</code> still requires a higher-C sensitivity test,
+and the seven persistent UCD failures require provenance and association review.
+Validation performance must remain uninspected until those development decisions
+are frozen.</p>
+<h3 id="artifacts">Artifacts</h3>
+<ul>
+<li>Benchmark: <code>data/literature/benchmarks/gaia_validation_benchmark_v2.csv</code></li>
+<li>Development features: <code>data/literature/benchmarks/gaia_selector_development_features_v2.csv</code></li>
+<li>Stellar matches: <code>data/literature/benchmarks/spectroscopic_stellar_reference_matches_v2.csv</code></li>
+<li>ML comparison: <code>data/literature/validation/point_source_ml_comparison_v2.json</code></li>
+<li>Stability summary: <code>data/literature/validation/point_source_ml_stability_summary_v2.json</code></li>
+<li>Stability validation: <code>data/literature/validation/point_source_ml_stability_validation_v2.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/point_source_ml_stability_v2.md -->
+
+<p><a id="record-point_source_ml_v2_failure_audit"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_ml_v2_failure_audit.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_ml_v2_failure_audit.md -->
+<h2 id="benchmark-v2-persistent-ucd-failure-audit">Benchmark-v2 persistent UCD failure audit</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Scope:</strong> Seven confirmed UCDs missed in all ten development-only logistic repeats<br>
+<strong>Validation partition:</strong> Sealed and uninspected</p>
+<h3 id="result">Result</h3>
+<p>The seven failures are not one homogeneous class. All seven retain approved
+spectroscopic membership evidence, so this audit does not recommend changing their
+UCD classifications. Four Gaia associations are nevertheless unsafe as positive
+training examples because the matched Gaia source has highly significant proper
+motion. The remaining three are plausible hard UCD examples at <code>G &gt; 20</code> and should
+remain in development.</p>
+<table>
+<thead>
+<tr>
+<th>Literature object</th>
+<th style="text-align: right;">Gaia DR3 source</th>
+<th style="text-align: right;">G</th>
+<th style="text-align: right;">Literature-to-Gaia offset</th>
+<th style="text-align: right;">Proper-motion zero-significance</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 1400_1</td>
+<td style="text-align: right;">5107392559411455616</td>
+<td style="text-align: right;">19.571</td>
+<td style="text-align: right;">0.466 arcsec</td>
+<td style="text-align: right;">14.31</td>
+<td>Suspect foreground superposition or wrong Gaia association</td>
+</tr>
+<tr>
+<td>NGC1400_2</td>
+<td style="text-align: right;">5107470379920956160</td>
+<td style="text-align: right;">19.049</td>
+<td style="text-align: right;">0.392 arcsec</td>
+<td style="text-align: right;">44.87</td>
+<td>Suspect foreground superposition or wrong Gaia association</td>
+</tr>
+<tr>
+<td>Dorado2</td>
+<td style="text-align: right;">4778649573525185024</td>
+<td style="text-align: right;">19.825</td>
+<td style="text-align: right;">0.741 arcsec</td>
+<td style="text-align: right;">9.91</td>
+<td>Suspect foreground superposition or wrong Gaia association</td>
+</tr>
+<tr>
+<td>Saifollahi A1 row 32</td>
+<td style="text-align: right;">4860354282585368064</td>
+<td style="text-align: right;">20.338</td>
+<td style="text-align: right;">0.121 arcsec</td>
+<td style="text-align: right;">11.67</td>
+<td>Suspect foreground superposition despite close positional match</td>
+</tr>
+<tr>
+<td>Saifollahi A1 row 36</td>
+<td style="text-align: right;">4860213682535953792</td>
+<td style="text-align: right;">20.456</td>
+<td style="text-align: right;">0.112 arcsec</td>
+<td style="text-align: right;">0.27</td>
+<td>Plausible hard UCD; faint and blue</td>
+</tr>
+<tr>
+<td>Saifollahi A1 row 39</td>
+<td style="text-align: right;">4860359470905910656</td>
+<td style="text-align: right;">20.575</td>
+<td style="text-align: right;">0.301 arcsec</td>
+<td style="text-align: right;">0.56</td>
+<td>Plausible hard UCD; faint and moderately extended in Gaia</td>
+</tr>
+<tr>
+<td>Saifollahi A1 row 59</td>
+<td style="text-align: right;">4860293126545559424</td>
+<td style="text-align: right;">20.351</td>
+<td style="text-align: right;">0.270 arcsec</td>
+<td style="text-align: right;">2.80</td>
+<td>Plausible hard UCD; resolved-size evidence and Gaia excess noise</td>
+</tr>
+</tbody>
+</table>
+<p>The proper-motion significance uses the full Gaia two-dimensional covariance, not
+the two components independently. The four suspect associations have significance
+between 9.91 and 44.87, whereas the other three range from 0.27 to 2.80. The three
+Fahrion objects have nonzero published velocities. The four Saifollahi objects are
+members of the spectroscopic A1 reference sample and have published half-light
+radii of 15.2, 5.6, 9.9, and 13.2 pc, respectively. Thus, the conflict is between
+the confirmed literature object and the Gaia association, not evidence that the
+literature object itself is a foreground star.</p>
+<h3 id="approved-treatment">Approved treatment</h3>
+<p>Retain all seven canonical objects as confirmed UCDs. Mark the four high-motion Gaia
+links as <code>suspect_foreground_superposition_or_wrong_gaia_association</code> and exclude
+those links from selector training until image/epoch-aware association review is
+complete. Do not relabel the underlying UCDs. Keep the other three as intentional
+hard positive examples. The project lead approved this treatment on 2026-07-18.
+The five-case evidence register, including rejected B409, is
+<code>data/literature/sources/ucd_reliability_reviews.json</code>.</p>
+<p>Benchmark v3 implements the decision non-destructively. It retains all 3,857 rows
+and changes no published classification or partition assignment, but makes the four
+conflicted links ineligible for reliable training. Development then contains 146
+reliable confirmed UCDs and 438 rematched stars. Ten-repeat logistic recall is
+93.84--96.58% (median 94.18%) and macro priority retention is 3.61--4.00% (median
+3.78%). All stability gates pass, although nine reliable UCDs are now persistent
+misses and all 50 fits still choose boundary <code>C = 3.0</code>.</p>
+<!-- preserved_source_end: docs/point_source_ml_v2_failure_audit.md -->
+
+<p><a id="record-logistic_regularization_sensitivity"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/logistic_regularization_sensitivity.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/logistic_regularization_sensitivity.md -->
+<h2 id="logistic-regularization-sensitivity">Logistic regularization sensitivity</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Benchmark:</strong> v3 development partition only<br>
+<strong>Validation partition:</strong> Sealed and uninspected</p>
+<p>The original grid ended at <code>C = 3</code>. All 50 repeated outer fits selected that
+boundary, so the nested comparison grid was expanded first through <code>C = 100</code> and
+then through <code>C = 3000</code>.</p>
+<p>With the grid ending at 100, four of five outer folds selected 100 and one selected
+30. With the grid ending at 3000, four folds selected 3000 and one selected 100.
+The resulting pooled logistic recall is 92.47%, and macro priority-contaminant
+retention is 2.18%. Individual-fold recall remains 80.77--97.30%, so the apparent
+contaminant improvement does not remove fold instability.</p>
+<p>This experiment shows that <code>C = 3</code> imposed more regularization than the current
+inner objective prefers. It does not justify selecting 3000: the preference remains
+at the search boundary, and repeatedly enlarging the grid would convert small,
+fold-specific retention differences into an effectively unregularized model choice.
+The correct next comparison is therefore explicit weakly regularized versus
+unregularized logistic regression, assessed for coefficient and prediction
+convergence as well as grouped-CV behavior. No <code>C</code> or threshold is frozen.</p>
+<p>That direct comparison uses <code>C = 100, 300, 1000, 3000</code> and an explicitly
+unregularized fit. At the fixed grouped-OOF 90% recall operating point, all models
+measure 90.41% UCD recall. Macro priority retention is 2.25%, 1.91%, 1.88%, 2.03%,
+and 2.03%, respectively. Thus <code>C = 3000</code> and the unregularized model already make
+identical aggregate selection decisions, while <code>C = 1000</code> is slightly better on
+this fixed split and retains a finite regularization safeguard. Full-development
+probability correlation with the unregularized model rises from 0.955 at <code>C = 100</code>
+to 0.991 at 1000 and 0.997 at 3000. Raw coefficient vectors converge more slowly,
+so coefficient equality is not claimed.</p>
+<p>The measured candidate for repeated stability is <code>C = 1000</code>, compared directly
+against <code>C = 3000</code> and unregularized logistic regression. This is a development-only
+candidate, not a frozen hyperparameter.</p>
+<p>Across ten fixed grouped repeats, all three configurations retain exactly 90.41%
+of reliable UCDs. Median macro priority retention is 1.96% for <code>C = 1000</code>, 2.11%
+for <code>C = 3000</code>, and 2.11% for the unregularized fit. <code>C = 1000</code> has the lowest
+paired retention in seven repeats, versus one for 3000 and two for unregularized.
+Its maximum fold coefficient-vector norm is 5.35, compared with 7.01 and 12.94.
+The evidence therefore recommends <code>C = 1000</code>: it gives the best repeated retention
+at identical measured recall and avoids unnecessary coefficient growth. Project-lead
+approval is still required before recording it as the frozen regularization policy.</p>
+<p>The project lead approved <code>C = 1000</code> on 2026-07-18. The frozen regularization and
+subsequently approved threshold are recorded in
+<code>data/literature/sources/point_source_logistic_policy_v1.json</code>.</p>
+<p>The frozen threshold is 0.8277833629, defined as the median of ten grouped-OOF
+thresholds individually calibrated to retain at least 90% of reliable UCDs. It is
+not an in-sample quantile and was not selected using validation data.</p>
+<p>Artifacts:</p>
+<ul>
+<li><code>data/literature/validation/point_source_ml_comparison_v4.json</code> (<code>C &lt;= 100</code>)</li>
+<li><code>data/literature/validation/point_source_ml_comparison_v5.json</code> (<code>C &lt;= 3000</code>)</li>
+<li><code>data/literature/validation/point_source_ml_fold_metrics_v5.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_convergence_v1.json</code></li>
+<li><code>data/literature/validation/logistic_regularization_convergence_coefficients_v1.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_v1.json</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_metrics_v1.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_validation_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/logistic_regularization_sensitivity.md -->
+
+<p><a id="record-frozen_c1000_persistent_ucd_audit"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/frozen_c1000_persistent_ucd_audit.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/frozen_c1000_persistent_ucd_audit.md -->
+<h2 id="frozen-c1000-persistent-ucd-audit">Frozen-C1000 persistent UCD audit</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Model:</strong> <code>point_source_logistic_policy_v1</code>, frozen <code>C = 1000</code><br>
+<strong>Scope:</strong> Development only; validation remains sealed</p>
+<h3 id="result_1">Result</h3>
+<p>Ten of 146 reliable confirmed UCDs are missed in every one of ten grouped-OOF
+repeats. None warrants removal from the reliable sample on current evidence.</p>
+<ul>
+<li>Five are multiply published Virgo/M87 UCDs. Their Gaia sources have two-parameter
+  solutions, no usable parallax or proper motion, <code>G = 20.92--21.14</code>, and
+  astrometric excess noise of 7.12--10.06 mas. They are genuine faint, extended
+  hard positives rather than foreground-like associations.</li>
+<li>Three are Saifollahi spectroscopic A1 compact systems (rows 36, 39, and 59) with
+  published half-light radii of 5.6, 9.9, and 13.2 pc. Their Gaia proper-motion
+  significance is 0.27, 0.56, and 2.79. They remain valid hard positives.</li>
+<li>One is object 3 from Gregg et al. (2009), with low proper-motion significance
+  (0.25), 3.60 mas excess noise, and a spectroscopic confirmation record.</li>
+<li>One is a Voggel et al. NGC 5128 object at <code>G = 18.37</code>. Its Gaia proper-motion
+  significance is 11.66, but the literature-to-Gaia separation is only 0.019
+  arcsec, the BP/RP flux-excess factor is 2.39, and astrometric excess noise is
+  1.35 mas. The evidence favors corrupted Gaia astrometry for an extended source
+  over a chance foreground association. It remains reliable but should be flagged
+  for ancillary-image review.</li>
+</ul>
+<p>The persistent misses therefore document the intended completeness cost of a
+point-source-contaminant selector: faint or measurably extended UCDs and sources
+with incomplete or corrupted Gaia astrometry are the hardest positive cases. They
+must remain in completeness accounting. Removing them would bias the selector
+toward easy, point-like UCDs.</p>
+<h3 id="artifacts_1">Artifacts</h3>
+<ul>
+<li><code>data/literature/validation/logistic_regularization_frozen_c1000_source_summary_v1.csv</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_v1.json</code></li>
+<li><code>data/literature/validation/logistic_regularization_stability_validation_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/frozen_c1000_persistent_ucd_audit.md -->
+
+<p><a id="record-point_source_logistic_model_v1"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_logistic_model_v1.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_logistic_model_v1.md -->
+<h2 id="point-source-logistic-model-v1">Point-source logistic model v1</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Training scope:</strong> Benchmark-v3 development model-fit rows only<br>
+<strong>Validation:</strong> Sealed and uninspected</p>
+<p>The final development model is an L2 logistic-regression pipeline with frozen
+<code>C = 1000</code> and operating threshold <code>0.8277833628791744</code>. It uses the approved nine
+Gaia measurement features, median imputation with missingness indicators, standard
+scaling, and equal total weight for reliable UCDs versus the three equally weighted
+priority contaminant cohorts.</p>
+<p>The fit contains 146 reliable UCDs and 1,966 priority contaminants, including 438
+matched spectroscopic stars. Apparent full-development recall is 92.47% and macro
+priority retention is 1.65%; these are descriptive training-set values, not
+validation performance.</p>
+<p>The serialized 4.1 KB pipeline reproduces all stored development probabilities to
+a maximum absolute difference of <code>1.11e-16</code>. Eight checks pass, including model and
+prediction hashes, row-order parity, threshold parity, the feature contract, and
+absence of every validation Gaia identifier from fitting. The transparent manifest
+records imputer statistics, missing-indicator indices, scaler means and scales,
+coefficients, intercept, threshold, and provenance hashes.</p>
+<p>Artifacts:</p>
+<ul>
+<li><code>data/literature/validation/point_source_logistic_model_v1.joblib</code></li>
+<li><code>data/literature/validation/point_source_logistic_model_v1.json</code></li>
+<li><code>data/literature/validation/point_source_logistic_development_predictions_v1.csv</code></li>
+<li><code>data/literature/validation/point_source_logistic_model_validation_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/point_source_logistic_model_v1.md -->
+
+<p><a id="record-point_source_selector_integration_v1"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_selector_integration_v1.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_selector_integration_v1.md -->
+<h2 id="point-source-selector-integration-v1">Point-source selector integration v1</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Model:</strong> <code>point_source_logistic_model_v1</code><br>
+<strong>Threshold:</strong> <code>0.8277833628791744</code></p>
+<p>The shared inference implementation is
+<code>scripts/utils/point_source_selector.py</code>. It loads the frozen serialized pipeline,
+verifies its SHA-256 digest, checks the exact nine-feature order, reproduces the
+approved feature derivations, and preserves missing values for the fitted median
+imputation and missingness indicators.</p>
+<p>The Phase IV Gaia query retrieves every raw column needed by the model. It does not
+apply the historical astrometric-excess-noise, proper-motion, or color cuts before
+inference. It limits the denominator to the complete measured benchmark domain of
+<code>11.26291847229004 &lt;= phot_g_mean_mag &lt;= 21.75798797607422</code>; these are the measured
+minimum and maximum in
+<code>data/literature/benchmarks/gaia_validation_benchmark_v3.csv</code>, not estimated limits.</p>
+<p>Each scored row records:</p>
+<ul>
+<li><code>point_source_logistic_probability</code>;</li>
+<li><code>point_source_logistic_selected</code>; and</li>
+<li><code>point_source_selector_version</code>.</li>
+</ul>
+<p>The validator
+<code>scripts/phase4_search/validate_frozen_selector_integration.py</code> performs seven
+checks. It reproduces the stored 2,112 development probabilities with maximum
+absolute difference <code>1.11e-16</code>, reproduces every threshold decision, verifies the
+version and feature contract, confirms all raw query columns, and confirms the two
+legacy astrometric prefilters are absent. The machine-readable report is
+<code>data/literature/validation/point_source_logistic_integration_validation_v1.json</code>.</p>
+<p>This integration authorizes use of the frozen selector. It does not validate the
+current Phase IV background geometry or significance calculation, which remain
+blocked by BT-005 and BT-006 and must be corrected before a scientific pilot rerun.</p>
+<!-- preserved_source_end: docs/point_source_selector_integration_v1.md -->
+
+<p><a id="record-point_source_logistic_validation_v1"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_logistic_validation_v1.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_logistic_validation_v1.md -->
+<h2 id="point-source-logistic-validation-v1">Point-source logistic validation v1</h2>
+<p><strong>Date:</strong> 2026-07-18<br>
+<strong>Evaluation:</strong> One-time frozen validation; complete<br>
+<strong>Retuning:</strong> Prohibited</p>
+<p>The project-lead-authorized evaluation applied <code>point_source_logistic_model_v1</code>
+unchanged to all 721 benchmark-v3 validation rows. The model used frozen
+<code>C = 1000</code> and threshold <code>0.8277833628791744</code>. No validation outcome contributed
+to feature choice, training, regularization, threshold calibration, or reliability
+labels.</p>
+<h3 id="primary-result">Primary result</h3>
+<table>
+<thead>
+<tr>
+<th>Cohort</th>
+<th style="text-align: right;">Selected</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reliable confirmed UCD</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">91.30%</td>
+</tr>
+<tr>
+<td>Gaia NSS</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">287</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+<tr>
+<td>Spectroscopic QSO</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">1.14%</td>
+</tr>
+</tbody>
+</table>
+<p>Macro retention across the two available priority validation cohorts is 0.57%.
+The independent sample therefore meets the predeclared 90% reliable-UCD recall
+target while strongly rejecting the point-source contaminants that motivated the
+selector.</p>
+<h3 id="secondary-stress-cohorts">Secondary stress cohorts</h3>
+<p>The selector retains 146/167 spectroscopic galaxies (87.43%), 30/57 compact H II
+regions (52.63%), and 1/3 dwarf-host H II regions. This is consistent with their
+predeclared role: the Gaia-only model was not optimized to remove extended
+extragalactic sources. Imaging, morphology, and photometric modeling remain the
+second-round safeguards.</p>
+<h3 id="false-negatives-and-post-validation-evidence">False negatives and post-validation evidence</h3>
+<p>Dorado1 has probability 0.000090, 34.57-sigma Gaia proper motion, and a 0.769-arcsec
+literature-to-Gaia offset. It is a newly exposed published-UCD/Gaia-counterpart
+conflict analogous to Dorado2. The frozen validation label and outcome are retained;
+no metric is revised. Any future model generation should quarantine this Gaia link
+and use a new independent validation cohort.</p>
+<p>M85-HCC1 has probability 0.693918, insignificant Gaia motion, 1.41 mas astrometric
+excess noise, RUWE 1.24, and BP/RP flux-excess factor 2.18. It remains a credible
+hard UCD and a genuine completeness failure.</p>
+<h3 id="artifacts_2">Artifacts</h3>
+<ul>
+<li><code>data/literature/validation/gaia_selector_validation_features_v1.csv</code></li>
+<li><code>data/literature/validation/point_source_logistic_validation_predictions_v1.csv</code></li>
+<li><code>data/literature/validation/point_source_logistic_validation_summary_v1.json</code></li>
+<li><code>data/literature/validation/point_source_logistic_validation_validation_v1.json</code></li>
+<li><code>data/literature/sources/point_source_validation_findings_v1.json</code></li>
+</ul>
+<!-- preserved_source_end: docs/point_source_logistic_validation_v1.md -->
+
+<p><a id="record-point_source_astrometric_rejection_assessment_v1"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/point_source_astrometric_rejection_assessment_v1.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/point_source_astrometric_rejection_assessment_v1.md -->
+<h2 id="point-source-astrometric-rejection-assessment-version-1">Point-source astrometric rejection assessment, version 1</h2>
+<h3 id="question">Question</h3>
+<p>Can a simple Gaia motion rule remove additional stars and QSOs after the frozen
+point-source selector, without losing too many reliable ultra-compact dwarfs
+(UCDs)?</p>
+<p>Here, <strong>astrometric significance</strong> means how far a measured parallax or proper
+motion lies from zero after accounting for its reported uncertainty. A distant UCD
+should have effectively zero parallax and proper motion, so a large value can be
+evidence for a foreground star. However, Gaia can also report misleading motion for
+a barely resolved source whose changing image shape shifts its measured center.</p>
+<p>The tested second rule uses the larger available value from:</p>
+<ul>
+<li>absolute parallax divided by its uncertainty; and</li>
+<li>the two-dimensional proper-motion distance from zero, including the reported
+  correlation between the two proper-motion components.</li>
+</ul>
+<p>A source is rejected only when that value is strictly above the trial boundary. If
+one measurement is missing, the other can still be used. If both are missing, the
+rule does not reject the source.</p>
+<h3 id="scope-and-safeguards">Scope and safeguards</h3>
+<p>The contract in
+<code>data/literature/sources/point_source_astrometric_rejection_assessment_v1.json</code>
+was committed before the measurements were calculated. The analysis uses only the
+benchmark-v3 development sample and the ordinary-star development supplement. It
+applies <code>point_source_logistic_model_v1</code> and its frozen threshold first. It does not
+inspect validation data, change selector version 1, use the NGC 4698 star to choose
+a boundary, or select a new operating point automatically.</p>
+<p>The measured sample contains 146 reliable UCDs, 438 ordinary spectroscopic stars,
+1,125 Gaia non-single stars, and 403 spectroscopic QSOs. Galaxies and H II regions
+are reported as secondary checks. At least one usable motion measurement exists for
+69/146 UCDs, 306/438 ordinary stars, 1,125/1,125 non-single stars, and 321/403 QSOs.</p>
+<h3 id="measured-result_1">Measured result</h3>
+<table>
+<thead>
+<tr>
+<th>Treatment</th>
+<th style="text-align: right;">Reliable UCDs passing</th>
+<th style="text-align: right;">Ordinary stars passing</th>
+<th style="text-align: right;">Gaia non-single stars passing</th>
+<th style="text-align: right;">QSOs passing</th>
+<th style="text-align: right;">Equal-weight priority-contaminant fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selector version 1 alone</td>
+<td style="text-align: right;">135/146 (92.47%)</td>
+<td style="text-align: right;">13/438 (2.97%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">8/403 (1.99%)</td>
+<td style="text-align: right;">1.651%</td>
+</tr>
+<tr>
+<td>3-standard-deviation reference</td>
+<td style="text-align: right;">131/146 (89.73%)</td>
+<td style="text-align: right;">12/438 (2.74%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">7/403 (1.74%)</td>
+<td style="text-align: right;">1.492%</td>
+</tr>
+<tr>
+<td>First measured boundary retaining at least 90% of all UCDs: 7.0397</td>
+<td style="text-align: right;">132/146 (90.41%)</td>
+<td style="text-align: right;">13/438 (2.97%)</td>
+<td style="text-align: right;">0/1,125 (0.00%)</td>
+<td style="text-align: right;">8/403 (1.99%)</td>
+<td style="text-align: right;">1.651%</td>
+</tr>
+</tbody>
+</table>
+<p>The 3-standard-deviation reference removes four UCDs that selector version 1 had
+retained, while removing one retained ordinary star and one retained QSO. At every
+measured boundary that preserves the historical goal of at least 90% reliable-UCD
+retention, the priority-contaminant fraction is unchanged from selector version 1.
+The full 1,885-boundary curve is preserved in
+<code>data/literature/validation/point_source_astrometric_rejection_curve_v1.csv</code>.</p>
+<p>Five reliable UCD associations exceed 3 standard deviations. All five are from the
+Voggel et al. (2020) NGC 5128 catalog (<code>2020ApJ...899..140V</code>) and retain the
+project's high-confidence spectroscopic classification. Four pass selector version
+1 and would be newly removed at the 3-standard-deviation reference; one is already
+below the selector threshold. Their Gaia identifiers, coordinates, source rows,
+selector scores, and motion measurements are preserved in
+<code>data/literature/validation/point_source_astrometric_rejection_ucd_review_v1.csv</code>.
+This shared origin makes extended-source astrometric corruption a plausible
+explanation and does not provide evidence that their published UCD classifications
+are wrong.</p>
+<h3 id="recommendation-for-review">Recommendation for review</h3>
+<p>Do not add a universal hard astrometric rejection boundary to the shared selector.
+In this development sample it cannot improve priority-contaminant rejection while
+maintaining the project's 90% UCD-retention goal. Preserve parallax and
+proper-motion significance as explicit warning flags instead: a high value should
+trigger individual imaging and literature review, as the NGC 4698 stellar example
+demonstrates, but should not by itself erase a source from the candidate list.</p>
+<p>The project lead should review
+<code>figures/phase1/point_source_astrometric_rejection_tradeoff_v1.png</code> and approve or
+reject this no-hard-boundary recommendation before the shared selection workflow is
+changed.</p>
+<!-- preserved_source_end: docs/point_source_astrometric_rejection_assessment_v1.md --></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#gaia-selector-development-and-validation">Gaia selector development and validation</a><ul>
+<li><a href="#current-reading-guidance">Current reading guidance</a></li>
+<li><a href="#dated-evidence">Dated evidence</a></li>
+<li><a href="#point-source-priority-selector-calibration">Point-Source-Priority Selector Calibration</a><ul>
+<li><a href="#approved-priority">Approved Priority</a></li>
+<li><a href="#score-architecture">Score Architecture</a></li>
+<li><a href="#measured-trade-off">Measured Trade-off</a></li>
+<li><a href="#h-ii-color-safeguard">H II Color Safeguard</a></li>
+<li><a href="#decision-needed-before-freezing">Decision Needed Before Freezing</a></li>
+<li><a href="#reproducibility">Reproducibility</a></li>
+</ul>
+</li>
+<li><a href="#development-only-point-source-ml-comparison">Development-only point-source ML comparison</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#leakage-controls">Leakage controls</a></li>
+<li><a href="#features-and-models">Features and models</a></li>
+<li><a href="#measured-result">Measured result</a></li>
+<li><a href="#interpretation-and-next-decision">Interpretation and next decision</a></li>
+<li><a href="#reproduction">Reproduction</a></li>
+</ul>
+</li>
+<li><a href="#repeated-point-source-logistic-regression-stability">Repeated point-source logistic-regression stability</a><ul>
+<li><a href="#decision-status">Decision status</a></li>
+<li><a href="#design">Design</a></li>
+<li><a href="#stability-result">Stability result</a></li>
+<li><a href="#coefficient-behavior">Coefficient behavior</a></li>
+<li><a href="#persistent-failures">Persistent failures</a></li>
+<li><a href="#fixed-stratum-behavior">Fixed-stratum behavior</a></li>
+<li><a href="#2026-07-17-preliminary-source-audit">2026-07-17 preliminary source audit</a></li>
+<li><a href="#readiness-gate-and-required-review">Readiness gate and required review</a></li>
+<li><a href="#reproduction_1">Reproduction</a></li>
+</ul>
+</li>
+<li><a href="#point-source-ml-stability-after-the-fahrion-evidence-correction">Point-source ML stability after the Fahrion evidence correction</a><ul>
+<li><a href="#evidence-corrected-training-cohort">Evidence-corrected training cohort</a></li>
+<li><a href="#repeated-grouped-nested-cross-validation">Repeated grouped nested cross-validation</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+<li><a href="#artifacts">Artifacts</a></li>
+</ul>
+</li>
+<li><a href="#benchmark-v2-persistent-ucd-failure-audit">Benchmark-v2 persistent UCD failure audit</a><ul>
+<li><a href="#result">Result</a></li>
+<li><a href="#approved-treatment">Approved treatment</a></li>
+</ul>
+</li>
+<li><a href="#logistic-regularization-sensitivity">Logistic regularization sensitivity</a></li>
+<li><a href="#frozen-c1000-persistent-ucd-audit">Frozen-C1000 persistent UCD audit</a><ul>
+<li><a href="#result_1">Result</a></li>
+<li><a href="#artifacts_1">Artifacts</a></li>
+</ul>
+</li>
+<li><a href="#point-source-logistic-model-v1">Point-source logistic model v1</a></li>
+<li><a href="#point-source-selector-integration-v1">Point-source selector integration v1</a></li>
+<li><a href="#point-source-logistic-validation-v1">Point-source logistic validation v1</a><ul>
+<li><a href="#primary-result">Primary result</a></li>
+<li><a href="#secondary-stress-cohorts">Secondary stress cohorts</a></li>
+<li><a href="#false-negatives-and-post-validation-evidence">False negatives and post-validation evidence</a></li>
+<li><a href="#artifacts_2">Artifacts</a></li>
+</ul>
+</li>
+<li><a href="#point-source-astrometric-rejection-assessment-version-1">Point-source astrometric rejection assessment, version 1</a><ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#scope-and-safeguards">Scope and safeguards</a></li>
+<li><a href="#measured-result_1">Measured result</a></li>
+<li><a href="#recommendation-for-review">Recommendation for review</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="off_target_controls.html">Off-target control experiments</a></li></ul></details><details><summary>Linked from (5)</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../plans/scientific_validation.html">Initial Scientific Validation Plan</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>
