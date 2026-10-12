@@ -35,7 +35,7 @@ REFERENCE_VALIDATION = LITERATURE_VALIDATION / "literature_reference_v2_validati
 DOCUMENTATION_PATHS = [
     PROJECT_ROOT / "README.md",
     PROJECT_ROOT / "docs/PLAN.md",
-    PROJECT_ROOT / "docs/CONTEXT.md",
+    PROJECT_ROOT / "docs/current_status.md",
     PROJECT_ROOT / "data/README.md",
     REFERENCE_DIR / "summary.md",
 ]

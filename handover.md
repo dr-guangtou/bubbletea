@@ -1,5 +1,11 @@
 # `BubbleTea` - Search for fun compact galaxies using Gaia data 
 
+> **Historical handover; not current operating instructions.** The frozen
+> `ucd_project/` tree below is read-only legacy reference. Start with
+> [current status](docs/current_status.md), the [documentation guide](docs/documentation_guide.md),
+> and the [roadmap](docs/PLAN.md). Do not use the legacy commands below as the
+> current production workflow. The original text is retained for provenance.
+
 This is a repo for a project that will utilize the Gaia and imaging survey data to search for Ultra-Compact Dwarf (UCD) galaxies and maybe other compact galaxies.
 
 This project has been developed casually by other agents, and the results are in the `ucd_project` folder. Important files include: 

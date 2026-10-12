@@ -1,0 +1,107 @@
+{
+  "export_version": "ucd_visual_review_export_v1",
+  "generated_at_utc": "2026-08-17T02:26:27.083431+00:00",
+  "counts": {
+    "total": 724,
+    "reviewed": 0,
+    "complete": 0,
+    "included_confirmed": 0,
+    "excluded_confirmed": 0,
+    "held_confirmed": 0,
+    "candidate_pool": 44,
+    "coordinate_proposals": 0
+  },
+  "cross_tabulations": {
+    "review_completion": {
+      "confirmed_ucd": {
+        "not_started": 680
+      },
+      "saifollahi_high_probability_candidate": {
+        "not_started": 44
+      }
+    },
+    "image_usability": {
+      "confirmed_ucd": {
+        "not_reviewed": 680
+      },
+      "saifollahi_high_probability_candidate": {
+        "not_reviewed": 44
+      }
+    },
+    "final_decision": {
+      "confirmed_ucd": {
+        "not_reviewed": 680
+      },
+      "saifollahi_high_probability_candidate": {
+        "not_reviewed": 44
+      }
+    },
+    "host_association_state": {
+      "confirmed_ucd": {
+        "verified_unique_host": 411,
+        "published_environment_only": 269
+      },
+      "saifollahi_high_probability_candidate": {
+        "published_environment_only": 44
+      }
+    },
+    "observations": {
+      "resolved": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "off_center": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "close_to_host_light": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "too_faint_to_judge": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "blend_or_nearby_source": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "image_artifact": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      },
+      "star_forming_or_young_cluster_appearance": {
+        "confirmed_ucd": {
+          "not_reviewed": 680
+        },
+        "saifollahi_high_probability_candidate": {
+          "not_reviewed": 44
+        }
+      }
+    }
+  }
+}

@@ -20,6 +20,11 @@ DATA_DIR = PROJECT_ROOT / "data"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 REFERENCE_DIR = PROJECT_ROOT / "reference"
 DOCS_DIR = PROJECT_ROOT / "docs"
+DOCUMENTATION_SITE_DIR = DOCS_DIR / "html"
+DOCUMENTATION_HOME = DOCS_DIR / "index.html"
+DOCUMENTATION_ASSETS_DIR = SCRIPTS_DIR / "documentation" / "assets"
+DOCUMENTATION_BUILD_REPORT = DOCUMENTATION_SITE_DIR / "build_report.json"
+DOCUMENTATION_MIGRATION = DOCS_DIR / "development" / "documentation_migration.json"
 
 # ---------------------------------------------------------------------------
 # Data subdirectories
@@ -336,6 +341,70 @@ KOURKCHI_TULLY_HALO_EXCLUSION_OUTLIERS = (
 KOURKCHI_TULLY_2017_PROVENANCE = LITERATURE_SOURCES / "kourkchi_tully_2017_groups.json"
 RADIAL_SEARCH_RESULTS_DIR = RESULTS_DIR / "radial_search"
 CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
+M60_POSITIVE_CONTROL_CONTRACT = RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_v1.json"
+M60_POSITIVE_CONTROL_KNOWN_OBJECTS = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_known_objects_v1.csv"
+)
+M60_POSITIVE_CONTROL_COUNT_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_count_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_COUNT_BENCHMARK = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_count_benchmark_v1.json"
+)
+M60_POSITIVE_CONTROL_REVIEW_RULES = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_review_rules_v1.json"
+)
+M60_POSITIVE_CONTROL_RETRIEVAL_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_retrieval_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_RETRIEVAL_PLAN = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_retrieval_plan_v1.csv"
+)
+M60_POSITIVE_CONTROL_PROFILE = RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_profile_v1.csv"
+M60_POSITIVE_CONTROL_RUN_MANIFEST = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_run_manifest_v1.json"
+)
+M60_POSITIVE_CONTROL_KNOWN_RECOVERY = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_known_recovery_v1.csv"
+)
+M60_POSITIVE_CONTROL_AUDIT_CONTRACT = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_contract_v1.json"
+)
+M60_POSITIVE_CONTROL_AUDIT_SAMPLE = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_sample_v1.csv"
+)
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_MANIFEST = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_cutouts_v1.csv"
+)
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_SUMMARY = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_visual_audit_cutouts_v1.json"
+)
+M60_POSITIVE_CONTROL_FLUX_EXCESS_DIAGNOSTICS = (
+    RADIAL_SEARCH_RESULTS_DIR / "m60_positive_control_flux_excess_by_radius_v1.json"
+)
+UCD_LEGACY_REFERENCE_CONTRACT = LITERATURE_SOURCES / "ucd_legacy_reference_contract_v1.json"
+UCD_LEGACY_REFERENCE_TARGETS = LITERATURE_CATALOGS / "ucd_legacy_reference_targets_v1.csv"
+UCD_LEGACY_REFERENCE_GAIA_MEMBERSHIP = (
+    LITERATURE_CATALOGS / "ucd_legacy_reference_gaia_membership_v1.csv"
+)
+UCD_LEGACY_REFERENCE_TRACTOR_MATCHES = (
+    LITERATURE_CATALOGS / "ucd_legacy_reference_tractor_matches_v1.csv"
+)
+UCD_LEGACY_REFERENCE_TRACTOR_AUDIT = (
+    LITERATURE_VALIDATION / "ucd_legacy_reference_tractor_audit_v1.csv"
+)
+UCD_LEGACY_REFERENCE_CUTOUT_MANIFEST = LITERATURE_CATALOGS / "ucd_legacy_reference_cutouts_v1.csv"
+UCD_LEGACY_REFERENCE_ATLAS_INDEX = LITERATURE_CATALOGS / "ucd_legacy_reference_atlas_index_v1.csv"
+UCD_LEGACY_REFERENCE_MANIFEST = LITERATURE_SOURCES / "ucd_legacy_reference_manifest_v1.json"
+HOST_ASSOCIATION_REGISTER = LITERATURE_CATALOGS / "host_association_register_v1.csv"
+HOST_ASSOCIATION_REGISTER_CONTRACT = (
+    LITERATURE_SOURCES / "host_association_register_contract_v1.json"
+)
+CONFIRMED_UCD_DESIGN_REFERENCE_EXCLUSIONS = (
+    LITERATURE_SOURCES / "confirmed_ucd_design_reference_exclusions_v1.json"
+)
+M60_KNOWN_UCD_CUTOUT_MANIFEST = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.csv"
+M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy_cutouts_v1.json"
 
 # ---------------------------------------------------------------------------
 # External data (large catalogs not stored in the repo)
@@ -347,6 +416,36 @@ CROSSMATCH_RESULTS_DIR = RESULTS_DIR / "crossmatch"
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
 LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
 FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_host_profiles_v1"
+M60_POSITIVE_CONTROL_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "m60_positive_control_v1"
+M60_KNOWN_UCD_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "known_ucd_cutouts"
+M60_POSITIVE_CONTROL_AUDIT_CUTOUT_DIR = M60_POSITIVE_CONTROL_EXTERNAL_DIR / "audit_cutouts"
+UCD_LEGACY_REFERENCE_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "ucd_legacy_reference_v1"
+UCD_LEGACY_REFERENCE_CUTOUT_DIR = UCD_LEGACY_REFERENCE_EXTERNAL_DIR / "cutouts"
+UCD_VISUAL_REVIEW_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "ucd_visual_review_v1"
+UCD_VISUAL_REVIEW_WIDE_CUTOUT_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "wide_cutouts"
+UCD_VISUAL_REVIEW_WIDE_CUTOUT_MANIFEST = (
+    LITERATURE_CATALOGS / "ucd_visual_review_wide_cutouts_v1.csv"
+)
+UCD_VISUAL_REVIEW_WIDE_CUTOUT_SUMMARY = (
+    LITERATURE_CATALOGS / "ucd_visual_review_wide_cutouts_v1.json"
+)
+UCD_VISUAL_REVIEW_GAIA_NEIGHBORS = LITERATURE_CATALOGS / "ucd_visual_review_gaia_neighbors_v1.csv"
+UCD_VISUAL_REVIEW_GAIA_NEIGHBOR_AUDIT = (
+    LITERATURE_CATALOGS / "ucd_visual_review_gaia_neighbor_audit_v1.csv"
+)
+UCD_VISUAL_REVIEW_GAIA_MANIFEST = LITERATURE_SOURCES / "ucd_visual_review_gaia_manifest_v1.json"
+UCD_VISUAL_REVIEW_EXTERNAL_ASSOCIATIONS = (
+    LITERATURE_CATALOGS / "ucd_visual_review_external_associations_v1.csv"
+)
+UCD_VISUAL_REVIEW_EXTERNAL_MANIFEST = (
+    LITERATURE_SOURCES / "ucd_visual_review_external_manifest_v1.json"
+)
+UCD_VISUAL_REVIEW_BUNDLE_DIR = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "bundle"
+UCD_VISUAL_REVIEW_BUNDLE_INDEX = LITERATURE_CATALOGS / "ucd_visual_review_bundle_index_v1.csv"
+UCD_VISUAL_REVIEW_BUNDLE_MANIFEST = LITERATURE_SOURCES / "ucd_visual_review_bundle_manifest_v1.json"
+UCD_VISUAL_REVIEW_REVIEW_DB = UCD_VISUAL_REVIEW_EXTERNAL_DIR / "reviews" / "review_v1.db"
+UCD_VISUAL_REVIEW_EXPORT_DIR = RESULTS_DIR / "ucd_visual_review"
+UCD_VISUAL_REVIEW_PILOT_LIST = LITERATURE_CATALOGS / "ucd_visual_review_pilot_v1.csv"
 EXTRAGALACTIC_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "extragalactic_reference"
 STELLAR_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "stellar_reference"
 ENVIRONMENT_REFERENCE_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "environment_reference"

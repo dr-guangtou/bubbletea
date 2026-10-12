@@ -78,6 +78,16 @@ Caption `.md` format:
 Use `scripts/utils/plotting.py` for consistent matplotlib style.
 The `save_figure()` helper saves both PNG and companion .md simultaneously.
 
+## Documentation Organization
+
+Follow the documentation organization rules in `AGENTS.md` and
+`docs/documentation_guide.md`: only project-level key documents belong directly in
+`docs/`; implementation notes, benchmarks, experiment records, and audits belong
+in topic-organized `docs/development/` documents. Permanent scientific explanations
+belong in `docs/methods/`. Extend an existing topic before adding a new document.
+Journals and lessons retain their separate folders. The generated HTML entrance
+is `docs/index.html`; rebuild and validate HTML after document moves or merges.
+
 ## Journal Convention
 
 - **Location:** `docs/journal/YYYY-MM-DD_brief_topic.md`

@@ -5,6 +5,12 @@ Gaia DR3 properties, and devise distance-dependent selection criteria.
 
 **Status:** In progress
 
+**Checkpoint (2026-10-12):** Canonical-reference stabilization and selector-v1
+integration are complete. The implemented 724-object visual-review workbench is
+awaiting human assessment; final selection-sensitivity work remains open. See
+[current status](../current_status.md), [review specification](ucd_visual_review_tool.md),
+and the [roadmap](../PLAN.md).
+
 Sections completed in April-May 2026 record the historical exploratory pipeline.
 Canonical counts and scientific validation status are governed by
 `docs/plans/scientific_validation.md` and the generated status artifact.

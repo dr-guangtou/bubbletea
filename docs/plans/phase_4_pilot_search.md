@@ -1,8 +1,18 @@
 # Phase IV: Pilot Search — Task Tracking
 
-**Goal:** Execute the UCD search around Top 100 targets and identify new candidates using the radial excess method.
+**Goal:** Validate a small real-host search and contamination assessment before scale-up.
 
 **Status:** In progress
+
+**Current checkpoint (2026-10-12):** NGC 4698 and M60 have measured 14-ring profiles
+through 600 kpc. The reference-review workbench is implemented, but its local
+database has zero saved reviews. Review the UCD reference, then the representative
+400-source M60 sample (BT-031). See [current status](../current_status.md),
+[tool specification](ucd_visual_review_tool.md), and [roadmap](../PLAN.md).
+
+April--May checked items below describe the historical exploratory pipeline,
+including its old top-20/top-100 runs and significance diagnostics. They do not
+establish completeness, purity, or scientific significance for the current selector.
 
 ---
 
@@ -26,6 +36,45 @@
   - [x] Check contrast against local background (22.6x)
 - [x] Run search around **NGC 5128** (Centaurus A) - (Processed in top tier)
 - [x] Verify selection completeness and purity statistics (2026-05-11)
+- [ ] Run the M60 positive control using the unchanged selector and frozen 0--600
+  kpc rings (started 2026-08-12)
+  - [x] Freeze the count-blind design and known-object recovery table (2026-08-12).
+  - [x] Measure one aggregate Gaia source count for the raw retrieval workload:
+    45,402 sources in the frozen magnitude range (2026-08-12).
+  - [x] Verify compact Legacy Survey DR10 three-color cutouts using the two reliable
+    confirmed M60 UCDs (2026-08-12).
+  - [x] Freeze explicit visual-review columns: color alone cannot label a compact
+    star-forming region, incomplete catalog coverage is not negative evidence, and
+    blend or image-problem flags require visual inspection (2026-08-12).
+  - [x] Retrieve all 45,402 magnitude-limited Gaia rows in verified strips, apply the
+    unchanged selector locally, and preserve the 14-ring profile; 4,920 sources pass
+    selector version 1 (2026-08-12).
+  - [x] Recover both reliable UCD controls and all nine literature candidates with a
+    unique Gaia identifier; keep 18 objects without a unique identifier explicitly
+    not testable by exact identifier (2026-08-12).
+  - [x] Freeze a representative 400-source contamination-audit sample separately
+    from the known controls and promising-candidate shortlist before visual
+    inspection (2026-08-12).
+  - [x] Retrieve and verify all 400 compact Legacy Survey cutouts and create four
+    blinded radial-zone contact sheets; keep every visual field not reviewed
+    (2026-08-12).
+  - [x] Plot G magnitude against raw BP/RP flux-excess factor for the complete
+    selector-retained population and frozen audit sample in all four radial zones
+    (2026-08-12).
+  - [x] Build an empirical Legacy Survey appearance and photometry reference for 680
+    confirmed UCDs and 44 Saifollahi high-probability candidates (2026-08-12).
+    - [x] Freeze the two provenance-defined cohorts before inspecting catalog or
+      imaging outcomes (2026-08-12).
+    - [x] Record compact three-color cutouts or explicit unavailable outcomes and
+      create an eight-page atlas of 707 non-placeholder images (2026-08-12).
+    - [x] Test Gaia NSS, galaxy-candidate, and QSO-candidate membership by exact Gaia
+      identifier where possible (2026-08-12).
+    - [x] Retrieve auditable Legacy Survey DR10 Tractor matches with photometry,
+      quality flags, model type, and available shape measurements (2026-08-12).
+    - [x] Document the measurements and interpretation limits in plain language
+      (2026-08-12).
+  - [ ] Keep possible contaminants as review flags; do not remove them from the
+    selector-v1 radial profile during this first pass.
 
 ## IV.3 Pilot Search Execution
 

@@ -1487,3 +1487,47 @@ equal-weight priority-contaminant fraction unchanged from selector version 1.
 mandatory individual-review warning. Do not apply a universal hard boundary unless
 a future independently validated rule demonstrates a useful completeness-versus-
 contamination improvement.
+
+## 2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions
+
+**Lesson:** A Gaia source identifier has 19 digits and can be silently rounded when a
+CSV reader interprets it as a floating-point number. A set-membership check can then
+appear valid while excluding the wrong identifiers.
+
+**Context:** The first unopened M60 audit-sample freeze read the literature recovery
+table without an explicit string type. Eight of eleven known identifiers were rounded
+and remained eligible for random sampling. No image had been requested or inspected;
+the sample was regenerated after forcing the identifier column to string and directly
+checking that the overlap was empty.
+
+**Recommendation:** Read Gaia identifier columns explicitly as strings whenever they
+are used for matching, exclusion, provenance, or serialization. Add a direct expected-
+identifier overlap check rather than relying only on row counts.
+
+## 2026-08-12: A valid image response can be a survey-viewer placeholder
+
+**Lesson:** A readable JPEG with the requested dimensions does not prove that a sky
+image was returned.
+
+**Context:** The Legacy Survey viewer returned valid 64-by-64 JPEG files for all 724
+UCD reference coordinates, but 17 files were low-color blue or white placeholder
+tiles. Counting HTTP or JPEG success alone would have overstated usable image
+coverage.
+
+**Recommendation:** Record transport success and image-content status separately.
+Measure the returned-image distribution, inspect the low-information modes, and keep
+placeholder outcomes explicit without changing the literature classification.
+
+## 2026-10-12: Preserve historical records without blocking new entries
+
+**Lesson:** Comparing the entire journal and lessons directories against a fixed
+Git checkpoint incorrectly rejects later journal additions and legitimate lesson
+appends.
+
+**Context:** The documentation consolidation validator passed before closeout but
+would reject the new closeout journal. This was a validation-design mistake, not
+a change to historical research evidence.
+
+**Recommendation:** Compare each original journal byte-for-byte, require existing
+lessons to retain their original byte prefix, and allow new files. Rebuild the HTML
+portal whenever new repository documentation is added.

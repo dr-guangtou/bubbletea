@@ -469,6 +469,12 @@ used retrospectively to alter the Gaia-only statistical selection. Any analysis 
 an imaging-covered subset must be labeled as such and kept distinct from the
 all-Gaia population inference.
 
+The source-by-source review of the literature UCD reference — including two-scale
+Legacy Survey imaging, provenance, Gaia, host, and external-catalog evidence — is
+specified separately in `docs/plans/ucd_visual_review_tool.md`. Its output is a
+clean positive design reference for deriving detailed Gaia-plus-Legacy selection
+rules; it never changes the Gaia-only statistical selection.
+
 ## Extended-Source Probability Calibration
 
 The method for assigning a Gaia-only probability that a source is non-point-like
@@ -501,18 +507,18 @@ uncertainty must be retained. Confirmed and candidate UCDs must not be treated a
 equally certain training labels without testing the effect of that assumption.
 
 The permanent source-by-source definitions, selection rules, bias limitations,
-and required safeguards are maintained in `docs/contaminant_benchmark.md`. That
+and required safeguards are maintained in `docs/methods/contaminant_samples.md#record-contaminant_benchmark`. That
 document is normative for interpreting benchmark contaminant labels.
 
 Large extragalactic supplements have three distinct roles: relatively independent
 spectroscopic calibration, Gaia-derived failure-mode stress testing, and spatial
 density or null testing. Their approved catalog choices, exact counts, provenance,
 and circularity constraints are maintained in
-`docs/extragalactic_contaminant_catalogs.md`. They must not mutate
+`docs/methods/extragalactic_catalogs.md#record-extragalactic_contaminant_catalogs`. They must not mutate
 `benchmark_v1` or be pooled according to raw catalog size.
 
 The ordinary-stellar development supplement is the matched SDSS DR16 spectroscopic
-stellar reference defined in `docs/spectroscopic_stellar_reference.md`. It is
+stellar reference defined in `docs/methods/contaminant_samples.md#record-spectroscopic_stellar_reference`. It is
 disjoint from `benchmark_v1`, uses no selector feature for retrieval or matching,
 and must not be called a physically single-star sample. Its 525 sources are matched
 3:1 to the 175 confirmed development UCDs in G magnitude, absolute Galactic
@@ -558,11 +564,11 @@ An exact-ID cross-match restricted to the blind-safe development partition found
 Sersic-catalog membership among 175 high-confidence confirmed UCDs, one membership
 among 569 uncertain UCD candidates, and none among 127 H II regions. The 24 confirmed
 validation UCDs remain uninspected until selector and morphology-use freezing. These
-results are defined in `docs/gaia_morphology_ucd_crossmatch.md`.
+results are defined in `docs/development/extragalactic_checks.md#record-gaia_morphology_ucd_crossmatch`.
 
 The permanent definitions, units, derivations, official Gaia references, and
 interpretation safeguards for selector inputs are maintained in
-`docs/gaia_selector_features.md`. That document is normative for feature names
+`docs/methods/gaia_features.md#record-gaia_selector_features`. That document is normative for feature names
 and scientific interpretation.
 
 The versioned Gaia-only calibration benchmark is a derived validation product,
@@ -859,7 +865,7 @@ measured benchmark Gaia G-magnitude domain, 11.26291847229004 through
 21.75798797607422 mag. Every scored export records the model version, probability,
 and frozen-threshold decision. The integration must reproduce stored development
 probabilities to floating-point precision before any live search. Its contract and
-validation evidence are maintained in `docs/point_source_selector_integration_v1.md`.
+validation evidence are maintained in `docs/development/selector_experiments.md#record-point_source_selector_integration_v1`.
 
 The NGC 4698 QA review on 2026-08-12 records Gaia source
 `3734680398396995328` as a project-lead visually confirmed star. It passes selector
@@ -897,6 +903,92 @@ least 90% of all reliable UCDs leaves the priority-contaminant fraction unchange
 from selector version 1. No boundary is approved; the measured recommendation is
 to keep astrometric significance as an individual-review warning flag rather than
 a universal hard rejection until the project lead reviews the tradeoff.
+
+The M60 positive-control run preserves selector version 1 and the frozen physical
+rings through 600 kpc. Possible stellar, Gaia non-single-star, QSO, galaxy, H II,
+blend, and image-artifact contamination is recorded as review flags only during the
+first pass. These flags cannot remove sources from the Gaia radial profile. The two
+reliable M60 UCDs are recovery controls, not independent selector validation;
+literature candidates and rejected comparisons remain separately labeled.
+
+Legacy Survey DR10 three-color images provide compact visual-review cutouts. The
+initial image pilot uses only the two reliable M60 UCDs and a 64-by-64-pixel field
+at 0.262 arcseconds per pixel, for a measured width of 16.768 arcseconds. Cutout
+availability, imaging masks, and visual labels never change Gaia coverage or its
+area denominator. The full-field review sample and separate new-candidate shortlist
+must be frozen after the raw workload is measured and before the complete passing
+population is visually inspected.
+
+The bounded pre-retrieval pilot measured 45,402 raw Gaia sources in the frozen
+11.2629184723--21.7579879761 G-magnitude range and 600 kpc circle. This count is a
+retrieval-workload measurement only: no individual rows were downloaded and selector
+version 1 was not applied. The two reliable UCD controls both have usable compact
+Legacy Survey DR10 images at the frozen 16.768-arcsecond field width. Detailed scope,
+measurements, and proposed review-flag meanings are maintained in
+`docs/development/host_pilot_profiles.md#record-m60_positive_control`.
+
+For M60, color alone cannot assign a compact star-forming-region or young-cluster
+flag. A positive flag requires a published catalog association or visual evidence;
+because such catalogs are rare and incomplete, no catalog match is unknown evidence,
+not contrary evidence. A nearby-source blend or image-problem flag requires visual
+inspection. Gaia image-quality measurements may prioritize inspection but remain
+separate warnings. The exact review columns and allowed values are frozen before
+complete-field retrieval in
+`data/results/radial_search/m60_positive_control_review_rules_v1.json`.
+
+The verified complete-field run retrieved all 45,402 raw sources in 14 archive-safe
+declination strips and retained 4,920 with selector version 1. Both reliable controls
+and all nine literature candidates with unique Gaia identifiers pass. The 12
+literature candidates and six rejected comparisons without unique Gaia identifiers
+remain not testable by exact identifier. No review flag was assigned during this run.
+The preserved profile shows substantially elevated source density inside the
+temporary 50 kpc diagnostic region; no contamination-corrected UCD excess or final
+outer radius has been inferred.
+
+The first representative M60 visual audit is frozen before image retrieval. It
+excludes the 11 literature objects with exact Gaia identifiers, leaving 4,909
+previously unidentified selector-retained sources. A stable identifier hash selects
+100 sources from each of the 0--50, 50--150, 150--300, and 300--600 kpc zones. Stored
+zone weights are mandatory for population summaries because equal audit counts do not
+mean equal population sizes. Known controls and the deliberately promising shortlist
+remain separate from the contamination audit.
+
+All 400 frozen audit cutouts were retrieved successfully from the Legacy Survey DR10
+three-color JPEG service at the approved 16.768-arcsecond field width. Four blinded
+contact sheets display one radial zone each and omit Gaia score, magnitude, and
+candidate priority. Image provenance and digests are complete, but all visual fields
+remain explicitly not reviewed. Image retrieval and contact-sheet generation assign
+no contamination label and change no Gaia area measurement.
+
+The M60 flux-excess QA preserves the raw Gaia quantity
+\((I_{BP}+I_{RP})/I_G\), shows the complete selector-retained population and frozen
+audit sample in four radial panels, and counts missing measurements explicitly. The
+full-population median changes from 2.1663 inside 50 kpc to 5.1566, 6.5307, and 6.5464
+in the three outer zones. Consequently, the plot is a radial diagnostic rather than
+a source-classification boundary. The Liu et al. (2020) value 1.7 remains a
+sample-specific reference and is not a BubbleTea cut.
+
+The UCD Legacy Survey reference side quest uses two provenance-defined cohorts: all
+680 canonical objects classified confirmed under `confirmation_rules_v1`, and the 44
+Saifollahi et al. (2021) objects published in the high-probability candidate table
+`tablea6.dat`. The latter remain candidates and cannot be relabeled confirmed. Gaia
+non-single-star, galaxy-candidate, and QSO-candidate membership is tested only by an
+exact unique Gaia source identifier; objects without one remain not testable. Legacy
+Survey DR10 imaging and Tractor-catalog coverage are tested at all 724 literature
+coordinates. Positional catalog matching retains ambiguity information, and Tractor
+model type or shape measurements are never treated as physical truth labels.
+
+The completed retrieval returned 724 readable JPEG files, of which 707 contain
+nonuniform image content and 17 are low-color Legacy Survey viewer placeholders. The
+visual atlas therefore contains 663 confirmed UCDs and all 44 Saifollahi candidates;
+every image remains not reviewed. Exact Gaia identifiers test 175 confirmed-object
+rows representing 174 distinct Gaia sources. Gaia catalog overlap is 0 non-single
+stars, 8 QSO candidates, and 74 galaxy-candidate object rows representing 73 distinct
+sources. These are inspection flags, not rejection rules. The Legacy Survey catalog
+has a source within 2 arcseconds for 585 targets, including all 44 Saifollahi
+candidates; 101 matched targets have more than one possible association. Full plain-
+language definitions, provenance, and use limits are in
+`docs/development/reference_imaging.md#record-ucd_legacy_survey_reference`.
 
 ## Host-Galaxy Properties
 
@@ -980,7 +1072,7 @@ At 600 kpc, the audited angular radius exceeds two degrees for 1,018 hosts and
 reaches 13.064418 degrees. The real retrieval therefore cannot use the inherited
 two-degree cap. It must use complete tiled or equivalent queries with explicit
 requested, retrieved, masked, and usable areas. Detailed calibration requirements
-are maintained in `docs/radial_measurement_design.md`.
+are maintained in `docs/methods/radial_measurements.md#record-radial_measurement_design`.
 
 Interview decisions on 2026-08-11 fix the first-stage calibration policy. Report
 both the physical-kpc profile and the `R50`-normalized profile whenever a verified
@@ -1488,6 +1580,36 @@ The following areas remain intentionally unspecified:
 
 ## Execution Plan
 
+### Documentation reading portal (2026-10-12)
+
+Markdown remains the editable source for project documentation. A generated,
+local static HTML portal provides navigation, a current-status summary, the science
+roadmap, repository layout, and rendered document pages. It must not modify
+scientific inputs, review databases, selectors, or profiles, and it is not a public
+deployment. Historical journals and superseded results retain their dates and
+provenance. The documentation guide defines document ownership and linking;
+generated HTML must link back to source Markdown and distinguish historical
+evidence from current requirements.
+
+The entrance is `docs/index.html`; generated document pages and assets live in
+`docs/html/`. Only project-level key Markdown documents belong directly under
+`docs/`. Permanent scientific explanations belong in `docs/methods/`, while
+implementation notes, benchmarks, and experiment audits belong in consolidated
+topic records under `docs/development/`. Journals, lessons, and phase plans retain
+their separate folders. A migration register records merged and relocated documents;
+unique scientific evidence must remain traceable after obsolete standalone notes
+are removed. These organization rules also apply to future agents.
+
+See the [documentation architecture and checks](plans/documentation_site.md),
+[document guide](documentation_guide.md), and [dated status](current_status.md).
+Teaching materials will be specified separately after an audience and course
+brief are available; planned research is not to be presented as an established result.
+
+### Scientific execution
+
 The staged implementation and validation order is maintained in
 `docs/plans/scientific_validation.md`. The cross-phase issue register is
 `docs/todo.md`.
+
+The source-by-source UCD reference visual-review workbench is specified in
+`docs/plans/ucd_visual_review_tool.md`.

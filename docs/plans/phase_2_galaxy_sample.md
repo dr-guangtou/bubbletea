@@ -5,6 +5,13 @@ UCD search pipeline.
 
 **Status:** In progress
 
+**Checkpoint (2026-10-12):** The inherited 2,155-host table is useful for development,
+not a frozen final parent sample. Its May ranking and catalog are historical.
+Consistent half-light radii, morphology, and parent-sample completeness remain
+open (BT-020, BT-026, BT-027). See [current status](../current_status.md),
+[validation stage 2](scientific_validation.md#stage-2-define-the-galaxy-samples),
+and [roadmap](../PLAN.md).
+
 ---
 
 ## II.1 Sample Compilation

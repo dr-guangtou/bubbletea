@@ -7,6 +7,50 @@ during the project takeover review
 This file tracks cross-phase issues that do not belong to only one phase plan.
 Phase-specific execution tasks remain in `docs/plans/`.
 
+**Status reviewed:** 2026-10-12. Start with [current status](current_status.md) and
+the [documentation guide](documentation_guide.md). Dated progress paragraphs are
+history, not necessarily the latest state. `BT-023` retains its original meaning
+(probabilistic host association); the accidentally duplicated M60 task is now
+`BT-031`. Historical journals keep their original labels.
+
+- [ ] **BT-031 - Complete the M60 positive-control search and contamination audit.**
+  Use the unchanged selector version 1 and the frozen 0--600 kpc physical rings.
+  Recover two reliable confirmed UCDs, report 21 literature candidates and six
+  rejected comparisons separately, and preserve every possible contamination type
+  as a visual-review flag during the first pass. Measure real-field contamination
+  from a representative sample; keep the deliberately promising new-candidate list
+  separate. Legacy Survey DR10 cutouts are compact imaging diagnostics and never
+  change Gaia coverage or area accounting.
+  - 2026-08-12 checkpoint: the frozen 600 kpc magnitude-limited field contains
+    45,402 raw Gaia sources; both reliable UCD controls have usable
+    16.768-arcsecond Legacy Survey cutouts. Full source retrieval and review-sample
+    freezing remain pending.
+  - 2026-08-12 review rule: incomplete H II-region and young-cluster catalogs cannot
+    provide negative evidence; color only prioritizes inspection, and blend or image
+    problems require visual inspection.
+  - 2026-08-12 complete-field result: selector version 1 retained 4,920 of 45,402
+    sources. Both reliable controls and all nine exact-identifier literature
+    candidates pass; representative contamination sampling remains pending.
+  - 2026-08-12 audit sample: froze 100 previously unidentified passing sources from
+    each of four radial zones, with population weights and all visual fields still
+    marked not reviewed. Explicit visual inspection remains pending.
+  - 2026-08-12 image checkpoint: all 400 compact Legacy Survey images and four
+    blinded contact sheets are complete. Explicit visual classification remains
+    pending.
+  - 2026-08-12 flux-excess QA: 4,879 of 4,920 retained sources and 397 of 400 audit
+    sources have plottable G and raw BP/RP flux-excess measurements. Radial changes
+    rule out interpreting one display reference as a universal classification cut.
+  - 2026-08-12 side quest approved: build a visual and Legacy Survey catalog reference
+    from all 680 confirmed UCDs plus the 44 Saifollahi high-probability candidates;
+    preserve candidate status and report Gaia-catalog membership only where an exact
+    identifier makes the test possible.
+  - 2026-08-12 side quest complete: 707 non-placeholder three-color images form an
+    eight-page atlas; 17 confirmed-object requests returned viewer placeholders. Of
+    175 exactly testable confirmed-object rows, 0 overlap Gaia non-single stars, 8
+    overlap QSO candidates, and 74 overlap galaxy candidates. Legacy Survey catalog
+    matches exist for 585 targets, including all 44 Saifollahi candidates; all raw
+    associations and 101 multiple-match cases remain auditable.
+
 ## Status and Priority
 
 - Checkbox unchecked: open.
@@ -71,10 +115,10 @@ Phase-specific execution tasks remain in `docs/plans/`.
     separate color/morphology safeguards.
   - [x] Consolidate every contaminant source definition, inclusion rule, intended
     failure mode, and selection-bias limitation in
-    `docs/contaminant_benchmark.md` (2026-07-16).
+    `docs/methods/contaminant_samples.md#record-contaminant_benchmark` (2026-07-16).
   - [x] Define every measured Gaia feature, unit, derivation, null behavior, and
     interpretation safeguard with official Gaia DR3 references in
-    `docs/gaia_selector_features.md`; correct the IPD labels to percentages and
+    `docs/methods/gaia_features.md#record-gaia_selector_features`; correct the IPD labels to percentages and
     replace the diagonal proper-motion approximation with its covariance-aware
     zero-significance statistic (2026-07-16).
   - [x] Document the raw and direction-adjusted ROC AUC definitions, rank
@@ -397,7 +441,7 @@ Phase-specific execution tasks remain in `docs/plans/`.
   reporting zero background.
   Depends on: BT-001, BT-002.
   Progress, 2026-07-18: Audited the inherited Phase III random fields, Phase IV
-  annulus, and frozen legacy method. Drafted `docs/background_control_design.md`
+  annulus, and frozen legacy method. Drafted `docs/development/background_geometry.md#record-background_control_design`
   with paired off-target controls, a halo-excluded local annulus, and a stratified
   large-field diagnostic. Implementation awaits project-lead decisions on method
   hierarchy, unresolved environments, and the first `R200c` proxy.
@@ -615,6 +659,44 @@ Phase-specific execution tasks remain in `docs/plans/`.
   Depends on: BT-002, BT-009.
 
 ## P1: Pilot Reproducibility and Scale-up
+
+- [x] **BT-030 - Build the UCD reference visual-review workbench (implemented
+  2026-08-19; status reconciled 2026-10-12).**
+  Evidence: The UCD Legacy Survey reference (680 confirmed UCDs and 44 Saifollahi
+  high-probability candidates) now has compact three-color images, Legacy Survey
+  Tractor matches, and exact-identifier Gaia membership, but no source-by-source
+  visual review of appearance, centering, host context, or contamination. Mosaic
+  atlas pages are insufficient for per-source diagnosis.
+  Resolution criteria: A local single-user workbench reviews all 724 objects at two
+  image scales with provenance, Gaia, host, Legacy Survey, and external-catalog
+  evidence; records append-only visual observations and a manual positive-design-
+  reference decision; and exports a clean confirmed-UCD positive design reference
+  plus a separate Saifollahi follow-up pool, without altering any canonical data.
+  Specification: `docs/plans/ucd_visual_review_tool.md`.
+  Completion evidence: [August 19 checkpoint](journal/2026-08-19_ucd_visual_review_workbench.md),
+  the implemented application, versioned exports, and the stored 15-check API
+  validation report. Both cohorts now use include/exclude/hold, but candidate
+  inclusion never promotes confirmation. Human source review is not part of this
+  build-completion checkbox: zero saved local reviews were found on 2026-10-12.
+  Resume the reference assessment before the M60 contamination audit in BT-031.
+  Depends on: BT-003, the UCD Legacy Survey reference side quest in BT-031, and a
+  separately audited host-association register.
+
+- [x] **BT-032 - Organize project documentation and build the HTML reading portal
+  (completed 2026-10-12).**
+  Scope: Correct stale summaries, make document ownership explicit, preserve
+  historical evidence, and generate an index plus linked HTML document views.
+  No selector changes, review classifications, or public deployment are included.
+  Specification: [Documentation-site plan](plans/documentation_site.md).
+  Initial implementation, 2026-10-12: 88 Markdown views and 109 automated checks;
+  project lead approved the appearance. The requested follow-up consolidates
+  development notes, keeps six project-level documents at docs root, moves the
+  entrance to docs/index.html and generated pages to docs/html/, and persists
+  placement rules for future agents. See the
+  [disposition audit](development/documentation_audit.md). The revised build renders
+  58 Markdown documents as 60 HTML pages, checks retained original evidence and
+  historical link routing, and preserves journals unchanged. No scientific
+  processing is changed. The new organization is ready for project-lead review.
 
 - [ ] **BT-009 - Recompute the background experiment with the canonical
   selection.**
@@ -1006,7 +1088,7 @@ Phase-specific execution tasks remain in `docs/plans/`.
   link to the applicable selection and run versions.
   Completed, 2026-07-16: `project_status_counts.json` now generates the canonical
   headline counts from the v2 database and synchronized products. `README.md`,
-  `docs/PLAN.md`, `docs/CONTEXT.md`, `data/README.md`, `reference/summary.md`, and
+  `docs/PLAN.md`, `docs/development/project_history.md#record-CONTEXT`, `data/README.md`, `reference/summary.md`, and
   the Phase I tracker cite 5,049 literature records, 4,359 canonical objects, the
   versioned classification counts, and current cross-match totals. Historical
   journals remain dated snapshots; the stale key-paper and VizieR inventories are

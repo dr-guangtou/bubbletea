@@ -1,0 +1,99 @@
+{
+  "contract_version": "m60_positive_control_v1",
+  "generated_at_utc": "2026-08-12T13:42:26.509794+00:00",
+  "status": "frozen_before_full_field_retrieval",
+  "plain_language_scope": "Measure the unchanged Gaia selector around M60, recover known literature objects, and attach possible-contamination flags for visual review. Flags do not remove sources or change the radial profile.",
+  "host": {
+    "host_name": "MESSIER 060",
+    "literature_host_name": "M60",
+    "ra_deg": 190.9166453,
+    "dec_deg": 11.5526118,
+    "distance_mpc": 16.6571232806881,
+    "outer_radius_kpc": 600,
+    "outer_radius_deg": 2.062937915783204,
+    "requested_area_square_deg": 13.368271934895693,
+    "ring_edges_kpc": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50,
+      75,
+      100,
+      150,
+      200,
+      300,
+      600
+    ],
+    "temporary_central_review_radius_kpc": 50
+  },
+  "known_objects": {
+    "counts_by_classification": {
+      "candidate": 21,
+      "rejected": 6,
+      "confirmed": 2
+    },
+    "confirmed_ucds_are_development_controls_not_independent_validation": true,
+    "recover_every_known_object_regardless_of_radius": true,
+    "artifact": "data/results/radial_search/m60_positive_control_known_objects_v1.csv",
+    "artifact_sha256": "adb64e0c935aaeafd6f1c2810951cf41f3b0a6e93eff848e02b8bc3f7d1a6a67"
+  },
+  "contamination_review": {
+    "policy": "flags_only_no_automatic_removal",
+    "flag_families": [
+      "parallax_or_proper_motion_review",
+      "gaia_non_single_star_membership",
+      "qso_evidence",
+      "galaxy_or_extended_morphology_evidence",
+      "hii_region_or_young_cluster_evidence",
+      "blend_or_image_artifact_evidence"
+    ],
+    "continuous_measurements_remain_available": true,
+    "exact_flag_thresholds_beyond_published_catalog_membership": "pending_source_type_discussion",
+    "raw_selector_profile_preserved": true
+  },
+  "visual_review": {
+    "survey": "Legacy Survey DR10",
+    "endpoint": "https://www.legacysurvey.org/viewer/jpeg-cutout",
+    "layer": "ls-dr10",
+    "three_color_image": true,
+    "pixel_scale_arcsec": 0.262,
+    "size_pixels": 64,
+    "field_width_arcsec": 16.768,
+    "first_pilot_scope": "two_reliable_confirmed_m60_ucds_only",
+    "cutouts_are_diagnostics_not_physical_classifications": true,
+    "cutout_masks_do_not_change_gaia_area": true
+  },
+  "sequence": [
+    "one_aggregate_gaia_count_query",
+    "known_ucd_three_color_cutout_pilot",
+    "review_measured_raw_workload",
+    "freeze_full_source_retrieval_and_review_sampling",
+    "retrieve_and_score_complete_field",
+    "create_representative_contamination_audit_and_separate_candidate_shortlist"
+  ],
+  "inputs": {
+    "data/results/background/first_stage_host_profile_fixture_v1.csv": "12a9ce1c2bc0eca66a757c300369b1a76247641c0dd42117949ba8f37de3fdc6",
+    "data/results/background/first_stage_host_profile_fixture_v1.json": "51d14e99870e099a3a7069d52862846957e1a20d8925c57120a3e0766d5bdb4d",
+    "data/literature/database/ucd_reference_v2.db": "6f18ae36701eff9e423782a7fae01cbeadc823193d00d8db06898210da32f5e2",
+    "data/literature/validation/point_source_logistic_model_v1.json": "1dd9fdf3109ed2252a20e2b5c1b8bc3b41174724c0a49eb02c98454c2796c6d8"
+  },
+  "check_count": 10,
+  "passed_count": 10,
+  "checks": {
+    "host_geometry_has_fourteen_frozen_rings": true,
+    "host_outer_radius_is_600_kpc": true,
+    "host_fixture_checks_passed": true,
+    "known_classification_counts_match_reference_database": true,
+    "known_objects_are_unique": true,
+    "two_confirmed_ucds_have_one_gaia_identifier_each": true,
+    "contaminants_are_flags_only": true,
+    "legacy_cutouts_do_not_change_gaia_area": true,
+    "no_gaia_query_executed": true,
+    "full_field_not_opened": true
+  }
+}

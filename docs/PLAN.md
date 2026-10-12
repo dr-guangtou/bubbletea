@@ -1,6 +1,10 @@
 # BubbleTea — Master Development Plan
 
-**Last updated:** 2026-08-11
+**Last updated:** 2026-10-12
+
+[Current status](current_status.md) · [Documentation guide](documentation_guide.md) ·
+[Scientific requirements](SPEC.md) · [Validation stages](plans/scientific_validation.md) ·
+[Open issues](todo.md)
 
 ## Overview
 
@@ -10,9 +14,22 @@ Systematic search for Ultra-Compact Dwarf (UCD) galaxies around nearby galaxies
 Development proceeds in six phases, each building on the previous. Detailed task
 tracking for each phase is in `docs/plans/`.
 
+Phases overlap in implementation; a completed script does not close its scientific
+validation stage. The latest research checkpoint is 2026-08-19. Teaching materials
+are a separate upcoming documentation task, not an expansion of the research sample.
+
+## Immediate sequence
+
+1. Verify the implemented review workbench with a small, varied reference pilot.
+2. Inspect the 724-object reference and export clean confirmed objects separately
+   from the candidate follow-up pool.
+3. Classify the representative 400-source M60 sample to measure real contamination.
+4. Evaluate selection improvements against the frozen Gaia-only baseline.
+5. Finish host geometry, background validity, and uncertainty before scientific scale-up.
+
 ## Phases
 
-### Phase I: Literature UCDs (Active)
+### Phase I: Literature UCDs (Reference audit complete; selection validation active)
 
 **Goal:** Establish the known UCD population as a reference dataset. Understand their
 Gaia DR3 properties. Devise distance-dependent selection criteria.
@@ -24,18 +41,24 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Maintain complete canonical Gaia DR3 and Legacy Survey DR10 cross-match audits
 - Analyze AEN, color, proper motion, and classprob distributions
 - Calibrate one versioned Gaia-only selector; historical thresholds are exploratory
-- **Tracking:** `docs/plans/phase_1_literature_ucds.md`
+- Shared selector v1 is implemented; the 724-object visual-reference tool is ready
+  but its local review database has zero saved reviews as of 2026-10-12
+- **Tracking:** [Literature tasks](plans/phase_1_literature_ucds.md),
+  [review-tool specification](plans/ucd_visual_review_tool.md)
 
-### Phase Ib: Ancillary Data Collection (Planned)
+### Phase Ib: Ancillary Data Collection (Reference subset prepared; broader work pending)
 
 **Goal:** Gather complementary data from public surveys.
 
 - Identify DESI spectroscopic data in UCD candidate regions
 - Catalog imaging survey coverage (LegacySurvey, DES, KiDS, HSC)
 - Cross-match known UCDs with multi-wavelength catalogs (2MASS, WISE, GALEX)
-- **Tracking:** `docs/plans/phase_1b_ancillary_data.md`
+- Legacy Survey reference images, catalog matches, and Gaia external-catalog flags
+  are already prepared; this is not complete multi-survey coverage
+- **Tracking:** [Reference report](development/reference_imaging.md#record-ucd_legacy_survey_reference),
+  [open issues](todo.md) (no separate Phase Ib checklist exists yet)
 
-### Phase II: Target Galaxy Sample (Planned)
+### Phase II: Target Galaxy Sample (Inherited sample audited; final definition open)
 
 **Goal:** Define and prioritize the nearby galaxy sample (D < 50 Mpc).
 
@@ -43,9 +66,11 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Collect photometry, morphology, star-formation properties
 - Check imaging survey footprint overlap
 - Rank by luminosity, distance, galactic latitude, and imaging coverage
-- **Tracking:** `docs/plans/phase_2_galaxy_sample.md`
+- The inherited 2,155-host catalog has been audited; parent-sample completeness,
+  consistent morphology, and half-light radii remain open
+- **Tracking:** [Host-sample tasks](plans/phase_2_galaxy_sample.md)
 
-### Phase III: Background Characterization (Active)
+### Phase III: Background Characterization (Random fields complete; host calibration open)
 
 **Goal:** Characterize the "background density" of Gaia sources passing UCD selection.
 
@@ -56,9 +81,11 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Report the random-field distribution alongside a valid local outer annulus and
   preserve their difference
 - Validate on known UCD hosts
-- **Tracking:** `docs/plans/phase_3_background.md`
+- All 398 development and 102 independently reserved validation fields are complete
+- **Tracking:** [Background tasks](plans/phase_3_background.md),
+  [independent validation](development/background_measurements.md#record-large_sky_validation_run)
 
-### Phase IV: Pilot Search (Planned)
+### Phase IV: Pilot Search (Exploratory profiles measured; visual assessment pending)
 
 **Goal:** Search around confirmed UCD hosts and high-priority targets.
 
@@ -67,7 +94,9 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Compare radial profiles to local background
 - Identify candidates (statistical excess + individual sources)
 - Characterize contamination and false positive rate
-- **Tracking:** `docs/plans/phase_4_pilot_search.md`
+- NGC 4698 and M60 profiles retain 14 rings through 600 kpc; M60's representative
+  400-source visual assessment remains pending
+- **Tracking:** [Pilot tasks](plans/phase_4_pilot_search.md), [M60 report](development/host_pilot_profiles.md#record-m60_positive_control)
 
 ### Phase V: Cross-match and Characterization (Planned)
 
@@ -77,7 +106,8 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - HST/Euclid archive search for high-resolution imaging
 - DESI/SDSS spectroscopic cross-match
 - Clean up sample based on multi-wavelength evidence
-- **Tracking:** `docs/plans/phase_5_crossmatch.md`
+- **Tracking:** [Validation stages 5--6](plans/scientific_validation.md) and
+  [open issues](todo.md); no dedicated Phase V checklist exists yet
 
 ### Phase VI: Statistical Analysis and Discussion (Planned)
 
@@ -87,7 +117,8 @@ Gaia DR3 properties. Devise distance-dependent selection criteria.
 - Comparison with literature expectations
 - Perspectives for future surveys (Euclid, Rubin/LSST, 4MOST)
 - Spin-off project ideas
-- **Tracking:** `docs/plans/phase_6_analysis.md`
+- **Tracking:** [Validation stage 6](plans/scientific_validation.md) and
+  [open issues](todo.md); no dedicated Phase VI checklist exists yet
 
 ## Migration Strategy
 

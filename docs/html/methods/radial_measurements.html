@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Radial measurements and central exclusion · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Scientific reference</span><a href="../../methods/radial_measurements.md">Markdown source ↗</a></div><h1 id="radial-measurements-and-central-exclusion">Radial measurements and central exclusion</h1>
+<p><strong>Role:</strong> Permanent scientific definitions and source-selection limitations.<br>
+<strong>Organized:</strong> 2026-10-12; original evidence dates remain below.</p>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../SPEC.html">Scientific requirements</a> · <a href="../current_status.html">Current status</a></p>
+<p>These definitions describe versioned reference samples and diagnostics, not final
+survey contamination rates. The original benchmark and later supplements have
+different scopes; consult the dated sections rather than pooling their counts.</p>
+<p><a id="record-radial_measurement_design"></a></p>
+<!-- preserved_source_start: docs/radial_measurement_design.md -->
+<h2 id="radial-measurement-and-central-exclusion-design">Radial measurement and central exclusion design</h2>
+<p><strong>Status:</strong> First-stage conservative profile policy approved; scientific boundaries
+not final
+<strong>Date:</strong> 2026-08-11
+<strong>Issues:</strong> BT-005, BT-020, BT-021</p>
+<h3 id="what-the-real-measurement-does">What the real measurement does</h3>
+<p>For each nearby galaxy, the pipeline will keep every retrieved source's continuous
+angular separation from the galaxy center. Using the galaxy distance, it will also
+store projected separation in kiloparsecs. When a verified half-light radius,
+<code>R50</code>, is available, it will additionally store separation divided by <code>R50</code>.</p>
+<p>The pipeline will then summarize the sources in a series of concentric circular
+rings. Each ring has an inner radius and an outer radius. Together, the rings form
+a radial profile showing how selected-source density changes with distance from the
+galaxy. The stored continuous separations allow the rings to be combined or changed
+without repeating the Gaia query.</p>
+<p>The following regions have different roles:</p>
+<ul>
+<li><strong>Central exclusion:</strong> The innermost galaxy region. Its sources remain in the raw
+  data and contamination summaries, but do not contribute to UCD inference.</li>
+<li><strong>Radial measurement rings:</strong> Successive rings outside the center. Their counts,
+  usable areas, and densities form the host profile.</li>
+<li><strong>Off-galaxy comparison rings:</strong> The same angular ring shapes placed away from the
+  galaxy. They estimate unrelated sources after halo and environment screening.</li>
+<li><strong>Outer retrieval boundary:</strong> The largest radius downloaded around the galaxy.
+  It must cover every requested ring and must not be silently shortened by a fixed
+  angular cap.</li>
+</ul>
+<h3 id="exploratory-ring-view">Exploratory ring view</h3>
+<p>The first recombinable physical-radius view uses edges at 0, 5, 10, 15, 20, 25,
+30, 40, 50, 75, 100, 150, 200, 300, and 600 kpc. These values preserve the union of
+the existing fine inner pilot grid and the earlier 600 kpc morphology diagnostic.
+They are not an approved central exclusion, final signal range, or local-background
+definition. In particular, the 0--5 kpc ring is not automatically accepted as UCD
+signal.</p>
+<p>Every output must retain exact requested area, masked area, successfully queried
+area, and usable area for each ring. Areas use spherical geometry. Missing coverage
+is an explicit failure or partial-area state, never a zero count over the requested
+area.</p>
+<h3 id="geometry-audit">Geometry audit</h3>
+<p>The current host catalog contains 2,155 positive distances but no <code>R50</code> or
+equivalent half-light-radius field. For a provisional 600 kpc outer diagnostic
+radius, the measured angular radius ranges from 1.374835 to 13.064418 degrees, with
+a median of 1.951086 degrees. It exceeds two degrees for 1,018 hosts, five degrees
+for 123 hosts, and ten degrees for 25 hosts.</p>
+<p>Therefore the inherited two-degree cap is invalid. Large nearby-host retrievals
+will require tiled or otherwise complete archive queries with explicit coverage and
+row-limit checks. The 600 kpc value remains exploratory; this audit does not approve
+it as the final outer signal boundary.</p>
+<p>A bounded live test validates the first gap-free retrieval building block. A
+0.2-degree-radius NGC 4698 circle returned 500 Gaia entries both as one complete
+query and as four non-overlapping horizontal sky strips. The strip counts were 82,
+154, 149, and 115; their 500 unique source identifiers match the complete-circle
+reference exactly. All nine checks pass in 12.96 seconds. Real strip sizes will be
+set from measured archive row counts rather than this test's 0.1-degree height.
+Production checkpointing and adaptive splitting remain pending. Full details are
+in <code>docs/gaia_query_partition_validation.md</code>.</p>
+<p>The restartable implementation has now passed a second bounded test. A test-only
+130-entry limit divided the same 500-entry circle into six measured strips. The
+first pass stopped after two saved strips; a fresh run skipped those two and
+retrieved the remaining four. A deliberately damaged checkpoint was then detected
+and replaced without repeating the other five downloads. All 15 checks pass in
+21.68 seconds. The production safe row limit and a full-selector-column restart
+benchmark remain pending; see <code>docs/gaia_adaptive_retrieval_validation.md</code>.</p>
+<p>The full 19-column retrieval benchmark subsequently completed tests from 100 to
+10,000 rows. Three 5,000-row runs returned identical identifiers in
+1.948628--1.976649 seconds and serialized to 1,027,468 bytes each. Use 5,000 rows as
+the provisional development checkpoint limit before the multi-field test. The limit
+is not an archive maximum.</p>
+<p>The full-column restart test now covers NGC 4698, M60, and ESO 006-G001 with 2,991,
+6,497, and 13,010 measured rows. They require one, two, and four final strips,
+respectively, and all 13 checks pass in 29.589341 seconds. Freeze 5,000 rows as the
+per-strip limit for development and pilot retrieval under the current 19-column
+contract.</p>
+<p>The spherical area component now records requested, successfully queried, missing,
+masked, and usable area for every ring. It derives query coverage from verified
+completed strips and subtracts the union of circular masks, so overlapping masks
+are not counted twice. Complete strip plans for all three performance fields
+reproduce the requested area; a controlled partial M60 state retains positive
+missing area. The masks used to test generic intersection geometry are explicitly
+synthetic and cannot be used for Gaia science. The Gaia area policy applies no
+bright-star, dust, or ancillary-imaging masks: usable area equals successfully
+queried area, while an incomplete or failed strip contributes missing area. All 18
+checks pass in 0.216274 seconds. See <code>docs/radial_ring_area_accounting.md</code>.</p>
+<p>The count-blind audit uses no Gaia source or selector counts and passes all seven
+validation checks. Its artifacts are:</p>
+<ul>
+<li><code>data/results/background/radial_measurement_geometry_audit_v1.csv</code></li>
+<li><code>data/results/background/radial_measurement_geometry_audit_v1.json</code></li>
+</ul>
+<p>Reproduce it with:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/audit_radial_measurement_geometry.py
+</code></pre>
+<h3 id="calibrating-the-central-exclusion">Calibrating the central exclusion</h3>
+<p>The central boundary must be calibrated once for a declared host population, not
+chosen separately for each galaxy after viewing its UCD excess.</p>
+<p>The calibration will use development galaxies to measure, as a function of radius
+divided by <code>R50</code>:</p>
+<ul>
+<li>the density of compact H II and star-forming-region references where available;</li>
+<li>the density of very blue sources and clearly extended galaxy substructure;</li>
+<li>source-extraction failures, bright-core masks, crowding, and missing Gaia area;</li>
+<li>the radial distribution and retained fraction of reliable literature UCDs; and</li>
+<li>sensitivity to the photometric band and uncertainty of the measured <code>R50</code>.</li>
+</ul>
+<p>A candidate central boundary is acceptable only if it materially reduces central
+contamination while retaining a declared fraction of reliable reference UCDs and
+remaining stable on spatially separate validation galaxies. It must not be chosen
+because it produces the largest target overdensity.</p>
+<p>No central multiplier is approved now. The earlier <code>2 x R50</code> example remains only
+a value to test. Until <code>R50</code> coverage is completed under BT-020, a host can retain
+its physical-kpc exploratory profile but cannot receive a final normalized central
+exclusion from an undocumented estimate.</p>
+<p>For the first profile stage, label 0--50 kpc as a conservative contamination region
+and withhold it from UCD inference. This deliberately large physical exclusion is a
+temporary safety rule, not the final central boundary. Preserve its component rings
+and test the already declared 20, 25, 30, 40, and 50 kpc edges using contamination
+behavior. Do not choose among them by maximizing a UCD excess. When a verified
+<code>R50</code> becomes available, report the normalized profile as well; otherwise mark only
+that view unavailable.</p>
+<h3 id="calibrating-the-outer-signal-range">Calibrating the outer signal range</h3>
+<p>The final outer signal boundary will also be common to a declared host class rather
+than optimized per galaxy. Development profiles will test where the selected-source
+excess becomes consistent with the independently measured background, while
+validation profiles will measure whether that boundary generalizes. Group and
+cluster cases retain the same host-centered profile, but their scientific
+background remains unavailable when the containing environment cannot be screened.</p>
+<p>The final analysis may combine several rings only after the central exclusion,
+outer signal boundary, background method, and handling of the resulting radial
+scan have been declared.</p>
+<p>The first-stage retrieval should retain the complete physical profile through the
+declared 600 kpc edge wherever verified retrieval coverage permits. Review the
+measured outer profiles before choosing a smaller final signal boundary. A failed
+or incomplete outer strip remains missing area and cannot silently shorten the
+requested profile or become a zero-density ring.</p>
+<!-- preserved_source_end: docs/radial_measurement_design.md --></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#radial-measurements-and-central-exclusion">Radial measurements and central exclusion</a><ul>
+<li><a href="#radial-measurement-and-central-exclusion-design">Radial measurement and central exclusion design</a><ul>
+<li><a href="#what-the-real-measurement-does">What the real measurement does</a></li>
+<li><a href="#exploratory-ring-view">Exploratory ring view</a></li>
+<li><a href="#geometry-audit">Geometry audit</a></li>
+<li><a href="#calibrating-the-central-exclusion">Calibrating the central exclusion</a></li>
+<li><a href="#calibrating-the-outer-signal-range">Calibrating the outer signal range</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_samples.html">Contaminant samples and their limitations</a></li><li><a href="extragalactic_catalogs.html">Extragalactic reference catalogs</a></li><li><a href="gaia_features.html">Gaia measurement definitions</a></li><li><a href="reference_review.html">UCD reference review: scope, evidence, and decisions</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="../development/documentation_audit.html">Documentation consolidation audit</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

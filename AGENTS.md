@@ -29,6 +29,7 @@ reference/                 — Literature: [first_author_last_name][year]/ folde
 docs/journal/              — Research journal (YYYY-MM-DD_topic.md)
 docs/lessons/              — Lessons learned (append with date headers)
 docs/plans/                — Per-phase task tracking with checkboxes
+docs/development/          — Topic-organized implementation notes, benchmarks, and audits
 ucd_project/               — Legacy code (FROZEN, gitignored, read-only reference)
 ```
 
@@ -54,6 +55,10 @@ Reference paper folders follow the naming convention:
 If multiple papers by the same first author in one year, append a/b/c/d.
 Each folder contains: PDF, original data files, and a README.md with full provenance.
 
+- Always read and serialize Gaia source identifiers as strings when matching,
+  excluding, or recording provenance. Their 19 digits can be rounded by floating-
+  point conversion.
+
 ## Figure Convention
 
 Every figure gets TWO files:
@@ -77,6 +82,25 @@ Caption `.md` format:
 
 Use `scripts/utils/plotting.py` for consistent matplotlib style.
 The `save_figure()` helper saves both PNG and companion .md simultaneously.
+
+## Documentation Organization
+
+- Keep only project-level key Markdown documents directly under `docs/`:
+  scientific specification, roadmap, current status, issue register, documentation
+  guide, and the project science guide. The HTML entrance is `docs/index.html`.
+- Put implementation notes, experiment logs, retrieval benchmarks, debugging
+  records, and development audits under `docs/development/`, organized by topic.
+  Extend an existing topic document rather than creating another top-level note.
+- Keep permanent scientific definitions and reference explanations under
+  `docs/methods/`; keep task checklists under `docs/plans/`.
+- Journals remain under `docs/journal/` and lessons under `docs/lessons/`.
+  Development notes are not a replacement for either.
+- Before adding a document, consult `docs/documentation_guide.md` and link to the
+  existing owner of the topic. Record consolidation and removal decisions in the
+  development documentation audit. Preserve unique scientific evidence and
+  provenance; do not treat a superseded result as current policy.
+- HTML is generated, not hand-maintained. Rebuild it after moving or merging
+  Markdown documents and validate internal links and script output destinations.
 
 ## Journal Convention
 
@@ -140,6 +164,23 @@ The `save_figure()` helper saves both PNG and companion .md simultaneously.
   retrieval strips; incomplete or failed strips remain explicit missing area.
 - Keep any generic mask-intersection fixture labeled as geometry validation only.
   It must not be used as a Gaia scientific mask or density denominator.
+
+## M60 Positive-Control Review Policy
+
+- During the first M60 positive-control pass, possible stellar, non-single-star,
+  QSO, galaxy, H II-region, blend, and artifact contamination must be recorded as
+  review flags only. Do not automatically remove flagged sources from the frozen
+  Gaia selector output or radial profile.
+- Use compact Legacy Survey DR10 three-color cutouts for visual checks because the
+  intended targets are compact. Keep cutout availability, imaging masks, and image
+  classifications separate from Gaia coverage and area accounting.
+- Do not assign a compact star-forming-region or young-cluster flag from color alone.
+  Require a catalog association or visual evidence; because such catalogs are rare
+  and incomplete, no catalog match is unknown evidence rather than evidence against
+  the flag.
+- Assign a nearby-source blend or image-problem flag only from visual inspection.
+  Gaia image-quality measurements may prioritize a source for inspection, but they
+  remain separate warnings and cannot assign the visual flag.
 
 ## Git Conventions
 

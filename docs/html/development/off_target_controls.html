@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Off-target control experiments · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Development records</span><a href="../../development/off_target_controls.md">Markdown source ↗</a></div><h1 id="off-target-control-experiments">Off-target control experiments</h1>
+<p><strong>Consolidated:</strong> 2026-10-12<br>
+<strong>Role:</strong> Topic-organized development evidence, not a replacement for current scientific requirements.</p>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a> · <a href="documentation_audit.html">Documentation audit</a></p>
+<h2 id="current-reading-guidance">Current reading guidance</h2>
+<p>These small comparison fields tested field matching, source retrieval, and counting uncertainty. They were never approved as final scientific backgrounds. The complete 500-field experiment is recorded separately in background_measurements.md; a valid host-specific comparison remains separate work.</p>
+<h2 id="dated-evidence">Dated evidence</h2>
+<p>Each section below retains an original report's scientific content, measurements,
+commands, and limitations. Status statements apply to that report's original date;
+read the guidance above and current SPEC before following an old next step.</p>
+<p><a id="record-background_field_conditions_benchmark"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/background_field_conditions_benchmark.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/background_field_conditions_benchmark.md -->
+<h2 id="gaia-field-condition-benchmark">Gaia field-condition benchmark</h2>
+<p><strong>Status:</strong> Bounded diagnostic completed; matching rules not yet fixed<br>
+<strong>Date:</strong> 2026-07-18<br>
+<strong>Host:</strong> NGC 4698<br>
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code><br>
+<strong>Artifacts:</strong>
+<code>data/results/background/background_review_hosts_v1.csv</code>,
+<code>data/results/background/background_review_hosts_v1.json</code>,
+<code>data/results/background/background_field_conditions_benchmark_v1.csv</code> and
+<code>data/results/background/background_field_conditions_benchmark_v1.json</code></p>
+<h3 id="question">Question</h3>
+<p>Does placing comparison patches at exactly the same Galactic latitude as a target
+also make their Gaia coverage and total Gaia source density effectively identical?</p>
+<p>This benchmark does not apply the UCD selector and does not count UCD candidates.
+The reported source counts include every Gaia DR3 catalog entry inside the circle
+with G magnitude between 11.262918 and 21.757988. No parallax, proper-motion,
+binary-star, QSO, morphology, or UCD-classifier filter is applied. It measures only
+field properties that can be chosen before seeing a possible galaxy excess.</p>
+<h3 id="test">Test</h3>
+<p>The test uses a circular patch of radius 0.1 degree centered on NGC 4698 and two
+same-size comparison patches placed east and west of it. All three patch centers
+have the same Galactic latitude, 71.345091 degrees. The comparison-patch separation
+and the group-radius multiplier are temporary test values, not approved scientific
+rules.</p>
+<p>The 0.1-degree radius was selected only to make the first live archive query small
+and fast. It is not a proposed scientific search radius. The real galaxy
+measurement will use multiple concentric circular rings, retain a radial profile,
+and omit a calibrated central galaxy region from UCD inference.</p>
+<p>The script measures:</p>
+<ul>
+<li>the number and sky density of all Gaia sources in the selector's allowed G
+  magnitude range, before applying the selector;</li>
+<li>the average number of visibility periods and matched astrometric transits;</li>
+<li>ecliptic latitude; and</li>
+<li><code>M10</code>, the median G magnitude of Gaia sources with no more than ten matched
+  astrometric transits in the patch. Here <code>M10</code> is used only as a local Gaia-depth
+  indicator: a brighter value usually means shallower coverage.</li>
+</ul>
+<h3 id="measured-result">Measured result</h3>
+<table>
+<thead>
+<tr>
+<th>Patch</th>
+<th style="text-align: right;">Gaia sources</th>
+<th style="text-align: right;">Sources per square degree</th>
+<th style="text-align: right;">Mean visibility periods</th>
+<th style="text-align: right;">Mean matched transits</th>
+<th style="text-align: right;">M10 (G magnitude)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 4698 target</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">3851.55</td>
+<td style="text-align: right;">15.98</td>
+<td style="text-align: right;">39.12</td>
+<td style="text-align: right;">21.187</td>
+</tr>
+<tr>
+<td>West comparison</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">3183.10</td>
+<td style="text-align: right;">12.07</td>
+<td style="text-align: right;">37.97</td>
+<td style="text-align: right;">21.093</td>
+</tr>
+<tr>
+<td>East comparison</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">3883.38</td>
+<td style="text-align: right;">14.46</td>
+<td style="text-align: right;">35.92</td>
+<td style="text-align: right;">21.102</td>
+</tr>
+</tbody>
+</table>
+<p>All six validation checks passed. The three patches had positive measured area,
+complete retrieval of the low-transit sample, no missing values in either
+observation-count column, and no UCD-selector output in the query contract. The
+complete run took 11.19 seconds on 2026-07-18.</p>
+<h3 id="interpretation">Interpretation</h3>
+<p>Matching Galactic latitude alone did not make the three fields identical. The west
+comparison contained 100 Gaia sources, versus 121 and 122 in the target and east
+patches, and it had fewer visibility periods on average. The three <code>M10</code> values
+were much closer, spanning 0.094 magnitude.</p>
+<p>This is only one target and two comparison patches. It shows why Gaia coverage and
+total source density should be measured rather than assumed, but it cannot tell us
+which diagnostic is most useful or set an acceptable mismatch. Those decisions
+require a larger count-blind development sample and later validation against the
+frozen selector on spatially separate fields.</p>
+<h3 id="reproduction">Reproduction</h3>
+<pre><code class="language-bash">uv run python scripts/phase3_background/build_background_review_hosts.py
+uv run python scripts/phase3_background/benchmark_gaia_field_conditions.py
+</code></pre>
+<!-- preserved_source_end: docs/background_field_conditions_benchmark.md -->
+
+<p><a id="record-background_review_field_conditions"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/background_review_field_conditions.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/background_review_field_conditions.md -->
+<h2 id="five-host-gaia-field-condition-review">Five-host Gaia field-condition review</h2>
+<p><strong>Status:</strong> Diagnostic measurements completed; no scientific background field approved
+<strong>Date:</strong> 2026-07-18
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code></p>
+<h3 id="purpose">Purpose</h3>
+<p>This review asks whether temporary same-Galactic-latitude comparison circles have
+similar Gaia coverage and total source density across five different nearby-galaxy
+settings. “Before selection” means that these measurements are made before applying
+the UCD classifier. No UCD-candidate count is used to choose or approve a field.</p>
+<p>The five target galaxies are NGC 4698, the nearby ESO 006-G001, the group main
+galaxy NGC 1316, the group member M60, and the unresolved-environment case Arp 244.</p>
+<h3 id="temporary-geometry">Temporary geometry</h3>
+<p>In this document, a <strong>galaxy-centered test circle</strong> is a 0.1-degree-radius circle
+centered on the named galaxy. Earlier summaries called this the “target patch.” A
+<strong>comparison test circle</strong> is an equal-size circle moved away from the galaxy while
+remaining at the same Galactic latitude. Earlier summaries called these
+“diagnostic patches.” They are measured to test the method; they are not yet
+approved for subtracting contamination from the galaxy measurement.</p>
+<p>The 0.1-degree radius was chosen only for a bounded archive-query test. It is not
+the real galaxy measurement aperture. At the catalog distances used here, this
+angle corresponds to a projected radius of 4.712394 kpc for ESO 006-G001 and
+41.771283 kpc for NGC 4698. The real measurement must instead preserve a series of
+concentric circular rings in physical and host-size-normalized radius. A calibrated
+inner circular region will be omitted from UCD inference because galaxy
+substructure, compact star-forming regions, and H II regions can dominate it.</p>
+<p>For the four galaxies with accepted Kourkchi-Tully catalog associations, two
+comparison test circles were placed east and west at exactly the galaxy's Galactic
+latitude. Their temporary separation uses twice the catalog's estimated
+collapsed-group radius, followed by a 1.2 center-separation multiplier. These are
+test values, not approved halo boundaries.</p>
+<p>For group cases, each comparison test circle was also checked against a circle
+centered on the catalog's group main galaxy. All four group test circles clear that
+temporary boundary, but this does not make them valid scientific backgrounds. Arp
+244 has no accepted environment association, so only its galaxy-centered circle
+was measured. We did not create off-galaxy comparison coordinates from an
+unverified group center or group size. That is what the earlier phrase “no invented
+comparison” meant; it did not mean that any observed data were fabricated.</p>
+<h3 id="quantities-measured">Quantities measured</h3>
+<ul>
+<li><strong>Total Gaia source count and density:</strong> every Gaia DR3 catalog entry inside the
+  circle whose G magnitude lies between 11.262918 and 21.757988. No parallax,
+  proper-motion, binary-star, QSO, morphology, or UCD-classifier filter is applied.
+  These counts are therefore expected to be dominated by ordinary Milky Way stars.</li>
+<li><strong>Visibility periods:</strong> separated groups of Gaia observations contributing to a
+  source. The table reports the average within each patch.</li>
+<li><strong>Matched astrometric transits:</strong> individual Gaia passages associated with a
+  source's astrometric processing. The table reports the patch average.</li>
+<li><strong><code>M10</code>:</strong> the median G magnitude of Gaia entries with no more than ten matched
+  astrometric transits and a reported G magnitude. Unlike the total-count column,
+  this depth calculation is not restricted to the classifier's G-magnitude range.
+  It is a local Gaia-depth indicator; a brighter value generally indicates
+  shallower coverage.</li>
+</ul>
+<h3 id="measured-result_1">Measured result</h3>
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th>Circle</th>
+<th style="text-align: right;">Gaia entries in the stated G range</th>
+<th style="text-align: right;">Entries per square degree</th>
+<th style="text-align: right;">Mean visibility periods</th>
+<th style="text-align: right;">Mean matched transits</th>
+<th style="text-align: right;">M10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 4698</td>
+<td>Target</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">3851.55</td>
+<td style="text-align: right;">15.98</td>
+<td style="text-align: right;">39.12</td>
+<td style="text-align: right;">21.187</td>
+</tr>
+<tr>
+<td>NGC 4698</td>
+<td>West test</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">3183.10</td>
+<td style="text-align: right;">12.07</td>
+<td style="text-align: right;">37.97</td>
+<td style="text-align: right;">21.093</td>
+</tr>
+<tr>
+<td>NGC 4698</td>
+<td>East test</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">3883.38</td>
+<td style="text-align: right;">14.46</td>
+<td style="text-align: right;">35.92</td>
+<td style="text-align: right;">21.102</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td>Target</td>
+<td style="text-align: right;">530</td>
+<td style="text-align: right;">16870.43</td>
+<td style="text-align: right;">23.55</td>
+<td style="text-align: right;">33.55</td>
+<td style="text-align: right;">21.018</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td>West test</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">14642.26</td>
+<td style="text-align: right;">21.17</td>
+<td style="text-align: right;">28.54</td>
+<td style="text-align: right;">20.913</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td>East test</td>
+<td style="text-align: right;">584</td>
+<td style="text-align: right;">18589.30</td>
+<td style="text-align: right;">24.85</td>
+<td style="text-align: right;">35.07</td>
+<td style="text-align: right;">21.001</td>
+</tr>
+<tr>
+<td>NGC 1316</td>
+<td>Target</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: right;">4329.02</td>
+<td style="text-align: right;">23.05</td>
+<td style="text-align: right;">37.38</td>
+<td style="text-align: right;">21.213</td>
+</tr>
+<tr>
+<td>NGC 1316</td>
+<td>West diagnostic</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3501.41</td>
+<td style="text-align: right;">26.65</td>
+<td style="text-align: right;">56.51</td>
+<td style="text-align: right;">21.129</td>
+</tr>
+<tr>
+<td>NGC 1316</td>
+<td>East diagnostic</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">2578.31</td>
+<td style="text-align: right;">24.69</td>
+<td style="text-align: right;">40.88</td>
+<td style="text-align: right;">21.631</td>
+</tr>
+<tr>
+<td>M60</td>
+<td>Target</td>
+<td style="text-align: right;">289</td>
+<td style="text-align: right;">9199.16</td>
+<td style="text-align: right;">9.96</td>
+<td style="text-align: right;">35.94</td>
+<td style="text-align: right;">21.384</td>
+</tr>
+<tr>
+<td>M60</td>
+<td>West diagnostic</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">1878.03</td>
+<td style="text-align: right;">12.64</td>
+<td style="text-align: right;">21.32</td>
+<td style="text-align: right;">20.886</td>
+</tr>
+<tr>
+<td>M60</td>
+<td>East diagnostic</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">4138.03</td>
+<td style="text-align: right;">15.58</td>
+<td style="text-align: right;">33.87</td>
+<td style="text-align: right;">21.049</td>
+</tr>
+<tr>
+<td>Arp 244</td>
+<td>Target only</td>
+<td style="text-align: right;">330</td>
+<td style="text-align: right;">10504.23</td>
+<td style="text-align: right;">11.82</td>
+<td style="text-align: right;">21.14</td>
+<td style="text-align: right;">21.134</td>
+</tr>
+</tbody>
+</table>
+<p>The complete run took 46.93 seconds. All nine validation checks passed: all frozen
+positions were measured, retrievals were complete, required observation values
+were present, every patch had positive area, the queries contained no selector
+output, and no test patch was marked as an approved scientific background.</p>
+<h3 id="interpretation_1">Interpretation</h3>
+<p>The two one-galaxy catalog cases have comparatively small <code>M10</code> ranges across their
+three patches: 0.094 magnitude for NGC 4698 and 0.105 magnitude for ESO 006-G001.
+The group cases have larger ranges: 0.503 magnitude for NGC 1316 and 0.498 magnitude
+for M60. The average observation counts also vary substantially within some sets.
+This confirms that exact Galactic-latitude matching does not guarantee similar Gaia
+coverage.</p>
+<p>Total Gaia density needs more careful treatment. M60's target patch contains 289
+Gaia sources, while its test patches contain 59 and 130. The target patch may
+contain real sources associated with M60 or the Virgo environment, not merely a
+different level of Gaia crowding or completeness. Therefore total Gaia density is
+a useful diagnostic but cannot be required to match the target rigidly: doing so
+could reject genuine host-associated populations before the UCD selector is even
+applied.</p>
+<p>The next calibration should learn how field properties predict selected-source
+density from comparison fields that are not centered on target galaxies. It should
+then test that relationship on spatially separate comparison fields. Target
+overdensities must not be used to choose the matching tolerances.</p>
+<h3 id="artifacts-and-reproduction">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/background_review_field_positions_v1.csv</code></li>
+<li><code>data/results/background/background_review_field_positions_v1.json</code></li>
+<li><code>data/results/background/background_review_field_conditions_v1.csv</code></li>
+<li><code>data/results/background/background_review_field_conditions_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/build_background_review_field_positions.py
+uv run python scripts/phase3_background/measure_background_review_field_conditions.py
+</code></pre>
+<!-- preserved_source_end: docs/background_review_field_conditions.md -->
+
+<p><a id="record-off_target_field_split"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/off_target_field_split.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/off_target_field_split.md -->
+<h2 id="off-target-development-and-validation-fields">Off-target development and validation fields</h2>
+<p><strong>Status:</strong> Bounded diagnostic split frozen
+<strong>Date:</strong> 2026-07-18
+<strong>Issues:</strong> BT-005, BT-009</p>
+<h3 id="plain-language-definitions">Plain-language definitions</h3>
+<p>An <strong>off-target field</strong> here is one of the existing 0.1-degree test circles placed
+away from a review galaxy. These circles were created to test background methods;
+they are not the real galaxy measurement rings.</p>
+<ul>
+<li><strong>Development fields</strong> may be used to choose or adjust the background method.</li>
+<li><strong>Validation fields</strong> are held back until those choices are fixed. They then test
+  whether the method works in different sky regions.</li>
+<li><strong>Excluded fields</strong> are the five galaxy-centered test circles. They are not part
+  of this off-target split.</li>
+</ul>
+<p>“Held back” is a procedural rule: selector results from validation fields must not
+be used to choose cuts, matching tolerances, or model settings.</p>
+<h3 id="frozen-assignment">Frozen assignment</h3>
+<p>The split identifier is <code>split_04329736d47c538b7aa0</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Host system</th>
+<th>Environment case</th>
+<th style="text-align: right;">Galactic latitude</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>NGC 4698</td>
+<td>Isolated principal in the group catalog</td>
+<td style="text-align: right;">+71.345091°</td>
+<td>west, east</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>NGC 1316</td>
+<td>Main galaxy of a cataloged group</td>
+<td style="text-align: right;">−56.690166°</td>
+<td>west, east</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>ESO 006-G001</td>
+<td>Isolated principal in the group catalog</td>
+<td style="text-align: right;">−25.222591°</td>
+<td>west, east</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>M60</td>
+<td>Member of a cataloged group</td>
+<td style="text-align: right;">+74.317758°</td>
+<td>west, east</td>
+</tr>
+</tbody>
+</table>
+<p>Both off-target circles generated from one host remain in the same partition. This
+prevents closely related east/west measurements from appearing on opposite sides of
+the method test. Each partition contains one isolated case, one grouped case, one
+positive Galactic latitude, and one negative Galactic latitude.</p>
+<p>The smallest measured center-to-center separation between a development circle and
+a validation circle is 11.949376 degrees. The test-circle diameter is 0.2 degree,
+so no development circle overlaps a validation circle.</p>
+<h3 id="what-was-not-used">What was not used</h3>
+<p>The assignment script reads only the previously frozen field positions and their
+host, environment, and sky coordinates. It does not read the field-condition table,
+Gaia source counts, source densities, or frozen-selector results.</p>
+<p>Pre-selector field-condition measurements already exist for these positions and
+have been discussed previously. They were not inputs to this assignment. No
+selected-source count has been calculated or inspected for this split.</p>
+<h3 id="important-limitation">Important limitation</h3>
+<p>These eight circles form a small first experiment, not a final survey-wide
+validation sample. All still have
+<code>eligible_for_scientific_background = false</code>. The split allows the canonical
+selector experiment to test procedure and leakage control; it does not approve any
+circle as the background for a real galaxy or calibrate a final Galactic-latitude
+limit.</p>
+<h3 id="artifacts-and-reproduction_1">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/off_target_field_split_v1.csv</code></li>
+<li><code>data/results/background/off_target_field_split_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/freeze_off_target_field_split.py
+</code></pre>
+<!-- preserved_source_end: docs/off_target_field_split.md -->
+
+<p><a id="record-off_target_development_selector"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/off_target_development_selector.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/off_target_development_selector.md -->
+<h2 id="frozen-selector-results-for-off-target-development-fields">Frozen-selector results for off-target development fields</h2>
+<p><strong>Status:</strong> Development fields measured; validation selector results remain unopened
+<strong>Date:</strong> 2026-07-18
+<strong>Issues:</strong> BT-005, BT-009</p>
+<h3 id="what-was-done">What was done</h3>
+<p>The four frozen development circles were queried for all 19 Gaia columns required
+by <code>point_source_logistic_model_v1</code>. The selector was then applied locally, using
+its frozen probability threshold of <code>0.8277833628791744</code>.</p>
+<p>A source that <strong>passes the frozen selector</strong> has a model probability at or above
+that threshold. It is a search candidate, not a confirmed UCD. These small circles
+measure the selector's off-target behavior and cannot establish an astrophysical
+background by themselves.</p>
+<h3 id="measured-development-results">Measured development results</h3>
+<p>Each circle has a 0.1-degree radius and an exact spherical area of 0.031416 square
+degree. Gaia usable area equals queried area, with no imaging masks.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Host system</th>
+<th style="text-align: right;">Gaia sources</th>
+<th style="text-align: right;">Sources passing selector</th>
+<th style="text-align: right;">Passing-source density per square degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1:east</code></td>
+<td>NGC 1316</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">572.957941</td>
+</tr>
+<tr>
+<td><code>1:west</code></td>
+<td>NGC 1316</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">254.647974</td>
+</tr>
+<tr>
+<td><code>58:east</code></td>
+<td>NGC 4698</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">381.971960</td>
+</tr>
+<tr>
+<td><code>58:west</code></td>
+<td>NGC 4698</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">190.985980</td>
+</tr>
+</tbody>
+</table>
+<p>The four fields contain 413 Gaia sources in total; 44 pass the selector over a
+combined usable area of 0.125664 square degree. The observed field-to-field
+difference must be tested explicitly; four fields from only two host systems do not
+by themselves show that one common density is invalid. No matching tolerance or
+final background model is selected by this measurement alone.</p>
+<h3 id="validation-isolation">Validation isolation</h3>
+<p>The held-back identifiers are <code>2115:east</code>, <code>2115:west</code>, <code>4:east</code>, and <code>4:west</code>.
+The script checks these identifiers before every query and again in both output
+tables. None was queried or summarized.</p>
+<p>Pre-selector observing-condition measurements already exist for those sky
+positions. “Unopened” here specifically means that no frozen-selector probability,
+decision, or selected-source count has been produced for the held-back fields.</p>
+<h3 id="validation-result">Validation result</h3>
+<p>All 18 checks pass in 10.560200 seconds. They verify:</p>
+<ul>
+<li>exactly the four frozen development fields were queried;</li>
+<li>the four held-back identifiers and their frozen host-role assignments are intact;</li>
+<li>no held-back field appears in a query or output;</li>
+<li>measured and retrieved row counts agree;</li>
+<li>all 19 raw Gaia columns and selector outputs are present;</li>
+<li>source identifiers are unique and have recorded fingerprints;</li>
+<li>probabilities are finite and use the frozen selector version;</li>
+<li>summary counts match the saved source decisions; and</li>
+<li>Gaia queried and usable areas agree, with zero missing or masked area.</li>
+</ul>
+<h3 id="artifacts-and-reproduction_2">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/off_target_development_selector_sources_v1.csv</code></li>
+<li><code>data/results/background/off_target_development_selector_summary_v1.csv</code></li>
+<li><code>data/results/background/off_target_development_selector_v1.json</code></li>
+</ul>
+<p>Reproduction deliberately re-queries only development fields:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/run_off_target_development_selector.py
+</code></pre>
+<!-- preserved_source_end: docs/off_target_development_selector.md -->
+
+<p><a id="record-off_target_development_summary"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/off_target_development_summary.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/off_target_development_summary.md -->
+<h2 id="frozen-development-summary-rules">Frozen development summary rules</h2>
+<p><strong>Status:</strong> Summary procedure frozen before validation
+<strong>Date:</strong> 2026-07-18
+<strong>Issues:</strong> BT-005, BT-009</p>
+<h3 id="what-is-frozen">What is frozen</h3>
+<p>The development results will be summarized at three levels:</p>
+<ol>
+<li>Keep each of the four fields as a separate measurement.</li>
+<li>Combine east and west fields only when they come from the same host system.</li>
+<li>Show one all-development total for description only, not as a universal
+   background density.</li>
+</ol>
+<p>The frozen selector threshold remains <code>0.8277833628791744</code>. It will not be changed
+after seeing these counts. No development field is promoted to an approved
+scientific background.</p>
+<h3 id="small-count-ranges-in-plain-language">Small-count ranges in plain language</h3>
+<p>When only a few sources are counted, repeating an equivalent measurement can
+produce a different count by chance. A Poisson model is the standard simple model
+for that random counting variation when events are independent and have one average
+rate over a fixed area.</p>
+<p>For every field and combined row, the table records 68% and 95% exact central
+Poisson ranges. These give ranges of average counts compatible with the observed
+small count under that simple model. The corresponding density ranges divide the
+count ranges by the exact usable area.</p>
+<p>The percentage describes repeated use of the procedure: under the Poisson model,
+ranges constructed this way include the true average rate at least that percentage
+of the time over many equivalent experiments. It is not the probability that one
+particular displayed range contains the true value.</p>
+<p>These ranges do <strong>not</strong> include real differences among sky fields, correlated
+sources, changes in Gaia observing conditions, or uncertainty in the selector.
+They are therefore counting-only ranges, not the final background uncertainty.</p>
+<h3 id="host-pair-and-overall-summaries">Host-pair and overall summaries</h3>
+<table>
+<thead>
+<tr>
+<th>Summary</th>
+<th style="text-align: right;">Passing sources</th>
+<th style="text-align: right;">Usable area (square degrees)</th>
+<th style="text-align: right;">Density per square degree</th>
+<th style="text-align: right;">68% counting-only range</th>
+<th style="text-align: right;">95% counting-only range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 1316 east + west</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">0.062832</td>
+<td style="text-align: right;">413.802957</td>
+<td style="text-align: right;">333.564113–511.396270</td>
+<td style="text-align: right;">270.309830–606.317208</td>
+</tr>
+<tr>
+<td>NGC 4698 east + west</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0.062832</td>
+<td style="text-align: right;">286.478970</td>
+<td style="text-align: right;">219.901362–370.724732</td>
+<td style="text-align: right;">169.785594–452.760282</td>
+</tr>
+<tr>
+<td>All development fields, descriptive only</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.125664</td>
+<td style="text-align: right;">350.140964</td>
+<td style="text-align: right;">297.819151–410.960003</td>
+<td style="text-align: right;">254.412960–470.047901</td>
+</tr>
+</tbody>
+</table>
+<p>The all-development value is not a claim that every sky field has the same
+background. It is retained so count and area totals can be audited.</p>
+<h3 id="validation-boundary">Validation boundary</h3>
+<p>The four held-back validation identifiers do not appear in the input or output.
+When validation is opened, the same seven-row structure, confidence levels,
+selector threshold, and host-pair rule must be used. Validation results cannot be
+used to rewrite this development summary procedure.</p>
+<p>All 16 checks pass. They verify field preservation, east/west pairing, count and
+area conservation, interval ordering, zero-count support, unchanged selector
+threshold, and continued absence of validation fields.</p>
+<h3 id="artifacts-and-reproduction_3">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/off_target_development_frozen_summary_v1.csv</code></li>
+<li><code>data/results/background/off_target_development_frozen_summary_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/freeze_off_target_development_summary.py
+</code></pre>
+<!-- preserved_source_end: docs/off_target_development_summary.md -->
+
+<p><a id="record-off_target_validation_selector"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/off_target_validation_selector.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/off_target_validation_selector.md -->
+<h2 id="held-back-off-target-validation-result">Held-back off-target validation result</h2>
+<p><strong>Status:</strong> One-time held-back check complete; no field approved as a scientific background
+<strong>Date:</strong> 2026-07-19
+<strong>Issues:</strong> BT-005, BT-009</p>
+<h3 id="what-was-tested">What was tested</h3>
+<p>The four off-target circles kept out of development were opened after the selector
+and summary rules were fixed. The run used the same 19 Gaia columns, G-magnitude
+range, selector version, probability threshold, 0.1-degree circle, usable-area
+definition, east/west host pairing, and counting-only ranges used for development.
+No setting was changed after the validation counts became visible.</p>
+<p>Here, <strong>validation</strong> means a one-time check on circles whose selector
+probabilities, decisions, and passing-source counts were not used to choose the
+procedure. Earlier measurements of total Gaia source density and observing
+conditions at these positions were allowed and remain separate.</p>
+<p>A source that passes the selector is a retained search candidate, not a confirmed
+UCD. These circles are diagnostic measurements and are not approved backgrounds
+for a host-galaxy measurement.</p>
+<h3 id="field-results">Field results</h3>
+<p>Each circle has an exact spherical area of 0.031416 square degree. For this Gaia
+measurement, usable area equals successfully queried area; no bright-star, dust,
+or ancillary-imaging masks are applied.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Related host</th>
+<th style="text-align: right;">Gaia sources</th>
+<th style="text-align: right;">Sources passing selector</th>
+<th style="text-align: right;">Passing-source density per square degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2115:east</code></td>
+<td>ESO 006-G001</td>
+<td style="text-align: right;">584</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">509.295947</td>
+</tr>
+<tr>
+<td><code>2115:west</code></td>
+<td>ESO 006-G001</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">604.788937</td>
+</tr>
+<tr>
+<td><code>4:east</code></td>
+<td>M60</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">445.633954</td>
+</tr>
+<tr>
+<td><code>4:west</code></td>
+<td>M60</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">95.492990</td>
+</tr>
+</tbody>
+</table>
+<p>The four fields contain 1,233 Gaia sources. Fifty-two pass the selector over
+0.125664 square degree, giving a descriptive combined density of 413.802957 per
+square degree.</p>
+<h3 id="frozen-summaries">Frozen summaries</h3>
+<p>East and west are combined only within the same related host. The ranges below
+describe random variation in small independent counts under a Poisson model. They
+do not include real differences among sky fields, correlated sources, Gaia
+observing-condition differences, or selector uncertainty.</p>
+<table>
+<thead>
+<tr>
+<th>Summary</th>
+<th style="text-align: right;">Passing sources</th>
+<th style="text-align: right;">Density per square degree</th>
+<th style="text-align: right;">68% counting-only range</th>
+<th style="text-align: right;">95% counting-only range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESO 006-G001 east + west</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">557.042442</td>
+<td style="text-align: right;">463.798777–667.425658</td>
+<td style="text-align: right;">388.000471–774.711191</td>
+</tr>
+<tr>
+<td>M60 east + west</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">270.563472</td>
+<td style="text-align: right;">205.896317–352.952862</td>
+<td style="text-align: right;">157.613193–433.198328</td>
+</tr>
+<tr>
+<td>All validation fields, descriptive only</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">413.802957</td>
+<td style="text-align: right;">356.892019–479.163152</td>
+<td style="text-align: right;">309.047841–542.647524</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison-with-development">Comparison with development</h3>
+<p>The combined validation density is 1.181818 times the combined development
+density of 350.140964 per square degree. It falls outside the development 68%
+counting-only range but inside the development 95% range. This is a description,
+not a rule that the result must pass.</p>
+<p>Individual development fields span 190.985980–572.957941 per square degree, while
+validation fields span 95.492990–604.788937. Development host pairs span
+286.478970–413.802957, while validation host pairs span 270.563472–557.042442.
+Both pairs of ranges overlap.</p>
+<p>The result supports the limited claim that the fixed procedure can be executed on
+untouched fields without an obvious incompatible total density. It also shows
+large field-to-field variation. Four validation circles from two host systems are
+therefore too few and too small to define a survey-wide background model, matching
+tolerance, or Galactic-latitude limit.</p>
+<h3 id="safeguards-and-artifacts">Safeguards and artifacts</h3>
+<p>All 24 safeguards pass. They verify the frozen field identities, exclusion of all
+development fields from validation queries and outputs, complete retrieval,
+unchanged selector and area rules, count and area conservation, the fixed
+seven-row summary structure, unchanged development files, and the explicitly
+descriptive status of every comparison.</p>
+<ul>
+<li><code>data/results/background/off_target_validation_selector_sources_v1.csv</code></li>
+<li><code>data/results/background/off_target_validation_selector_summary_v1.csv</code></li>
+<li><code>data/results/background/off_target_validation_frozen_summary_v1.csv</code></li>
+<li><code>data/results/background/off_target_validation_selector_v1.json</code></li>
+</ul>
+<p>The recorded run took 12.439364 seconds:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/run_off_target_validation_selector.py
+</code></pre>
+<!-- preserved_source_end: docs/off_target_validation_selector.md --></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#off-target-control-experiments">Off-target control experiments</a><ul>
+<li><a href="#current-reading-guidance">Current reading guidance</a></li>
+<li><a href="#dated-evidence">Dated evidence</a></li>
+<li><a href="#gaia-field-condition-benchmark">Gaia field-condition benchmark</a><ul>
+<li><a href="#question">Question</a></li>
+<li><a href="#test">Test</a></li>
+<li><a href="#measured-result">Measured result</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+<li><a href="#reproduction">Reproduction</a></li>
+</ul>
+</li>
+<li><a href="#five-host-gaia-field-condition-review">Five-host Gaia field-condition review</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#temporary-geometry">Temporary geometry</a></li>
+<li><a href="#quantities-measured">Quantities measured</a></li>
+<li><a href="#measured-result_1">Measured result</a></li>
+<li><a href="#interpretation_1">Interpretation</a></li>
+<li><a href="#artifacts-and-reproduction">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#off-target-development-and-validation-fields">Off-target development and validation fields</a><ul>
+<li><a href="#plain-language-definitions">Plain-language definitions</a></li>
+<li><a href="#frozen-assignment">Frozen assignment</a></li>
+<li><a href="#what-was-not-used">What was not used</a></li>
+<li><a href="#important-limitation">Important limitation</a></li>
+<li><a href="#artifacts-and-reproduction_1">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#frozen-selector-results-for-off-target-development-fields">Frozen-selector results for off-target development fields</a><ul>
+<li><a href="#what-was-done">What was done</a></li>
+<li><a href="#measured-development-results">Measured development results</a></li>
+<li><a href="#validation-isolation">Validation isolation</a></li>
+<li><a href="#validation-result">Validation result</a></li>
+<li><a href="#artifacts-and-reproduction_2">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#frozen-development-summary-rules">Frozen development summary rules</a><ul>
+<li><a href="#what-is-frozen">What is frozen</a></li>
+<li><a href="#small-count-ranges-in-plain-language">Small-count ranges in plain language</a></li>
+<li><a href="#host-pair-and-overall-summaries">Host-pair and overall summaries</a></li>
+<li><a href="#validation-boundary">Validation boundary</a></li>
+<li><a href="#artifacts-and-reproduction_3">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#held-back-off-target-validation-result">Held-back off-target validation result</a><ul>
+<li><a href="#what-was-tested">What was tested</a></li>
+<li><a href="#field-results">Field results</a></li>
+<li><a href="#frozen-summaries">Frozen summaries</a></li>
+<li><a href="#comparison-with-development">Comparison with development</a></li>
+<li><a href="#safeguards-and-artifacts">Safeguards and artifacts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="project_history.html">Historical project context</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

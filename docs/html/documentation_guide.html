@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Documentation guide · BubbleTea</title><link rel="stylesheet" href="assets/style.css">
+<script src="assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../index.html">Overview</a><a href="directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Start here</span><a href="../documentation_guide.md">Markdown source ↗</a></div><h1 id="documentation-guide">Documentation guide</h1>
+<p><a href="current_status.html">Current status</a> · <a href="science_guide.html">Science guide</a> ·
+<a href="PLAN.html">Roadmap</a> · <a href="SPEC.html">Scientific requirements</a> · <a href="todo.html">Open issues</a></p>
+<h2 id="start-here">Start here</h2>
+<p>The HTML entrance is <a href="../index.html">docs/index.html</a>. Read current status for where
+work stopped, the science guide for what we measure, and the roadmap for what comes
+next. SPEC owns approved requirements; detailed reports provide the evidence.</p>
+<h2 id="the-six-key-project-documents">The six key project documents</h2>
+<p>Only these Markdown documents belong directly under <code>docs/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="current_status.html">current_status.md</a></td>
+<td>Dated progress, unfinished work, and next research action</td>
+</tr>
+<tr>
+<td><a href="science_guide.html">science_guide.md</a></td>
+<td>Plain-language scientific reading map and key interpretation limits</td>
+</tr>
+<tr>
+<td><a href="PLAN.html">PLAN.md</a></td>
+<td>Scientific roadmap and phase-level status</td>
+</tr>
+<tr>
+<td><a href="SPEC.html">SPEC.md</a></td>
+<td>Approved definitions, scientific requirements, and architecture</td>
+</tr>
+<tr>
+<td><a href="todo.html">todo.md</a></td>
+<td>Cross-phase issues and their resolution requirements</td>
+</tr>
+<tr>
+<td><a href="documentation_guide.html">documentation_guide.md</a></td>
+<td>Document ownership, placement, linking, and maintenance</td>
+</tr>
+</tbody>
+</table>
+<p>The repository <a href="project/README.html">README</a> remains the setup and layout entry point.
+Do not create another status summary or roadmap at the same level.</p>
+<h2 id="what-belongs-in-each-folder">What belongs in each folder</h2>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Contents</th>
+<th>How to maintain it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>methods/</code></td>
+<td>Permanent Gaia feature, contaminant, catalog, radial, and review explanations</td>
+<td>Extend the scientific topic owner; cite original sources and distinguish versions</td>
+</tr>
+<tr>
+<td><code>development/</code></td>
+<td>Implementation notes, experiment records, retrieval benchmarks, debugging, and audits</td>
+<td>Extend a consolidated topic record; label dated results and superseded instructions</td>
+</tr>
+<tr>
+<td><code>plans/</code></td>
+<td>Phase checklists, validation stages, and detailed implementation specifications</td>
+<td>Link back to SPEC and the relevant issue; do not create competing scientific policy</td>
+</tr>
+<tr>
+<td><code>journal/</code></td>
+<td>Automatically generated or session-based dated progress records</td>
+<td>Preserve the historical record; not a substitute for development documentation</td>
+</tr>
+<tr>
+<td><code>lessons/</code></td>
+<td>Append-only mistakes, rationale, and safeguards</td>
+<td>Follow the existing lesson convention</td>
+</tr>
+<tr>
+<td><code>html/</code></td>
+<td>Generated reading pages, directory, assets, and build report</td>
+<td>Rebuild; never hand-edit generated HTML</td>
+</tr>
+</tbody>
+</table>
+<p>Data provenance stays with <a href="../../data/README.md">data</a>, <a href="../../reference/summary.md">reference papers</a>,
+and figure captions. Do not move those into development notes or restructure the
+reference-paper folders for documentation cleanup.</p>
+<h2 id="how-these-documents-connect">How these documents connect</h2>
+<pre><code class="language-text">README / docs/index.html
+    |
+    +-- current_status: where we stopped
+    +-- science_guide: what the measurements mean
+    +-- PLAN: the scientific sequence
+         |
+         +-- SPEC: approved requirements
+         +-- plans/scientific_validation: evidence required
+         +-- todo / phase plans: remaining work
+              |
+              +-- methods: permanent scientific explanations
+              +-- development: dated experiments --&gt; scripts, data, figures
+              +-- journal: historical session records
+</code></pre>
+<p>When documents disagree, distinguish requirements from measurements and compare
+their dates. An old development snapshot cannot silently override a later approved
+requirement. Current status summarizes evidence; it does not replace it. Ask the
+project lead if approved scientific decisions actually conflict.</p>
+<h2 id="topic-owners-and-reading-routes">Topic owners and reading routes</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Permanent explanation</th>
+<th>Development evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source selection</td>
+<td><a href="methods/gaia_features.html">Gaia features</a>, <a href="methods/contaminant_samples.html">contaminant samples</a></td>
+<td><a href="development/selector_experiments.html">Selector experiments and validation</a></td>
+</tr>
+<tr>
+<td>Extragalactic sources</td>
+<td><a href="methods/extragalactic_catalogs.html">Reference catalogs</a></td>
+<td><a href="development/extragalactic_checks.html">Catalog stress tests</a></td>
+</tr>
+<tr>
+<td>Radial measurements</td>
+<td><a href="methods/radial_measurements.html">Radial definitions</a></td>
+<td><a href="development/retrieval_and_area.html">Retrieval and area</a>, <a href="development/host_pilot_profiles.html">host profiles</a></td>
+</tr>
+<tr>
+<td>Background comparisons</td>
+<td><a href="science_guide.html#4-measure-unrelated-sources-directly">Science guide</a></td>
+<td><a href="development/background_measurements.html">Background measurements</a>, <a href="development/off_target_controls.html">off-target experiments</a>, <a href="development/background_geometry.html">geometry history</a></td>
+</tr>
+<tr>
+<td>Random-field retrieval</td>
+<td><a href="plans/phase_3_background.html">Background tasks</a></td>
+<td><a href="development/sky_retrieval.html">Sky retrieval</a></td>
+</tr>
+<tr>
+<td>UCD reference inspection</td>
+<td><a href="methods/reference_review.html">Review rules</a>, <a href="plans/ucd_visual_review_tool.html">tool specification</a></td>
+<td><a href="development/reference_imaging.html">Image-reference preparation</a>, <a href="../../scripts/phase4_search/ucd_visual_review/README.md">application launch guide</a></td>
+</tr>
+<tr>
+<td>Documentation maintenance</td>
+<td>This guide and <a href="plans/documentation_site.html">site plan</a></td>
+<td><a href="development/documentation_audit.html">Consolidation audit</a></td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="development/project_history.html">historical project context</a> is retained only
+for the July takeover rationale. It is not recommended as the restart entry point.
+Teaching materials will get a separate brief and location once the audience,
+learning goals, exercises, and student data access are agreed.</p>
+<h2 id="before-adding-another-document">Before adding another document</h2>
+<ol>
+<li>Find the existing topic owner in the table above.</li>
+<li>Add permanent definitions to <code>methods/</code>; add implementation or experimental
+   detail to the relevant <code>development/</code> topic. Do not create a new top-level note.</li>
+<li>Record dates, input versions, commands, results, limitations, and links to
+   artifacts. Distinguish a failed alternative from current practice.</li>
+<li>Create a new topic document only when the subject genuinely differs; link it
+   from this guide and the relevant plan or issue.</li>
+<li>Keep journal generation separate. Agent operating rules are in <a href="project/AGENTS.html">AGENTS</a>
+   and <a href="project/CLAUDE.html">CLAUDE</a>, both of which include this placement policy.</li>
+</ol>
+<h2 id="linking-consolidation-and-deletion">Linking, consolidation, and deletion</h2>
+<p>Use relative Markdown links and point to the document that owns a statement.
+Do not copy whole requirements into competing summaries. Check heading anchors
+after a move or merge.</p>
+<p>The <a href="development/documentation_audit.html">consolidation audit</a> records all 47 retired
+or relocated files. Its <a href="../development/documentation_migration.json">machine-readable register</a>
+stores original hashes, destinations, and retained-section anchors. Unique
+scientific content is preserved in dated sections; obsolete standalone entry
+points are removed. Journals and lessons remain unchanged. Old historical path
+citations can be resolved through the register, and the HTML renderer redirects
+links to their retained sections.</p>
+<p>Do not delete a document merely because its experiment failed. Remove redundant
+files after retaining their unique evidence, and ask the project lead before
+discarding scientific or provenance content whose value is uncertain.</p>
+<p>The original <code>BT-023</code> means probabilistic host association; the accidentally
+duplicated M60 task is <code>BT-031</code>. Interpret old dated references by their task title.</p>
+<h2 id="build-and-check-html">Build and check HTML</h2>
+<pre><code class="language-bash">uv sync
+uv run python scripts/documentation/build_documentation.py
+uv run python scripts/documentation/validate_documentation.py
+</code></pre>
+<p>Open <code>docs/index.html</code>. All generated document pages are under <code>docs/html/</code>:
+project documents are directly in that folder, scientific and development pages
+mirror their source subfolders, and root guides are grouped under <code>html/project/</code>.
+The directory is <code>docs/html/directory.html</code>; shared CSS and JavaScript are in
+<code>docs/html/assets/</code>. No root <code>index.html</code> or root <code>site/</code> copy is maintained.</p>
+<p>The default build covers root guides and all Markdown under <code>docs/</code>, excluding
+generated content. Supporting files elsewhere remain source links. Use <code>--scope all</code>
+only for an explicitly requested expansion. Navigation and styling work without
+network access; some scientific evidence requires locally available external data.
+Mathematical notation is preserved as source text rather than promising offline
+typesetting. This is a reading portal, not the application that saves source reviews.</p>
+<p>The build does not query archives, publish a website, or modify scientific data.
+Edit Markdown or source assets, rebuild HTML, and inspect the home page and a long
+document. After substantial research work, update the owning requirements/report,
+task checkboxes, dated status, and roadmap as needed. Do not refresh historical
+dates just to make a note appear current.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#documentation-guide">Documentation guide</a><ul>
+<li><a href="#start-here">Start here</a></li>
+<li><a href="#the-six-key-project-documents">The six key project documents</a></li>
+<li><a href="#what-belongs-in-each-folder">What belongs in each folder</a></li>
+<li><a href="#how-these-documents-connect">How these documents connect</a></li>
+<li><a href="#topic-owners-and-reading-routes">Topic owners and reading routes</a></li>
+<li><a href="#before-adding-another-document">Before adding another document</a></li>
+<li><a href="#linking-consolidation-and-deletion">Linking, consolidation, and deletion</a></li>
+<li><a href="#build-and-check-html">Build and check HTML</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Linked from (9)</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="development/documentation_audit.html">Documentation consolidation audit</a></li><li><a href="plans/documentation_site.html">Documentation organization and HTML portal</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li><li><a href="project/handover.html">BubbleTea - Search for fun compact galaxies using Gaia data </a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

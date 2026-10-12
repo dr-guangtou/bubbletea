@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Documentation organization and HTML portal · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Plans and requirements</span><a href="../../plans/documentation_site.md">Markdown source ↗</a></div><h1 id="documentation-organization-and-html-portal">Documentation organization and HTML portal</h1>
+<p><strong>Date:</strong> 2026-10-12<br>
+<strong>Issue:</strong> BT-032<br>
+<strong>Scope:</strong> Documentation only; no scientific processing or public deployment.</p>
+<p><strong>Status:</strong> Original appearance approved; document consolidation and HTML relocation complete.</p>
+<h2 id="approved-organization-revision">Approved organization revision</h2>
+<p>The project lead reviewed and approved the visual style on 2026-10-12 and requested
+further cleanup: move the entrance to <code>docs/index.html</code>, consolidate same-topic
+notes, remove superseded standalone files, and keep only key project documents at
+the top of <code>docs/</code>. Development records are distinct from automatic journals.</p>
+<p>The revised layout has six project-level Markdown documents; permanent scientific
+explanations live in <code>methods/</code>; merged implementation and experiment records live
+in <code>development/</code>. Keep <code>plans/</code>, <code>journal/</code>, and <code>lessons/</code> separate. Generated
+pages and assets move from root <code>site/</code> to <code>docs/html/</code>, with the same approved design.</p>
+<p>Before removing a note, retain its unique measurements, commands, limitations, and
+scientific provenance in a dated section of the owning topic document. Preserve
+journals unchanged. Record old-to-new paths and section anchors in a machine-readable
+migration register so historical references remain interpretable. Update live links
+and script citations; do not leave obsolete top-level compatibility documents.</p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit and classify every top-level document (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Consolidate development records and relocate scientific explanations (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Add a short project science guide and a complete disposition register (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Persist the new organization rule for future agents (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Move generated HTML, rebuild, and validate current and historical links (2026-10-12).</li>
+</ul>
+<p><a href="../documentation_guide.html">Documentation guide</a> · <a href="../current_status.html">Current status</a></p>
+<h2 id="request-and-boundaries">Request and boundaries</h2>
+<p>The project lead requested a separate documentation branch after preserving the
+existing work and updating remote master. Organize the relationship between
+documents, correct stale status, generate HTML views, and provide an <code>index.html</code>
+summarizing progress, the science roadmap, repository layout, and document links.
+An observational-astronomy teaching project follows separately; its course brief
+has not yet been provided.</p>
+<p>At branch creation, the old feature branch remained unmerged. The documentation
+branch started from its latest committed state so the portal includes the workbench
+implementation. The project lead authorized integration with <code>/wrap-up</code> on
+2026-10-12; the merge includes that inherited M60/workbench history. See the
+<a href="../journal/2026-10-12_documentation_portal_closeout.html">closeout journal</a> and Git
+history for the integration outcome.</p>
+<h2 id="architecture">Architecture</h2>
+<ul>
+<li>Markdown remains the source of truth; SPEC owns approved scientific decisions.</li>
+<li><code>docs/current_status.md</code> owns the dated restart summary; PLAN owns the roadmap.</li>
+<li><code>docs/documentation_guide.md</code> explains ownership, reading routes, and history.</li>
+<li>A standalone Python builder uses Python-Markdown for tables, fenced code,
+  headings, and a per-page contents list. No frontend framework or remote service
+  is needed.</li>
+<li>Inputs and outputs are configured centrally in <code>scripts/config.py</code>.</li>
+<li><code>docs/index.html</code> is the generated entrance; <code>docs/html/</code> contains mirrored document
+  pages, a complete directory, shared CSS/JavaScript, and a build report.</li>
+<li>Root/project guides and documents are discoverable by category. The project lead
+  selected root guides plus <code>docs/</code> for the first build, with supporting documents
+  elsewhere linked rather than rendered. Keep an optional <code>--scope all</code> for a
+  separately requested expansion. Include newly added documentation; exclude frozen, ignored,
+  dependency, and generated trees. Do not rearrange source provenance folders.</li>
+<li>Relative Markdown links become relative HTML links when the target is rendered.
+  Source/data/image links resolve against their original file location. External
+  URLs remain unchanged. Missing source links remain explicit historical warnings.</li>
+<li>Include source links, category labels, a contents list, related reading, and
+  backlinks. Journal pages are labelled historical records rather than current policy.</li>
+<li>Search/filter runs locally. The site needs no network for navigation or styling.
+  Scientific formulas remain readable as their source notation; do not promise
+  offline mathematical typesetting without implementing it.</li>
+<li>Use a restrained editorial field-notebook design: warm paper, dark ink, teal
+  navigation, serif titles, readable long-form text, accessible focus states,
+  responsive layouts, and reduced-motion support.</li>
+</ul>
+<h2 id="safety-and-validation">Safety and validation</h2>
+<p>The builder must never open a scientific database for writing, start the review
+application, query archives, overwrite source Markdown, or follow a path outside
+the repository. Writes are confined to the generated home page and site directory.</p>
+<p>Validate at small scale before the complete build. Check generated pages and
+fragment targets, source coverage, unique page paths and heading identifiers,
+rendered tables/code/task lists, reproducibility, and local-link rewriting. Report
+pre-existing missing historical files separately from broken generated navigation.
+Measure build time and output size. Inspect desktop and narrow layouts in a browser.</p>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Confirm clean feature-branch checkpoint and push remote master (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Back up the existing feature branch remotely without merging (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Create a separate documentation branch (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Correct top-level status and duplicate issue identifier without rewriting history (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Add document-ownership guide and dated current status (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Implement reproducible Markdown-to-HTML builder and local navigation (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Build all selected documents and check generated navigation (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Record checks, limitations, and the teaching-project next step (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Receive project-lead approval of the home-page appearance (2026-10-12).
+  Automated browser inspection and narrow-width visual checks were unavailable;
+  these remain presentation limitations, not completed tests.</li>
+</ul>
+<h2 id="review">Review</h2>
+<h3 id="consolidated-revision">Consolidated revision</h3>
+<p>The revised build covers 58 Markdown documents and produces 60 HTML pages. The
+top-level Markdown count fell from 52 to six. Forty-two development reports became
+ten topic records; five permanent-definition reports became four methods
+documents, alongside a new reference-review guide. All 47 retired paths have
+registered destinations and original source hashes. A preservation audit compares
+retained text, commands, measurements, and caveats with the original Git checkpoint.
+Journals, lessons, scientific data, figures, and reference-paper packages are unchanged.</p>
+<p>The site entrance is <code>docs/index.html</code>, all generated pages/assets are in
+<code>docs/html/</code>, and obsolete root copies are removed. The original visual style was
+approved by the project lead; the new structure is ready for review. Exact timing,
+file size, source hashes, and link-check results are in the current build report.</p>
+<h3 id="original-first-build-measurements-historical">Original first-build measurements (historical)</h3>
+<ul>
+<li>A five-document pilot built seven pages in 0.216 seconds before full execution.</li>
+<li>The complete build covers 88 root/docs Markdown documents and 90 HTML pages.
+  One measured full build took 0.927184 seconds and wrote 1,238,774 HTML bytes
+  before this review text was added. Exact current measurements are recorded in
+  <a href="../build_report.json">the generated build report</a>.</li>
+<li>The standalone validator passed 109 checks: source coverage and digests,
+  Markdown rendering, local links, anchors, and identifier preservation. No
+  unavailable source links or unresolved fragments were found in the selected scope.</li>
+<li>Two successive builds produced byte-identical results for all 92 HTML and asset
+  files. Timing fields in the build report are intentionally measured afresh.</li>
+<li>Scoped Ruff and pre-commit checks passed. Scientific data, source classifications,
+  review storage, selector behavior, and profiles were not modified.</li>
+<li>Browser review was not completed: the in-app browser was unavailable, and native
+  Chrome interaction was stopped after concurrent-user-activity guards. The
+  responsive stylesheet is implemented, but its visual appearance still needs
+  manual inspection. Open <a href="../../index.html">the home page</a>, then a long specification
+  and the directory filter. No public deployment was performed.</li>
+<li>Teaching content is intentionally deferred until audience, learning goals, time
+  available, and student data access are specified.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#documentation-organization-and-html-portal">Documentation organization and HTML portal</a><ul>
+<li><a href="#approved-organization-revision">Approved organization revision</a></li>
+<li><a href="#request-and-boundaries">Request and boundaries</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#safety-and-validation">Safety and validation</a></li>
+<li><a href="#checklist">Checklist</a></li>
+<li><a href="#review">Review</a><ul>
+<li><a href="#consolidated-revision">Consolidated revision</a></li>
+<li><a href="#original-first-build-measurements-historical">Original first-build measurements (historical)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="phase_1_literature_ucds.html">Phase I: Literature UCDs — Task Tracking</a></li><li><a href="phase_2_galaxy_sample.html">Phase II: Target Galaxy Sample — Task Tracking</a></li><li><a href="phase_3_background.html">Phase III: Background Characterization — Task Tracking</a></li><li><a href="phase_4_pilot_search.html">Phase IV: Pilot Search — Task Tracking</a></li><li><a href="scientific_validation.html">Initial Scientific Validation Plan</a></li><li><a href="ucd_visual_review_tool.html">UCD Reference Review Workbench</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

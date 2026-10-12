@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>UCD reference review: scope, evidence, and decisions · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Scientific reference</span><a href="../../methods/reference_review.md">Markdown source ↗</a></div><h1 id="ucd-reference-review-scope-evidence-and-decisions">UCD reference review: scope, evidence, and decisions</h1>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a> ·
+<a href="../plans/ucd_visual_review_tool.html">Detailed tool specification</a></p>
+<h2 id="what-is-being-reviewed">What is being reviewed</h2>
+<p>The fixed image-reference list contains 680 literature-confirmed UCDs and 44
+Saifollahi high-probability candidates. This is not the complete literature
+database. The candidate group always remains separate from the confirmed group.</p>
+<p>The tool combines literature provenance, Gaia measurements and neighbors, host
+distance and context, Legacy Survey images and fitted catalog measurements,
+external-catalog associations, and manual source-identification proposals.
+The <a href="../../../scripts/phase4_search/ucd_visual_review/README.md">application README</a>
+contains the launch command and local storage description.</p>
+<h2 id="images-and-associations-are-not-physical-classifications">Images and associations are not physical classifications</h2>
+<p>A readable cutout can be a survey placeholder. A target can be off-center or have
+an ambiguous nearest catalog source. A Legacy Survey point-source fit does not
+prove an object is a star; an extended fit does not prove it is an unrelated galaxy.
+Apparent resolution depends on distance as well as image quality.</p>
+<p>The original image-reference Tractor search used 2 arcseconds. The later workbench
+expanded Gaia and Legacy Survey neighbor searches to 10 arcseconds, and limits
+Legacy matches to r &lt; 23, to help inspect displaced literature coordinates.
+These settings belong to different retrieval versions. Keep both records rather
+than silently replacing the older measurement.</p>
+<p>Gaia galaxy- or QSO-candidate membership is a review warning, not spectroscopic
+confirmation of contamination. Gaia non-single-star membership records a multiple-
+source solution; a missing match is not proof of physical singleness. Always keep
+the exact Gaia identifier as a string.</p>
+<h2 id="how-to-record-a-judgment">How to record a judgment</h2>
+<ul>
+<li>Record whether an image is usable and whether the source appears resolved,
+  off-center, close to host light, too faint to judge, blended, affected by an image
+  problem, or consistent with a star-forming region or young cluster.</li>
+<li>Color alone cannot assign the star-forming-region flag; require catalog or visual
+  evidence. Missing or incomplete catalogs provide unknown evidence.</li>
+<li>Blend and image-problem flags require visual inspection. Gaia quality measurements
+  can prioritize inspection but do not assign those flags.</li>
+<li>Use <code>include</code>, <code>exclude</code>, or <code>hold</code>, keeping reasons and uncertainty. Candidate
+  <code>include</code> means retain for follow-up, never promote to confirmed.</li>
+<li>Store coordinate/counterpart corrections as proposals. Gaia identifies the
+  coordinate reference; a selected Legacy source identifies the photometry reference.
+  Do not edit the canonical database during visual review.</li>
+</ul>
+<p>The clean positive design reference contains only eligible confirmed objects with
+completed include decisions. It is separate from the candidate follow-up pool.
+Saved revisions retain history; exports connect decisions to their original inputs.</p>
+<h2 id="current-limits-and-next-measurement">Current limits and next measurement</h2>
+<p>The workbench is implemented; zero saved local revisions were found in the
+October 12 restart audit. No visual-cleanliness claim follows from software
+completion. Review a varied pilot, then the full reference, before measuring
+real-field contamination in M60's independent representative 400-source sample.</p>
+<p>See <a href="../development/reference_imaging.html">reference preparation</a>,
+<a href="../journal/2026-08-19_ucd_visual_review_workbench.html">August 19 implementation checkpoint</a>,
+and <a href="../development/host_pilot_profiles.html">host profiles</a> for evidence.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#ucd-reference-review-scope-evidence-and-decisions">UCD reference review: scope, evidence, and decisions</a><ul>
+<li><a href="#what-is-being-reviewed">What is being reviewed</a></li>
+<li><a href="#images-and-associations-are-not-physical-classifications">Images and associations are not physical classifications</a></li>
+<li><a href="#how-to-record-a-judgment">How to record a judgment</a></li>
+<li><a href="#current-limits-and-next-measurement">Current limits and next measurement</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="contaminant_samples.html">Contaminant samples and their limitations</a></li><li><a href="extragalactic_catalogs.html">Extragalactic reference catalogs</a></li><li><a href="gaia_features.html">Gaia measurement definitions</a></li><li><a href="radial_measurements.html">Radial measurements and central exclusion</a></li></ul></details><details><summary>Linked from (2)</summary><ul><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

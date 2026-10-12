@@ -1,0 +1,34 @@
+{
+  "cutout_version": "m60_positive_control_visual_audit_cutouts_v1",
+  "generated_at_utc": "2026-08-12T14:40:48.973775+00:00",
+  "status": "complete_unreviewed_visual_audit_cutout_set",
+  "sample_count": 400,
+  "downloaded_this_run": 400,
+  "reused_verified_checkpoints": 0,
+  "survey": "Legacy Survey DR10",
+  "layer": "ls-dr10",
+  "pixel_scale_arcsec": 0.262,
+  "size_pixels": 64,
+  "field_width_arcsec": 16.768,
+  "sample_sha256": "d101d9b0a0cf079ba93044b30cd4d70cb732e19a60c3ee175decae375ac30447",
+  "manifest_sha256": "560eb6ef2e6931ad8fca240418199fb90e364a706f178a5e66cad2e8655bb813",
+  "scientific_limits": [
+    "cutouts_are_visual_review_evidence_not_calibrated_morphology",
+    "unusable_images_must_not_be_labeled_clean",
+    "visual_flags_remove_no_sources_from_gaia_profile",
+    "legacy_imaging_does_not_change_gaia_area_accounting",
+    "audit_sample_is_separate_from_promising_candidate_shortlist"
+  ],
+  "check_count": 8,
+  "passed_count": 8,
+  "checks": {
+    "frozen_sample_used": true,
+    "all_four_hundred_cutouts_recorded": true,
+    "source_identifiers_are_unique": true,
+    "one_hundred_cutouts_per_zone": true,
+    "all_images_are_verified_dimensions": true,
+    "all_images_remain_unreviewed": true,
+    "images_do_not_change_gaia_area": true,
+    "candidate_shortlist_remains_separate": true
+  }
+}

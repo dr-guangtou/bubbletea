@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Random-sky field preparation and retrieval · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Development records</span><a href="../../development/sky_retrieval.md">Markdown source ↗</a></div><h1 id="random-sky-field-preparation-and-retrieval">Random-sky field preparation and retrieval</h1>
+<p><strong>Consolidated:</strong> 2026-10-12<br>
+<strong>Role:</strong> Topic-organized development evidence, not a replacement for current scientific requirements.</p>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a> · <a href="documentation_audit.html">Documentation audit</a></p>
+<h2 id="current-reading-guidance">Current reading guidance</h2>
+<p>The count-blind 500-field grid, 12-field pilot, measured field conditions, and 398-field development retrieval are complete. Statements that the 102 reserved fields remain unopened are dated snapshots: their subsequent one-time evaluation is in background_measurements.md.</p>
+<h2 id="dated-evidence">Dated evidence</h2>
+<p>Each section below retains an original report's scientific content, measurements,
+commands, and limitations. Status statements apply to that report's original date;
+read the guidance above and current SPEC before following an old next step.</p>
+<p><a id="record-large_sky_field_grid"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/large_sky_field_grid.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/large_sky_field_grid.md -->
+<h2 id="fixed-large-sky-field-grid">Fixed large-sky field grid</h2>
+<p><strong>Status:</strong> Count-blind field identities and partition frozen
+<strong>Date:</strong> 2026-07-19
+<strong>Issues:</strong> BT-005, BT-009, BT-022</p>
+<h3 id="purpose">Purpose</h3>
+<p>This grid replaces the inherited file of 500 unseeded random positions. It will be
+used to measure how the density of sources passing the frozen selector changes
+across the sky. It is separate from the galaxy-specific comparison regions used
+for primary background subtraction.</p>
+<p>No Gaia source count, selector probability, or passing-source density was read to
+generate a coordinate or choose its partition. All 500 fields remain diagnostic;
+none is approved as a scientific background.</p>
+<h3 id="why-there-are-500-fields-and-why-the-radius-is-08-degree">Why there are 500 fields and why the radius is 0.8 degree</h3>
+<p>The field count and radius preserve the scope of the inherited 500-field Phase III
+experiment. They are not a new statistical power calculation and do not define the
+real galaxy aperture.</p>
+<p>Every field is a 0.8-degree-radius circle. Its exact spherical area is
+2.010586633 square degrees. The earlier value 2.010619 is the flat-circle formula
+<code>pi * radius^2</code>; 2.0 is a further approximation. The new workflow uses the
+spherical area.</p>
+<h3 id="how-the-positions-are-distributed">How the positions are distributed</h3>
+<p>The existing galaxy catalog covers absolute Galactic latitude <code>|b| &gt;= 20</code> degrees,
+so the grid uses that same declared domain. It places 250 centers north and 250
+south of the Milky Way plane.</p>
+<p>Latitude is spaced uniformly in spherical area, not uniformly in degrees. In plain
+language, each successive latitude represents the same amount of sky even though
+lines of longitude converge toward a pole. Longitude advances by the fixed
+golden angle, 137.507764 degrees. This is a standard deterministic spacing that
+prevents successive points from lining up; it does not introduce randomness.</p>
+<p>The measured absolute Galactic-latitude range is 20.080258–87.060276 degrees, and
+the measured absolute ecliptic-latitude range is 0.098908–87.171146 degrees. The
+minimum separation between any two centers is 6.429656 degrees, so the
+0.8-degree-radius circles do not overlap.</p>
+<h3 id="development-and-held-back-validation">Development and held-back validation</h3>
+<p>A <strong>sky block</strong> is a broad fixed part of the sky used only for splitting this
+experiment. It combines one 30-degree Galactic-longitude band with one of five
+equal-sky-area absolute-Galactic-latitude bands and one Galactic hemisphere. All
+fields in a block remain on the same side of the split.</p>
+<p>The five latitude bands have edges at 20.000000, 28.269284, 37.244105, 47.460216,
+60.273704, and 90.000000 degrees. Within each hemisphere/latitude combination, two
+sky blocks are assigned to validation. Five of the ten combinations contribute a
+third validation block. Stable hashes choose both the extra combinations and the
+blocks, using positions and version strings only.</p>
+<p>The frozen split contains:</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th style="text-align: right;">Sky blocks</th>
+<th style="text-align: right;">Fields</th>
+<th>Allowed use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">398</td>
+<td>Measure field conditions, fit models, and choose rules</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">102</td>
+<td>Remain unopened until the development model and evaluation rules are fixed</td>
+</tr>
+</tbody>
+</table>
+<p>Both partitions contain northern and southern fields, every equal-area Galactic-
+latitude band, and every fixed 15-degree absolute-ecliptic-latitude band. The
+minimum development-to-validation center separation is 6.429656 degrees.</p>
+<p>Ecliptic latitude is only a sky-position indicator related to Gaia's scanning
+pattern. It does not prove that two fields have similar Gaia coverage. Observation
+counts, local depth, total source density, query completion, and usable area must
+be measured later. Those measurements begin with development fields only.</p>
+<h3 id="known-environment-flags">Known-environment flags</h3>
+<p>The grid records whether each field intersects catalog geometry represented in the
+current project:</p>
+<ul>
+<li>142 fields intersect at least one circle with radius <code>2 R2t</code> around a represented
+  Kourkchi-Tully group;</li>
+<li>283 intersect at least one represented association circle with radius <code>R1t</code>;</li>
+<li>47 contain the center of at least one galaxy in the 2,155-host project catalog;
+  and</li>
+<li>304 have one or more of these flags, while 196 have none.</li>
+</ul>
+<p>These are sensitivity labels, not automatic exclusions. Earlier audits showed that
+neither <code>2 R2t</code> nor <code>R1t</code> is a universal physical boundary, and excluding all
+flagged fields would strongly change the sky coverage before its effect is tested.
+The development analysis must report results both with the full diagnostic grid
+and with declared environment-flag sensitivity subsets before any exclusion rule
+is frozen.</p>
+<h3 id="validation-result-and-artifacts">Validation result and artifacts</h3>
+<p>All 16 checks pass. They verify coordinate uniqueness, exact spherical area,
+hemisphere and latitude coverage, whole-block partitioning, non-overlap, preserved
+environment flags, absence of Gaia-count and selector columns, and unchanged host
+and environment input row counts.</p>
+<ul>
+<li><code>data/results/background/large_sky_field_grid_v1.csv</code></li>
+<li><code>data/results/background/large_sky_field_grid_v1.json</code></li>
+</ul>
+<p>Reproduce the count-blind grid without querying Gaia:</p>
+<pre><code class="language-bash">uv run python scripts/phase3_background/freeze_large_sky_field_grid.py
+</code></pre>
+<!-- preserved_source_end: docs/large_sky_field_grid.md -->
+
+<p><a id="record-large_sky_development_pilot"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/large_sky_development_pilot.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/large_sky_development_pilot.md -->
+<h2 id="frozen-large-sky-development-pilot">Frozen large-sky development pilot</h2>
+<p><strong>Status:</strong> Field identities frozen before Gaia retrieval
+<strong>Date:</strong> 2026-07-19
+<strong>Issues:</strong> BT-009, BT-022</p>
+<h3 id="selection-rule">Selection rule</h3>
+<p>The performance benchmark is <code>sky_field_0000</code>, the development field with the
+smallest absolute Galactic latitude. <code>field_id</code> breaks an exact tie. This uses sky
+position only and is intended to exercise a relatively demanding part of the
+declared <code>|b| &gt;= 20</code> degree domain.</p>
+<p>The small pilot contains the benchmark and one stable-hash-selected development
+field from each of the other nine combinations of Galactic hemisphere and
+equal-area Galactic-latitude band. Those ten fields did not cover two of the six
+fixed ecliptic-latitude bands, so the lowest-hash development field in each missing
+band was added. The measured pilot therefore contains 12 fields.</p>
+<p>The pilot includes both fields with and without count-blind catalog-environment
+flags. Those flags remain labels for later sensitivity comparisons, not reasons to
+delete a field.</p>
+<h3 id="isolation-and-allowed-use">Isolation and allowed use</h3>
+<p>All 12 identities were written before any 0.8-degree grid field was queried. Every
+field belongs to the 398-field development partition. None of the 102 held-back
+validation identifiers is present.</p>
+<p>Development fields may be used to benchmark retrieval, measure pre-selector Gaia
+conditions, apply the frozen selector, and choose the eventual large-sky model.
+Validation fields remain unopened until the model and its evaluation rules are
+fixed.</p>
+<p>All ten checks pass. They verify unique development identities, the benchmark
+rule, complete Galactic and ecliptic coverage, representation of both environment-
+flag states, and absence of Gaia-count and selector-result columns.</p>
+<h3 id="artifacts-and-reproduction">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/large_sky_development_pilot_fields_v1.csv</code></li>
+<li><code>data/results/background/large_sky_development_pilot_fields_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/freeze_large_sky_development_pilot.py
+</code></pre>
+<!-- preserved_source_end: docs/large_sky_development_pilot.md -->
+
+<p><a id="record-large_sky_development_retrieval"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/large_sky_development_retrieval.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/large_sky_development_retrieval.md -->
+<h2 id="large-sky-development-retrieval-benchmark-and-pilot">Large-sky development retrieval benchmark and pilot</h2>
+<p><strong>Status:</strong> Single-field benchmark and 12-field development pilot complete
+<strong>Date:</strong> 2026-07-19
+<strong>Issues:</strong> BT-009, BT-022</p>
+<h3 id="what-was-measured">What was measured</h3>
+<p>All fields use the frozen 0.8-degree circles, exact spherical areas, 19 raw Gaia
+columns, G-magnitude range, 5,000-row strip limit, selector version, and probability
+threshold. Gaia was queried only for the 12 frozen development fields. None of the
+102 held-back validation fields was queried or scored.</p>
+<p>Raw Gaia rows are stored as verified strip checkpoints outside the repository at
+<code>~/Dropbox/work/data/bubbletea/gaia_large_sky_v1</code>. The repository retains measured
+strip plans, compact field summaries, and provenance manifests.</p>
+<p>A passing source is a search candidate selected by
+<code>point_source_logistic_model_v1</code>; it is not a confirmed UCD.</p>
+<h3 id="single-field-performance-benchmark">Single-field performance benchmark</h3>
+<p><code>sky_field_0000</code> is the development field closest to the declared
+<code>|b| = 20</code> degree boundary. It was chosen from position alone before its Gaia count
+was known.</p>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gaia sources in the frozen magnitude range</td>
+<td style="text-align: right;">84,025</td>
+</tr>
+<tr>
+<td>Sources passing the frozen selector</td>
+<td style="text-align: right;">1,393</td>
+</tr>
+<tr>
+<td>Passing-source density per square degree</td>
+<td style="text-align: right;">692.832618</td>
+</tr>
+<tr>
+<td>Final retrieval strips</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr>
+<td>Largest strip</td>
+<td style="text-align: right;">4,982 rows</td>
+</tr>
+<tr>
+<td>External checkpoint CSV bytes</td>
+<td style="text-align: right;">17,369,345</td>
+</tr>
+<tr>
+<td>Measured planning time</td>
+<td style="text-align: right;">87.086338 seconds</td>
+</tr>
+<tr>
+<td>Measured retrieval time</td>
+<td style="text-align: right;">43.725160 seconds</td>
+</tr>
+<tr>
+<td>Local selector time</td>
+<td style="text-align: right;">2.161201 seconds</td>
+</tr>
+<tr>
+<td>Total measured time</td>
+<td style="text-align: right;">133.357677 seconds</td>
+</tr>
+</tbody>
+</table>
+<p>The run deliberately stopped after retrieving one strip. On resume, that strip was
+verified and skipped, and the remaining 25 were downloaded. All 18 benchmark
+safeguards pass. This confirms that the 5,000-row limit and persistent restart
+mechanism work for a substantially denser 0.8-degree field.</p>
+<h3 id="twelve-field-pilot-result">Twelve-field pilot result</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Galactic latitude</th>
+<th style="text-align: right;">Ecliptic latitude</th>
+<th style="text-align: right;">Gaia sources</th>
+<th style="text-align: right;">Passing candidates</th>
+<th style="text-align: right;">Passing density per square degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sky_field_0000</code></td>
+<td style="text-align: right;">20.080258</td>
+<td style="text-align: right;">4.592953</td>
+<td style="text-align: right;">84,025</td>
+<td style="text-align: right;">1,393</td>
+<td style="text-align: right;">692.832618</td>
+</tr>
+<tr>
+<td><code>sky_field_0067</code></td>
+<td style="text-align: right;">31.310434</td>
+<td style="text-align: right;">-4.243134</td>
+<td style="text-align: right;">11,911</td>
+<td style="text-align: right;">960</td>
+<td style="text-align: right;">477.472586</td>
+</tr>
+<tr>
+<td><code>sky_field_0126</code></td>
+<td style="text-align: right;">42.450885</td>
+<td style="text-align: right;">48.038246</td>
+<td style="text-align: right;">14,969</td>
+<td style="text-align: right;">852</td>
+<td style="text-align: right;">423.756920</td>
+</tr>
+<tr>
+<td><code>sky_field_0151</code></td>
+<td style="text-align: right;">47.795850</td>
+<td style="text-align: right;">-7.017217</td>
+<td style="text-align: right;">7,002</td>
+<td style="text-align: right;">481</td>
+<td style="text-align: right;">239.233660</td>
+</tr>
+<tr>
+<td><code>sky_field_0220</code></td>
+<td style="text-align: right;">67.273333</td>
+<td style="text-align: right;">29.317707</td>
+<td style="text-align: right;">7,708</td>
+<td style="text-align: right;">754</td>
+<td style="text-align: right;">375.014927</td>
+</tr>
+<tr>
+<td><code>sky_field_0275</code></td>
+<td style="text-align: right;">-24.150451</td>
+<td style="text-align: right;">-79.497819</td>
+<td style="text-align: right;">24,779</td>
+<td style="text-align: right;">812</td>
+<td style="text-align: right;">403.862229</td>
+</tr>
+<tr>
+<td><code>sky_field_0299</code></td>
+<td style="text-align: right;">-28.183708</td>
+<td style="text-align: right;">-46.372292</td>
+<td style="text-align: right;">41,893</td>
+<td style="text-align: right;">1,425</td>
+<td style="text-align: right;">708.748370</td>
+</tr>
+<tr>
+<td><code>sky_field_0302</code></td>
+<td style="text-align: right;">-28.698198</td>
+<td style="text-align: right;">-4.040004</td>
+<td style="text-align: right;">40,952</td>
+<td style="text-align: right;">1,081</td>
+<td style="text-align: right;">537.654027</td>
+</tr>
+<tr>
+<td><code>sky_field_0357</code></td>
+<td style="text-align: right;">-38.678626</td>
+<td style="text-align: right;">-7.318965</td>
+<td style="text-align: right;">22,443</td>
+<td style="text-align: right;">1,374</td>
+<td style="text-align: right;">683.382639</td>
+</tr>
+<tr>
+<td><code>sky_field_0429</code></td>
+<td style="text-align: right;">-54.532984</td>
+<td style="text-align: right;">-33.083639</td>
+<td style="text-align: right;">5,779</td>
+<td style="text-align: right;">696</td>
+<td style="text-align: right;">346.167625</td>
+</tr>
+<tr>
+<td><code>sky_field_0432</code></td>
+<td style="text-align: right;">-55.320275</td>
+<td style="text-align: right;">-60.348961</td>
+<td style="text-align: right;">7,745</td>
+<td style="text-align: right;">1,251</td>
+<td style="text-align: right;">622.206464</td>
+</tr>
+<tr>
+<td><code>sky_field_0483</code></td>
+<td style="text-align: right;">-73.052711</td>
+<td style="text-align: right;">-14.650003</td>
+<td style="text-align: right;">6,198</td>
+<td style="text-align: right;">504</td>
+<td style="text-align: right;">250.673108</td>
+</tr>
+</tbody>
+</table>
+<p>Together, the fields contain 275,404 Gaia sources and 11,583 passing candidates
+over 24.127040 square degrees. The combined density is 480.083765 per square
+degree, retained for count and area auditing only. Individual densities span
+239.233660–708.748370, with a median of 450.614753.</p>
+<p>The pilot used 83 final strips. Planning took 182.383724 seconds in total,
+retrieval took 109.159825 seconds, and local scoring took 0.256445 seconds during
+the batch run. The benchmark plan and all 26 benchmark checkpoints were reused
+without another download. All nine aggregate safeguards pass.</p>
+<h3 id="interpretation-and-limits">Interpretation and limits</h3>
+<p>The measured spread confirms that one latitude-only density value will not be
+adequate. It does not yet show which combination of Galactic latitude, ecliptic
+latitude, Gaia depth, observation counts, or environment flags best predicts the
+passing-source density. The pilot was chosen for positional coverage rather than
+statistical representativeness and is too small for the final model.</p>
+<p>The four environment-flagged pilot fields are retained. Their combined result must
+not be interpreted as an environment effect because the fields were not matched in
+latitude or Gaia conditions. The full development analysis must measure those
+conditions and use a declared comparison before deciding whether an environment
+flag changes the model or sensitivity analysis.</p>
+<h3 id="artifacts-and-reproduction_1">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/large_sky_development_benchmark_plan_v1.csv</code></li>
+<li><code>data/results/background/large_sky_development_benchmark_summary_v1.csv</code></li>
+<li><code>data/results/background/large_sky_development_benchmark_v1.json</code></li>
+<li><code>data/results/background/large_sky_development_retrieval_plan_v1.csv</code></li>
+<li><code>data/results/background/large_sky_development_retrieval_summary_v1.csv</code></li>
+<li><code>data/results/background/large_sky_development_retrieval_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">BUBBLETEA_EXTERNAL_DATA=&quot;$HOME/Dropbox/work/data&quot; \
+  uv run python scripts/phase3_background/benchmark_large_sky_development_retrieval.py
+
+BUBBLETEA_EXTERNAL_DATA=&quot;$HOME/Dropbox/work/data&quot; \
+  uv run python scripts/phase3_background/run_large_sky_development_retrieval.py
+</code></pre>
+<!-- preserved_source_end: docs/large_sky_development_retrieval.md -->
+
+<p><a id="record-large_sky_development_field_conditions"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/large_sky_development_field_conditions.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/large_sky_development_field_conditions.md -->
+<h2 id="large-sky-development-field-conditions">Large-sky development field conditions</h2>
+<p><strong>Date:</strong> 2026-07-19</p>
+<p><strong>Scope:</strong> The 12 frozen development pilot fields only</p>
+<p><strong>Script:</strong> <code>scripts/phase3_background/measure_large_sky_development_field_conditions.py</code></p>
+<p><strong>Outputs:</strong> <code>data/results/background/large_sky_development_field_conditions_v1.csv</code>
+and its JSON provenance record</p>
+<h3 id="purpose_1">Purpose</h3>
+<p>These measurements describe the Gaia catalog in each field before the UCD selector
+is applied. They test whether variations in Gaia coverage, depth, or total catalog
+density help predict how many sources pass the selector. They do not decide whether
+a field is a valid scientific background.</p>
+<h3 id="measurements-in-plain-language">Measurements in plain language</h3>
+<ul>
+<li><strong>Total Gaia source density:</strong> all Gaia sources in the selector's allowed G-magnitude
+  range, divided by the exact queried area. It can reflect Milky Way source density,
+  crowding, and real astrophysical populations as well as survey behavior. It is not
+  a pure observing-condition measurement and cannot become a rigid host-to-control
+  matching cut.</li>
+<li><strong>Mean visibility periods:</strong> the average number of groups of Gaia observations
+  separated in time. It describes how often sources in the field were observed on
+  distinct occasions.</li>
+<li><strong>Mean matched transits:</strong> the average number of Gaia focal-plane crossings that
+  were associated with a catalog source. It is a second description of observation
+  frequency.</li>
+<li><strong>M10:</strong> the median G magnitude of sources with no more than ten matched transits.
+  A fainter value generally indicates that such sparsely observed sources reach
+  fainter magnitudes. M10 is a local depth indicator, not a selector cut.</li>
+</ul>
+<p>The archive service overflowed when it summed the two integer observation-count
+columns directly. The final procedure therefore retrieves each field's compact
+source identifier and observation counts, verifies that the retrieval is complete
+and unique, and calculates both means locally. The total count is independently
+measured and must also equal the count from the existing 19-column retrieval.</p>
+<h3 id="measured-result">Measured result</h3>
+<p>All 12 development fields pass all 12 safeguards. The complete run took
+66.501269 seconds. The measured ranges are:</p>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Gaia sources per square degree</td>
+<td style="text-align: right;">2,874.285496</td>
+<td style="text-align: right;">41,791.285489</td>
+</tr>
+<tr>
+<td>Mean visibility periods</td>
+<td style="text-align: right;">12.437076</td>
+<td style="text-align: right;">24.246461</td>
+</tr>
+<tr>
+<td>Mean matched transits</td>
+<td style="text-align: right;">19.192643</td>
+<td style="text-align: right;">56.199413</td>
+</tr>
+<tr>
+<td>M10, G magnitude</td>
+<td style="text-align: right;">20.894909</td>
+<td style="text-align: right;">21.158578</td>
+</tr>
+</tbody>
+</table>
+<p>The full-column and compact pre-selector retrievals have identical source counts
+in every field. None of the 102 held-back validation fields was queried or scored.</p>
+<p>Three additional field descriptions were calculated later from the verified raw
+checkpoints: the 10th percentile, median, and 90th percentile of all G magnitudes
+inside the frozen magnitude range. All nine checks pass, all source counts and
+identifier fingerprints match the original retrieval, and no archive query was
+needed. See <code>docs/large_sky_development_scale.md</code>.</p>
+<h3 id="interpretation-limit">Interpretation limit</h3>
+<p>The fields were selected to cover sky position, not to estimate correlations
+precisely. Their ranges show that the candidate predictors vary enough to test in
+the 398-field development experiment. Associations seen among only these 12 fields
+must not select a predictor, model, threshold, or scientific background.</p>
+<!-- preserved_source_end: docs/large_sky_development_field_conditions.md -->
+
+<p><a id="record-large_sky_development_scale"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/large_sky_development_scale.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/large_sky_development_scale.md -->
+<h2 id="large-sky-development-continuation">Large-sky development continuation</h2>
+<p><strong>Date:</strong> 2026-07-19</p>
+<p><strong>Scripts:</strong>
+<code>scripts/phase3_background/derive_large_sky_development_g_magnitude_summaries.py</code>
+and <code>scripts/phase3_background/run_large_sky_development_scale.py</code></p>
+<h3 id="what-was-added">What was added</h3>
+<p>The 12 pilot development fields include three fixed descriptions of their
+Gaia G-magnitude distributions:</p>
+<ul>
+<li>the magnitude below which 10% of the field's sources lie;</li>
+<li>the median magnitude;</li>
+<li>the magnitude below which 90% of the field's sources lie.</li>
+</ul>
+<p>These are calculated from already downloaded sources. The definitions were fixed
+before the remaining development fields are measured. They describe each entire
+field and are not cuts applied to individual sources.</p>
+<p>The continuation script combines four operations for every new development field:</p>
+<ol>
+<li>divide the circular Gaia request into measured, non-overlapping strips;</li>
+<li>save and verify the 19 columns required by the frozen source selector;</li>
+<li>apply that selector locally and count the passing sources;</li>
+<li>measure the pre-selector field conditions and calculate all fixed magnitude
+   summaries.</li>
+</ol>
+<p>After a field finishes, its raw files, measured strip plan, hashes, checks, and
+plain field summary are written outside the repository under the configured
+external-data directory. A later run checks that record and the saved file hashes
+before treating the field as complete. An interrupted field reuses valid strips and
+continues from the unfinished work.</p>
+<h3 id="safety-rules">Safety rules</h3>
+<ul>
+<li>Only rows marked <code>development</code> in the frozen grid may be processed.</li>
+<li>The 102 held-back validation identifiers are never placed in the processing list.</li>
+<li>The default command permits zero new remote fields. Starting remote work requires
+  an explicit nonnegative <code>--maximum-new-fields</code> value.</li>
+<li>Processing order is a reproducible hash of the run version and field identifier.
+  It uses no Gaia count, selector result, or host excess.</li>
+<li>A field with incomplete or invalid files is not represented as a zero count.</li>
+<li>This step measures inputs only. It fits no sky-background model and approves no
+  field as a scientific background.</li>
+</ul>
+<h3 id="measured-validation">Measured validation</h3>
+<p>The local magnitude calculation read all 12 completed fields in 1.416442 seconds,
+made zero archive queries, and passed all nine safeguards. Every field's source
+count and source-identifier fingerprint match the original retrieval.</p>
+<p>The continuation first completed a zero-query dry run, importing the 12 existing
+fields and passing all 14 run safeguards. It then processed exactly one new field,
+<code>sky_field_0167</code>, selected by the fixed count-blind order:</p>
+<ul>
+<li>9,095 Gaia sources in two verified strips;</li>
+<li>540 sources pass the frozen selector;</li>
+<li>total density 4,523.555389 sources per square degree;</li>
+<li>selected density 268.578330 sources per square degree;</li>
+<li>complete field processing in 13.655484 seconds;</li>
+<li>all ten field checks and all 14 run checks pass.</li>
+</ul>
+<p>A subsequent zero-query restart retained 13 completed development fields, started
+no new field, and finished its state check in 0.005078 seconds.</p>
+<p>Continued bounded runs completed all 398 development fields. Together they contain
+8,001,113 Gaia sources, of which 403,920 pass the frozen selector, over
+800.213480 square degrees. The external raw checkpoints contain 2,356 final strips
+and 1,640,878,040 CSV bytes. Total Gaia density spans 2,401.289216--618,195.694388
+sources per square degree; passing-source density spans
+99.970823--37,714.863283 per square degree. These are measured ranges, not
+projections from the pilot.</p>
+<p>One unusually dense field, <code>sky_field_0317</code>, contains 1,242,936 Gaia sources and
+75,829 passing sources in 386 final strips. Its adaptive planning repeatedly met
+the fixed time ceiling. The planner now saves every completed count measurement,
+checks its query and geometry before reuse, and resumes from that point. A local
+stop-and-restart test passed all eight safeguards without an archive query. The
+live field then resumed across bounded attempts until it completed; earlier failed
+attempts remain as permanent external records and are not converted to zero.</p>
+<p>The workflow retains a 180-second ceiling for each archive request and a 300-second
+ceiling for each complete field attempt. Failed fields are deferred by default so
+they cannot consume the first slot of every later batch, and retrying them requires
+the explicit <code>--retry-failed-fields</code> option. All 17 aggregate safeguards pass. A
+final zero-work run verified all 398 external field records, made no new field
+attempt, and finished in 0.025172 seconds. All 102 validation fields remain
+unopened.</p>
+<h3 id="interpretation">Interpretation</h3>
+<p>This validates the complete development measurement, failure preservation, bounded
+waiting, planning and retrieval restarts, and local aggregate verification. The six
+frozen models were subsequently compared, then reassigned to a secondary diagnostic
+role after review. The primary large-sky reference now uses the directly measured
+density distribution of development fields in the same broad
+absolute-Galactic-latitude band. See
+<code>docs/large_sky_direct_background_comparison.md</code>. No individual field is thereby
+approved as a scientific background, and all 102 large-sky validation fields remain
+unopened.</p>
+<!-- preserved_source_end: docs/large_sky_development_scale.md --></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#random-sky-field-preparation-and-retrieval">Random-sky field preparation and retrieval</a><ul>
+<li><a href="#current-reading-guidance">Current reading guidance</a></li>
+<li><a href="#dated-evidence">Dated evidence</a></li>
+<li><a href="#fixed-large-sky-field-grid">Fixed large-sky field grid</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#why-there-are-500-fields-and-why-the-radius-is-08-degree">Why there are 500 fields and why the radius is 0.8 degree</a></li>
+<li><a href="#how-the-positions-are-distributed">How the positions are distributed</a></li>
+<li><a href="#development-and-held-back-validation">Development and held-back validation</a></li>
+<li><a href="#known-environment-flags">Known-environment flags</a></li>
+<li><a href="#validation-result-and-artifacts">Validation result and artifacts</a></li>
+</ul>
+</li>
+<li><a href="#frozen-large-sky-development-pilot">Frozen large-sky development pilot</a><ul>
+<li><a href="#selection-rule">Selection rule</a></li>
+<li><a href="#isolation-and-allowed-use">Isolation and allowed use</a></li>
+<li><a href="#artifacts-and-reproduction">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#large-sky-development-retrieval-benchmark-and-pilot">Large-sky development retrieval benchmark and pilot</a><ul>
+<li><a href="#what-was-measured">What was measured</a></li>
+<li><a href="#single-field-performance-benchmark">Single-field performance benchmark</a></li>
+<li><a href="#twelve-field-pilot-result">Twelve-field pilot result</a></li>
+<li><a href="#interpretation-and-limits">Interpretation and limits</a></li>
+<li><a href="#artifacts-and-reproduction_1">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#large-sky-development-field-conditions">Large-sky development field conditions</a><ul>
+<li><a href="#purpose_1">Purpose</a></li>
+<li><a href="#measurements-in-plain-language">Measurements in plain language</a></li>
+<li><a href="#measured-result">Measured result</a></li>
+<li><a href="#interpretation-limit">Interpretation limit</a></li>
+</ul>
+</li>
+<li><a href="#large-sky-development-continuation">Large-sky development continuation</a><ul>
+<li><a href="#what-was-added">What was added</a></li>
+<li><a href="#safety-rules">Safety rules</a></li>
+<li><a href="#measured-validation">Measured validation</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="off_target_controls.html">Off-target control experiments</a></li></ul></details><details><summary>Linked from (2)</summary><ul><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

@@ -1,0 +1,39 @@
+{
+  "contract_version": "host_association_register_v1",
+  "generated_at_utc": "2026-08-13T14:19:51.467369+00:00",
+  "status": "approved_by_project_lead_2026-08-13",
+  "plain_language_scope": "Assign one host-association state and resolved host per canonical reference object under the project-lead host policy of 2026-08-13.",
+  "cohort_counts": {
+    "confirmed_ucd": 680,
+    "saifollahi_high_probability_candidate": 44
+  },
+  "host_state_counts": {
+    "verified_unique_host": 411,
+    "published_environment_only": 313
+  },
+  "membership_counts": {
+    "include": 667,
+    "candidate_saifollahi": 44,
+    "excluded_stripped_nucleus_or_luminous_gc": 13
+  },
+  "output": {
+    "path": "data/literature/catalogs/host_association_register_v1.csv",
+    "sha256": "03a2af3827af571e6878d73574652bc57e73dd1e5ff603cef955eb2e9aaac683"
+  },
+  "inputs": {
+    "data/literature/catalogs/ucd_legacy_reference_targets_v1.csv": "b3f6a29203811b074604d18a8e855d7915fac3b89138b30a3edeff3f02efc407",
+    "data/galaxy_sample/galaxy_sample_ranked.csv": "7c7033a3a7b49ed071db16f2a63a3f63abb5d10182791752892fbbb8022e6fce",
+    "data/literature/database/ucd_reference_v2.db": "6f18ae36701eff9e423782a7fae01cbeadc823193d00d8db06898210da32f5e2"
+  },
+  "check_count": 7,
+  "passed_count": 7,
+  "checks": {
+    "row_count_is_724": true,
+    "states_are_allowed": true,
+    "memberships_are_allowed": true,
+    "no_host_unavailable_remains": true,
+    "excluded_count_is_13": true,
+    "saifollahi_candidates_are_separate": true,
+    "saifollahi_never_in_confirmed_design_reference": true
+  }
+}

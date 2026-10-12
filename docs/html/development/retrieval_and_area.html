@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Gaia retrieval, radial areas, and run records · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Development records</span><a href="../../development/retrieval_and_area.md">Markdown source ↗</a></div><h1 id="gaia-retrieval-radial-areas-and-run-records">Gaia retrieval, radial areas, and run records</h1>
+<p><strong>Consolidated:</strong> 2026-10-12<br>
+<strong>Role:</strong> Topic-organized development evidence, not a replacement for current scientific requirements.</p>
+<p><a href="../science_guide.html">Science guide</a> · <a href="../current_status.html">Current status</a> · <a href="documentation_audit.html">Documentation audit</a></p>
+<h2 id="current-reading-guidance">Current reading guidance</h2>
+<p>Strip-based retrieval, restart checks, exact spherical areas, and per-host run records are implemented. Small angular circles and controlled interrupted runs below are infrastructure tests, not scientific host profiles. The current Gaia policy applies no bright-star or ancillary-imaging area masks; successfully retrieved strips determine available area.</p>
+<h2 id="dated-evidence">Dated evidence</h2>
+<p>Each section below retains an original report's scientific content, measurements,
+commands, and limitations. Status statements apply to that report's original date;
+read the guidance above and current SPEC before following an old next step.</p>
+<p><a id="record-gaia_query_partition_validation"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/gaia_query_partition_validation.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/gaia_query_partition_validation.md -->
+<h2 id="gaia-large-region-query-partition-validation">Gaia large-region query partition validation</h2>
+<p><strong>Status:</strong> Bounded equivalence test passed; adaptive large-region retrieval pending
+<strong>Date:</strong> 2026-07-18
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code></p>
+<h3 id="why-the-query-is-divided">Why the query is divided</h3>
+<p>Some nearby galaxies require sky coverage much larger than the inherited
+two-degree limit. One very large archive request can exceed a service row limit or
+fail partway through. The retrieval will therefore divide the requested galaxy-
+centered circle into smaller horizontal sky strips and query them separately.</p>
+<p>A horizontal sky strip is simply a range of declination, the north-south sky
+coordinate. Every strip query still includes the exact original circular boundary.
+The strips do not replace the circle with rectangles.</p>
+<p>The lower edge of every strip is included. The upper edge is excluded except for
+the final strip, which includes the circle's last edge. This rule assigns a source
+lying exactly on a shared boundary to one and only one strip. Combining all strips
+therefore reconstructs the complete circle without gaps or repeated boundary rows.</p>
+<h3 id="bounded-live-test">Bounded live test</h3>
+<p>The validation queried a 0.2-degree-radius circle centered on NGC 4698 in two ways:</p>
+<ol>
+<li>one complete-circle query used as the reference; and</li>
+<li>four separate strips, each no taller than 0.1 degree.</li>
+</ol>
+<p>Both methods used every Gaia DR3 catalog entry in the selector's allowed G-magnitude
+range. The UCD selector and contaminant filters were not applied.</p>
+<p>The complete circle returned 500 Gaia entries. The four strips returned 82, 154,
+149, and 115 entries, also totaling 500. The combined strip result contains 500
+unique Gaia source identifiers and matches the reference identifier set exactly:
+zero entries are missing and zero are repeated. The run took 12.96 seconds.</p>
+<p>All nine checks passed, including exact source-identifier equality, exact-circle
+membership, one-time assignment of every synthetic strip-boundary point, correct
+clipping of a synthetic circle at the north celestial pole, and absence of UCD
+selector output.</p>
+<h3 id="real-retrieval-contract">Real retrieval contract</h3>
+<p>The 0.1-degree strip height is a test value, not a production setting. For a real
+host, the workflow will first count rows without downloading them. Any strip whose
+measured count exceeds the declared safe retrieval size will be divided again. The
+count, query status, retrieved row count, and source-identifier uniqueness must be
+validated separately for every final strip.</p>
+<p>After the strips are combined, the pipeline will calculate each source's exact
+spherical separation from the galaxy once. It will then assign the source to the
+exploratory radial rings locally. It will not query overlapping rings separately.</p>
+<p>The production workflow must also checkpoint completed strips so a failed archive
+request can resume without repeating successful downloads. A follow-up bounded test
+now validates measured splitting, a controlled stop and restart, and recovery of a
+deliberately damaged checkpoint; see
+<code>docs/gaia_adaptive_retrieval_validation.md</code>. Neither test yet establishes a safe
+production row limit for the full selector-input column set or service reliability
+for a multi-degree nearby-galaxy retrieval.</p>
+<h3 id="artifacts-and-reproduction">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/gaia_query_partition_sources_v1.csv</code></li>
+<li><code>data/results/background/gaia_query_partition_strips_v1.csv</code></li>
+<li><code>data/results/background/gaia_query_partition_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_gaia_query_partition.py
+</code></pre>
+<!-- preserved_source_end: docs/gaia_query_partition_validation.md -->
+
+<p><a id="record-gaia_adaptive_retrieval_validation"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/gaia_adaptive_retrieval_validation.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/gaia_adaptive_retrieval_validation.md -->
+<h2 id="adaptive-and-restartable-gaia-retrieval-validation">Adaptive and restartable Gaia retrieval validation</h2>
+<p><strong>Status:</strong> Bounded split, stop, resume, and corruption-recovery test passed
+<strong>Date:</strong> 2026-07-18
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code></p>
+<h3 id="plain-language-workflow">Plain-language workflow</h3>
+<p>Before downloading a large galaxy-centered region, the workflow asks the Gaia
+archive only for the number of entries in that region. If the measured number is
+larger than the declared safe size for one download, the north-south coordinate
+range is divided in half and both halves are counted. This repeats until every
+final sky strip is small enough.</p>
+<p>A <strong>checkpoint</strong> is the saved source file for one completed strip plus a small
+metadata file recording its expected row count, archive-query hash, retrieved row
+count, and source-file hash. Both files are written through temporary files so an
+interrupted write cannot masquerade as a completed download.</p>
+<p>When a run restarts, every existing checkpoint is verified. A checkpoint is reused
+only when its query, expected count, file hash, row count, and source identifiers
+remain valid. Missing, incomplete, changed, or corrupted files are downloaded
+again. Successfully verified files are not queried again.</p>
+<h3 id="bounded-live-validation">Bounded live validation</h3>
+<p>The validation uses the same 0.2-degree-radius NGC 4698 circle and 500-entry
+reference as the earlier partition test. A test-only limit of 130 entries per strip
+forces the workflow to measure and divide the circle adaptively. It creates six
+final strips containing 82, 71, 83, 70, 79, and 115 entries.</p>
+<p>The first retrieval is deliberately stopped after saving two strips. A new
+retrieval instance then loads the saved plan, verifies and skips those two strips,
+and downloads only the remaining four. The two original files retain exactly the
+same hashes.</p>
+<p>After that successful restart, the validation deliberately changes the final saved
+strip. A third retrieval detects the hash mismatch, downloads only that damaged
+strip again, and skips the five intact files. The final combined table contains 500
+unique Gaia source identifiers and matches the independent reference exactly.</p>
+<p>All 15 checks pass in 21.68 seconds. The validation queries only <code>source_id</code>, sky
+position, and G magnitude; it does not apply the UCD selector.</p>
+<h3 id="production-contract-and-remaining-work">Production contract and remaining work</h3>
+<p>The 130-entry limit is intentionally small so the bounded test exercises splitting.
+It is not a production archive limit. The production safe size must be measured
+using the full set of Gaia columns required by the frozen selector. The reusable
+retriever accepts that full column list; its query hash invalidates checkpoints if
+the requested columns or any query condition changes.</p>
+<p>A production run must preserve:</p>
+<ul>
+<li>the complete measured split plan before source retrieval begins;</li>
+<li>one atomic source and metadata checkpoint per final strip;</li>
+<li>explicit complete, incomplete, failed, and recovered states;</li>
+<li>exact source-identifier uniqueness after combination; and</li>
+<li>the immutable run configuration, Gaia release, selector input columns, query
+  hashes, and output hashes.</li>
+</ul>
+<p>A follow-up full-column benchmark directly measured 5,000 rows three times and
+10,000 rows once. The 5,000-row results had identical source identifiers, query
+times of 1.948628--1.976649 seconds, and serialized sizes of 1,027,468 bytes. The
+provisional development checkpoint limit was therefore 5,000 rows. A subsequent
+three-field test validates full-column restart behavior for one unsplit and two
+split cases and freezes the 5,000-row per-strip limit for development and pilot
+runs. The subsequent spherical area component maps verified completed strips to
+each ring's successfully queried and missing area, then subtracts the union of
+explicit masks. See <code>docs/radial_ring_area_accounting.md</code>.</p>
+<h3 id="artifacts-and-reproduction_1">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/gaia_adaptive_retrieval_plan_v1.csv</code></li>
+<li><code>data/results/background/gaia_adaptive_retrieval_sources_v1.csv</code></li>
+<li><code>data/results/background/gaia_adaptive_retrieval_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_adaptive_gaia_retrieval.py
+</code></pre>
+<!-- preserved_source_end: docs/gaia_adaptive_retrieval_validation.md -->
+
+<p><a id="record-gaia_full_selector_retrieval_benchmark"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/gaia_full_selector_retrieval_benchmark.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/gaia_full_selector_retrieval_benchmark.md -->
+<h2 id="full-selector-column-gaia-retrieval-benchmark">Full-selector-column Gaia retrieval benchmark</h2>
+<p><strong>Status:</strong> Bounded benchmark passed; 5,000-row limit confirmed by multifield restart validation
+<strong>Date:</strong> 2026-07-18
+<strong>Selector:</strong> <code>point_source_logistic_model_v1</code>
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code></p>
+<h3 id="purpose">Purpose</h3>
+<p>The restart test initially downloaded only four columns. A real search must download
+all 19 Gaia columns required to calculate the frozen classifier's nine features.
+This benchmark measures the archive time, local memory, serialized file size, and
+classifier time for progressively larger full-column results.</p>
+<p>The test uses a predeclared review host, ESO 006-G001, and a 0.5-degree-radius
+performance-test circle. The circle contains 13,010 Gaia entries in the frozen
+G-magnitude range. This field and radius measure retrieval behavior only; they do
+not define the galaxy's scientific aperture or background.</p>
+<h3 id="measurements">Measurements</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Requested rows</th>
+<th style="text-align: right;">Repeat</th>
+<th style="text-align: right;">Query seconds</th>
+<th style="text-align: right;">Table memory (bytes)</th>
+<th style="text-align: right;">CSV bytes</th>
+<th style="text-align: right;">Classifier seconds</th>
+<th style="text-align: right;">Python-traced peak bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.534212</td>
+<td style="text-align: right;">10,132</td>
+<td style="text-align: right;">21,049</td>
+<td style="text-align: right;">0.047920</td>
+<td style="text-align: right;">5,289,258</td>
+</tr>
+<tr>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.688021</td>
+<td style="text-align: right;">50,132</td>
+<td style="text-align: right;">104,549</td>
+<td style="text-align: right;">0.013902</td>
+<td style="text-align: right;">1,229,038</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.585557</td>
+<td style="text-align: right;">100,132</td>
+<td style="text-align: right;">206,631</td>
+<td style="text-align: right;">0.013612</td>
+<td style="text-align: right;">2,783,334</td>
+</tr>
+<tr>
+<td style="text-align: right;">2,500</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.118256</td>
+<td style="text-align: right;">250,132</td>
+<td style="text-align: right;">514,448</td>
+<td style="text-align: right;">0.014471</td>
+<td style="text-align: right;">5,815,883</td>
+</tr>
+<tr>
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.967479</td>
+<td style="text-align: right;">500,132</td>
+<td style="text-align: right;">1,027,468</td>
+<td style="text-align: right;">0.013912</td>
+<td style="text-align: right;">11,409,998</td>
+</tr>
+<tr>
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.627872</td>
+<td style="text-align: right;">1,000,132</td>
+<td style="text-align: right;">2,051,704</td>
+<td style="text-align: right;">0.014861</td>
+<td style="text-align: right;">13,217,268</td>
+</tr>
+<tr>
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.976649</td>
+<td style="text-align: right;">500,132</td>
+<td style="text-align: right;">1,027,468</td>
+<td style="text-align: right;">0.015364</td>
+<td style="text-align: right;">11,407,446</td>
+</tr>
+<tr>
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.948628</td>
+<td style="text-align: right;">500,132</td>
+<td style="text-align: right;">1,027,468</td>
+<td style="text-align: right;">0.013794</td>
+<td style="text-align: right;">11,407,752</td>
+</tr>
+</tbody>
+</table>
+<p>“Table memory” is the measured pandas table size. “CSV bytes” is the measured size
+after serializing that table. “Python-traced peak” covers Python-tracked allocations
+during each query, serialization, and classification; it does not include every
+possible native-library allocation. The process-wide peak resident memory reached
+282,624,000 bytes by the end of the repeated sequence, but that value is cumulative
+over the process and is not attributable to one query.</p>
+<p>All requested rows and all 19 columns were returned. Source identifiers were unique
+within every query, classifier probabilities were finite, and all three 5,000-row
+runs returned the same identifier hash. All ten validation checks pass. The eight
+queries took 17.719464 seconds in total.</p>
+<p>The classifier was run only to verify that each retrieved table is usable. The
+number passing the classifier is not used to choose the checkpoint size or any
+scientific selection rule.</p>
+<h3 id="provisional-limit">Provisional limit</h3>
+<p>Use 5,000 rows as the provisional maximum for one development checkpoint. It was
+measured successfully three times with identical identifiers and is half the
+largest successful full-column test of 10,000 rows. This is a conservative project
+setting, not a measured Gaia archive failure boundary.</p>
+<p>A follow-up test now validates the limit in three fields with different measured
+row counts and through complete full-column stop-and-resume behavior. The accepted
+cases contain 2,991, 6,497, and 13,010 rows, produce one, two, and four strips, and
+match independent identifier references exactly. The project therefore freezes
+5,000 rows as the per-strip limit for development and pilot runs under the current
+19-column contract. File sizes must still be recorded per checkpoint because null
+patterns and numeric representations can change serialized size. See
+<code>docs/gaia_full_column_multifield_validation.md</code>.</p>
+<h3 id="artifacts-and-reproduction_2">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/gaia_full_selector_retrieval_benchmark_v1.csv</code></li>
+<li><code>data/results/background/gaia_full_selector_retrieval_benchmark_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/benchmark_full_selector_retrieval.py
+</code></pre>
+<!-- preserved_source_end: docs/gaia_full_selector_retrieval_benchmark.md -->
+
+<p><a id="record-gaia_full_column_multifield_validation"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/gaia_full_column_multifield_validation.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/gaia_full_column_multifield_validation.md -->
+<h2 id="multi-field-full-column-gaia-retrieval-validation">Multi-field full-column Gaia retrieval validation</h2>
+<p><strong>Status:</strong> 5,000-row per-strip retrieval limit validated for development and pilot use
+<strong>Date:</strong> 2026-07-18
+<strong>Selector:</strong> <code>point_source_logistic_model_v1</code>
+<strong>Gaia release reference:</strong> <code>2023A&amp;A...674A...1G</code>, DOI
+<code>10.1051/0004-6361/202243940</code></p>
+<h3 id="purpose_1">Purpose</h3>
+<p>This test checks whether the adaptive stop-and-restart workflow works with all 19
+Gaia columns required by the frozen classifier in fields with different measured
+source densities. It uses the previously measured 5,000-row limit for each saved
+sky strip.</p>
+<p>The circles are performance-test regions, not scientific galaxy apertures. NGC
+4698 and ESO 006-G001 use 0.5-degree radii. M60 uses 0.75 degree so the intermediate-
+density case contains enough rows to exercise splitting.</p>
+<h3 id="preserved-failed-test">Preserved failed test</h3>
+<p>The first run used 0.5 degree for all three fields. It measured 2,991 rows for NGC
+4698, 3,098 for M60, and 13,010 for ESO 006-G001. Only ESO 006-G001 required
+splitting, so the predeclared requirement that at least two fields exercise restart
+behavior failed. All identity and column checks passed, but that run was not
+accepted.</p>
+<p>The requirement was not weakened. The M60 performance-test radius was expanded to
+0.75 degree, while NGC 4698 was retained as the below-limit case and ESO 006-G001
+as the higher-density case. This geometry change affects only retrieval validation
+and cannot define a scientific search radius.</p>
+<h3 id="accepted-measurements">Accepted measurements</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: right;">Test radius (degrees)</th>
+<th style="text-align: right;">Gaia rows</th>
+<th style="text-align: right;">Final strips</th>
+<th style="text-align: right;">Largest strip</th>
+<th style="text-align: right;">Saved CSV bytes</th>
+<th style="text-align: right;">Largest saved strip (bytes)</th>
+<th style="text-align: right;">Elapsed seconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 4698</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">2,991</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2,991</td>
+<td style="text-align: right;">581,964</td>
+<td style="text-align: right;">581,964</td>
+<td style="text-align: right;">5.556552</td>
+</tr>
+<tr>
+<td>M60</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">6,497</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3,326</td>
+<td style="text-align: right;">1,255,861</td>
+<td style="text-align: right;">639,072</td>
+<td style="text-align: right;">8.158222</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">13,010</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4,123</td>
+<td style="text-align: right;">2,723,286</td>
+<td style="text-align: right;">859,723</td>
+<td style="text-align: right;">15.873899</td>
+</tr>
+</tbody>
+</table>
+<p>The fields contain 22,498 Gaia rows in total and produce seven final strips. Every
+strip remains below 5,000 rows. The two split fields deliberately stop after their
+first saved strip; fresh retrieval instances verify and skip that strip, download
+only unfinished strips, and complete successfully. NGC 4698 completes as one strip
+without unnecessary splitting.</p>
+<p>For every field, the combined full-column rows are unique and their source-
+identifier hash exactly matches an independent complete-circle identifier query.
+All required classifier columns are present and all classifier probabilities are
+finite. The selected-source counts are validation outputs only and are not used for
+an astrophysical decision. All 13 checks pass in 29.589341 seconds.</p>
+<h3 id="decision">Decision</h3>
+<p>Freeze 5,000 rows as the maximum for one saved Gaia retrieval strip in development
+and pilot runs using the current 19-column contract. This value is supported by:</p>
+<ul>
+<li>three repeated 5,000-row full-column benchmarks with identical identifiers;</li>
+<li>a successful 10,000-row full-column stress test;</li>
+<li>one unsplit and two split multifield cases;</li>
+<li>controlled full-column stop-and-restart behavior; and</li>
+<li>exact independent source-identifier agreement in all three fields.</li>
+</ul>
+<p>This limit controls one archive response, not the total size of a galaxy run.
+Multi-degree hosts may require many strips. Every strip must still record its actual
+row count, file bytes, query hash, file hash, and completion state. Changing the
+Gaia column contract, archive, or data release requires a new benchmark.</p>
+<h3 id="artifacts-and-reproduction_3">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/gaia_full_column_multifield_retrieval_v1.csv</code></li>
+<li><code>data/results/background/gaia_full_column_multifield_plan_v1.csv</code></li>
+<li><code>data/results/background/gaia_full_column_multifield_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_full_column_multifield_retrieval.py
+</code></pre>
+<!-- preserved_source_end: docs/gaia_full_column_multifield_validation.md -->
+
+<p><a id="record-radial_ring_area_accounting"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/radial_ring_area_accounting.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/radial_ring_area_accounting.md -->
+<h2 id="radial-ring-area-accounting">Radial-ring area accounting</h2>
+<p><strong>Status:</strong> Spherical area component validated; Gaia no-mask policy fixed
+<strong>Date:</strong> 2026-07-18
+<strong>Issues:</strong> BT-005, BT-010, BT-021</p>
+<h3 id="plain-language-definitions">Plain-language definitions</h3>
+<p>Each radial ring now carries five separate areas:</p>
+<ul>
+<li><strong>Requested area:</strong> the entire ring that the measurement asked for.</li>
+<li><strong>Successfully queried area:</strong> the part covered by retrieval strips whose saved
+  files passed all completion and integrity checks.</li>
+<li><strong>Missing area:</strong> the requested part without a verified completed strip.</li>
+<li><strong>Masked area:</strong> the union of explicitly unusable regions inside the successfully
+  queried area. Overlapping masks are counted once, not once per mask.</li>
+<li><strong>Usable area:</strong> successfully queried area minus masked area. This is the
+  denominator for a source density.</li>
+</ul>
+<p>An interrupted query therefore produces a positive missing area rather than a
+false zero source density. A complete query can still have less usable area than
+requested area if an authoritative mask removes part of the sky.</p>
+<p>The central galaxy exclusion is a different concept. It marks inner rings as
+diagnostic-only for the scientific analysis; it does not pretend that those rings
+were missing from the archive or geometrically unusable.</p>
+<p>For the Gaia measurement, masked area is always zero. Bright-star, dust, and
+ancillary-imaging masks are not applied. Therefore Gaia usable area equals
+successfully queried area. Crowding, observation counts, or dust may still be
+recorded as diagnostics, but they do not remove Gaia sky area.</p>
+<h3 id="spherical-calculation">Spherical calculation</h3>
+<p>The requested area is the analytic area between two circles on a sphere. Retrieval
+strips and circular masks are intersected with each ring on the sphere, including
+right-ascension wraparound and polar geometry. The intersections are integrated to
+an internal absolute tolerance of <code>1e-13</code> steradian and validated to <code>1e-8</code> square
+degree. Here, "exact area" means spherical rather than a flat-sky approximation,
+with the numerical integration error recorded in every row.</p>
+<p>Each mask must have an identifier, center, angular radius, reason, and provenance.
+The area code forms the union of all masks before subtraction, so overlapping masks
+cannot remove the same sky twice.</p>
+<h3 id="bounded-validation">Bounded validation</h3>
+<p>The measured retrieval plans for NGC 4698, M60, and ESO 006-G001 were divided into
+four test rings each. A controlled M60 case retains only one of its two completed
+strips. These are fractions of the archive performance-test circles, not physical-
+kiloparsec rings or approved scientific apertures.</p>
+<p>For all three completed retrievals, the successfully queried area reproduces the
+requested spherical area. The largest ring-level difference is
+<code>1.873002e-12</code> square degree, and the four rings for each host sum to the analytic
+circle area within <code>1.110223e-16</code> square degree.</p>
+<p>Under the Gaia policy, the complete M60 fixture has <code>1.767121</code> square degrees both
+successfully queried and usable. The controlled one-of-two-strip state has
+<code>0.884062</code> square degree both successfully queried and usable, while <code>0.883059</code>
+square degree remains explicitly missing.</p>
+<p>Two overlapping circular masks were then placed in the M60 fixture. They are
+explicitly labeled <code>synthetic_fixture_not_survey_coverage</code>; they are not real Gaia,
+bright-star, dust, or imaging masks. The complete fixture contains
+<code>1.767121</code> square degrees of requested and successfully queried area. The union of
+the two masks removes <code>0.039362</code> square degree, leaving <code>1.727758</code> square degrees
+usable. A controlled partial state with only one of two retrieval strips complete
+records <code>0.884062</code> square degree queried and <code>0.883059</code> square degree missing.</p>
+<p>All 18 predeclared checks pass in <code>0.216274</code> seconds. They cover completed and
+partial retrievals, area identities, overlapping-mask union, non-negative areas,
+polar geometry, central-ring disposition, retrieval-plan counts, the Gaia no-mask
+policy, and the synthetic-mask provenance warning. The output contains 24 ring
+records.</p>
+<h3 id="boundary-between-gaia-and-ancillary-imaging">Boundary between Gaia and ancillary imaging</h3>
+<p>Real Gaia host densities must not use the synthetic fixture masks. The generic mask
+intersection remains available only as tested geometry for a future data product
+that explicitly requires masks. Any later ancillary-imaging measurement has its own
+coverage and quality policy; it does not change the Gaia denominator.</p>
+<h3 id="artifacts-and-reproduction_4">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/radial_ring_area_accounting_validation_v1.csv</code></li>
+<li><code>data/results/background/radial_ring_area_accounting_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_radial_ring_area_accounting.py
+</code></pre>
+<!-- preserved_source_end: docs/radial_ring_area_accounting.md -->
+
+<p><a id="record-host_run_records"></a></p>
+<blockquote>
+<p>Dated source record: <code>docs/host_run_records.md</code>. Superseded instructions are history, not current policy.</p>
+</blockquote>
+<!-- preserved_source_start: docs/host_run_records.md -->
+<h2 id="per-galaxy-analysis-receipts">Per-galaxy analysis receipts</h2>
+<p><strong>Status:</strong> Receipt format and non-overwrite behavior validated
+<strong>Date:</strong> 2026-07-18
+<strong>Issue:</strong> BT-010</p>
+<h3 id="what-one-receipt-is">What one receipt is</h3>
+<p>A receipt is one JSON file describing what happened when one galaxy was processed
+under one declared analysis configuration. It records:</p>
+<ul>
+<li>the galaxy name and sky position;</li>
+<li>whether its work completed, stopped partway, or failed;</li>
+<li>which retrieval strips have verified saved files;</li>
+<li>the expected and retrieved Gaia row counts;</li>
+<li>the Gaia source-identifier checksums;</li>
+<li>the radial-ring requested, queried, missing, and usable areas;</li>
+<li>any failure in ordinary English; and</li>
+<li>the configuration checksum and time inherited from the source retrieval.</li>
+</ul>
+<p>A checksum is a short digital fingerprint of content. If the content changes, its
+checksum changes. The receipt index stores each receipt file's checksum so later
+validation can detect an accidental edit.</p>
+<h3 id="why-receipts-are-never-overwritten">Why receipts are never overwritten</h3>
+<p>The run identifier is calculated from the declared configuration and exact input
+file checksums. The per-galaxy identifier combines that run identifier with the
+galaxy identity. Therefore rerunning identical inputs finds the same receipt, while
+changed inputs or settings produce a different run identifier and a new receipt
+path.</p>
+<p>Writing is atomic: other code sees either no receipt or the complete receipt, never
+a half-written file. If the destination already contains identical content, it is
+reused. If it contains different content, the write fails rather than replacing the
+earlier result. The validation also exercises concurrent-safe file creation.</p>
+<h3 id="bounded-results">Bounded results</h3>
+<p>The three completed performance fields share run identifier
+<code>run_be3271012ea314b4a512</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Galaxy</th>
+<th>Status</th>
+<th style="text-align: right;">Completed strips</th>
+<th style="text-align: right;">Gaia rows</th>
+<th style="text-align: right;">Requested area (square degrees)</th>
+<th style="text-align: right;">Missing area (square degrees)</th>
+<th style="text-align: right;">Usable area (square degrees)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NGC 4698</td>
+<td>complete</td>
+<td style="text-align: right;">1 of 1</td>
+<td style="text-align: right;">2,991</td>
+<td style="text-align: right;">0.785393</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">0.785393</td>
+</tr>
+<tr>
+<td>M60</td>
+<td>complete</td>
+<td style="text-align: right;">2 of 2</td>
+<td style="text-align: right;">6,497</td>
+<td style="text-align: right;">1.767121</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">1.767121</td>
+</tr>
+<tr>
+<td>ESO 006-G001</td>
+<td>complete</td>
+<td style="text-align: right;">4 of 4</td>
+<td style="text-align: right;">13,010</td>
+<td style="text-align: right;">0.785393</td>
+<td style="text-align: right;">0.000000</td>
+<td style="text-align: right;">0.785393</td>
+</tr>
+</tbody>
+</table>
+<p>The tiny stored missing values in completed rows are below the declared numerical
+area tolerance and display as zero in this summary.</p>
+<p>A separate controlled M60 receipt uses run identifier
+<code>run_0462fc307c338f11120f</code>. It represents one of two strips complete, records
+<code>0.884062</code> square degree as queried and usable, preserves <code>0.883059</code> square degree
+as missing, and states: "Only one of two required sky strips has a verified file."
+It is a failure-handling fixture, not a scientific M60 result.</p>
+<p>All 18 checks pass in <code>0.014978</code> seconds. The checks cover stable identifiers,
+identical rerun reuse, rejection of changed content, absence of temporary files,
+receipt checksums, embedded configuration and query fingerprints, Gaia area
+identities, complete-run source counts and identifiers, plain-language failure
+recording, and separation of complete and controlled partial runs.</p>
+<h3 id="current-boundary">Current boundary</h3>
+<p>These receipts describe the existing archive performance circles and four
+fractional test rings. They are not real physical-kiloparsec search receipts. The
+same format can be used for real hosts after the exploratory physical ring request
+and central scientific exclusion are declared.</p>
+<h3 id="artifacts-and-reproduction_5">Artifacts and reproduction</h3>
+<ul>
+<li><code>data/results/background/host_run_records_v1/</code></li>
+<li><code>data/results/background/host_run_record_index_v1.csv</code></li>
+<li><code>data/results/background/host_run_record_validation_v1.json</code></li>
+</ul>
+<pre><code class="language-bash">uv run python scripts/phase3_background/validate_host_run_records.py
+</code></pre>
+<!-- preserved_source_end: docs/host_run_records.md --></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#gaia-retrieval-radial-areas-and-run-records">Gaia retrieval, radial areas, and run records</a><ul>
+<li><a href="#current-reading-guidance">Current reading guidance</a></li>
+<li><a href="#dated-evidence">Dated evidence</a></li>
+<li><a href="#gaia-large-region-query-partition-validation">Gaia large-region query partition validation</a><ul>
+<li><a href="#why-the-query-is-divided">Why the query is divided</a></li>
+<li><a href="#bounded-live-test">Bounded live test</a></li>
+<li><a href="#real-retrieval-contract">Real retrieval contract</a></li>
+<li><a href="#artifacts-and-reproduction">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#adaptive-and-restartable-gaia-retrieval-validation">Adaptive and restartable Gaia retrieval validation</a><ul>
+<li><a href="#plain-language-workflow">Plain-language workflow</a></li>
+<li><a href="#bounded-live-validation">Bounded live validation</a></li>
+<li><a href="#production-contract-and-remaining-work">Production contract and remaining work</a></li>
+<li><a href="#artifacts-and-reproduction_1">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#full-selector-column-gaia-retrieval-benchmark">Full-selector-column Gaia retrieval benchmark</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#measurements">Measurements</a></li>
+<li><a href="#provisional-limit">Provisional limit</a></li>
+<li><a href="#artifacts-and-reproduction_2">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#multi-field-full-column-gaia-retrieval-validation">Multi-field full-column Gaia retrieval validation</a><ul>
+<li><a href="#purpose_1">Purpose</a></li>
+<li><a href="#preserved-failed-test">Preserved failed test</a></li>
+<li><a href="#accepted-measurements">Accepted measurements</a></li>
+<li><a href="#decision">Decision</a></li>
+<li><a href="#artifacts-and-reproduction_3">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#radial-ring-area-accounting">Radial-ring area accounting</a><ul>
+<li><a href="#plain-language-definitions">Plain-language definitions</a></li>
+<li><a href="#spherical-calculation">Spherical calculation</a></li>
+<li><a href="#bounded-validation">Bounded validation</a></li>
+<li><a href="#boundary-between-gaia-and-ancillary-imaging">Boundary between Gaia and ancillary imaging</a></li>
+<li><a href="#artifacts-and-reproduction_4">Artifacts and reproduction</a></li>
+</ul>
+</li>
+<li><a href="#per-galaxy-analysis-receipts">Per-galaxy analysis receipts</a><ul>
+<li><a href="#what-one-receipt-is">What one receipt is</a></li>
+<li><a href="#why-receipts-are-never-overwritten">Why receipts are never overwritten</a></li>
+<li><a href="#bounded-results">Bounded results</a></li>
+<li><a href="#current-boundary">Current boundary</a></li>
+<li><a href="#artifacts-and-reproduction_5">Artifacts and reproduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="background_geometry.html">Background geometry and environment development</a></li><li><a href="background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="off_target_controls.html">Off-target control experiments</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="documentation_audit.html">Documentation consolidation audit</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

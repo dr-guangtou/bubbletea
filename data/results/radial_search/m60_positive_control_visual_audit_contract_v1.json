@@ -1,0 +1,75 @@
+{
+  "audit_version": "m60_positive_control_visual_audit_v1",
+  "generated_at_utc": "2026-08-12T14:29:13.050414+00:00",
+  "status": "frozen_before_audit_image_retrieval",
+  "plain_language_scope": "Randomly select 100 previously unidentified selector-retained sources from each of four physical-radius zones. Known literature objects and the deliberately promising shortlist remain separate.",
+  "selection_method": "Within each radial zone, sort the SHA-256 hash of the audit version and Gaia source identifier, then select the first 100 rows.",
+  "zone_design": [
+    {
+      "zone_name": "central_diagnostic_0_50_kpc",
+      "lower_radius_kpc": 0.0,
+      "upper_radius_kpc": 50.0,
+      "eligible_population_count": 151,
+      "sample_count": 100,
+      "inclusion_probability": 0.6622516556291391,
+      "design_weight": 1.51
+    },
+    {
+      "zone_name": "near_host_50_150_kpc",
+      "lower_radius_kpc": 50.0,
+      "upper_radius_kpc": 150.0,
+      "eligible_population_count": 372,
+      "sample_count": 100,
+      "inclusion_probability": 0.26881720430107525,
+      "design_weight": 3.72
+    },
+    {
+      "zone_name": "intermediate_150_300_kpc",
+      "lower_radius_kpc": 150.0,
+      "upper_radius_kpc": 300.0,
+      "eligible_population_count": 982,
+      "sample_count": 100,
+      "inclusion_probability": 0.10183299389002037,
+      "design_weight": 9.82
+    },
+    {
+      "zone_name": "far_300_600_kpc",
+      "lower_radius_kpc": 300.0,
+      "upper_radius_kpc": 600.0,
+      "eligible_population_count": 3404,
+      "sample_count": 100,
+      "inclusion_probability": 0.02937720329024677,
+      "design_weight": 34.04
+    }
+  ],
+  "known_exact_identifier_object_count_kept_separate": 11,
+  "eligible_unidentified_passing_population_count": 4909,
+  "sample_count": 400,
+  "weighting_rule": "For population summaries, multiply each reviewed row by its audit design weight; do not treat the four zones as equally common.",
+  "sample_output": {
+    "path": "data/results/radial_search/m60_positive_control_visual_audit_sample_v1.csv",
+    "sha256": "d101d9b0a0cf079ba93044b30cd4d70cb732e19a60c3ee175decae375ac30447"
+  },
+  "inputs": {
+    "run_manifest_sha256": "397f68c6b9932d79d15e22b5a10b9e271ef85612497d050f80f8bc136da3b781",
+    "known_recovery_sha256": "5b09428c3425f32b3e84517f9acc7359ed04b91755c14ea425eec9ff6dd14cdb",
+    "review_rules_sha256": "cc3d0c31dad96f940ddc9e5bb9d9d8bf99838d2945fa993daaf2692c9414e3db",
+    "external_selector_passing_review_sha256": "5edd997f19c20559f7a366b6113b7f8a76e17ce160c30dec1fc561de320712e7"
+  },
+  "check_count": 12,
+  "passed_count": 12,
+  "checks": {
+    "complete_run_checks_passed": true,
+    "review_rules_are_frozen": true,
+    "passing_population_matches_run": true,
+    "eleven_exact_identifier_literature_objects_are_separate": true,
+    "known_identifier_objects_are_excluded_from_audit": true,
+    "four_hundred_unique_sources_are_sampled": true,
+    "one_hundred_sources_are_sampled_per_zone": true,
+    "all_eligible_sources_have_one_zone": true,
+    "every_sampled_source_has_equal_chance_within_zone": true,
+    "visual_flags_remain_unreviewed": true,
+    "no_image_was_requested_or_opened": true,
+    "candidate_shortlist_is_not_part_of_audit": true
+  }
+}

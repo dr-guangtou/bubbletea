@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Phase I: Literature UCDs — Task Tracking · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Plans and requirements</span><a href="../../plans/phase_1_literature_ucds.md">Markdown source ↗</a></div><h1 id="phase-i-literature-ucds-task-tracking">Phase I: Literature UCDs — Task Tracking</h1>
+<p><strong>Goal:</strong> Establish the known UCD population as a reference dataset, understand their
+Gaia DR3 properties, and devise distance-dependent selection criteria.</p>
+<p><strong>Status:</strong> In progress</p>
+<p><strong>Checkpoint (2026-10-12):</strong> Canonical-reference stabilization and selector-v1
+integration are complete. The implemented 724-object visual-review workbench is
+awaiting human assessment; final selection-sensitivity work remains open. See
+<a href="../current_status.html">current status</a>, <a href="ucd_visual_review_tool.html">review specification</a>,
+and the <a href="../PLAN.html">roadmap</a>.</p>
+<p>Sections completed in April-May 2026 record the historical exploratory pipeline.
+Canonical counts and scientific validation status are governed by
+<code>docs/plans/scientific_validation.md</code> and the generated status artifact.</p>
+<hr>
+<h2 id="i1-infrastructure-setup">I.1 Infrastructure Setup</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Create directory structure (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write pyproject.toml with dependencies (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Configure ruff in pyproject.toml (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Create .pre-commit-config.yaml (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write scripts/config.py (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Update .gitignore (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write README.md (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write CLAUDE.md and AGENTS.md (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write docs/PLAN.md (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write this task tracking file (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Migrate LESSON.md to docs/lessons/LESSON.md (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Create first journal entry (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write scripts/utils/plotting.py (matplotlib defaults + save_figure helper) (2026-04-15)</li>
+</ul>
+<h2 id="i2-literature-database-migration-and-verification">I.2 Literature Database Migration and Verification</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Copy ucd_collection.db to data/literature/database/ (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Copy by_source CSVs to data/literature/catalogs/by_source/ (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Copy sources JSON files to data/literature/sources/ (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Copy galaxy_sample_ranked.csv to data/galaxy_sample/ (2026-03-27)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify historical database checkpoint (1,542 rows, 6 sources) (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Validate current v2 database (5,049 records, 4,359 canonicals) (2026-07-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write data/README.md documenting provenance of each file (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Add provenance README.md to reference/voggel2020/ (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Add provenance README.md to reference/wang2023/ (2026-04-15)</li>
+</ul>
+<h2 id="i3-rewrite-core-database-scripts">I.3 Rewrite Core Database Scripts</h2>
+<p>Source: <code>ucd_project/scripts/ucd_database/</code></p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/ucd_database.py</code> — schema + utilities (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/fetch_vizier_catalog.py</code> — VizieR ingestion (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Verify: run ingestion against existing DB, confirm same counts</li>
+</ul>
+<h2 id="i4-gaia-cross-match">I.4 Gaia Cross-match</h2>
+<p>Source: <code>ucd_project/scripts/legacy_survey/xmatch_gaia_final.py</code></p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/xmatch_gaia.py</code> — Gaia DR3 cross-match (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Synchronize all 963 canonical Gaia associations (2026-07-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Preserve the 632-row historical export and generate a complete 4,359-target
+  canonical audit (2026-07-15)</li>
+</ul>
+<h2 id="i5-legacy-survey-cross-match">I.5 Legacy Survey Cross-match</h2>
+<p>Source: <code>ucd_project/scripts/legacy_survey/xmatch_legacy_survey.py</code></p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/xmatch_legacy_survey.py</code> — NOIRLab Data Lab TAP (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Run spherical cross-match for all 4,359 canonical targets (2026-07-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Export 3,723 matches and preserve 636 no-match audit states (2026-07-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Preserve the 917-row historical export by manifest digest (2026-07-15)</li>
+</ul>
+<h2 id="i6-gaia-property-analysis-and-figures">I.6 Gaia Property Analysis and Figures</h2>
+<p>Source: <code>ucd_project/scripts/analysis/analyze_ucd_properties.py</code>, <code>color_color_analysis.py</code></p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/analyze_gaia_properties.py</code> (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: AEN distribution vs host galaxy distance (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: UCD property distributions (AEN, BP-RP, G mag, RUWE) (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: Color-magnitude diagram (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: classprob_galaxy analysis (2026-04-15)</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Figure: Background vs UCD property comparison</li>
+</ul>
+<h2 id="i7-distance-dependent-selection-criteria">I.7 Distance-dependent Selection Criteria</h2>
+<p>Source: <code>ucd_project/scripts/analysis/distance_analysis.py</code></p>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> <code>scripts/phase1_literature/distance_selection.py</code> (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Study AEN threshold as function of distance (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Study magnitude limits as function of distance (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Derive parametric selection criteria (Model C - Probabilistic) (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Document in docs/plans/selection_criteria.md (Pending creation of separate file, summary in journal)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: Selection criteria vs distance (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Figure: Completeness vs distance (2026-05-11)</li>
+</ul>
+<h2 id="i8-phase-i-summary">I.8 Phase I Summary</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write journal entry summarizing Phase I findings (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Update docs/PLAN.md with Phase I results (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Update reference/summary.md if new papers were added (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Mark Phase I complete (2026-05-11)</li>
+</ul>
+<hr>
+<h2 id="scripts-migration-reference">Scripts Migration Reference</h2>
+<table>
+<thead>
+<tr>
+<th>New script</th>
+<th>Source in ucd_project/</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ucd_database.py</td>
+<td>scripts/ucd_database/ucd_database.py</td>
+<td>Schema + utilities</td>
+</tr>
+<tr>
+<td>fetch_vizier_catalog.py</td>
+<td>scripts/ucd_database/ingest_improved.py</td>
+<td>VizieR ingestion</td>
+</tr>
+<tr>
+<td>xmatch_gaia.py</td>
+<td>scripts/legacy_survey/xmatch_gaia_final.py</td>
+<td>Gaia cross-match</td>
+</tr>
+<tr>
+<td>xmatch_legacy_survey.py</td>
+<td>scripts/legacy_survey/xmatch_legacy_survey.py</td>
+<td>Legacy Survey cross-match</td>
+</tr>
+<tr>
+<td>analyze_gaia_properties.py</td>
+<td>scripts/analysis/analyze_ucd_properties.py</td>
+<td>Property analysis</td>
+</tr>
+<tr>
+<td>distance_selection.py</td>
+<td>scripts/analysis/distance_analysis.py</td>
+<td>Selection criteria</td>
+</tr>
+</tbody>
+</table></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#phase-i-literature-ucds-task-tracking">Phase I: Literature UCDs — Task Tracking</a><ul>
+<li><a href="#i1-infrastructure-setup">I.1 Infrastructure Setup</a></li>
+<li><a href="#i2-literature-database-migration-and-verification">I.2 Literature Database Migration and Verification</a></li>
+<li><a href="#i3-rewrite-core-database-scripts">I.3 Rewrite Core Database Scripts</a></li>
+<li><a href="#i4-gaia-cross-match">I.4 Gaia Cross-match</a></li>
+<li><a href="#i5-legacy-survey-cross-match">I.5 Legacy Survey Cross-match</a></li>
+<li><a href="#i6-gaia-property-analysis-and-figures">I.6 Gaia Property Analysis and Figures</a></li>
+<li><a href="#i7-distance-dependent-selection-criteria">I.7 Distance-dependent Selection Criteria</a></li>
+<li><a href="#i8-phase-i-summary">I.8 Phase I Summary</a></li>
+<li><a href="#scripts-migration-reference">Scripts Migration Reference</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="documentation_site.html">Documentation organization and HTML portal</a></li><li><a href="phase_2_galaxy_sample.html">Phase II: Target Galaxy Sample — Task Tracking</a></li><li><a href="phase_3_background.html">Phase III: Background Characterization — Task Tracking</a></li><li><a href="phase_4_pilot_search.html">Phase IV: Pilot Search — Task Tracking</a></li><li><a href="scientific_validation.html">Initial Scientific Validation Plan</a></li><li><a href="ucd_visual_review_tool.html">UCD Reference Review Workbench</a></li></ul></details><details><summary>Linked from (1)</summary><ul><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

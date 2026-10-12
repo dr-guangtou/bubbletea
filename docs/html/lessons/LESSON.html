@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Lessons Learned - UCD Search Project · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Operating guides</span><a href="../../lessons/LESSON.md">Markdown source ↗</a></div><h1 id="lessons-learned-ucd-search-project">Lessons Learned - UCD Search Project</h1>
+<h2 id="2026-07-14-parse-cds-fixed-width-tables-from-their-byte-specification">2026-07-14: Parse CDS fixed-width tables from their byte specification</h2>
+<p><strong>Lesson:</strong> Whitespace splitting is unsafe for CDS fixed-width tables because
+optional blank fields shift all later values without changing the apparent row.</p>
+<p><strong>Context:</strong> The multi-position Gaia audit initially split Fahrion table B1 rows
+and encountered a shifted reference-code value before producing review results.</p>
+<p><strong>Recommendation:</strong> Parse columns using the published one-based byte ranges in
+the VizieR <code>ReadMe</code>, and validate expected types before scientific comparison.</p>
+<h2 id="2026-07-14-validate-the-documented-direct-script-command">2026-07-14: Validate the documented direct script command</h2>
+<p><strong>Lesson:</strong> A script that imports the repository's <code>scripts</code> namespace can pass
+static checks but fail when invoked by its documented file path because Python
+places the script directory, rather than the repository root, on <code>sys.path</code>.</p>
+<p><strong>Context:</strong> The one-target Gaia image-ambiguity audit failed before retrieval
+when run with the required <code>uv run python scripts/phase1_literature/...</code> command.</p>
+<p><strong>Recommendation:</strong> Exercise the exact documented command during small-scale
+validation and add a minimal repository-root bootstrap to standalone scripts that
+use absolute project imports.</p>
+<p><strong>Date:</strong> 2026-03-27
+<strong>Project Duration:</strong> ~11 days (Mar 16 - Mar 27, 2026)</p>
+<hr>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This document captures key lessons learned during the UCD search project exploration phase. These insights should guide future work and prevent repeating mistakes.</p>
+<hr>
+<h2 id="1-data-access-infrastructure">1. Data Access &amp; Infrastructure</h2>
+<h3 id="11-gaia-tap-queries">1.1 Gaia TAP Queries</h3>
+<p><strong>Lesson:</strong> Gaia archive has strict query limits requiring careful pagination.</p>
+<ul>
+<li><strong>Issue:</strong> <code>OFFSET</code> pagination is NOT supported by Gaia TAP service</li>
+<li><strong>Solution:</strong> Use <code>TOP</code> with iterative queries, or accept row limits and design queries to be selective</li>
+<li><strong>Best Practice:</strong> Design queries to return &lt; 50,000 rows per query; use ADQL <code>TOP</code> clause</li>
+</ul>
+<p><strong>Lesson:</strong> <code>astroquery.gaia</code> requires proper user authentication for large queries.</p>
+<ul>
+<li><strong>Issue:</strong> Anonymous queries have stricter rate limits</li>
+<li><strong>Solution:</strong> Configure <code>Gaia.login(user=..., password=...)</code> for production queries</li>
+<li><strong>Best Practice:</strong> Use asynchronous queries (<code>upload_table</code>, <code>launch_job</code>) for large requests</li>
+</ul>
+<h3 id="12-legacy-survey-cross-match">1.2 Legacy Survey Cross-Match</h3>
+<p><strong>Lesson:</strong> NOIRLab Data Lab provides the best access to Legacy Survey DR10.</p>
+<ul>
+<li><strong>Issue:</strong> Legacy Survey not available on VizieR for cross-matching</li>
+<li><strong>Solution:</strong> Use Data Lab TAP service with <code>q3c_join</code> for spatial matching</li>
+<li><strong>Best Practice:</strong> Start with Data Lab for any Legacy Survey work</li>
+</ul>
+<p><strong>Lesson:</strong> Multiple cross-match methods were explored before finding optimal one.</p>
+<ul>
+<li><strong>Explored:</strong> CDS XMatch, astroquery.vizier, NOIRLab Data Lab, direct HTTP requests</li>
+<li><strong>Final Choice:</strong> Data Lab TAP with box search - best balance of speed and reliability</li>
+<li><strong>Recommendation:</strong> Start with Data Lab for any Legacy Survey work</li>
+</ul>
+<h3 id="13-vizier-catalog-ingestion">1.3 VizieR Catalog Ingestion</h3>
+<p><strong>Lesson:</strong> VizieR table formats vary significantly across catalogs.</p>
+<ul>
+<li><strong>Issue:</strong> Column names, units, and data types are not standardized</li>
+<li><strong>Solution:</strong> Build flexible parsers that handle format conventions</li>
+<li><strong>Best Practice:</strong> Always verify column names from the VizieR ReadMe before parsing</li>
+</ul>
+<p><strong>Lesson:</strong> VizieR download limits require chunking for large catalogs.</p>
+<ul>
+<li><strong>Solution:</strong> Use <code>ROW_LIMIT</code> parameter or download via FTP for large catalogs</li>
+<li><strong>Best Practice:</strong> Check catalog size before downloading; use async methods</li>
+</ul>
+<hr>
+<h2 id="2-selection-criteria-development">2. Selection Criteria Development</h2>
+<h3 id="21-aen-as-primary-ucd-indicator">2.1 AEN as Primary UCD Indicator</h3>
+<p><strong>Key Finding:</strong> Astrometric Excess Noise (AEN) is the most reliable single indicator for UCD identification.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>UCDs</th>
+<th>Background</th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median AEN</td>
+<td>3.95 mas</td>
+<td>1.73 mas</td>
+<td>2.3x</td>
+</tr>
+<tr>
+<td>25th %ile</td>
+<td>3.42 mas</td>
+<td>1.00 mas</td>
+<td>3.4x</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lesson:</strong> Color (BP-RP) does NOT distinguish UCDs from background.</p>
+<ul>
+<li>Both UCDs and background sources have BP-RP ~ 1.3 (old stellar populations)</li>
+<li>Use AEN and morphological classification instead</li>
+</ul>
+<p><strong>Recommendation:</strong> Consider raising AEN threshold from 0.5 mas to 2.0-3.0 mas for improved S/N.</p>
+<h3 id="22-proper-motion-filtering">2.2 Proper Motion Filtering</h3>
+<p><strong>Lesson:</strong> Proper motion selection must balance completeness vs. purity.</p>
+<ul>
+<li><strong>Original:</strong> Hard cut at PM &lt; 2.92 mas/yr</li>
+<li><strong>Issue:</strong> Some UCDs have uncertain PM measurements</li>
+<li><strong>Better:</strong> Accept if PM is NULL OR PM_S/N ≤ 3.0 OR PM &lt; 2.92 mas/yr</li>
+</ul>
+<p><strong>Result:</strong> Prioritize completeness over purity for initial candidate selection.</p>
+<h3 id="23-classprob_galaxy-reliability">2.3 classprob_galaxy Reliability</h3>
+<p><strong>Lesson:</strong> Gaia's <code>classprob_dsc_combi_galaxy</code> is statistically useful but unreliable for individual objects.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>UCDs</th>
+<th>Background</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median</td>
+<td>0.95</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>&gt; 0.5 fraction</td>
+<td>72%</td>
+<td>12%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> Use as soft prior, NOT as hard cut.</p>
+<hr>
+<h2 id="3-background-characterization">3. Background Characterization</h2>
+<h3 id="31-galactic-latitude-dependence">3.1 Galactic Latitude Dependence</h3>
+<p><strong>Critical Finding:</strong> Background density varies by 10x with galactic latitude.</p>
+<table>
+<thead>
+<tr>
+<th>|b| Range</th>
+<th>Density (/deg²)</th>
+<th>Std Dev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20-30°</td>
+<td>~600</td>
+<td>300</td>
+</tr>
+<tr>
+<td>30-40°</td>
+<td>~230</td>
+<td>94</td>
+</tr>
+<tr>
+<td>40-50°</td>
+<td>~90</td>
+<td>29</td>
+</tr>
+<tr>
+<td>50-60°</td>
+<td>~85</td>
+<td>10</td>
+</tr>
+<tr>
+<td>60-70°</td>
+<td>~70</td>
+<td>11</td>
+</tr>
+<tr>
+<td>70-90°</td>
+<td>~60</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lesson:</strong> Local background estimation is ESSENTIAL for each target galaxy.</p>
+<ul>
+<li>Cannot use single global background estimate</li>
+<li>Must estimate from outer annulus around each galaxy (r &gt; 150 kpc)</li>
+</ul>
+<h3 id="32-nature-of-background-sources">3.2 Nature of Background Sources</h3>
+<p><strong>Analysis:</strong> Sources passing UCD selection are primarily:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Fraction</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary stars</td>
+<td>50-60%</td>
+<td>High AEN from orbital motion</td>
+</tr>
+<tr>
+<td>Unresolved galaxies</td>
+<td>20-30%</td>
+<td>Extended appearance</td>
+</tr>
+<tr>
+<td>Poorly-fit stars</td>
+<td>10-20%</td>
+<td>Near detection limits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lesson:</strong> Background contamination is unavoidable; focus on signal excess, not purity.</p>
+<hr>
+<h2 id="4-radial-search-methodology">4. Radial Search Methodology</h2>
+<h3 id="41-validated-approach">4.1 Validated Approach</h3>
+<ol>
+<li>Divide search area into concentric annuli (in kpc, not degrees)</li>
+<li>Count candidates in each bin, normalize by area</li>
+<li>Estimate background from outer annulus (r = 150-300 kpc)</li>
+<li>Calculate excess and significance in inner bins</li>
+</ol>
+<p><strong>Key Metric:</strong> Contrast = Inner density / Background density</p>
+<table>
+<thead>
+<tr>
+<th>Contrast</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 10x</td>
+<td>High-confidence detection</td>
+</tr>
+<tr>
+<td>2-10x</td>
+<td>Detection</td>
+</tr>
+<tr>
+<td>&lt; 2x</td>
+<td>Non-detection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-angular-scale">4.2 Angular Scale</h3>
+<p><strong>Lesson:</strong> Always convert angular to physical scales using galaxy distance.</p>
+<ul>
+<li>Radial bins in kpc, not degrees</li>
+<li>Background annulus: 150-300 kpc</li>
+<li>Maximum search radius: ~300 kpc</li>
+</ul>
+<hr>
+<h2 id="5-project-organization">5. Project Organization</h2>
+<h3 id="51-version-control">5.1 Version Control</h3>
+<p><strong>Problem:</strong> Many intermediate script versions created during exploration.</p>
+<p><strong>Lesson:</strong> Establish naming convention early:</p>
+<ul>
+<li><code>script_v1.py</code>, <code>script_v2.py</code>, <code>script_v3.py</code> for versions</li>
+<li>Mark final clearly (<code>script_final.py</code> or just <code>script.py</code>)</li>
+<li>Archive intermediate versions promptly</li>
+</ul>
+<p><strong>Recommendation:</strong> Create <code>_archive/</code> subdirectory for obsolete scripts.</p>
+<h3 id="52-documentation">5.2 Documentation</h3>
+<p><strong>What worked well:</strong>
+- <code>notes/</code> directory with markdown files per analysis stage
+- <code>manifest.json</code> for database statistics
+- Clear schema documentation</p>
+<p><strong>What could improve:</strong>
+- Session-level logs of decisions made
+- Linking scripts to their outputs</p>
+<h3 id="53-database-design">5.3 Database Design</h3>
+<p><strong>Lesson:</strong> SQLite is sufficient for ~1,500 objects.</p>
+<p><strong>Design Principles:</strong>
+- Separate tables for sources, objects, photometry
+- Full provenance tracking (source_id, date_added, added_by)
+- JSON for flexible metadata</p>
+<hr>
+<h2 id="6-technical-pitfalls">6. Technical Pitfalls</h2>
+<h3 id="61-coordinate-systems">6.1 Coordinate Systems</h3>
+<p><strong>Issue:</strong> Multiple coordinate systems across catalogs.</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J2000 equatorial (RA, Dec)</td>
+<td>Primary storage</td>
+</tr>
+<tr>
+<td>Galactic (l, b)</td>
+<td>Background estimation</td>
+</tr>
+<tr>
+<td>Ecliptic</td>
+<td>Occasionally encountered</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practice:</strong> Store in J2000 equatorial, convert as needed.</p>
+<h3 id="62-magnitude-systems">6.2 Magnitude Systems</h3>
+<p><strong>Issue:</strong> Vega vs. AB magnitudes.</p>
+<table>
+<thead>
+<tr>
+<th>Survey</th>
+<th>System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gaia</td>
+<td>Vega</td>
+</tr>
+<tr>
+<td>Legacy Survey</td>
+<td>AB (flux-based)</td>
+</tr>
+<tr>
+<td>SDSS</td>
+<td>AB</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practice:</strong> Document magnitude system; convert to consistent system for analysis.</p>
+<h3 id="63-cross-match-radius">6.3 Cross-Match Radius</h3>
+<p><strong>Recommendation:</strong> 1 arcsec is conservative but safe.</p>
+<ul>
+<li>Gaia astrometric precision: ~0.1 mas for bright sources</li>
+<li>Legacy Survey astrometry: ~0.1 arcsec</li>
+<li>UCD sizes: 0.1-0.5 arcsec at 15-20 Mpc</li>
+</ul>
+<hr>
+<h2 id="7-collaboration-workflow">7. Collaboration Workflow</h2>
+<h3 id="71-agent-human-interaction">7.1 Agent-Human Interaction</h3>
+<p><strong>What worked:</strong>
+- Clear scientific questions from Dr. Guangtou
+- Iterative refinement of criteria
+- Regular check-ins on direction</p>
+<p><strong>What improved:</strong>
+- Better astronomical context understanding
+- More autonomous exploration within scope</p>
+<h3 id="72-knowledge-persistence">7.2 Knowledge Persistence</h3>
+<p><strong>Issue:</strong> Re-learning project context each session.</p>
+<p><strong>Mitigation:</strong>
+- Comprehensive documentation
+- <code>manifest.json</code> and <code>README.md</code> as quick-start
+- Clear file naming conventions</p>
+<hr>
+<h2 id="8-recommendations">8. Recommendations</h2>
+<h3 id="81-immediate">8.1 Immediate</h3>
+<ol>
+<li>Confirm archival decisions with Dr. Guangtou</li>
+<li>Create <code>_archive/</code> directories</li>
+<li>Update README with current active scripts</li>
+</ol>
+<h3 id="82-technical">8.2 Technical</h3>
+<ol>
+<li>Raise AEN threshold to 2.0-3.0 mas for better S/N</li>
+<li>Implement local background estimation for all galaxies</li>
+<li>Use classprob_galaxy as soft prior only</li>
+</ol>
+<h3 id="83-organizational">8.3 Organizational</h3>
+<ol>
+<li>Archive obsolete scripts promptly</li>
+<li>Maintain session-level notes</li>
+<li>Update manifest.json after major changes</li>
+</ol>
+<h2 id="2026-05-11-morphology-of-nearby-galaxies">2026-05-11: Morphology of Nearby Galaxies</h2>
+<p><strong>Lesson:</strong> Do NOT use Legacy Survey object types (<code>REX</code>, <code>SER</code>, <code>DEV</code>, <code>EXP</code>) to characterize the morphology of nearby large galaxies ($D &lt; 25\text{ Mpc}$).
+<strong>Context:</strong> In the Legacy Survey's <code>tractor</code> processing, these nearby large galaxies are often "shredded" into many individual pieces rather than being represented by a single object. Consequently, the assigned morphological type of any one piece does not reflect the global morphology of the galaxy.
+<strong>Recommendation:</strong> Use primary identifiers (NGC, IC, PGC) to retrieve reliable Hubble classifications and T-types from established databases like NED or HyperLEDA.</p>
+<ul>
+<li>AEN is the primary UCD discriminator</li>
+<li>Background varies 10x with galactic latitude</li>
+<li>Local background estimation is essential</li>
+<li>PM filtering must prioritize completeness</li>
+</ul>
+<p><strong>Technical lessons:</strong>
+- Data Lab is best for Legacy Survey access
+- VizieR formats vary - build flexible parsers
+- SQLite is adequate for this scale</p>
+<p><strong>Organizational lessons:</strong>
+- Version control and archival are essential
+- Documentation pays dividends
+- Clear naming conventions save time</p>
+<h2 id="2026-07-14-validate-documented-script-invocation">2026-07-14: Validate documented script invocation</h2>
+<p><strong>Lesson:</strong> A script that imports <code>scripts.config</code> does not resolve the repository
+package when invoked by file path unless the repository root is on <code>PYTHONPATH</code>.
+<strong>Context:</strong> The first literature-audit dry run failed before reading the database
+because its documented direct-file command omitted <code>PYTHONPATH=.</code>.
+<strong>Recommendation:</strong> Run and time the exact documented command on the smallest local
+case before publishing it; use <code>PYTHONPATH=.</code> for the current direct-file pattern.</p>
+<h2 id="2026-07-14-treat-source-metadata-as-evidence-requiring-verification">2026-07-14: Treat source metadata as evidence requiring verification</h2>
+<p><strong>Lesson:</strong> A syntactically valid bibcode, source-wide distance, or confirmation
+label can still describe the wrong paper, a heterogeneous compilation, or an
+ingestion default rather than the object.
+<strong>Context:</strong> ADS and VizieR checks corrected two legacy bibcodes, distinguished the
+Centaurus galaxy cluster from Centaurus A, and exposed compilation-wide distances
+and labels that were unsafe to normalize.
+<strong>Recommendation:</strong> Preserve original values in immutable raw payloads, verify
+bibliographic identifiers against authoritative services, and queue uncertain
+normalized metadata for review rather than silently propagating it.</p>
+<h2 id="2026-07-14-separate-broad-selection-pools-from-positive-references">2026-07-14: Separate broad selection pools from positive references</h2>
+<p><strong>Lesson:</strong> A catalog of objects considered during photometric selection is not
+equivalent to a catalog of reported candidates or confirmed reference objects.
+<strong>Context:</strong> Saifollahi et al. table A5 contains 1,155 classified UCD/GC selection
+objects, while table A6 contains the final 44 unconfirmed UCD candidates and table
+A1 reproduces 61 operational spectroscopic reference UCDs from a mixed sample.
+<strong>Recommendation:</strong> Store broad selection pools separately, link final candidates
+back to their source rows, and encode paper-specific reference criteria explicitly
+without promoting reported confirmation automatically.</p>
+<h2 id="2026-07-14-audit-object-labels-below-the-table-title-level">2026-07-14: Audit object labels below the table-title level</h2>
+<p><strong>Lesson:</strong> A table described as UCD candidates can contain explicit non-UCD or
+contaminant rows, while rows absent from direct source membership may already be
+represented through a later literature compilation.
+<strong>Context:</strong> The Liu M49 and M60 candidate tables contain 51 rows flagged as UCDs
+and 28 rows explicitly flagged as non-UCDs. All 51 positive rows already have
+sub-arcsecond v2 counterparts through existing provenance, whereas the 28
+non-positive rows do not.
+<strong>Recommendation:</strong> Join paired source tables, preserve object-level flags, and
+measure exact and spherical overlap before changing canonical membership or
+interpreting a table-wide role as a positive label.</p>
+<h2 id="2026-07-14-omit-unsupported-optional-reader-arguments">2026-07-14: Omit unsupported optional reader arguments</h2>
+<p><strong>Lesson:</strong> Passing <code>None</code> to an optional library argument is not always equivalent
+to omitting that argument.
+<strong>Context:</strong> The Astropy CDS reader expects <code>fill_values</code> to be iterable when the
+keyword is present, so a shared table loader failed when it forwarded
+<code>fill_values=None</code>.
+<strong>Recommendation:</strong> Build optional keyword arguments explicitly and pass them only
+when a concrete value is required; exercise both the default and specialized paths
+in the small-scale check.</p>
+<h2 id="2026-07-14-never-use-opaque-identifier-order-as-provenance-routing">2026-07-14: Never use opaque identifier order as provenance routing</h2>
+<p><strong>Lesson:</strong> A deterministic ordering can still encode the wrong relationship when
+it has no scientific or provenance meaning.
+<strong>Context:</strong> After adding multiple datasets per publication, unmatched raw files
+fell back to UUID-sorted dataset order and attached legacy primary tables to new
+supplemental datasets.
+<strong>Recommendation:</strong> Route exact and paired tables explicitly, then use the declared
+legacy-normalized dataset as the semantic fallback; audit the resulting file-to-
+dataset row counts after every multi-table ingestion change.</p>
+<h2 id="2026-07-14-run-namespace-importing-scripts-as-modules">2026-07-14: Run namespace-importing scripts as modules</h2>
+<p><strong>Lesson:</strong> A standalone research script that imports from the repository's
+<code>scripts</code> namespace is not directly executable by file path unless the project
+root is added to Python's import path.
+<strong>Context:</strong> Running <code>uv run python scripts/phase1_literature/build_reference_database.py</code>
+failed before the build began because Python could not resolve <code>scripts.config</code>.
+<strong>Recommendation:</strong> From the project root, run namespace-importing scripts with
+<code>uv run python -m scripts.phase1_literature.&lt;module_name&gt;</code>, and keep imports
+between phase scripts fully qualified under the same namespace.</p>
+<h2 id="2026-07-14-inspect-pre-commit-scope-before-repository-wide-runs">2026-07-14: Inspect pre-commit scope before repository-wide runs</h2>
+<p><strong>Lesson:</strong> A repository-wide auto-fixing hook can mutate frozen legacy notebooks
+and unrelated phase scripts when its file exclusions do not match project policy.
+<strong>Context:</strong> <code>pre-commit run --all-files</code> applied Ruff fixes and formatting to
+unrelated tracked files before failing on known legacy findings; those hook-only
+edits were immediately restored.
+<strong>Recommendation:</strong> Audit hook include/exclude rules before an all-files run and
+use targeted Ruff checks for scoped work until frozen and archived paths are
+excluded from auto-fixing hooks.</p>
+<h2 id="2026-07-14-recompute-catalog-distances-on-the-sphere">2026-07-14: Recompute catalog distances on the sphere</h2>
+<p><strong>Lesson:</strong> A nearest-neighbor identifier can be correct while its stored distance
+is geometrically inconsistent.
+<strong>Context:</strong> The legacy Gaia matcher ranked degree-space offsets without the
+right-ascension cosine factor. Across 280 proposal endpoints, the largest measured
+difference from an authoritative great-circle separation was 0.176110481759
+arcseconds.
+<strong>Recommendation:</strong> Use <code>SkyCoord.separation</code> for validation, preserve legacy
+distances only as provenance, and assess shared-source identity separately from
+Gaia blending and catalog-role conflicts.</p>
+<h2 id="2026-07-14-apply-review-routing-after-proposal-eligibility">2026-07-14: Apply review routing after proposal eligibility</h2>
+<p><strong>Lesson:</strong> Repeated identifiers do not necessarily imply a non-exact association
+proposal when every associated row has identical coordinates.
+<strong>Context:</strong> A Gaia review-routing assertion initially ran before exact-coordinate
+pairs were filtered and rejected an identifier that correctly had no proposal.
+<strong>Recommendation:</strong> Construct the eligible non-exact pair set first, then require
+review metadata only for groups that actually produce proposals.</p>
+<h2 id="2026-07-14-validate-relationships-independently-of-a-primary-method-label">2026-07-14: Validate relationships independently of a primary method label</h2>
+<p><strong>Lesson:</strong> A one-to-many scientific relationship cannot always be reconstructed
+from a single-valued association-method field after canonical groups are merged.
+<strong>Context:</strong> Two exact-coordinate companion groups remained intact after approved
+Gaia merging, but their moved rows correctly acquired the Gaia association method,
+causing a method-filtered duplicate check to report false loss.
+<strong>Recommendation:</strong> Validate exact-coordinate preservation directly from immutable
+row coordinates and shared canonical membership, while treating the association
+method as the reason for the latest non-exact merge.</p>
+<h2 id="2026-07-15-run-the-builder-smoke-check-after-adding-new-digest-logic">2026-07-15: Run the builder smoke check after adding new digest logic</h2>
+<p><strong>Lesson:</strong> A new Wave 1 package-digest path referenced <code>hashlib</code> before its import
+was added; Ruff and the temporary-database smoke build caught the error before the
+production v2 database was replaced.</p>
+<p><strong>Context:</strong> The literature builder recreates its output database, so new ingestion
+paths must first target a disposable database even when prior builds are fast.</p>
+<p><strong>Recommendation:</strong> Run Ruff followed by a timed build to a temporary output path
+after changing imports, package hashing, or ingestion orchestration, and only then
+rebuild the configured v2 product.</p>
+<h2 id="2026-07-15-do-not-probe-a-guessed-sqlite-path">2026-07-15: Do not probe a guessed SQLite path</h2>
+<p><strong>Lesson:</strong> Opening a nonexistent path with the SQLite command-line client creates
+an empty database even when the intended operation is read-only.</p>
+<p><strong>Context:</strong> A diagnostic schema query used a guessed v2 filename instead of the
+configured <code>LITERATURE_REFERENCE_DB_V2</code> path and created a zero-byte ignored file.
+The file was detected immediately, was never read by the audit, and was removed.</p>
+<p><strong>Recommendation:</strong> Resolve database paths from <code>scripts/config.py</code> before running
+SQLite diagnostics, assert that the file exists, and use immutable or read-only
+connection modes for inspection.</p>
+<h2 id="2026-07-15-audit-catalog-lineage-before-treating-a-nearby-row-as-unlinked">2026-07-15: Audit catalog lineage before treating a nearby row as unlinked</h2>
+<p><strong>Lesson:</strong> A coordinate-designated record can retain its identity alias only in
+an original table's secondary-name column, so normalized database names alone may
+make a documented cross-identification appear absent.</p>
+<p><strong>Context:</strong> Seventy-two Wave 1 groups initially contained an "unreferenced" Liu or
+Fahrion canonical. Liu 2015 table 3 preserved the Zhang/Ko identifier in <code>Other</code>,
+and the exact NGVS catalog key connected the records without a positional rule.</p>
+<p><strong>Recommendation:</strong> Before routing a nearby canonical to manual ambiguity, inspect
+source-specific alias columns and stable catalog keys across predecessor and
+successor tables.</p>
+<h2 id="2026-07-15-connected-proximity-groups-can-contain-more-than-one-identity">2026-07-15: Connected proximity groups can contain more than one identity</h2>
+<p><strong>Lesson:</strong> A connected review component is not necessarily one astrophysical
+object even when every member has an identifier edge.</p>
+<p><strong>Context:</strong> S547 and VUCD3 share an unresolved Gaia source and occur in one
+sub-arcsecond component, but Fahrion preserves different positions, references,
+magnitudes, and sizes. Source identifiers correctly split the component into two
+identities.</p>
+<p><strong>Recommendation:</strong> Resolve identity at the identifier-edge subgroup level and
+carry explicit retained-separate decisions through any group-level consolidation.</p>
+<h2 id="2026-07-15-recheck-authoritative-flags-even-when-row-linkage-is-correct">2026-07-15: Recheck authoritative flags even when row linkage is correct</h2>
+<p><strong>Lesson:</strong> Correctly linking a supporting table does not prove that normalized
+labels inherited from a legacy database match the authoritative primary table.</p>
+<p><strong>Context:</strong> Liu's 127 M87 rows were correctly paired with their structural and
+velocity rows, but the legacy import had set all 127 to UCD. The authoritative
+primary table contains 92 <code>UCD=1</code> and 35 <code>UCD=0</code> rows.</p>
+<p><strong>Recommendation:</strong> Validate identity, row role, and every selector-facing
+normalized field as separate invariants against the authoritative source row.</p>
+<h2 id="2026-07-15-a-reviewed-confirmation-can-end-in-non-promotion">2026-07-15: A reviewed confirmation can end in non-promotion</h2>
+<p><strong>Lesson:</strong> Closing a confirmation review does not require promoting the object.</p>
+<p><strong>Context:</strong> Voggel's 57 previously confirmed comparison rows carry Gaia
+photometry in the local table but not the spectroscopy or resolved morphology
+required by <code>confirmation_rules_v1</code>. They remain candidates with an explicit
+reviewed-insufficient-evidence decision.</p>
+<p><strong>Recommendation:</strong> Represent approval, non-promotion, and unresolved review as
+distinct evidence states so absence of local qualifying evidence is not confused
+with either rejection or unfinished work.</p>
+<h2 id="2026-07-15-validate-catalog-service-geometry-against-the-live-endpoint">2026-07-15: Validate catalog-service geometry against the live endpoint</h2>
+<p><strong>Lesson:</strong> Standards-compliant ADQL geometry syntax is not necessarily supported
+by a service that exposes a TAP endpoint.</p>
+<p><strong>Context:</strong> NOIRLab Data Lab rejected <code>CONTAINS(POINT, CIRCLE)</code> with a PostgreSQL
+function error. Its supported <code>Q3C_RADIAL_QUERY</code> cone predicate succeeded for both
+Gaia DR3 and Legacy Survey DR10. Independent local great-circle filtering remains
+necessary to enforce the requested radius and make the behavior testable.</p>
+<p><strong>Recommendation:</strong> Test one bounded live cone per service before scaling a
+cross-match, use the service's documented spatial predicate, and always verify the
+returned candidates with a local spherical calculation.</p>
+<h2 id="2026-07-15-separate-provenance-row-counts-from-canonical-association-counts">2026-07-15: Separate provenance-row counts from canonical association counts</h2>
+<p><strong>Lesson:</strong> Repeated literature rows carrying one catalog identifier must not be
+counted as missing matches after those rows are consolidated into canonical
+objects.</p>
+<p><strong>Context:</strong> The legacy database contained 1,097 Gaia-bearing rows, but the
+stabilized model resolves them to 963 canonical associations and 962 unique Gaia
+sources. The old 917-row Legacy export lacked returned source coordinates and
+separations, so its geometry could not be revalidated or promoted.</p>
+<p><strong>Recommendation:</strong> Report record, canonical-association, and unique-source counts
+separately; hash historical products; and regenerate canonical enrichments with a
+complete target audit and explicit shared-source diagnostics.</p>
+<h2 id="2026-07-16-do-not-use-path-as-a-zsh-loop-variable">2026-07-16: Do not use <code>path</code> as a zsh loop variable</h2>
+<p><strong>Lesson:</strong> In zsh, parameter names are case-insensitive, so assigning the loop
+variable <code>path</code> shadows the executable-search <code>PATH</code> array.</p>
+<p><strong>Context:</strong> A read-only README comparison loop assigned <code>path</code> and then could not
+find <code>sed</code>. The command failed before reading or changing any file.</p>
+<p><strong>Recommendation:</strong> Use specific names such as <code>file_path</code> in zsh loops and avoid
+shell special parameters even when their capitalization differs.</p>
+<h2 id="2026-07-16-generate-current-counts-and-label-historical-inventories">2026-07-16: Generate current counts and label historical inventories</h2>
+<p><strong>Lesson:</strong> A dated plan or inventory should remain an honest historical artifact,
+but it must not appear to be the current source of truth after the data model
+changes.</p>
+<p><strong>Context:</strong> Project summaries still cited the 1,542-row exploratory database and
+two metadata JSON files retained pending decisions that had since been closed.</p>
+<p><strong>Recommendation:</strong> Generate headline counts from canonical products, link current
+documents to that artifact, and mark superseded inventories explicitly instead of
+silently rewriting their historical entries.</p>
+<h2 id="2026-07-16-calibrate-catalog-associations-by-source-geometry">2026-07-16: Calibrate catalog associations by source geometry</h2>
+<p><strong>Lesson:</strong> One angular radius is not defensible for catalogs with different
+coordinate construction and source morphology.</p>
+<p><strong>Context:</strong> PHANGS-MUSE region centroids supported a 0.3-arcsecond Gaia radius,
+while van Zee dwarf-galaxy positions derived from galaxy centers and integer-
+arcsecond slit offsets required a separately measured 3.0-arcsecond radius.</p>
+<p><strong>Recommendation:</strong> Measure real and displaced-control separation curves for each
+source catalog, record the coordinate construction, and never transfer an
+association radius between catalogs without calibration.</p>
+<h2 id="2026-07-16-consolidate-benchmark-labels-at-the-gaia-source-level">2026-07-16: Consolidate benchmark labels at the Gaia-source level</h2>
+<p><strong>Lesson:</strong> Multiple legitimate catalog positions can select one Gaia source even
+when the catalog rows represent separate observations.</p>
+<p><strong>Context:</strong> Two UGC 3647 slit positions produced 13 accepted van Zee associations
+but only 12 unique Gaia sources. A release validation check caught the duplicate
+before selector work began.</p>
+<p><strong>Recommendation:</strong> Enforce one benchmark row per Gaia source while retaining all
+contributing source-row locators, measurements, and association separations in
+the row-level provenance.</p>
+<h2 id="2026-07-16-interpret-discrimination-together-with-feature-coverage">2026-07-16: Interpret discrimination together with feature coverage</h2>
+<p><strong>Lesson:</strong> A strong conditional AUC does not justify a hard cut when the feature
+is missing preferentially for the target class.</p>
+<p><strong>Context:</strong> Proper-motion and absolute-parallax zero-significance reached
+development AUC values above 0.84 but were present for only 82 of 175 confirmed
+UCDs. Extended sources frequently lack five-parameter astrometry.</p>
+<p><strong>Recommendation:</strong> Report target and contaminant coverage beside every metric,
+preserve missing astrometry as an allowed selector state, and reject hard cuts
+that silently remove sources without the measurement.</p>
+<h2 id="2026-07-16-uncertain-positives-can-reverse-feature-priorities">2026-07-16: Uncertain positives can reverse feature priorities</h2>
+<p><strong>Lesson:</strong> Candidate labels can change which Gaia diagnostics appear most useful
+even when every source association is correct.</p>
+<p><strong>Context:</strong> Adding the uncertain UCD-candidate cohort raised IPD multi-peak and
+RUWE discrimination while weakening proper-motion separation. Many candidates
+have high-motion or poor-fit properties absent from the confirmed cohort.</p>
+<p><strong>Recommendation:</strong> Calibrate primary score terms on confirmed positives, retain
+candidates only as declared sensitivity rows, and present both rankings before
+freezing a selector.</p>
+<h2 id="2026-07-16-normalize-generated-validation-details-before-json-serialization">2026-07-16: Normalize generated validation details before JSON serialization</h2>
+<p><strong>Lesson:</strong> Passing scientific checks can still fail artifact creation when a
+diagnostic detail contains NumPy scalar types.</p>
+<p><strong>Context:</strong> The selector-development validator reached report writing with no
+failed invariant, then <code>json.dumps</code> rejected <code>numpy.int64</code> values returned by a
+Pandas uniqueness operation.</p>
+<p><strong>Recommendation:</strong> Convert Pandas and NumPy diagnostic scalars to native Python
+types when assembling machine-readable validation reports.</p>
+<h2 id="2026-07-16-run-repository-diagnostics-through-uv">2026-07-16: Run repository diagnostics through uv</h2>
+<p><strong>Lesson:</strong> A system Python process can lack project dependencies even when the
+locked project environment is complete.</p>
+<p><strong>Context:</strong> One read-only selector-summary command invoked <code>python</code> directly and
+failed to import <code>pyvo</code>; rerunning the same command through <code>uv run python</code>
+succeeded without changing dependencies or data.</p>
+<p><strong>Recommendation:</strong> Use <code>uv run</code> for scripts and ad hoc Python diagnostics, not
+only for formal pipeline commands.</p>
+<h2 id="2026-07-16-name-gaia-diagnostics-by-their-actual-units-and-null-hypothesis">2026-07-16: Name Gaia diagnostics by their actual units and null hypothesis</h2>
+<p><strong>Lesson:</strong> Archive column names and convenient “significance” labels can hide
+scientifically important definitions.</p>
+<p><strong>Context:</strong> Gaia's <code>ipd_frac_multi_peak</code> and <code>ipd_frac_odd_win</code> are integer
+percentages from 0 to 100, not unit fractions. The initial proper-motion
+diagnostic also treated the two components as independent even though Gaia
+publishes <code>pmra_pmdec_corr</code>.</p>
+<p><strong>Recommendation:</strong> Document every selector feature with its unit, equation,
+physical non-uniqueness, null behavior, and official data-model reference. Use
+the Gaia covariance submatrix for vector zero-significance tests.</p>
+<h2 id="2026-07-17-verify-the-numerical-domain-of-archive-sampling-fields">2026-07-17: Verify the numerical domain of archive sampling fields</h2>
+<p><strong>Lesson:</strong> A numeric interval does not imply a sampling fraction unless the
+field's complete domain is measured and recorded.</p>
+<p><strong>Context:</strong> The SDSS benchmark query used <code>0.0 &lt;= random_id &lt; 0.1</code>. Prose called
+this a 10% slice, but the measured SDSS field spans 0 to 100, making it a 0.1%
+engineering slice. The exact query and selected rows remained reproducible, but
+the interpretation was wrong.</p>
+<p><strong>Recommendation:</strong> Record sampling-field domains, interval widths, and derived
+fractions together; validate them before using cohort size to support a scientific
+claim.</p>
+<h2 id="2026-07-17-separate-truth-stress-and-density-roles-for-large-catalogs">2026-07-17: Separate truth, stress, and density roles for large catalogs</h2>
+<p><strong>Lesson:</strong> A very large catalog can improve coverage while weakening validation
+if it was constructed from the same features being tested.</p>
+<p><strong>Context:</strong> Gaia DR3 galaxy and QSO candidate catalogs contain millions of rows
+and directly represent real search failure modes, but their classifications use
+Gaia features. Spectroscopic SDSS labels are more independent, Gaia morphology
+galaxies are better stress cases, and Quaia's selection function is useful for
+spatial-null tests.</p>
+<p><strong>Recommendation:</strong> Assign each external catalog one declared role—independent
+calibration, failure-mode stress, or density/null analysis—and never use raw
+catalog size as a class prior or evidence of independent selector accuracy.</p>
+<h2 id="2026-07-17-retrieve-contaminants-before-applying-selector-prefilters">2026-07-17: Retrieve contaminants before applying selector prefilters</h2>
+<p><strong>Lesson:</strong> An archive-side selector prefilter makes contaminant acceptance
+impossible to measure because rejected objects never enter the audit artifact.</p>
+<p><strong>Context:</strong> The inherited radial search queried only sources passing provisional
+astrometric and proper-motion cuts. The morphology-galaxy stress test instead
+retrieved every Sersic-fit source and then found that both historical selectors
+accepted the same 714 of 814 galaxies.</p>
+<p><strong>Recommendation:</strong> Retrieve the complete declared contaminant cohort first, store
+every row, and evaluate versioned selectors locally with selected and rejected
+counts both retained.</p>
+<h2 id="2026-07-17-compact-galaxy-failure-modes-include-missing-astrometry">2026-07-17: Compact-galaxy failure modes include missing astrometry</h2>
+<p><strong>Lesson:</strong> A high galaxy rejection rate cannot be assumed from proper-motion or
+RUWE diagnostics when most Gaia morphology galaxies lack those measurements.</p>
+<p><strong>Context:</strong> Astrometric excess noise and IPD percentages were complete in the
+three-host morphology fixture, but RUWE and covariance-aware proper-motion
+significance covered only 11.9%. Both historical selectors still accepted 87.7%.</p>
+<p><strong>Recommendation:</strong> Treat missing five-parameter astrometry as an explicit state,
+measure galaxy acceptance within that state, and add morphology-sensitive evidence
+that does not impose a hard astrometry-availability requirement on UCDs.</p>
+<h2 id="2026-07-17-combined-density-can-conceal-paired-field-variation">2026-07-17: Combined density can conceal paired field variation</h2>
+<p><strong>Lesson:</strong> A larger combined count does not establish a host-centered excess when
+matched field differences are heterogeneous.</p>
+<p><strong>Context:</strong> Twelve host fields had a combined morphology-galaxy density of 42.22
+per square degree versus 31.68 in controls, but only eight paired differences were
+positive, the two-sided sign-test p-value was 0.3877, and one control was empty.</p>
+<p><strong>Recommendation:</strong> Preserve paired field results, report robust paired tests, and
+do not promote an area-weighted combined ratio to a clustering detection.</p>
+<h2 id="2026-07-17-empty-groups-and-exact-interval-bounds-require-explicit-handling">2026-07-17: Empty groups and exact interval bounds require explicit handling</h2>
+<p><strong>Lesson:</strong> Valid zero-count fields and floating-point confidence-interval endpoints
+must be supported by both analysis and plotting paths.</p>
+<p><strong>Context:</strong> All 24 queries completed, but the first figure attempt failed because a
+Wilson upper bound at one differed by floating-point roundoff and produced a tiny
+negative display error. Reuse validation also initially expected every field name
+in a source table even though a valid zero-row control has no source rows.</p>
+<p><strong>Recommendation:</strong> Clip derived display-error lengths at zero, retain zero-count
+fields in field-level tables, and validate source-field membership against nonempty
+query records rather than the complete field design.</p>
+<h2 id="2026-07-17-a-morphology-candidate-catalog-is-neither-truth-nor-a-parent-sample">2026-07-17: A morphology candidate catalog is neither truth nor a parent sample</h2>
+<p><strong>Lesson:</strong> Successful Gaia Sersic fitting identifies a useful extended-source
+stress population but does not establish that every row is a background galaxy.</p>
+<p><strong>Context:</strong> Gaia DR3 <code>galaxy_candidates</code> can in principle contain UCDs, H II
+regions, nuclei, and other compact sources. Requiring its morphology fit would also
+exclude unresolved UCDs. A blind-safe exact match found 0/175 confirmed development
+UCDs, 1/569 uncertain UCD candidates, and 0/127 development H II regions in the
+914,837-source Sersic-fit subset.</p>
+<p><strong>Recommendation:</strong> Select the Gaia UCD parent sample independently of morphology-
+catalog membership. Use Sersic radius, index, uncertainty, and fit quality only as
+supplementary exclusion evidence calibrated against independent imaging, and keep
+validation identifiers blind until the policy is frozen.</p>
+<h2 id="2026-07-17-spectroscopic-star-does-not-mean-physically-single-star">2026-07-17: Spectroscopic star does not mean physically single star</h2>
+<p><strong>Lesson:</strong> An externally classified stellar spectrum supplies a useful ordinary-
+star label, but neither that label nor absence from Gaia NSS establishes singleness.</p>
+<p><strong>Context:</strong> A deterministic SDSS DR16 pool produced 525 unique stars matched 3:1
+to confirmed development UCDs in G and sky latitudes. Expanding the pool from 1% to
+10% of the measured <code>random_id</code> domain reduced the median absolute G mismatch from
+0.539 to 0.081 mag; using signed ecliptic latitude had also encoded the SDSS
+footprint rather than Gaia scan similarity.</p>
+<p><strong>Recommendation:</strong> Name the cohort by the evidence actually available, match on
+absolute ecliptic latitude when controlling broad Gaia scanning geometry, preserve
+the measured balance diagnostics, and keep Gaia NSS as a separate failure mode.</p>
+<h2 id="2026-07-17-optimize-contaminant-cohorts-equally-not-by-their-row-counts">2026-07-17: Optimize contaminant cohorts equally, not by their row counts</h2>
+<p><strong>Lesson:</strong> A pooled false-positive fraction silently gives the largest reference
+cohort the greatest scientific importance.</p>
+<p><strong>Context:</strong> The approved Stage 3 priority treats ordinary stars, NSS/binaries, and
+QSOs as separate point-source failure modes. Equal-cohort calibration found a 90.3%
+confirmed-UCD operating point with 6.48%, 0.00%, and 4.71% retention in those three
+cohorts, respectively. The same core retains most galaxies and H II regions, which
+are intentionally assigned secondary imaging and color/morphology treatments.</p>
+<p><strong>Recommendation:</strong> Optimize and report the macro-average across declared priority
+cohorts, retain every cohort-specific result, and never let catalog availability or
+sample size become an implicit scientific weight.</p>
+<h2 id="2026-07-17-nested-thresholds-expose-selector-instability">2026-07-17: Nested thresholds expose selector instability</h2>
+<p><strong>Lesson:</strong> Meeting a pooled development recall target does not guarantee stable
+completeness across spatially grouped folds.</p>
+<p><strong>Context:</strong> Regularized logistic regression reached 93.7% pooled confirmed-UCD
+recall with 4.02% equal-cohort point-source retention, but fold-specific recall
+ranged from 81.8% to 100%. Shallow boosting retained fewer contaminants yet missed
+the recall target and was still less stable. Fold-local preprocessing and threshold
+selection prevented training-set calibration from hiding this variation.</p>
+<p><strong>Recommendation:</strong> Require repeated grouped nested-CV stability, inspect simple-
+model coefficients and failure cases, and report stratified completeness before
+freezing one selector for withheld validation.</p>
+<h2 id="2026-07-17-normalize-numpy-diagnostics-before-json-output">2026-07-17: Normalize NumPy diagnostics before JSON output</h2>
+<p><strong>Lesson:</strong> A validation computation can pass logically and still fail while
+writing its report when diagnostic details contain NumPy scalar types.</p>
+<p><strong>Context:</strong> The first ML-comparison validation run reached report serialization,
+where an outer-fold diagnostic contained <code>numpy.int64</code>, which the standard JSON
+encoder does not accept.</p>
+<p><strong>Recommendation:</strong> Convert NumPy scalar diagnostics through a strict serializer
+when writing machine-readable validation reports, then rerun the full validator.</p>
+<h2 id="2026-07-17-invoke-project-tools-through-uv">2026-07-17: Invoke project tools through uv</h2>
+<p><strong>Lesson:</strong> Project development executables are available through the locked uv
+environment and may not exist on the interactive shell path.</p>
+<p><strong>Context:</strong> A direct <code>pre-commit</code> invocation failed because the executable was not
+globally installed; <code>uv run pre-commit</code> used the declared project environment and
+ran successfully.</p>
+<p><strong>Recommendation:</strong> Prefix all project Python tools, including pre-commit, with
+<code>uv run</code> so execution uses the reproducible locked environment.</p>
+<h2 id="2026-07-17-sync-development-groups-before-running-repository-hooks">2026-07-17: Sync development groups before running repository hooks</h2>
+<p><strong>Lesson:</strong> A default locked uv sync can remove tools that are declared only in
+optional development extras.</p>
+<p><strong>Context:</strong> <code>uv sync --locked</code> reproduced the default environment but removed
+Ruff and pre-commit before the targeted hook run. No source or scientific artifact
+changed, but the check could not start until the development groups were restored.</p>
+<p><strong>Recommendation:</strong> Use <code>uv sync --locked --all-extras</code> when preparing the full
+repository-development environment, then run hooks through <code>uv run</code>.</p>
+<h2 id="2026-07-17-stable-pooled-recall-can-coexist-with-localized-failures">2026-07-17: Stable pooled recall can coexist with localized failures</h2>
+<p><strong>Lesson:</strong> Repeated cross-validation can stabilize the global estimate without
+eliminating spatial, magnitude, or source-specific completeness failures.</p>
+<p><strong>Context:</strong> Ten grouped nested-CV repeats produced a narrow 93.1--95.4% pooled UCD
+recall range, while individual folds reached as low as 81.8%. Eleven UCDs were
+persistently missed, several in shared HEALPix groups, and fixed-bin recall fell to
+85--88% in some populated magnitude or latitude strata.</p>
+<p><strong>Recommendation:</strong> Treat repeated pooled stability as a gate to source-level
+review, not permission to skip it. Preserve failure identities, report stratum
+counts, and audit provenance and Gaia associations before selector freezing.</p>
+<h2 id="2026-07-17-logistic-coefficient-signs-are-diagnostics-not-causes">2026-07-17: Logistic coefficient signs are diagnostics, not causes</h2>
+<p><strong>Lesson:</strong> Stable standardized logistic coefficients show that model direction is
+reproducible, but correlated measurements prevent causal feature interpretation.</p>
+<p><strong>Context:</strong> All nine measurement coefficients retained the same sign in 50 fitted
+outer models. Astrometric excess noise carried the largest positive coefficient,
+while parallax and proper-motion significance were consistently negative.</p>
+<p><strong>Recommendation:</strong> Report the preprocessing scale, missing indicators, coefficient
+range, and sign agreement. Do not call coefficient magnitude physical importance
+or use it alone to justify a scientific cut.</p>
+<h2 id="2026-07-17-unanimous-boundary-selection-does-not-enclose-an-optimum">2026-07-17: Unanimous boundary selection does not enclose an optimum</h2>
+<p><strong>Lesson:</strong> Repeatedly choosing the same hyperparameter is not evidence of an
+interior optimum when that value lies at the edge of the tested grid.</p>
+<p><strong>Context:</strong> All 50 logistic outer fits selected <code>C = 3.0</code>, the least-regularized
+value available. The choice is stable within the declared grid, but weaker
+regularization was never compared.</p>
+<p><strong>Recommendation:</strong> Run a bounded grid extension until performance plateaus or an
+interior choice is enclosed, without changing the validation partition or choosing
+the extension from validation behavior.</p>
+<h2 id="2026-07-17-a-numeric-zero-can-be-a-missing-value-sentinel">2026-07-17: A numeric zero can be a missing-value sentinel</h2>
+<p><strong>Lesson:</strong> A machine-readable numeric value is not automatically a physical
+measurement; catalog conventions and astrophysical plausibility must both be
+checked before promoting it to confirmation evidence.</p>
+<p><strong>Context:</strong> Fahrion table B1 contains <code>RV = 0.0</code> for 68 of 377 coordinate-bearing
+rows. The confirmation review incorrectly stated that every row supplies a radial
+velocity, placing 30 zero-RV objects in the confirmed development benchmark. The
+bright B409 row then matched a Gaia source with 77.9-sigma parallax and large proper
+motion, exposing the error during classifier failure review.</p>
+<p><strong>Recommendation:</strong> Treat Fahrion <code>RV = 0.0</code> as unavailable velocity evidence,
+re-audit affected objects for independent confirmation and foreground Gaia
+superpositions, preserve the original rows and decisions, and rebuild every
+downstream benchmark artifact before selector freezing.</p>
+<h2 id="2026-07-17-validate-cds-reader-compatibility-before-relying-on-it">2026-07-17: Validate CDS reader compatibility before relying on it</h2>
+<p><strong>Lesson:</strong> A valid CDS archive README is not guaranteed to be parsed successfully
+by every Astropy CDS-reader version.</p>
+<p><strong>Context:</strong> The first corrected Fahrion audit attempted to read table B1 through
+its authoritative README, but the installed Astropy reader did not recognize the
+file declaration. The fixed-width radial-velocity field is explicitly defined at
+bytes 62--67 and the table has a validated 381-row count.</p>
+<p><strong>Recommendation:</strong> When a CDS reader rejects an otherwise validated package, parse
+only the required documented fixed-width field, assert the complete row count, and
+retain the original README and file hashes as provenance.</p>
+<h2 id="2026-07-17-patch-repeated-approval-blocks-with-exact-function-context">2026-07-17: Patch repeated approval blocks with exact function context</h2>
+<p><strong>Lesson:</strong> A short patch context can modify the wrong occurrence when a build file
+contains several similar approval-status and evidence-insertion blocks.</p>
+<p><strong>Context:</strong> The first B409 evidence patch changed the Wave-1 approval status instead
+of the confirmation-review status and placed the existing positive-evidence insert
+inside the new rejection branch. The safety gate stopped the rebuild with an empty
+temporary target database before any completed artifact was accepted.</p>
+<p><strong>Recommendation:</strong> Anchor patches on function names and inspect the complete edited
+control-flow block before rebuilding; treat any interrupted generated database as
+invalid and rebuild it from immutable inputs rather than using it.</p>
+<h2 id="2026-07-17-correct-labels-through-versioned-migrations">2026-07-17: Correct labels through versioned migrations</h2>
+<p><strong>Lesson:</strong> An evidence correction should not overwrite a benchmark that already
+anchors documented analyses, even when every observational feature is unchanged.</p>
+<p><strong>Context:</strong> Correcting the Fahrion zero-velocity policy changed 26 Gaia-linked
+literature labels but did not change source identity, Gaia measurements, spatial
+groups, or the sealed partition assignment. Requerying Gaia would add unnecessary
+external variability, while overwriting benchmark v1 would erase the provenance of
+the superseded selector results.</p>
+<p><strong>Recommendation:</strong> Preserve the old benchmark, create a new evidence version through
+a deterministic field-limited migration, hash both inputs and outputs, and recompute
+all downstream training artifacts under the new version before model approval.</p>
+<h2 id="2026-07-18-boundary-chasing-is-not-hyperparameter-calibration">2026-07-18: Boundary chasing is not hyperparameter calibration</h2>
+<p><strong>Lesson:</strong> Repeatedly enlarging a regularization grid does not establish a defensible
+finite optimum when cross-validation continues selecting its weakest-regularized edge.</p>
+<p><strong>Context:</strong> The logistic grid was extended from <code>C = 3</code> to 100 and then 3000. Four
+of five outer folds selected the upper boundary in both tests, while fold recall
+remained variable.</p>
+<p><strong>Recommendation:</strong> Stop geometric boundary chasing. Compare weakly regularized and
+explicitly unregularized fits for coefficient and prediction convergence, then use
+stability and scientific interpretability to define the final model policy.</p>
+<h2 id="2026-07-18-define-scientific-shorthand-before-using-it">2026-07-18: Define scientific shorthand before using it</h2>
+<p><strong>Lesson:</strong> Catalog abbreviations and internal role labels can hide the physical
+meaning of an analysis even when the calculations are correct.</p>
+<p><strong>Context:</strong> The background-design summary used <code>R1t</code>, <code>R2t</code>, “isolated principal,”
+and “exclusion region” before explaining what they mean or how they relate to the
+existing nearby-galaxy catalog.</p>
+<p><strong>Recommendation:</strong> Introduce every new term in plain language, explain what the
+analysis is doing and why, and use abbreviations only after their definitions.</p>
+<h2 id="2026-07-18-validate-archive-aggregate-data-types-and-denominators">2026-07-18: Validate archive aggregate data types and denominators</h2>
+<p><strong>Lesson:</strong> A remote archive can return an aggregate with metadata that a client
+cannot parse, and a valid sum may still use fewer rows than the total count.</p>
+<p><strong>Context:</strong> The NOIRLab Data Lab Gaia service declared an integer data type for an
+<code>AVG</code> result that contained a decimal value, causing the VOTable reader to fail.
+Replacing the average with <code>SUM</code> and local division worked, but required a separate
+non-missing count for each column because SQL sums ignore missing values.</p>
+<p><strong>Recommendation:</strong> For remote integer-column averages, retrieve <code>SUM</code>,
+<code>COUNT(column)</code>, and <code>COUNT(*)</code>, compute the mean locally, and fail validation when
+required values are missing rather than silently dividing by the total row count.</p>
+<h2 id="2026-07-18-do-not-treat-target-field-source-density-as-pure-survey-coverage">2026-07-18: Do not treat target-field source density as pure survey coverage</h2>
+<p><strong>Lesson:</strong> A pre-selector source count is independent of the classifier but is not
+necessarily independent of the astrophysical signal.</p>
+<p><strong>Context:</strong> The five-host Gaia field review found 289 sources in the M60 target
+patch and 59 and 130 in its two diagnostic patches. The target count may include
+real M60 or Virgo-associated objects as well as crowding and Gaia coverage effects.</p>
+<p><strong>Recommendation:</strong> Use total Gaia density as a crowding diagnostic, not a rigid
+target-to-control matching rule. Calibrate its predictive role on off-target fields,
+validate it on spatially separate fields, and never use target overdensity to tune
+the matching tolerance.</p>
+<h2 id="2026-07-18-separate-query-benchmarks-from-scientific-measurement-geometry">2026-07-18: Separate query benchmarks from scientific measurement geometry</h2>
+<p><strong>Lesson:</strong> A small fixed-angle archive test can be mistaken for the intended host
+measurement if its limited purpose is not stated every time it is summarized.</p>
+<p><strong>Context:</strong> The Gaia field-condition benchmark used 0.1-degree-radius circles to
+keep the first live queries bounded. That angle corresponds to 4.712394 kpc at the
+distance of ESO 006-G001 and 41.771283 kpc at the distance of NGC 4698, so it cannot
+serve as one comparable host aperture.</p>
+<p><strong>Recommendation:</strong> Label fixed-angle benchmark geometry as diagnostic-only. Real
+host measurements must retain concentric circular-annulus profiles in physical and
+host-normalized radius and exclude a separately calibrated central region from UCD
+inference.</p>
+<h2 id="2026-07-18-preserve-continuous-radius-and-never-cap-physical-coverage-silently">2026-07-18: Preserve continuous radius and never cap physical coverage silently</h2>
+<p><strong>Lesson:</strong> Fixed physical profiles cannot be retrieved safely through one fixed
+angular cap across a nearby-galaxy sample.</p>
+<p><strong>Context:</strong> For the 2,155 current hosts, a 600 kpc radius spans 1.374835 to
+13.064418 degrees and exceeds the inherited two-degree cap for 1,018 hosts. A fixed
+cap would silently remove outer rings preferentially for nearby galaxies.</p>
+<p><strong>Recommendation:</strong> Store continuous angular, physical, and—when available—<code>R50</code>-
+normalized source radius; treat displayed rings as recombinable views; and use
+complete tiled or equivalent queries with explicit requested and usable area.</p>
+<h2 id="2026-07-18-partition-large-cone-queries-with-disjoint-coordinate-boundaries">2026-07-18: Partition large cone queries with disjoint coordinate boundaries</h2>
+<p><strong>Lesson:</strong> Large circular sky retrievals can be divided without changing their
+contents when every subquery retains the exact circle and the coordinate ranges do
+not overlap.</p>
+<p><strong>Context:</strong> One 0.2-degree NGC 4698 query returned 500 Gaia entries. Four
+declination strips returned 82, 154, 149, and 115 entries, reproducing exactly the
+same 500 unique source identifiers. Half-open shared boundaries assign synthetic
+boundary points exactly once.</p>
+<p><strong>Recommendation:</strong> Count rows first, split only ranges that exceed the declared
+safe retrieval size, retain the exact circle predicate in every subquery, validate
+row-count and source-identifier equality, and checkpoint every completed range.</p>
+<h2 id="2026-07-18-resume-only-from-verified-atomic-checkpoints">2026-07-18: Resume only from verified atomic checkpoints</h2>
+<p><strong>Lesson:</strong> The existence of a partial download is not evidence that an archive
+request completed successfully.</p>
+<p><strong>Context:</strong> A controlled Gaia test stopped after two of six measured strips. A new
+retrieval verified and reused those files, completed the other four, then detected
+and replaced one deliberately corrupted file while leaving five valid files
+unchanged. The final 500 source identifiers matched the independent reference.</p>
+<p><strong>Recommendation:</strong> Write source data and metadata atomically, record query and file
+hashes plus expected and retrieved counts, validate source-identifier uniqueness,
+and requery any checkpoint that fails one of those checks.</p>
+<h2 id="2026-07-18-measure-checkpoint-size-with-the-complete-column-contract">2026-07-18: Measure checkpoint size with the complete column contract</h2>
+<p><strong>Lesson:</strong> A row limit tested with a narrow diagnostic query does not establish the
+memory, file size, or runtime of the real classifier input.</p>
+<p><strong>Context:</strong> The full 19-column Gaia benchmark found that 5,000 rows occupied
+500,132 bytes as a pandas table and 1,027,468 bytes as CSV in three repeated tests;
+the query times were 1.948628--1.976649 seconds. A 10,000-row query also succeeded,
+but only once in one field.</p>
+<p><strong>Recommendation:</strong> Set provisional limits only from repeated full-column
+measurements, retain a margin below the largest successful test, record actual
+per-checkpoint bytes, and require multi-field validation before production.</p>
+<h2 id="2026-07-18-preserve-a-failed-validation-gate-instead-of-weakening-it">2026-07-18: Preserve a failed validation gate instead of weakening it</h2>
+<p><strong>Lesson:</strong> A performance test that does not exercise its intended branch is not a
+successful validation, even when every data-integrity check passes.</p>
+<p><strong>Context:</strong> The first three-field full-column test used 0.5-degree circles and
+measured 2,991, 3,098, and 13,010 rows, so only one field exceeded the 5,000-row
+limit. The requirement for two independently split and restarted fields failed.</p>
+<p><strong>Recommendation:</strong> Preserve the failed result and requirement. Change only the
+performance-test geometry needed to exercise the branch, state that it is not a
+scientific aperture, and rerun every check rather than lowering the gate after
+seeing the data.</p>
+<h2 id="2026-07-18-keep-missing-coverage-separate-from-scientific-exclusion">2026-07-18: Keep missing coverage separate from scientific exclusion</h2>
+<p><strong>Lesson:</strong> An inner region excluded from UCD inference is not the same as sky that
+was never retrieved or was removed by a survey-quality mask.</p>
+<p><strong>Context:</strong> Radial profiles need a density denominator even when a retrieval stops
+partway or overlapping masks remove area. Treating the central galaxy exclusion as
+missing coverage would hide useful contamination diagnostics and confuse geometry
+with a scientific decision.</p>
+<p><strong>Recommendation:</strong> Record requested, successfully queried, missing, masked, and
+usable area separately. Form the union of overlapping masks before subtraction,
+retain central rings with a diagnostic-only role, and require provenance before a
+real mask can alter a scientific density.</p>
+<h2 id="2026-07-18-do-not-import-ancillary-imaging-masks-into-the-gaia-denominator">2026-07-18: Do not import ancillary-imaging masks into the Gaia denominator</h2>
+<p><strong>Lesson:</strong> Gaia retrieval completion and ancillary image quality are separate data
+contracts.</p>
+<p><strong>Context:</strong> The project lead decided that bright-star, dust, and other imaging
+masks should not remove area from the Gaia radial measurement. Applying them would
+mix a later imaging-stage concern into the Gaia-only source-density denominator.</p>
+<p><strong>Recommendation:</strong> For Gaia, set masked area to zero and usable area equal to the
+area covered by verified completed retrieval strips. Preserve incomplete or failed
+strips as missing area, and retain any synthetic mask fixture only as a generic
+geometry test.</p>
+<h2 id="2026-07-18-preserve-one-permanent-receipt-per-galaxy-and-run">2026-07-18: Preserve one permanent receipt per galaxy and run</h2>
+<p><strong>Lesson:</strong> A project-wide summary can hide a galaxy that failed or disappeared
+between runs.</p>
+<p><strong>Context:</strong> The receipt fixture contains three completed galaxies and one
+controlled partial M60 run. The partial run must remain visible without replacing
+the completed M60 receipt, and an identical rerun should not create contradictory
+content.</p>
+<p><strong>Recommendation:</strong> Derive run identifiers from declared configuration and input
+fingerprints, write one atomic receipt per galaxy, reuse only byte-identical
+content, refuse changed-content overwrites, and record failures in plain language.</p>
+<h2 id="2026-07-18-keep-related-off-target-fields-on-the-same-side-of-validation">2026-07-18: Keep related off-target fields on the same side of validation</h2>
+<p><strong>Lesson:</strong> Two fields generated from the same host are not independent examples
+for method development and validation.</p>
+<p><strong>Context:</strong> The bounded background fixture has east and west circles around four
+host systems. Splitting an east/west pair would allow host-specific geometry and sky
+conditions to appear in both the method-tuning and held-back samples.</p>
+<p><strong>Recommendation:</strong> Assign fields in host-level groups, balance declared host and
+sky categories without using Gaia counts, hold validation selector results until
+method choices are fixed, and preserve diagnostic fields as non-scientific controls
+until their background eligibility is separately established.</p>
+<h2 id="2026-07-18-define-precisely-what-remains-unopened-in-validation">2026-07-18: Define precisely what remains unopened in validation</h2>
+<p><strong>Lesson:</strong> A held-back selector experiment can coexist with earlier pre-selector
+observing-condition measurements only when the boundary is explicit.</p>
+<p><strong>Context:</strong> All eight off-target positions already had total Gaia counts and
+observation diagnostics, but only the four development fields received frozen-
+selector probabilities and decisions. Calling the validation fields simply
+“unopened” would incorrectly imply that nothing had ever been measured there.</p>
+<p><strong>Recommendation:</strong> State that held-back fields have no selector probabilities,
+decisions, or passing-source counts; guard their identifiers before archive queries
+and in saved outputs; and do not use their later selector results until the
+development summary procedure is fixed.</p>
+<h2 id="2026-07-18-separate-random-counting-ranges-from-field-to-field-uncertainty">2026-07-18: Separate random counting ranges from field-to-field uncertainty</h2>
+<p><strong>Lesson:</strong> An exact small-count interval is not a complete background-error model.</p>
+<p><strong>Context:</strong> The four development circles contain 6 to 18 passing sources. Exact
+Poisson ranges describe how independent counts can fluctuate around an average, but
+they do not include real sky differences, correlated populations, Gaia observing
+conditions, or selector uncertainty.</p>
+<p><strong>Recommendation:</strong> Report counting-only ranges explicitly, retain every field and
+related host pair, keep pooled values descriptive, and estimate field-to-field and
+method uncertainty separately before scientific inference.</p>
+<h2 id="2026-07-19-treat-a-small-held-back-check-as-a-transfer-test-not-final-calibration">2026-07-19: Treat a small held-back check as a transfer test, not final calibration</h2>
+<p><strong>Lesson:</strong> A procedure can behave consistently on untouched fields without the
+held-back sample being large or representative enough to define a background
+model.</p>
+<p><strong>Context:</strong> The four validation circles have a combined passing-source density
+1.181818 times the development value and overlapping field and host-pair density
+ranges, but individual densities still span 95.492990–604.788937 per square degree.</p>
+<p><strong>Recommendation:</strong> Freeze rules before opening held-back data, report comparisons
+without retuning or pass/fail reinterpretation, and use a much larger count-blind
+off-target sample to calibrate sky dependence and final applicability limits.</p>
+<h2 id="2026-07-19-convert-pandas-coordinate-columns-to-numerical-arrays-before-adding-units">2026-07-19: Convert pandas coordinate columns to numerical arrays before adding units</h2>
+<p><strong>Lesson:</strong> Multiplying a pandas Series by an Astropy unit can retain an object-like
+container that <code>SkyCoord</code> does not interpret as an angular quantity.</p>
+<p><strong>Context:</strong> The first 20-field grid check converted right ascension with
+<code>to_numpy()</code> but passed declination as a Series, causing an Astropy unit error
+before the full grid was written.</p>
+<p><strong>Recommendation:</strong> Convert every pandas coordinate column with <code>to_numpy()</code> before
+attaching degree units, and exercise coordinate construction in the required
+small-scale run before writing full products.</p>
+<h2 id="2026-07-19-do-not-assume-a-fixed-radius-neighbor-search-returns-a-pair">2026-07-19: Do not assume a fixed-radius neighbor search returns a pair</h2>
+<p><strong>Lesson:</strong> A sparse test grid can have no distinct pair inside a chosen neighbor-
+search radius, leaving a minimum operation with no values.</p>
+<p><strong>Context:</strong> The 20-field check was more widely separated than the provisional
+20-degree search radius, so the first minimum-separation implementation failed even
+though the geometry itself was valid.</p>
+<p><strong>Recommendation:</strong> For bounded validation sets, calculate the complete angular-
+separation matrix, ignore its diagonal, and take the measured minimum without an
+assumed search radius.</p>
+<h2 id="2026-07-19-a-hash-threshold-does-not-guarantee-a-balanced-held-back-sky-sample">2026-07-19: A hash threshold does not guarantee a balanced held-back sky sample</h2>
+<p><strong>Lesson:</strong> Stable hashing makes an assignment reproducible, but a modulus rule can
+still produce an uneven number of validation sky blocks and fields.</p>
+<p><strong>Context:</strong> The first count-blind 500-field audit assigned only 17 of 120 broad sky
+blocks, containing 68 fields, to validation even though the nominal hash remainder
+represented one fifth of possible values.</p>
+<p><strong>Recommendation:</strong> Define balance explicitly using position-only strata, then use
+stable hashes to choose a fixed number of whole blocks within each stratum. Audit
+the resulting field and coverage counts before freezing the partition.</p>
+<h2 id="2026-07-19-inspect-a-failed-measured-artifact-before-reporting-its-size">2026-07-19: Inspect a failed measured artifact before reporting its size</h2>
+<p><strong>Lesson:</strong> A failed expected-count check identifies a mismatch but does not reveal
+whether the measured count is above or below the expectation.</p>
+<p><strong>Context:</strong> The pilot freeze failed an expected 11-field assertion. An immediate
+status update incorrectly inferred 10 fields before the saved table showed the
+actual count was 12: ten positional representatives and two ecliptic supplements.</p>
+<p><strong>Recommendation:</strong> Read and report the measured value before explaining a failed
+numerical assertion, then correct both the implementation contract and the user-
+facing record explicitly.</p>
+<h2 id="2026-07-19-persist-measured-strip-plans-as-well-as-raw-checkpoints">2026-07-19: Persist measured strip plans as well as raw checkpoints</h2>
+<p><strong>Lesson:</strong> In a dense large field, planning the adaptive split can cost more time
+than retrieving the resulting strips.</p>
+<p><strong>Context:</strong> Planning the 84,025-row low-latitude benchmark took 87.086338 seconds,
+while retrieving its 26 strips took 43.725160 seconds. The batch reused both the
+plan and all raw checkpoints, reducing the repeated benchmark processing to local
+verification and scoring.</p>
+<p><strong>Recommendation:</strong> Store a query-contract hash beside each measured plan, verify
+it before reuse, and keep raw strip checkpoints and plans together in external
+storage so neither archive operation must be repeated unnecessarily.</p>
+<h2 id="2026-07-19-do-not-sum-narrow-integer-gaia-columns-in-archive-aggregates">2026-07-19: Do not sum narrow integer Gaia columns in archive aggregates</h2>
+<p><strong>Lesson:</strong> A TAP service can preserve a narrow source-column integer type in
+<code>SUM</code>, silently overflowing a field-level aggregate.</p>
+<p><strong>Context:</strong> Summing <code>visibility_periods_used</code> and
+<code>astrometric_matched_transits</code> over 6,198 sources returned both totals as the
+16-bit maximum 32,767, falsely making their means identical. Raw rows showed the
+columns were different, and the service did not accept an aggregate cast.</p>
+<p><strong>Recommendation:</strong> Measure the row count first, retrieve the compact observation-
+count columns completely with a verified row limit, and calculate means locally.
+Require retrieved counts, unique source identifiers, and non-null counts to match
+the independently measured field total.</p>
+<h2 id="2026-07-19-read-the-repositorys-default-branch-name-before-comparing-refs">2026-07-19: Read the repository's default branch name before comparing refs</h2>
+<p><strong>Lesson:</strong> A project rule may use <code>main</code> generically even when the repository's
+actual primary branch is named <code>master</code>.</p>
+<p><strong>Context:</strong> A remote-state check first requested a nonexistent local <code>main</code> ref.
+Inspection showed that both the local and remote primary branches are <code>master</code> and
+are synchronized at <code>06fb6b6</code>.</p>
+<p><strong>Recommendation:</strong> Inspect <code>git branch -a</code> and the remote HEAD before constructing
+primary-branch comparisons. Use the repository's measured ref name in all later
+checks.</p>
+<h2 id="2026-07-19-reduce-table-wide-safeguards-to-one-boolean-value">2026-07-19: Reduce table-wide safeguards to one Boolean value</h2>
+<p><strong>Lesson:</strong> Applying <code>.all()</code> once to a two-dimensional pandas or NumPy result can
+still return one value per column rather than one value for the entire check.</p>
+<p><strong>Context:</strong> The first G-magnitude validation attempted to convert a column-wise
+Series to <code>bool</code>, which pandas correctly rejected as ambiguous.</p>
+<p><strong>Recommendation:</strong> For a safeguard covering an entire table, explicitly reduce
+both dimensions and verify the resulting type is one Boolean before building the
+manifest.</p>
+<h2 id="2026-07-19-phrase-safeguards-as-conditions-that-must-be-true">2026-07-19: Phrase safeguards as conditions that must be true</h2>
+<p><strong>Lesson:</strong> A manifest check named as an observed failure state can correctly store
+<code>false</code> while accidentally causing an otherwise successful all-checks gate to fail.</p>
+<p><strong>Context:</strong> The first zero-query continuation manifest used
+<code>validation_selector_results_opened: false</code> inside the checks dictionary. The
+scientific state was correct, but the generic requirement that every safeguard be
+true rejected the run.</p>
+<p><strong>Recommendation:</strong> Keep descriptive state fields separate. Phrase safeguards as
+positive requirements such as <code>validation_selector_results_remain_unopened: true</code>.</p>
+<h2 id="2026-07-19-bound-both-archive-requests-and-complete-field-attempts">2026-07-19: Bound both archive requests and complete field attempts</h2>
+<p><strong>Lesson:</strong> A timeout on each remote request does not by itself bound an adaptive
+field plan because the planner can issue many separate count requests.</p>
+<p><strong>Context:</strong> <code>sky_field_0317</code> remained in adaptive planning for more than six
+minutes without producing a completed plan. A later run showed both a 180-second
+archive read timeout and a 300-second total field-attempt limit were needed. The
+failure was preserved and the next field completed normally.</p>
+<p><strong>Recommendation:</strong> Limit batches by attempted fields rather than successful
+fields, apply measured ceilings to both individual requests and the whole field,
+write every failure without converting it to zero, and defer repeated failures so
+untouched fields can continue.</p>
+<h2 id="2026-07-19-save-adaptive-planning-after-every-completed-measurement">2026-07-19: Save adaptive planning after every completed measurement</h2>
+<p><strong>Lesson:</strong> A resumable source download is not enough when deciding how to divide a
+dense field requires hundreds of separate archive counts.</p>
+<p><strong>Context:</strong> <code>sky_field_0317</code> required 771 saved planning entries before its 386
+final source strips could be retrieved. Whole-field time limits repeatedly stopped
+the work, but saving each completed planning entry allowed every explicit retry to
+continue forward. The field ultimately completed with 1,242,936 Gaia sources
+without weakening the fixed row or time limits.</p>
+<p><strong>Recommendation:</strong> Write planning progress atomically after each measured count,
+store the query contract beside it, and verify both the query hash and strip
+geometry before reuse. Test stop and restart locally before relying on the behavior
+for a live archive field.</p>
+<h2 id="2026-07-19-exercise-synthetic-data-builders-before-real-model-fitting">2026-07-19: Exercise synthetic data builders before real model fitting</h2>
+<p><strong>Lesson:</strong> Similar-looking pandas and NumPy arrays do not provide the same
+comparison methods.</p>
+<p><strong>Context:</strong> The first local model-comparison test used the pandas-only <code>.eq()</code>
+method on a NumPy array while constructing an environment flag. The synthetic run
+failed before reading or fitting the 398-field development table.</p>
+<p><strong>Recommendation:</strong> Run the complete synthetic builder and comparison path before
+the real fit, and use ordinary vectorized comparison operators for NumPy arrays.</p>
+<h2 id="2026-07-19-treat-model-convergence-warnings-as-failed-fits">2026-07-19: Treat model convergence warnings as failed fits</h2>
+<p><strong>Lesson:</strong> A model can return coefficients after reaching its iteration limit, but
+those coefficients are not a valid basis for scientific model selection.</p>
+<p><strong>Context:</strong> The first 398-field comparison exposed unscaled spline bases that
+reached the Poisson solver's 2,000-iteration limit. The run was stopped before
+writing or interpreting model-comparison artifacts.</p>
+<p><strong>Recommendation:</strong> Scale every learned spline basis inside its training fold and
+promote convergence warnings to errors. Accept the comparison only when every
+inner, outer, sensitivity, and final fit converges.</p>
+<h2 id="2026-07-19-make-table-wide-boolean-reduction-visually-explicit">2026-07-19: Make table-wide Boolean reduction visually explicit</h2>
+<p><strong>Lesson:</strong> A bare <code>.all()</code> on a two-dimensional table is easy to mistake for a
+complete reduction even after the pandas behavior has been documented.</p>
+<p><strong>Context:</strong> The first completed development-model fit reached its final safeguards
+but the finite-input check returned one Boolean per feature. The ambiguous Series
+correctly stopped the manifest from being accepted.</p>
+<p><strong>Recommendation:</strong> Convert table-wide checks to a NumPy array and call <code>.all()</code> on
+that array, or explicitly reduce both axes. Keep this form visible in scientific
+manifests so reviewers can see that the result is one Boolean.</p>
+<h2 id="2026-08-11-write-normalized-distances-in-the-same-form-as-the-contract">2026-08-11: Write normalized distances in the same form as the contract</h2>
+<p><strong>Lesson:</strong> Algebraically equivalent code can still obscure whether a frozen
+training-only transformation was implemented as declared.</p>
+<p><strong>Context:</strong> The first nearest-comparison implementation divided training-to-target
+differences by the training scale. The training center cancels from that distance,
+so an assigned center appeared unused and Ruff stopped the validation run.</p>
+<p><strong>Recommendation:</strong> Express both training and target values in the explicitly
+centered and scaled coordinates before calculating distance. This makes the absence
+of held-out preprocessing visible to reviewers and static checks.</p>
+<h2 id="2026-08-11-prefer-preserved-measurements-when-the-background-is-directly-observable">2026-08-11: Prefer preserved measurements when the background is directly observable</h2>
+<p><strong>Lesson:</strong> A fitted sky model is not automatically the best primary background
+reference when comparison-field densities can be measured directly.</p>
+<p><strong>Context:</strong> Three direct procedures had nearly identical typical held-out errors.
+The simple Galactic-latitude bands used roughly 61 measured fields per comparison
+and gave better range coverage than two procedures using Gaia source density. They
+also exposed <code>sky_field_0317</code> as a factor of 96.597 above its comparison median
+rather than hiding it behind a smooth extrapolation.</p>
+<p><strong>Recommendation:</strong> Preserve and report the comparison-field distribution and
+identities as the primary large-sky reference. Use fitted curves only for trend
+diagnostics, and report direct local-annulus and random-field measurements together
+without forcing agreement.</p>
+<h2 id="2026-08-11-scope-automatic-lint-fixes-before-running-them">2026-08-11: Scope automatic lint fixes before running them</h2>
+<p><strong>Lesson:</strong> A repository-wide pre-commit run can rewrite unrelated legacy files
+before reporting failures, even when the current task changes only a few scripts.</p>
+<p><strong>Context:</strong> The final direct-background check reformatted archived notebooks and
+older phase scripts, then stopped on 13 pre-existing lint errors. The working tree
+had been inspected immediately beforehand, so those hook-created edits could be
+identified and restored without touching the direct-background work.</p>
+<p><strong>Recommendation:</strong> Inspect the working tree first, run the required repository-wide
+check once to expose its true status, and restore only known hook-created edits if
+legacy failures stop it. Then run the same hooks explicitly on the files changed by
+the current task and report the repository-wide failures separately.</p>
+<h2 id="2026-08-11-normalize-metric-labels-before-comparing-frozen-artifacts">2026-08-11: Normalize metric labels before comparing frozen artifacts</h2>
+<p><strong>Lesson:</strong> Two artifacts can measure the same quantity while using slightly
+different column names, so direct dictionary subtraction is unsafe without an
+explicit mapping.</p>
+<p><strong>Context:</strong> The first reserved-field evaluation reached the final comparison but
+stopped before writing its report because the older fitted-model table calls its
+coverage fields <code>empirical_68_percent_coverage</code> and
+<code>empirical_95_percent_coverage</code>, while the newer direct procedure includes the word
+<code>range</code>. No model was refitted and no scientific result was changed.</p>
+<p><strong>Recommendation:</strong> Map historical column names to one declared report vocabulary
+before checking metric sets or calculating differences. Let missing mappings stop
+the run before an evaluation artifact is written.</p>
+<h2 id="2026-08-11-scope-formatting-checks-in-the-legacy-research-tree">2026-08-11: Scope formatting checks in the legacy research tree</h2>
+<p><strong>Lesson:</strong> A repository-wide pre-commit run can mechanically rewrite archived
+notebooks and legacy scripts that are unrelated to the active task before reporting
+their pre-existing lint failures.</p>
+<p><strong>Context:</strong> The first NGC 4698 host-profile closeout ran pre-commit over the full
+tree. The hooks changed 22 unrelated legacy files; those hook-only edits were
+removed immediately from a previously clean worktree.</p>
+<p><strong>Recommendation:</strong> Run Ruff and pre-commit on every file changed by the active
+task. Reserve a repository-wide cleanup for its own approved branch so legacy
+formatting changes cannot enter a scientific task commit.</p>
+<h2 id="2026-08-12-show-missing-measurements-beside-selector-feature-plots">2026-08-12: Show missing measurements beside selector feature plots</h2>
+<p><strong>Lesson:</strong> A high fitted selector score can be driven partly by the model's
+explicit missing-measurement indicators, so a feature-space plot that silently
+drops null rows can misrepresent most passing sources.</p>
+<p><strong>Context:</strong> In the first NGC 4698 profile, 2,421 of 2,548 passing sources lack
+Gaia's five-parameter astrometric solution, compared with 16.31% of rejected
+sources. Only 127 passing sources can therefore appear in panels requiring RUWE,
+parallax significance, and proper-motion significance.</p>
+<p><strong>Recommendation:</strong> Report feature availability next to every candidate
+feature-space diagnostic. Treat the logistic output as a selection score rather
+than a calibrated probability of physical UCD identity, and require imaging or
+spectroscopy before calling a high-score source compelling.</p>
+<h2 id="2026-08-12-soft-astrometric-penalties-can-lose-to-extension-diagnostics">2026-08-12: Soft astrometric penalties can lose to extension diagnostics</h2>
+<p><strong>Lesson:</strong> Including parallax and proper-motion significance in a logistic model
+does not guarantee rejection of a source with strongly nonzero astrometry because
+other features can outweigh their negative coefficients.</p>
+<p><strong>Context:</strong> The project lead visually classified NGC 4698 example E as a star. It
+passes selector v1 with score 0.974892 despite 48.468-sigma motion and 9.069-sigma
+parallax. Its strong excess-noise diagnostics dominate the soft astrometric
+penalties, while its BP/RP flux-excess factor of 2.084 lies above the Liu et al.
+(2020) 1.7 extended-source reference.</p>
+<p><strong>Recommendation:</strong> Preserve selector v1 as the baseline and separately measure a
+versioned hard astrometric contradiction rule. Report completeness and contaminant
+rejection across the full boundary curve, preserve missing astrometry as unknown,
+and do not select a boundary from one visually inspected source.</p>
+<h2 id="2026-08-12-large-gaia-motion-can-be-a-review-flag-without-being-a-safe-hard-cut">2026-08-12: Large Gaia motion can be a review flag without being a safe hard cut</h2>
+<p><strong>Lesson:</strong> A large Gaia parallax or proper-motion significance is strong evidence
+against an unresolved extragalactic source, but it is not a safe universal rejection
+for barely resolved UCDs because image-shape changes can produce misleading Gaia
+motion.</p>
+<p><strong>Context:</strong> After selector version 1, a 3-standard-deviation rule removed four
+reliable Voggel et al. NGC 5128 UCDs while removing only one ordinary star and one
+QSO. Every measured boundary retaining at least 90% of all reliable UCDs left the
+equal-weight priority-contaminant fraction unchanged from selector version 1.</p>
+<p><strong>Recommendation:</strong> Keep parallax and proper-motion significance visible as a
+mandatory individual-review warning. Do not apply a universal hard boundary unless
+a future independently validated rule demonstrates a useful completeness-versus-
+contamination improvement.</p>
+<h2 id="2026-08-12-preserve-gaia-source-identifiers-as-strings-during-joins-and-exclusions">2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions</h2>
+<p><strong>Lesson:</strong> A Gaia source identifier has 19 digits and can be silently rounded when a
+CSV reader interprets it as a floating-point number. A set-membership check can then
+appear valid while excluding the wrong identifiers.</p>
+<p><strong>Context:</strong> The first unopened M60 audit-sample freeze read the literature recovery
+table without an explicit string type. Eight of eleven known identifiers were rounded
+and remained eligible for random sampling. No image had been requested or inspected;
+the sample was regenerated after forcing the identifier column to string and directly
+checking that the overlap was empty.</p>
+<p><strong>Recommendation:</strong> Read Gaia identifier columns explicitly as strings whenever they
+are used for matching, exclusion, provenance, or serialization. Add a direct expected-
+identifier overlap check rather than relying only on row counts.</p>
+<h2 id="2026-08-12-a-valid-image-response-can-be-a-survey-viewer-placeholder">2026-08-12: A valid image response can be a survey-viewer placeholder</h2>
+<p><strong>Lesson:</strong> A readable JPEG with the requested dimensions does not prove that a sky
+image was returned.</p>
+<p><strong>Context:</strong> The Legacy Survey viewer returned valid 64-by-64 JPEG files for all 724
+UCD reference coordinates, but 17 files were low-color blue or white placeholder
+tiles. Counting HTTP or JPEG success alone would have overstated usable image
+coverage.</p>
+<p><strong>Recommendation:</strong> Record transport success and image-content status separately.
+Measure the returned-image distribution, inspect the low-information modes, and keep
+placeholder outcomes explicit without changing the literature classification.</p>
+<h2 id="2026-10-12-preserve-historical-records-without-blocking-new-entries">2026-10-12: Preserve historical records without blocking new entries</h2>
+<p><strong>Lesson:</strong> Comparing the entire journal and lessons directories against a fixed
+Git checkpoint incorrectly rejects later journal additions and legitimate lesson
+appends.</p>
+<p><strong>Context:</strong> The documentation consolidation validator passed before closeout but
+would reject the new closeout journal. This was a validation-design mistake, not
+a change to historical research evidence.</p>
+<p><strong>Recommendation:</strong> Compare each original journal byte-for-byte, require existing
+lessons to retain their original byte prefix, and allow new files. Rebuild the HTML
+portal whenever new repository documentation is added.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#lessons-learned-ucd-search-project">Lessons Learned - UCD Search Project</a><ul>
+<li><a href="#2026-07-14-parse-cds-fixed-width-tables-from-their-byte-specification">2026-07-14: Parse CDS fixed-width tables from their byte specification</a></li>
+<li><a href="#2026-07-14-validate-the-documented-direct-script-command">2026-07-14: Validate the documented direct script command</a></li>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#1-data-access-infrastructure">1. Data Access &amp; Infrastructure</a><ul>
+<li><a href="#11-gaia-tap-queries">1.1 Gaia TAP Queries</a></li>
+<li><a href="#12-legacy-survey-cross-match">1.2 Legacy Survey Cross-Match</a></li>
+<li><a href="#13-vizier-catalog-ingestion">1.3 VizieR Catalog Ingestion</a></li>
+</ul>
+</li>
+<li><a href="#2-selection-criteria-development">2. Selection Criteria Development</a><ul>
+<li><a href="#21-aen-as-primary-ucd-indicator">2.1 AEN as Primary UCD Indicator</a></li>
+<li><a href="#22-proper-motion-filtering">2.2 Proper Motion Filtering</a></li>
+<li><a href="#23-classprob_galaxy-reliability">2.3 classprob_galaxy Reliability</a></li>
+</ul>
+</li>
+<li><a href="#3-background-characterization">3. Background Characterization</a><ul>
+<li><a href="#31-galactic-latitude-dependence">3.1 Galactic Latitude Dependence</a></li>
+<li><a href="#32-nature-of-background-sources">3.2 Nature of Background Sources</a></li>
+</ul>
+</li>
+<li><a href="#4-radial-search-methodology">4. Radial Search Methodology</a><ul>
+<li><a href="#41-validated-approach">4.1 Validated Approach</a></li>
+<li><a href="#42-angular-scale">4.2 Angular Scale</a></li>
+</ul>
+</li>
+<li><a href="#5-project-organization">5. Project Organization</a><ul>
+<li><a href="#51-version-control">5.1 Version Control</a></li>
+<li><a href="#52-documentation">5.2 Documentation</a></li>
+<li><a href="#53-database-design">5.3 Database Design</a></li>
+</ul>
+</li>
+<li><a href="#6-technical-pitfalls">6. Technical Pitfalls</a><ul>
+<li><a href="#61-coordinate-systems">6.1 Coordinate Systems</a></li>
+<li><a href="#62-magnitude-systems">6.2 Magnitude Systems</a></li>
+<li><a href="#63-cross-match-radius">6.3 Cross-Match Radius</a></li>
+</ul>
+</li>
+<li><a href="#7-collaboration-workflow">7. Collaboration Workflow</a><ul>
+<li><a href="#71-agent-human-interaction">7.1 Agent-Human Interaction</a></li>
+<li><a href="#72-knowledge-persistence">7.2 Knowledge Persistence</a></li>
+</ul>
+</li>
+<li><a href="#8-recommendations">8. Recommendations</a><ul>
+<li><a href="#81-immediate">8.1 Immediate</a></li>
+<li><a href="#82-technical">8.2 Technical</a></li>
+<li><a href="#83-organizational">8.3 Organizational</a></li>
+</ul>
+</li>
+<li><a href="#2026-05-11-morphology-of-nearby-galaxies">2026-05-11: Morphology of Nearby Galaxies</a></li>
+<li><a href="#2026-07-14-validate-documented-script-invocation">2026-07-14: Validate documented script invocation</a></li>
+<li><a href="#2026-07-14-treat-source-metadata-as-evidence-requiring-verification">2026-07-14: Treat source metadata as evidence requiring verification</a></li>
+<li><a href="#2026-07-14-separate-broad-selection-pools-from-positive-references">2026-07-14: Separate broad selection pools from positive references</a></li>
+<li><a href="#2026-07-14-audit-object-labels-below-the-table-title-level">2026-07-14: Audit object labels below the table-title level</a></li>
+<li><a href="#2026-07-14-omit-unsupported-optional-reader-arguments">2026-07-14: Omit unsupported optional reader arguments</a></li>
+<li><a href="#2026-07-14-never-use-opaque-identifier-order-as-provenance-routing">2026-07-14: Never use opaque identifier order as provenance routing</a></li>
+<li><a href="#2026-07-14-run-namespace-importing-scripts-as-modules">2026-07-14: Run namespace-importing scripts as modules</a></li>
+<li><a href="#2026-07-14-inspect-pre-commit-scope-before-repository-wide-runs">2026-07-14: Inspect pre-commit scope before repository-wide runs</a></li>
+<li><a href="#2026-07-14-recompute-catalog-distances-on-the-sphere">2026-07-14: Recompute catalog distances on the sphere</a></li>
+<li><a href="#2026-07-14-apply-review-routing-after-proposal-eligibility">2026-07-14: Apply review routing after proposal eligibility</a></li>
+<li><a href="#2026-07-14-validate-relationships-independently-of-a-primary-method-label">2026-07-14: Validate relationships independently of a primary method label</a></li>
+<li><a href="#2026-07-15-run-the-builder-smoke-check-after-adding-new-digest-logic">2026-07-15: Run the builder smoke check after adding new digest logic</a></li>
+<li><a href="#2026-07-15-do-not-probe-a-guessed-sqlite-path">2026-07-15: Do not probe a guessed SQLite path</a></li>
+<li><a href="#2026-07-15-audit-catalog-lineage-before-treating-a-nearby-row-as-unlinked">2026-07-15: Audit catalog lineage before treating a nearby row as unlinked</a></li>
+<li><a href="#2026-07-15-connected-proximity-groups-can-contain-more-than-one-identity">2026-07-15: Connected proximity groups can contain more than one identity</a></li>
+<li><a href="#2026-07-15-recheck-authoritative-flags-even-when-row-linkage-is-correct">2026-07-15: Recheck authoritative flags even when row linkage is correct</a></li>
+<li><a href="#2026-07-15-a-reviewed-confirmation-can-end-in-non-promotion">2026-07-15: A reviewed confirmation can end in non-promotion</a></li>
+<li><a href="#2026-07-15-validate-catalog-service-geometry-against-the-live-endpoint">2026-07-15: Validate catalog-service geometry against the live endpoint</a></li>
+<li><a href="#2026-07-15-separate-provenance-row-counts-from-canonical-association-counts">2026-07-15: Separate provenance-row counts from canonical association counts</a></li>
+<li><a href="#2026-07-16-do-not-use-path-as-a-zsh-loop-variable">2026-07-16: Do not use path as a zsh loop variable</a></li>
+<li><a href="#2026-07-16-generate-current-counts-and-label-historical-inventories">2026-07-16: Generate current counts and label historical inventories</a></li>
+<li><a href="#2026-07-16-calibrate-catalog-associations-by-source-geometry">2026-07-16: Calibrate catalog associations by source geometry</a></li>
+<li><a href="#2026-07-16-consolidate-benchmark-labels-at-the-gaia-source-level">2026-07-16: Consolidate benchmark labels at the Gaia-source level</a></li>
+<li><a href="#2026-07-16-interpret-discrimination-together-with-feature-coverage">2026-07-16: Interpret discrimination together with feature coverage</a></li>
+<li><a href="#2026-07-16-uncertain-positives-can-reverse-feature-priorities">2026-07-16: Uncertain positives can reverse feature priorities</a></li>
+<li><a href="#2026-07-16-normalize-generated-validation-details-before-json-serialization">2026-07-16: Normalize generated validation details before JSON serialization</a></li>
+<li><a href="#2026-07-16-run-repository-diagnostics-through-uv">2026-07-16: Run repository diagnostics through uv</a></li>
+<li><a href="#2026-07-16-name-gaia-diagnostics-by-their-actual-units-and-null-hypothesis">2026-07-16: Name Gaia diagnostics by their actual units and null hypothesis</a></li>
+<li><a href="#2026-07-17-verify-the-numerical-domain-of-archive-sampling-fields">2026-07-17: Verify the numerical domain of archive sampling fields</a></li>
+<li><a href="#2026-07-17-separate-truth-stress-and-density-roles-for-large-catalogs">2026-07-17: Separate truth, stress, and density roles for large catalogs</a></li>
+<li><a href="#2026-07-17-retrieve-contaminants-before-applying-selector-prefilters">2026-07-17: Retrieve contaminants before applying selector prefilters</a></li>
+<li><a href="#2026-07-17-compact-galaxy-failure-modes-include-missing-astrometry">2026-07-17: Compact-galaxy failure modes include missing astrometry</a></li>
+<li><a href="#2026-07-17-combined-density-can-conceal-paired-field-variation">2026-07-17: Combined density can conceal paired field variation</a></li>
+<li><a href="#2026-07-17-empty-groups-and-exact-interval-bounds-require-explicit-handling">2026-07-17: Empty groups and exact interval bounds require explicit handling</a></li>
+<li><a href="#2026-07-17-a-morphology-candidate-catalog-is-neither-truth-nor-a-parent-sample">2026-07-17: A morphology candidate catalog is neither truth nor a parent sample</a></li>
+<li><a href="#2026-07-17-spectroscopic-star-does-not-mean-physically-single-star">2026-07-17: Spectroscopic star does not mean physically single star</a></li>
+<li><a href="#2026-07-17-optimize-contaminant-cohorts-equally-not-by-their-row-counts">2026-07-17: Optimize contaminant cohorts equally, not by their row counts</a></li>
+<li><a href="#2026-07-17-nested-thresholds-expose-selector-instability">2026-07-17: Nested thresholds expose selector instability</a></li>
+<li><a href="#2026-07-17-normalize-numpy-diagnostics-before-json-output">2026-07-17: Normalize NumPy diagnostics before JSON output</a></li>
+<li><a href="#2026-07-17-invoke-project-tools-through-uv">2026-07-17: Invoke project tools through uv</a></li>
+<li><a href="#2026-07-17-sync-development-groups-before-running-repository-hooks">2026-07-17: Sync development groups before running repository hooks</a></li>
+<li><a href="#2026-07-17-stable-pooled-recall-can-coexist-with-localized-failures">2026-07-17: Stable pooled recall can coexist with localized failures</a></li>
+<li><a href="#2026-07-17-logistic-coefficient-signs-are-diagnostics-not-causes">2026-07-17: Logistic coefficient signs are diagnostics, not causes</a></li>
+<li><a href="#2026-07-17-unanimous-boundary-selection-does-not-enclose-an-optimum">2026-07-17: Unanimous boundary selection does not enclose an optimum</a></li>
+<li><a href="#2026-07-17-a-numeric-zero-can-be-a-missing-value-sentinel">2026-07-17: A numeric zero can be a missing-value sentinel</a></li>
+<li><a href="#2026-07-17-validate-cds-reader-compatibility-before-relying-on-it">2026-07-17: Validate CDS reader compatibility before relying on it</a></li>
+<li><a href="#2026-07-17-patch-repeated-approval-blocks-with-exact-function-context">2026-07-17: Patch repeated approval blocks with exact function context</a></li>
+<li><a href="#2026-07-17-correct-labels-through-versioned-migrations">2026-07-17: Correct labels through versioned migrations</a></li>
+<li><a href="#2026-07-18-boundary-chasing-is-not-hyperparameter-calibration">2026-07-18: Boundary chasing is not hyperparameter calibration</a></li>
+<li><a href="#2026-07-18-define-scientific-shorthand-before-using-it">2026-07-18: Define scientific shorthand before using it</a></li>
+<li><a href="#2026-07-18-validate-archive-aggregate-data-types-and-denominators">2026-07-18: Validate archive aggregate data types and denominators</a></li>
+<li><a href="#2026-07-18-do-not-treat-target-field-source-density-as-pure-survey-coverage">2026-07-18: Do not treat target-field source density as pure survey coverage</a></li>
+<li><a href="#2026-07-18-separate-query-benchmarks-from-scientific-measurement-geometry">2026-07-18: Separate query benchmarks from scientific measurement geometry</a></li>
+<li><a href="#2026-07-18-preserve-continuous-radius-and-never-cap-physical-coverage-silently">2026-07-18: Preserve continuous radius and never cap physical coverage silently</a></li>
+<li><a href="#2026-07-18-partition-large-cone-queries-with-disjoint-coordinate-boundaries">2026-07-18: Partition large cone queries with disjoint coordinate boundaries</a></li>
+<li><a href="#2026-07-18-resume-only-from-verified-atomic-checkpoints">2026-07-18: Resume only from verified atomic checkpoints</a></li>
+<li><a href="#2026-07-18-measure-checkpoint-size-with-the-complete-column-contract">2026-07-18: Measure checkpoint size with the complete column contract</a></li>
+<li><a href="#2026-07-18-preserve-a-failed-validation-gate-instead-of-weakening-it">2026-07-18: Preserve a failed validation gate instead of weakening it</a></li>
+<li><a href="#2026-07-18-keep-missing-coverage-separate-from-scientific-exclusion">2026-07-18: Keep missing coverage separate from scientific exclusion</a></li>
+<li><a href="#2026-07-18-do-not-import-ancillary-imaging-masks-into-the-gaia-denominator">2026-07-18: Do not import ancillary-imaging masks into the Gaia denominator</a></li>
+<li><a href="#2026-07-18-preserve-one-permanent-receipt-per-galaxy-and-run">2026-07-18: Preserve one permanent receipt per galaxy and run</a></li>
+<li><a href="#2026-07-18-keep-related-off-target-fields-on-the-same-side-of-validation">2026-07-18: Keep related off-target fields on the same side of validation</a></li>
+<li><a href="#2026-07-18-define-precisely-what-remains-unopened-in-validation">2026-07-18: Define precisely what remains unopened in validation</a></li>
+<li><a href="#2026-07-18-separate-random-counting-ranges-from-field-to-field-uncertainty">2026-07-18: Separate random counting ranges from field-to-field uncertainty</a></li>
+<li><a href="#2026-07-19-treat-a-small-held-back-check-as-a-transfer-test-not-final-calibration">2026-07-19: Treat a small held-back check as a transfer test, not final calibration</a></li>
+<li><a href="#2026-07-19-convert-pandas-coordinate-columns-to-numerical-arrays-before-adding-units">2026-07-19: Convert pandas coordinate columns to numerical arrays before adding units</a></li>
+<li><a href="#2026-07-19-do-not-assume-a-fixed-radius-neighbor-search-returns-a-pair">2026-07-19: Do not assume a fixed-radius neighbor search returns a pair</a></li>
+<li><a href="#2026-07-19-a-hash-threshold-does-not-guarantee-a-balanced-held-back-sky-sample">2026-07-19: A hash threshold does not guarantee a balanced held-back sky sample</a></li>
+<li><a href="#2026-07-19-inspect-a-failed-measured-artifact-before-reporting-its-size">2026-07-19: Inspect a failed measured artifact before reporting its size</a></li>
+<li><a href="#2026-07-19-persist-measured-strip-plans-as-well-as-raw-checkpoints">2026-07-19: Persist measured strip plans as well as raw checkpoints</a></li>
+<li><a href="#2026-07-19-do-not-sum-narrow-integer-gaia-columns-in-archive-aggregates">2026-07-19: Do not sum narrow integer Gaia columns in archive aggregates</a></li>
+<li><a href="#2026-07-19-read-the-repositorys-default-branch-name-before-comparing-refs">2026-07-19: Read the repository's default branch name before comparing refs</a></li>
+<li><a href="#2026-07-19-reduce-table-wide-safeguards-to-one-boolean-value">2026-07-19: Reduce table-wide safeguards to one Boolean value</a></li>
+<li><a href="#2026-07-19-phrase-safeguards-as-conditions-that-must-be-true">2026-07-19: Phrase safeguards as conditions that must be true</a></li>
+<li><a href="#2026-07-19-bound-both-archive-requests-and-complete-field-attempts">2026-07-19: Bound both archive requests and complete field attempts</a></li>
+<li><a href="#2026-07-19-save-adaptive-planning-after-every-completed-measurement">2026-07-19: Save adaptive planning after every completed measurement</a></li>
+<li><a href="#2026-07-19-exercise-synthetic-data-builders-before-real-model-fitting">2026-07-19: Exercise synthetic data builders before real model fitting</a></li>
+<li><a href="#2026-07-19-treat-model-convergence-warnings-as-failed-fits">2026-07-19: Treat model convergence warnings as failed fits</a></li>
+<li><a href="#2026-07-19-make-table-wide-boolean-reduction-visually-explicit">2026-07-19: Make table-wide Boolean reduction visually explicit</a></li>
+<li><a href="#2026-08-11-write-normalized-distances-in-the-same-form-as-the-contract">2026-08-11: Write normalized distances in the same form as the contract</a></li>
+<li><a href="#2026-08-11-prefer-preserved-measurements-when-the-background-is-directly-observable">2026-08-11: Prefer preserved measurements when the background is directly observable</a></li>
+<li><a href="#2026-08-11-scope-automatic-lint-fixes-before-running-them">2026-08-11: Scope automatic lint fixes before running them</a></li>
+<li><a href="#2026-08-11-normalize-metric-labels-before-comparing-frozen-artifacts">2026-08-11: Normalize metric labels before comparing frozen artifacts</a></li>
+<li><a href="#2026-08-11-scope-formatting-checks-in-the-legacy-research-tree">2026-08-11: Scope formatting checks in the legacy research tree</a></li>
+<li><a href="#2026-08-12-show-missing-measurements-beside-selector-feature-plots">2026-08-12: Show missing measurements beside selector feature plots</a></li>
+<li><a href="#2026-08-12-soft-astrometric-penalties-can-lose-to-extension-diagnostics">2026-08-12: Soft astrometric penalties can lose to extension diagnostics</a></li>
+<li><a href="#2026-08-12-large-gaia-motion-can-be-a-review-flag-without-being-a-safe-hard-cut">2026-08-12: Large Gaia motion can be a review flag without being a safe hard cut</a></li>
+<li><a href="#2026-08-12-preserve-gaia-source-identifiers-as-strings-during-joins-and-exclusions">2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions</a></li>
+<li><a href="#2026-08-12-a-valid-image-response-can-be-a-survey-viewer-placeholder">2026-08-12: A valid image response can be a survey-viewer placeholder</a></li>
+<li><a href="#2026-10-12-preserve-historical-records-without-blocking-new-entries">2026-10-12: Preserve historical records without blocking new entries</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="../project/AGENTS.html">CLAUDE.md — BubbleTea Project Instructions</a></li><li><a href="../project/CLAUDE.html">CLAUDE.md — BubbleTea Project Instructions</a></li><li><a href="../project/handover.html">BubbleTea - Search for fun compact galaxies using Gaia data </a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

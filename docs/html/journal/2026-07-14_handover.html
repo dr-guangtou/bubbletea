@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Session Handover - 2026-07-14 · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../journal/2026-07-14_handover.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><h1 id="session-handover-2026-07-14">Session Handover - 2026-07-14</h1>
+<h2 id="goal">Goal</h2>
+<ul>
+<li>Current objective: establish a reliable scientific and technical foundation for a Gaia-only statistical search for UCD populations around nearby galaxies.</li>
+<li>Most recent user request: finalize this takeover session, merge and push all accumulated work, record the session journal and Obsidian snapshot, and prepare the next session for literature stabilization.</li>
+</ul>
+<h2 id="completed-this-session">Completed This Session</h2>
+<ul>
+<li>Reviewed repository instructions, <code>docs/lessons/LESSON.md</code>, plans, journals, active and legacy code, data products, figures, and local reference material.</li>
+<li>Reviewed the local Voggel (2020) and Wang (2023) PDFs with PDF extraction tools installed through <code>uv</code> in the existing environment; dependency declarations were not changed.</li>
+<li>Conducted the scientific-definition interview and made <code>docs/SPEC.md</code> the source of truth for the project objectives, operational UCD definition, Gaia-only statistical design, background constraints, host variables, and confirmation standards.</li>
+<li>Created <code>docs/CONTEXT.md</code> as the working takeover context and <code>docs/todo.md</code> as the issue register. The register contains 29 issues, with BT-001 complete and 28 open.</li>
+<li>Created <code>docs/plans/scientific_validation.md</code>, which defines six ordered validation stages. Stage 1, literature reference stabilization, is next.</li>
+<li>Committed the accumulated Phase I-IV research state and takeover documents in <code>bef96ea</code> (<code>phase4: consolidate pipeline and scientific validation</code>).</li>
+<li>Appended and verified the development snapshot in the <code>wensai</code> Obsidian daily note at <code>journal/2026/07/2026-07-14.md</code>.</li>
+</ul>
+<h2 id="in-progress-not-finished">In Progress (Not Finished)</h2>
+<ul>
+<li>Remaining work: stabilize the literature reference population before changing Gaia selectors or interpreting pilot excess measurements.</li>
+<li>Immediate next action: audit canonical object identity, paper-to-object source associations, confirmation tiers, and the 180 exact duplicate-coordinate groups.</li>
+<li>Next action after stabilization: build contaminant reference sets and empirically map Gaia recovery and false-positive behavior versus distance, magnitude, color, Galactic latitude, and local density.</li>
+</ul>
+<h2 id="problems-blockers">Problems / Blockers</h2>
+<ul>
+<li>The literature SQLite database contains 2,108 rows, while the inspected exported products are inconsistent: 1,097 database Gaia matches versus 632 exported Gaia rows, and zero database Legacy Survey matches versus 917 exported rows.</li>
+<li>Exact-coordinate duplication includes 180 groups and cannot be resolved safely by deleting rows; canonical objects and many-to-many literature source associations are required.</li>
+<li>Some literature entries are candidates rather than confirmed UCDs, but confirmation status is not yet represented consistently.</li>
+<li>Seven source citations lack complete repository provenance folders according to the audit recorded in <code>docs/todo.md</code>.</li>
+<li>Existing cross-match and selection scripts contain geometric, quality-cut, provenance, and reproducibility risks detailed in BT-002 through BT-029.</li>
+<li>Ruff currently reports 85 issues; these are recorded technical debt rather than a blocker to reading the research products.</li>
+</ul>
+<h2 id="key-decisions">Key Decisions</h2>
+<ul>
+<li>Decision: UCDs are the primary target; ordinary globular clusters are not, although the physical boundary is fuzzy.</li>
+<li>Rationale: the operational search should identify Gaia sources that are measurably extended and probably too luminous or large for ordinary globular clusters.</li>
+<li>Decision: prioritize population overdensity, then host-property correlations, then prominent candidate lists.</li>
+<li>Rationale: the primary claim is statistical and must remain valid even if no individual candidate is confirmed.</li>
+<li>Decision: use Gaia data alone for primary selection and overdensity inference; use external imaging, colors, SEDs, and spectroscopy only as value-added validation.</li>
+<li>Rationale: heterogeneous ancillary coverage must not define the statistical sample.</li>
+<li>Decision: retain zero and negative excesses, use multiple background definitions at similar Galactic latitude, and keep numerical cuts empirically open.</li>
+<li>Rationale: this limits confirmation bias and exposes selection-function failures.</li>
+<li>Decision: analyze hosts independently in the first round, including overlapping search regions; revisit probabilistic host assignment only after empirical results exist.</li>
+<li>Rationale: the first implementation should not assume an unvalidated ownership model.</li>
+<li>Decision: assume approximate Gaia spatial uniformity during early work but require a final scanning-pattern systematic check.</li>
+<li>Rationale: the effect is technically difficult but could bias extended-source sensitivity.</li>
+</ul>
+<h2 id="branch-state">Branch State</h2>
+<ul>
+<li>Branch at handover creation: <code>review_project_context_20260714</code>.</li>
+<li>Uncommitted changes at handover creation: this journal and handover only; the research snapshot is committed as <code>bef96ea</code>.</li>
+<li>Relationship to default branch: the feature branch is one substantive commit ahead of <code>master</code>; session finalization will add the documentation commit, merge with <code>--no-ff</code>, delete the feature branch, and push <code>master</code>.</li>
+</ul>
+<h2 id="files-modified-this-session">Files Modified This Session</h2>
+<ul>
+<li><code>docs/CONTEXT.md</code></li>
+<li><code>docs/SPEC.md</code></li>
+<li><code>docs/todo.md</code></li>
+<li><code>docs/plans/scientific_validation.md</code></li>
+<li><code>docs/journal/bubbletea_review_project_context_20260714_2026-07-14.md</code></li>
+<li><code>docs/journal/2026-07-14_handover.md</code></li>
+<li><code>data/README.md</code></li>
+</ul>
+<h2 id="verification">Verification</h2>
+<ul>
+<li>Ran: <code>git diff --cached --check</code> before commit.</li>
+<li>Result: passed after whitespace-only cleanup of staged Python and Markdown files.</li>
+<li>Ran: AST parsing across <code>scripts/**/*.py</code> with Python 3.12 through <code>uv</code>.</li>
+<li>Result: all 26 active Python files parsed; two invalid-escape <code>SyntaxWarning</code> messages remain represented among Ruff findings.</li>
+<li>Ran: <code>uv run --no-sync ruff check scripts --output-format json</code>.</li>
+<li>Result: 85 findings: F401 23, I001 18, UP006 14, UP035 12, F541 5, UP045 5, W605 3, F841 2, E701 1, E712 1, and E402 1.</li>
+<li>Ran: issue and plan consistency audit.</li>
+<li>Result: 29 registered issues, 28 open; the validation plan references the open work by stage.</li>
+<li>Ran: Obsidian append and daily-note readback.</li>
+<li>Result: snapshot present in <code>journal/2026/07/2026-07-14.md</code> in vault <code>wensai</code>.</li>
+<li>Not run yet: destructive database cleanup, full Gaia/VizieR/Legacy Survey network queries, or scientific reproduction of prior Phase I-IV results.</li>
+<li>Reason: this session was a repository takeover, definition, and audit pass; literature identity and provenance must be stabilized first.</li>
+</ul>
+<h2 id="snapshot">Snapshot</h2>
+<ul>
+<li><code>[2026-07-14] bubbletea: Completed a repository takeover audit and scientific-definition interview, establishing a Gaia-only UCD population specification, 29 tracked issues, and a six-stage validation plan; next session begins literature reference stabilization and contaminant benchmark construction.</code></li>
+</ul>
+<hr>
+<ul>
+<li>Session ID (best effort): <code>ba7fa9b6-5fc9-40a3-bc59-44d31abe13b5</code></li>
+<li>Resume hint: start with Stage 1 in <code>docs/plans/scientific_validation.md</code>; do not run <code>scripts/phase1_literature/redundancy_check.py</code> destructively before the canonical object/source model is defined.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#session-handover-2026-07-14">Session Handover - 2026-07-14</a><ul>
+<li><a href="#goal">Goal</a></li>
+<li><a href="#completed-this-session">Completed This Session</a></li>
+<li><a href="#in-progress-not-finished">In Progress (Not Finished)</a></li>
+<li><a href="#problems-blockers">Problems / Blockers</a></li>
+<li><a href="#key-decisions">Key Decisions</a></li>
+<li><a href="#branch-state">Branch State</a></li>
+<li><a href="#files-modified-this-session">Files Modified This Session</a></li>
+<li><a href="#verification">Verification</a></li>
+<li><a href="#snapshot">Snapshot</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li><li><a href="2026-07-14_literature_reference_v2.html">Literature Reference v2 Build and Discovery</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

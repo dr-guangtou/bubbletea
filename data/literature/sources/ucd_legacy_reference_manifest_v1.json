@@ -1,0 +1,207 @@
+{
+  "retrieval_version": "ucd_legacy_reference_catalog_retrieval_v1",
+  "generated_at_utc": "2026-08-14T01:47:11.772074+00:00",
+  "status": "catalog_retrieval_complete_images_pending",
+  "gaia_membership": {
+    "method": "exact_unique_gaia_dr3_source_identifier",
+    "testable_canonical_object_count": 175,
+    "unique_tested_gaia_source_count": 174,
+    "qso_candidate_membership": {
+      "canonical_object_count": 8,
+      "unique_gaia_source_count": 8
+    },
+    "galaxy_candidate_membership": {
+      "canonical_object_count": 74,
+      "unique_gaia_source_count": 73
+    },
+    "non_single_star_membership": {
+      "canonical_object_count": 0,
+      "unique_gaia_source_count": 0
+    },
+    "query_batches": [
+      {
+        "batch_number": 1,
+        "requested_identifier_count": 100,
+        "returned_row_count": 100,
+        "seconds": 1.8783775420160964,
+        "query_sha256": "a8ba43465b87029af057e6f6b1b18927cfcfec9d8c88b05fc0b15f4a747418c5"
+      },
+      {
+        "batch_number": 2,
+        "requested_identifier_count": 74,
+        "returned_row_count": 74,
+        "seconds": 1.1453262499999255,
+        "query_sha256": "09d6133bf7f774ff92ee59701b6dc2c5356d70ea6c093047eda16cfa15ce4824"
+      }
+    ]
+  },
+  "legacy_tractor": {
+    "method": "all positional associations within 10 arcseconds",
+    "target_count": 724,
+    "matched_target_count": 683,
+    "no_match_target_count": 41,
+    "ambiguous_target_count": 645,
+    "association_row_count": 3793,
+    "closest_type_counts": {
+      "PSF": 372,
+      "REX": 216,
+      "SER": 46,
+      "DEV": 29,
+      "EXP": 12,
+      "DUP": 8
+    },
+    "query_batches": [
+      {
+        "batch_number": 1,
+        "target_count": 40,
+        "returned_candidate_count": 217,
+        "seconds": 2.3036153329885565,
+        "query_sha256": "5411bfe0e492a253e41fac51545b23f5ce7ab645d12f16951ff10e5356bf7fa9"
+      },
+      {
+        "batch_number": 2,
+        "target_count": 40,
+        "returned_candidate_count": 218,
+        "seconds": 2.1979955840215553,
+        "query_sha256": "14e6edeb54a6f036773d7ffa0e05d537df7e3910298cd7cca8cbb70d39f4002c"
+      },
+      {
+        "batch_number": 3,
+        "target_count": 40,
+        "returned_candidate_count": 192,
+        "seconds": 2.1026567090011667,
+        "query_sha256": "b5f169f0868f9c07827268306d714e72fb65942034f5bced2a4c6ecf257528c8"
+      },
+      {
+        "batch_number": 4,
+        "target_count": 40,
+        "returned_candidate_count": 213,
+        "seconds": 1.9630102909868583,
+        "query_sha256": "4776ba69ab6a7c02ba09fd8a0361e79991a47c8842f045b2025b554e6df3126d"
+      },
+      {
+        "batch_number": 5,
+        "target_count": 40,
+        "returned_candidate_count": 191,
+        "seconds": 2.068141541996738,
+        "query_sha256": "9d48eace8774dab0d2d127c3c8adcf3b4aed7f9d776c80713f0b8cd7d77e4fdc"
+      },
+      {
+        "batch_number": 6,
+        "target_count": 40,
+        "returned_candidate_count": 220,
+        "seconds": 2.0468218750029337,
+        "query_sha256": "23c9653c506de87c0a0db1bf6a6ff525327df4049c9f6ae3b93bb7f5eaca2da6"
+      },
+      {
+        "batch_number": 7,
+        "target_count": 40,
+        "returned_candidate_count": 220,
+        "seconds": 2.197282417007955,
+        "query_sha256": "999704600e79363087715544f3d42e6e5ca5e9a02f2829d96e69b571626097be"
+      },
+      {
+        "batch_number": 8,
+        "target_count": 40,
+        "returned_candidate_count": 180,
+        "seconds": 2.1196319160226267,
+        "query_sha256": "056ee3a34bd2c72c79739d5752eae7b2f28a4a73d7f10e2b7f58d113b58ec456"
+      },
+      {
+        "batch_number": 9,
+        "target_count": 40,
+        "returned_candidate_count": 184,
+        "seconds": 2.122850042011123,
+        "query_sha256": "18a3bb50a91dd5b3e332008d660044de7385b1f8c67145ae7d8572a12b9515d2"
+      },
+      {
+        "batch_number": 10,
+        "target_count": 40,
+        "returned_candidate_count": 212,
+        "seconds": 1.8719702500093263,
+        "query_sha256": "eacae06cbd0a7d9bcd3cd9d19228c378a89671f73b59d6f778a45e073213a765"
+      },
+      {
+        "batch_number": 11,
+        "target_count": 40,
+        "returned_candidate_count": 151,
+        "seconds": 2.026493291981751,
+        "query_sha256": "0419b7713cf4efcad55704f30631e658b70075472f6ef4a0ac3b3175bdfca25d"
+      },
+      {
+        "batch_number": 12,
+        "target_count": 40,
+        "returned_candidate_count": 246,
+        "seconds": 2.1202181249973364,
+        "query_sha256": "94b6585b9a795046db411efd95d1ee54f63e231f38bda75d30396e2d3de5210f"
+      },
+      {
+        "batch_number": 13,
+        "target_count": 40,
+        "returned_candidate_count": 226,
+        "seconds": 2.1438656669924967,
+        "query_sha256": "a65321ea0d96392a1c0d45a342ffef73fc119f1b4ac20baa07bbcf740aa82e86"
+      },
+      {
+        "batch_number": 14,
+        "target_count": 40,
+        "returned_candidate_count": 233,
+        "seconds": 2.1476833340129815,
+        "query_sha256": "1915dae2569377e298a383b50045df626714d7eb0279496362d9e6d57d2b2091"
+      },
+      {
+        "batch_number": 15,
+        "target_count": 40,
+        "returned_candidate_count": 232,
+        "seconds": 2.0420272500196006,
+        "query_sha256": "4b8ed166067c143dbe1e3a6a7792f15ff6e8a00a4ae96938011fee77f9320ea3"
+      },
+      {
+        "batch_number": 16,
+        "target_count": 40,
+        "returned_candidate_count": 216,
+        "seconds": 2.1311360409890767,
+        "query_sha256": "d13e3d6202b370dbfed5419bb26666d86a316186a0ac262f100292fdeb527c6e"
+      },
+      {
+        "batch_number": 17,
+        "target_count": 40,
+        "returned_candidate_count": 222,
+        "seconds": 2.0518396249972284,
+        "query_sha256": "8bd5215b69fde85bc2a9f9fae749920ef129aad6d2520f380c3a36bc42eff788"
+      },
+      {
+        "batch_number": 18,
+        "target_count": 40,
+        "returned_candidate_count": 180,
+        "seconds": 1.9609186659799889,
+        "query_sha256": "95c7da62cd604f03c5dc1d9c22471302889b75bc976dc8979b0e5afff4469115"
+      },
+      {
+        "batch_number": 19,
+        "target_count": 4,
+        "returned_candidate_count": 17,
+        "seconds": 1.420876332995249,
+        "query_sha256": "ede2b276cefe937b3994b12a50fbd028f5fed2e93157c295aa56ec849e5f0495"
+      }
+    ]
+  },
+  "outputs": {
+    "data/literature/catalogs/ucd_legacy_reference_gaia_membership_v1.csv": "77b027852fb501e2cc29a80887a22a4dc4cae6a0be961a2d5baa2d03eab0285a",
+    "data/literature/catalogs/ucd_legacy_reference_tractor_matches_v1.csv": "21dac9eaf284c6a3806dd45ea5185fcd8f45d4efc4d018980369ec801b10ba0d",
+    "data/literature/validation/ucd_legacy_reference_tractor_audit_v1.csv": "64772eb9b5d030f3f54c05346aa12702d1b3e9635457ec6840c035cf09287b57"
+  },
+  "check_count": 9,
+  "passed_count": 9,
+  "checks": {
+    "all_724_targets_have_gaia_status": true,
+    "exactly_175_gaia_identifiers_tested": true,
+    "all_testable_gaia_rows_retrieved": true,
+    "all_targets_have_tractor_audit_rows": true,
+    "all_tractor_associations_are_within_ten_arcseconds": true,
+    "closest_match_is_unique_per_matched_target": true,
+    "all_associations_have_portable_string_identifiers": true,
+    "catalog_flags_are_evidence_not_rejections": true,
+    "tractor_types_are_measurements_not_truth_labels": true
+  }
+}

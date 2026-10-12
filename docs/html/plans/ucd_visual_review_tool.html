@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>UCD Reference Review Workbench · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Plans and requirements</span><a href="../../plans/ucd_visual_review_tool.md">Markdown source ↗</a></div><h1 id="ucd-reference-review-workbench">UCD Reference Review Workbench</h1>
+<h2 id="summary">Summary</h2>
+<p>Build a local, single-reviewer web application for examining the complete reference
+set of:</p>
+<ul>
+<li>680 canonical objects classified as confirmed ultra-compact dwarf galaxies (UCDs)
+  under <code>confirmation_rules_v1</code>; and</li>
+<li>44 objects from the Saifollahi et al. (2021) high-probability candidate table.</li>
+</ul>
+<p>The tool will combine two-scale Legacy Survey imaging with literature provenance,
+Gaia measurements, host-galaxy context, Legacy Survey catalog measurements, and
+external contaminant-catalog evidence. It will record auditable visual observations,
+coordinate-correction proposals, and a manual decision about whether each confirmed
+UCD belongs in a clean positive design reference for deriving detailed UCD selection
+rules from combined Gaia and Legacy Survey measurements.</p>
+<p>The application is a review and evidence-management system. It must never alter the
+canonical literature database, silently replace an object's coordinates, invent an
+unknown host, treat catalog membership as physical truth, or automatically remove an
+object from the positive design reference.</p>
+<h2 id="scientific-context">Scientific context</h2>
+<p>The current mosaic figures are useful for rapid comparison but are insufficient for
+source-by-source diagnosis. Important problems include:</p>
+<ul>
+<li>the apparent source can be displaced from the literature coordinate;</li>
+<li>host-galaxy light or structure can dominate a small cutout;</li>
+<li>the source can be too faint for a reliable visual judgment;</li>
+<li>nearby objects or image artifacts can confuse the interpretation; and</li>
+<li>the expected appearance depends on host distance, because a nearby UCD may be
+  visibly resolved while the same physical object would appear point-like farther
+  away.</li>
+</ul>
+<p>For this reason, “resolved” is an observation rather than an automatic contamination
+label. The interface must display it beside host distance and physical scale. The
+design-reference decision remains a separate human judgment supported by all available
+evidence.</p>
+<p>The 44 Saifollahi high-probability objects remain candidates. They will be reviewed
+with the same interface but cannot enter the confirmed positive design reference.
+Their output is a separate follow-up-priority pool.</p>
+<h2 id="existing-data-on-this-computer">Existing data on this computer</h2>
+<h3 id="canonical-literature-and-reference-cohort">Canonical literature and reference cohort</h3>
+<p>The canonical literature database is:</p>
+<p><code>data/literature/database/ucd_reference_v2.db</code></p>
+<p>It contains publications, datasets, immutable literature records, canonical objects,
+object-record associations, classifications, aliases, and evidence. The frozen
+724-object review scope is:</p>
+<p><code>data/literature/catalogs/ucd_legacy_reference_targets_v1.csv</code></p>
+<p>The scope contract is:</p>
+<p><code>data/literature/sources/ucd_legacy_reference_contract_v1.json</code></p>
+<p>The target table includes canonical identifiers, adopted literature coordinates,
+classification state, names, published host or environment strings, Gaia identifiers
+reported in accepted source records, bibcodes, row locators, dataset identifiers,
+catalog identifiers, and local source paths.</p>
+<h3 id="legacy-survey-images">Legacy Survey images</h3>
+<p>The existing compact three-color images are under:</p>
+<p><code>$BUBBLETEA_EXTERNAL_DATA/bubbletea/ucd_legacy_reference_v1/cutouts/</code></p>
+<p>With the expected environment setting, this resolves to:</p>
+<p><code>~/Dropbox/work/data/bubbletea/ucd_legacy_reference_v1/cutouts/</code></p>
+<p>Each current image is 64 by 64 pixels at 0.262 arcseconds per pixel, or 16.768
+arcseconds wide. The retrieval manifest is:</p>
+<p><code>data/literature/catalogs/ucd_legacy_reference_cutouts_v1.csv</code></p>
+<p>The server returned a readable JPEG for all 724 coordinates, but 17 files are
+low-color Legacy Survey viewer placeholders rather than useful sky images. The
+remaining 707 files contain nonuniform image content: 663 confirmed UCDs and all 44
+Saifollahi candidates. Transport success and useful image content must remain
+separate states in the review application.</p>
+<h3 id="legacy-survey-catalog-measurements">Legacy Survey catalog measurements</h3>
+<p>All Legacy Survey DR10 Tractor associations within 10 arcseconds are stored in:</p>
+<p><code>data/literature/catalogs/ucd_legacy_reference_tractor_matches_v1.csv</code></p>
+<p>The per-target association audit is:</p>
+<p><code>data/literature/validation/ucd_legacy_reference_tractor_audit_v1.csv</code></p>
+<p>At least one association exists for 683 targets, including all 44 Saifollahi
+candidates. The 10-arcsecond radius was adopted (2026-08-13) after the 2-arcsecond
+pilot missed off-center literature coordinates, such as Hydra-UCD33. The tool must
+show all nearby associations and identify the closest row without presenting it as
+certainly correct.</p>
+<p>Available measurements include coordinates, separation, fitted light-profile type,
+g/r/i/z/W1/W2 fluxes and inverse variances, observed and dust-corrected magnitudes,
+number of exposures, fit quality, contamination fractions, mask values, point-spread
+function sizes, fitted size, ellipticity, and Sérsic index.</p>
+<p>The Tractor profile type describes how the survey pipeline fit the light. <code>PSF</code> does
+not prove that a source is a star, and an extended profile does not prove that it is a
+background galaxy.</p>
+<h3 id="gaia-information">Gaia information</h3>
+<p>The current exact-identifier catalog-membership table is:</p>
+<p><code>data/literature/catalogs/ucd_legacy_reference_gaia_membership_v1.csv</code></p>
+<p>Only 175 confirmed-object rows have one accepted Gaia identifier, representing 174
+distinct Gaia sources. The current exact-identifier overlaps are:</p>
+<ul>
+<li>0 Gaia non-single-star catalog members;</li>
+<li>8 Gaia QSO-candidate catalog members; and</li>
+<li>74 Gaia galaxy-candidate rows representing 73 distinct Gaia sources.</li>
+</ul>
+<p>The canonical Gaia cross-match table contains the complete Gaia measurements for
+these exact identifiers:</p>
+<p><code>data/literature/catalogs/canonical_gaia_dr3_crossmatch.csv</code></p>
+<p>It includes Gaia coordinates, G/BP/RP photometry, parallax, proper motion,
+uncertainties, astrometric excess noise, RUWE, image-parameter diagnostics, and match
+separation. Objects without an accepted identifier currently remain not testable for
+exact identifier membership. The new preparation stage will retrieve diagnostic Gaia
+neighbors around every literature coordinate without promoting those neighbors to
+accepted counterparts.</p>
+<h3 id="host-galaxy-information">Host-galaxy information</h3>
+<p>The nearby-galaxy table is:</p>
+<p><code>data/galaxy_sample/galaxy_sample_ranked.csv</code></p>
+<p>It contains galaxy coordinates, adopted distance and distance source, absolute
+K-band magnitude, logarithmic K-band luminosity, and related photometry. It cannot be
+joined blindly to the published UCD host strings. Many UCD rows contain a cluster
+name, multiple possible hosts, or no host. The application requires a separately
+audited host-association register before it may calculate host separation or display
+host luminosity as object-specific evidence.</p>
+<p>The literature database also contains source-level distance values and an approved
+distance-provenance review:</p>
+<p><code>data/literature/sources/host_distance_reviews.json</code></p>
+<p>Source-level cluster distance must not be presented as proof of one unique host
+galaxy.</p>
+<h3 id="external-catalogs-already-downloaded">External catalogs already downloaded</h3>
+<p>Large external catalogs are stored outside the repository under:</p>
+<p><code>~/Dropbox/work/data/bubbletea/extragalactic_reference/</code></p>
+<p>Available files include:</p>
+<ul>
+<li>Gaia DR3 morphology galaxies with Sérsic measurements;</li>
+<li>the Quaia G &lt; 20 all-sky QSO catalog and its selection function; and</li>
+<li>a Gaia-linked clean SDSS DR16 spectroscopic galaxy and QSO catalog.</li>
+</ul>
+<p>Their provenance, row counts, selection rules, paths, and SHA-256 digests are recorded
+in:</p>
+<p><code>data/literature/sources/extragalactic_reference_catalogs.json</code></p>
+<p>These catalogs have different scientific roles. Gaia candidate catalogs are useful
+warnings but are not independent truth. Quaia begins from Gaia QSO candidates. SDSS
+spectroscopic classifications are stronger external evidence but have footprint and
+targeting selection effects.</p>
+<h2 id="data-preparation-before-application-development">Data preparation before application development</h2>
+<p>The data-preparation stage must finish and validate a versioned review-input bundle
+before the web interface is built. Large products belong under:</p>
+<p><code>$BUBBLETEA_EXTERNAL_DATA/bubbletea/ucd_visual_review_v1/</code></p>
+<p>Repository-tracked manifests and compact tables must refer to external files through
+<code>BUBBLETEA_EXTERNAL_DATA</code>; scripts must import all paths from <code>scripts/config.py</code>.</p>
+<h3 id="two-legacy-survey-image-scales">Two Legacy Survey image scales</h3>
+<p>Keep the existing compact view and prefetch one wider view for every target, except
+the 17 objects whose compact image is already a viewer-placeholder tile:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th style="text-align: right;">Pixels</th>
+<th style="text-align: right;">Pixel scale</th>
+<th style="text-align: right;">Field width</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compact</td>
+<td style="text-align: right;">64 × 64</td>
+<td style="text-align: right;">0.262 arcsec/pixel</td>
+<td style="text-align: right;">16.768 arcsec</td>
+<td>Central morphology and centering</td>
+</tr>
+<tr>
+<td>Wide</td>
+<td style="text-align: right;">256 × 256</td>
+<td style="text-align: right;">0.262 arcsec/pixel</td>
+<td style="text-align: right;">67.072 arcsec</td>
+<td>Neighbors, host light, and local context</td>
+</tr>
+</tbody>
+</table>
+<p>Use the Legacy Survey DR10 three-color JPEG endpoint with the frozen literature
+coordinate as the requested center. Reuse verified existing compact images. Record
+the exact URL, coordinate, layer, dimensions, pixel scale, byte count, digest,
+content type, retrieval outcome, and image-content outcome for both scales.</p>
+<p>A valid JPEG does not prove useful imaging. Preserve at least these content states:</p>
+<ul>
+<li><code>nonuniform_image_content</code></li>
+<li><code>viewer_placeholder_tile</code></li>
+<li><code>unavailable_or_non_jpeg</code></li>
+<li><code>unusable_wrong_dimensions</code></li>
+</ul>
+<p>Do not automatically recenter an image on a catalog source. A mismatch between the
+literature coordinate and the visible source is evidence the tool is intended to
+record.</p>
+<h3 id="gaia-source-preparation">Gaia source preparation</h3>
+<p>For every target, preserve two distinct evidence paths:</p>
+<ol>
+<li>an accepted exact Gaia source identifier from the canonical literature evidence;</li>
+<li>diagnostic Gaia neighbors found by position.</li>
+</ol>
+<p>Retrieve all Gaia DR3 sources within 5 arcseconds of every literature coordinate.
+Five arcseconds is a diagnostic search radius, not an association rule. Retain every
+neighbor and calculate its separation and position angle. Never automatically assign
+the nearest neighbor as the counterpart.</p>
+<p>For accepted identifiers and positional neighbors, retrieve:</p>
+<ul>
+<li>source identifier and ICRS coordinates;</li>
+<li>G, BP, and RP magnitudes and fluxes where available;</li>
+<li>raw BP/RP flux-excess factor;</li>
+<li>parallax and uncertainty;</li>
+<li>proper motion in both axes and uncertainties;</li>
+<li>the proper-motion correlation needed for the combined significance calculation;</li>
+<li>RUWE;</li>
+<li>astrometric excess noise and its significance;</li>
+<li>image-parameter multi-peak fraction;</li>
+<li>image-parameter odd-window fraction;</li>
+<li>duplicated-source status;</li>
+<li>astrometric parameters solved;</li>
+<li>visibility periods and observation counts where available;</li>
+<li>Gaia classification probabilities; and</li>
+<li>Gaia QSO-candidate, galaxy-candidate, and non-single-star membership.</li>
+</ul>
+<p>Compute absolute parallax significance as <code>abs(parallax) / parallax_error</code> only when
+the uncertainty is finite and positive. Compute the two-dimensional proper-motion
+significance using the full covariance matrix, not by adding independent axis
+significances. Store raw inputs beside derived values.</p>
+<p>Query all Gaia DR3 non-single-star solution tables used by the existing benchmark.
+Record which table contains a source and the published solution/model type. A source
+without an accepted Gaia identifier can only have positional-neighbor NSS evidence;
+it cannot be called an NSS catalog member of the UCD itself.</p>
+<h3 id="external-catalog-preparation">External catalog preparation</h3>
+<p>Use exact Gaia identifiers where the catalog supports them. Also perform bounded
+positional searches around every literature coordinate so objects lacking an
+accepted Gaia identifier remain diagnosable.</p>
+<p>Every association must record:</p>
+<ul>
+<li>catalog name and release;</li>
+<li>catalog source identifier;</li>
+<li>exact-identifier or positional-neighbor match basis;</li>
+<li>catalog coordinates;</li>
+<li>angular separation;</li>
+<li>class or candidate label;</li>
+<li>redshift and uncertainty where available;</li>
+<li>catalog-specific measurements relevant to morphology or classification; and</li>
+<li>provenance registry entry.</li>
+</ul>
+<p>At minimum, integrate:</p>
+<ul>
+<li>Gaia DR3 QSO candidates;</li>
+<li>Gaia DR3 galaxy candidates;</li>
+<li>Gaia DR3 non-single-star solution tables;</li>
+<li>Quaia G &lt; 20;</li>
+<li>Gaia morphology galaxies with Sérsic fits; and</li>
+<li>the local SDSS DR16 spectroscopic galaxy/QSO reference.</li>
+</ul>
+<p>Exact identifier membership is stronger than a positional neighbor. The interface
+and exports must never collapse them into one Boolean flag.</p>
+<h3 id="host-association-register">Host-association register</h3>
+<p>Create a versioned host-association register with one row per canonical object and
+one of these states:</p>
+<ul>
+<li><code>verified_unique_host</code></li>
+<li><code>published_environment_only</code></li>
+<li><code>ambiguous_host</code></li>
+<li><code>host_unavailable</code></li>
+</ul>
+<p>Normalize published host names only through reviewed aliases. Do not select the
+nearest galaxy automatically. For a verified unique host, preserve:</p>
+<ul>
+<li>canonical host name and aliases;</li>
+<li>host coordinates;</li>
+<li>host-table row identifier;</li>
+<li>adopted distance and distance source;</li>
+<li>absolute K-band magnitude;</li>
+<li>logarithmic K-band luminosity;</li>
+<li>literature-coordinate angular separation;</li>
+<li>projected separation at the adopted distance; and</li>
+<li>parsecs per arcsecond.</li>
+</ul>
+<p>For <code>published_environment_only</code>, show the published cluster/group text and
+source-level distance evidence, but do not calculate a galaxy-specific projected
+separation or attach one galaxy's luminosity. For ambiguous or unavailable hosts,
+leave derived host quantities missing and preserve an explanatory note.</p>
+<p>Host assignments are scientific evidence and must be audited before the application
+uses them. Any later correction needs a new register version rather than an in-place
+edit without provenance.</p>
+<h3 id="review-input-bundle">Review-input bundle</h3>
+<p>Produce a compact, application-ready bundle rather than having the web server scan
+large FITS files or query remote services during review. The bundle must include:</p>
+<ul>
+<li>one object row per canonical object;</li>
+<li>all literature provenance associations;</li>
+<li>accepted and diagnostic Gaia sources;</li>
+<li>all Legacy Survey associations;</li>
+<li>all external-catalog associations;</li>
+<li>host associations;</li>
+<li>image manifests for both scales; and</li>
+<li>link templates or complete URLs.</li>
+</ul>
+<p>Create a manifest containing input hashes, external file hashes, query text, match
+radii, retrieval dates, row counts, software command, output hashes, validation
+checks, and the review-bundle version.</p>
+<h2 id="application-architecture">Application architecture</h2>
+<h3 id="technology">Technology</h3>
+<p>Implement a localhost-only Flask application with vanilla HTML, CSS, and JavaScript.</p>
+<ul>
+<li>Add Flask through <code>uv</code>; do not use pip, conda, or another package manager.</li>
+<li>Bind only to <code>127.0.0.1</code> by default.</li>
+<li>Do not add accounts, remote authentication, cloud storage, or public deployment in
+  version 1.</li>
+<li>Serve the prepared object bundle and cached images locally.</li>
+<li>Store review state in a small external SQLite database.</li>
+<li>Export compact CSV and JSON artifacts for version control.</li>
+</ul>
+<p>The application should use a restrained observatory-console visual design: a dark
+neutral background, image-dominant layout, compact evidence tables, clear typography,
+high-contrast coordinate markers, and colorblind-safe status colors. Avoid decorative
+animation that distracts from image diagnosis.</p>
+<h3 id="startup-contract">Startup contract</h3>
+<p>Provide one documented command that:</p>
+<ul>
+<li>resolves external data through <code>BUBBLETEA_EXTERNAL_DATA</code>;</li>
+<li>validates the input manifest and required images;</li>
+<li>opens or creates the review database; and</li>
+<li>starts the server on localhost.</li>
+</ul>
+<p>The server must refuse to start if the review bundle's recorded input hashes do not
+match the files on disk. A command-line option may allow read-only inspection of an
+older review database but must not silently migrate or rewrite it.</p>
+<h3 id="review-storage">Review storage</h3>
+<p>The review SQLite database belongs under:</p>
+<p><code>$BUBBLETEA_EXTERNAL_DATA/bubbletea/ucd_visual_review_v1/reviews/</code></p>
+<p>Every save creates an append-only revision. Do not update or delete earlier
+revisions. Store:</p>
+<ul>
+<li>review database schema version;</li>
+<li>review-input bundle version and digest;</li>
+<li>canonical object identifier;</li>
+<li>UTC timestamp;</li>
+<li>prior revision identifier;</li>
+<li>all visual evidence states;</li>
+<li>image usability;</li>
+<li>design-reference or follow-up decision;</li>
+<li>required reason and notes;</li>
+<li>coordinate proposal, if any; and</li>
+<li>client revision used for optimistic concurrency control.</li>
+</ul>
+<p>The application is designed for one reviewer, but it must still prevent two browser
+tabs from silently overwriting one another. Reject a save if the submitted parent
+revision is no longer current and show the newer saved revision to the user.</p>
+<h2 id="user-interface">User interface</h2>
+<h3 id="object-list-and-navigation">Object list and navigation</h3>
+<p>Provide a searchable, filterable object list. Search must cover:</p>
+<ul>
+<li>original and canonical names;</li>
+<li>canonical object identifier;</li>
+<li>atlas identifier;</li>
+<li>published host/environment text;</li>
+<li>verified host name;</li>
+<li>publication bibcode;</li>
+<li>Gaia source identifier; and</li>
+<li>Legacy Survey source identifier.</li>
+</ul>
+<p>Filters must include:</p>
+<ul>
+<li>confirmed UCD or Saifollahi candidate cohort;</li>
+<li>complete, incomplete, or not-started review;</li>
+<li>host-association status;</li>
+<li>host-distance interval;</li>
+<li>image-content/usability status;</li>
+<li>each visual evidence state;</li>
+<li>Gaia QSO, galaxy, or non-single-star evidence;</li>
+<li>external catalog name and match basis;</li>
+<li>Legacy Survey fitted profile type;</li>
+<li>no, one, or multiple Legacy Survey associations;</li>
+<li>coordinate proposal status; and</li>
+<li>design-reference or candidate follow-up decision.</li>
+</ul>
+<p>Allow sorting by object name, host name, host distance, parsecs per arcsecond, G
+magnitude, Legacy Survey magnitude, host separation, image status, and review status.</p>
+<p>Previous and next navigation must follow the current filtered and sorted list. Show
+separate progress counts for confirmed UCDs and Saifollahi candidates. Never combine
+candidate review completion with confirmed positive design-reference completion.</p>
+<h3 id="image-inspector">Image inspector</h3>
+<p>Place the compact and wide Legacy Survey images side by side. Each image must support
+independent zoom and pan while retaining a reset-to-fit control.</p>
+<p>Provide overlay toggles for:</p>
+<ul>
+<li>literature-coordinate crosshair;</li>
+<li>accepted Gaia source;</li>
+<li>all diagnostic Gaia neighbors;</li>
+<li>closest Legacy Survey catalog source;</li>
+<li>alternative Legacy Survey associations;</li>
+<li>proposed corrected coordinate;</li>
+<li>field width; and</li>
+<li>north/east orientation.</li>
+</ul>
+<p>Use different marker shapes and colors for literature, Gaia, Legacy Survey, and
+proposed coordinates. Label neighbor markers with their angular separation. Include
+a legend that states whether the Gaia marker is accepted by identifier or merely a
+positional neighbor.</p>
+<p>The literature coordinate remains the image center. If the apparent object is not at
+the crosshair, the reviewer records <code>off_center</code>; the application must not hide the
+problem by recentering the displayed image.</p>
+<h3 id="literature-provenance-panel">Literature provenance panel</h3>
+<p>Display:</p>
+<ul>
+<li>current canonical classification and ruleset;</li>
+<li>confirmed or candidate cohort;</li>
+<li>all original names;</li>
+<li>all published host/environment strings;</li>
+<li>every accepted source-row association;</li>
+<li>source row locator and local data file;</li>
+<li>reported confirmation status;</li>
+<li>reported radial velocity, size, magnitude, or mass when present in the raw source
+  record;</li>
+<li>publication title, authors, year, bibcode, DOI, and catalog identifier; and</li>
+<li>classification rationale and existing review-required status.</li>
+</ul>
+<p>Do not flatten conflicting source measurements into an unexplained single value.
+Show source-specific measurements with their provenance.</p>
+<h3 id="gaia-panel">Gaia panel</h3>
+<p>Show accepted Gaia evidence separately from diagnostic neighbors. For every displayed
+Gaia source, show:</p>
+<ul>
+<li>match basis and separation;</li>
+<li>identifier and coordinates;</li>
+<li>G, BP, RP, and BP-RP;</li>
+<li>raw BP/RP flux-excess factor;</li>
+<li>parallax and absolute parallax significance;</li>
+<li>proper motion and combined significance;</li>
+<li>RUWE;</li>
+<li>astrometric excess noise and significance;</li>
+<li>image-parameter multi-peak and odd-window fractions;</li>
+<li>duplicated-source and astrometric-solution information; and</li>
+<li>Gaia QSO, galaxy, and non-single-star catalog evidence.</li>
+</ul>
+<p>Define each non-obvious Gaia field in expandable plain-language help. Missing values
+must be labeled unavailable, not displayed as zero.</p>
+<h3 id="host-or-environment-panel">Host or environment panel</h3>
+<p>Always show the host-association state. For <code>verified_unique_host</code>, show host name,
+coordinates, adopted distance, distance source, <code>M_Ks</code>, <code>log_L_K</code>, angular
+separation, projected separation, and parsecs per arcsecond.</p>
+<p>For a published cluster or group without one verified host, show the environment and
+distance evidence but state plainly that galaxy-specific luminosity and separation
+are unavailable. Never present a nearest catalog galaxy as the host unless a separate
+audited register explicitly verifies it.</p>
+<h3 id="legacy-survey-panel">Legacy Survey panel</h3>
+<p>Show every catalog association within 10 arcseconds, ordered by separation. Identify
+the closest association but show an ambiguity warning whenever another source is
+also within the radius.</p>
+<p>For each association show:</p>
+<ul>
+<li>Legacy Survey identifier and coordinates;</li>
+<li>separation;</li>
+<li>primary-source status;</li>
+<li>fitted profile type;</li>
+<li>g/r/i/z/W1/W2 magnitudes and uncertainties where valid;</li>
+<li>number of observations;</li>
+<li>per-band fit quality;</li>
+<li>flux contamination, masked fraction, and fraction of model inside the blob;</li>
+<li>mask and fit flags with decoded plain-language definitions;</li>
+<li>point-spread function size;</li>
+<li>fitted radius and ellipticity; and</li>
+<li>Sérsic index and uncertainty.</li>
+</ul>
+<p>Raw values must remain available even when the interface summarizes them as warnings.</p>
+<h3 id="external-catalog-panel">External-catalog panel</h3>
+<p>Group evidence by catalog. For each result show catalog role, source identifier,
+class/candidate label, redshift where available, exact-identifier versus positional
+match basis, and separation.</p>
+<p>Use explicit wording such as “Gaia galaxy candidate,” “Quaia QSO candidate,” “SDSS
+spectroscopic galaxy,” or “Gaia positional neighbor with an NSS solution.” Do not use
+a generic “contaminant” label that erases the evidence type.</p>
+<h3 id="external-links">External links</h3>
+<p>Include links to:</p>
+<ul>
+<li>Legacy Survey viewer centered on the literature coordinate;</li>
+<li>Legacy Survey viewer centered on a proposed coordinate when present;</li>
+<li>Gaia Archive source page or search for accepted and neighboring source IDs;</li>
+<li>SIMBAD coordinate and name searches;</li>
+<li>NED coordinate and name searches;</li>
+<li>ADS abstract pages;</li>
+<li>DOI landing pages; and</li>
+<li>local reference files and source packages.</li>
+</ul>
+<p>Links should open in a new tab and display the destination name before navigation.</p>
+<h2 id="review-model">Review model</h2>
+<h3 id="four-state-visual-evidence">Four-state visual evidence</h3>
+<p>Use a four-state segmented control for each visual observation:</p>
+<ul>
+<li><code>not_reviewed</code></li>
+<li><code>yes</code></li>
+<li><code>no</code></li>
+<li><code>uncertain</code></li>
+</ul>
+<p>Require these seven observations for every usable image:</p>
+<ol>
+<li><code>resolved</code></li>
+<li><code>off_center</code></li>
+<li><code>close_to_host_light</code></li>
+<li><code>too_faint_to_judge</code></li>
+<li><code>blend_or_nearby_source</code></li>
+<li><code>image_artifact</code></li>
+<li><code>star_forming_or_young_cluster_appearance</code></li>
+</ol>
+<p>Definitions:</p>
+<ul>
+<li><strong>Resolved:</strong> The central source appears broader or structurally extended relative
+  to nearby point sources. This is not automatically negative; interpretation
+  depends on distance and image quality.</li>
+<li><strong>Off-center:</strong> The likely intended object is visibly displaced from the literature
+  coordinate crosshair.</li>
+<li><strong>Close to host light:</strong> Host-galaxy light, a galaxy halo, dust, or visible host
+  substructure materially affects the cutout. This is distinct from a measured
+  projected host separation.</li>
+<li><strong>Too faint to judge:</strong> The source is present weakly or not detected well enough to
+  decide its morphology or centering reliably.</li>
+<li><strong>Blend or nearby source:</strong> A neighbor overlaps the source or is close enough to
+  compromise visual or catalog measurements.</li>
+<li><strong>Image artifact:</strong> Saturation, diffraction, missing coverage, seams, unusual color
+  patches, placeholder output, or another imaging problem compromises interpretation.</li>
+<li><strong>Star-forming or young-cluster appearance:</strong> The source appears associated with
+  visible star-forming structure or irregular compact emission. Color alone cannot
+  assign this observation.</li>
+</ul>
+<p>Provide an image-usability field with:</p>
+<ul>
+<li><code>not_reviewed</code></li>
+<li><code>usable</code></li>
+<li><code>partly_usable</code></li>
+<li><code>unusable</code></li>
+</ul>
+<p>An unusable image may complete through an explicit unusable-image path. In that path,
+visual flags may remain <code>not_reviewed</code>; the final design-reference decision must be <code>hold</code>,
+and the reviewer must provide a reason.</p>
+<h3 id="notes">Notes</h3>
+<p>Provide:</p>
+<ul>
+<li>one concise evidence note associated with visual flags;</li>
+<li>one optional general comment; and</li>
+<li>a required decision reason for <code>exclude</code>, <code>hold</code>, or candidate <code>exclude</code> / <code>hold</code>
+  <code>hold</code>.</li>
+</ul>
+<p>The interface should encourage factual descriptions such as “central source is 1.2
+arcseconds east of the literature crosshair” rather than unsupported physical
+conclusions.</p>
+<h3 id="coordinate-correction-proposals">Coordinate-correction proposals</h3>
+<p>When <code>off_center</code> is <code>yes</code> or <code>uncertain</code>, require one of:</p>
+<ul>
+<li>select an accepted or diagnostic Gaia source;</li>
+<li>select a Legacy Survey association;</li>
+<li>enter a manual ICRS RA and Dec; or</li>
+<li>state that no corrected coordinate can yet be proposed.</li>
+</ul>
+<p>Store:</p>
+<ul>
+<li>proposed RA and Dec;</li>
+<li>proposal source type and source identifier;</li>
+<li>separation from the literature coordinate;</li>
+<li>supporting note;</li>
+<li>UTC time; and</li>
+<li>review revision identifier.</li>
+</ul>
+<p>A proposal is exported for a separate provenance audit. It must never update the
+canonical object or trigger automatic image recentering.</p>
+<h3 id="confirmed-ucd-design-reference-decision">Confirmed-UCD design-reference decision</h3>
+<p>For confirmed UCDs, record one manual state:</p>
+<ul>
+<li><code>not_reviewed</code></li>
+<li><code>include</code></li>
+<li><code>exclude</code></li>
+<li><code>hold</code></li>
+</ul>
+<p><code>exclude</code> and <code>hold</code> require a reason. <code>include</code> may coexist with a positive visual
+flag, because a nearby real UCD can be resolved or close to host light. In that case,
+show a confirmation warning so inclusion is intentional.</p>
+<p>An object cannot enter the clean design-reference export unless:</p>
+<ul>
+<li>its image is usable or partly usable;</li>
+<li>all seven visual observations have been answered;</li>
+<li>any off-center evidence has a completed coordinate-proposal response;</li>
+<li>its design-reference decision is <code>include</code>; and</li>
+<li>the current review revision passes server-side validation.</li>
+</ul>
+<p>The tool does not automatically translate any single catalog flag into exclusion.</p>
+<h3 id="candidate-follow-up-decision">Candidate follow-up decision</h3>
+<p>Saifollahi candidates use the same three decisions as confirmed UCDs:</p>
+<ul>
+<li><code>not_reviewed</code></li>
+<li><code>include</code></li>
+<li><code>exclude</code></li>
+<li><code>hold</code></li>
+</ul>
+<p>A candidate's <code>include</code> means "a good candidate to keep in the follow-up pool", not a
+promotion to confirmed. Candidates cannot enter the confirmed positive design-reference
+export even when marked <code>include</code>. Their review output remains a separate follow-up pool
+with all provenance and evidence retained.</p>
+<h3 id="completion-rules">Completion rules</h3>
+<p>A usable-image review is complete only when:</p>
+<ul>
+<li>image usability is answered;</li>
+<li>all seven visual observations are answered;</li>
+<li>an off-center proposal response is complete when required;</li>
+<li>the cohort-appropriate final decision is answered; and</li>
+<li>a required reason is present.</li>
+</ul>
+<p>Review completion and design-reference eligibility are different. An excluded or held object
+can have a complete review.</p>
+<h2 id="local-api">Local API</h2>
+<p>Provide these minimum routes:</p>
+<ul>
+<li><code>GET /api/summary</code></li>
+<li><code>GET /api/objects</code></li>
+<li><code>GET /api/objects/{canonical_object_id}</code></li>
+<li><code>GET /api/objects/{canonical_object_id}/history</code></li>
+<li><code>GET /api/images/{canonical_object_id}/{compact|wide}</code></li>
+<li><code>POST /api/objects/{canonical_object_id}/reviews</code></li>
+<li><code>POST /api/export</code></li>
+</ul>
+<p><code>GET /api/objects</code> must support filtering, sorting, pagination, and stable navigation.
+The object-detail response must group provenance, Gaia, host, Legacy Survey, external
+catalogs, images, links, and current review state rather than returning one ambiguous
+flat namespace.</p>
+<p>The save endpoint must validate:</p>
+<ul>
+<li>allowed four-state values;</li>
+<li>allowed image-usability values;</li>
+<li>cohort-specific final decisions;</li>
+<li>required reasons;</li>
+<li>required coordinate-proposal response;</li>
+<li>candidate prohibition from confirmed design-reference inclusion;</li>
+<li>parent revision currency; and</li>
+<li>canonical object membership in the frozen input bundle.</li>
+</ul>
+<p>Return structured validation errors that the interface can place beside the relevant
+field.</p>
+<h2 id="user-interaction-details">User interaction details</h2>
+<p>Provide:</p>
+<ul>
+<li>explicit Save and Save-and-next buttons;</li>
+<li><code>Ctrl+S</code> or <code>Cmd+S</code> to save;</li>
+<li>previous/next keyboard shortcuts that do not fire while editing text;</li>
+<li>an unsaved-change warning before navigation or tab closure;</li>
+<li>a visible saved timestamp and revision identifier;</li>
+<li>a history drawer showing every prior revision; and</li>
+<li>a conflict dialog when another tab has saved a newer revision.</li>
+</ul>
+<p>Do not autosave individual flag clicks. A review is a coherent revision and should be
+saved explicitly after the reviewer checks the evidence.</p>
+<h2 id="versioned-exports">Versioned exports</h2>
+<p>Exports must be generated from a transactionally consistent snapshot of the review
+database. Write compact repository-ready CSV and JSON artifacts plus a manifest.</p>
+<p>Required exports:</p>
+<ol>
+<li>current review state for all 724 objects;</li>
+<li>complete append-only revision history;</li>
+<li>included confirmed-UCD positive design reference;</li>
+<li>excluded confirmed UCDs with reasons;</li>
+<li>held confirmed UCDs with reasons;</li>
+<li>Saifollahi candidate follow-up pool;</li>
+<li>coordinate-correction proposals;</li>
+<li>summary counts and cross-tabulations; and</li>
+<li>export manifest with input/output hashes and validation checks.</li>
+</ol>
+<p>Summary tables must report confirmed UCDs and candidates separately and include
+counts by:</p>
+<ul>
+<li>review completion;</li>
+<li>image usability;</li>
+<li>each visual observation;</li>
+<li>design-reference or follow-up decision;</li>
+<li>host-association state and distance interval;</li>
+<li>Gaia catalog evidence;</li>
+<li>external catalog and match basis;</li>
+<li>Legacy Survey profile type; and</li>
+<li>coordinate-proposal status.</li>
+</ul>
+<p>The clean positive design-reference export must contain only confirmed objects with current
+<code>include</code> decisions that satisfy every eligibility rule. It must link back to the
+review revision and all source evidence; it must not become a replacement canonical
+literature table.</p>
+<h2 id="validation-fixtures">Validation fixtures</h2>
+<p>Create deterministic fixtures representing at least:</p>
+<ol>
+<li>an exact Gaia identifier with QSO and galaxy-candidate overlap;</li>
+<li>an object without an accepted Gaia identifier but with positional neighbors;</li>
+<li>multiple Legacy Survey associations;</li>
+<li>a viewer placeholder or unusable image;</li>
+<li>a nearby verified host;</li>
+<li>a cluster-only published environment;</li>
+<li>an unknown host;</li>
+<li>a visibly resolved nearby UCD;</li>
+<li>an off-center source with a coordinate proposal;</li>
+<li>a Saifollahi candidate;</li>
+<li>included, excluded, and held confirmed objects; and</li>
+<li>conflicting saves from two browser tabs.</li>
+</ol>
+<p>Fixtures must use synthetic or explicitly frozen small data so tests do not query
+remote services.</p>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<h3 id="scientific-integrity">Scientific integrity</h3>
+<ul>
+<li>The canonical literature database and frozen input tables remain byte-identical
+  during review.</li>
+<li>Exact-identifier and positional-neighbor evidence cannot be confused in the UI or
+  exports.</li>
+<li>Unknown or ambiguous hosts never acquire calculated host luminosity or projected
+  separation.</li>
+<li>Candidate status never becomes confirmed status through review.</li>
+<li>Saifollahi candidates never enter the confirmed positive design-reference export.</li>
+<li>Coordinate proposals appear only as proposals and never change canonical
+  coordinates.</li>
+<li>Catalog membership and fitted profile types remain evidence, not automatic truth
+  labels.</li>
+<li>Incomplete reviews cannot enter the clean positive design-reference export.</li>
+</ul>
+<h3 id="image-and-geometry-validation">Image and geometry validation</h3>
+<ul>
+<li>Every image endpoint serves the file recorded for the requested object and scale.</li>
+<li>Image dimensions and digests match the image manifest.</li>
+<li>Literature coordinates map to the image center within numerical rendering
+  tolerance.</li>
+<li>Gaia, Legacy Survey, and proposal overlays reproduce recorded separations and
+  position angles using the documented pixel transformation.</li>
+<li>Placeholder and unavailable images are never labeled clean automatically.</li>
+</ul>
+<h3 id="persistence-and-api-behavior">Persistence and API behavior</h3>
+<ul>
+<li>Restarting the server preserves every saved revision.</li>
+<li>Saving creates a new revision and retains the previous one.</li>
+<li>A stale parent revision produces a conflict rather than overwriting new work.</li>
+<li>Server-side validation rejects invalid flag states, incomplete required evidence,
+  or cohort-incompatible final decisions.</li>
+<li>Exporting does not change review state.</li>
+</ul>
+<h3 id="interface-behavior">Interface behavior</h3>
+<ul>
+<li>Search, filters, sorting, and filtered previous/next navigation work on all 724
+  objects.</li>
+<li>Both image scales load and overlays can be toggled independently.</li>
+<li>Zoom, pan, reset, keyboard save, history, unsaved-change warnings, and external
+  links work in the supported browser.</li>
+<li>Missing measurements display as unavailable rather than zero.</li>
+<li>Confirmed and candidate progress remain visibly separate.</li>
+</ul>
+<h3 id="reproducibility-and-code-quality">Reproducibility and code quality</h3>
+<ul>
+<li>Every generated data product has a manifest with provenance and hashes.</li>
+<li>Data-preparation and validation scripts are standalone and use paths from
+  <code>scripts/config.py</code>.</li>
+<li>All dependencies are managed through <code>uv</code>.</li>
+<li>Ruff, pre-commit, data validation, API checks, export checks, and
+  <code>git diff --check</code> pass.</li>
+<li>No file larger than 10 MB, database file, FITS file, or downloaded image cache is
+  committed.</li>
+</ul>
+<h3 id="measured-performance">Measured performance</h3>
+<p>Benchmark rather than estimate:</p>
+<ul>
+<li>startup and manifest-validation time;</li>
+<li>object-list response time;</li>
+<li>object-detail response time;</li>
+<li>review-save latency;</li>
+<li>filtered navigation latency; and</li>
+<li>full export time.</li>
+</ul>
+<p>Record the commands, hardware context, full 724-object measurements, and acceptance
+thresholds chosen from the measured pilot. Do not claim responsiveness before it has
+been measured.</p>
+<h2 id="delivery-sequence">Delivery sequence</h2>
+<ol>
+<li>Link this specification from <code>docs/SPEC.md</code> and <code>docs/todo.md</code> when implementation
+   begins.</li>
+<li>Checkpoint the completed UCD Legacy Survey reference side quest without merging
+   unless the project lead explicitly approves a merge.</li>
+<li>Create a new feature branch for the review workbench.</li>
+<li>Review three to five similar repository scripts before adding new preparation or
+   validation code.</li>
+<li>Freeze schemas and provenance contracts for enriched data and review storage.</li>
+<li>Build the host-association register and stop for scientific review of ambiguous
+   host groups.</li>
+<li>Retrieve and validate the wide images, Gaia neighbors, full Gaia measurements,
+   and external-catalog associations.</li>
+<li>Build and validate the compact review-input bundle.</li>
+<li>Implement the append-only review database and local API.</li>
+<li>Implement the image-dominant interface and evidence panels.</li>
+<li>Run automated validation and a browser smoke test.</li>
+<li>Conduct a 12-object pilot spanning all validation fixtures.</li>
+<li>Stop for project-lead review of the interface, visual definitions, host handling,
+    and exports before opening all 724 objects for production review.</li>
+<li>After review approval, freeze the production review version and begin the full
+    source-by-source assessment.</li>
+</ol>
+<h2 id="frozen-assumptions-and-decisions">Frozen assumptions and decisions</h2>
+<ul>
+<li>Version 1 is local, single-user, and bound to localhost.</li>
+<li>The application uses Flask with plain HTML, CSS, and JavaScript.</li>
+<li>Review state is stored in an external SQLite database with append-only history.</li>
+<li>No reviewer identity is recorded; the workbench is a single local user.</li>
+<li>Image scales are 16.768 and 67.072 arcseconds at 0.262 arcseconds per pixel.</li>
+<li>Visual observations use <code>not_reviewed</code>, <code>yes</code>, <code>no</code>, and <code>uncertain</code>.</li>
+<li>The required visual set has seven observations.</li>
+<li>Host-derived properties require a separately verified unique host.</li>
+<li>Exact identifiers and positional neighbors are separate evidence types.</li>
+<li>Coordinate corrections are proposals for later provenance audit.</li>
+<li>Design-reference membership is manual and separate from evidence flags.</li>
+<li>Only confirmed UCDs can enter the positive design reference.</li>
+<li>Saifollahi candidates and confirmed UCDs share the same include/exclude/hold decisions;
+  a candidate <code>include</code> never enters the confirmed design reference.</li>
+<li>The clean positive design reference supports deriving detailed UCD selection
+  rules from combined Gaia and Legacy Survey measurements; it is not model training.</li>
+<li>This workbench reviews only the literature confirmed UCDs and high-probability
+  candidates. The later candidate-selection review tool is a separate deliverable.</li>
+<li>The 17 known viewer-placeholder objects receive only the compact image; the wide
+  image is not retrieved for them.</li>
+<li>Host-association policy (2026-08-13): a single published galaxy name resolves to
+  <code>verified_unique_host</code>; a published cluster/group name resolves to
+  <code>published_environment_only</code> and adopts the cluster/group distance; a galaxy pair
+  (<code>X/Y</code>) resolves to the named group; an empty host field resolves from the source
+  publication's documented environment rather than remaining unknown.</li>
+<li>The 13 Voggel 2020 candidate stripped-nucleus / luminous-globular-cluster objects
+  are excluded from the confirmed positive design reference (see
+  <code>data/literature/sources/confirmed_ucd_design_reference_exclusions_v1.json</code>).</li>
+<li>Adopted cluster distances: Virgo cluster 16.5 Mpc, Centaurus cluster 43.0 Mpc,
+  Hydra I (NGC 3311) 50.7 Mpc, NGC 5128 3.8 Mpc. The register is
+  <code>data/literature/catalogs/host_association_register_v1.csv</code>.</li>
+<li>A complete review requires all applicable visual evidence and a final decision.</li>
+<li>No review action changes literature classification, canonical coordinates, host
+  identity, selector output, radial profiles, or source provenance.</li>
+</ul></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#ucd-reference-review-workbench">UCD Reference Review Workbench</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#scientific-context">Scientific context</a></li>
+<li><a href="#existing-data-on-this-computer">Existing data on this computer</a><ul>
+<li><a href="#canonical-literature-and-reference-cohort">Canonical literature and reference cohort</a></li>
+<li><a href="#legacy-survey-images">Legacy Survey images</a></li>
+<li><a href="#legacy-survey-catalog-measurements">Legacy Survey catalog measurements</a></li>
+<li><a href="#gaia-information">Gaia information</a></li>
+<li><a href="#host-galaxy-information">Host-galaxy information</a></li>
+<li><a href="#external-catalogs-already-downloaded">External catalogs already downloaded</a></li>
+</ul>
+</li>
+<li><a href="#data-preparation-before-application-development">Data preparation before application development</a><ul>
+<li><a href="#two-legacy-survey-image-scales">Two Legacy Survey image scales</a></li>
+<li><a href="#gaia-source-preparation">Gaia source preparation</a></li>
+<li><a href="#external-catalog-preparation">External catalog preparation</a></li>
+<li><a href="#host-association-register">Host-association register</a></li>
+<li><a href="#review-input-bundle">Review-input bundle</a></li>
+</ul>
+</li>
+<li><a href="#application-architecture">Application architecture</a><ul>
+<li><a href="#technology">Technology</a></li>
+<li><a href="#startup-contract">Startup contract</a></li>
+<li><a href="#review-storage">Review storage</a></li>
+</ul>
+</li>
+<li><a href="#user-interface">User interface</a><ul>
+<li><a href="#object-list-and-navigation">Object list and navigation</a></li>
+<li><a href="#image-inspector">Image inspector</a></li>
+<li><a href="#literature-provenance-panel">Literature provenance panel</a></li>
+<li><a href="#gaia-panel">Gaia panel</a></li>
+<li><a href="#host-or-environment-panel">Host or environment panel</a></li>
+<li><a href="#legacy-survey-panel">Legacy Survey panel</a></li>
+<li><a href="#external-catalog-panel">External-catalog panel</a></li>
+<li><a href="#external-links">External links</a></li>
+</ul>
+</li>
+<li><a href="#review-model">Review model</a><ul>
+<li><a href="#four-state-visual-evidence">Four-state visual evidence</a></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#coordinate-correction-proposals">Coordinate-correction proposals</a></li>
+<li><a href="#confirmed-ucd-design-reference-decision">Confirmed-UCD design-reference decision</a></li>
+<li><a href="#candidate-follow-up-decision">Candidate follow-up decision</a></li>
+<li><a href="#completion-rules">Completion rules</a></li>
+</ul>
+</li>
+<li><a href="#local-api">Local API</a></li>
+<li><a href="#user-interaction-details">User interaction details</a></li>
+<li><a href="#versioned-exports">Versioned exports</a></li>
+<li><a href="#validation-fixtures">Validation fixtures</a></li>
+<li><a href="#acceptance-criteria">Acceptance criteria</a><ul>
+<li><a href="#scientific-integrity">Scientific integrity</a></li>
+<li><a href="#image-and-geometry-validation">Image and geometry validation</a></li>
+<li><a href="#persistence-and-api-behavior">Persistence and API behavior</a></li>
+<li><a href="#interface-behavior">Interface behavior</a></li>
+<li><a href="#reproducibility-and-code-quality">Reproducibility and code quality</a></li>
+<li><a href="#measured-performance">Measured performance</a></li>
+</ul>
+</li>
+<li><a href="#delivery-sequence">Delivery sequence</a></li>
+<li><a href="#frozen-assumptions-and-decisions">Frozen assumptions and decisions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="documentation_site.html">Documentation organization and HTML portal</a></li><li><a href="phase_1_literature_ucds.html">Phase I: Literature UCDs — Task Tracking</a></li><li><a href="phase_2_galaxy_sample.html">Phase II: Target Galaxy Sample — Task Tracking</a></li><li><a href="phase_3_background.html">Phase III: Background Characterization — Task Tracking</a></li><li><a href="phase_4_pilot_search.html">Phase IV: Pilot Search — Task Tracking</a></li><li><a href="scientific_validation.html">Initial Scientific Validation Plan</a></li></ul></details><details><summary>Linked from (6)</summary><ul><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../methods/reference_review.html">UCD reference review: scope, evidence, and decisions</a></li><li><a href="phase_1_literature_ucds.html">Phase I: Literature UCDs — Task Tracking</a></li><li><a href="phase_4_pilot_search.html">Phase IV: Pilot Search — Task Tracking</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

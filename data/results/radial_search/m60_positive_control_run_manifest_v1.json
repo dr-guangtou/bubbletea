@@ -1,0 +1,51 @@
+{
+  "run_version": "m60_positive_control_run_v1",
+  "generated_at_utc": "2026-08-12T14:09:48.519960+00:00",
+  "status": "complete_m60_selector_v1_profile",
+  "plain_language_scope": "Every Gaia source in the frozen M60 circle and magnitude range was retrieved, scored locally, and counted in preserved physical rings. Review columns were initialized but no source was visually classified.",
+  "selector_version": "point_source_logistic_model_v1",
+  "raw_source_count": 45402,
+  "selector_passing_source_count": 4920,
+  "confirmed_control_retrieved_count": 2,
+  "confirmed_control_selector_passing_count": 2,
+  "planned_node_count": 27,
+  "final_strip_count": 14,
+  "maximum_leaf_source_count": 3705,
+  "planning_seconds": 48.994874875003006,
+  "retrieval_seconds": 32.71195595798781,
+  "scoring_seconds": 1.8360945419990458,
+  "total_seconds": 84.56447404100618,
+  "profile_output": {
+    "path": "data/results/radial_search/m60_positive_control_profile_v1.csv",
+    "sha256": "f7af69e28aacbeceda6e5084ecd364cbc8247262d92406f610e6a1954c5efcef"
+  },
+  "known_recovery_output": {
+    "path": "data/results/radial_search/m60_positive_control_known_recovery_v1.csv",
+    "sha256": "5b09428c3425f32b3e84517f9acc7359ed04b91755c14ea425eec9ff6dd14cdb"
+  },
+  "external_outputs": {
+    "scored_sources": "$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/scored_sources.csv",
+    "scored_sources_sha256": "be5ec495bc219c78e607c08c90cbb43689befc33f1345ba805ced183789594ce",
+    "selector_passing_review": "$BUBBLETEA_EXTERNAL_DATA/bubbletea/m60_positive_control_v1/selector_passing_review.csv",
+    "selector_passing_review_sha256": "5edd997f19c20559f7a366b6113b7f8a76e17ce160c30dec1fc561de320712e7"
+  },
+  "archive_count_queries_executed_or_reused": 27,
+  "archive_source_queries_executed_or_reused": 14,
+  "count_benchmark_source_count": 45402,
+  "check_count": 12,
+  "passed_count": 12,
+  "checks": {
+    "retrieval_completed": true,
+    "leaf_counts_match_raw_count": true,
+    "retrieved_rows_match_raw_count": true,
+    "source_identifiers_are_unique": true,
+    "all_rings_are_preserved": true,
+    "profile_contains_every_source": true,
+    "profile_selected_count_matches_rows": true,
+    "two_confirmed_controls_are_retrieved": true,
+    "review_rows_start_unreviewed": true,
+    "review_flags_remove_no_sources": true,
+    "source_rows_are_external": true,
+    "no_gaia_imaging_masks_applied": true
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Science guide: what we measure and what the evidence means · BubbleTea</title><link rel="stylesheet" href="assets/style.css">
+<script src="assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../index.html">Overview</a><a href="directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Start here</span><a href="../science_guide.md">Markdown source ↗</a></div><h1 id="science-guide-what-we-measure-and-what-the-evidence-means">Science guide: what we measure and what the evidence means</h1>
+<p><a href="current_status.html">Current status</a> · <a href="PLAN.html">Roadmap</a> · <a href="SPEC.html">Scientific requirements</a></p>
+<h2 id="the-project-in-one-paragraph">The project in one paragraph</h2>
+<p>BubbleTea searches Gaia for compact stellar systems around nearby galaxies,
+especially ultra-compact dwarf galaxies (UCDs). These can be brighter or larger
+than ordinary globular clusters while remaining barely resolved in survey images.
+The primary question is whether a reproducibly selected population shows an excess
+around a galaxy relative to unrelated foreground and background sources. A passing
+source, a catalog label, and an excess are three different kinds of evidence;
+none alone confirms a new UCD.</p>
+<h2 id="1-establish-a-reliable-reference">1. Establish a reliable reference</h2>
+<p>Published records are associated with distinct objects without discarding their
+source provenance or uncertain classifications. The full database and the smaller
+visual-review reference have different scopes. Literature-confirmed objects can
+still have incorrect classifications or incorrect Gaia counterparts, so reference
+review records evidence rather than treating every published label as infallible.</p>
+<p>Read the <a href="methods/reference_review.html">review rules and available evidence</a>,
+<a href="development/reference_imaging.html">reference-image preparation</a>, and the
+<a href="plans/ucd_visual_review_tool.html">workbench specification</a>.</p>
+<h2 id="2-select-sources-using-gaia-alone">2. Select sources using Gaia alone</h2>
+<p>The baseline is a frozen logistic-regression selector: a statistical rule combining
+nine Gaia measurements, with explicit handling of missing values. “Frozen” means
+its inputs, fitted parameters, and selection threshold are fixed so the reference,
+random fields, and galaxy profiles use the same rule. Its output is a selection
+score, not a calibrated probability of physical UCD identity.</p>
+<p>Removing ordinary stars, non-single or binary stars, and QSOs is the first priority.
+Extended galaxies are secondary and can require ancillary imaging. H II regions
+and young clusters need separate evidence; blue color alone cannot assign a visual
+star-forming-region flag.</p>
+<ul>
+<li><a href="methods/gaia_features.html">Gaia features, significance calculations, and ROC AUC</a>
+  explain the measurements and diagnostic plots in plain language with Gaia references.</li>
+<li><a href="methods/contaminant_samples.html">Contaminant samples</a> explain how each comparison
+  population was assembled and how its selection could bias performance estimates.</li>
+<li><a href="methods/extragalactic_catalogs.html">Extragalactic catalogs</a> explain why candidate
+  membership is not a truth label or a universal veto.</li>
+<li><a href="development/selector_experiments.html">Selector development and independent validation</a>
+  retain the measurements, rejected alternatives, and frozen version-1 implementation.</li>
+</ul>
+<p>Balanced benchmark contaminant fractions do not predict purity in real fields.
+The real-field contamination rate must be measured with representative samples,
+not inferred from an intentionally selected collection of known objects.</p>
+<h2 id="3-measure-a-radial-profile-not-just-one-count">3. Measure a radial profile, not just one count</h2>
+<p>Keep every source's separation from the host and summarize it in concentric circular
+annuli, meaning rings sharing the same center. Where a verified half-light radius
+is available, also express separations relative to that galaxy size. Preserve the
+physical-kiloparsec profile when size information is missing.</p>
+<p>The inner galaxy region is set aside for UCD inference because galaxy light,
+substructure, compact young clusters, and H II regions can dominate. The first-stage
+0--50 kpc exclusion and 600 kpc retrieval reach are conservative working geometry,
+not final universal scientific limits. Gaia area comes from verified completed
+retrieval strips, not external-imaging masks.</p>
+<p>Read <a href="methods/radial_measurements.html">radial definitions and limits</a>,
+<a href="development/retrieval_and_area.html">retrieval and area checks</a>, and
+<a href="development/host_pilot_profiles.html">NGC 4698/M60 measured profiles</a>.</p>
+<h2 id="4-measure-unrelated-sources-directly">4. Measure unrelated sources directly</h2>
+<p>The primary large-sky comparison is a distribution of measured selected-source
+densities in random fields at similar Galactic latitude. Its median, mean, and
+central ranges preserve real variation among fields. A fitted sky-density model is
+only a diagnostic; it does not replace an available measurement.</p>
+<p>A valid local outer annulus must be reported alongside the random-field comparison,
+including their difference and ratio. A region inside the relevant galaxy or group
+population cannot simply be called background. Missing or invalid coverage means
+unavailable evidence, not a density of zero.</p>
+<p>Read <a href="development/background_measurements.html">background comparisons and reserved-field validation</a>,
+<a href="development/off_target_controls.html">small off-target experiments</a>, and
+<a href="development/background_geometry.html">environment and geometry history</a>.
+The final host-specific background treatment and complete excess uncertainty
+remain open; measured profiles are not automatically significant detections.</p>
+<h2 id="5-review-images-without-changing-the-frozen-experiment">5. Review images without changing the frozen experiment</h2>
+<p>Legacy Survey images and catalog fits help identify counterparts, learn what UCDs
+look like at different distances, and flag possible contamination. Their
+availability must not redefine Gaia's statistical sample or usable area.
+During the first M60 pass, possible contaminants are flags, not automatic removals.</p>
+<p>The next research action is reference review, followed by the representative M60
+contamination sample. A clean reference can support a separately validated future
+selector; it does not retroactively alter frozen validation results.</p>
+<h2 id="where-detailed-records-belong">Where detailed records belong</h2>
+<p>This page is the scientific reading map. SPEC owns approved requirements; current
+status owns the dated restart summary. Permanent definitions are in <code>methods/</code>.
+Development experiments, benchmarks, failures, and reproducibility details are
+in topic-organized <code>development/</code> records. Journals preserve dated sessions.
+The <a href="documentation_guide.html">documentation guide</a> explains these responsibilities;
+the <a href="development/documentation_audit.html">consolidation audit</a> maps retired documents.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#science-guide-what-we-measure-and-what-the-evidence-means">Science guide: what we measure and what the evidence means</a><ul>
+<li><a href="#the-project-in-one-paragraph">The project in one paragraph</a></li>
+<li><a href="#1-establish-a-reliable-reference">1. Establish a reliable reference</a></li>
+<li><a href="#2-select-sources-using-gaia-alone">2. Select sources using Gaia alone</a></li>
+<li><a href="#3-measure-a-radial-profile-not-just-one-count">3. Measure a radial profile, not just one count</a></li>
+<li><a href="#4-measure-unrelated-sources-directly">4. Measure unrelated sources directly</a></li>
+<li><a href="#5-review-images-without-changing-the-frozen-experiment">5. Review images without changing the frozen experiment</a></li>
+<li><a href="#where-detailed-records-belong">Where detailed records belong</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="todo.html">BubbleTea Issue Register</a></li></ul></details><details><summary>Linked from (18)</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="development/background_geometry.html">Background geometry and environment development</a></li><li><a href="development/background_measurements.html">Random-field background comparisons and validation</a></li><li><a href="development/documentation_audit.html">Documentation consolidation audit</a></li><li><a href="development/extragalactic_checks.html">Extragalactic-catalog stress tests</a></li><li><a href="development/host_pilot_profiles.html">First real-host profiles: NGC 4698 and M60</a></li><li><a href="development/off_target_controls.html">Off-target control experiments</a></li><li><a href="development/project_history.html">Historical project context</a></li><li><a href="development/reference_imaging.html">UCD image-reference preparation</a></li><li><a href="development/retrieval_and_area.html">Gaia retrieval, radial areas, and run records</a></li><li><a href="development/selector_experiments.html">Gaia selector development and validation</a></li><li><a href="development/sky_retrieval.html">Random-sky field preparation and retrieval</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="methods/contaminant_samples.html">Contaminant samples and their limitations</a></li><li><a href="methods/extragalactic_catalogs.html">Extragalactic reference catalogs</a></li><li><a href="methods/gaia_features.html">Gaia measurement definitions</a></li><li><a href="methods/radial_measurements.html">Radial measurements and central exclusion</a></li><li><a href="methods/reference_review.html">UCD reference review: scope, evidence, and decisions</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

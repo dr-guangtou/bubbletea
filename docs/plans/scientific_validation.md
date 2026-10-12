@@ -1,9 +1,16 @@
 # Initial Scientific Validation Plan
 
 **Created:** 2026-07-14
-**Status:** Ready for execution after initial scientific-definition interview
+**Status:** Stage 1 complete; later stages partly implemented, with scientific gates open
 **Specification:** `docs/SPEC.md`
 **Issue register:** `docs/todo.md`
+
+**Restart checkpoint (2026-10-12):** Read [current status](../current_status.md) and
+the [roadmap](../PLAN.md). Selector v1, all 500 random fields, the first two real-host
+profiles, and the reference-review workbench are implemented. This plan's broad
+unchecked gates remain open where completeness, host-specific background validity,
+or calibrated significance is not yet established; they must not erase completed
+implementation work. The M60 audit is BT-031; BT-023 means probabilistic host association.
 
 ## Goal
 
@@ -252,18 +259,20 @@ inputs, and every exclusion has a recorded reason.
     selection workflow.
 - [ ] Measure selection behavior across magnitude, distance, inferred luminosity,
   inferred size, Galactic latitude, and Gaia uncertainty properties (`BT-002`).
-- [ ] Freeze one versioned selector used identically for literature, control fields,
-  and host searches (`BT-002`, `BT-017`).
-- [ ] Add fast deterministic validation scripts for selector parity and null handling
-  (`BT-018`).
+- [x] Freeze selector v1 and use it identically for literature, control fields,
+  and host searches (`BT-002`, `BT-017`; 2026-07-18). Final sensitivity calibration
+  and any successor selector remain separate open work.
+- [x] Add deterministic validation for selector parity and null handling
+  (`BT-018`; 2026-07-18); see [integration report](../development/selector_experiments.md#record-point_source_selector_integration_v1).
 
 **Gate:** The selector has measured completeness and contamination behavior over a
 declared applicability domain and one implementation produces all selections.
 
 ## Stage 4: Validate Background and Radial Statistics
 
-- [ ] Recompute background behavior with the canonical selector and exact usable
-  areas (`BT-009`).
+- [x] Recompute the 500 random fields with the canonical selector and exact usable
+  areas (`BT-009`; independent validation completed 2026-08-11). Host-specific
+  background approval remains open; see [validation](../development/background_measurements.md#record-large_sky_validation_run).
 - [ ] Compare large-field, off-target circular, and off-target annular backgrounds
   matched in Galactic latitude and screened for nearby halos (`BT-005`).
 - [ ] Calibrate exploratory physical and `R50`-normalized annuli, including the

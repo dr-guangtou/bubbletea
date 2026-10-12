@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Phase IV: Pilot Search — Task Tracking · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Plans and requirements</span><a href="../../plans/phase_4_pilot_search.md">Markdown source ↗</a></div><h1 id="phase-iv-pilot-search-task-tracking">Phase IV: Pilot Search — Task Tracking</h1>
+<p><strong>Goal:</strong> Validate a small real-host search and contamination assessment before scale-up.</p>
+<p><strong>Status:</strong> In progress</p>
+<p><strong>Current checkpoint (2026-10-12):</strong> NGC 4698 and M60 have measured 14-ring profiles
+through 600 kpc. The reference-review workbench is implemented, but its local
+database has zero saved reviews. Review the UCD reference, then the representative
+400-source M60 sample (BT-031). See <a href="../current_status.html">current status</a>,
+<a href="ucd_visual_review_tool.html">tool specification</a>, and <a href="../PLAN.html">roadmap</a>.</p>
+<p>April--May checked items below describe the historical exploratory pipeline,
+including its old top-20/top-100 runs and significance diagnostics. They do not
+establish completeness, purity, or scientific significance for the current selector.</p>
+<hr>
+<h2 id="iv1-search-pipeline-development">IV.1 Search Pipeline Development</h2>
+<ul>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> Integrate <code>point_source_logistic_model_v1</code> as the single shared Gaia selector
+  with exact feature, missing-value, threshold, and version parity; validate locally
+  before any live pilot query (completed 2026-07-18)</p>
+</li>
+<li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> Implement <code>scripts/phase4_search/radial_search.py</code> (2026-05-11)</p>
+</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Gaia DR3 query around target ($R &lt; 300$ kpc)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Replace historical Model C with the frozen v1 selector (2026-07-18)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Calculate radial density profile (sources/deg$^2$ vs $R_{\text{kpc}}$)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Implement annulus background estimation ($150$-$300$ kpc)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Implement statistical excess detection (Poisson significance) (2026-05-11)</li>
+</ul>
+<h2 id="iv2-validation-literature-recovery">IV.2 Validation: Literature Recovery</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Run search around <strong>MESSIER 087</strong> (Virgo) (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify recovery of known literature UCDs (74 recovered)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Check contrast against local background (22.6x)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Run search around <strong>NGC 5128</strong> (Centaurus A) - (Processed in top tier)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify selection completeness and purity statistics (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Run the M60 positive control using the unchanged selector and frozen 0--600
+  kpc rings (started 2026-08-12)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze the count-blind design and known-object recovery table (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Measure one aggregate Gaia source count for the raw retrieval workload:
+    45,402 sources in the frozen magnitude range (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify compact Legacy Survey DR10 three-color cutouts using the two reliable
+    confirmed M60 UCDs (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze explicit visual-review columns: color alone cannot label a compact
+    star-forming region, incomplete catalog coverage is not negative evidence, and
+    blend or image-problem flags require visual inspection (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Retrieve all 45,402 magnitude-limited Gaia rows in verified strips, apply the
+    unchanged selector locally, and preserve the 14-ring profile; 4,920 sources pass
+    selector version 1 (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Recover both reliable UCD controls and all nine literature candidates with a
+    unique Gaia identifier; keep 18 objects without a unique identifier explicitly
+    not testable by exact identifier (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze a representative 400-source contamination-audit sample separately
+    from the known controls and promising-candidate shortlist before visual
+    inspection (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Retrieve and verify all 400 compact Legacy Survey cutouts and create four
+    blinded radial-zone contact sheets; keep every visual field not reviewed
+    (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Plot G magnitude against raw BP/RP flux-excess factor for the complete
+    selector-retained population and frozen audit sample in all four radial zones
+    (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Build an empirical Legacy Survey appearance and photometry reference for 680
+    confirmed UCDs and 44 Saifollahi high-probability candidates (2026-08-12).<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze the two provenance-defined cohorts before inspecting catalog or
+  imaging outcomes (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Record compact three-color cutouts or explicit unavailable outcomes and
+  create an eight-page atlas of 707 non-placeholder images (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Test Gaia NSS, galaxy-candidate, and QSO-candidate membership by exact Gaia
+  identifier where possible (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Retrieve auditable Legacy Survey DR10 Tractor matches with photometry,
+  quality flags, model type, and available shape measurements (2026-08-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Document the measurements and interpretation limits in plain language
+  (2026-08-12).</li>
+</ul>
+</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Keep possible contaminants as review flags; do not remove them from the
+    selector-v1 radial profile during this first pass.</li>
+</ul>
+<h2 id="iv3-pilot-search-execution">IV.3 Pilot Search Execution</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Execute search for all Top 20 pilot targets (2026-05-11)</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Filter targets by minimum $|b| &gt; 30^\circ$ (Applied)</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Generate candidate lists per galaxy</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Aggregate all candidates into a master pilot catalog</li>
+</ul>
+<h2 id="iv4-candidate-ranking-qa">IV.4 Candidate Ranking &amp; QA</h2>
+<ul>
+<li><input type="checkbox" disabled aria-label="Task pending"> Rank candidates by frozen v1 probability and radial significance</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Generate "Candidate Cards" (thumbnails + Gaia properties)</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Produce Phase IV Summary Report</li>
+</ul>
+<h2 id="review-2026-07-18-frozen-selector-integration">Review — 2026-07-18 frozen-selector integration</h2>
+<ul>
+<li>Shared inference reproduces all stored development probabilities and decisions.</li>
+<li>The Gaia query retains the full measured magnitude-domain denominator and removes
+  the two legacy astrometric prefilters.</li>
+<li>No live scientific pilot was run because BT-005 background coverage and BT-006
+  significance calibration remain open.</li>
+</ul>
+<hr>
+<h2 id="scripts-to-develop">Scripts to Develop</h2>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/phase4_search/radial_search.py</code></td>
+<td>Core search engine for radial excess detection</td>
+</tr>
+<tr>
+<td><code>scripts/phase4_search/validate_recovery.py</code></td>
+<td>Cross-match search results with literature DB</td>
+</tr>
+<tr>
+<td><code>scripts/phase4_search/process_pilot.py</code></td>
+<td>Batch processing and aggregation for Top 100</td>
+</tr>
+</tbody>
+</table></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#phase-iv-pilot-search-task-tracking">Phase IV: Pilot Search — Task Tracking</a><ul>
+<li><a href="#iv1-search-pipeline-development">IV.1 Search Pipeline Development</a></li>
+<li><a href="#iv2-validation-literature-recovery">IV.2 Validation: Literature Recovery</a></li>
+<li><a href="#iv3-pilot-search-execution">IV.3 Pilot Search Execution</a></li>
+<li><a href="#iv4-candidate-ranking-qa">IV.4 Candidate Ranking &amp; QA</a></li>
+<li><a href="#review-2026-07-18-frozen-selector-integration">Review — 2026-07-18 frozen-selector integration</a></li>
+<li><a href="#scripts-to-develop">Scripts to Develop</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="documentation_site.html">Documentation organization and HTML portal</a></li><li><a href="phase_1_literature_ucds.html">Phase I: Literature UCDs — Task Tracking</a></li><li><a href="phase_2_galaxy_sample.html">Phase II: Target Galaxy Sample — Task Tracking</a></li><li><a href="phase_3_background.html">Phase III: Background Characterization — Task Tracking</a></li><li><a href="scientific_validation.html">Initial Scientific Validation Plan</a></li><li><a href="ucd_visual_review_tool.html">UCD Reference Review Workbench</a></li></ul></details><details><summary>Linked from (2)</summary><ul><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../current_status.html">Current research status</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>
