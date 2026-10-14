@@ -1,6 +1,7 @@
 # Current research status
 
-**Reviewed:** 2026-10-12  
+**Reviewed:** 2026-10-14 (teaching implementation update; research checkpoint unchanged)
+
 **Latest research checkpoint:** 2026-08-19  
 **Purpose:** A dated restart summary, not a live dashboard or a new scientific result.
 
@@ -78,16 +79,51 @@ requirements; completed software is not equivalent to completed science.
 
 ## Documentation and teaching pivot
 
-The current task is documentation maintenance and a static HTML reading portal.
+Documentation maintenance and the static HTML reading portal are complete.
 The entrance is [docs/index.html](index.html), with generated pages under
 `docs/html/`. Six project-level Markdown documents remain directly under `docs/`;
 scientific explanations live in `methods/`, and consolidated development records
 live in `development/`. The [consolidation audit](development/documentation_audit.md)
 records each retired document and its retained evidence.
-Documentation maintenance does not change any scientific selector, catalog, image classification, or
-radial measurement. An observational-astronomy teaching project will follow as a
-separate brief. Audience, lesson scope, exercises, and student data access have
-not yet been specified; research plans must not be presented as established results.
+The active side task is [A Galaxy in Disguise](teaching/README.md), a no-code
+undergraduate project. The [Part I implementation](plans/teaching_part1_redesign.md)
+is complete through technical validation. The
+[single offline HTML](teaching/ucd_investigation.html) contains illustrated background,
+seven labeled examples, 30 source classifications, a 21,118-row selection experiment,
+and one open membership question. All 74 DR11 cutouts are embedded and reviewed.
+JSON save/restore, independent grading calculations, malformed-import rejection,
+denied storage, and offline desktop/narrow layouts pass the recorded tests.
+The revised approximately 9.35 MB file meets the measured performance/size targets.
+It restores the distance/angular-size illustration and folded online guide, renders
+optional equations offline, and makes Task 1 classification the only required
+per-object field. Task 2 retains ranges but now optimizes F1 (the harmonic mean
+of purity and completeness) and saves one final selection with two explanations.
+The instructor-only range trial reaches F1 0.623 on this teaching sample; it is
+not an independent estimate of new-field performance. Older same-packet answers
+import without losing prior work.
+The Task 1 layout follow-up puts measurements above the images/response area and
+keeps the desktop images beside the controls. Six window sizes pass the layout
+and navigation checks; data, classifications, and the answer schema are unchanged.
+
+Latest handoff: all five code-review findings are fixed and the classroom HTML is
+finalized. The suite passes 43,740 assertions, including 26 focused regressions.
+Student-facing Project Introductions are available in
+[English](teaching/project_introduction_en.md) and
+[Chinese](teaching/project_introduction_zh.md), each with a visually checked,
+three-page PDF. Students submit `[NAME]_[STUDENT_ID].json` to Tsinghua Online
+Classroom (网络学堂). Next: **distribute the HTML and introduction PDF(s), set the
+course deadline, and collect JSON submissions**. See the
+[handoff record](development/teaching_materials.md#classroom-finalization-and-project-introductions-2026-10-14)
+and [instructor notes](teaching/instructor_notes.md).
+The [development record](development/teaching_materials.md) documents curation,
+reference exclusions, image failures, timing, and limitations. Technical tests do
+not prove unique class identification from Gaia and a thumbnail or establish
+student completion time. Windows rehearsal is not required and has not been done.
+The [old six-object HTML](teaching/ucd_investigation_v1.html) and
+[PDF](teaching/ucd_worksheet.pdf) remain explicitly version 1 resources.
+New-search host checks belong to later teaching parts. No scientific selector,
+catalog, image classification, or radial measurement is changed; teaching reviews
+are not scientific confirmations.
 
 ## Snapshot limitations
 

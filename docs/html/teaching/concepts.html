@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Necessary background: compact galaxies hidden among stars · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/concepts.md">Markdown source ↗</a></div><h1 id="necessary-background-compact-galaxies-hidden-among-stars">Necessary background: compact galaxies hidden among stars</h1>
+<p><a href="README.html">Course guide</a> · <a href="target_shortlist.html">Objects to investigate</a> ·
+<a href="source_checks.html">Instructor source checks</a></p>
+<h2 id="why-look-for-ultra-compact-dwarf-galaxies">Why look for ultra-compact dwarf galaxies?</h2>
+<p>Galaxies grow through interactions and mergers. Some of their history survives in
+small stellar systems orbiting them. A compact object that looks unremarkable in
+an image can therefore carry evidence about how a much larger galaxy assembled.
+UCDs are interesting partly because their origin is not unique: some may be very
+massive star clusters, while others may be galaxy centers left behind after their
+outer stars were stripped away. Identifying the objects is the first step toward
+testing those histories, not the final answer.</p>
+<p>M60-UCD1 makes this question tangible. Detailed follow-up found a massive black
+hole in this small stellar system, supporting an origin as the surviving center
+of a larger galaxy. This result required spectroscopy and dynamical modeling;
+students cannot infer a black hole from a Legacy Survey cutout or a Gaia fit
+statistic. See <a href="https://arxiv.org/html/1409.4769">Seth et al. (2014)</a>.</p>
+<p>There is also a lesson about how discoveries happen. Bright compact systems can
+be overlooked when a survey labels them as stars or when a search assumes that
+all interesting galaxies must look visibly extended. M59-UCD3 was found by
+combining archival images and spectroscopy rather than accepting a single
+catalog label. Its <a href="https://arxiv.org/html/1506.08828">discovery study</a> is a useful
+example of asking a new question of existing data.</p>
+<p>In this short project we will not establish a new object's distance, formation
+history, or UCD classification. We will learn to identify useful evidence, find
+obvious alternative explanations, and recommend what should be checked next.</p>
+<h2 id="1-what-kind-of-object-are-we-looking-for">1. What kind of object are we looking for?</h2>
+<p>A foreground star belongs to the Milky Way. A globular cluster is a dense group of
+stars. A UCD is a compact stellar system that can be larger or more luminous than
+ordinary globular clusters, although the categories overlap. A host galaxy is the
+larger galaxy with which a compact system may be physically associated. Being
+near that galaxy on the sky does not prove association.</p>
+<p>Some UCDs may be stripped galaxy nuclei: compact centers left behind after a
+larger galaxy loses its outer stars. Do not teach that every UCD has this origin
+or that a single size or brightness boundary settles the classification.</p>
+<p><strong>Naming trap:</strong> Gaia also uses “UCD” for <strong>ultracool dwarfs</strong>, very cool stellar
+objects. Its <code>gold_sample_ucd</code> table is not a catalog of ultra-compact dwarf
+galaxies. See the <a href="https://gaia.aip.de/metadata/gaiadr3/gold_sample_ucd/">Gaia table definition</a>.</p>
+<h2 id="2-a-point-like-image-does-not-imply-a-single-star">2. A point-like image does not imply a single star</h2>
+<p>A telescope blurs a true point source into a small patch. That pattern is called
+the <strong>point-spread function</strong>, or PSF. An object is <em>resolved</em> only when its own
+spatial extent can be distinguished from this blur. Atmospheric seeing contributes
+to the blur in ground-based images. Image pixel size and resolving power are not
+the same thing.</p>
+<p>At larger distance the same physical object subtends a smaller angle. Thus a
+nearby UCD can look extended while a similar, more distant UCD looks like a star.
+Compare against neighboring stars in the same image, not against images with
+different seeing or display stretches. “Unresolved” is a valid observation, not a
+rejection of a UCD.</p>
+<p>Physical sizes and distances here use parsecs (pc), an astronomical distance unit;
+one megaparsec (Mpc) is one million parsecs.</p>
+<p><strong>Worked example:</strong> the discovery paper gives M60-UCD1 a half-light radius of
+24.2 pc, the radius enclosing half its measured light, at an adopted distance of
+16.5 Mpc. The small-angle relation gives</p>
+<pre><code class="language-text">angular radius (arcseconds) = 206265 × radius (pc) / distance (pc)
+                           = 206265 × 24.2 / 16,500,000
+                           = 0.303 arcseconds, rounded
+</code></pre>
+<p>This is a half-light <strong>radius</strong>, not a diameter or the observed image width. A
+ground-based image can therefore look nearly point-like without contradicting
+the resolved measurements from better imaging. These literature inputs are from
+<a href="https://arxiv.org/html/1307.7707">Strader et al. (2013)</a>.</p>
+<h2 id="why-gaia-favors-star-like-objects-but-does-not-see-only-stars">Why Gaia favors star-like objects - but does not see only stars</h2>
+<p>Gaia scanned the sky rather than taking ordinary large photographs for each
+target. Its onboard software searched for compact concentrations of light and
+allocated small detector regions, called <strong>windows</strong>, for measurements and
+transmission to Earth. Rejecting very sharp detector events and broad diffuse
+signals helped make autonomous detection practical. A smooth, faint galaxy disk
+is therefore much less favored than a compact bright center or a UCD.</p>
+<p>The software detects a light pattern, not the object's physical identity. A quasar,
+compact galaxy, or galaxy nucleus can enter the catalog if it has a suitable
+bright compact component. An extended object need not be perfectly point-like.
+Gaia's ground processing can subsequently show departures from a stellar image
+or motion model. That is the opportunity this project explores, but also the
+reason blends and image problems must be considered. See
+<a href="https://arxiv.org/html/1502.00454">de Bruijne et al. (2015)</a> and the DR3
+<a href="https://doi.org/10.1051/0004-6361/202243940">extended-object summary</a>.</p>
+<h3 id="what-is-gaias-spatial-resolution">What is Gaia's spatial resolution?</h3>
+<p>Here spatial resolution means an <strong>angular</strong> separation on the sky, not a
+physical length in parsecs. There is no single number that describes detection,
+image sampling, resolving two sources, and final catalog completeness.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Useful numerical context</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detector pixel sampling</td>
+<td>0.0589 arcsec along the scan; 0.1768 arcsec across it</td>
+<td>Angular width of one detector pixel, not the resolving limit</td>
+</tr>
+<tr>
+<td>Onboard equal-brightness pair resolution</td>
+<td>About 0.23 arcsec along the scan and 0.70 arcsec across it in the detection study</td>
+<td>Two equally bright point sources can be separated more easily in one direction; unequal brightness can require more separation</td>
+</tr>
+<tr>
+<td>Published catalog pair completeness</td>
+<td>EDR3 validation finds losses below about 1.5 arcsec, becoming severe below about 0.7 arcsec</td>
+<td>The catalog does not contain every close pair that the optics could in principle distinguish</td>
+</tr>
+</tbody>
+</table>
+<p>“Along the scan” means the direction an object's image moves across Gaia's
+detector; “across” is perpendicular to it. Different visits have different scan
+directions. The pixel values are from the
+<a href="https://arxiv.org/html/1609.04153">mission instrument description</a>, the detection
+numbers from <a href="https://arxiv.org/html/1502.00454">de Bruijne et al.</a>, and the catalog
+limits from <a href="https://arxiv.org/html/2012.06242">Fabricius et al. (2021), Section 2.3</a>.
+The last result concerns EDR3; DR3 uses the EDR3 astrometric source solution. None
+of these pair-separation numbers is a cutoff on UCD half-light radius.</p>
+<p><strong>Positional precision is different:</strong> repeated measurements can locate the center
+of a blurred source much more precisely than the width of the blur. Very precise
+positions do not mean Gaia resolves individual stars inside a distant UCD. Gaia
+normally records their combined light as one source, if it detects that system.</p>
+<h2 id="3-apparent-brightness-is-not-luminosity">3. Apparent brightness is not luminosity</h2>
+<p>Magnitude tells us how bright something appears in a particular filter. To infer
+intrinsic brightness we need distance and, for precise work, extinction and
+appropriate photometry. For negligible extinction,</p>
+<pre><code class="language-text">absolute magnitude = apparent magnitude − 5 log10(distance in pc / 10)
+</code></pre>
+<p>Use this as a concept, not a Gaia-only UCD definition. Gaia G, Legacy Survey g,
+and literature V are different filters. Gaia's measurement of a slightly extended
+object may also miss light compared with a total-light measurement. Do not insert
+Gaia G into a published V-band classification threshold as though they were the
+same measurement. An assumed host distance gives a conditional luminosity, not
+independent proof that the source belongs to that host.</p>
+<h2 id="4-parallax-and-proper-motion-are-measurements-with-uncertainty">4. Parallax and proper motion are measurements with uncertainty</h2>
+<p>Astrometry means measuring positions and how they change. Parallax is the annual apparent positional shift associated with the Earth's
+orbit. Proper motion is a change in sky position over time. Gaia reports parallax
+in milliarcseconds (mas) and proper motion in mas per year; 1 arcsecond is 1000 mas.
+Nearby stars can have measurable values; a distant compact galaxy is expected to
+have values far below Gaia's practical precision.</p>
+<p>The field <code>pmra</code> is the east-west component, including the cosine of declination
+so it represents an angular motion on the sky, not simply the change in RA angle.
+The field <code>pmdec</code> is the north-south component. Both are in mas per year.</p>
+<p>For parallax, a useful warning measure is <code>abs(parallax) / parallax_error</code>.
+A value near one is not convincing evidence for a nonzero parallax. Negative
+measured parallaxes can arise from noise and calibration; they are not negative
+physical distances. Do not invert an uncertain or negative parallax to estimate
+the distance to a UCD.</p>
+<p>For the live M60-UCD1 Gaia record, parallax is −0.079 ± 0.395 mas: its absolute
+significance is 0.20. Its two proper-motion components are +0.420 ± 0.475 and
+−0.547 ± 0.432 mas/year. These are consistent with no detected motion, not proof
+of a galaxy. A distant star, QSO, compact background galaxy, or poor measurement
+can also have no convincing detected motion.</p>
+<p>A missing parallax or motion means Gaia did not supply that measurement. It does
+not mean the measurement was exactly zero. The optional combined-motion calculation,
+which includes the correlation between the two components, is in the
+<a href="source_checks.html#optional-significance-calculation">instructor record</a>.</p>
+<h2 id="5-gaia-can-notice-a-poor-stellar-fit">5. Gaia can notice a poor stellar fit</h2>
+<p>Gaia fits a model to its observations. A source's actual shape, a neighboring
+source, orbital motion in a multiple-star system, or other measurement problems
+can make a stellar model fit poorly. This is why unusual Gaia measurements can
+help find non-stellar objects, but cannot identify UCDs by themselves.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Plain meaning</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ruwe</code></td>
+<td>Renormalized unit weight error: a normalized measure of the astrometric fit quality</td>
+<td>A large value does not uniquely mean extension or a binary</td>
+</tr>
+<tr>
+<td><code>astrometric_excess_noise</code></td>
+<td>Additional angular scatter used to account for residuals in the astrometric fit, in mas</td>
+<td>Not a direct size measurement</td>
+</tr>
+<tr>
+<td><code>astrometric_excess_noise_sig</code></td>
+<td>Gaia's internal significance statistic for that extra scatter</td>
+<td>Not automatically a number of Gaussian standard deviations</td>
+</tr>
+<tr>
+<td><code>phot_bp_rp_excess_factor</code></td>
+<td>Ratio of summed BP and RP flux to G flux</td>
+<td>Not a UCD probability or a universal pass/fail boundary</td>
+</tr>
+</tbody>
+</table>
+<p>These field definitions come from the official
+<a href="https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html">Gaia DR3 source data model</a>.
+Further project definitions and limitations are in
+<a href="../methods/gaia_features.html">Gaia features</a>. Leave the image-window diagnostics,
+machine-learning details, and fit-solution codes to the instructor notes in this
+short course.</p>
+<h2 id="6-why-compare-g-magnitude-with-flux-excess">6. Why compare G magnitude with flux excess?</h2>
+<p>The raw flux-excess factor is</p>
+<pre><code class="language-text">C = (I_BP + I_RP) / I_G
+</code></pre>
+<p>Here I means measured flux, not magnitude. BP and RP are Gaia's blue and red
+photometric measurements and G is its broad-band measurement. Their response and
+measurement regions differ. C is not expected to be exactly one for ordinary
+stars; its normal distribution depends on color and measurement quality.</p>
+<p>A G-versus-C diagram helps compare a target with the distribution of ordinary
+sources. M60-UCD1 has C = 4.65, while the selected foreground comparison has
+C = 1.22. That contrast is useful, but extension, crowding, bright host light,
+and measurement problems can all affect C. Compare similar-color sources and
+inspect images. Do not derive a universal threshold from these two examples or
+confuse raw C with a color-corrected excess statistic.</p>
+<h2 id="7-matching-and-provenance-are-part-of-the-science">7. Matching and provenance are part of the science</h2>
+<p>The nearest catalog row is not necessarily the intended object. Check the
+coordinates, angular separation, image center, nearby alternatives, and coordinate
+epoch, the date to which a position applies. A moving star can change position
+between surveys. Keep Gaia's long source identifier as text so spreadsheet
+rounding does not corrupt it.</p>
+<p><em>Provenance</em> means where a claim or measurement came from: the original paper,
+table, survey release, source identifier, and matching method. An object name alone
+can be ambiguous. Two papers calling an object “UCD1” need not refer to the same
+coordinates. Preserve the original source rather than silently correcting it.</p>
+<h2 id="8-separate-observation-interpretation-and-confirmation">8. Separate observation, interpretation, and confirmation</h2>
+<ul>
+<li><strong>Observation:</strong> “The image is compact; no convincing motion is measured; the
+  Gaia fit is poor; there is nearby host light.”</li>
+<li><strong>Interpretation:</strong> “It is worth checking as a compact extragalactic candidate,
+  but a blend or background source is still possible.”</li>
+<li><strong>Confirmation:</strong> independent evidence, typically including spectroscopy for
+  velocity/association and suitable imaging or other physical characterization.
+  The precise classification can remain uncertain even with a measured velocity.</li>
+</ul>
+<p>A quasar, also called a quasi-stellar object (QSO), is an active galactic nucleus
+that can also appear point-like and have no
+detectable motion. An H II region is gas ionized by young stars, often part of a
+galaxy rather than an independent UCD. A non-single-star catalog records Gaia
+evidence or solutions involving multiple stars. These are possible competing
+explanations, not automatic ground truth from a catalog label.</p>
+<p>For the class, the required conclusion is a defensible evidence record and a
+follow-up recommendation. “Cannot tell from these data” can be the correct answer.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#necessary-background-compact-galaxies-hidden-among-stars">Necessary background: compact galaxies hidden among stars</a><ul>
+<li><a href="#why-look-for-ultra-compact-dwarf-galaxies">Why look for ultra-compact dwarf galaxies?</a></li>
+<li><a href="#1-what-kind-of-object-are-we-looking-for">1. What kind of object are we looking for?</a></li>
+<li><a href="#2-a-point-like-image-does-not-imply-a-single-star">2. A point-like image does not imply a single star</a></li>
+<li><a href="#why-gaia-favors-star-like-objects-but-does-not-see-only-stars">Why Gaia favors star-like objects - but does not see only stars</a><ul>
+<li><a href="#what-is-gaias-spatial-resolution">What is Gaia's spatial resolution?</a></li>
+</ul>
+</li>
+<li><a href="#3-apparent-brightness-is-not-luminosity">3. Apparent brightness is not luminosity</a></li>
+<li><a href="#4-parallax-and-proper-motion-are-measurements-with-uncertainty">4. Parallax and proper motion are measurements with uncertainty</a></li>
+<li><a href="#5-gaia-can-notice-a-poor-stellar-fit">5. Gaia can notice a poor stellar fit</a></li>
+<li><a href="#6-why-compare-g-magnitude-with-flux-excess">6. Why compare G magnitude with flux excess?</a></li>
+<li><a href="#7-matching-and-provenance-are-part-of-the-science">7. Matching and provenance are part of the science</a></li>
+<li><a href="#8-separate-observation-interpretation-and-confirmation">8. Separate observation, interpretation, and confirmation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_zh.html">伪装成恒星的星系</a></li></ul></details><details><summary>Linked from (5)</summary><ul><li><a href="../plans/teaching_part1_redesign.html">A Galaxy in Disguise: Part I implementation plan</a></li><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="source_checks.html">Instructor evidence record and remaining preparation</a></li><li><a href="target_shortlist.html">Teaching objects and provisional search hosts</a></li><li><a href="worksheet.html">Student worksheet: a star in disguise?</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

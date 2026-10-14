@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>A star in disguise? - UCD field notebook</title>
+  <style>__STYLE__</style>
+</head>
+<body>
+  <a class="skip_link" href="#investigation">Skip to investigation</a>
+  <header class="masthead"><a href="#top" class="brand">BUBBLETEA <span>/ FIELD NOTEBOOK 01</span></a><span class="offline_badge">SELF-CONTAINED / NO SERVER</span></header>
+  <main id="top">
+    <section class="hero">
+      <div><p class="eyebrow">Observational astronomy / one or two sessions</p><h1>A star<br>in <em>disguise?</em></h1><p class="standfirst">An unremarkable dot can hold a galaxy's history. Look at real images, question the catalog, and build an argument from evidence.</p><a class="primary_link" href="#investigation">Open your investigation ↓</a></div>
+      <aside class="hero_note"><span class="large_number">≠</span><h2>Candidate is not<br>confirmation.</h2><p>Six selected examples. Saved Gaia DR3 measurements and Legacy Survey DR11 images. No code, account, or internet needed for the core activity.</p><p class="small">Images are observations. Flags are your judgments. Keep the two separate.</p></aside>
+    </section>
+    <section class="opening">
+      <p class="eyebrow">The scientific question</p><h2>How can a compact galaxy hide among stars?</h2>
+      <p>An ultra-compact dwarf galaxy (UCD) is a compact stellar system, sometimes a very massive star cluster and sometimes the surviving center of a stripped galaxy. The boundary is not sharp. Gaia detects compact concentrations of light, not physical identities: a compact galaxy or bright galactic center can enter a catalog designed around stars.</p>
+      <p>A massive black hole was found in M60-UCD1 through detailed follow-up. That makes it a compelling clue to galaxy evolution - not something you can establish from this worksheet alone. <a href="https://arxiv.org/html/1409.4769" target="_blank" rel="noopener noreferrer">Seth et al. 2014 ↗</a></p>
+      <details id="background"><summary>Read the necessary background: UCDs, Gaia, resolution, and uncertainty</summary><div class="reading">__BACKGROUND__</div></details>
+      <details id="online_guide"><summary>Optional step-by-step guide: Gaia Archive, Visualization, Aladin, Legacy Survey</summary><div class="reading">__GUIDE__</div></details>
+    </section>
+    <section class="size_lab" aria-labelledby="size_heading">
+      <div><p class="eyebrow">Try a change in distance</p><h2 id="size_heading">Same system.<br>Different apparent size.</h2><p>Keep M60-UCD1's published half-light radius fixed at <strong>24.2 pc</strong>. Move it hypothetically farther away. A half-light radius encloses half the light; it is not the image's full width.</p><label for="distance_slider">Hypothetical distance: <output id="distance_value">16.5</output> Mpc</label><input id="distance_slider" type="range" min="5" max="50" step="0.5" value="16.5"><p id="angular_value" class="measurement" aria-live="polite"></p></div>
+      <div><svg id="size_ruler" viewBox="0 0 620 230" role="img" aria-label="Angular scale ruler comparing a half-light diameter with detector sampling and onboard pair separations"></svg><p class="small">A geometry demonstration, not a Gaia detection simulation. Pixel sizes and equal-brightness pair separations describe different things; neither is a cutoff on UCD radius. Sources: <a href="https://arxiv.org/html/1609.04153">mission description</a>, <a href="https://arxiv.org/html/1502.00454">detection study</a>.</p></div>
+    </section>
+    <section id="investigation" class="investigation">
+      <div class="section_header"><div><p class="eyebrow">01 / Inspect the evidence</p><h2>Choose an object. Look twice.</h2></div><label class="student_label" for="student_identifier">Student / group identifier<input id="student_identifier" maxlength="80" placeholder="Your course identifier"></label></div>
+      <nav id="object_navigation" class="object_navigation" aria-label="Teaching objects"></nav>
+      <div class="inspection_layout">
+        <article class="object_panel"><div class="object_heading"><div><p id="object_role" class="eyebrow"></p><h3 id="object_name"></h3></div><label class="marker_label"><input type="checkbox" id="show_marker" checked> Show catalog position</label></div><p id="object_position" class="monospace"></p>
+          <div id="images" class="image_grid"></div><p class="small">Center marks show the requested Gaia DR3 position, not a verified association. Angular scale bars apply to the displayed square; browser enlargement does not add information.</p>
+          <p id="object_caveat" class="caution"></p><details><summary>Original provenance, host assumption, and image records</summary><div id="provenance" class="small"></div></details><div id="object_links" class="object_links"></div>
+        </article>
+        <aside class="catalog_panel"><p class="eyebrow">Gaia DR3 / saved snapshot</p><h3>Measurements, not a verdict.</h3><table><caption id="source_identifier"></caption><tbody id="catalog_rows"></tbody></table><p class="small">One milliarcsecond (mas) is 0.001 arcsec. Motion is in mas/year. Renormalized unit weight error (RUWE) measures astrometric fit quality; excess noise is extra angular scatter, not size. C = (I_BP + I_RP) / I_G uses blue, red, and broad-band fluxes, not magnitudes. Missing means not supplied, never zero.</p><p class="small" id="external_checks"></p><p class="small" id="snapshot_date"></p></aside>
+      </div>
+    </section>
+    <section class="plot_section"><div><p class="eyebrow">02 / Compare measurements</p><h2>Similar appearance.<br>Different records.</h2><p>Select a point to inspect its object. Smaller G means brighter. These are <strong>six deliberately chosen examples</strong>, not a stellar locus, a representative field, or a way to measure contamination.</p><p class="small">Green: known UCDs. Ochre: published candidates. Blue: foreground comparison. Gray: compact-system boundary case.</p></div><svg id="comparison_plot" viewBox="0 0 700 360" role="img" aria-label="G magnitude versus raw BP RP flux-excess factor for six selected teaching examples"></svg></section>
+    <section class="review_section"><p class="eyebrow">03 / Record what you see</p><h2 id="review_heading">Your image review</h2><p>Required for candidates A and B; optional for controls. Do not force a judgment. A bad Gaia fit cannot assign a visual blend/artifact flag. Color alone does not identify a young cluster or an H II region.</p><div id="review_flags" class="flags_grid"></div><div id="review_responses" class="response_grid"></div><label for="recommendation">Recommendation for instructor review<select id="recommendation"><option value="not_reviewed">Not yet recorded</option><option value="retain">Retain for instructor review</option><option value="possible_contaminant">Possible contaminant - explain evidence</option><option value="insufficient_information">Insufficient information</option></select></label><p class="small">These answers never edit the catalog, remove a source from the research selector, or promote a candidate to confirmed.</p></section>
+    <section class="questions_section"><p class="eyebrow">04 / Build your argument</p><h2>The guided worksheet</h2><p>Use the images and measurements above. Keep observations, interpretations, and unresolved questions distinct. A calculator is enough; no programming is required.</p><div id="questions"></div></section>
+    <section class="submission"><div><p class="eyebrow">05 / Save and submit</p><h2>Your evidence belongs<br>in a file you can keep.</h2><p>Export JSON to resume and text for easy reading. Send the files through your instructor's chosen channel. Nothing uploads automatically. Browser storage is best-effort only; export before closing or changing computers.</p><p id="progress" role="status"></p></div><div class="save_controls"><button id="export_json">Export answers (JSON)</button><button id="export_text" class="secondary">Export readable text</button><button id="print_answers" class="secondary">Print answers / save as PDF</button><label class="import_label" for="import_answers">Resume from your own exported JSON<input id="import_answers" type="file" accept="application/json,.json"></label><p id="save_status" role="status" aria-live="polite">Draft stays in this page until you export it.</p></div></section>
+    <section class="credits"><p class="eyebrow">Data, limits, and credit</p><p id="packet_credit"></p><p>Gaia data: ESA/Gaia/DPAC. Images: DESI Legacy Imaging Surveys DR11; <a href="https://www.legacysurvey.org/acknowledgment/">survey acknowledgment</a>. Follow each object's paper link for original scientific provenance. External catalog memberships are not checked in this packet. These records do not establish completeness or new discoveries.</p><p class="small">Online links are optional and open external services. This HTML contains no remote scripts, fonts, images, analytics, or required downloads. No installation or local server is needed.</p></section>
+    <section id="print_summary" aria-label="Printable answer report"></section>
+  </main>
+  <footer>BubbleTea / observational astronomy / learn to keep the uncertainty visible.</footer>
+  <script id="teaching_packet" type="application/json">__PACKET__</script>
+  <script>__SCRIPT__</script>
+</body>
+</html>

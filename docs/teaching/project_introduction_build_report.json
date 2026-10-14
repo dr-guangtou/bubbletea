@@ -1,0 +1,48 @@
+{
+  "classroom_html_sha256": "49bbd5851475cca8159eca904d04e89e640b4d8af86d0b27c520d936e35db68d",
+  "fonts": [
+    {
+      "name": "Arial Unicode.ttf",
+      "sha256": "876af2cd4854644e7f3e7feb2f688997fdb3343c6df6693611209c9dfb47ccec"
+    },
+    {
+      "name": "STHeiti Medium.ttc",
+      "sha256": "f8fa4a63e2cf500e98e64d4c73260daaba049306cf85dec9e3729bc285b7d645"
+    }
+  ],
+  "documents": {
+    "en": {
+      "source": "docs/teaching/project_introduction_en.md",
+      "source_sha256": "0f94aaa4b77cb9630c145b9d10f06f33864a3d4b305725409bf84540466797df",
+      "pdf": "docs/teaching/project_introduction_en.pdf",
+      "pdf_sha256": "98ef09b75f6c147208a6a869610f1090132f493058c1a79f5195c7f5b840c5e9",
+      "pdf_bytes": 55020,
+      "pages": 3,
+      "extracted_page_characters": [
+        2451,
+        2317,
+        2443
+      ],
+      "source_text_preserved_in_order": true,
+      "font_report": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nAAAAAA+STHeitiSC-Medium-1            TrueType          WinAnsi          yes yes yes     11  0\nAAAAAA+ArialUnicodeMS                TrueType          WinAnsi          yes yes yes     15  0\n",
+      "preview_prefix": "tmp/pdfs/teaching/project_introduction/project_introduction_en"
+    },
+    "zh": {
+      "source": "docs/teaching/project_introduction_zh.md",
+      "source_sha256": "08283354ec231705e43d97e0bbce0d835dc6d58389e35800a111bb290e577861",
+      "pdf": "docs/teaching/project_introduction_zh.pdf",
+      "pdf_sha256": "0ae646216f0bb967067e943b70d13a222d745666fa878569960f14aa90e6693f",
+      "pdf_bytes": 291406,
+      "pages": 3,
+      "extracted_page_characters": [
+        1069,
+        1079,
+        1112
+      ],
+      "source_text_preserved_in_order": true,
+      "font_report": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nAAAAAA+STHeitiSC-Medium-1            TrueType          WinAnsi          yes yes yes     11  0\nAAAAAA+ArialUnicodeMS                TrueType          WinAnsi          yes yes yes     15  0\nAAAAAB+ArialUnicodeMS                TrueType          WinAnsi          yes yes yes     19  0\nAAAAAC+ArialUnicodeMS                TrueType          WinAnsi          yes yes yes     23  0\n",
+      "preview_prefix": "tmp/pdfs/teaching/project_introduction/project_introduction_zh"
+    }
+  },
+  "visual_review": "Rendered PNGs require human/agent inspection; not asserted by this script."
+}

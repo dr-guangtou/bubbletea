@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Instructor guide: A Galaxy in Disguise, Part I · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/instructor_notes.md">Markdown source ↗</a></div><h1 id="instructor-guide-a-galaxy-in-disguise-part-i">Instructor guide: A Galaxy in Disguise, Part I</h1>
+<p><strong>Date:</strong> 2026-10-14. <strong>Status:</strong> classroom file finalized after approved revisions
+and regression-tested fixes. These notes are not embedded in the
+student HTML.</p>
+<p><a href="../../teaching/ucd_investigation.html">Student activity</a> · <a href="README.html">Course guide</a> ·
+<a href="../development/teaching_materials.html">Technical record</a> ·
+<a href="../../../data/teaching/README.md">Data provenance</a></p>
+<h2 id="what-to-review-first">What to review first</h2>
+<p>The <a href="../development/teaching_materials.html#html-code-review-and-student-id-wording-2026-10-14">code review</a>
+findings are resolved with 26 focused regressions, including a forced import
+rendering failure. The full suite passes 43,740 assertions. The Student ID label
+is corrected; no group ID is asked. The instructor has approved finalization.</p>
+<ol>
+<li>Read the background and compare the labeled examples. Is the depth appropriate
+   for your students? The approximately 30-minute reading path is a target, not a
+   classroom timing measurement.</li>
+<li>Inspect Task 1, especially <strong>Object 03</strong> (a QSO with overlapping compact-system
+   measurements), <strong>Object 21</strong> (the least conspicuous UCD by flux excess), and
+   <strong>Object 25</strong> (a QSO with nearby light). Decide how much credit a well-supported
+   <code>uncertain</code> response should receive. No numerical grade threshold is imposed.</li>
+<li>Try a few Task 2 rules, compare F1 alongside purity/completeness, save one final
+   selection with the two explanations, and export/import JSON. Check
+   whether the 30-object investigation plus selection exercise fits the intended
+   out-of-class workload. Task 3 deliberately has no hints or answer key here.</li>
+</ol>
+<p>These remain useful teaching/grading checks, not unresolved implementation gates.
+Research follow-up and new-host searches remain later work.</p>
+<h2 id="distribution-and-submissions">Distribution and submissions</h2>
+<p>Send <strong><code>ucd_investigation.html</code></strong> with the preferred
+<a href="../../teaching/project_introduction_en.pdf">English</a> and/or <a href="../../teaching/project_introduction_zh.pdf">Chinese</a>
+Project Introduction. Students save and open the HTML in a desktop
+browser. All 74 image cutouts, the reading, and catalog data are embedded. They
+need no software installation, local server, internet, or supporting files for
+the core tasks. Optional archive/viewer links need internet. Do not distribute
+the instructor directory as an answer key.</p>
+<p>Ask students to rename their <strong>JSON answer file</strong> to <strong><code>[NAME]_[STUDENT_ID].json</code></strong>
+and upload it to <strong>Tsinghua Online Classroom (网络学堂)</strong>. They replace the two
+placeholders with their name and Student ID, omit brackets, and keep the extension.
+The page itself asks only for Student ID. The readable TXT is optional and does
+not replace JSON. JSON supports resuming in this exact activity version and independently
+checking the rules. Browser storage is not a reliable submission mechanism, and
+there is no automatic upload. Incomplete work can be exported. Keep a copy of the
+exact HTML and packet used by the class; data changes deliberately invalidate old
+submissions. The retained version 1 PDF is not a print version of this lesson.</p>
+<p>LLM assistance is welcome with a brief disclosure of its contribution and what
+the student checked. Do not require private chat histories or an unaided attempt.
+Assess observations, reasoning, uncertainty, citations, and reproducible work.</p>
+<h2 id="what-the-reference-classes-mean">What the reference classes mean</h2>
+<p>The seven demonstrations are M60-UCD1, M59-UCD3, M59cO, two independently
+spectroscopically classified stars, and two spectroscopic quasars. M59cO is
+explicitly labeled as a UCD/compact-elliptical boundary case with unavailable
+astrometry; it is not a clean binary-classification answer and is not in either task.</p>
+<p>Task 1 has <strong>10 UCD references, 10 spectroscopic stars, and 10 spectroscopic
+quasars</strong>, presented in a separately shuffled order. That composition is not
+shown to students. Its UCDs are Sombrero UCD1, three Fornax objects, VUCD1, VUCD2,
+VUCD5, VUCD6, S804, and J122636.42+125512.9. They span G = 18.677–20.079, rounded
+for this summary. Four of the ten have unavailable Gaia motion solutions.
+These are current approved literature reference labels, not new confirmations.</p>
+<p>Several brighter Cen A cutouts contained severe colored slabs or obscured centers.
+NGC 3923 UCD1 was lost against its displayed host background. They were replaced
+with somewhat fainter, usable images; their scientific records were not rejected.
+Every retained close/context pair has explicit visual notes and image hashes in
+<a href="../../../data/teaching/instructor/part1_image_reviews_v2.json">the review record</a>.</p>
+<p>Introductory stellar cards deliberately require combined proper-motion significance
+at least 4, so students have clearer motion evidence. This two-component statistic
+is <strong>not</strong> a one-dimensional four-sigma probability. This curation applies only to
+the small gallery. <strong>Task 2 has no proper-motion, parallax, color, flux-excess, or
+image-quality cut on its sampled stars.</strong> Its difficult low-motion and missing-data
+stars are retained. Magnitude matching in the gallery does not make the parent
+catalog representative of every region of sky.</p>
+<h2 id="task-1-grade-evidence-not-certainty">Task 1: grade evidence, not certainty</h2>
+<p>The <a href="../../../data/teaching/instructor/part1_reference_key_v2.json">instructor reference key</a>
+retains exact string Gaia identifiers, canonical identities, original publication
+or spectrum information, source-file hashes, association offsets, and the review
+notes. No Task 1 reference classes or class-bearing object names are embedded in
+its student cards. Coordinates and identifiers are provided for open investigation;
+finding the published identity is allowed if cited.</p>
+<p>Only the classification (including <code>uncertain</code>) is mandatory. Confidence, evidence
+basis, notes, and citations are optional. The button-style choices preserve an
+unanswered state. Do not penalize omitted optional fields as incomplete Task 1
+submissions; assess evidence and confidence when students choose to supply them.
+Galactic longitude and latitude are calculated from each saved Gaia position and
+shown on every object card, without introducing them as a classification rule.</p>
+<p>The layout keeps measurements above the images and answers. On wider windows,
+the images stay beside the response panel while students classify, type evidence,
+or advance. Previous/next returns the new images and classification to view,
+retaining the previous object's answers. Narrow windows use a stacked layout.
+This is a layout-only revision; existing answer files require no new migration.</p>
+<p>Gaia plus an RGB image supports a comparison, not necessarily a unique physical
+class. Small motion is not proof of a quasar or UCD. Flux excess can overlap;
+missing astrometry is not zero; surrounding light can affect interpretation.
+Some definite reference QSOs are legitimately <strong>uncertain from the supplied
+observations alone</strong>. In particular, Object 03 overlaps UCD-like measurements.
+Credit a careful uncertain answer rather than force unsupported confidence.
+The current audit is agent-assisted preparation, not an independent blind human
+classification experiment or measured student success rate.</p>
+<p>Suggested review dimensions for any supplied supporting evidence, without fixed point weights:</p>
+<ul>
+<li>Did the student identify the intended source and use actual measurements/errors?</li>
+<li>Does the explanation distinguish observations from interpretation and literature?</li>
+<li>Is the stated confidence defensible, including missing values and image limitations?</li>
+<li>If an external record supplied the class, is that evidence cited?</li>
+</ul>
+<p>Catalog STAR does not prove singleness. No absence of an NSS, galaxy, or QSO-candidate
+flag is assumed. An image-quality warning does not itself establish a blend;
+color does not itself establish a young cluster. Classroom answers must not be
+imported into canonical research classifications.</p>
+<h2 id="task-2-what-its-scores-establish">Task 2: what its scores establish</h2>
+<p>The fixed catalog contains <strong>20,000 stars + 121 UCD references + 391 QSOs +
+606 unconfirmed candidates = 21,118 sources</strong>. Examples and Task 1 are disjoint
+from it. Approved reliability exclusions are applied; 13 later source-status
+exclusions are retained only among the unscored candidates. Scientific validation
+measurements are not used to construct the exercise. The already-public M60
+example comes from the preserved v1 teaching packet.</p>
+<p>Purity is selected reference UCDs divided by selected reference UCDs, stars,
+and QSOs. Completeness is selected reference UCDs divided by all 121 reference
+UCDs, <strong>including those with missing measurements</strong>. F1 is their harmonic mean,
+equivalently <code>2 TP / (2 TP + FP + FN)</code>: selected UCDs are TP, selected stars/QSOs
+are FP, and missed reference UCDs are FN. The 606 candidates enter none of the
+three scores; their selected count remains visible. Empty scored selections
+have undefined purity, not 100%, and F1 = 0. All intervals include their endpoints and combine
+with AND; the missing-data policy is part of the saved rule.</p>
+<p>These are scores for this constructed reference subset, not a prediction of
+purity near a new host. SDSS targeting, spectroscopic success, footprint, literature
+selection, magnitude distributions, and chosen class proportions all matter.
+The student page explains the distinction. Repeated experiments are appropriate
+for learning, but scores after repeated tuning are not an independent scientific
+validation result. No learned research-model coefficients or optimized cuts are
+provided. Individual plotted points remain classless after evaluation.</p>
+<p>Require one evaluated final selection and answers to <strong>"Why do you think this
+works?"</strong> and <strong>"How do you think this selection can be improved?"</strong>. The learning
+objective is higher F1, not higher purity or completeness in isolation. Evaluate
+whether the actual recorded results support the explanation. A perfect score or
+particular threshold is neither promised nor required. The IPD window fractions
+are genuine measurements, not fake distractors:
+both have median zero in every scored class in this sample, so students can discover
+their limited simple separation themselves. That observation is not a claim that
+the fields are universally useless.</p>
+<h3 id="instructor-only-range-cut-trial">Instructor-only range-cut trial</h3>
+<p>The <a href="../../../data/teaching/instructor/part1_selection_trial.json">measured trial</a>
+tests 4,536 combinations of ranges using fields available to students. Its best
+result selects <strong>76/121 UCDs, 42 stars, 5 QSOs</strong>, plus <strong>168 unconfirmed candidates</strong>:
+purity <strong>61.8%</strong>, completeness <strong>62.8%</strong>, F1 <strong>0.623</strong>. Its active cuts are flux
+excess at least 2.5 and astrometric excess noise at least 5 mas, with missing active
+measurements excluded. This is one achievable solution, not a global optimum,
+independent scientific validation, or recommended production selector. Keep these
+thresholds out of the student page; there is no automatic solution preset.</p>
+<p>Selecting everything yields F1 <strong>0.0117</strong> despite complete UCD recovery. Selecting
+exactly one reference UCD by its unique G value yields F1 <strong>0.0164</strong> despite 100%
+reference purity; selecting nothing yields zero. The one-object rule deliberately
+uses the instructor label to illustrate the earlier exercise's loophole, not to
+recommend an observational strategy. F1 is a better classroom objective for this
+concern, but it still depends on the chosen class mixture and the unknown candidates
+remain unscored. ROC AUC is explained as optional background, not used to optimize
+these binary range selections.</p>
+<h2 id="check-submitted-files">Check submitted files</h2>
+<p>Only the instructor needs the repository and Python environment:</p>
+<pre><code class="language-sh">uv run python scripts/teaching/check_part1_answers.py \
+  --answers /path/to/student_answers.json \
+  --output /path/to/instructor_check.json
+</code></pre>
+<p>The checker validates the version and exact packet digest, verifies object IDs,
+and recomputes each attempt from the actual saved rules and missing-data policy.
+It rejects mismatched or altered counts, invalid thresholds, and bad references.
+Its output combines each student explanation with the instructor evidence notes;
+<code>class_agrees</code> is a comparison, <strong>not an automatic grade</strong>. Task 3 and justified
+uncertainty always require human assessment. Never overwrite the original submission.</p>
+<p>Current submissions use <code>bubbletea_answers_v3</code> with the unchanged version 2 data
+packet. Valid same-packet older v2 submissions are checked, their F1 scores are
+recomputed, and the two old final choices are preserved separately. The browser
+asks for a new single final selection and both new explanations; it does not
+silently choose for the student. Wrong packets, version 1 answers, and tampered
+older scores are rejected without replacing existing work.</p>
+<p>This is not an anti-cheating system. Offline Task 2 feedback necessarily includes
+information sufficient to recover its reference classes by inspecting the HTML.
+Task 1's separate key is not shipped, but its public sky identities are discoverable.</p>
+<h2 id="testing-and-remaining-limits">Testing and remaining limits</h2>
+<p>The complete local file was tested with network disabled in installed Chrome on
+macOS, including image decoding, independent scoring, JSON/text downloads, restore,
+invalid imports, denied storage, narrow layouts, keyboard focus, and paused/reduced-
+motion behavior. At fourfold CPU throttling, startup and evaluation met the plan's
+5-second and 300-ms targets. Exact measurements are in the
+<a href="../../teaching/part1_validation_report.json">validation report</a>; the file remains below 10 MB.
+Student-device performance, other browsers, live archive interfaces, accessibility
+with a screen reader, and classroom completion time have not been established.</p>
+<p><strong>Next step:</strong> distribute the finalized HTML and introduction PDF(s), announce the
+deadline on the course platform, and collect JSON submissions before Part II.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#instructor-guide-a-galaxy-in-disguise-part-i">Instructor guide: A Galaxy in Disguise, Part I</a><ul>
+<li><a href="#what-to-review-first">What to review first</a></li>
+<li><a href="#distribution-and-submissions">Distribution and submissions</a></li>
+<li><a href="#what-the-reference-classes-mean">What the reference classes mean</a></li>
+<li><a href="#task-1-grade-evidence-not-certainty">Task 1: grade evidence, not certainty</a></li>
+<li><a href="#task-2-what-its-scores-establish">Task 2: what its scores establish</a><ul>
+<li><a href="#instructor-only-range-cut-trial">Instructor-only range-cut trial</a></li>
+</ul>
+</li>
+<li><a href="#check-submitted-files">Check submitted files</a></li>
+<li><a href="#testing-and-remaining-limits">Testing and remaining limits</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_zh.html">伪装成恒星的星系</a></li></ul></details><details><summary>Linked from (7)</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../development/teaching_materials.html">Teaching materials: implementation and validation</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../plans/teaching_part1_redesign.html">A Galaxy in Disguise: Part I implementation plan</a></li><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

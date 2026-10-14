@@ -1265,7 +1265,132 @@ would reject the new closeout journal. This was a validation-design mistake, not
 a change to historical research evidence.</p>
 <p><strong>Recommendation:</strong> Compare each original journal byte-for-byte, require existing
 lessons to retain their original byte prefix, and allow new files. Rebuild the HTML
-portal whenever new repository documentation is added.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+portal whenever new repository documentation is added.</p>
+<h2 id="2026-10-12-host-flags-and-documented-image-urls-need-independent-checks">2026-10-12: Host flags and documented image URLs need independent checks</h2>
+<p><strong>Lesson:</strong> A convenient catalog flag or a documented image-layer URL is not
+enough to establish scientific eligibility or usable imaging.</p>
+<p><strong>Context:</strong> Teaching preparation initially assumed that the ranked host CSV had
+the pilot table's extra fields. Schema inspection corrected that assumption. The
+pilot's hardcoded literature-host list also missed a published NGC 2768 UCD.
+Separately, the documented DR11 grz layer returned uniform dark JPEGs for two
+known UCDs while the standard DR11 layer returned real images. Concurrent host
+probes triggered an HTTP 429 response for one host; a later serial retry succeeded.</p>
+<p><strong>Recommendation:</strong> Inspect schemas before joining or filtering; distinguish a
+missing host label from a literature absence. Validate returned image content and
+record exact release/layer. Probe survey services serially with backoff, and
+retain rate-limited checks as unknown rather than absent coverage. Never insert
+unmeasured placeholder statistics into an evidence table.</p>
+<h2 id="2026-10-13-local-teaching-files-need-explicit-answer-exports">2026-10-13: Local teaching files need explicit answer exports</h2>
+<p><strong>Lesson:</strong> A self-contained HTML lesson can work offline while still losing
+answers if it relies on browser storage for local files.</p>
+<p><strong>Context:</strong> The no-server classroom requirement excludes a shared review service.
+Browser policies can deny local storage; a downloadable file and verified import
+round trip are therefore part of the activity, not optional polish.</p>
+<p><strong>Recommendation:</strong> Embed required images/data, test with network access disabled
+and storage denied, and make JSON/text exports prominent. Preserve exact Gaia
+identifiers as strings and reject imports from a different data snapshot. Keep
+student evidence separate from canonical scientific classifications.</p>
+<h2 id="2026-10-14-reapply-later-reference-decisions-when-making-teaching-samples">2026-10-14: Reapply later reference decisions when making teaching samples</h2>
+<p><strong>Lesson:</strong> A frozen benchmark's confirmed-label column is not sufficient to define
+a new, reliably labeled teaching sample when later source reviews exist.</p>
+<p><strong>Context:</strong> The teaching feasibility audit found 146 confirmed, primary-eligible
+development rows, but all 13 objects in the later source-status exclusion file
+were still in that count. Their original paper describes candidates, not confirmed
+UCDs. Applying the exclusion leaves 133 provisional reference rows before the
+classroom evidence and image audit. The five separate reliability reviews also
+need an explicit check even though none overlap those remaining rows.</p>
+<p><strong>Recommendation:</strong> Freeze and apply current source-status, reliability, and
+identity decisions in every new teaching export. Keep excluded candidates and
+their provenance separate from scored reference classes, and retain an accounting
+table. Do not edit the historical benchmark merely to simplify a teaching export.</p>
+<h2 id="2026-10-14-nonuniform-images-still-require-source-level-inspection">2026-10-14: Nonuniform images still require source-level inspection</h2>
+<p><strong>Lesson:</strong> A decodable, nonuniform survey JPEG can still be unusable for identifying
+the intended object.</p>
+<p><strong>Context:</strong> Several Cen A DR11 cutouts passed dimension/color checks but contained
+severe colored slabs or obscured centers. Other introductory choices were affected
+by host saturation, bright-neighbor bleed, or a close double. These problems were
+visible only when inspecting each source at close and wider scales.</p>
+<p><strong>Recommendation:</strong> Preserve raw responses, inspect both scales, record explicit
+notes tied to image hashes, and require a renewed review after image bytes change.
+Replace an unsuitable teaching image without rejecting its scientific record or
+imposing ancillary-image masks on the Gaia measurement sample.</p>
+<h2 id="2026-10-14-separate-selection-order-from-presentation-order">2026-10-14: Separate selection order from presentation order</h2>
+<p><strong>Lesson:</strong> Reusing one deterministic hash to choose a small set and display a
+mixed exercise can unintentionally group sources by class.</p>
+<p><strong>Context:</strong> Hash-ranked stellar comparisons occupied an early block when the same
+ordering was reused for Task 1. An independent presentation prefix removed that
+construction artifact without changing scientific measurements or class counts.</p>
+<p><strong>Recommendation:</strong> Use separately documented seeds/prefixes for sampling and
+display order. Inspect the final mixed sequence and verify role disjointness.</p>
+<h2 id="2026-10-14-preserve-the-bit-pattern-of-external-spectrum-identifiers">2026-10-14: Preserve the bit pattern of external spectrum identifiers</h2>
+<p><strong>Lesson:</strong> Exact integer storage can still represent an unsigned catalog ID as a
+negative signed integer; that is different from floating-point rounding.</p>
+<p><strong>Context:</strong> The local stellar FITS table contains SDSS spectrum identifiers with
+signed 64-bit representations. Adding 2^64 to negative integers recovers the
+unsigned representation while retaining the original value in provenance.</p>
+<p><strong>Recommendation:</strong> Verify each identifier's data model, preserve its original
+representation, and serialize exact strings. Do not apply an unsigned conversion
+to an unrelated identifier field or use floating point as an intermediary.</p>
+<h2 id="2026-10-14-repository-wide-auto-fix-hooks-can-cross-the-task-boundary">2026-10-14: Repository-wide auto-fix hooks can cross the task boundary</h2>
+<p><strong>Lesson:</strong> A broad validation command can mutate unrelated historical files when
+its hooks include automatic fixes, even if the intended task is only teaching code.</p>
+<p><strong>Context:</strong> <code>pre-commit run --all-files</code> changed previously clean archived notebooks
+and research scripts while reporting legacy lint failures. The pre-run status
+made it possible to identify and reverse only those hook-generated edits. Scoped
+checks passed for the actual teaching work; the repository-wide failure remains.</p>
+<p><strong>Recommendation:</strong> Inspect hook behavior and record the baseline before running
+broad checks. Use explicit changed-file checks for bounded work, and use a read-only
+lint invocation when surveying unrelated code. Restore only verified tool-generated
+edits, preserve user changes, and report scoped success separately from legacy failures.</p>
+<h2 id="2026-10-14-match-the-classroom-objective-to-the-control-students-actually-use">2026-10-14: Match the classroom objective to the control students actually use</h2>
+<p><strong>Lesson:</strong> A ranking metric and the quality of one selected list answer different
+questions. A high ROC AUC need not imply a pure list in a strongly imbalanced sample.</p>
+<p><strong>Context:</strong> The instructor wanted to discourage trivial all-inclusive or one-object
+answers while retaining range cuts. A scoring-weight redesign would have changed
+the exercise unnecessarily. A bounded range trial demonstrated useful F1, whereas
+the all/one controls scored poorly despite perfect completeness or purity alone.</p>
+<p><strong>Recommendation:</strong> Clarify whether students produce a ranking or a binary selection
+before choosing a metric. Here retain ranges, show F1 with purity/completeness and
+counts, keep uncertain labels outside the scores, and state the constructed-sample
+limitation. Preserve old submissions explicitly when changing the final-answer form.</p>
+<h2 id="2026-10-14-test-image-visibility-while-students-use-the-form">2026-10-14: Test image visibility while students use the form</h2>
+<p><strong>Lesson:</strong> A page can have no horizontal overflow yet place the reference images
+off-screen during its main interaction. Responsive checks must exercise that action.</p>
+<p><strong>Context:</strong> The longer Task 1 property list pushed its classification panel away
+from the images. Moving measurements above a side-by-side review area and keeping
+the image column in view solved the desktop problem. The new checks verify image
+bounds during classification, writing, and navigation at short laptop sizes.
+One identity assertion initially compared mixed-case text with <code>inner_text</code>, which
+reflects CSS uppercase styling; the page identity itself was correct.</p>
+<p><strong>Recommendation:</strong> Test the actual interaction sequence and saved-answer behavior
+at several viewport sizes, not just the initial layout. Compare semantic source
+text with <code>text_content</code> when capitalization is presentation-only, and verify both
+images and the new response identity after advancing.</p>
+<h2 id="2026-10-14-passing-normal-path-tests-does-not-make-imports-transactional">2026-10-14: Passing normal-path tests does not make imports transactional</h2>
+<p><strong>Lesson:</strong> Validate types before coercive operations, and preserve the current
+work until an imported state has been applied successfully.</p>
+<p><strong>Context:</strong> A one-element array passed the browser's attempt-ID regular expression
+through implicit string conversion, then failed during history rendering. Because
+the import had already replaced <code>state</code>, its error message incorrectly claimed
+that current work was preserved. Existing malformed-file tests all failed earlier,
+before assignment, so they missed this path.</p>
+<p><strong>Recommendation:</strong> Require primitive string identifiers, test a failure after
+validation, and restore both state and UI on failure. Distinguish incomplete numeric
+input from intentionally blank bounds using native validity, and test slider
+endpoints through their actual handlers. Many per-row data assertions do not replace
+these interaction-edge checks. The confirmed findings are recorded in the teaching
+development review and remain pending explicit fix approval.</p>
+<h2 id="2026-10-14-verify-fonts-and-layout-in-bilingual-pdf-exports">2026-10-14: Verify fonts and layout in bilingual PDF exports</h2>
+<p><strong>Lesson:</strong> Registering a Unicode font does not prove that every PDF font is
+embedded, nor that translated text has acceptable line breaks.</p>
+<p><strong>Context:</strong> The introduction PDF builder initially retained ReportLab's default
+Helvetica resource. Setting the document's initial font, rather than a canvas
+partial overridden by the document, made all resources embedded Unicode subsets.
+Visual inspection also caught a stranded colon in the Chinese task description.</p>
+<p><strong>Recommendation:</strong> Check font resources, glyph coverage, extracted source text,
+and every rendered page. Retain Markdown as the source for both language versions.
+The earlier import/numeric-input findings are now approved, fixed, and covered by
+26 focused regression checks; see the dated classroom finalization record.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
 <ul>
 <li><a href="#lessons-learned-ucd-search-project">Lessons Learned - UCD Search Project</a><ul>
 <li><a href="#2026-07-14-parse-cds-fixed-width-tables-from-their-byte-specification">2026-07-14: Parse CDS fixed-width tables from their byte specification</a></li>
@@ -1407,6 +1532,17 @@ portal whenever new repository documentation is added.</p></article><aside class
 <li><a href="#2026-08-12-preserve-gaia-source-identifiers-as-strings-during-joins-and-exclusions">2026-08-12: Preserve Gaia source identifiers as strings during joins and exclusions</a></li>
 <li><a href="#2026-08-12-a-valid-image-response-can-be-a-survey-viewer-placeholder">2026-08-12: A valid image response can be a survey-viewer placeholder</a></li>
 <li><a href="#2026-10-12-preserve-historical-records-without-blocking-new-entries">2026-10-12: Preserve historical records without blocking new entries</a></li>
+<li><a href="#2026-10-12-host-flags-and-documented-image-urls-need-independent-checks">2026-10-12: Host flags and documented image URLs need independent checks</a></li>
+<li><a href="#2026-10-13-local-teaching-files-need-explicit-answer-exports">2026-10-13: Local teaching files need explicit answer exports</a></li>
+<li><a href="#2026-10-14-reapply-later-reference-decisions-when-making-teaching-samples">2026-10-14: Reapply later reference decisions when making teaching samples</a></li>
+<li><a href="#2026-10-14-nonuniform-images-still-require-source-level-inspection">2026-10-14: Nonuniform images still require source-level inspection</a></li>
+<li><a href="#2026-10-14-separate-selection-order-from-presentation-order">2026-10-14: Separate selection order from presentation order</a></li>
+<li><a href="#2026-10-14-preserve-the-bit-pattern-of-external-spectrum-identifiers">2026-10-14: Preserve the bit pattern of external spectrum identifiers</a></li>
+<li><a href="#2026-10-14-repository-wide-auto-fix-hooks-can-cross-the-task-boundary">2026-10-14: Repository-wide auto-fix hooks can cross the task boundary</a></li>
+<li><a href="#2026-10-14-match-the-classroom-objective-to-the-control-students-actually-use">2026-10-14: Match the classroom objective to the control students actually use</a></li>
+<li><a href="#2026-10-14-test-image-visibility-while-students-use-the-form">2026-10-14: Test image visibility while students use the form</a></li>
+<li><a href="#2026-10-14-passing-normal-path-tests-does-not-make-imports-transactional">2026-10-14: Passing normal-path tests does not make imports transactional</a></li>
+<li><a href="#2026-10-14-verify-fonts-and-layout-in-bilingual-pdf-exports">2026-10-14: Verify fonts and layout in bilingual PDF exports</a></li>
 </ul>
 </li>
 </ul>

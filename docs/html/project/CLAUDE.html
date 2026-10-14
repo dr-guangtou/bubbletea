@@ -79,6 +79,20 @@ The <code>save_figure()</code> helper saves both PNG and companion .md simultane
 <code>docs/</code>; implementation notes, benchmarks, experiment records, and audits belong
 in topic-organized <code>docs/development/</code> documents. Permanent scientific explanations
 belong in <code>docs/methods/</code>. Extend an existing topic before adding a new document.
+Keep course materials, student instructions, and teaching target lists in
+<code>docs/teaching/</code>, separate from scientific decisions and the research roadmap.
+Distributable teaching HTML must open directly as a local file with embedded
+assets/data and no required website, server, installation, or network requests.
+Online links are optional; student answers export separately. Preparation must
+not require access to a Windows computer.
+For current Part I, only Task 1 classification is mandatory; confidence/evidence
+fields are optional. Task 2 retains range controls and optimizes F1 alongside
+purity/completeness, with one final selection and two explanation prompts.
+External teaching links open new tabs; the required lesson remains offline.
+The requested Chinese Project Introduction is a scoped exception to English-only
+documentation; provide matching English and Chinese Markdown/PDF briefs. The
+student form asks only for Student ID. Students rename the exported JSON to
+<code>[NAME]_[STUDENT_ID].json</code> and upload it to Tsinghua Online Classroom (网络学堂).
 Journals and lessons retain their separate folders. The generated HTML entrance
 is <code>docs/index.html</code>; rebuild and validate HTML after document moves or merges.</p>
 <h2 id="journal-convention">Journal Convention</h2>

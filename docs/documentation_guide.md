@@ -32,6 +32,7 @@ Do not create another status summary or roadmap at the same level.
 | `methods/` | Permanent Gaia feature, contaminant, catalog, radial, and review explanations | Extend the scientific topic owner; cite original sources and distinguish versions |
 | `development/` | Implementation notes, experiment records, retrieval benchmarks, debugging, and audits | Extend a consolidated topic record; label dated results and superseded instructions |
 | `plans/` | Phase checklists, validation stages, and detailed implementation specifications | Link back to SPEC and the relevant issue; do not create competing scientific policy |
+| `teaching/` | Course brief, concepts, example objects, and instructor preparation | Keep the no-code teaching activity separate from research selection and confirmation; start at the [course guide](teaching/README.md) |
 | `journal/` | Automatically generated or session-based dated progress records | Preserve the historical record; not a substitute for development documentation |
 | `lessons/` | Append-only mistakes, rationale, and safeguards | Follow the existing lesson convention |
 | `html/` | Generated reading pages, directory, assets, and build report | Rebuild; never hand-edit generated HTML |
@@ -74,11 +75,16 @@ project lead if approved scientific decisions actually conflict.
 | Random-field retrieval | [Background tasks](plans/phase_3_background.md) | [Sky retrieval](development/sky_retrieval.md) |
 | UCD reference inspection | [Review rules](methods/reference_review.md), [tool specification](plans/ucd_visual_review_tool.md) | [Image-reference preparation](development/reference_imaging.md), [application launch guide](../scripts/phase4_search/ucd_visual_review/README.md) |
 | Documentation maintenance | This guide and [site plan](plans/documentation_site.md) | [Consolidation audit](development/documentation_audit.md) |
+| Teaching project | [Course guide](teaching/README.md), [instructor guide](teaching/instructor_notes.md), [Part I plan](plans/teaching_part1_redesign.md) | [Teaching implementation and validation](development/teaching_materials.md) |
 
 The [historical project context](development/project_history.md) is retained only
 for the July takeover rationale. It is not recommended as the restart entry point.
-Teaching materials will get a separate brief and location once the audience,
-learning goals, exercises, and student data access are agreed.
+The [teaching guide](teaching/README.md) owns the separate no-code undergraduate
+semester project; its [Part I implementation plan](plans/teaching_part1_redesign.md)
+owns the single-file lesson, evidence audits, catalog construction, and acceptance
+checks. The guide distinguishes the retained version 1 artifacts from the delivered
+Part I redesign, now finalized with bilingual Project Introductions. Teaching shortlists are not
+approved research samples or discovery claims.
 
 ## Before adding another document
 

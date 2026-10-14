@@ -44,6 +44,7 @@ groups = (
     "Start here",
     "Plans and requirements",
     "Scientific reference",
+    "Teaching materials",
     "Development records",
     "Selection and reference",
     "Background and radial measurements",
@@ -128,6 +129,8 @@ def category(path: Path) -> str:
         return "Plans and requirements"
     if name.startswith("docs/methods/"):
         return "Scientific reference"
+    if name.startswith("docs/teaching/"):
+        return "Teaching materials"
     if name.startswith("docs/development/"):
         return "Development records"
     if name.startswith("docs/journal/"):
@@ -462,7 +465,9 @@ def build(scope: str, limit: int | None) -> dict:
         unavailable.extend(parsed.unavailable)
         destination = page_map.get(source, source)
         home_body += f'<section class="overview_section"><div class="section_heading"><span class="section_number">{number}</span><h2>{heading}</h2><a href="{relative_url(destination, home)}">Source document ↗</a></div><div class="overview_content">{"".join(parsed.parts)}</div></section>'
-    home_body += f'<section class="next_step"><p class="eyebrow">Next: observational astronomy in the classroom</p><h2>A teaching project, with its own brief.</h2><p>This portal organizes the research record. Student-facing lessons, exercises, and datasets come next, after the audience and learning goals are agreed.</p><a href="{relative_url(directory, home)}">Browse all {len(sources)} documents ↗</a></section>'
+    teaching_source = DOCS_DIR / "teaching" / "README.md"
+    teaching_target = page_map.get(teaching_source, teaching_source)
+    home_body += f'<section class="next_step"><p class="eyebrow">Observational astronomy in the classroom</p><h2>A Galaxy in Disguise</h2><p>Part I is finalized: investigate 30 objects, experiment with 21,118 catalog sources, and save evidence in one self-contained offline HTML. Illustrated reading, 74 saved images, and grading exports are included. All five code-review findings are fixed and regression-tested. English and Chinese Project Introductions are available in Markdown and PDF, including JSON filename and course-platform submission instructions. Next: distribute the classroom files and collect submissions. The old six-object worksheet remains version 1.</p><a href="{relative_url(teaching_target, home)}">Open the teaching guide and student activity ↗</a><p><a href="{relative_url(directory, home)}">Browse all {len(sources)} documents ↗</a></p></section>'
     home.write_text(page_shell("Research overview", home_body, home), encoding="utf-8")
     outputs.append(home)
     failures, warnings = validate_pages(outputs)

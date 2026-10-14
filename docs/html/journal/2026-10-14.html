@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>bubbletea - teaching_ucd_course_20261012 - 2026-10-14 · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Research journals</span><a href="../../journal/2026-10-14.md">Markdown source ↗</a></div><p class="notice">Historical record. Read the dated current-status page before treating this as today’s operating state.</p><hr>
+<p>date: 2026-10-14
+repo: bubbletea
+branch: teaching_ucd_course_20261012
+tags:
+  - development
+  - development/bubbletea</p>
+<hr>
+<h1 id="bubbletea-teaching_ucd_course_20261012-2026-10-14">bubbletea - teaching_ucd_course_20261012 - 2026-10-14</h1>
+<h2 id="progress">Progress</h2>
+<ul>
+<li>Built and finalized Part I of the no-code undergraduate UCD project in <code>docs/teaching/ucd_investigation.html</code>: scientific background, neutral Gaia definitions, scanning and angular-size illustrations, seven labeled examples, and three practical tasks in one offline file.</li>
+<li>Prepared 30 classification objects and a separate 21,118-object selection catalog: 20,000 stars, 121 UCD references, 391 QSOs, and 606 unconfirmed candidates. Embedded 74 reviewed Legacy Survey DR11 cutouts; retained provenance and exact Gaia identifiers without changing research catalogs or selectors.</li>
+<li>Implemented classification buttons with optional evidence/confidence, range-based selection with purity/completeness/F1 feedback, one explained final selection, and a host-membership question without a supplied answer. Kept uncertain candidates outside the scores and enabled responsible LLM use with brief disclosure.</li>
+<li>Improved the Task 1 layout so images remain beside desktop classification controls. Added compatible JSON export/import, an independent instructor checker, Student ID wording, and <code>[NAME]_[STUDENT_ID].json</code> submission instructions for Tsinghua Online Classroom.</li>
+<li>Fixed five review findings: import-state rollback and identifier typing, malformed numeric input, missing excess-noise table values, stale hover text, and floating-point slider endpoints. The offline suite passed 43,740 assertions, including 26 focused regressions; the frozen packet and answer schema remained unchanged.</li>
+<li>Delivered equivalent English/Chinese Project Introduction Markdown and three-page PDFs, checked all six rendered pages and embedded fonts, and retained the previous six-object HTML/PDF separately as version 1. The finalized HTML measured 9,354,951 bytes; fourfold-throttled startup was 0.795206 seconds and median evaluation plus redraw was 64.5 ms.</li>
+<li>Updated the specification, completed BT-033, linked the classroom artifacts, and rebuilt the documentation portal. Before this journal addition, 316 documentation checks and scoped Ruff/pre-commit checks passed. Implementation details and reproduction commands are in <code>docs/development/teaching_materials.md</code>.</li>
+</ul>
+<h2 id="current-state">Current State</h2>
+<h3 id="key-issues">Key Issues</h3>
+<ul>
+<li>The user approved classroom finalization and will distribute the files and manage course-platform uploads personally. No course-platform upload was performed by the agent.</li>
+<li>Browser checks used installed Chrome on macOS with network disabled, including rejected imports, denied storage, and six viewport sizes. Windows, other browsers, screen-reader use, and real student completion time remain untested.</li>
+<li>Teaching scores describe a constructed reference sample after tuning, not independent selection performance in a new sky field; no new UCD discovery or source confirmation was claimed.</li>
+<li>The journal helper did not find its configured Obsidian vault path, so this entry uses the prescribed repository fallback. Obsidian CLI preflight passed; the one-sentence snapshot was appended once to <code>journal/2026/10/2026-10-14.md</code> in wensai through the running app.</li>
+<li>At journal creation, <code>teaching_ucd_course_20261012</code> contained uncommitted teaching files and generated documentation. The default branch was <code>master</code>, remote <code>origin</code>. Wrap-up authorized committing, a non-fast-forward merge, branch deletion, and push; final integration results belong to Git history and the closeout response.</li>
+</ul>
+<h3 id="next-steps">Next Steps</h3>
+<ul>
+<li>Complete the authorized Git closeout after recording the daily snapshot and validating the added journal page.</li>
+<li>The instructor will post the finalized HTML and preferred introduction PDFs, announce the deadline, and collect named JSON submissions.</li>
+<li>When development resumes, scope Part II separately, beginning with students' answers about physical association with a host galaxy. New-host literature, imaging coverage, and sensitivity checks are prerequisites to a discovery exercise.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Test import failures after validation and before persistence; ordinary malformed-file rejection does not demonstrate rollback safety.</li>
+<li>Distinguish incomplete numeric input from an intentionally empty bound, and exercise exact slider endpoints through their event handlers.</li>
+<li>Validate the interaction students actually perform, including image visibility during evidence entry and navigation, not only page overflow.</li>
+<li>Retain uncertainty and provenance in classroom data; optimize F1 for a selected list rather than substitute a ranking metric for range cuts.</li>
+<li>Check Unicode font resources, extracted text, and every rendered page when producing bilingual PDFs. Scope auto-fixing hooks to changed files to avoid unrelated legacy edits.</li>
+</ul>
+<hr>
+<p><em>Agent: Codex (runtime model identifier not exposed) · Session: identifier not exposed</em></p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#bubbletea-teaching_ucd_course_20261012-2026-10-14">bubbletea - teaching_ucd_course_20261012 - 2026-10-14</a><ul>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#current-state">Current State</a><ul>
+<li><a href="#key-issues">Key Issues</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="2026-03-27_project_initialization.html">2026-03-27: Project Initialization</a></li><li><a href="2026-05-11_phase_1_completion.html">2026-05-11 phase 1 completion</a></li><li><a href="2026-05-11_phase_2_completion.html">2026-05-11 phase 2 completion</a></li><li><a href="2026-05-11_phase_3_completion.html">2026-05-11 phase 3 completion</a></li><li><a href="2026-07-14_handover.html">Session Handover - 2026-07-14</a></li><li><a href="2026-07-14_literature_reference_audit.html">Literature Reference Audit</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

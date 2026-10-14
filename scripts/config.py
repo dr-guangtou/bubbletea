@@ -25,6 +25,51 @@ DOCUMENTATION_HOME = DOCS_DIR / "index.html"
 DOCUMENTATION_ASSETS_DIR = SCRIPTS_DIR / "documentation" / "assets"
 DOCUMENTATION_BUILD_REPORT = DOCUMENTATION_SITE_DIR / "build_report.json"
 DOCUMENTATION_MIGRATION = DOCS_DIR / "development" / "documentation_migration.json"
+TEACHING_DIR = DOCS_DIR / "teaching"
+TEACHING_SOURCE_DIR = SCRIPTS_DIR / "teaching"
+TEACHING_ASSETS_DIR = TEACHING_SOURCE_DIR / "assets"
+TEACHING_PACKET = DATA_DIR / "teaching" / "ucd_course_packet_v1.json"
+TEACHING_TARGETS = DATA_DIR / "teaching" / "targets_v1.json"
+TEACHING_ACTIVITY_HTML = TEACHING_DIR / "ucd_investigation.html"
+TEACHING_WORKSHEET_PDF = TEACHING_DIR / "ucd_worksheet.pdf"
+TEACHING_BUILD_REPORT = TEACHING_DIR / "materials_build_report.json"
+TEACHING_VALIDATION_REPORT = TEACHING_DIR / "materials_validation_report.json"
+TEACHING_PDF_PREVIEW_DIR = PROJECT_ROOT / "tmp" / "pdfs" / "teaching"
+TEACHING_BROWSER_PREVIEW_DIR = PROJECT_ROOT / "tmp" / "teaching"
+teaching_part1_packet = DATA_DIR / "teaching" / "ucd_course_packet_v2.json"
+teaching_part1_key = DATA_DIR / "teaching" / "instructor" / "part1_reference_key_v2.json"
+teaching_part1_reviews = DATA_DIR / "teaching" / "instructor" / "part1_image_reviews_v2.json"
+teaching_part1_reading = TEACHING_DIR / "part1_reading.md"
+teaching_part1_tool_guide = TEACHING_DIR / "tool_guide.md"
+teaching_part1_selection_trial = DATA_DIR / "teaching" / "instructor" / "part1_selection_trial.json"
+teaching_part1_build_report = TEACHING_DIR / "part1_build_report.json"
+teaching_part1_validation_report = TEACHING_DIR / "part1_validation_report.json"
+teaching_part1_preview = PROJECT_ROOT / "tmp" / "teaching" / "part1"
+teaching_previous_html = TEACHING_DIR / "ucd_investigation_v1.html"
+teaching_introduction_sources = {
+    language: TEACHING_DIR / f"project_introduction_{language}.md" for language in ("en", "zh")
+}
+teaching_introduction_pdfs = {
+    language: source.with_suffix(".pdf")
+    for language, source in teaching_introduction_sources.items()
+}
+teaching_introduction_report = TEACHING_DIR / "project_introduction_build_report.json"
+teaching_introduction_preview = TEACHING_PDF_PREVIEW_DIR / "project_introduction"
+teaching_introduction_font = Path(
+    os.environ.get(
+        "BUBBLETEA_TEACHING_FONT", "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+    )
+)
+teaching_introduction_bold_font = Path(
+    os.environ.get("BUBBLETEA_TEACHING_BOLD_FONT", "/System/Library/Fonts/STHeiti Medium.ttc")
+)
+teaching_introduction_bold_font_index = int(
+    os.environ.get("BUBBLETEA_TEACHING_BOLD_FONT_INDEX", "1")
+)
+teaching_canonical_reference = (
+    DATA_DIR / "literature" / "validation" / "canonical_reference_catalog.csv"
+)
+teaching_reliability_reviews = DATA_DIR / "literature" / "sources" / "ucd_reliability_reviews.json"
 
 # ---------------------------------------------------------------------------
 # Data subdirectories
@@ -414,6 +459,8 @@ M60_KNOWN_UCD_CUTOUT_SUMMARY = RADIAL_SEARCH_RESULTS_DIR / "m60_known_ucd_legacy
 # Falls back to data/external/ if not set.
 # ---------------------------------------------------------------------------
 EXTERNAL_DATA_DIR = Path(os.environ.get("BUBBLETEA_EXTERNAL_DATA", str(DATA_DIR / "external")))
+TEACHING_DOWNLOAD_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "teaching" / "course_packet_v1"
+teaching_part1_downloads = EXTERNAL_DATA_DIR / "bubbletea" / "teaching" / "course_packet_v2"
 LARGE_SKY_GAIA_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_large_sky_v1"
 FIRST_STAGE_HOST_PROFILE_RETRIEVAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "gaia_host_profiles_v1"
 M60_POSITIVE_CONTROL_EXTERNAL_DIR = EXTERNAL_DATA_DIR / "bubbletea" / "m60_positive_control_v1"

@@ -1,6 +1,6 @@
 # BubbleTea — Master Development Plan
 
-**Last updated:** 2026-10-12
+**Last updated:** 2026-10-14
 
 [Current status](current_status.md) · [Documentation guide](documentation_guide.md) ·
 [Scientific requirements](SPEC.md) · [Validation stages](plans/scientific_validation.md) ·
@@ -15,8 +15,15 @@ Development proceeds in six phases, each building on the previous. Detailed task
 tracking for each phase is in `docs/plans/`.
 
 Phases overlap in implementation; a completed script does not close its scientific
-validation stage. The latest research checkpoint is 2026-08-19. Teaching materials
-are a separate upcoming documentation task, not an expansion of the research sample.
+validation stage. The latest research checkpoint is 2026-08-19. The separate
+[teaching activity](teaching/README.md) now has an implemented and technically
+validated Part I single-file HTML, with 30 classification objects and a 21,118-row
+selection exercise. The [Part I plan](plans/teaching_part1_redesign.md) is complete
+through approved classroom finalization, regression fixes, and bilingual Project
+Introduction Markdown/PDF briefs. Next: distribute the files and collect JSON
+submissions via Tsinghua Online Classroom. The old HTML/PDF
+is retained as version 1. Teaching does not expand the research
+sample or replace this roadmap.
 
 ## Immediate sequence
 
