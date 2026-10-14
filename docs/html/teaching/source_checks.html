@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Instructor evidence record and remaining preparation · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/source_checks.md">Markdown source ↗</a></div><h1 id="instructor-evidence-record-and-remaining-preparation">Instructor evidence record and remaining preparation</h1>
+<p><strong>Check date:</strong> 2026-10-12<br>
+<strong>Scope:</strong> Read-only reference checks and a small online feasibility test<br>
+<strong>Not performed:</strong> New sky search, selector changes, catalog edits, classroom deployment</p>
+<p><a href="README.html">Course guide</a> · <a href="concepts.html">Concepts</a> · <a href="target_shortlist.html">Shortlist</a></p>
+<h2 id="gaia-measurements-retrieval-and-exact-identifiers">Gaia measurements: retrieval and exact identifiers</h2>
+<p>Endpoint: <code>https://gea.esac.esa.int/tap-server/tap/sync</code>, synchronous GET with
+<code>REQUEST=doQuery</code>, <code>LANG=ADQL</code>, <code>FORMAT=csv</code>. This is an instructor reproducibility
+record; students do not need to write or run query language.</p>
+<pre><code class="language-sql">SELECT source_id, ra, dec, phot_g_mean_mag, bp_rp,
+       parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error,
+       pmra_pmdec_corr, astrometric_params_solved, ruwe,
+       astrometric_excess_noise, astrometric_excess_noise_sig,
+       phot_bp_rp_excess_factor, ipd_frac_multi_peak, ipd_frac_odd_win
+FROM gaiadr3.gaia_source
+WHERE source_id IN
+      (3928413763095214592, 3928425445406259456, 3681343123693230336)
+   OR 1 = CONTAINS(POINT('ICRS', ra, dec),
+                  CIRCLE('ICRS', 190.8999, 11.5347, 0.001388888888888889))
+</code></pre>
+<p>HTTP 200; four rows returned. The circle is a five-arcsecond identification check
+around the published M60-UCD1 position, not a host search aperture. Snapshot:</p>
+<pre><code class="language-csv">source_id,ra,dec,phot_g_mean_mag,bp_rp,parallax,parallax_error,pmra,pmra_error,pmdec,pmdec_error,pmra_pmdec_corr,astrometric_params_solved,ruwe,astrometric_excess_noise,astrometric_excess_noise_sig,phot_bp_rp_excess_factor,ipd_frac_multi_peak,ipd_frac_odd_win
+3681343123693230336,188.86962553574625,-3.7892273034273836,20.011778,1.6481342,,,,,,,,3,,20.483147,87.61437,14.027047,0,0
+3928413763095214592,190.54602278774948,11.644788807179935,17.850197,1.3634567,0.37005448835480237,0.41709605,0.09610431738777558,0.49103335,-0.3610979218563479,0.48753542,-0.2133063,95,2.505549,2.946191,71.23422,6.1350255,0,0
+3927659910436411136,190.89985109702346,11.534629821482913,18.114574,1.393795,-0.07908963212446929,0.39496252,0.42010192290665743,0.47508794,-0.5473674291859698,0.4324203,-0.38418424,95,1.9795566,2.3343117,50.317596,4.6536803,0,0
+3928425445406259456,190.48055767488492,11.667719481928792,19.513365,1.3728333,,,,,,,,3,,10.038126,92.513596,9.460632,0,0
+</code></pre>
+<p>The corresponding <code>astrometric_params_solved</code> values 95 and 3 mean six-parameter
+and position-only solutions, respectively. The sixth fitted parameter is a
+pseudocolor used in astrometric calibration. Neither code is a UCD label. See the
+<a href="https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html">official DR3 data model</a>.
+The two image-window diagnostic fields are retained for reproducibility, not
+included in the core student lesson.</p>
+<h3 id="foreground-comparison-query">Foreground comparison query</h3>
+<pre><code class="language-sql">SELECT TOP 3 source_id, ra, dec, phot_g_mean_mag, bp_rp,
+       parallax, parallax_error, pmra, pmra_error, pmdec, pmdec_error,
+       pmra_pmdec_corr, ruwe, astrometric_excess_noise,
+       astrometric_excess_noise_sig, phot_bp_rp_excess_factor
+FROM gaiadr3.gaia_source
+WHERE 1 = CONTAINS(POINT('ICRS', ra, dec),
+                  CIRCLE('ICRS', 190.54602278774948, 11.644788807179935, 0.15))
+  AND phot_g_mean_mag BETWEEN 17 AND 19
+  AND bp_rp BETWEEN 1.0 AND 2.0
+  AND parallax_over_error &gt; 10
+  AND ruwe &lt; 1.2
+  AND SQRT(pmra * pmra + pmdec * pmdec) &gt; 10
+ORDER BY phot_g_mean_mag ASC
+</code></pre>
+<p>HTTP 200; one row returned:</p>
+<pre><code class="language-csv">source_id,ra,dec,phot_g_mean_mag,bp_rp,parallax,parallax_error,pmra,pmra_error,pmdec,pmdec_error,pmra_pmdec_corr,ruwe,astrometric_excess_noise,astrometric_excess_noise_sig,phot_bp_rp_excess_factor
+3928418917055971968,190.6453381977382,11.680329417651473,17.129242,1.1142445,0.7881429756883358,0.07627482,10.984085699696536,0.090215534,-50.07016177246407,0.0824956,-0.22354709,0.9647263,0.0,0.0,1.2198806
+</code></pre>
+<p>This deliberately selects an easy foreground example; it is not an unbiased
+comparison sample or a set of proposed science-selection thresholds. Preserve
+source identifiers as strings when loading these snapshots into any tool.</p>
+<h3 id="optional-significance-calculation">Optional significance calculation</h3>
+<p>For parallax use <code>abs(parallax) / parallax_error</code>. For a two-component proper
+motion, account for the correlation <code>rho = pmra_pmdec_corr</code>:</p>
+<pre><code class="language-text">u = pmra / pmra_error
+v = pmdec / pmdec_error
+combined_motion_significance = sqrt((u*u + v*v - 2*rho*u*v) / (1-rho*rho))
+</code></pre>
+<p>This is distance from zero motion in units defined by the covariance matrix; it
+is not directly a one-dimensional Gaussian tail probability. Calculated values:
+M60-UCD1 parallax 0.200, combined motion 1.337; M59-UCD3 parallax 0.887,
+combined motion 0.742. These calculations use the quoted random-error covariance
+and do not correct Gaia systematics or modeling failures.</p>
+<h2 id="legacy-survey-checks">Legacy Survey checks</h2>
+<p>The <a href="https://www.legacysurvey.org/dr11/description/">official DR11 description</a>
+documents both the standard layer and a grz alternative. Actual requests for the
+two worked examples gave:</p>
+<table>
+<thead>
+<tr>
+<th>Layer and target</th>
+<th>Transport</th>
+<th>Pixel/content check</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls-dr11-grz</code>, M60-UCD1</td>
+<td>HTTP 200, 128×128 JPEG</td>
+<td>Every channel of every pixel equals 32</td>
+<td>Blank tile, not usable imaging</td>
+</tr>
+<tr>
+<td><code>ls-dr11-grz</code>, M59-UCD3</td>
+<td>HTTP 200, 128×128 JPEG</td>
+<td>Every channel of every pixel equals 32</td>
+<td>Blank tile, not usable imaging</td>
+</tr>
+<tr>
+<td><code>ls-dr11</code>, M60-UCD1</td>
+<td>HTTP 200, 128×128 JPEG</td>
+<td>4,153 distinct RGB colors; visually checked</td>
+<td>Compact central source, host-light gradient, nearby streaks</td>
+</tr>
+<tr>
+<td><code>ls-dr11</code>, M59-UCD3</td>
+<td>HTTP 200, 128×128 JPEG</td>
+<td>9,450 distinct RGB colors; visually checked</td>
+<td>Compact central source with another bright source in the wider close-up</td>
+</tr>
+</tbody>
+</table>
+<p>Color counts detect a blank response; they do not measure scientific image quality.</p>
+<p>Request pattern, substituting the exact coordinates in the shortlist:</p>
+<pre><code class="language-text">https://www.legacysurvey.org/viewer/jpeg-cutout?ra=RA&amp;dec=DEC&amp;layer=ls-dr11&amp;pixscale=0.262&amp;size=128
+</code></pre>
+<p>The square covers 33.536 arcseconds per side. Standard DR11 JPEG colors need not
+use the same bands as previous grz displays, so label the layer and do not infer
+photometric colors from the displayed RGB values. Preserve the blank responses
+as failed content checks rather than silently substituting a different release.</p>
+<p>Downloaded records are outside Git at
+<code>~/Dropbox/work/data/bubbletea/teaching/20261012/</code>:</p>
+<ul>
+<li><code>m60_ucd1_dr11_grz.jpg</code> and <code>m59_ucd3_dr11_grz.jpg</code>: blank responses.</li>
+<li><code>m60_ucd1_dr11_default.jpg</code> and <code>m59_ucd3_dr11_default.jpg</code>: inspected images.</li>
+</ul>
+<p>Host-center tests used <code>fits-cutout</code>, <code>layer=ls-dr11</code>, <code>bands=grz</code>, <code>size=32</code>,
+<code>pixscale=0.262</code>, at the exact host coordinates in the shortlist. NGC 2974 and
+NGC 4753 returned three 32×32 planes, each with 1,024 finite and nonzero pixels.
+Their wider JPEG tests (<code>size=256</code>, <code>pixscale=4</code>) had 6,392 and 7,244 distinct RGB
+colors, respectively. These responses were inspected numerically in memory,
+not saved as a host-coverage data product and not visually adjudicated.
+NGC 1395's first FITS request returned HTTP 429, a rate limit, not evidence of
+missing survey coverage. A later serial retry returned HTTP 200 and three 32×32
+planes, each with 1,024 finite and nonzero pixels. Do not repeat concurrent host
+requests or launch a bulk download yet; use serial requests and backoff.</p>
+<p>Full-area coverage, per-band weights, image defects, host-background effects,
+and actual candidate cutouts still need checking. Legacy image availability never
+changes the Gaia radial-area denominator.</p>
+<h2 id="literature-and-local-catalog-checks">Literature and local catalog checks</h2>
+<p>The canonical database was opened with SQLite <code>mode=ro</code>:
+<code>data/literature/database/ucd_reference_v2.db</code>. Classification, source-association,
+and exact host-label checks did not edit any records. M60-UCD1's coordinate
+counterpart is NGVS-UCD753 from <code>reference/liu2020</code>, VizieR <code>J/ApJS/250/17</code>,
+<code>table3.dat:raw_row_753</code>, bibcode <code>2020ApJS..250...17L</code>. Its approved canonical
+classification is confirmed, while the original source's reported label is
+candidate. Its canonical position is 190.8998699, 11.5346389; the source row has
+no Gaia identifier. The live Gaia match is an independently recorded teaching
+check, not a newly accepted database association.</p>
+<p>The two M60 review seeds link to datasets from
+<a href="https://doi.org/10.1088/0004-637X/812/1/34">Liu et al. 2015</a>
+(<code>2015ApJ...812...34L</code>, original <code>reference/liu2015/table6.dat</code>) and
+<a href="https://doi.org/10.1051/0004-6361/201834941">Fahrion et al. 2019</a>
+(<code>2019A&amp;A...625A..50F</code>, inherited comparative compilation at
+<code>data/literature/catalogs/by_source/2019A&amp;A...625A..50V.csv</code>).
+Use the original publication/table context and the approved classification, not
+the inherited source labels alone. The subsequent portable packet below preserves
+these distinctions; candidate status is not confirmation.</p>
+<h3 id="portable-teaching-packet-2026-10-13">Portable teaching packet, 2026-10-13</h3>
+<p>The <a href="../../../data/teaching/README.md">versioned teaching data</a> records six exact Gaia
+identifiers, original provenance, host-distance assumptions, the complete Gaia
+query, retrieval timestamps, twelve image URLs/scales, and SHA-256 file digests.
+The UTC retrieval date is 2026-10-12 (2026-10-13 in local Shanghai time).
+Candidate A is row 22 and candidate B is row 25 of the original
+<code>reference/liu2015/table6.dat</code>; both exact names were checked in that file.</p>
+<p>A one-object download test completed in 18.203 seconds before the six-object
+retrieval completed in 38.745 seconds. All twelve standard <code>ls-dr11</code> images were
+nonuniform. The PDF's displayed cutouts and the HTML's two-scale inspection
+layout were checked for presentation, not assigned scientific visual flags.
+The raw image records deliberately retain <code>visual_review_status: pending</code>:
+download/display checks are not an adjudicated source classification.</p>
+<p>The <a href="../../teaching/materials_build_report.json">build report</a> and
+<a href="../../teaching/materials_validation_report.json">validation report</a> record the generated files
+and 41 passed offline checks. Six rendered PDF pages were inspected separately;
+live archive interfaces and Windows execution were not fully tested or required.
+No external QSO, galaxy, or non-single-star cross-match was performed for this
+small teaching packet; all six records say <strong>not checked</strong>, not <strong>no match</strong>.</p>
+<p>Nearby-host values came from <code>data/galaxy_sample/pilot_sample_top100.csv</code>, cross-
+checked against <code>galaxy_sample_ranked.csv</code>. The ranked table does not carry
+<code>is_lit_host</code> or imaging-coverage columns. The pilot flag derives from a short
+hardcoded list in <code>scripts/phase2_galaxy_sample/rank_targets.py</code>, not a complete
+literature audit. Exact canonical host-label associations were zero for the three
+shortlisted hosts; NGC 2768 demonstrated why that is not a literature-absence test.</p>
+<h3 id="bounded-ads-search">Bounded ADS search</h3>
+<p>ADS search API: <code>https://api.adsabs.harvard.edu/v1/search/query</code>, <code>rows=100</code>,
+<code>start=0</code>, sorted by date descending. Credentials were read from the environment;
+no credential is stored here. The final title/abstract query was:</p>
+<pre><code class="language-text">(title:(&quot;ultra-compact&quot; OR ultracompact) OR abs:(&quot;ultra-compact dwarf&quot; OR &quot;ultracompact dwarf&quot; OR UCD))
+AND
+(title:(&quot;NGC 2974&quot; OR &quot;NGC 2652&quot; OR &quot;NGC 4753&quot; OR &quot;NGC 1395&quot; OR &quot;NGC 4699&quot; OR &quot;NGC 1332&quot; OR &quot;NGC 3585&quot; OR &quot;NGC 3607&quot; OR &quot;NGC 4125&quot; OR &quot;NGC 7331&quot; OR &quot;NGC 2841&quot;)
+OR abs:(&quot;NGC 2974&quot; OR &quot;NGC 2652&quot; OR &quot;NGC 4753&quot; OR &quot;NGC 1395&quot; OR &quot;NGC 4699&quot; OR &quot;NGC 1332&quot; OR &quot;NGC 3585&quot; OR &quot;NGC 3607&quot; OR &quot;NGC 4125&quot; OR &quot;NGC 7331&quot; OR &quot;NGC 2841&quot;))
+</code></pre>
+<p>HTTP 200; <code>numFound=3</code>, all three returned, so no pagination truncation:</p>
+<table>
+<thead>
+<tr>
+<th>Bibcode</th>
+<th>Screening result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2022ApJ...938..104K</code></td>
+<td>Black-hole/lensing topic; no qualifying host UCD discovery identified</td>
+</tr>
+<tr>
+<td><code>2010AAS...21631607W</code></td>
+<td>NGC 2841 compact-cluster conference contribution; not evidence that a shortlisted host has a UCD</td>
+</tr>
+<tr>
+<td><code>1977ApJ...214..359K</code></td>
+<td>Galaxy-profile topic; no qualifying UCD discovery identified</td>
+</tr>
+</tbody>
+</table>
+<p>Title/abstract indexing and aliases can miss sources mentioned only in tables or
+full text. Separate host-specific web and paper checks found the relevant SLUGGS,
+NGC 1395, and NGC 4753 studies. A definitive eligibility audit must also search
+coordinates, aliases, compact-object tables, recent papers, and cited/follow-up
+work for the final chosen host. Do not present this query as proof of absence.</p>
+<h3 id="primary-references-used-in-this-preparation">Primary references used in this preparation</h3>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>ADS bibcode</th>
+<th>DOI / primary text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strader et al. 2013, The Densest Galaxy</td>
+<td><code>2013ApJ...775L...6S</code></td>
+<td><a href="https://doi.org/10.1088/2041-8205/775/1/L6">10.1088/2041-8205/775/1/L6</a>; <a href="https://arxiv.org/html/1307.7707">text</a></td>
+</tr>
+<tr>
+<td>Sandoval et al. 2015, Hiding in Plain Sight</td>
+<td><code>2015ApJ...808L..32S</code></td>
+<td><a href="https://doi.org/10.1088/2041-8205/808/1/L32">10.1088/2041-8205/808/1/L32</a></td>
+</tr>
+<tr>
+<td>Chilingarian &amp; Mamon 2008, M59cO</td>
+<td><code>2008MNRAS.385L..83C</code></td>
+<td><a href="https://doi.org/10.1111/j.1745-3933.2008.00438.x">10.1111/j.1745-3933.2008.00438.x</a></td>
+</tr>
+<tr>
+<td>Norris &amp; Kannappan 2011, UCD origins</td>
+<td><code>2011MNRAS.414..739N</code></td>
+<td><a href="https://doi.org/10.1111/j.1365-2966.2011.18440.x">10.1111/j.1365-2966.2011.18440.x</a></td>
+</tr>
+<tr>
+<td>Forbes et al. 2017, SLUGGS velocity catalog</td>
+<td><code>2017AJ....153..114F</code></td>
+<td><a href="https://doi.org/10.3847/1538-3881/153/3/114">10.3847/1538-3881/153/3/114</a>; <a href="https://arxiv.org/html/1701.04835">text</a></td>
+</tr>
+<tr>
+<td>Caso et al. 2015, NGC 4753 cluster system</td>
+<td><code>2015MNRAS.453.4421C</code></td>
+<td><a href="https://doi.org/10.1093/mnras/stv2015">10.1093/mnras/stv2015</a>; <a href="https://arxiv.org/html/1508.07653">text</a></td>
+</tr>
+<tr>
+<td>Escudero et al. 2018, NGC 1395 cluster system</td>
+<td><code>2018MNRAS.474.4302E</code></td>
+<td><a href="https://doi.org/10.1093/mnras/stx3045">10.1093/mnras/stx3045</a></td>
+</tr>
+</tbody>
+</table>
+<p>ADS supplied the publication metadata. Existing reference packages remain in place;
+this task did not download new paper PDFs or claim a completed provenance package.</p>
+<h2 id="next-preparation-pass-bounded-and-testable">Next preparation pass: bounded and testable</h2>
+<ol>
+<li>Rehearse one object end-to-end on Windows.
+   Save screenshots, source measurements, and image-layer labels as fallbacks.</li>
+<li>Check a small varied published-candidate packet, including the two M60 seeds
+   only if their provenance and images pass. Give students independent worksheets.</li>
+<li>Audit one possible new host, not all three simultaneously: verify luminosity
+   and distance, literature status, environment, Gaia sensitivity, and DR11
+   coverage of the intended rings. Record any gaps explicitly. HSC is optional.</li>
+<li>Only then prepare a strict teaching-only source list. Test proposed cuts on
+   the known examples first and report what they reject; do not equate a small,
+   visually attractive list with a calibrated contamination or completeness result.</li>
+</ol>
+<p>Stop for instructor review before fixing the classroom packet or interpreting a
+source as a new discovery. No multi-user tool deployment is authorized by this
+preparation task.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#instructor-evidence-record-and-remaining-preparation">Instructor evidence record and remaining preparation</a><ul>
+<li><a href="#gaia-measurements-retrieval-and-exact-identifiers">Gaia measurements: retrieval and exact identifiers</a><ul>
+<li><a href="#foreground-comparison-query">Foreground comparison query</a></li>
+<li><a href="#optional-significance-calculation">Optional significance calculation</a></li>
+</ul>
+</li>
+<li><a href="#legacy-survey-checks">Legacy Survey checks</a></li>
+<li><a href="#literature-and-local-catalog-checks">Literature and local catalog checks</a><ul>
+<li><a href="#portable-teaching-packet-2026-10-13">Portable teaching packet, 2026-10-13</a></li>
+<li><a href="#bounded-ads-search">Bounded ADS search</a></li>
+<li><a href="#primary-references-used-in-this-preparation">Primary references used in this preparation</a></li>
+</ul>
+</li>
+<li><a href="#next-preparation-pass-bounded-and-testable">Next preparation pass: bounded and testable</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li></ul></details><details><summary>Linked from (4)</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="target_shortlist.html">Teaching objects and provisional search hosts</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

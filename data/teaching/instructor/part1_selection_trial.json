@@ -1,0 +1,289 @@
+{
+  "packet_sha256": "365ce898ac0ab8944adc514d24d0208b4ac91e02f0db67fc6925a34551f2f1ad",
+  "task2_counts": {
+    "star": 20000,
+    "ucd": 121,
+    "candidate": 606,
+    "qso": 391
+  },
+  "scope": "Fixed teaching sample; optimization and evaluation on the same objects. Not a global optimum, held-out test, or real-sky purity estimate.",
+  "grid": {
+    "phot_bp_rp_excess_factor": [
+      "minimum",
+      [
+        null,
+        1.2,
+        1.4,
+        1.6,
+        1.8,
+        2,
+        2.2,
+        2.5,
+        3,
+        3.5,
+        4,
+        5
+      ]
+    ],
+    "proper_motion_significance": [
+      "maximum",
+      [
+        null,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10,
+        15,
+        20
+      ]
+    ],
+    "astrometric_excess_noise": [
+      "minimum",
+      [
+        null,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10
+      ]
+    ],
+    "phot_g_mean_mag": [
+      "maximum",
+      [
+        null,
+        19,
+        20,
+        20.5,
+        21,
+        21.5
+      ]
+    ]
+  },
+  "combinations_tested": 4536,
+  "missing_policy": "exclude",
+  "best_in_grid": {
+    "rules": {
+      "phot_g_mean_mag": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "bp_rp": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "phot_bp_rp_excess_factor": {
+        "enabled": true,
+        "minimum": 2.5,
+        "maximum": null
+      },
+      "absolute_parallax_significance": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "proper_motion_significance": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "astrometric_excess_noise": {
+        "enabled": true,
+        "minimum": 5,
+        "maximum": null
+      },
+      "ruwe": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "astrometric_excess_noise_sig": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "ipd_frac_multi_peak": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      },
+      "ipd_frac_odd_win": {
+        "enabled": false,
+        "minimum": null,
+        "maximum": null
+      }
+    },
+    "counts": {
+      "ucd": 76,
+      "star": 42,
+      "qso": 5,
+      "candidate": 168,
+      "selected_missing": 0,
+      "total_selected": 291
+    },
+    "metrics": {
+      "purity": 0.6178861788617886,
+      "completeness": 0.628099173553719,
+      "f1": 0.6229508196721312
+    }
+  },
+  "independent_sklearn_f1": 0.6229508196721312,
+  "controls": {
+    "select_everything": {
+      "counts": {
+        "ucd": 121,
+        "star": 20000,
+        "qso": 391,
+        "candidate": 606,
+        "selected_missing": 0,
+        "total_selected": 21118
+      },
+      "metrics": {
+        "purity": 0.0058989859594383775,
+        "completeness": 1.0,
+        "f1": 0.011728783986817235
+      }
+    },
+    "select_nothing": {
+      "rules": {
+        "phot_g_mean_mag": {
+          "enabled": true,
+          "minimum": -1,
+          "maximum": 0
+        },
+        "bp_rp": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "phot_bp_rp_excess_factor": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "absolute_parallax_significance": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "proper_motion_significance": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "astrometric_excess_noise": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ruwe": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "astrometric_excess_noise_sig": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ipd_frac_multi_peak": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ipd_frac_odd_win": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "counts": {
+        "ucd": 0,
+        "star": 0,
+        "qso": 0,
+        "candidate": 0,
+        "selected_missing": 0,
+        "total_selected": 0
+      },
+      "metrics": {
+        "purity": null,
+        "completeness": 0.0,
+        "f1": 0.0
+      }
+    },
+    "select_one_known_ucd": {
+      "rules": {
+        "phot_g_mean_mag": {
+          "enabled": true,
+          "minimum": 21.11622428894043,
+          "maximum": 21.11622428894043
+        },
+        "bp_rp": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "phot_bp_rp_excess_factor": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "absolute_parallax_significance": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "proper_motion_significance": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "astrometric_excess_noise": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ruwe": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "astrometric_excess_noise_sig": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ipd_frac_multi_peak": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        },
+        "ipd_frac_odd_win": {
+          "enabled": false,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "counts": {
+        "ucd": 1,
+        "star": 0,
+        "qso": 0,
+        "candidate": 0,
+        "selected_missing": 0,
+        "total_selected": 1
+      },
+      "metrics": {
+        "purity": 1.0,
+        "completeness": 0.008264462809917356,
+        "f1": 0.01639344262295082
+      }
+    }
+  },
+  "runtime_seconds": 0.17300654199789278,
+  "grading_note": "Keep thresholds instructor-only. Do not require this particular solution or claim it is best possible. Review explanations as well as metrics."
+}

@@ -1,0 +1,65 @@
+{
+  "activity_version": "bubbletea_part1_v2",
+  "packet_sha256": "365ce898ac0ab8944adc514d24d0208b4ac91e02f0db67fc6925a34551f2f1ad",
+  "passed": 43740,
+  "check_categories": "data integrity, every derived astrometry value, offline gallery, independent scoring, imports, storage, keyboard/narrow UI, full-page performance",
+  "browser": "156.0.8078.12",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "cpu_throttle": 4,
+  "startup_seconds": 0.7952056670037564,
+  "evaluation_and_frames_median_ms": 64.5,
+  "evaluation_trials_ms": [
+    81.7999999821186,
+    64.90000000596046,
+    64.40000000596046,
+    66.5,
+    61.29999998211861,
+    64.5
+  ],
+  "task1_layout_viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "side_by_side": true,
+      "image_visibility_checks": true
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "side_by_side": true,
+      "image_visibility_checks": true
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "side_by_side": true,
+      "image_visibility_checks": true
+    },
+    {
+      "width": 900,
+      "height": 600,
+      "side_by_side": true,
+      "image_visibility_checks": true
+    },
+    {
+      "width": 820,
+      "height": 740,
+      "side_by_side": false,
+      "image_visibility_checks": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "side_by_side": false,
+      "image_visibility_checks": false
+    }
+  ],
+  "mandatory_remote_requests": [],
+  "javascript_errors": [],
+  "elapsed_seconds": 26.684334334015148,
+  "limitations": [
+    "Windows and other browsers not tested",
+    "Final pedagogical assessment belongs to the instructor",
+    "Visual source review recorded separately from automated image checks"
+  ]
+}

@@ -85,6 +85,20 @@ Follow the documentation organization rules in `AGENTS.md` and
 `docs/`; implementation notes, benchmarks, experiment records, and audits belong
 in topic-organized `docs/development/` documents. Permanent scientific explanations
 belong in `docs/methods/`. Extend an existing topic before adding a new document.
+Keep course materials, student instructions, and teaching target lists in
+`docs/teaching/`, separate from scientific decisions and the research roadmap.
+Distributable teaching HTML must open directly as a local file with embedded
+assets/data and no required website, server, installation, or network requests.
+Online links are optional; student answers export separately. Preparation must
+not require access to a Windows computer.
+For current Part I, only Task 1 classification is mandatory; confidence/evidence
+fields are optional. Task 2 retains range controls and optimizes F1 alongside
+purity/completeness, with one final selection and two explanation prompts.
+External teaching links open new tabs; the required lesson remains offline.
+The requested Chinese Project Introduction is a scoped exception to English-only
+documentation; provide matching English and Chinese Markdown/PDF briefs. The
+student form asks only for Student ID. Students rename the exported JSON to
+`[NAME]_[STUDENT_ID].json` and upload it to Tsinghua Online Classroom (网络学堂).
 Journals and lessons retain their separate folders. The generated HTML entrance
 is `docs/index.html`; rebuild and validate HTML after document moves or merges.
 

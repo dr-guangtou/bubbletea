@@ -1,0 +1,142 @@
+{
+  "activity_version": "bubbletea_part1_v2",
+  "packet_sha256": "365ce898ac0ab8944adc514d24d0208b4ac91e02f0db67fc6925a34551f2f1ad",
+  "html_bytes": 9354951,
+  "html_sha256": "49bbd5851475cca8159eca904d04e89e640b4d8af86d0b27c520d936e35db68d",
+  "embedded_images": 74,
+  "image_review_sha256": "a7f9bd195548860dbcea37f693a8b600824f468ee0a5469a8c9aabfa82a6ecc1",
+  "missing_images": [],
+  "catalog_counts": {
+    "star": 20000,
+    "ucd": 121,
+    "candidate": 606,
+    "qso": 391
+  },
+  "catalog_rows": 21118,
+  "gallery_objects": 37,
+  "core_reading_words": 3260,
+  "features": [
+    {
+      "key": "phot_g_mean_mag",
+      "label": "G magnitude",
+      "short_label": "G (mag)",
+      "unit": "mag",
+      "scale": "linear",
+      "advanced": false,
+      "definition": "Mean apparent brightness in Gaia's broad G passband.",
+      "minimum": 11.26291847229004,
+      "maximum": 21.75798797607422,
+      "missing_count": 0
+    },
+    {
+      "key": "bp_rp",
+      "label": "BP\u2212RP color",
+      "short_label": "BP\u2212RP (mag)",
+      "unit": "mag",
+      "scale": "linear",
+      "advanced": false,
+      "definition": "BP magnitude minus RP magnitude.",
+      "minimum": -2.8002185821533203,
+      "maximum": 4.529619216918945,
+      "missing_count": 106
+    },
+    {
+      "key": "phot_bp_rp_excess_factor",
+      "label": "BP/RP flux excess",
+      "short_label": "(I_BP + I_RP) / I_G",
+      "unit": "dimensionless",
+      "scale": "log1p",
+      "advanced": false,
+      "definition": "Sum of BP and RP mean fluxes divided by G mean flux.",
+      "minimum": 0.4281289875507355,
+      "maximum": 55.26802444458008,
+      "missing_count": 106
+    },
+    {
+      "key": "absolute_parallax_significance",
+      "label": "Absolute-parallax significance",
+      "short_label": "|parallax| / error",
+      "unit": "dimensionless",
+      "scale": "log1p",
+      "advanced": false,
+      "definition": "Absolute fitted parallax divided by its positive error.",
+      "minimum": 4.175809508813003e-05,
+      "maximum": 821.7527369169345,
+      "missing_count": 1571
+    },
+    {
+      "key": "proper_motion_significance",
+      "label": "Proper-motion significance",
+      "short_label": "Combined motion significance",
+      "unit": "dimensionless",
+      "scale": "log1p",
+      "advanced": false,
+      "definition": "Two-component motion distance from zero in its correlated uncertainty coordinates.",
+      "minimum": 0.05690864435098332,
+      "maximum": 7938.6729552966735,
+      "missing_count": 1571
+    },
+    {
+      "key": "astrometric_excess_noise",
+      "label": "Astrometric excess noise",
+      "short_label": "Excess noise (mas)",
+      "unit": "mas",
+      "scale": "log1p",
+      "advanced": true,
+      "definition": "Additional per-observation angular noise in the astrometric solution.",
+      "minimum": 0.0,
+      "maximum": 115.80145263671876,
+      "missing_count": 0
+    },
+    {
+      "key": "ruwe",
+      "label": "RUWE",
+      "short_label": "RUWE",
+      "unit": "dimensionless",
+      "scale": "log1p",
+      "advanced": true,
+      "definition": "Astrometric fit statistic normalized for magnitude and color.",
+      "minimum": 0.7879779934883118,
+      "maximum": 42.47702407836914,
+      "missing_count": 1571
+    },
+    {
+      "key": "astrometric_excess_noise_sig",
+      "label": "Excess-noise significance",
+      "short_label": "Excess-noise significance",
+      "unit": "dimensionless",
+      "scale": "log1p",
+      "advanced": true,
+      "definition": "Gaia's reported significance statistic for excess noise.",
+      "minimum": 0.0,
+      "maximum": 1232254.5,
+      "missing_count": 0
+    },
+    {
+      "key": "ipd_frac_multi_peak",
+      "label": "IPD multi-peak fraction",
+      "short_label": "Multi-peak windows (%)",
+      "unit": "%",
+      "scale": "linear",
+      "advanced": true,
+      "definition": "Percentage of successful image windows with more than one detected peak.",
+      "minimum": 0.0,
+      "maximum": 99.0,
+      "missing_count": 0
+    },
+    {
+      "key": "ipd_frac_odd_win",
+      "label": "IPD odd-window fraction",
+      "short_label": "Odd-window transits (%)",
+      "unit": "%",
+      "scale": "linear",
+      "advanced": true,
+      "definition": "Percentage of successful image-measurement transits with truncated windows or multiple gates.",
+      "minimum": 0.0,
+      "maximum": 96.0,
+      "missing_count": 0
+    }
+  ],
+  "build_seconds": 0.34120004199212417,
+  "status": "built; see the validation report and dated classroom handoff in the course guide"
+}

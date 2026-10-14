@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Teaching objects and provisional search hosts · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/target_shortlist.md">Markdown source ↗</a></div><h1 id="teaching-objects-and-provisional-search-hosts">Teaching objects and provisional search hosts</h1>
+<p><strong>Checked:</strong> 2026-10-12. Coordinates below are decimal degrees, ICRS. Gaia
+positions are DR3 catalog positions; literature coordinates can differ slightly.</p>
+<p><a href="README.html">Course guide</a> · <a href="concepts.html">Concepts</a> · <a href="source_checks.html">Query and image checks</a></p>
+<h2 id="1-known-objects-start-here">1. Known objects: start here</h2>
+<table>
+<thead>
+<tr>
+<th>Object and role</th>
+<th>Gaia DR3 source identifier (text)</th>
+<th>Gaia RA, Dec (degrees)</th>
+<th>G; BP−RP; raw flux excess C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M60-UCD1: main worked example</strong></td>
+<td><code>3927659910436411136</code></td>
+<td>190.89985110, +11.53462982</td>
+<td>18.115; 1.394; 4.654</td>
+</tr>
+<tr>
+<td><strong>M59-UCD3: brighter, cleaner-looking comparison</strong></td>
+<td><code>3928413763095214592</code></td>
+<td>190.54602279, +11.64478881</td>
+<td>17.850; 1.363; 6.135</td>
+</tr>
+<tr>
+<td><strong>M59cO: optional boundary-case compact system, with missing motion/parallax</strong></td>
+<td><code>3928425445406259456</code></td>
+<td>190.48055767, +11.66771948</td>
+<td>19.513; 1.373; 9.461</td>
+</tr>
+<tr>
+<td>NGC 4546-UCD1: optional, fainter comparison</td>
+<td><code>3681343123693230336</code></td>
+<td>188.86962554, −3.78922730</td>
+<td>20.012; 1.648; 14.027</td>
+</tr>
+<tr>
+<td><strong>Foreground comparison, selected by strong astrometry</strong></td>
+<td><code>3928418917055971968</code></td>
+<td>190.64533820, +11.68032942</td>
+<td>17.129; 1.114; 1.220</td>
+</tr>
+</tbody>
+</table>
+<p>All Gaia numbers were retrieved live from ESA TAP, not inferred from a name. The
+foreground comparison has parallax 0.788 ± 0.076 mas and proper motion components
++10.984 and −50.070 mas/year: persuasive foreground-star evidence. It is not a
+spectroscopically checked classification or a perfectly color/magnitude-matched
+control. M59cO and NGC 4546-UCD1 have no parallax/proper-motion solution in the
+retrieved rows. Their missing measurements must not be entered as zero.</p>
+<h3 id="why-retain-m60-ucd1-as-the-main-example">Why retain M60-UCD1 as the main example?</h3>
+<p>It combines published physical characterization, a relatively bright Gaia record,
+and unusual Gaia fit/flux measurements without significant measured motion.
+<a href="https://arxiv.org/html/1307.7707">Strader et al. (2013)</a> adopted 16.5 Mpc and
+measured a 24.2 pc half-light radius. It is close to M60's light, so it also teaches
+why context matters. The current DR11 cutout shows the compact source near its
+center, a strong background gradient, and nearby green streaks. Do not interpret
+those streaks as part of the UCD or present the image as artifact-free.</p>
+<p>This is a known-object teaching exercise, not a claim that the frozen M60 host
+search recovered this famous object. The discovery paper places it only 6.6 kpc
+in projection from M60, inside the current conservative inner search exclusion.
+It is not one of the two reliable controls counted in that outer-profile run.</p>
+<p>M59-UCD3 is brighter in Gaia and its checked close-up is less dominated by host
+background. Its discovery paper is
+<a href="https://arxiv.org/abs/1506.08828">Sandoval et al. (2015)</a>. Use it alongside M60,
+or as the first image if the class needs a cleaner-looking demonstration. Gaia
+alone did not establish either object's physical nature.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Legacy Survey viewer, DR11</th>
+<th>Published/canonical evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M60-UCD1</td>
+<td><a href="https://www.legacysurvey.org/viewer?ra=190.89985109702346&amp;dec=11.534629821482913&amp;layer=ls-dr11&amp;zoom=17">Viewer</a></td>
+<td>Strader 2013; coordinate counterpart <code>canonical_315a636f7b7d54328e51ee79840622bb</code>, original name NGVS-UCD753</td>
+</tr>
+<tr>
+<td>M59-UCD3</td>
+<td><a href="https://www.legacysurvey.org/viewer?ra=190.54602278774948&amp;dec=11.644788807179935&amp;layer=ls-dr11&amp;zoom=17">Viewer</a></td>
+<td>Sandoval 2015; <code>canonical_93ce39d50879542baaa8504b35ca6e2f</code></td>
+</tr>
+<tr>
+<td>M59cO</td>
+<td><a href="https://www.legacysurvey.org/viewer?ra=190.48055767488492&amp;dec=11.667719481928792&amp;layer=ls-dr11&amp;zoom=17">Viewer</a></td>
+<td><a href="https://academic.oup.com/mnrasl/article/385/1/L83/1017524">Chilingarian &amp; Mamon 2008</a>, between UCDs and compact ellipticals; <code>canonical_5a3facb9aecc5172a84fab77470ce757</code></td>
+</tr>
+<tr>
+<td>NGC 4546-UCD1</td>
+<td><a href="https://www.legacysurvey.org/viewer?ra=188.86962553574625&amp;dec=-3.7892273034273836&amp;layer=ls-dr11&amp;zoom=17">Viewer</a></td>
+<td><a href="https://arxiv.org/abs/1102.0001">Norris &amp; Kannappan 2011</a>; <code>canonical_2926c0b4346e5f36afbf5546631a63a4</code></td>
+</tr>
+<tr>
+<td>Foreground comparison</td>
+<td><a href="https://www.legacysurvey.org/viewer?ra=190.6453381977382&amp;dec=11.680329417651473&amp;layer=ls-dr11&amp;zoom=17">Viewer</a></td>
+<td>Strong-astrometry selection in <a href="source_checks.html">source checks</a>; not a UCD</td>
+</tr>
+</tbody>
+</table>
+<p>Only the M60-UCD1 and M59-UCD3 close-up images were visually inspected in this
+pass. Links for other examples are starting points, not certified usable images.
+The coordinate counterpart for M60-UCD1 is in the canonical database but its
+source row lacks a Gaia identifier. Do not assume that searching its common name
+in the 724-object image bundle will find it; this teaching check has not modified
+the database or its associations.</p>
+<h2 id="2-published-candidates-for-a-small-review-exercise">2. Published candidates for a small review exercise</h2>
+<p>Two relatively bright entries from the existing M60 recovery table are useful
+<strong>preparation seeds</strong>, not a final classroom packet:</p>
+<table>
+<thead>
+<tr>
+<th>Original name</th>
+<th>Literature RA, Dec</th>
+<th>Gaia source identifier</th>
+<th>Recorded G</th>
+<th>Current audited state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J124352.42+112534.2</td>
+<td>190.96841667, +11.42616667</td>
+<td><code>3927645994742413056</code></td>
+<td>19.376</td>
+<td>Candidate</td>
+</tr>
+<tr>
+<td>J124524.02+110535.2</td>
+<td>191.35008333, +11.09310000</td>
+<td><code>3927574728348720512</code></td>
+<td>19.660</td>
+<td>Candidate</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="../../../data/results/radial_search/m60_positive_control_known_recovery_v1.csv">M60 recovery table</a>.
+Canonical identifiers are <code>canonical_81deddc896515cea8ec786782a21d528</code> and
+<code>canonical_d93f45b5a3c55ed386cb3c5b6e8fddee</code>. Their linked literature records have
+different original status labels, but the approved database classification remains
+candidate: no approved confirmation or rejection evidence. Retain the original
+labels in provenance; do not teach either as a confirmed UCD.</p>
+<p>Before assignment, the instructor must check the original publications and table
+rows, Gaia match, image center, brightness, host context, external associations,
+and DR11 image quality. Select additional varied examples from the existing
+reference bundle, including clear and ambiguous appearances, rather than only
+easy or attractive sources. Keep confirmed examples and candidates labeled
+separately. This exercise is not a representative contamination-rate measurement.</p>
+<h2 id="3-possible-new-search-hosts-not-yet-an-approved-sample">3. Possible new search hosts: not yet an approved sample</h2>
+<p>The inherited nearby-galaxy pilot table supplies a first luminosity-ranked list.
+K-band luminosity is useful as a rough indicator of stellar mass, not a measured
+stellar mass. The following are plausible fields to investigate, <strong>not certified
+hosts with no published UCDs</strong> and not the three most massive galaxies in the
+nearby Universe.</p>
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th>RA, Dec (degrees)</th>
+<th>Inherited distance (Mpc)</th>
+<th>Inherited absolute K magnitude</th>
+<th>Rationale and caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NGC 2974</strong> (also NGC 2652)</td>
+<td>145.6387045, −3.6991485</td>
+<td>22.428</td>
+<td>−25.499</td>
+<td>Luminous in the inherited table; in SLUGGS but not its UCD table. First practical field to audit; verify the unusually high luminosity against independent photometry/mass before calling it a top-mass host.</td>
+</tr>
+<tr>
+<td><strong>NGC 1395</strong></td>
+<td>54.62447083, −23.02747222</td>
+<td>24.277</td>
+<td>−25.032</td>
+<td>Rich published globular-cluster system, so scientifically interesting; group environment complicates membership. Published work did not identify a significant bright massive-cluster/UCD population, which is not a claim of none.</td>
+</tr>
+<tr>
+<td><strong>NGC 4753</strong></td>
+<td>193.091951, −1.1996105</td>
+<td>24.479</td>
+<td>−25.222</td>
+<td>Published study reported no UCD candidates under its criteria. Useful recovery/null-result exercise; existing negative evidence is a caveat for discovery yield, not proof the wider halo is empty.</td>
+</tr>
+</tbody>
+</table>
+<p>Distances and magnitudes are rounded values read from
+<a href="../../../data/galaxy_sample/pilot_sample_top100.csv">pilot_sample_top100.csv</a>, not newly
+adopted distance measurements. Check distance-source consistency before luminosity
+cuts: SLUGGS uses 20.9 Mpc for NGC 2974, for example, and the NGC 1395 study derives
+21.1 Mpc from its cluster luminosity function. Different adopted distances change
+inferred luminosity and projected separation.</p>
+<h3 id="what-the-literature-check-actually-establishes">What the literature check actually establishes</h3>
+<ul>
+<li><a href="https://arxiv.org/html/1701.04835">Forbes et al. (2017), SLUGGS</a>, includes
+  NGC 2974 but does not list it among its separately tabulated UCD hosts. This is
+  bounded evidence, not an exhaustive absence claim.</li>
+<li><a href="https://academic.oup.com/mnras/article/474/4/4302/4662636">Escudero et al. (2018)</a>
+  finds a rich NGC 1395 cluster system but no significant population of bright
+  massive-cluster/UCD candidates in its color-magnitude analysis. The study's
+  footprint and selection matter.</li>
+<li><a href="https://arxiv.org/html/1508.07653">Caso et al. (2015)</a>, Section 3.1, reports no
+  UCD candidates around NGC 4753 using its adopted magnitude/color criteria and
+  studied fields. A Gaia search would test a different, explicitly limited sample.</li>
+</ul>
+<p>Each has zero exact-host-label associations in our current canonical compilation;
+that check is insufficient on its own. A counterexample is NGC 2768: it has zero
+under this exact-label test but <strong>does</strong> have a published UCD in the SLUGGS table.
+The script's hardcoded <code>is_lit_host</code> flag is therefore not an eligibility criterion.
+The <a href="source_checks.html">source-check record</a> gives the bounded ADS query and limits.</p>
+<h3 id="imaging-and-gaia-eligibility-are-still-separate-checks">Imaging and Gaia eligibility are still separate checks</h3>
+<p>The standard <code>ls-dr11</code> service returned nonzero g/r/z FITS pixels at the centers
+of all three hosts, with nonuniform wider JPEGs also checked numerically for
+NGC 2974 and NGC 4753. NGC 1395's first request was rate-limited, then succeeded
+on a serial retry. These verify small center samples, not complete usable coverage
+of any search annulus.
+No host-specific HSC footprint has been verified. HSC is optional, and Subaru
+imaging in a paper does not automatically mean HSC public-release coverage.</p>
+<p>DR11 is a release, not a guarantee of new observations everywhere: the northern
+part reuses DR9 reductions. See the official
+<a href="https://www.legacysurvey.org/dr11/description/">DR11 description</a> and
+<a href="https://hsc-release.mtk.nao.ac.jp/doc/index.php/available-data__pdr3/">HSC PDR3 coverage tools</a>.</p>
+<p>At these distances we cannot promise Gaia detects every real UCD. The actual
+detections above verify specific luminous examples, not completeness for a host
+population. Before selecting a class field, measure recovery of relevant known
+objects, inspect magnitude/measurement availability, and verify the chosen radial
+area's DR11 imaging. Preserve radial rings and exclude a justified inner galaxy
+region; do not adopt the image cutout size as a search aperture.</p>
+<p><strong>Recommendation:</strong> M60-UCD1 and M59-UCD3 for the first session; a small published
+candidate packet for student contributions; NGC 2974 as the first host to finish
+auditing, NGC 1395 as an interesting alternative, and NGC 4753 as a useful
+published-null comparison. Do not start a new-host class search until those
+remaining checks pass.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#teaching-objects-and-provisional-search-hosts">Teaching objects and provisional search hosts</a><ul>
+<li><a href="#1-known-objects-start-here">1. Known objects: start here</a><ul>
+<li><a href="#why-retain-m60-ucd1-as-the-main-example">Why retain M60-UCD1 as the main example?</a></li>
+</ul>
+</li>
+<li><a href="#2-published-candidates-for-a-small-review-exercise">2. Published candidates for a small review exercise</a></li>
+<li><a href="#3-possible-new-search-hosts-not-yet-an-approved-sample">3. Possible new search hosts: not yet an approved sample</a><ul>
+<li><a href="#what-the-literature-check-actually-establishes">What the literature check actually establishes</a></li>
+<li><a href="#imaging-and-gaia-eligibility-are-still-separate-checks">Imaging and Gaia eligibility are still separate checks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li></ul></details><details><summary>Linked from (3)</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="source_checks.html">Instructor evidence record and remaining preparation</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

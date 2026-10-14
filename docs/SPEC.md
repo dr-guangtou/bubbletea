@@ -1602,8 +1602,8 @@ are removed. These organization rules also apply to future agents.
 
 See the [documentation architecture and checks](plans/documentation_site.md),
 [document guide](documentation_guide.md), and [dated status](current_status.md).
-Teaching materials will be specified separately after an audience and course
-brief are available; planned research is not to be presented as an established result.
+Teaching materials follow the separate scope below; planned research is not to be
+presented as an established result.
 
 ### Scientific execution
 
@@ -1613,3 +1613,294 @@ The staged implementation and validation order is maintained in
 
 The source-by-source UCD reference visual-review workbench is specified in
 `docs/plans/ucd_visual_review_tool.md`.
+
+## Teaching project scope, approved 2026-10-12
+
+The following 2026-10-12/13 sections document version 1. The
+[2026-10-14 redesign](#teaching-redesign-interview-requested-2026-10-14) supersedes
+its activity sequence, reading-comprehension questions, and short-session framing;
+the provenance, scientific isolation, and offline-delivery requirements remain.
+
+The course activity is separate from the research pipeline and lives under
+`docs/teaching/`. Its audience is STEM-background junior undergraduates who know
+coordinates, magnitudes, and colors and have been introduced to Gaia. The project
+lead specified one or two sessions with no coding required.
+
+Students should learn why Gaia contains non-stellar sources, compare a published
+UCD with a foreground star using Gaia and Legacy Survey, and record evidence from
+published-candidate images. ESA Archive, Aladin Desktop on Windows, and the Legacy
+Survey viewer are the intended tools. An optional instructor-prepared search may
+use massive nearby hosts with DR11 imaging; HSC imaging is desirable, not required.
+
+Teaching preparation must distinguish a confirmed literature example, a published
+candidate, and a newly selected source. No Gaia feature, apparent absence of motion,
+catalog label, image appearance, or sky proximity alone establishes a UCD or its
+host membership. Missing astrometry is not zero motion. A host absent from our UCD
+register is not necessarily absent from the literature. Gaia detectability and
+imaging coverage must be checked, not assumed from distance or a successful URL.
+
+This first task produces a concept guide and an evidence-backed, provisional
+shortlist, not a new classifier or completed sky search. Student observations must
+remain separate from canonical data and instructor adjudication. The existing
+single-user workbench must not be exposed as a shared classroom service without
+a separate design decision. DR11 teaching images do not silently replace frozen
+DR10 research products or change Gaia area accounting.
+
+The [course guide](teaching/README.md) owns the activity sequence and preparation
+checklist. The scientific roadmap and research priorities remain unchanged.
+
+### Portable worksheet and demonstration, requested 2026-10-13
+
+Expand the teaching concepts into necessary background knowledge, including why
+UCDs are interesting, why Gaia favors compact light concentrations rather than
+only physically stellar objects, and the difference between angular resolution,
+pixel sampling, catalog pair completeness, and positional precision. Cite mission
+documentation or primary instrument studies. Numerical resolution examples must
+state the observing/detection context, not imply a universal UCD-size cutoff.
+
+Provide a printable PDF worksheet and a self-contained interactive HTML activity
+under `docs/teaching/`. The HTML must open using `file://` on a normal desktop
+browser without any server, package installation, account, or network access for
+the core exercise. Inline all required styles, scripts, measurements, and images;
+external archive/viewer links are optional extensions. Student preparation does
+not require a Windows rehearsal. Provide platform-independent, step-by-step tool
+instructions and state which online interface details were actually verified.
+
+Use a bounded, versioned teaching snapshot: known M60/M59 examples, a foreground
+comparison, a missing-astrometry example, and the two already shortlisted M60
+published candidates. Keep source coordinates, exact Gaia identifiers as strings,
+query dates, original versus approved classifications, and image URLs/releases,
+dimensions, scales, hashes, and availability traceable. Download source images to
+the configured external data directory; embed copies in the distributable HTML.
+This is an educational subset, not a representative population or a new selector.
+
+Students can record observations and guided answers, download a versioned JSON
+answer file plus a readable report, and import their own answers later. Browser
+storage is best-effort only: exporting is the reliable save/submission method.
+Imported data must be validated against the packet version, object identifiers,
+question identifiers, and allowed flags, and rendered as text rather than markup.
+No student write goes into the canonical or production review databases. Exported
+reviews remain unadjudicated evidence, not training labels or confirmation.
+
+Any interactive size demonstration must label its idealized assumptions and must
+not predict Gaia detection or completeness. The G-versus-flux-excess plot must
+label its deliberately selected examples and must not imply a stellar locus or
+population contamination rate. The PDF must retain the same question identifiers,
+essential data, image scales, blank response spaces, and provenance as the HTML;
+instructor interpretation notes remain a separate artifact.
+
+Validate a small acquisition before downloading the bounded set; acquire serially
+with rate-limit backoff. Check image content, not just HTTP success. Render and
+visually inspect every PDF page, and test local-file HTML with network disabled,
+answer export/import, missing measurements, keyboard interaction, and narrow
+layouts. Do not claim testing on an unavailable operating system or browser.
+
+### Teaching redesign interview, requested 2026-10-14
+
+The project lead requests a semester-long project with a stronger discovery
+motivation and practical investigations replacing most explanatory Q&A. The
+proposed title is **A Galaxy in Disguise**. The introductory material should
+explain Gaia's observations using illustrations or animations, define measurements,
+and link advanced reading without teaching which parameter cuts separate classes.
+Labeled UCD, star, and quasar examples should have comparable apparent brightness.
+
+Requested activities are: (1) classification of an unlabeled mixture, provisionally
+ten bright nearby UCDs or strong candidates plus twenty stars/quasars, with JSON
+submission and no correctness feedback; (2) adjustable selection rules applied to
+larger, fainter catalogs, linked two-dimensional plots, repeatable trials, purity
+and completeness feedback, and exported rules; (3) a reachable research extension
+answered in an exportable text field. Preserve the local-file distribution requirement.
+
+Interview decision, 2026-10-14: these three tasks together constitute **Part 1**
+of the semester-long teaching project. Later parts will ask students to search
+for new candidates. Scope the present redesign to Part 1 and prepare students
+for those later investigations; their detailed design remains future work.
+
+Interview decision, 2026-10-14: LLM assistance is allowed and encouraged when used
+responsibly, with brief disclosure of how it contributed. The activity should
+teach students to check model suggestions against the supplied observations and
+source records. It must not require an unaided attempt or prohibit LLM use.
+The implementation plan specifies the short disclosure and evidence-based grading;
+no numerical pass threshold has been requested.
+
+Interview decision, 2026-10-14: Task 1 is an open investigation. Use neutral
+display names while providing coordinates, exact Gaia identifiers, and survey
+links. Students may find published classifications through external research;
+their submissions should distinguish interpretations of the supplied measurements
+from externally reported classifications and cite those sources.
+
+The project lead requires verification that the supplied information supports
+successful classification. Before including an object in Task 1, check the source
+association, image quality and centering, measurement availability, accessible
+external evidence, and the evidence path supporting its intended class. Audit
+the student-visible information rather than relying only on the instructor label.
+Use the agreed uncertain response for irreducible ambiguity and manual review for
+any unconfirmed reference case. Do not promise that Gaia measurements and compact
+images alone uniquely separate every UCD, star, and quasar.
+
+Initial interview decision, 2026-10-14: Task 1 offers **UCD / star / QSO / uncertain**,
+with a confidence level and a brief evidence-based explanation. The later revision
+below makes all fields except classification optional. The project lead
+accepts this design but asks that it remain simple. Use one compact form per
+object; proposed confidence choices are low, medium, and high. Preserve an
+unanswered state distinct from an intentional uncertain classification in exports.
+Prefer secure Task 1 reference objects; do not grade a high-probability candidate
+as a definitely confirmed UCD merely to reach the desired object count.
+
+Interview decision, 2026-10-14: Task 2 calculates purity and completeness using
+securely classified UCDs, stars, and quasars. Include the larger, fainter published
+UCD candidate sample in the plots, but report the number of unconfirmed candidates
+selected separately. Unknown candidates do not enter the scored positive or
+negative classes. Clearly label the scores as applying to the securely classified
+reference subset; its class proportions do not establish purity in a real sky
+search. All candidate rows remain traceable to their original confirmation tiers.
+
+Superseded interview decision, 2026-10-14: Task 2 initially had two final selection goals. Students
+save one rule intended to recover more UCDs while accepting more contaminants,
+and another intended to produce a cleaner list while accepting more missed UCDs.
+Both use the same controls and reference data. Each saved rule includes its
+criteria, measured purity/completeness and counts, and a brief explanation of the
+tradeoff and intended use. The interface should retain evaluated attempts for
+comparison and export; ordinary slider movements need not create history records.
+Numerical pass thresholds and a single combined optimization score have not been
+requested at that interview stage. The later decision below replaces this with
+one final selection and an F1 objective while preserving the range controls.
+
+Interview decision, 2026-10-14: distribute the complete Part 1 project in **one
+self-contained HTML file**, containing the motivation, core background, labeled
+examples, Tasks 1-3, required data/images, and answer export/import. Aim for about
+30 minutes of core reading; students may spend substantially longer investigating
+and completing the tasks. The earlier one-or-two-session framing is not a hard
+completion limit. Keep advanced explanations in optional links/citations, with
+the required learning path available offline. The reading duration is a design
+target, not a measured completion-time claim.
+
+Interview decision, 2026-10-14: Task 3 is **one common question about establishing
+membership in a host galaxy**, with a free-text answer saved in the submission.
+Use this response to begin Part II. Keep the prompt concise and open-ended;
+do not supply a hint panel, worked answer, or automatic correctness feedback.
+Proposed wording: "You find a possible UCD close to a massive galaxy on the sky.
+How would you investigate whether it is physically associated with that galaxy?"
+Do not turn this into a menu of research topics or reveal the intended solution
+in the student activity's concluding section.
+
+Interview decision, 2026-10-14: use a **star-rich Task 2 sample**, including a large
+number of real sources if the single HTML handles them comfortably. Determine the
+final count through measurements of the complete page, not an assumed browser
+limit. The local spectroscopic parent contains 79,369 distinct Gaia-linked stars;
+begin the file-size experiment with 20,000, then adjust after the complete build.
+This is a constructed teaching mixture, not a representative all-sky population.
+Apply the approved reliability and source-status exclusions before assigning any
+scored UCD labels; preserve unconfirmed candidates as a separate, unscored group.
+
+Status, 2026-10-14: **Part I implemented and technically validated; final instructor
+review pending**. The
+[Part I implementation plan](plans/teaching_part1_redesign.md) owns the data
+inventory, evidence audit, browser measurements, interface and submission design,
+and ordered acceptance checks. The delivered single HTML contains seven labeled
+examples, 30 Task 1 sources, 74 embedded DR11 images, and a 21,118-row Task 2 catalog
+(20,000 stars, 121 UCD references, 391 QSOs, 606 unscored candidates). Current
+reference exclusions, exact string IDs, missing-data policies, provenance, and
+separate instructor evidence records are enforced. Introductory stars are curated
+for clearer motion evidence; Task 2's stellar sampling has no such cut. Unusable
+bright cutouts were replaced without rejecting their research records.
+The [development record](development/teaching_materials.md) documents these choices,
+offline browser tests, independent scoring, and remaining review limitations.
+An offline activity with immediate class-based feedback necessarily includes
+information sufficient to compute that feedback; it cannot securely conceal its
+answer key from a student inspecting the file. Task 1 reference classes remain
+in a separate instructor key. The old HTML is now `ucd_investigation_v1.html`;
+its PDF is retained as version 1, not as a print version of this redesign.
+Next: instructor review of the actual reading, assignments, and uncertainty grading
+before freezing a class distribution copy. New-host searches remain later work.
+
+### Instructor revision requests, 2026-10-14
+
+Restore the earlier interactive distance/angular-size illustration while retaining
+its distinction between geometry, image resolution, and detection probability.
+Make measurement names prominent in sans-serif type, and expand their plain-language
+definitions without giving away feature usefulness or selection directions. Render
+the optional mathematical expressions offline, using native MathML with readable
+text equivalents; do not depend on a remote typesetting library or Windows testing.
+
+Put tool links directly in the online-exploration steps, open external links in a
+new tab, and restore the detailed platform-independent instructions in a section
+collapsed by default. Internal navigation stays on the current page.
+
+Task 1 uses button-style single-choice controls instead of dropdowns. **Only the
+classification is mandatory**; confidence, evidence basis, notes, and citations
+are optional. This supersedes the earlier completeness requirement. Show Galactic
+longitude and latitude in degrees, derived from each saved Gaia ICRS position;
+describe the coordinate system without teaching a classification shortcut.
+
+Task 2 is to replace the two-final-list exercise with one final solution and the
+prompts "Why do you think this works?" and "How do you think this selection can
+be improved?" The initial AUC-based proposal prompted a feasibility study:
+one set of hard cuts supplies only a binary decision, whereas a full ROC curve
+evaluates a ranking across thresholds. A scoring-control design and a companion
+purity/completeness summary were tested. The instructor subsequently chose to keep
+range controls, as recorded below; scoring controls were not adopted.
+Report measured experiments as teaching-catalog tests, not independent
+validation of a scientific selector. Keep unconfirmed candidates unscored.
+
+Interview decision, 2026-10-14: **keep the range-selection controls**. Replace the
+two-final-list requirement with a single final attempt; show purity, completeness,
+counts, and **F1** as the combined optimization objective. F1 is their harmonic
+mean, equivalently `2 TP / (2 TP + FP + FN)`, with unknown candidates excluded.
+Here TP is selected reference UCDs, FP is selected stars/QSOs, and FN is unselected
+reference UCDs including those with unavailable measurements. This weights purity
+and completeness symmetrically, without imposing an unapproved numerical pass mark.
+Keep undefined purity for an empty scored selection, but F1 is zero when the
+reference UCD denominator is nonempty and none is recovered. All-inclusive and
+one-UCD-only selections must be included as explicit benchmark controls.
+
+ROC AUC is not the task's objective because students are producing a binary
+selection, not a continuous ranking. Explain the distinction briefly in optional
+reading rather than add scoring-weight controls. Benchmark the unchanged data
+using the same interval and missing-data semantics as the browser. Instructor
+benchmark settings are not student presets or a scientific selector recommendation.
+The final response fields are one evaluated attempt, "Why do you think this
+works?", and "How do you think this selection can be improved?" Update the answer
+schema explicitly; preserve Task 1 responses on importing an earlier same-packet
+v2 submission and ask the student to choose their new single final attempt.
+
+### Task 1 panel arrangement, 2026-10-14
+
+The instructor requests a layout-only improvement: the growing measurement table
+must not separate source images from the controls used to classify, record evidence,
+and advance. Keep all 15 measurements visible above the review area in two
+columns on wider screens, with source coordinates and survey links together.
+Below, place the close/context images beside the three choice groups, evidence,
+citation, and previous/next controls. Keep the image column in view while scrolling
+the answer panel on desktop-sized screens; stack cleanly on narrow screens.
+Maintain a stable review position when advancing between objects and retain all
+four classification options, including uncertain. Do not change observations,
+example-card layout, Task 2, answer requirements, or submission schema. Validate
+image visibility during classification/evidence/navigation on short laptop windows,
+answer persistence across objects, and narrow-screen accessibility.
+
+### Submission wording and code review, 2026-10-14
+
+Label the submission identifier **Student ID**, not a student/group identifier,
+and use the same wording in the readable report. Keep `student_identifier` as the
+existing JSON key so saved submissions remain compatible. Review the generated
+HTML and source scripts for concrete bugs, with reproducible evidence and severity;
+record any behavior-change proposals separately from this authorized wording edit.
+
+### Classroom finalization and bilingual introductions, 2026-10-14
+
+The instructor approved fixing all five findings in the teaching code review:
+strict string attempt identifiers with rollback if an import fails during display;
+invalid numeric input must retain the previous valid boundary; the accessible
+catalog table must include excess noise; result changes must clear stale hover
+selection text; slider endpoints must preserve exact observed extrema.
+Add regression coverage without changing the frozen teaching catalog or scores.
+
+Provide student-facing Project Introduction documents in equivalent English and
+Chinese Markdown/PDF under `docs/teaching/`. Cover scientific context, the three
+Part I tasks, responsible LLM use, saving/resuming, and deliverables without Task 1
+answers or Task 2 benchmark settings. Students must rename their JSON export to
+`[NAME]_[STUDENT_ID].json` and upload it to Tsinghua Online Classroom (网络学堂).
+Keep only Student ID in the existing form; no new answer schema is needed. The
+introductions accompany the single offline HTML, not replace its interactive tasks.
+Render and visually inspect both PDFs, including Chinese font embedding.

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>A Galaxy in Disguise · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/README.md">Markdown source ↗</a></div><h1 id="a-galaxy-in-disguise">A Galaxy in Disguise</h1>
+<p><strong>Updated:</strong> 2026-10-14. <strong>Status:</strong> classroom file finalized after instructor
+revisions and all five code-review fixes. English/Chinese introductions accompany it.</p>
+<p><a href="../../teaching/ucd_investigation.html">Open the student HTML</a> ·
+<a href="instructor_notes.html">Instructor guide</a> ·
+<a href="../plans/teaching_part1_redesign.html">Implementation plan</a> ·
+<a href="../development/teaching_materials.html">Development and validation record</a></p>
+<p>This is Part I of a semester-long, no-code observational astronomy project for
+STEM-background junior undergraduates. Students already know coordinates,
+magnitude, color, and the purpose of Gaia. They investigate real measurements
+and images, rather than complete a reading-comprehension quiz.</p>
+<h2 id="the-complete-student-project">The complete student project</h2>
+<p>The required activity is <strong><a href="../../teaching/ucd_investigation.html">ucd_investigation.html</a></strong>. It contains
+the reading, original Gaia scanning and interactive angular-size illustrations, all required observations,
+74 saved Legacy Survey DR11 cutouts, and every task. No supporting data package,
+website, local server, Python, account, installation, or internet is required.
+Students save the attachment and open it in a desktop browser, not an email
+preview. Optional Gaia, Legacy Survey, SDSS, SIMBAD, and Aladin links need internet.</p>
+<p>Include either or both student-facing Project Introductions as assignment briefs:</p>
+<ul>
+<li>English: <a href="project_introduction_en.html">Markdown</a> · <a href="../../teaching/project_introduction_en.pdf">three-page PDF</a>.</li>
+<li>Chinese: <a href="project_introduction_zh.html">Markdown</a> · <a href="../../teaching/project_introduction_zh.pdf">three-page PDF</a>.</li>
+</ul>
+<p>Both cover background, all three tasks, deliverables, saving/resuming, and LLM use.
+Students rename the JSON export to <strong><code>[NAME]_[STUDENT_ID].json</code></strong> and upload it to
+<strong>Tsinghua Online Classroom (网络学堂)</strong>. The webpage asks only for Student ID;
+the name is supplied in the filename. TXT is optional, not a substitute for JSON.
+Do not distribute instructor keys or the whole repository as the student package.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What students do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motivation and background</td>
+<td>Learn why compact systems are interesting and how Gaia collects measurements; definitions remain neutral rather than prescribing cuts</td>
+</tr>
+<tr>
+<td>Seven labeled examples</td>
+<td>Compare M60-UCD1, M59-UCD3, M59cO, two stars, and two quasars; M59cO explicitly illustrates a classification boundary</td>
+</tr>
+<tr>
+<td>Task 1</td>
+<td>Investigate 30 neutral-coded sources; choose a class or uncertainty using buttons; confidence and evidence records are optional; no answer reveal</td>
+</tr>
+<tr>
+<td>Task 2</td>
+<td>Explore 21,118 real catalog rows, adjust measurement ranges, compare purity/completeness/F1, and save one final selection with two explanations</td>
+</tr>
+<tr>
+<td>Task 3</td>
+<td>Answer one open question about association with a host galaxy, without hints; carry the response into Part II</td>
+</tr>
+<tr>
+<td>Save and submit</td>
+<td>Export/import JSON, download a readable text report, and briefly disclose responsible LLM assistance</td>
+</tr>
+</tbody>
+</table>
+<p>Aim for about 30 minutes of core reading and example study, with longer independent
+task time. This is a design target, not measured student completion time.
+Task 2 includes 20,000 spectroscopic stars, 121 UCD references, 391 spectroscopic
+quasars, and 606 unconfirmed candidates. The candidates are counted separately
+and enter none of purity, completeness, or F1. F1 combines purity and completeness
+using their harmonic mean; students try to improve it without a fixed pass mark.
+The constructed mixture is not an
+unbiased sample of a new galaxy field. There is no automated best-cut suggestion.</p>
+<p>Students should save JSON early and often. Browser storage is best-effort; an
+exported file is the reliable record. Keep the exact HTML used for the class:
+imports check its data snapshot. Nothing is uploaded automatically, and classroom
+answers cannot change the research database.</p>
+<p>Task 1 places measurements above the review area in two columns on wider screens.
+Below, the close/context images remain beside the classification and evidence
+controls; the image column stays in view while scrolling that panel. Previous/next
+returns to the new object's images and classification. Narrow windows stack the
+panels without shrinking the controls into an unusable sidebar.</p>
+<p>The revised answer format is <code>bubbletea_answers_v3</code>; the underlying data remain
+the same version 2 packet. Older same-packet v2 answers import safely, preserving
+responses, evaluated attempts, and old final choices. Students then designate
+one final selection and answer the revised explanation prompts. The tool guide
+is folded by default, external links open new tabs, and optional equations render
+without downloading a library.</p>
+<h2 id="validation-and-distribution">Validation and distribution</h2>
+<p>The <a href="instructor_notes.html">instructor guide</a> explains the source curation, difficult
+cases, evidence-based grading, JSON checker, and review priorities. The lesson
+works offline in installed Chrome on macOS, including denied browser storage.
+No Windows or other-browser rehearsal is claimed. Browser performance, exact
+file size, and test environment are recorded in the
+<a href="../../teaching/part1_build_report.json">build report</a> and
+<a href="../../teaching/part1_validation_report.json">validation report</a>.</p>
+<p>All five findings in the <a href="../development/teaching_materials.html#html-code-review-and-student-id-wording-2026-10-14">final code review</a>
+are fixed: rejected imports preserve answers, malformed numbers retain the last
+valid cut, the table includes excess noise, hover text refreshes, and slider
+endpoints retain exact extrema. The full suite passes 43,740 assertions, including
+26 focused regressions. The frozen data packet and answer schema are unchanged.
+Both introduction PDFs have embedded Unicode fonts and were visually checked on
+all three pages. See the <a href="../../teaching/project_introduction_build_report.json">introduction build report</a>.</p>
+<p>Pedagogical review concerns reading depth, the 30-object
+workload, and treatment of justified uncertainty in the actual page. Technical
+tests do not establish that every source can be uniquely classified from Gaia
+and a thumbnail. The separate instructor record audits every displayed image pair
+and retains the independent literature/spectroscopic evidence.</p>
+<h2 id="maintaining-the-materials">Maintaining the materials</h2>
+<p><a href="../SPEC.html#teaching-redesign-interview-requested-2026-10-14">SPEC</a> owns the approved
+requirements; the <a href="../plans/teaching_part1_redesign.html">Part I plan</a> tracks completion.
+<a href="../../../data/teaching/README.md">Data provenance and reproduction</a> documents the
+frozen packet and external image cache. Implementation details belong in
+<a href="../development/teaching_materials.html">development/teaching_materials.md</a>, not a
+new top-level document. Paths are defined in <code>scripts/config.py</code>.</p>
+<p>The research selector, canonical catalog, contamination decisions, and radial
+measurements are unchanged. New-host searches belong to later teaching parts.
+The <a href="target_shortlist.html">provisional host shortlist</a> still needs full-area
+imaging, literature, and sensitivity checks before any discovery assignment.</p>
+<h2 id="retained-version-1-and-supporting-reading">Retained version 1 and supporting reading</h2>
+<p>The earlier six-object lesson is preserved as
+<a href="../../teaching/ucd_investigation_v1.html">ucd_investigation_v1.html</a>, alongside its
+<a href="../../teaching/ucd_worksheet.pdf">six-page PDF</a>, <a href="worksheet.html">worksheet source</a>, and
+<a href="instructor_notes_v1.html">version 1 instructor notes</a>. They do <strong>not</strong> implement the
+new three-task project. The new introduction PDFs explain the assignment;
+they are not printable replacements for the interactive HTML.
+The legacy builder now writes the v1 HTML path and cannot overwrite Part I v2.</p>
+<p>The <a href="concepts.html">concept guide</a>, <a href="tool_guide.html">platform-independent tool guide</a>,
+and <a href="source_checks.html">original source checks</a> remain useful supporting references.
+The current student reading is maintained in <a href="part1_reading.html">part1_reading.md</a>
+and embedded directly in the distributed HTML. The repository reading portal
+under <code>docs/html/</code> is separate and is not a student distribution package.</p>
+<p><strong>Next step:</strong> upload the finalized HTML and the preferred introduction PDF(s) to
+the course platform, set the assignment deadline, and collect students' JSON files.
+Part II/new-candidate searching remains a separate task.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#a-galaxy-in-disguise">A Galaxy in Disguise</a><ul>
+<li><a href="#the-complete-student-project">The complete student project</a></li>
+<li><a href="#validation-and-distribution">Validation and distribution</a></li>
+<li><a href="#maintaining-the-materials">Maintaining the materials</a></li>
+<li><a href="#retained-version-1-and-supporting-reading">Retained version 1 and supporting reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_zh.html">伪装成恒星的星系</a></li></ul></details><details><summary>Linked from (12)</summary><ul><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../current_status.html">Current research status</a></li><li><a href="../development/teaching_materials.html">Teaching materials: implementation and validation</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../plans/teaching_part1_redesign.html">A Galaxy in Disguise: Part I implementation plan</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="source_checks.html">Instructor evidence record and remaining preparation</a></li><li><a href="target_shortlist.html">Teaching objects and provisional search hosts</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>

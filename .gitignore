@@ -65,5 +65,9 @@ htmlcov/
 # Sphinx / docs build
 docs/_build/
 
+# Local PDF/browser QA renders and synthetic answer downloads
+tmp/pdfs/teaching/
+tmp/teaching/
+
 # Keep gitkeep files
 !.gitkeep

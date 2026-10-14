@@ -7,8 +7,8 @@
 <header class="masthead"><a class="brand" href="../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
 <nav aria-label="Main navigation"><a href="../index.html">Overview</a><a href="directory.html">All documents</a></nav></header>
 <main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Start here</span><a href="../current_status.md">Markdown source ↗</a></div><h1 id="current-research-status">Current research status</h1>
-<p><strong>Reviewed:</strong> 2026-10-12<br>
-<strong>Latest research checkpoint:</strong> 2026-08-19<br>
+<p><strong>Reviewed:</strong> 2026-10-14 (teaching implementation update; research checkpoint unchanged)</p>
+<p><strong>Latest research checkpoint:</strong> 2026-08-19<br>
 <strong>Purpose:</strong> A dated restart summary, not a live dashboard or a new scientific result.</p>
 <p><a href="documentation_guide.html">Documentation guide</a> · <a href="PLAN.html">Science roadmap</a> ·
 <a href="science_guide.html">Science guide</a> · <a href="SPEC.html">Scientific requirements</a> · <a href="todo.html">Open issues</a></p>
@@ -112,16 +112,50 @@ promote to confirmed. Original data and classifications remain unchanged.</p>
 <p>See the <a href="plans/scientific_validation.html">validation stages</a> for acceptance
 requirements; completed software is not equivalent to completed science.</p>
 <h2 id="documentation-and-teaching-pivot">Documentation and teaching pivot</h2>
-<p>The current task is documentation maintenance and a static HTML reading portal.
+<p>Documentation maintenance and the static HTML reading portal are complete.
 The entrance is <a href="../index.html">docs/index.html</a>, with generated pages under
 <code>docs/html/</code>. Six project-level Markdown documents remain directly under <code>docs/</code>;
 scientific explanations live in <code>methods/</code>, and consolidated development records
 live in <code>development/</code>. The <a href="development/documentation_audit.html">consolidation audit</a>
 records each retired document and its retained evidence.
-Documentation maintenance does not change any scientific selector, catalog, image classification, or
-radial measurement. An observational-astronomy teaching project will follow as a
-separate brief. Audience, lesson scope, exercises, and student data access have
-not yet been specified; research plans must not be presented as established results.</p>
+The active side task is <a href="teaching/README.html">A Galaxy in Disguise</a>, a no-code
+undergraduate project. The <a href="plans/teaching_part1_redesign.html">Part I implementation</a>
+is complete through technical validation. The
+<a href="../teaching/ucd_investigation.html">single offline HTML</a> contains illustrated background,
+seven labeled examples, 30 source classifications, a 21,118-row selection experiment,
+and one open membership question. All 74 DR11 cutouts are embedded and reviewed.
+JSON save/restore, independent grading calculations, malformed-import rejection,
+denied storage, and offline desktop/narrow layouts pass the recorded tests.
+The revised approximately 9.35 MB file meets the measured performance/size targets.
+It restores the distance/angular-size illustration and folded online guide, renders
+optional equations offline, and makes Task 1 classification the only required
+per-object field. Task 2 retains ranges but now optimizes F1 (the harmonic mean
+of purity and completeness) and saves one final selection with two explanations.
+The instructor-only range trial reaches F1 0.623 on this teaching sample; it is
+not an independent estimate of new-field performance. Older same-packet answers
+import without losing prior work.
+The Task 1 layout follow-up puts measurements above the images/response area and
+keeps the desktop images beside the controls. Six window sizes pass the layout
+and navigation checks; data, classifications, and the answer schema are unchanged.</p>
+<p>Latest handoff: all five code-review findings are fixed and the classroom HTML is
+finalized. The suite passes 43,740 assertions, including 26 focused regressions.
+Student-facing Project Introductions are available in
+<a href="teaching/project_introduction_en.html">English</a> and
+<a href="teaching/project_introduction_zh.html">Chinese</a>, each with a visually checked,
+three-page PDF. Students submit <code>[NAME]_[STUDENT_ID].json</code> to Tsinghua Online
+Classroom (网络学堂). Next: <strong>distribute the HTML and introduction PDF(s), set the
+course deadline, and collect JSON submissions</strong>. See the
+<a href="development/teaching_materials.html#classroom-finalization-and-project-introductions-2026-10-14">handoff record</a>
+and <a href="teaching/instructor_notes.html">instructor notes</a>.
+The <a href="development/teaching_materials.html">development record</a> documents curation,
+reference exclusions, image failures, timing, and limitations. Technical tests do
+not prove unique class identification from Gaia and a thumbnail or establish
+student completion time. Windows rehearsal is not required and has not been done.
+The <a href="../teaching/ucd_investigation_v1.html">old six-object HTML</a> and
+<a href="../teaching/ucd_worksheet.pdf">PDF</a> remain explicitly version 1 resources.
+New-search host checks belong to later teaching parts. No scientific selector,
+catalog, image classification, or radial measurement is changed; teaching reviews
+are not scientific confirmations.</p>
 <h2 id="snapshot-limitations">Snapshot limitations</h2>
 <p>This page records the repository and local data inspected on the review date.
 Review counts, branch names, and remote state can change afterward. The

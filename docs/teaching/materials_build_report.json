@@ -1,0 +1,20 @@
+{
+  "packet_version": "ucd_course_v1",
+  "packet_sha256": "a723ac4189675a81113de70e592ec77c345626d9777f4c20b562df37b4121d12",
+  "object_count": 6,
+  "embedded_image_count": 12,
+  "pdf_page_count": 6,
+  "html_bytes": 255472,
+  "pdf_bytes": 112005,
+  "build_seconds": 0.06978837500355439,
+  "source_sha256": {
+    "data/teaching/ucd_course_packet_v1.json": "a723ac4189675a81113de70e592ec77c345626d9777f4c20b562df37b4121d12",
+    "scripts/teaching/build_teaching_materials.py": "96d1038a27d2bd9b794b6de16a2506914d3b2e25cd911cd01ccbbe0c52ad25d6",
+    "scripts/teaching/assets/activity.html": "019cfac5449c9afc77e4af17588cd5942dd79d89f12e79a74ef5f3fc533e8515",
+    "scripts/teaching/assets/activity.js": "18acc3f170c86975bec9bbd1112e8e627235ae04a34f552565607b45b50470dd",
+    "scripts/teaching/assets/activity.css": "29d7c1a2a0627ab8fec84ec6fa9c7ff4b6f31f472b33735fab23c7467f5c3fca",
+    "docs/teaching/worksheet.md": "1a4139ba10862108dd4f78385aaa4a3f47a8472a766b07bf7c4b8148fb5f7f3f",
+    "docs/teaching/concepts.md": "68e2db406dfad5891b33869a9befe6a39374aab3735512f2ef166e46fcd6c6b5",
+    "docs/teaching/tool_guide.md": "96a47a664d87c815aa9efee53cd4478f21a3180b14246dbaeb5c7206699c3269"
+  }
+}

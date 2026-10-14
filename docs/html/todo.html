@@ -722,6 +722,153 @@ history, not necessarily the latest state. <code>BT-023</code> retains its origi
   processing is changed. The new organization is ready for project-lead review.</p>
 </li>
 <li>
+<p><input type="checkbox" disabled aria-label="Task complete" checked> <strong>BT-033 - Prepare the separate, no-code UCD teaching activity.</strong> Completed 2026-10-14.
+  Scope approved 2026-10-12: junior undergraduates, one or two sessions, ESA Gaia
+  Archive, Aladin Desktop on Windows, and Legacy Survey images. No scientific
+  selector changes, canonical edits, or shared production review service.
+  Owner: <a href="teaching/README.html">Course guide</a> and
+  <a href="plans/teaching_part1_redesign.html">Part I implementation checklist</a>.
+  Redesign requested 2026-10-14: semester project, practical classification and
+  selection exercises, Gaia illustrations, and reduced Q&amp;A. The one-question-at-a-time
+  interview is complete; see SPEC and the implementation plan. The earlier
+  six-object worksheet remains the previous version; the redesign is now implemented
+  and technically validated; the instructor's requested finalization is complete.
+  Interview decision, 2026-10-14: Tasks 1-3 comprise Part 1; searches for new
+  candidates belong to later parts of the semester project.
+  Interview decision, 2026-10-14: encourage responsible LLM assistance with brief
+  disclosure and verification against observational evidence.
+  Interview decision, 2026-10-14: Task 1 permits external investigation using
+  coordinates, Gaia identifiers, and survey links under neutral display names.
+  Verify that each object's student-visible evidence supports its classification;
+  record measurement-based interpretations separately from cited catalog labels.
+  Interview decision, 2026-10-14: allow UCD / star / QSO / uncertain responses,
+  with confidence and a short evidence note; keep the per-object form compact.
+  Interview decision, 2026-10-14: score Task 2 on securely classified reference
+  objects; include fainter unconfirmed candidates with a separate selected count.
+  Superseded interview decision, 2026-10-14: two saved Task 2 rules, one favoring
+  UCD recovery and one favoring a cleaner list. The later approved revision keeps
+  range controls but uses F1 and one final selection with two explanations.
+  Interview decision, 2026-10-14: deliver all Part 1 material and tasks in a single
+  self-contained HTML; target 30 minutes of core reading with longer independent
+  task time and optional advanced reading links.
+  Interview decision, 2026-10-14: Task 3 is one host-membership question with no
+  hints or solution; save students' responses as the starting point for Part II.
+  Interview decision, 2026-10-14: use a large star-rich Task 2 sample, with its
+  final size determined by complete-page measurements. Begin the size experiment
+  with 20,000 of the 79,369 locally available spectroscopic stars, then adjust.</p>
+</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Write the prerequisite concepts and activity outline (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify known-example Gaia records and inspect two DR11 images (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Record a bounded host-literature screen and provisional shortlist (2026-10-12).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Build and test the portable offline HTML activity and PDF worksheet (2026-10-13);
+    prepare platform-independent step-by-step tool instructions. Windows rehearsal
+    is not required (project-lead clarification, 2026-10-13).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Verify both candidate names/rows in Liu 2015 table6.dat and retrieve the
+    six-object teaching snapshot with twelve DR11 cutouts (2026-10-13).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Complete the redesign interview, read-only data audit, preliminary browser
+    size test, and detailed implementation plan (2026-10-14).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Audit a small UCD/star/QSO sample and verify student-visible evidence (2026-10-14).</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Freeze labeled examples, 30 Task 1 objects, and the large
+    Task 2 catalog with current reliability exclusions and separate candidate counts.
+    Completed 2026-10-14; every gallery image pair has explicit review notes/hashes.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Implement the redesigned reading, illustrations, three tasks, and versioned
+    answer export/import; verify on a small sample before scaling.
+    Completed 2026-10-14.</li>
+<li><input type="checkbox" disabled aria-label="Task complete" checked> Measure and validate the full offline HTML, grading calculations, and
+    instructor-only reference artifacts (2026-10-14).</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> Instructor reviews the redesigned lesson and evidence-audited assignments.</li>
+<li><input type="checkbox" disabled aria-label="Task pending"> In a later teaching part, finish a new host's literature, properties,
+    sensitivity, and full-area DR11 coverage checks; HSC is optional.
+  Review of the first preparation pass: confirmed objects, candidates, and search
+  hosts remain separate. No-detected-motion and missing-motion cases are explicit.
+  Blank image responses are not counted as imaging; an initially rate-limited
+  host-center check succeeded on a serial retry, but full-area coverage is still
+  unverified. Research catalogs and classifications remain untouched.
+  Validation, 2026-10-12: 63 Markdown sources rendered as 65 HTML pages; all 307
+  documentation checks passed with no unavailable links or unresolved fragments.
+  Scoped Ruff/pre-commit, teaching navigation, exact-identifier snapshot parsing,
+  significance calculations, and tracked scientific-file isolation checks passed.
+  Review, 2026-10-13: the six-page PDF and single-file HTML are complete; all 41
+  offline browser/PDF checks passed, including blocked browser storage, exact-ID
+  exports, import validation, and zero network requests. All six PDF pages and
+  desktop/narrow HTML inspection layouts were visually checked. Student answers
+  remain separate downloads; missing astrometry and unchecked external catalogs
+  remain explicit. The new-host discovery exercise is still deferred.
+  Planning review, 2026-10-14: the design is feasible, not yet implemented.
+  The 146 confirmed primary-eligible development rows become 133 after the later
+  13-object source exclusion, with no overlap with the five reliability reviews;
+  final teaching eligibility still requires object-level audits. Fourfold-throttled
+  Chrome parsed 20,000 real stellar rows in 52.4 ms and issued four-canvas drawing
+  commands in a median 30.7 ms. This excludes complete-page/image/paint costs.
+  The same JSON occupied 6,290,883 bytes; final HTML size and performance remain
+  acceptance checks. The full plan preserves unconfirmed candidates, missing data,
+  source provenance, independent grading records, and the research validation sample.</li>
+</ul>
+<p>Implementation review, 2026-10-14: one offline HTML now contains seven labeled
+  examples, 30 Task 1 objects, 74 inspected DR11 cutouts, and 21,118 Task 2 rows
+  (20,000 stars, 121 UCDs, 391 QSOs, 606 unscored candidates). Explicit reviews
+  replace unusable gallery images without rejecting research sources. Task 1 stars
+  are curated for clearer motion evidence; Task 2 has no such stellar cut. The
+  file is below 10 MB, passes offline/performance/scoring/export/import checks,
+  and preserves scientific input hashes. The old HTML/PDF is retained as v1.
+  <a href="development/teaching_materials.html">Implementation evidence</a> and
+  <a href="teaching/instructor_notes.html">instructor guidance</a> are current. Next: instructor
+  review of reading depth, workload, and justified uncertainty before class release.
+  Instructor revisions requested 2026-10-14:
+  - [x] Restore the distance/size illustration, improve definition typography and
+    explanations, and render the optional mathematics without network dependencies.
+    Completed 2026-10-14; native MathML with plain-text equivalents.
+  - [x] Restore folded detailed tool instructions and open external links separately
+    (2026-10-14).
+  - [x] Use button-style Task 1 choices, require classification only, and show
+    Galactic longitude/latitude derived from the saved coordinates.
+    Completed 2026-10-14.
+  - [x] Test the AUC proposal and confirm the interaction model: user chose range
+    selection with a combined purity/completeness metric. Implement F1, benchmark
+    4,536 combinations (best tested F1 0.623), and replace two final lists with one
+    final selection plus both explanation prompts (2026-10-14).
+  - [x] Revalidate the offline page, answer compatibility, and independent grading
+    (2026-10-14): 43,663 assertions, zero required network requests, 9,349,390-byte
+    student HTML; desktop/narrow layouts inspected. The many per-row assertions
+    are not independent interface tests. Documentation rebuilt with this revision.
+  Revision review, 2026-10-14: range selection remains; F1 penalizes both trivial
+  all-inclusive and one-UCD answers. The trial reaches purity 61.8%, completeness
+  62.8%, F1 0.623 without changing the research inputs or catalog packet. The
+  student page has no optimized-cut preset. Next: instructor review of the revised
+  Task 2 feedback/final prompts and restored background, then freeze a class copy.
+  Task 1 layout follow-up, 2026-10-14:
+  - [x] Put measurements in two columns above images and a side-by-side answer panel;
+    keep images visible during desktop classification, writing, and navigation.
+    Completed 2026-10-14.
+  - [x] Verify short/narrow windows, object switching, preserved answers, and the
+    unchanged data/schema; rebuild student HTML and documentation (2026-10-14).
+  Layout review: six viewport sizes tested; both full images stay visible during
+  classifying, writing evidence, and advancing in all four side-by-side layouts.
+  Previous restores the saved classification/evidence; narrow layouts do not
+  overlap or overflow. The full offline suite passes 43,713 assertions. Next:
+  instructor check of the new Task 1 arrangement, then freeze the class HTML.
+  Submission wording and final code review, 2026-10-14:
+  - [x] Change the field/report label to Student ID while preserving saved files
+    (2026-10-14).
+  - [x] Audit HTML/JavaScript behavior, reproduce suspected issues, and record
+    findings with recommended fixes before classroom distribution (2026-10-14).
+  - [x] Approved and completed 2026-10-14: fix rejected imports that can replace in-memory answers;
+    enforce string attempt IDs and preserve the previous state if rendering fails.
+  - [x] Fix invalid numeric input being treated as an intentionally unbounded cut (2026-10-14).
+  - [x] Complete the accessible table's plotted fields, refresh stale hover text,
+    and preserve exact observed values at slider endpoints (2026-10-14).
+  - [x] Finalize the classroom HTML and verify focused interaction regressions (2026-10-14).
+  - [x] Create matching English/Chinese Project Introduction Markdown/PDF files,
+    visually check every PDF page, and document JSON naming and 网络学堂 submission (2026-10-14).
+  Final review: all five findings resolved; the full suite passes 43,740 assertions,
+  including 26 focused regressions. Each introduction PDF has three visually
+  checked pages and embedded Unicode fonts. No research data or answer schema
+  changed. Next: distribute the HTML and introduction PDF(s), announce the course
+  deadline, and collect <code>[NAME]_[STUDENT_ID].json</code> via Tsinghua Online Classroom.
+  See the historical
+  <a href="development/teaching_materials.html#html-code-review-and-student-id-wording-2026-10-14">detailed findings</a>.</p>
+<ul>
+<li>
 <p><input type="checkbox" disabled aria-label="Task pending"> <strong>BT-009 - Recompute the background experiment with the canonical
   selection.</strong>
   Evidence: Phase III omits the Phase IV proper-motion filter and color score. Its
@@ -1183,7 +1330,7 @@ history, not necessarily the latest state. <code>BT-023</code> retains its origi
 </li>
 </ul>
 </div>
-<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Linked from (4)</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li></ul></details></aside></div></main>
+<details><summary>Research navigation</summary><ul><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Linked from (5)</summary><ul><li><a href="project/README.html">BubbleTea</a></li><li><a href="PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="current_status.html">Current research status</a></li><li><a href="documentation_guide.html">Documentation guide</a></li><li><a href="plans/teaching_part1_redesign.html">A Galaxy in Disguise: Part I implementation plan</a></li></ul></details></aside></div></main>
 <footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
 Local reading portal, not the source-review application or a final scientific catalog.</footer>
 </body></html>

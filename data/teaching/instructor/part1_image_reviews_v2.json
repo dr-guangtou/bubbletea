@@ -1,0 +1,435 @@
+{
+  "version": "part1_teaching_reviews_v2",
+  "reviewed_date": "2026-10-14",
+  "reviewer": "Codex preparation audit; final instructor review and classroom timing remain pending",
+  "scope": "Every close/context pair was visually inspected. This is a teaching-usability check, not a new morphology classification or remeasurement of a source center. Catalog identities/provenance were compared with existing audited local reference records. The reviewer was not blind to reference labels; no independent human blind-classification accuracy is claimed.",
+  "grading_policy": "Use secure catalog reference classes as external evidence, not a guarantee that the supplied Gaia/JPEG data uniquely determine class. Assess evidence notes, uncertainty, confidence, and citations manually. A justified uncertain answer may receive full reasoning credit. No automatic final grade or numerical pass threshold is assigned; Task 3 has no supplied solution.",
+  "epoch_note": "Gaia DR3 coordinates have reference epoch J2016.0; Legacy Survey images combine exposures at other dates. Visible centering was checked qualitatively. A uniform proper-motion propagation to one image epoch was not performed.",
+  "rejected_gallery_objects": [
+    {
+      "source_id": "6088704213306329856",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088703800989823360",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088700605533772288",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088704934861181312",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088718300799198720",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088701773764867328",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "6088703354312975744",
+      "reason": "Cen A close/context DR11 output contains severe colored slabs, missing/obscured central content, or stripes. JPEG dimensions and nonuniform colors were not sufficient. Root cause not established."
+    },
+    {
+      "source_id": "377786422868114560",
+      "reason": "Blank/placeholder image content."
+    },
+    {
+      "source_id": "909705654187349760",
+      "reason": "Bright-neighbor saturation/bleed obscures the target center."
+    },
+    {
+      "source_id": "3480892395785435904",
+      "reason": "NGC 3923 UCD1 is not clearly identifiable against the saturated bright host background in the returned display."
+    },
+    {
+      "source_id": "1080873260714189440",
+      "reason": "Very close, similarly bright double structure makes the intended isolated introductory stellar comparison ambiguous."
+    },
+    {
+      "source_id": "2849268728502575616",
+      "reason": "Image usable, but proper-motion significance 2.066 and parallax significance 0.410 do not supply a clear introductory star/QSO comparison."
+    },
+    {
+      "source_id": "578546220918767872",
+      "reason": "Alternative stellar row also has weak motion evidence (combined significance 2.480); not adopted for the introductory gallery."
+    }
+  ],
+  "exclusion_scope": "These are gallery-curation decisions only. They do not remove scientific records or impose image/astrometry cuts on Task 2; sources remain eligible for Task 2 according to its independently documented sampling.",
+  "objects": {
+    "3927659910436411136": {
+      "object_key": "example_01",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "c9e552ba1646308619ebcc4d5cc542282530b31b2066ed773923c0581214b0be",
+        "context": "11582440b384263eee33118ab9f674f3c3baa5127b84de861ec0306d7344baa0"
+      },
+      "image_note": "Bright central target is visible at the Gaia position in both scales; host-light gradient and nearby green streaks remain visible. These are context cautions, not grounds to erase the known source.",
+      "evidence_note": "Published M60-UCD1 identity and Gaia position were independently checked in the preserved v1 source record. The black-hole and discovery paper links supply the external evidence. Supplied measurements are consistent with the compact-system example, not an independent confirmation."
+    },
+    "3928413763095214592": {
+      "object_key": "example_02",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "d9093fe5bd8b08d0b9e18a12843a7fbd65f96a400b9041c075e71b65a11ac5a5",
+        "context": "671019cc74dbce0cc968d6a5c04b3ce77d74d135a3a251436fb90de38aca2ec1"
+      },
+      "image_note": "Clearly visible central compact target on a host-background gradient; the larger image establishes the bright host surroundings.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.08981267648438783 arcsec. Supplied flux excess is 6.135026; proper-motion significance is 0.741666709495268. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "3928425445406259456": {
+      "object_key": "example_03",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "95cf6312205c7495a27c6c339b5c0a7a642d6af9da497cc42b449adedb9bc9ea",
+        "context": "7b888b97d463a3cd42fcfee324da024bbf9e5e9ca6d5e1122b3507658c2b7a75"
+      },
+      "image_note": "Central compact system is visible in both views against host light. Keep the physical UCD/compact-elliptical boundary explicit; this is a labeled example, not a scored Task 1 answer.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.10634681131359217 arcsec. Supplied flux excess is 9.460632; proper-motion significance is unavailable (not zero). A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive. This is explicitly labeled a UCD/compact-elliptical boundary case and is excluded from both scored tasks by role reservation."
+    },
+    "2473060104820285312": {
+      "object_key": "example_04",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "afb4d3496255fe45152409c1cb79ffaa0588eb4b7aed46c3a625c0fb5e351d5a",
+        "context": "7230888d01b6abb7a479147263f104d1d1fb3adfecd46bbfe74c27e38904932d"
+      },
+      "image_note": "Central compact source is identifiable in both views. No image defect prevents this introductory comparison.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.3118725311629968 arcsec. Supplied proper-motion significance is 77.31757523295984; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "847129591297390336": {
+      "object_key": "example_05",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "fe0dc0f27cc33bff4357695234a829fd3211aea4cbf187a53a0e08a7f9e88800",
+        "context": "6fb6252b4852285cd98cc45e663d04b5b2e0df117de4096026d4c447c50511bb"
+      },
+      "image_note": "Central reddish compact source is identifiable in both views. Display color is not a calibrated color measurement.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.3591168405071208 arcsec. Supplied proper-motion significance is 9.810071895634088; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "2447695127482132992": {
+      "object_key": "example_06",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "87706ceae796a4a8f97208aced5744e12d1e6d0f0da1b7f37cfae66c998c8b61",
+        "context": "c477c340defb7576c37375680961221f970722ccf6196156ae6e34a4b9d8cc1e"
+      },
+      "image_note": "Central compact source is visible in both views; its appearance alone does not establish a quasar.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.1348563067192962 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 2.0046380175465135, parallax significance 1.5223468071921953, BP-RP 0.5061378479003942, and flux excess 1.167878. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "2724388018885925504": {
+      "object_key": "example_07",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "4efee8bc0febc77addb5fa723c66d82d4385b10067de4c19346a57d235acd1f5",
+        "context": "aa7077deebcb4a80fe42c4b069f48d5cc0f484f4e0690ce6bdbb13ef579a9d5f"
+      },
+      "image_note": "Central compact source is visible at both scales; retain the wider surroundings for comparison.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0194038780332546 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 0.7959090847670953, parallax significance 0.4446362732375536, BP-RP 0.7611255645751953, and flux excess 1.253184. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "2645421918413075456": {
+      "object_key": "task1_01",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "1b715cb008d243c6b3ebdff4250ec112db55ed315640f5763bcd940a799d0dfa",
+        "context": "13a0269f6177aac4b6343d98e2c584711d502ed04e36d92b8c190ac192a1f8e9"
+      },
+      "image_note": "Central faint compact source remains visible at both scales. No source-center image defect prevents inspection.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.042679101893109125 arcsec. Supplied proper-motion significance is 4.448501248532056; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "3812472972070332800": {
+      "object_key": "task1_02",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "38fa8cbf09a84f4814cacb86f5ad47cdb631103772e8415fae8ddf53377e9773",
+        "context": "7675e84b422d01c0352d8c1f70006cb365ee19cdf3a6c0753fe564bdeea51185"
+      },
+      "image_note": "Central gray-blue compact source is distinct; larger surrounding galaxies are separated from the target.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0711405085153325 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 1.0515317890828466, parallax significance 0.8728634283513282, BP-RP 0.9574947357177699, and flux excess 1.319338. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "3933157704796873216": {
+      "object_key": "task1_03",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "f5ea0a5c430ef9c8cd546efb8f67486882de215fd71e31f9e4bba3aa3272fdd7",
+        "context": "5fc83b8f5100ba86a42caf16c35be93b10b60e02e2061cde7439a8e81187da00"
+      },
+      "image_note": "Central target is visible in both views. Its flux-excess measurement overlaps the compact-system examples, so morphology and Gaia alone do not securely settle its class.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0873476197717948 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 0.9662105818114846, parallax significance 0.012331469120150517, BP-RP 1.0301036834716797, and flux excess 2.24009. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "3921530163174849280": {
+      "object_key": "task1_04",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "1d6f6a3c7e63d69e4d74c39d7b3d0c8b96aa74c8d5dba8ab7d8bbe180689daa9",
+        "context": "0e18f38aa2f0e23e5a26b87a852c405827f26be365104ebe00ecff1f379e73d0"
+      },
+      "image_note": "Central target is clear in both scales and suitable for comparing measured motion with the labeled examples.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.09334402708708231 arcsec. Supplied proper-motion significance is 42.43777541894347; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "4860287422830497664": {
+      "object_key": "task1_05",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "344d19f52303294cca38b84c7ccb74073530895c1bd99cf202a2f1f7296715e7",
+        "context": "99ca941f1365ab2cfc5a2c8b9325dde98d0f1d6248f16d49197a243a0b6b5228"
+      },
+      "image_note": "Faint compact central target is visible in both scales; no severe central defect was found.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.34263724587462707 arcsec. Supplied flux excess is 2.740099; proper-motion significance is 0.6452238455195042. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "2657285786315495296": {
+      "object_key": "task1_06",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "b127b18865175436b350d98b8b52b76fcff67d553b5fdbc081f7be6ec1d63dc8",
+        "context": "fc997969bdbe61b1bbb4959340a0959f6937f38bc6782d42d7b73767daca0cc9"
+      },
+      "image_note": "Compact central target is visible with adequate local context; its physical class is not determined by the thumbnail.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.1004464874276324 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 2.697688440889753, parallax significance 0.45945459720400356, BP-RP 0.5165500640869105, and flux excess 1.111022. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "3876052644263079040": {
+      "object_key": "task1_07",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "94c7d243a990a1ab592da700c0aef0d497d934064afa33af3abb2cf3101b3d7d",
+        "context": "6e0d3a8a5092c015a7589977acd4997b26f00385a7ed0e092f94e9e8bdb78603"
+      },
+      "image_note": "Central compact target remains identifiable in the close and surrounding views.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.12478753493519926 arcsec. Supplied proper-motion significance is 5.261544633811062; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "4860297520297524864": {
+      "object_key": "task1_08",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "1e654cca9ebb7e4d20babcedeed73e84e3428fcdbc42a019e7a2599d3959a98d",
+        "context": "8d96cd198b985e59cfd8f998ba1e38db9d4c5e1048565ca631eed0d2e81ca49f"
+      },
+      "image_note": "Central compact target is visible in both views; keep surrounding objects separate from its identifier.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.16261815699473664 arcsec. Supplied flux excess is 2.445596; proper-motion significance is 0.2161981693089838. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "1575891915437524096": {
+      "object_key": "task1_09",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "d5bff200352be97637f87c12a4b18d5b2b5fc71fadb8b0d484c112e74dcd1598",
+        "context": "8e50be2727eab293a59ba9d2659dc8b335730a2487b5fee9517962736efb06d3"
+      },
+      "image_note": "Central compact target is visible in both views; no severe central image artifact was found.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0591963802945008 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 1.6609681315265774, parallax significance 0.7059742828197765, BP-RP 0.390045166015625, and flux excess 1.104739. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "3907903846852100992": {
+      "object_key": "task1_10",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "33f647fb1dae3b995afa180b96ea615a5831fa704b14b557e87180ba21df8f4f",
+        "context": "ed9761c9a68dc03d8c732bb7ea316895ee627432d0c359c10977b7135411dccc"
+      },
+      "image_note": "Central compact system is visible at both scales. Missing astrometry in its Gaia row is an important observation, not a measured zero.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.01466836458499046 arcsec. Supplied flux excess is 3.239534; proper-motion significance is unavailable (not zero). A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "295939503146275712": {
+      "object_key": "task1_11",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "955446d06f916ff8d2ea49ab3c838c642e86e918eeb4fb2cea920f69a5fc49df",
+        "context": "ee4ecec33e7fc3571a0e2d1648cf55cfe693f9f0a1ed283b5b5e8e19180b4782"
+      },
+      "image_note": "Central compact target is visible in both views without a center-obscuring artifact.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0066023099018387 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 2.2565559348468933, parallax significance 0.7798189158854721, BP-RP 0.723541259765625, and flux excess 1.189435. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "830870528742237696": {
+      "object_key": "task1_12",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "cff0d63427ed0ce27465cf8960d5f0fd905f3e90e1d57e2031f59204894f9639",
+        "context": "cc7af851a33cafb8674da2123bc89a70b66f1e819dc4c90c380b2f1607d38415"
+      },
+      "image_note": "Central compact target is visible at both scales; its Gaia color/flux-excess comparison is less clear-cut than the easiest examples.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0239913487381359 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 1.2610887167461138, parallax significance 0.7150721800973745, BP-RP 1.1179370880126953, and flux excess 1.63927. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "3530134298912051200": {
+      "object_key": "task1_13",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "ce30e3762469bb49f703692825b997d05ac8646fd89a04102aba8b13e1aeae15",
+        "context": "31f5077b8178bc1bbf56fd07539310dbac7a8ede07e1456ec4f6212262e303fc"
+      },
+      "image_note": "Target is visible near the center against Sombrero host light, with nearby light in the scene. It looks broader than several stellar comparisons; no size measurement is inferred from the JPEG.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.650208183613101 arcsec. Supplied flux excess is 3.636898; proper-motion significance is 0.9942881195225401. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "1526968522788816128": {
+      "object_key": "task1_14",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "b029a5ae59c696b2ca691dffc3556fd46f66264da90069651133a422a24a22d9",
+        "context": "6a4c605c3271b19e7c4b659edd7873c12faa3ebb2e75f0772a3e66daa8c6f949"
+      },
+      "image_note": "Central compact target is visible in both views; a useful motion-evidence comparison.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.2650690695004057 arcsec. Supplied proper-motion significance is 75.77991086732351; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "891915483036131200": {
+      "object_key": "task1_15",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "8690b306b5a2c402d300a713fb36af0d8042e32199a4f2374bab703f2a9df6f1",
+        "context": "0be0862e75f995bb94081117a63835f9ad6f03dfc41ec045c11af18ef960e149"
+      },
+      "image_note": "Central compact target is visible in both views; brighter surrounding objects do not replace the marked identity.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0665489946093011 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 1.770212165976927, parallax significance 0.9792820010887372, BP-RP 0.6926422119140625, and flux excess 1.16549. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "314305569282658432": {
+      "object_key": "task1_16",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "15bfa63bfc8ed9494cbde673e9557629dba29c19fa6613e070151d2119112545",
+        "context": "d70a8e0693556114a9a455bb4ec25cc76ed5c090ef4c05cc93d6b6458322b88c"
+      },
+      "image_note": "Central target is identifiable in both views. The quoted parallax result is not exactly zero; students should report it rather than enforce a perfect quasar template.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0398805869159546 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 0.1764792514396088, parallax significance 3.117263072837091, BP-RP 0.5713768005371058, and flux excess 1.332842. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "693355193571905280": {
+      "object_key": "task1_17",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "d52c865a97f308b4c33e8c962a0ce27f4e46885435d0f1cf49d279e47583c70e",
+        "context": "c650ddc4e15e9d2c8e2e05a9ec0dfed69260c20cc412654d3d7dbf8c0b372b48"
+      },
+      "image_note": "Central compact source is visible in both views; retain the measured color separately from the RGB display.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.14383286830756972 arcsec. Supplied proper-motion significance is 17.38220716231454; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "1892270437799446400": {
+      "object_key": "task1_18",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "7d5dfa2b63283a92b41296628d2786ec331944d68ce1ea60078f7f9172b276b1",
+        "context": "e8fdf8fbe8727c5da3023e1a429714fe448fee36d24e3479ae99331fca0c5ebd"
+      },
+      "image_note": "Central compact target is visible in both scales; no center-obscuring image problem was found.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.06664969198110614 arcsec. Supplied proper-motion significance is 23.116238755067922; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "2719621704702952704": {
+      "object_key": "task1_19",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "f3f6e7c174093229d2e9c70b8fb3fb6acf3b0231517babee609c6d41a0b2298b",
+        "context": "4fc19599ef91012e1d7c497a2d05bbb56d3115a0689df328b21f2bbd95d83dc3"
+      },
+      "image_note": "The intended faint gray source is centered. A brighter orange neighbor about eight arcseconds to the left is clearly separated in the close view; the crosshair prevents choosing that neighbor.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.10239843703589407 arcsec. Supplied proper-motion significance is 9.38675225383976; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "3907710229727310208": {
+      "object_key": "task1_20",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "59ea2b17952d8840f9479e1892c35a58f1e6d5d5de83546af2cd6f3959110341",
+        "context": "dc8274e25a7883fb966b3a52d2eaeb8d7a610a9c3ef86c11739a2733f62d8ee6"
+      },
+      "image_note": "Central white compact source is visible against a strong host-light gradient. Nearby orange and white sources are distinct; both image scales are useful.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.0850562843867039 arcsec. Supplied flux excess is 2.984988; proper-motion significance is 1.9825318367134566. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "4860297554657264128": {
+      "object_key": "task1_21",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "078c911a609f946a7ac576cd9fdd5de285f0bb5700eee862c4d8188c3643e326",
+        "context": "b50c544ac3e8dae3289ad438615de628a0354b20577137b7a5ac67c1fcee7280"
+      },
+      "image_note": "Central compact source is visible. It has the lowest flux excess among the ten Task 1 UCD references and is intentionally a less obvious measurement-based case.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.027000029859007058 arcsec. Supplied flux excess is 1.928686; proper-motion significance is 2.401644441479759. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "3263796947320110208": {
+      "object_key": "task1_22",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "8ea3ff157a7961b22442e13dcaae20ab327a58b33ba0a8b1a6b00cae4cb9392b",
+        "context": "ad07b8a669719bc4dac87eebbce132744a819988ca9ca9be272402d916ede137"
+      },
+      "image_note": "Central faint compact source is identifiable in both views; no center-obscuring image defect was found.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.05166556752313633 arcsec. Supplied proper-motion significance is 4.448973668455163; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "3931736865191365760": {
+      "object_key": "task1_23",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "3ad83727e8729eac5ebfe474188d6d2851b8d11722ee36499a0bd3a1907a92cc",
+        "context": "81d2d0149d8c6e71df0b6c74ebee88d49add47ccfd3af416cb704030fd71bb8f"
+      },
+      "image_note": "Central compact system is visible in both scales; missing astrometry remains explicit.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.36137457497692604 arcsec. Supplied flux excess is 5.203968; proper-motion significance is unavailable (not zero). A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "3908713847620226176": {
+      "object_key": "task1_24",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "036080cce9506fa35f2ae47a36aa497b16717cf8926e7849c2f79a809a4077cc",
+        "context": "d68250951606d9162026253ca0249686045050c2b40270d3ff30f177fe5442f7"
+      },
+      "image_note": "Central compact target is clear despite a background gradient in the wider image; no central placeholder tile is present.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.03458928256930155 arcsec. Supplied flux excess is 4.681564; proper-motion significance is unavailable (not zero). A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "833743075884264448": {
+      "object_key": "task1_25",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "937d4cc78c8b59c857bbf4e265b373ecff563b31f9bc86a1b7d5bb0427a8a064",
+        "context": "cd4a80b6db9685e786d2f07e80495fc42ed63c22ee22da76d6bc778bf6c6d7a4"
+      },
+      "image_note": "Faint blue central target has a brighter reddish nearby source. The target is visible, but proximity makes a cautious uncertain/blend discussion reasonable; no automatic blend flag is assigned.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0432556580546961 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 1.8461339390435103, parallax significance 0.3052101988879179, BP-RP 0.4474811553955078, and flux excess 1.261365. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    },
+    "1340322575683508096": {
+      "object_key": "task1_26",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "79e80cf252b5aeeb22eea0f3888cd5a995c4e2d636cc27814c1db7e0df45f9e1",
+        "context": "27217ed7046954067a8c52f8e6a8106ea7b98300336d63e00280a494afa8c6d8"
+      },
+      "image_note": "Central faint compact source is visible in both views; keep measured motion and uncertainty together.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.08318342682091118 arcsec. Supplied proper-motion significance is 8.605450864217522; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "3907698826589168000": {
+      "object_key": "task1_27",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "3022d2799c2b5d16d9e5a2ff0e22f7ff7a3a15aeef94c20034aeff21bd1ab11f",
+        "context": "eebc08b496a8f237f8dc0ba493bce48e81dd9125ca2181aaac6fa3a74cb0ccbb"
+      },
+      "image_note": "Small colored central source is visible in both scales; screen color is not the classification evidence by itself.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.0048313682672785924 arcsec. Supplied flux excess is 3.186831; proper-motion significance is 2.109663173571168. A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "610431538433337856": {
+      "object_key": "task1_28",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "228392cfa636cffd70dd51ad8f5ffe00831b17fa5798c26bab4c46b5eb61504f",
+        "context": "cfa4c9457c63784d50c5cb543b15d32f8c74b923e23220f02b7a625fba3d24dc"
+      },
+      "image_note": "Central compact target is visible in both scales without a severe central image defect.",
+      "evidence_note": "The independent SDSS spectrum is class STAR, not proof of singleness. Its Gaia association separation is 0.12121019440888252 arcsec. Supplied proper-motion significance is 19.16180465840324; the signed components and errors allow a foreground interpretation. These deliberately clearer introductory stars do not define the Task 2 stellar distribution."
+    },
+    "3907716453134916352": {
+      "object_key": "task1_29",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "258dfa2efd0a7c426fa725c04992c77a244bfbcc10e8fb3260686e95fedcf208",
+        "context": "a63440911ec36c1cd6d56edb220c60a0881df9fd6efc842b5b28a8b7ce658af4"
+      },
+      "image_note": "Central compact system is visible at both scales; unavailable astrometric fields should not be replaced by zeros.",
+      "evidence_note": "Current canonical confirmed reference and original publication identifiers are retained in the key; approved reliability/source-status exclusions have been applied. Literature-to-Gaia offset is 0.052279350638429097 arcsec. Supplied flux excess is 3.019093; proper-motion significance is unavailable (not zero). A likely compact-system interpretation can be compared with the examples, but the literature supplies the independent class; accept uncertainty if the offline evidence is not decisive."
+    },
+    "2792897080880541568": {
+      "object_key": "task1_30",
+      "status": "suitable_for_instructor_review",
+      "image_sha256": {
+        "close": "b5e6af74b017488f93e3485f44d7220168915256d418011e6fc56aed6d2bf242",
+        "context": "2c263451d451c9b69efb30f90e38f07508b09f5a036f923522416595b177bbab"
+      },
+      "image_note": "Central compact source is visible in both scales; the thumbnail alone does not establish a quasar.",
+      "evidence_note": "The development reference has independent SDSS spectroscopic QSO evidence, with association separation 0.0925911315000701 arcsec and original spectrum provenance in the key. Supplied proper-motion significance is 0.5420857871246813, parallax significance 0.4063425972452632, BP-RP 0.5496006011962926, and flux excess 1.464272. These support comparison with the labeled quasars, not a unique quasar proof. A justified uncertain answer is valid without spectroscopy; coordinate-based SDSS/SIMBAD exploration is available online but its live availability is not guaranteed."
+    }
+  }
+}

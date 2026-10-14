@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BubbleTea: a reproducible search for ultra-compact dwarf galaxies. Research documentation and evidence.">
+<title>Step-by-step guide: find the same object in different surveys · BubbleTea</title><link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/navigation.js" defer></script></head><body>
+<a class="skip_link" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="../../index.html"><span class="brand_mark" aria-hidden="true">◉</span> BubbleTea <span class="brand_note">research notebook</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html">Overview</a><a href="../directory.html">All documents</a></nav></header>
+<main id="main"><div class="document_layout"><article class="document"><div class="document_meta"><span>Teaching materials</span><a href="../../teaching/tool_guide.md">Markdown source ↗</a></div><h1 id="step-by-step-guide-find-the-same-object-in-different-surveys">Step-by-step guide: find the same object in different surveys</h1>
+<p>These optional online steps are platform-independent and need no student code.
+The <a href="../../teaching/ucd_investigation.html">standalone activity</a> has saved data/images if a service
+is unavailable. Use that snapshot as the common basis for submitted answers.</p>
+<h2 id="1-gaia-archive-identify-the-record">1. Gaia Archive: identify the record</h2>
+<ol>
+<li>Choose M60-UCD1 in the activity. Copy Gaia DR3 identifier
+   <strong>3927659910436411136</strong> as text; note RA <strong>190.89985110</strong>, Dec <strong>+11.53462982</strong>, in degrees.</li>
+<li>Open the <a href="https://gea.esac.esa.int/archive/">ESA Gaia Archive</a>. Choose its
+   object-search route, labeled Single Object or basic position search in different
+   interface versions. Select <strong>Gaia DR3</strong> if a release choice is offered.</li>
+<li>Search the exact identifier if supported. Otherwise enter the decimal-degree
+   coordinates and a small radius such as <strong>5 arcseconds</strong>. This identifies a known
+   object; it is not the size of a host-galaxy search region.</li>
+<li>Select the row with exactly that source identifier. A nearby symbol or similar
+   name is insufficient. If lookup fails, use the saved row and report the failure.</li>
+<li>Inspect G, BP-RP, parallax/error, pmra/error, pmdec/error, RUWE, and
+   <code>phot_bp_rp_excess_factor</code>. Use result-table column controls or source details
+   if fields are hidden. Read units; missing fields remain missing.</li>
+<li>Repeat for the foreground comparison. Record the date and any differences from
+   the supplied DR3 snapshot. More decimal places do not mean a more certain class.</li>
+</ol>
+<p>The saved queries were verified with ESA's TAP service. Current graphical menu
+labels have not been fully tested; this is not a screenshot-exact menu transcript.
+Official help: <a href="https://www.cosmos.esa.int/web/gaia-users/archive/extract-data">data extraction</a>.</p>
+<h2 id="2-gaia-visualization-examine-sky-context">2. Gaia Visualization: examine sky context</h2>
+<ol>
+<li>Open <a href="https://gea.esac.esa.int/archive/visualization/">Gaia Visualization</a>.</li>
+<li>Use its sky/position view and available coordinate-search controls to navigate
+   to M60. If direct object search is unavailable, use the Archive or Aladin for
+   exact identification instead.</li>
+<li>Inspect the distribution of catalog sources. A source-density view is not a
+   color image or a map of confirmed galaxies. Is the UCD obvious from position alone?</li>
+<li>Try supported linked selections or magnitude histograms if available. Do not
+   assume every selected source is a UCD or our labeled examples represent that area.</li>
+<li>Use the activity's built-in G-versus-flux-excess plot for Task 2;
+   arbitrary-feature plotting in the live service is not required. A parallax-based
+   stellar 3D view does not give a UCD's host distance.</li>
+</ol>
+<p>Official <a href="https://www.cosmos.esa.int/web/gaia-users/archive/visualisation/">visualization guide</a>.
+Unavailable online services do not block the core exercise.</p>
+<h2 id="3-aladin-desktop-overlay-images-and-catalogs">3. Aladin Desktop: overlay images and catalogs</h2>
+<ol>
+<li>Download <a href="https://aladin.cds.unistra.fr/AladinDesktop/">Aladin Desktop from CDS</a>.
+   Choose your operating-system installer. Windows users can use the official
+   installer rather than configure a development environment. Aladin installation
+   is optional and is not needed to open the supplied HTML.</li>
+<li>Enter <strong>190.89985110 +11.53462982</strong> in Aladin's target/location box. Confirm
+   equatorial coordinates in degrees or use an explicitly formatted equivalent.</li>
+<li>Use the image/server selector to load an optical image. HiPS services stream
+   sky images at different zoom levels. Record the service name/release: a DSS or
+   Pan-STARRS image is not Legacy Survey DR11.</li>
+<li>Use the catalog/server selector for <strong>Gaia DR3</strong>, available in VizieR as
+   <strong>I/355/gaiadr3</strong>, around this position. Start with a small field; overlay the
+   catalog symbols on the image.</li>
+<li>Select the target symbol and inspect its table row. Check the exact identifier.
+   Toggle the catalog layer to compare the marker against the actual image.</li>
+<li>Zoom in for source shape and out for neighbors/host light. Use the angular-
+   distance tool if needed; screen pixels do not have a fixed angular scale across zooms.</li>
+<li>Repeat with the foreground star. It can shift between an image's epoch and
+   Gaia's <strong>J2016.0</strong> position. A discrepancy still needs identifier/epoch/neighbor checks.</li>
+</ol>
+<p>Menu names vary by version. See CDS <a href="https://aladin.cds.unistra.fr/java/nph-aladin.pl?frame=manual">manuals and tutorials</a>.
+No Windows-specific execution or complete GUI walkthrough is claimed.</p>
+<h2 id="4-legacy-survey-inspect-the-observation">4. Legacy Survey: inspect the observation</h2>
+<ol>
+<li>Select a source in the activity and choose <strong>Legacy viewer ↗</strong>.
+   The link points to its Gaia coordinates with <code>layer=ls-dr11</code>.</li>
+<li>Confirm the DR11 image layer; model/residual layers are not the original image.
+   A release label does not imply new observations everywhere.</li>
+<li>At high zoom inspect the intended compact source; at lower zoom inspect host
+   background, neighbors, and defects. Compare with the embedded close/context views.</li>
+<li>Use the coordinate readout and angular scale. A crosshair marks the requested
+   position, not a verified physical association.</li>
+<li>A blank tile means unavailable imaging, not necessarily empty sky. The documented
+   <code>ls-dr11-grz</code> layer returned blank tiles for two preparation examples; this
+   activity uses <code>ls-dr11</code> instead.</li>
+<li>Record morphology with uncertainty. RGB display colors are not calibrated
+   photometric colors. A compact image alone cannot separate a star, QSO, or UCD.</li>
+</ol>
+<p>Official references: <a href="https://www.legacysurvey.org/viewer/urls">viewer API</a>,
+<a href="https://www.legacysurvey.org/dr11/description/">DR11 description</a>,
+<a href="https://www.legacysurvey.org/dr11/issues/">known issues</a>.</p>
+<h2 id="5-save-and-return-to-the-activity">5. Save and return to the activity</h2>
+<p>Record unavailable steps and live-data differences instead of silently replacing
+the supplied measurements. <strong>Download answers (JSON)</strong> to save/resume or
+<strong>Download readable answers</strong> for a text copy. Nothing uploads automatically.</p></article><aside class="page_sidebar"><p class="eyebrow">On this page</p><div class="toc">
+<ul>
+<li><a href="#step-by-step-guide-find-the-same-object-in-different-surveys">Step-by-step guide: find the same object in different surveys</a><ul>
+<li><a href="#1-gaia-archive-identify-the-record">1. Gaia Archive: identify the record</a></li>
+<li><a href="#2-gaia-visualization-examine-sky-context">2. Gaia Visualization: examine sky context</a></li>
+<li><a href="#3-aladin-desktop-overlay-images-and-catalogs">3. Aladin Desktop: overlay images and catalogs</a></li>
+<li><a href="#4-legacy-survey-inspect-the-observation">4. Legacy Survey: inspect the observation</a></li>
+<li><a href="#5-save-and-return-to-the-activity">5. Save and return to the activity</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<details><summary>Research navigation</summary><ul><li><a href="../current_status.html">Current research status</a></li><li><a href="../documentation_guide.html">Documentation guide</a></li><li><a href="../PLAN.html">BubbleTea — Master Development Plan</a></li><li><a href="../SPEC.html">BubbleTea Scientific Specification</a></li><li><a href="../todo.html">BubbleTea Issue Register</a></li><li><a href="../science_guide.html">Science guide: what we measure and what the evidence means</a></li></ul></details><details><summary>Related reading</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="concepts.html">Necessary background: compact galaxies hidden among stars</a></li><li><a href="instructor_notes.html">Instructor guide: A Galaxy in Disguise, Part I</a></li><li><a href="instructor_notes_v1.html">Retained version 1 instructor notes: a star in disguise?</a></li><li><a href="part1_reading.html">A Galaxy in Disguise</a></li><li><a href="project_introduction_en.html">A Galaxy in Disguise</a></li></ul></details><details><summary>Linked from (2)</summary><ul><li><a href="README.html">A Galaxy in Disguise</a></li><li><a href="worksheet.html">Student worksheet: a star in disguise?</a></li></ul></details></aside></div></main>
+<footer>BubbleTea · Observational astronomy · Markdown is the editable source.<br>
+Local reading portal, not the source-review application or a final scientific catalog.</footer>
+</body></html>
